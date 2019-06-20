@@ -1,4 +1,4 @@
-import BinaryAPICalls from './BinaryAPICalls';
+import BinaryAPICalls from './BinaryAPICalls.js';
 
 export default class BinaryAPI extends BinaryAPICalls {
     constructor({connection, endpoint = 'ws.binaryws.com', appId = 1, lang = 'EN'}) {

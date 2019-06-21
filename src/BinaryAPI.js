@@ -8,6 +8,7 @@ export default class BinaryAPI extends BinaryAPICalls {
         if (connection) {
             this.connection = connection;
         } else {
+            this.shouldReconnect = true;
             this.connectionArgs = { endpoint, appId, lang };
             this.connect();
         }
@@ -21,8 +22,27 @@ export default class BinaryAPI extends BinaryAPICalls {
     }
 
     connect() {
+        if (!this.connectionArgs) {
+            throw new Error('Connection arguments are required to create a connection.');
+        }
+
         const { endpoint, lang, appId } = this.connectionArgs;
         this.connection = new WebSocket(`wss:\/\/${endpoint}/websockets/v3?l=${lang}&app_id=${appId}`);
+    }
+
+    disconnect() {
+        this.shouldReconnect = false; // prevents re-connecting automatically
+        this.connection.close();
+    }
+
+    async send(request) {
+        await this.connected;
+
+        this.connection.send(JSON.stringify(request));
+
+        const pending = new CustomPromise();
+        this.pendingRequests[request.req_id] = pending;
+        return pending;
     }
 
     onOpen() {
@@ -30,12 +50,6 @@ export default class BinaryAPI extends BinaryAPICalls {
             this.connected.resolve();
         } else {
             setTimeout(this.onOpen, 50);
-        }
-    }
-
-    onClose() {
-        if (this.connectionArgs) {
-            this.connect();
         }
     }
 
@@ -49,13 +63,9 @@ export default class BinaryAPI extends BinaryAPICalls {
         delete this.pendingRequests[response.req_id];
     }
 
-    async send(request) {
-        await this.connected;
-
-        this.connection.send(JSON.stringify(request));
-
-        const pending = new CustomPromise();
-        this.pendingRequests[request.req_id] = pending;
-        return pending;
+    onClose() {
+        if (this.shouldReconnect) {
+            this.connect();
+        }
     }
 }

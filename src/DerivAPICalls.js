@@ -66,7 +66,7 @@ let req_id = 0;
 // ----- API Methods -----
 // =======================
 
-export default class BinaryAPICalls {
+export default class DerivAPICalls {
     constructor() {
         // To be implemented by the sub-class
     }

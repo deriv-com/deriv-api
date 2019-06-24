@@ -1,7 +1,7 @@
-import BinaryAPICalls from './BinaryAPICalls';
-import CustomPromise  from './CustomPromise';
+import DerivAPICalls from './DerivAPICalls';
+import CustomPromise from './CustomPromise';
 
-export default class BinaryAPI extends BinaryAPICalls {
+export default class DerivAPI extends DerivAPICalls {
     constructor({ connection, endpoint = 'red.binaryws.com', appId = 1, lang = 'EN' } = {}) {
         super();
 

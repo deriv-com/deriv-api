@@ -5,9 +5,6 @@ import { first, take, scan, toArray } from 'rxjs/operators';
 
 const everySecond = new CustomObservable()
 
-let counter = 0;
-setInterval(() => everySecond.publish(++counter), 1000)
-
 test('Pure observable', async () => {
     const source = interval(1000)
     const result = await source.pipe(take(2), toArray()).toPromise()

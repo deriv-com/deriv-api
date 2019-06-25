@@ -1,3 +1,4 @@
+import CustomObservable from '../CustomObservable';
 import { interval } from 'rxjs';
 
 import { first, take, scan, toArray } from 'rxjs/operators';
@@ -9,6 +10,9 @@ test('Pure observable', async () => {
 })
 
 test('observable subscription', async () => {
+    const everySecond = new CustomObservable();
+    let counter = 0;
+    setInterval(() => everySecond.publish(++counter), 500)
     const array = await everySecond.pipe(take(4), toArray()).toPromise()
 
     expect(array).toBeInstanceOf(Array)

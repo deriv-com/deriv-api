@@ -11,7 +11,7 @@ beforeAll(() => {
 });
 
 afterAll(() => {
-    // api.disconnect();
+    api.disconnect();
 })
 
 test('Subscribe calling api.subscribeWithCallback without callback', async() => {

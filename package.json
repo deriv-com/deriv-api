@@ -1,0 +1,27 @@
+{
+  "name": "binary-api",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binary-hamedanchi/binary-api.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binary-hamedanchi/binary-api/issues"
+  },
+  "homepage": "https://github.com/binary-hamedanchi/binary-api#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "ws": "^7.0.1"
+  }
+}

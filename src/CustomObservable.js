@@ -1,15 +1,15 @@
 import { Observable } from 'rxjs';
 export default class CustomObservable extends Observable {
     constructor(cb = () => {}) {
-        const containers = [];
+        const observers = [];
 
-        super((o) => {
-            containers.push(o)
+        super((observer) => {
+            observers.push(observer)
         });
 
-        this.containers = containers;
+        this.observers = observers;
     }
     publish(obj) {
-        this.containers.forEach(e => e.next(obj))
+        this.observers.forEach(e => e.next(obj))
     }
 }

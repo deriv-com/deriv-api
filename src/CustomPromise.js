@@ -2,9 +2,9 @@ export default class CustomPromise extends Promise {
     constructor(cb = () => {}) {
         let resolve, reject;
 
-        super((res, rej) => {
-            resolve = res;
-            reject  = rej;
+        super((parentResolve, parentReject) => {
+            resolve = parentResolve;
+            reject  = parentReject;
         });
 
         cb(resolve, reject);

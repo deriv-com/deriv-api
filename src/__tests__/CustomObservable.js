@@ -1,9 +1,6 @@
-import CustomObservable from '../CustomObservable';
 import { interval } from 'rxjs';
 
 import { first, take, scan, toArray } from 'rxjs/operators';
-
-const everySecond = new CustomObservable()
 
 test('Pure observable', async () => {
     const source = interval(1000)

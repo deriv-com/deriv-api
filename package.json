@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "devel": "jest --watch --notify --onlyChanged"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "ws": "^7.0.1"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.2"
   }
 }

@@ -1,5 +1,5 @@
-import ws       from 'ws';
-import DerivAPI from '../DerivAPI'
+import ws        from 'ws';
+import DerivAPI  from '../DerivAPI'
 
 let api;
 
@@ -8,11 +8,13 @@ beforeAll(() => {
     api = new DerivAPI({ connection });
 });
 
+afterAll(() => {
+    api.disconnect();
+})
+
 test('Constructing DerivAPI', async() => {
     expect(api).toBeInstanceOf(DerivAPI);
 
     const response = await api.ping();
-    expect(response.ping).toEqual('pong');
-
-    api.disconnect();
+    expect(response.ping).toBe('pong');
 });

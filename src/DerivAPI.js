@@ -1,5 +1,8 @@
-import DerivAPICalls from './DerivAPICalls';
-import CustomPromise from './CustomPromise';
+import DerivAPICalls     from './DerivAPICalls';
+import CustomPromise     from './CustomPromise';
+import CustomObservable  from './CustomObservable';
+import { first }         from 'rxjs/operators';
+import { Observable }    from 'rxjs';
 
 export default class DerivAPI extends DerivAPICalls {
     constructor({ connection, endpoint = 'red.binaryws.com', appId = 1, lang = 'EN' } = {}) {
@@ -35,14 +38,35 @@ export default class DerivAPI extends DerivAPICalls {
         this.connection.close();
     }
 
-    async send(request) {
-        await this.connected;
+    async send(obj) {
+        const pending = new CustomObservable();
 
-        this.connection.send(JSON.stringify(request));
+        this.pendingRequests[obj.req_id] = pending;
 
-        const pending = new CustomPromise();
-        this.pendingRequests[request.req_id] = pending;
-        return pending;
+        const connection = await this.connected;
+
+        this.connection.send(JSON.stringify(obj));
+
+        return pending.pipe(first()).toPromise();
+    }
+
+    // await api.subscribeWithCallback({ ticks: "r_100" }, r => console.log(r))
+    async subscribeWithCallback(obj, callback) {
+        if (!callback) {
+            throw new Error('A callback is required for subscription');
+        }
+
+        const pendingSend = this.send({ ...obj, subscribe: 1 });
+
+        this.pendingRequests[obj.req_id].subscribe(callback)
+
+        return pendingSend;
+    }
+
+    subscribe(obj) {
+        this.send({ ...obj, subscribe: 1 });
+
+        return this.pendingRequests[obj.req_id];
     }
 
     onOpen() {
@@ -59,8 +83,14 @@ export default class DerivAPI extends DerivAPICalls {
         }
 
         const response = JSON.parse(msg.data);
-        this.pendingRequests[response.req_id].resolve(response);
-        delete this.pendingRequests[response.req_id];
+
+        const reqId = response.req_id;
+
+        if ( reqId in this.pendingRequests ) {
+            this.pendingRequests[reqId].publish(response);
+        } else {
+            throw Error('Extra response');
+        }
     }
 
     onClose() {

@@ -13,4 +13,7 @@ export default class CustomObservable extends Observable {
     publish(obj) {
         this.observers.forEach(e => e.next(obj))
     }
+    error(errorMessage) {
+        this.observers.forEach(e => e.error(errorMessage))
+    }
 }

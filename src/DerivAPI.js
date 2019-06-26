@@ -3,7 +3,7 @@ import CustomPromise     from './CustomPromise';
 import CustomObservable  from './CustomObservable';
 import { first }         from 'rxjs/operators';
 import { Observable }    from 'rxjs';
-import { APIError, ConstructionError } from './error';
+import { ResponseError, APIError, ConstructionError } from './error';
 
 export default class DerivAPI extends DerivAPICalls {
     constructor({ connection, endpoint = 'red.binaryws.com', appId = 1, lang = 'EN' } = {}) {
@@ -22,7 +22,7 @@ export default class DerivAPI extends DerivAPICalls {
         this.connection.onmessage = this.onMessage.bind(this);
 
         this.connected = new CustomPromise();
-        this.errorChannel = new CustomObservable();
+        this.sanityErrors = new CustomObservable();
         this.pendingRequests = {};
     }
 
@@ -83,7 +83,7 @@ export default class DerivAPI extends DerivAPICalls {
 
     onMessage(msg) {
         if (!msg.data) {
-            this.errorChannel.publish(new APIError('Something went wrong while receiving the response from API.'))
+            this.sanityErrors.publish(new APIError('Something went wrong while receiving the response from API.'))
             return;
         }
 
@@ -92,9 +92,13 @@ export default class DerivAPI extends DerivAPICalls {
         const reqId = response.req_id;
 
         if ( reqId in this.pendingRequests ) {
-            this.pendingRequests[reqId].publish(response);
+            if (response.error) {
+                this.pendingRequests[reqId].error(new ResponseError(response));
+            } else {
+                this.pendingRequests[reqId].publish(response);
+            }
         } else {
-            this.errorChannel.publish(new APIError('Extra response'))
+            this.sanityErrors.publish(new APIError('Extra response'))
         }
     }
 

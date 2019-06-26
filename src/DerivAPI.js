@@ -103,15 +103,15 @@ export default class DerivAPI extends DerivAPICalls {
 }
 
 function getUrl(originalEndpoint) {
+    if (typeof originalEndpoint !== 'string') {
+        throw Error(`Endpoint must be a string, passed: ${typeof originalEndpoint}`)
+    }
+
     let url;
 
     try {
-        if (typeof originalEndpoint === 'string') {
-            const [_, protocol, endpoint] = originalEndpoint.match(/((?:\w*:\/\/)*)(.*)/)
-            url = new URL(`${protocol === 'ws://' ? protocol : 'wss://'}${endpoint}`);
-        } else {
-            url = orginalEndpoint;
-        }
+        const [_, protocol, endpoint] = originalEndpoint.match(/((?:\w*:\/\/)*)(.*)/)
+        url = new URL(`${protocol === 'ws://' ? protocol : 'wss://'}${endpoint}`);
     } catch(e) {
         throw Error(`Invalid URL: ${originalEndpoint}`)
     }

@@ -1,6 +1,8 @@
 import ws        from 'ws';
 import DerivAPI  from '../DerivAPI'
 
+global.WebSocket = jest.fn()
+const WebSocket = global.WebSocket;
 let api;
 
 beforeAll(() => {
@@ -18,3 +20,11 @@ test('Constructing DerivAPI', async() => {
     const response = await api.ping();
     expect(response.ping).toBe('pong');
 });
+
+test('API construction with endpoint and appId', () => {
+    expect(new DerivAPI({ endpoint: 'ws.binaryws.com', appId: 1 })).toBeInstanceOf(DerivAPI);
+})
+
+test('API construction with endpoint', () => {
+    expect(() => new DerivAPI({ endpoint: 1, appId: 1 })).toThrow();
+})

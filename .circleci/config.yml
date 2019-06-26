@@ -13,7 +13,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: Run npm test
-          command: npm test
-
+          name: "Run tests and collect coverage data"
+          command: npm test -- --collectCoverage=true && npm run coverage
+      - store_artifacts:
+          path: coverage
 

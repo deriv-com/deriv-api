@@ -12,7 +12,7 @@ export default class DerivAPI extends DerivAPICalls {
             this.connection = connection;
         } else {
             this.shouldReconnect = true;
-            this.connectionArgs = { endpoint, appId, lang };
+            this.connectionArgs = { url: getUrl(endpoint), appId, lang: lang.toUpperCase() };
             this.connect();
         }
 
@@ -29,8 +29,8 @@ export default class DerivAPI extends DerivAPICalls {
             throw new Error('Connection arguments are required to create a connection.');
         }
 
-        const { endpoint, lang, appId } = this.connectionArgs;
-        this.connection = new WebSocket(`wss:\/\/${endpoint}/websockets/v3?l=${lang}&app_id=${appId}`);
+        const { url, lang, appId } = this.connectionArgs;
+        this.connection = new WebSocket(`${url.toString()}websockets/v3?l=${lang}&app_id=${appId}`);
     }
 
     disconnect() {
@@ -45,9 +45,11 @@ export default class DerivAPI extends DerivAPICalls {
 
         const connection = await this.connected;
 
+        const sendRequest = pending.pipe(first()).toPromise();
+
         this.connection.send(JSON.stringify(obj));
 
-        return pending.pipe(first()).toPromise();
+        return sendRequest;
     }
 
     // await api.subscribeWithCallback({ ticks: "r_100" }, r => console.log(r))
@@ -73,7 +75,7 @@ export default class DerivAPI extends DerivAPICalls {
         if (this.connection.readyState === 1) {
             this.connected.resolve();
         } else {
-            setTimeout(this.onOpen, 50);
+            setTimeout(this.onOpen.bind(this), 50);
         }
     }
 
@@ -99,3 +101,25 @@ export default class DerivAPI extends DerivAPICalls {
         }
     }
 }
+
+function getUrl(originalEndpoint) {
+    let url;
+
+    try {
+        if (typeof originalEndpoint === 'string') {
+            const [_, protocol, endpoint] = originalEndpoint.match(/((?:\w*:\/\/)*)(.*)/)
+            url = new URL(`${protocol === 'ws://' ? protocol : 'wss://'}${endpoint}`);
+        } else {
+            url = orginalEndpoint;
+        }
+    } catch(e) {
+        throw Error(`Invalid URL: ${originalEndpoint}`)
+    }
+
+    if (url.protocol !== 'wss:' && url.protocol !== 'ws:') {
+        throw Error(`URL protocol must be WebSocket, (given: ${url.protocol})`)
+    }
+
+    return url;
+}
+

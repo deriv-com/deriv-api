@@ -1,6 +1,7 @@
 export function errorFactory(type) {
     return class GenericError extends Error {
         constructor(message) {
+            super()
             this.type = type;
             this.message = message;
         }
@@ -20,6 +21,7 @@ export class ResponseError extends Error {
     constructor(response) {
         const { code, message, details } = response.error;
 
+        super()
         this.type    = 'ResponseError';
         this.code    = code;
         this.message = message;

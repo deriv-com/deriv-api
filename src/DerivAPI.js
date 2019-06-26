@@ -21,8 +21,9 @@ export default class DerivAPI extends DerivAPICalls {
         this.connection.onclose   = this.onClose.bind(this);
         this.connection.onmessage = this.onMessage.bind(this);
 
-        this.connected = new CustomPromise();
-        this.sanityErrors = new CustomObservable();
+        this.reqId           = 0;
+        this.connected       = new CustomPromise();
+        this.sanityErrors    = new CustomObservable();
         this.pendingRequests = {};
     }
 
@@ -43,6 +44,8 @@ export default class DerivAPI extends DerivAPICalls {
     async send(obj) {
         const pending = new CustomObservable();
 
+        obj.req_id = obj.req_id || ++this.reqId;
+
         this.pendingRequests[obj.req_id] = pending;
 
         const connection = await this.connected;
@@ -60,15 +63,19 @@ export default class DerivAPI extends DerivAPICalls {
             throw new CallError('A callback is required for subscription');
         }
 
-        const pendingSend = this.send({ ...obj, subscribe: 1 });
+        const source = this.subscribe(obj);
 
-        this.pendingRequests[obj.req_id].subscribe(callback)
+        // Ignoring the failures in observable, because we send a promise back
+        source.subscribe(callback, () => {})
 
-        return pendingSend;
+        return source.pipe(first()).toPromise()
     }
 
     subscribe(obj) {
-        this.send({ ...obj, subscribe: 1 });
+        obj.subscribe = 1;
+
+        // Ignore the promise failure, we expect the observable to handle error
+        this.send(obj).catch(() => {});
 
         return this.pendingRequests[obj.req_id];
     }

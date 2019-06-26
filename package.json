@@ -5,9 +5,9 @@
   "description": "Websocket API for Deriv applications",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "coverage": "codecov",
-    "devel": "jest --watch --notify --onlyChanged"
+    "devel": "npm test -- --watch --notify --onlyChanged"
   },
   "repository": {
     "type": "git",

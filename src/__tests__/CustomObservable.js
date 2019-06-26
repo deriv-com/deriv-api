@@ -30,3 +30,15 @@ test('Custom observable (with source.publish)', async () => {
 
     expect(array).toEqual([0, 1])
 })
+
+test('Custom observable throwing error', async () => {
+    const errorSource = new CustomObservable();
+
+    errorSource.subscribe(undefined, e => expect(e).toBeInstanceOf(Error))
+
+    const promise = errorSource.toPromise()
+
+    errorSource.error(Error('Oops, err...'))
+
+    expect(promise).rejects.toBeInstanceOf(Error)
+})

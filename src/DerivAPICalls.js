@@ -21,7 +21,6 @@ const checkErrorAndValidate = ({ config, args, call_name }) => {
     }
 
     args[call_name] = args[call_name] || 1;
-    args.req_id     = args.req_id || ++req_id;
 
     const error_messages = [];
 
@@ -57,10 +56,6 @@ const checkErrorAndValidate = ({ config, args, call_name }) => {
 
     return error_messages.length ? error_messages.join(' - ') : '';
 };
-
-// req_id is initialized once, and is unique for each request
-let req_id = 0;
-
 
 // =======================
 // ----- API Methods -----

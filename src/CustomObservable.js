@@ -16,4 +16,7 @@ export default class CustomObservable extends Observable {
     error(errorMessage) {
         this.observers.forEach(e => e.error(errorMessage))
     }
+    complete() {
+        this.observers.forEach(e => e.complete())
+    }
 }

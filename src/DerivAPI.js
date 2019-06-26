@@ -3,6 +3,7 @@ import CustomPromise     from './CustomPromise';
 import CustomObservable  from './CustomObservable';
 import { first }         from 'rxjs/operators';
 import { Observable }    from 'rxjs';
+import { APIError, ConstructionError } from './error';
 
 export default class DerivAPI extends DerivAPICalls {
     constructor({ connection, endpoint = 'red.binaryws.com', appId = 1, lang = 'EN' } = {}) {
@@ -21,12 +22,13 @@ export default class DerivAPI extends DerivAPICalls {
         this.connection.onmessage = this.onMessage.bind(this);
 
         this.connected = new CustomPromise();
+        this.errorChannel = new CustomObservable();
         this.pendingRequests = {};
     }
 
     connect() {
         if (!this.connectionArgs) {
-            throw new Error('Connection arguments are required to create a connection.');
+            throw new ConstructionError('Connection arguments are required to create a connection.')
         }
 
         const { url, lang, appId } = this.connectionArgs;
@@ -55,7 +57,7 @@ export default class DerivAPI extends DerivAPICalls {
     // await api.subscribeWithCallback({ ticks: "r_100" }, r => console.log(r))
     async subscribeWithCallback(obj, callback) {
         if (!callback) {
-            throw new Error('A callback is required for subscription');
+            throw new CallError('A callback is required for subscription');
         }
 
         const pendingSend = this.send({ ...obj, subscribe: 1 });
@@ -81,7 +83,8 @@ export default class DerivAPI extends DerivAPICalls {
 
     onMessage(msg) {
         if (!msg.data) {
-            throw new Error('Something went wrong while receiving the response from API.');
+            this.errorChannel.publish(new APIError('Something went wrong while receiving the response from API.'))
+            return;
         }
 
         const response = JSON.parse(msg.data);
@@ -91,7 +94,7 @@ export default class DerivAPI extends DerivAPICalls {
         if ( reqId in this.pendingRequests ) {
             this.pendingRequests[reqId].publish(response);
         } else {
-            throw Error('Extra response');
+            this.errorChannel.publish(new APIError('Extra response'))
         }
     }
 
@@ -104,7 +107,7 @@ export default class DerivAPI extends DerivAPICalls {
 
 function getUrl(originalEndpoint) {
     if (typeof originalEndpoint !== 'string') {
-        throw Error(`Endpoint must be a string, passed: ${typeof originalEndpoint}`)
+        throw new ConstructionError(`Endpoint must be a string, passed: ${typeof originalEndpoint}`)
     }
 
     let url;
@@ -113,7 +116,7 @@ function getUrl(originalEndpoint) {
         const [_, protocol, endpoint] = originalEndpoint.match(/((?:\w*:\/\/)*)(.*)/)
         url = new URL(`${protocol === 'ws://' ? protocol : 'wss://'}${endpoint}`);
     } catch(e) {
-        throw Error(`Invalid URL: ${originalEndpoint}`)
+        throw new ConstructionError(`Invalid URL: ${originalEndpoint}`)
     }
 
     return url;

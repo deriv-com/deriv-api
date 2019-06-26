@@ -116,10 +116,6 @@ function getUrl(originalEndpoint) {
         throw Error(`Invalid URL: ${originalEndpoint}`)
     }
 
-    if (url.protocol !== 'wss:' && url.protocol !== 'ws:') {
-        throw Error(`URL protocol must be WebSocket, (given: ${url.protocol})`)
-    }
-
     return url;
 }
 

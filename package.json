@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "coverage": "codecov",
     "devel": "jest --watch --notify --onlyChanged"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-jest": "^24.8.0",
+    "codecov": "^3.5.0",
     "jest": "^24.8.0",
     "ws": "^7.0.1"
   },

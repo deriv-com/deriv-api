@@ -1,5 +1,6 @@
+import { interval }     from 'rxjs';
+import { catchError }   from 'rxjs/operators';
 import CustomObservable from '../CustomObservable';
-import { interval } from 'rxjs';
 
 import { first, take, scan, toArray } from 'rxjs/operators';
 
@@ -34,7 +35,7 @@ test('Custom observable (with source.publish)', async () => {
 test('Custom observable throwing error', async () => {
     const errorSource = new CustomObservable();
 
-    errorSource.subscribe(undefined, e => expect(e).toBeInstanceOf(Error))
+    errorSource.pipe(catchError(e => expect(e).toBeInstanceOf(Error)));
 
     const promise = errorSource.toPromise()
 

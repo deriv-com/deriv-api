@@ -9,7 +9,15 @@ export default class CustomPromise extends Promise {
 
         cb(resolve, reject);
 
-        this.resolve = resolve;
-        this.reject  = reject;
+        this.resolveCallback = resolve;
+        this.rejectCallback  = reject;
+    }
+    resolve(data) {
+        this.resolveCallback(data)
+        return this;
+    }
+    reject(error) {
+        this.rejectCallback(error)
+        return this;
     }
 }

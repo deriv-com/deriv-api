@@ -1,10 +1,11 @@
 import { Observable } from 'rxjs';
 export default class CustomObservable extends Observable {
-    constructor(cb = () => {}) {
+    constructor(callback = () => {}) {
         const observers = [];
 
         super((observer) => {
             observers.push(observer)
+            callback(observer)
         });
 
         this.observers = observers;

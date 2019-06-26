@@ -9,11 +9,24 @@ test('Pure observable', async () => {
     expect(result).toEqual([0, 1])
 })
 
-test('observable subscription', async () => {
-    const everySecond = new CustomObservable();
-    let counter = 0;
-    setInterval(() => everySecond.publish(++counter), 500)
-    const array = await everySecond.pipe(take(4), toArray()).toPromise()
+test('Custom observable (with observer.next)', async () => {
+    const everySecond = new CustomObservable(observer => {
+        observer.next(0)
+        observer.next(1)
+        observer.complete()
+    });
+    const array = await everySecond.pipe(take(2), toArray()).toPromise()
 
-    expect(array).toBeInstanceOf(Array)
+    expect(array).toEqual([0, 1])
+})
+
+test('Custom observable (with source.publish)', async () => {
+    const everySecond = new CustomObservable();
+
+    let counter = 0;
+    setInterval(() => everySecond.publish(counter++), 1000)
+
+    const array = await everySecond.pipe(take(2), toArray()).toPromise()
+
+    expect(array).toEqual([0, 1])
 })

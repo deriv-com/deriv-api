@@ -8,8 +8,11 @@ const WebSocket = global.WebSocket;
 beforeAll(() => {
     WebSocket.prototype.close = jest.fn()
     api = new DerivAPI({ appId: 4000, endpoint: 'ws://localhost', lang: 'fr' });
+    // Set the connection to ready state with a delay
+    setTimeout(() => {
+        WebSocket.prototype.readyState = 1
+    }, 1000)
     // Make an open connection
-    WebSocket.prototype.readyState = 1
     api.connection.onopen()
 });
 

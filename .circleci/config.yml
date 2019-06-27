@@ -15,6 +15,8 @@ jobs:
       - run:
           name: "Run tests and collect coverage data"
           command: npm test -- --collectCoverage=true && npm run coverage
+      - run:
+          name: "Check syntax"
+          command: npm run syntax
       - store_artifacts:
           path: coverage
-

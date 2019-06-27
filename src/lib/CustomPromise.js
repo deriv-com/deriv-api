@@ -1,6 +1,7 @@
 export default class CustomPromise extends Promise {
     constructor(cb = () => {}) {
-        let resolve, reject;
+        let resolve; let
+            reject;
 
         super((parentResolve, parentReject) => {
             resolve = parentResolve;
@@ -12,12 +13,14 @@ export default class CustomPromise extends Promise {
         this.resolveCallback = resolve;
         this.rejectCallback  = reject;
     }
+
     resolve(data) {
-        this.resolveCallback(data)
+        this.resolveCallback(data);
         return this;
     }
+
     reject(error) {
-        this.rejectCallback(error)
+        this.rejectCallback(error);
         return this;
     }
 }

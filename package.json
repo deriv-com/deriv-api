@@ -7,7 +7,14 @@
   "scripts": {
     "test": "jest --verbose",
     "coverage": "codecov",
-    "devel": "npm test -- --watch --notify --onlyChanged"
+    "devel": "npm test -- --watch --notify --onlyChanged",
+    "syntax": "eslint 'src/**/*.js'",
+    "prettify": "eslint --fix 'src/**/*.js' src/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettify && git add ."
+    }
   },
   "repository": {
     "type": "git",
@@ -24,6 +31,11 @@
     "@babel/preset-env": "^7.4.5",
     "babel-jest": "^24.8.0",
     "codecov": "^3.5.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-align-assignments": "^1.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^2.4.1",
     "jest": "^24.8.0",
     "ws": "^7.0.1"
   },

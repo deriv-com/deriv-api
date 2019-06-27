@@ -1,19 +1,33 @@
-import DerivAPICalls     from './DerivAPICalls';
-import CustomPromise     from './CustomPromise';
-import CustomObservable  from './CustomObservable';
-import { first }         from 'rxjs/operators';
-import { Observable }    from 'rxjs';
-import { ResponseError, APIError, ConstructionError } from './error';
+import { first }        from 'rxjs/operators';
+import DerivAPICalls    from './DerivAPICalls';
+import CustomPromise    from './lib/CustomPromise';
+import CustomObservable from './lib/CustomObservable';
+import {
+    APIError,
+    CallError,
+    ConstructionError,
+    ResponseError,
+}                       from './lib/error';
+import getUrl           from './lib/utils';
 
 export default class DerivAPI extends DerivAPICalls {
-    constructor({ connection, endpoint = 'red.binaryws.com', appId = 1, lang = 'EN' } = {}) {
+    constructor({
+        connection,
+        endpoint = 'red.binaryws.com',
+        appId    = 1,
+        lang     = 'EN',
+    } = {}) {
         super();
 
         if (connection) {
             this.connection = connection;
         } else {
             this.shouldReconnect = true;
-            this.connectionArgs = { url: getUrl(endpoint), appId, lang: lang.toUpperCase() };
+            this.connectionArgs  = {
+                appId,
+                endpointUrl: getUrl(endpoint),
+                lang       : lang.toUpperCase(),
+            };
             this.connect();
         }
 
@@ -29,11 +43,16 @@ export default class DerivAPI extends DerivAPICalls {
 
     connect() {
         if (!this.connectionArgs) {
-            throw new ConstructionError('Connection arguments are required to create a connection.')
+            throw new ConstructionError(
+                'Connection arguments are required to create a connection.',
+            );
         }
 
-        const { url, lang, appId } = this.connectionArgs;
-        this.connection = new WebSocket(`${url.toString()}websockets/v3?l=${lang}&app_id=${appId}`);
+        const { endpointUrl, lang, appId } = this.connectionArgs;
+
+        this.connection = new WebSocket(
+            `${endpointUrl.toString()}websockets/v3?l=${lang}&app_id=${appId}`,
+        );
     }
 
     disconnect() {
@@ -48,7 +67,7 @@ export default class DerivAPI extends DerivAPICalls {
 
         this.pendingRequests[obj.req_id] = pending;
 
-        const connection = await this.connected;
+        await this.connected;
 
         const sendRequest = pending.pipe(first()).toPromise();
 
@@ -66,9 +85,9 @@ export default class DerivAPI extends DerivAPICalls {
         const source = this.subscribe(obj);
 
         // Ignoring the failures in observable, because we send a promise back
-        source.subscribe(callback, () => {})
+        source.subscribe(callback, () => {});
 
-        return source.pipe(first()).toPromise()
+        return source.pipe(first()).toPromise();
     }
 
     subscribe(obj) {
@@ -90,22 +109,25 @@ export default class DerivAPI extends DerivAPICalls {
 
     onMessage(msg) {
         if (!msg.data) {
-            this.sanityErrors.publish(new APIError('Something went wrong while receiving the response from API.'))
+            this.sanityErrors.publish(
+                new APIError(
+                    'Something went wrong while receiving the response from API.',
+                ),
+            );
             return;
         }
 
         const response = JSON.parse(msg.data);
+        const reqId    = response.req_id;
 
-        const reqId = response.req_id;
-
-        if ( reqId in this.pendingRequests ) {
+        if (reqId in this.pendingRequests) {
             if (response.error) {
                 this.pendingRequests[reqId].error(new ResponseError(response));
             } else {
                 this.pendingRequests[reqId].publish(response);
             }
         } else {
-            this.sanityErrors.publish(new APIError('Extra response'))
+            this.sanityErrors.publish(new APIError('Extra response'));
         }
     }
 
@@ -115,21 +137,3 @@ export default class DerivAPI extends DerivAPICalls {
         }
     }
 }
-
-function getUrl(originalEndpoint) {
-    if (typeof originalEndpoint !== 'string') {
-        throw new ConstructionError(`Endpoint must be a string, passed: ${typeof originalEndpoint}`)
-    }
-
-    let url;
-
-    try {
-        const [_, protocol, endpoint] = originalEndpoint.match(/((?:\w*:\/\/)*)(.*)/)
-        url = new URL(`${protocol === 'ws://' ? protocol : 'wss://'}${endpoint}`);
-    } catch(e) {
-        throw new ConstructionError(`Invalid URL: ${originalEndpoint}`)
-    }
-
-    return url;
-}
-

@@ -64,3 +64,10 @@ There are two ways to establish a connection:
       const cbTicks = (response) => { console.log('Current tick is: %s', response.tick.quote); };
       source.subscribe(cbTicks);
       ```
+
+3. There would be abstractions such as `account`, `contract`, `underlying`, etc.
+    ```js
+    const underlying = await api.underlying('R_100');
+    console.log(`${underlying.market}: ${underlying.market_display_name}`); // volidx: Volatility Indices
+    underlying.ticksHistory({ end: 'latest', count: 10 }, cbTicks);
+    ```

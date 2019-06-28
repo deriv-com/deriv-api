@@ -49,4 +49,13 @@ export default class Underlying {
 
         return this.assetIndexInfo[key][this.symbol];
     }
+
+    async contractsFor(args = {}) {
+        const contractsForResponse = await this.api.contractsFor({
+            contracts_for: this.symbol,
+            ...args,
+        });
+
+        return contractsForResponse;
+    }
 }

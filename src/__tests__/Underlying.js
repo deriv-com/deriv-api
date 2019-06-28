@@ -99,3 +99,8 @@ test('Call assetIndex', async () => {
     const assetIndex = await underlying.assetIndex();
     expect(assetIndex).toBeInstanceOf(Array);
 });
+
+test('Call contractsFor', async () => {
+    const contractsFor = await underlying.contractsFor();
+    expect(contractsFor.contracts_for.available).toBeInstanceOf(Array);
+});

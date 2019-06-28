@@ -10,10 +10,6 @@ export default class Underlying {
         this.assetIndexInfo   = {};
     }
 
-    ticksSubscribe(args) {
-        return this.api.subscribe({ ticks: this.symbol, ...args });
-    }
-
     ticksHistory(args) {
         if (args.subscribe) {
             throw new CallError('"subscribe" argument passed for a non-subscription call. Call "ticksHistorySubscribe" instead.');

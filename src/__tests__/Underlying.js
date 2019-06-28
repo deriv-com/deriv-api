@@ -1,8 +1,5 @@
 import { Observable } from 'rxjs';
-import {
-    take,
-    toArray,
-}                     from 'rxjs/operators';
+import { take }       from 'rxjs/operators';
 import DerivAPI       from '../DerivAPI';
 
 // test defaults
@@ -29,23 +26,6 @@ test('Underlying instance has correct information', async () => {
     expect(underlying.symbol).toBe(symbol);
     expect(underlying.market).toBe('volidx');
     expect(underlying.submarket).toBe('random_index');
-});
-
-test('Subscribe to ticks', async () => {
-    const source = underlying.ticksSubscribe();
-
-    const mockFn = jest.fn();
-    source.subscribe(mockFn);
-
-    expect(mockFn.mock.calls.length).toBe(0);
-
-    const twoResponses = await source.pipe(take(2), toArray()).toPromise();
-
-    expect(mockFn.mock.calls.length).toBe(2);
-
-    expect(twoResponses).toBeInstanceOf(Array);
-
-    expect(twoResponses[0].tick.symbol).toBe(symbol);
 });
 
 test('Call ticksHistory', async () => {

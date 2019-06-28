@@ -83,11 +83,6 @@ There are two ways to establish a connection:
       ...
       ```
 
-    - Subscribe to ticks stream:
-      ```js
-      r100Instance.ticksSubscribe({}, cbTicks);
-      ```
-
     - Retrieve the latest 10 ticks:
       ```js
       const r100History = await r100Instance.ticksHistory({ end: 'latest', count: 10 });

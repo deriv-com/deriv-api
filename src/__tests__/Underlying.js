@@ -31,7 +31,7 @@ test('Underlying instance has correct information', async () => {
     expect(underlying.submarket).toBe('random_index');
 });
 
-test('Subscribe to ticks on underlying instance', async () => {
+test('Subscribe to ticks', async () => {
     const source = underlying.ticks();
 
     const mockFn = jest.fn();
@@ -48,13 +48,22 @@ test('Subscribe to ticks on underlying instance', async () => {
     expect(twoResponses[0].tick.symbol).toBe(symbol);
 });
 
-test('Call ticks_history on underlying instance', async () => {
+test('Call ticksHistory', async () => {
     const ticksHistory = await underlying.ticksHistory(historyArgs);
     expect(ticksHistory.history.prices.length).toBe(historyArgs.count);
 });
 
-test('Subscribe ticks_history on underlying instance', async () => {
-    const source = await underlying.ticksHistory({
+test('Call ticksHistory with subscribe = 1', () => {
+    expect(() => {
+        underlying.ticksHistory({
+            ...historyArgs,
+            subscribe: 1,
+        });
+    }).toThrow();
+});
+
+test('Call ticksHistorySubscribe', async () => {
+    const source = await underlying.ticksHistorySubscribe({
         ...historyArgs,
         subscribe: 1,
     });

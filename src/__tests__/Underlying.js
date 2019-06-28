@@ -94,3 +94,8 @@ test('Call tradingTimes', async () => {
     expect(tradingTimes.symbol).toBe(symbol);
     expect(tradingTimes.times).toBeInstanceOf(Object);
 });
+
+test('Call assetIndex', async () => {
+    const assetIndex = await underlying.assetIndex();
+    expect(assetIndex).toBeInstanceOf(Array);
+});

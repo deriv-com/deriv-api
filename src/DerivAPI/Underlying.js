@@ -1,5 +1,5 @@
 import { CallError }            from '../lib/error';
-import { tradingTimesToObject } from '../lib/utils';
+import { assetIndexToObject, tradingTimesToObject } from '../lib/utils';
 
 export default class Underlying {
     constructor(symbolsInfo, api) {
@@ -7,6 +7,7 @@ export default class Underlying {
         this.api = api;
 
         this.tradingTimesInfo = {};
+        this.assetIndexInfo   = {};
     }
 
     ticks(args) {
@@ -37,5 +38,15 @@ export default class Underlying {
         }
 
         return this.tradingTimesInfo[date][this.symbol];
+    }
+
+    async assetIndex(args = {}) {
+        const key = args.landing_company || '';
+        if (!this.assetIndexInfo[key]) {
+            const assetIndexResponse = await this.api.assetIndex(args);
+            this.assetIndexInfo[key] = assetIndexToObject(assetIndexResponse);
+        }
+
+        return this.assetIndexInfo[key][this.symbol];
     }
 }

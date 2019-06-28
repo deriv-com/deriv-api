@@ -29,3 +29,8 @@ export function tradingTimesToObject(tradingTimesResponse) {
         .map(s => s.symbols).reduce((a, v) => a.concat(v), [])
         .reduce((a, s) => ({ ...a, [s.symbol]: s }), {});
 }
+
+export function assetIndexToObject(assetIndexResponse) {
+    return assetIndexResponse.asset_index
+        .reduce((a, v) => ({ ...a, [v[0]]: v[2] }), {});
+}

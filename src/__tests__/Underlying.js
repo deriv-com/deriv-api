@@ -32,7 +32,7 @@ test('Underlying instance has correct information', async () => {
 });
 
 test('Subscribe to ticks', async () => {
-    const source = underlying.ticks();
+    const source = underlying.ticksSubscribe();
 
     const mockFn = jest.fn();
     source.subscribe(mockFn);

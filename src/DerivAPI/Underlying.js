@@ -10,7 +10,7 @@ export default class Underlying {
         this.assetIndexInfo   = {};
     }
 
-    ticks(args) {
+    ticksSubscribe(args) {
         return this.api.subscribe({ ticks: this.symbol, ...args });
     }
 

@@ -1,6 +1,6 @@
 import { ConstructionError } from './error';
 
-export default function getUrl(originalEndpoint) {
+export function getUrl(originalEndpoint) {
     if (typeof originalEndpoint !== 'string') {
         throw new ConstructionError(
             `Endpoint must be a string, passed: ${typeof originalEndpoint}`,
@@ -21,4 +21,11 @@ export default function getUrl(originalEndpoint) {
     }
 
     return url;
+}
+
+export function tradingTimesToObject(tradingTimesResponse) {
+    return tradingTimesResponse.trading_times.markets
+        .map(m => m.submarkets).reduce((a, v) => a.concat(v), [])
+        .map(s => s.symbols).reduce((a, v) => a.concat(v), [])
+        .reduce((a, s) => ({ ...a, [s.symbol]: s }), {});
 }

@@ -9,7 +9,7 @@ import {
     ConstructionError,
     ResponseError,
 }                       from './lib/error';
-import getUrl           from './lib/utils';
+import { getUrl }       from './lib/utils';
 
 export default class DerivAPI extends DerivAPICalls {
     constructor({

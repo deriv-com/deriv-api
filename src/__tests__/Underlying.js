@@ -88,3 +88,9 @@ test('Call ticksHistorySubscribe', async () => {
     expect(tick.symbol).toBe(symbol);
     expect(tick.id.length).toBeGreaterThan(0);
 });
+
+test('Call tradingTimes', async () => {
+    const tradingTimes = await underlying.tradingTimes();
+    expect(tradingTimes.symbol).toBe(symbol);
+    expect(tradingTimes.times).toBeInstanceOf(Object);
+});

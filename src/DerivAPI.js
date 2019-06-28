@@ -1,5 +1,6 @@
 import { first }        from 'rxjs/operators';
 import DerivAPICalls    from './DerivAPICalls';
+import Underlying       from './DerivAPI/Underlying';
 import CustomPromise    from './lib/CustomPromise';
 import CustomObservable from './lib/CustomObservable';
 import {
@@ -13,7 +14,7 @@ import getUrl           from './lib/utils';
 export default class DerivAPI extends DerivAPICalls {
     constructor({
         connection,
-        endpoint = 'red.binaryws.com',
+        endpoint = 'blue.binaryws.com',
         appId    = 1,
         lang     = 'EN',
     } = {}) {
@@ -135,5 +136,14 @@ export default class DerivAPI extends DerivAPICalls {
         if (this.shouldReconnect) {
             this.connect();
         }
+    }
+
+    async underlying(symbol) {
+        if (!this.symbolsInfo) {
+            const symbols    = await this.activeSymbols({ active_symbols: 'full' });
+            this.symbolsInfo = symbols.active_symbols;
+        }
+
+        return new Underlying(this.symbolsInfo.find(info => info.symbol === symbol), this);
     }
 }

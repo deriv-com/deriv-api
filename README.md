@@ -65,9 +65,57 @@ There are two ways to establish a connection:
       source.subscribe(cbTicks);
       ```
 
-3. There would be abstractions such as `account`, `contract`, `underlying`, etc.
-    ```js
-    const underlying = await api.underlying('R_100');
-    console.log(`${underlying.market}: ${underlying.market_display_name}`); // volidx: Volatility Indices
-    underlying.ticksHistory({ end: 'latest', count: 10 }, cbTicks);
-    ```
+3. There are abstractions such as `account`, `contract`, `underlying`, etc.
+
+    e.g. **`underlying:`**
+
+    - To initialise with default values:
+      ```js
+      const r100Instance = await api.underlying('R_100');
+      // access underlying information according to active_symbols:
+      console.log(r100Instance.symbol);                 // R_100
+      console.log(r100Instance.display_name);           // Volatility 100 Index
+      console.log(r100Instance.market);                 // volidx
+      console.log(r100Instance.market_display_name);    // Volatility Indices
+      console.log(r100Instance.submarket);              // random_index
+      console.log(r100Instance.submarket_display_name); // Continuous Indices
+      console.log(r100Instance.pip);                    // 0.01
+      ...
+      ```
+
+    - Subscribe to ticks stream:
+      ```js
+      r100Instance.ticksSubscribe({}, cbTicks);
+      ```
+
+    - Retrieve the latest 10 ticks:
+      ```js
+      const r100History = await r100Instance.ticksHistory({ end: 'latest', count: 10 });
+      ```
+
+    - Retrieve the latest 10 ticks and subscribe:
+      ```js
+      r100Instance.ticksHistorySubscribe({ end: 'latest', count: 10 }, cbTicks);
+      ```
+
+    - Trading Times of the symbol:
+      ```js
+      const r100TradingTimesInfo = await r100Instance.tradingTimes(); // today
+      const r100TradingTimesInfo = await r100Instance.tradingTimes('2019-06-28');
+      ```
+
+    - Asset Index of the symbol:
+      ```js
+      const r100AssetIndexInfo = await r100Instance.assetIndex(); // default values
+      const r100AssetIndexInfo = await r100Instance.assetIndex({ landing_company: 'svg' });
+      ```
+
+    - Available contracts of the symbol:
+      ```js
+      const r100ContractsInfo = await r100Instance.contractsFor(); // default values
+      const r100ContractsInfo = await r100Instance.contractsFor({
+          landing_company: 'svg',
+          product_type   : 'basic',
+          currency       : 'USD',
+      });
+      ```

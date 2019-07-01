@@ -27,7 +27,7 @@ There are two ways to establish a connection:
     import DerivAPI from 'DerivAPI';
 
     const connection = new WebSocket('ws://...');
-    const api        = new DerivAPI(connection);
+    const api        = new DerivAPI({ connection });
     ```
 
 2. Pass the arguments needed to create a connection:
@@ -63,6 +63,7 @@ There are two ways to establish a connection:
       const source  = api.subscribe({ ticks: 'R_100' });
       const cbTicks = (response) => { console.log('Current tick is: %s', response.tick.quote); };
       source.subscribe(cbTicks);
+      const firstTick = await sourse.pipe(first()).toPromise() // RxJS 6
       ```
 
 3. There are abstractions such as `account`, `contract`, `underlying`, etc.

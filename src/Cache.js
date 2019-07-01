@@ -1,6 +1,6 @@
-import serialize from 'json-stable-stringify';
 import DerivAPICalls from './DerivAPICalls';
 import { ConstructionError } from './lib/error';
+import { objectToCacheKey } from './lib/utils';
 
 export default class Cache extends DerivAPICalls {
     constructor(api) {
@@ -13,14 +13,28 @@ export default class Cache extends DerivAPICalls {
     }
 
     async send(obj) {
-        const cacheKey = serialize(obj);
-
-        if (this.storage[cacheKey]) {
-            return this.storage[cacheKey];
+        if (this.has(obj)) {
+            return this.get(obj);
         }
 
-        this.storage[cacheKey] = await this.api.send(obj);
+        return this.api.send(obj);
+    }
 
-        return this.storage[cacheKey];
+    has(request) {
+        const key = objectToCacheKey(request);
+
+        return (key in this.storage);
+    }
+
+    get(request) {
+        const key = objectToCacheKey(request);
+
+        return this.storage[key];
+    }
+
+    set(request, response) {
+        const key = objectToCacheKey(request);
+
+        this.storage[key] = response;
     }
 }

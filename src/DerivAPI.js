@@ -76,7 +76,10 @@ export default class DerivAPI extends DerivAPICalls {
 
         this.connection.send(JSON.stringify(obj));
 
-        return sendRequest;
+        const result = await sendRequest;
+        this.cache.set(obj, result);
+
+        return result;
     }
 
     // await api.subscribeWithCallback({ ticks: "r_100" }, r => console.log(r))

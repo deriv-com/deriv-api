@@ -1,3 +1,4 @@
+import serialize from 'json-stable-stringify';
 import { ConstructionError } from './error';
 
 export function getUrl(originalEndpoint) {
@@ -33,4 +34,14 @@ export function tradingTimesToObject(tradingTimesResponse) {
 export function assetIndexToObject(assetIndexResponse) {
     return assetIndexResponse.asset_index
         .reduce((a, v) => ({ ...a, [v[0]]: v[2] }), {});
+}
+
+export function objectToCacheKey(obj) {
+    const clonedObj = { ...obj };
+
+    delete clonedObj.req_id;
+    delete clonedObj.passthrough;
+    delete clonedObj.subscribe;
+
+    return serialize(clonedObj);
 }

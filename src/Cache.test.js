@@ -20,8 +20,10 @@ test('Constructing DerivAPI', async () => {
 
     const startTime = parseInt(new Date().getTime() / 1000, 10);
 
-    const fivePings = Promise.all(Array.from(Array(5)).map(() => api.cache.ping()));
-    (await fivePings).forEach(ping => expect(ping.ping).toBe('pong'));
+    for (let i = 0; i < 5; i++) {
+        // eslint-disable-next-line no-await-in-loop
+        expect((await api.cache.ping()).ping).toBe('pong');
+    }
 
     const endTime = parseInt(new Date().getTime() / 1000, 10);
 

@@ -4,7 +4,7 @@ import {
     take,
     toArray,
 }                       from 'rxjs/operators';
-import CustomObservable from '../lib/CustomObservable';
+import CustomObservable from './CustomObservable';
 
 test('Pure observable', async () => {
     const source = interval(1000);

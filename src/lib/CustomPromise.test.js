@@ -1,4 +1,4 @@
-import CustomPromise from '../lib/CustomPromise';
+import CustomPromise from './CustomPromise';
 
 test('Pure promise', () => {
     expect(

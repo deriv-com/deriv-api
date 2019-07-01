@@ -9,6 +9,7 @@
     "coverage": "codecov",
     "devel": "npm test -- --watch --notify --onlyChanged",
     "syntax": "eslint 'src/**/*.js'",
+    "test_all": "npm test && npm run syntax",
     "prettify": "eslint --fix 'src/**/*.js' src/"
   },
   "husky": {

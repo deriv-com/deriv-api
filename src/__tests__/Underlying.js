@@ -53,11 +53,11 @@ test('Call ticksHistorySubscribe', async () => {
     const mockFn = jest.fn();
     source.subscribe(mockFn);
 
-    expect(mockFn.mock.calls.length).toBe(0);
+    expect(mockFn).toHaveBeenCalledTimes(0);
 
     const firstResponse = await source.pipe(take(1)).toPromise();
 
-    expect(mockFn.mock.calls.length).toBe(1);
+    expect(mockFn).toHaveBeenCalledTimes(1);
     expect(firstResponse.history.prices.length).toBe(historyArgs.count);
 
     await source.pipe(take(1)).toPromise();

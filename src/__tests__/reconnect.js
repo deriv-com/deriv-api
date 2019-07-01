@@ -24,7 +24,7 @@ afterAll(() => {
 
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);
-    expect(WebSocket.mock.calls[0][0]).toBe('ws://localhost/websockets/v3?l=FR&app_id=4000');
+    expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?l=FR&app_id=4000');
 });
 
 test('API can send a request', async () => {
@@ -39,12 +39,12 @@ test('API can send a request', async () => {
     const response = await api.ping();
 
     expect(response).toEqual(expectedResponse);
-    expect(WebSocket.prototype.send.mock.calls[0][0]).toBe(JSON.stringify(expectedRequest));
+    expect(WebSocket.prototype.send).toHaveBeenCalledWith(JSON.stringify(expectedRequest));
 });
 
 test('API auto reconnect', async () => {
     api.connection.onclose();
-    expect(WebSocket.mock.calls.length).toBe(2);
+    expect(WebSocket).toHaveBeenCalledTimes(2);
 });
 
 test('API does not reconnect if connection is passed', async () => {
@@ -55,5 +55,5 @@ test('API does not reconnect if connection is passed', async () => {
     apiWithConnection.connection.onclose();
 
     // If reconnect was issued, 4 calls were seen
-    expect(WebSocket.mock.calls.length).toBe(3);
+    expect(WebSocket).toHaveBeenCalledTimes(3);
 });

@@ -3,6 +3,7 @@ import DerivAPICalls    from './DerivAPICalls';
 import Underlying       from './DerivAPI/Underlying';
 import CustomPromise    from './lib/CustomPromise';
 import CustomObservable from './lib/CustomObservable';
+import Cache            from './Cache';
 import {
     APIError,
     CallError,
@@ -39,6 +40,7 @@ export default class DerivAPI extends DerivAPICalls {
         this.reqId           = 0;
         this.connected       = new CustomPromise();
         this.sanityErrors    = new CustomObservable();
+        this.cache           = new Cache(this);
         this.pendingRequests = {};
     }
 
@@ -139,11 +141,8 @@ export default class DerivAPI extends DerivAPICalls {
     }
 
     async underlying(symbol) {
-        if (!this.symbolsInfo) {
-            const symbols    = await this.activeSymbols({ active_symbols: 'full' });
-            this.symbolsInfo = symbols.active_symbols;
-        }
+        const activeSymbols = (await this.cache.activeSymbols({ active_symbols: 'full' })).active_symbols;
 
-        return new Underlying(this.symbolsInfo.find(info => info.symbol === symbol), this);
+        return new Underlying(activeSymbols.find(info => info.symbol === symbol), this);
     }
 }

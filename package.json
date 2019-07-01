@@ -41,6 +41,7 @@
     "ws": "^7.0.1"
   },
   "dependencies": {
+    "json-stable-stringify": "^1.0.1",
     "rxjs": "^6.5.2"
   }
 }

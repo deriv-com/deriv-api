@@ -5,16 +5,13 @@ export default class Underlying {
     constructor(symbolsInfo, api) {
         Object.assign(this, symbolsInfo);
         this.api = api;
-
-        this.tradingTimesInfo = {};
-        this.assetIndexInfo   = {};
     }
 
     ticksHistory(args) {
         if (args.subscribe) {
             throw new CallError('"subscribe" argument passed for a non-subscription call. Call "ticksHistorySubscribe" instead.');
         }
-        return this.api.ticksHistory({ ticks_history: this.symbol, ...args });
+        return this.api.cache.ticksHistory({ ticks_history: this.symbol, ...args });
     }
 
     ticksHistorySubscribe(args, callback) {
@@ -28,30 +25,19 @@ export default class Underlying {
     }
 
     async tradingTimes(date = 'today') {
-        if (!this.tradingTimesInfo[date]) {
-            const tradingTimesResponse  = await this.api.tradingTimes({ trading_times: date });
-            this.tradingTimesInfo[date] = tradingTimesToObject(tradingTimesResponse);
-        }
+        const tradingTimes = await this.api.cache.tradingTimes({ trading_times: date });
 
-        return this.tradingTimesInfo[date][this.symbol];
+        return tradingTimesToObject(tradingTimes)[this.symbol];
     }
 
     async assetIndex(args = {}) {
-        const key = args.landing_company || '';
-        if (!this.assetIndexInfo[key]) {
-            const assetIndexResponse = await this.api.assetIndex(args);
-            this.assetIndexInfo[key] = assetIndexToObject(assetIndexResponse);
-        }
-
-        return this.assetIndexInfo[key][this.symbol];
+        return assetIndexToObject(await this.api.cache.assetIndex(args))[this.symbol];
     }
 
     async contractsFor(args = {}) {
-        const contractsForResponse = await this.api.contractsFor({
+        return this.api.cache.contractsFor({
             contracts_for: this.symbol,
             ...args,
         });
-
-        return contractsForResponse;
     }
 }

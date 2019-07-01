@@ -20,6 +20,8 @@ test('Constructing DerivAPI', async () => {
 
     const startTime = parseInt(new Date().getTime() / 1000, 10);
 
+    // await inside for loop to make it slow, if replace with api.ping()
+    // tests should fail
     for (let i = 0; i < 5; i++) {
         // eslint-disable-next-line no-await-in-loop
         expect((await api.cache.ping()).ping).toBe('pong');

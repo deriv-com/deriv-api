@@ -2,29 +2,46 @@
   "name": "binary-api",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "Websocket API for Deriv applications",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "coverage": "codecov",
-    "devel": "jest --watch --notify --onlyChanged"
+    "devel": "npm test -- --watch --notify --onlyChanged",
+    "syntax": "eslint 'src/**/*.js'",
+    "test_all": "npm test && npm run syntax",
+    "prettify": "eslint --fix 'src/**/*.js' src/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettify && git add ."
+    }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/binary-hamedanchi/binary-api.git"
+    "url": "git+https://github.com/binary-com/deriv-api.git"
   },
-  "author": "",
+  "author": "Deriv",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/binary-hamedanchi/binary-api/issues"
+    "url": "https://github.com/binary-com/deriv-api/issues"
   },
-  "homepage": "https://github.com/binary-hamedanchi/binary-api#readme",
+  "homepage": "https://github.com/binary-com/deriv-api#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "babel-jest": "^24.8.0",
     "codecov": "^3.5.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-align-assignments": "^1.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^2.4.1",
     "jest": "^24.8.0",
     "ws": "^7.0.1"
+  },
+  "dependencies": {
+    "json-stable-stringify": "^1.0.1",
+    "rxjs": "^6.5.2"
   }
 }

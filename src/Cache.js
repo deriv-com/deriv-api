@@ -1,6 +1,6 @@
+import serialize from 'json-stable-stringify';
 import DerivAPICalls from './DerivAPICalls';
-import { ConstructionError } from './lib/error';
-import { objectToCacheKey } from './lib/utils';
+import { ConstructionError } from './Types/errors';
 
 /**
  * Cache - An in-memory cache used to prevent sending redundant requests to the
@@ -47,4 +47,14 @@ export default class Cache extends DerivAPICalls {
 
         this.storage[key] = response;
     }
+}
+
+function objectToCacheKey(obj) {
+    const clonedObj = { ...obj };
+
+    delete clonedObj.req_id;
+    delete clonedObj.passthrough;
+    delete clonedObj.subscribe;
+
+    return serialize(clonedObj);
 }

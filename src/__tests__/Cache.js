@@ -1,5 +1,5 @@
 import WS       from 'ws';
-import DerivAPI from './DerivAPI';
+import DerivAPI from '../DerivAPI';
 
 let api;
 

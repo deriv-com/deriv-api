@@ -3,40 +3,143 @@
 ### Table of Contents
 
 -   [DerivAPI][1]
-    -   [Examples][2]
--   [DerivAPI][3]
-    -   [Parameters][4]
-    -   [Examples][5]
--   [Cache][6]
-    -   [Parameters][7]
-    -   [Examples][8]
+    -   [Parameters][2]
+    -   [Examples][3]
+    -   [ticks][4]
+        -   [Parameters][5]
+    -   [candles][6]
+        -   [Parameters][7]
+    -   [contract][8]
+        -   [Parameters][9]
+    -   [underlying][10]
+        -   [Parameters][11]
+    -   [account][12]
+        -   [Parameters][13]
+    -   [assets][14]
+-   [DerivAPIBasic][15]
+    -   [Parameters][16]
+    -   [Examples][17]
+    -   [subscribeWithCallback][18]
+        -   [Parameters][19]
+        -   [Examples][20]
+    -   [subscribe][21]
+        -   [Parameters][22]
+        -   [Examples][23]
+    -   [onClose][24]
+-   [Cache][25]
+    -   [Parameters][26]
+    -   [Examples][27]
+-   [Underlying][28]
+    -   [Parameters][29]
+-   [Account][30]
+    -   [Parameters][31]
+-   [Assets][32]
+    -   [Parameters][33]
+-   [Immutable][34]
+-   [CandlesParam][35]
+    -   [Properties][36]
+-   [history][37]
+    -   [Parameters][38]
+-   [Range][39]
+    -   [Properties][40]
+-   [TicksParam][41]
+    -   [Properties][42]
+-   [Ticks][43]
+    -   [Parameters][44]
+    -   [history][45]
+        -   [Parameters][46]
+-   [Stream][47]
+-   [ContractsParam][48]
+    -   [Properties][49]
 
 ## DerivAPI
 
-An API library for using with Deriv.app API calls. Designed to provide an
-abstraction over the API, enabling FE applications to focus on developing
-their application instead of dealing with API complexities.
+**Extends DerivAPIBasic**
+
+The default class of the DerivAPI module.
+
+### Parameters
+
+-   `options` **[Object][50]** For options details see: [DerivAPIBasic][15]
 
 ### Examples
 
 ```javascript
-import DerivAPI from 'DerivAPI';
-const DerivAPI = require('DerivAPI');
+const ticks = api.ticks('R_100');
+ticks.onUpdate().subscribe(console.log)
 ```
 
-## DerivAPI
+### ticks
+
+A stream of ticks
+
+#### Parameters
+
+-   `options` **([String][51] \| [TicksParam][52])** symbol or a ticks parameter object
+
+Returns **[Ticks][53]** [Ticks][4]
+
+### candles
+
+A stream of candles (default granularity: 1 minute)
+
+#### Parameters
+
+-   `options` **([String][51] \| [CandlesParam][54])** symbol or a candles parameter object
+
+Returns **Candles** [Candles][55]
+
+### contract
+
+A contract object with status and ability to buy/sell
+
+#### Parameters
+
+-   `options` **[ContractsParam][56]** 
+
+Returns **Contract** [Contract][57]
+
+### underlying
+
+An underlying object which has information about an underlying
+
+#### Parameters
+
+-   `symbol` **[String][51]** The symbol for the expected underlying
+
+Returns **[Underlying][58]** [Underlying][10]
+
+### account
+
+An account object, containing all information about the account
+
+#### Parameters
+
+-   `token` **[String][51]** Token to create the account with
+
+Returns **[Account][59]** [Account][12]
+
+### assets
+
+Information about all trading assets
+
+Returns **[Assets][60]** [Assets][14]
+
+## DerivAPIBasic
 
 **Extends DerivAPICalls**
 
-DerivAPI - main class
+The minimum functionality provided by DerivAPI, provides direct calls to the
+API.
+`api.cache` is available if you want to use the cached data (see [Cache][25])
 
 ### Parameters
 
--   `options` **[Object][9]**  (optional, default `{}`)
-    -   `options.connection` **[WebSocket][10]?** A ready to use connection
-    -   `options.endpoint` **[String][11]** API server to connect to (optional, default `'blue.binaryws.com'`)
-    -   `options.appId` **[Number][12]** Application ID of the API user (optional, default `1`)
-    -   `options.lang` **lang** Language of the API communication (optional, default `'EN'`)
+-   `options` **[Object][50]**  (optional, default `{}`)
+    -   `options.connection` **[WebSocket][61]?** A ready to use connection
+    -   `options.endpoint` **[String][51]** API server to connect to (optional, default `'blue.binaryws.com'`)
+    -   `options.appId` **[Number][62]** Application ID of the API user (optional, default `1`)
+    -   `options.lang` **[String][51]** Language of the API communication (optional, default `'EN'`)
 
 ### Examples
 
@@ -44,6 +147,47 @@ DerivAPI - main class
 const apiFromOpenConnection = new DerivAPI({ connection });
 const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', appId: 1234 });
 ```
+
+### subscribeWithCallback
+
+Subscribe and call the given callback on each response
+
+#### Parameters
+
+-   `request` **[Object][50]** A request object acceptable by the API
+-   `callback` **[Function][63]** A callback to call on every new response
+
+#### Examples
+
+```javascript
+await api.subscribeWithCallback({ ticks: 'R_100' }, console.log)
+```
+
+Returns **[Promise][64]** A Promise which resolves to the first response or is rejected with an error
+
+### subscribe
+
+Subscribe to a given request, returns a stream of new responses,
+Errors should be handled by the user of the stream
+
+#### Parameters
+
+-   `request` **[Object][50]** A request object acceptable by the API
+
+#### Examples
+
+```javascript
+const ticks = api.subscribe({ ticks: 'R_100' });
+ticks.subscribe(console.log) // Print every new tick
+```
+
+Returns **Observable** An RxJS Observable
+
+### onClose
+
+Reconnects to the API in case of connection error, unless connection is
+passed as an argument, in that case reconnecting should be handled in the
+API user side.
 
 ## Cache
 
@@ -54,7 +198,7 @@ API
 
 ### Parameters
 
--   `api` **[DerivAPI][13]** API instance to get data that is not cached
+-   `api` **[DerivAPI][65]** API instance to get data that is not cached
 
 ### Examples
 
@@ -63,28 +207,254 @@ const symbols = await api.cache.activeSymbols();
 const cachedSymbols = await api.cache.activeSymbols();
 ```
 
+## Underlying
+
+**Extends Immutable**
+
+Contains all information related to a single underlying
+
+### Parameters
+
+-   `api` **[DerivAPI][65]** 
+-   `symbol` **[String][51]** 
+
+## Account
+
+**Extends Immutable**
+
+Abstraction over user accounts
+
+### Parameters
+
+-   `api` **[DerivAPI][65]** 
+-   `token` **[String][51]** 
+
+## Assets
+
+**Extends Immutable**
+
+Contains all information related to trading assets
+
+### Parameters
+
+-   `api` **[DerivAPI][65]** 
+
+## Immutable
+
+An abstract class for immutable objects
+
+## CandlesParam
+
+Type: [Object][50]
+
+### Properties
+
+-   `granularity` **[Number][62]** Granularity in seconds
+-   `count` **[Number][62]** Number of candles returned by history
+-   `symbol` **[String][51]** Symbol of the candles
+
+## history
+
+### Parameters
+
+-   `options` **[CandlesParam][54]?** 
+
+Returns **[Array][66]&lt;Candle>** 
+
+## Range
+
+Type: [Object][50]
+
+### Properties
+
+-   `start` **([Number][62] \| [Date][67])** An epoch in seconds or a Date object
+-   `end` **([Number][62] \| [Date][67])**  An epoch in seconds or a Date object
+
+## TicksParam
+
+Type: [Object][50]
+
+### Properties
+
+-   `range` **[Range][68]** A chunk of history to return with start and end time
+-   `count` **[Number][62]** Number of ticks returned by history
+-   `symbol` **[String][51]** The ticks symbol
+
+## Ticks
+
+**Extends Stream**
+
+Contains ticks of one symbol
+
+### Parameters
+
+-   `api` **[DerivAPI][65]** 
+-   `options` **[TicksParam][52]** 
+
+### history
+
+#### Parameters
+
+-   `options` **[TicksParam][52]?** 
+
+Returns **[Array][66]&lt;Tick>** 
+
+## Stream
+
+An abstract class for stream objects
+
+## ContractsParam
+
+Type: [Object][50]
+
+### Properties
+
+-   `contractType` **[String][51]** 
+-   `amount` **[Number][62]** 
+-   `barrier` **[String][51]** 
+-   `barrier2` **[String][51]** 
+-   `dateExpiry` **([Number][62] \| [Date][67])** epoch in seconds or [Date][69]
+-   `dateStart` **([Number][62] \| [Date][67])** epoch in seconds or [Date][69]
+-   `Currency` **[String][51]?** Default is the account currency
+-   `basis` **[String][51]** stake or payout
+-   `duration` **([Number][62] \| [String][51])** duration with unit or duration in number
+-   `durationUnit` **[String][51]?** duration unit, required if duration is number
+-   `productType` **[String][51]?** 'multi_barrier' or 'basic'
+
 [1]: #derivapi
 
-[2]: #examples
+[2]: #parameters
 
-[3]: #derivapi-1
+[3]: #examples
 
-[4]: #parameters
+[4]: #ticks
 
-[5]: #examples-1
+[5]: #parameters-1
 
-[6]: #cache
+[6]: #candles
 
-[7]: #parameters-1
+[7]: #parameters-2
 
-[8]: #examples-2
+[8]: #contract
 
-[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[9]: #parameters-3
 
-[10]: https://developer.mozilla.org/docs/WebSockets
+[10]: #underlying
 
-[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[11]: #parameters-4
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[12]: #account
 
-[13]: #derivapi
+[13]: #parameters-5
+
+[14]: #assets
+
+[15]: #derivapibasic
+
+[16]: #parameters-6
+
+[17]: #examples-1
+
+[18]: #subscribewithcallback
+
+[19]: #parameters-7
+
+[20]: #examples-2
+
+[21]: #subscribe
+
+[22]: #parameters-8
+
+[23]: #examples-3
+
+[24]: #onclose
+
+[25]: #cache
+
+[26]: #parameters-9
+
+[27]: #examples-4
+
+[28]: #underlying-1
+
+[29]: #parameters-10
+
+[30]: #account-1
+
+[31]: #parameters-11
+
+[32]: #assets-1
+
+[33]: #parameters-12
+
+[34]: #immutable
+
+[35]: #candlesparam
+
+[36]: #properties
+
+[37]: #history
+
+[38]: #parameters-13
+
+[39]: #range
+
+[40]: #properties-1
+
+[41]: #ticksparam
+
+[42]: #properties-2
+
+[43]: #ticks-1
+
+[44]: #parameters-14
+
+[45]: #history-1
+
+[46]: #parameters-15
+
+[47]: #stream
+
+[48]: #contractsparam
+
+[49]: #properties-3
+
+[50]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[51]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[52]: #ticksparam
+
+[53]: #ticks
+
+[54]: #candlesparam
+
+[55]: Candles
+
+[56]: #contractsparam
+
+[57]: Contract
+
+[58]: #underlying
+
+[59]: #account
+
+[60]: #assets
+
+[61]: https://developer.mozilla.org/docs/WebSockets
+
+[62]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[63]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+
+[64]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[65]: #derivapi
+
+[66]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[67]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+[68]: #range
+
+[69]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date

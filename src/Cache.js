@@ -2,6 +2,16 @@ import DerivAPICalls from './DerivAPICalls';
 import { ConstructionError } from './lib/error';
 import { objectToCacheKey } from './lib/utils';
 
+/**
+ * Cache - An in-memory cache used to prevent sending redundant requests to the
+ * API
+ *
+ * @example
+ * const symbols = await api.cache.activeSymbols();
+ * const cachedSymbols = await api.cache.activeSymbols();
+ *
+ * @param {DerivAPI} api - API instance to get data that is not cached
+ */
 export default class Cache extends DerivAPICalls {
     constructor(api) {
         if (!api) {

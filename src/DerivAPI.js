@@ -1,3 +1,12 @@
+/**
+ * An API library for using with Deriv.app API calls. Designed to provide an
+ * abstraction over the API, enabling FE applications to focus on developing
+ * their application instead of dealing with API complexities.
+ * @module DerivAPI
+ * @example
+ * import DerivAPI from 'DerivAPI';
+ * const DerivAPI = require('DerivAPI');
+ */
 import { first }        from 'rxjs/operators';
 import DerivAPICalls    from './DerivAPICalls';
 import Underlying       from './DerivAPI/Underlying';
@@ -12,6 +21,19 @@ import {
 }                       from './lib/error';
 import { getUrl }       from './lib/utils';
 
+/**
+ * DerivAPI - main class
+ *
+ * @example
+ * const apiFromOpenConnection = new DerivAPI({ connection });
+ * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', appId: 1234 });
+ *
+ * @param {Object} options
+ * @param {WebSocket=} options.connection - A ready to use connection
+ * @param {String} options.endpoint - API server to connect to
+ * @param {Number} options.appId - Application ID of the API user
+ * @param {lang} options.lang - Language of the API communication
+ */
 export default class DerivAPI extends DerivAPICalls {
     constructor({
         connection,

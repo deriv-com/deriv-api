@@ -28,4 +28,8 @@ export default class Contract extends Stream {
         this.api     = api;
         this.options = options;
     }
+
+    async init() {
+        return Promise.resolve();
+    }
 }

@@ -68,7 +68,8 @@ export default class TickStream extends Stream {
      * @returns {Tick[]}
      */
     history(range) {
-        return this.api.cache.ticksHistory(requestParams(this.symbol, range || this.range))
+        if (!range) return this.list;
+        return this.api.cache.ticksHistory(requestParams(this.symbol, range))
             .then(h => historyToTicks(h, this.pip));
     }
 }

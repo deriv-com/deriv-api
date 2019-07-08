@@ -104,7 +104,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
      * @param {Object} request - A request object acceptable by the API
      * @param {Function} callback - A callback to call on every new response
      *
-     * @returns {Promise} - A Promise which resolves to the first response or is rejected with an error
+     * @returns {Promise} - Resolves to the first response or is rejected with an error
      * */
     async subscribeWithCallback(request, callback) {
         if (!callback) {

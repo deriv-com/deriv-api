@@ -1,7 +1,10 @@
+import CustomDate from './CustomDate';
+import MarketValue from './MarketValue';
+
 /**
  * @typedef {Object} Candle
  *
- * @property {CustomDate} startTime
+ * @property {CustomDate} time
  * @property {MarketValue} open
  * @property {MarketValue} high
  * @property {MarketValue} low
@@ -15,6 +18,13 @@ export default class Candle {
     /**
      * @returns {Candle}
      */
-    constructor() {
+    constructor({
+        epoch, open, high, low, close,
+    }, pip) {
+        this.time  = new CustomDate(epoch);
+        this.open  = new MarketValue(open, pip);
+        this.high  = new MarketValue(high, pip);
+        this.low   = new MarketValue(low, pip);
+        this.close = new MarketValue(close, pip);
     }
 }

@@ -2,8 +2,8 @@ import DerivAPIBasic    from './DerivAPIBasic';
 import Underlying       from './Immutables/Underlying';
 import Account          from './Immutables/Account';
 import Assets           from './Immutables/Assets';
-import CandlesContainer          from './Streams/CandlesContainer';
-import TicksContainer            from './Streams/TicksContainer';
+import CandleStream     from './Streams/CandleStream';
+import TickStream       from './Streams/TickStream';
 import Contract         from './Streams/Contract';
 
 /**
@@ -32,18 +32,28 @@ export default class DerivAPI extends DerivAPIBasic {
      * Provides a ticks stream and a history of last 1000 ticks available
      *
      * @param {String|TicksParam} options - symbol or a ticks parameter object
-     * @returns {TicksContainer}
+     * @returns {TickStream}
      */
-    async ticks(options) {
+    async tickStream(options) {
+        const tickStream = new TickStream(this, options);
+
+        await tickStream.init();
+
+        return tickStream;
     }
 
     /**
      * Provides 1-minute candles stream and a history of last 1000 candles
      *
      * @param {String|CandlesParam} options - symbol or a candles parameter object
-     * @returns {CandlesContainer}
+     * @returns {CandleStream}
      */
-    async candles(options) {
+    async candleStream(options) {
+        const candleStream = new CandleStream(this, options);
+
+        await candleStream.init();
+
+        return candleStream;
     }
 
     /**
@@ -53,6 +63,11 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Contract}
      */
     async contract(options) {
+        const contract = new Contract(this, options);
+
+        await contract.init();
+
+        return contract;
     }
 
     /**
@@ -62,6 +77,11 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Underlying}
      */
     async underlying(symbol) {
+        const underlying = new Underlying(this, symbol);
+
+        await underlying.init();
+
+        return underlying;
     }
 
     /**
@@ -71,6 +91,11 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Account}
      */
     async account(token) {
+        const account = new Account(this, token);
+
+        await account.init();
+
+        return account;
     }
 
     /**
@@ -79,5 +104,10 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Assets}
      */
     async assets() {
+        const assets = new Assets(this);
+
+        await assets.init();
+
+        return assets;
     }
 }

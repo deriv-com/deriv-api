@@ -18,5 +18,8 @@ module.exports = {
         'no-multi-spaces'                    : 0,
         'no-param-reassign'                  : ['error', {'props': false }],
         'no-plusplus'                        : 0,
+        'no-use-before-define'               : 0,
+        'no-useless-constructor'             : 0,
+        'class-methods-use-this'             : 0,
     },
 };

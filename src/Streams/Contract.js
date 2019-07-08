@@ -24,5 +24,8 @@ export default class Contract extends Stream {
      * @param {ContractsParam} options
      */
     constructor(api, options) {
+        super();
+        this.api     = api;
+        this.options = options;
     }
 }

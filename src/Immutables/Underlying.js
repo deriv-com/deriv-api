@@ -9,5 +9,8 @@ export default class Underlying extends Immutable {
      * @param {String} symbol
      */
     constructor(api, symbol) {
+        super();
+        this.api    = api;
+        this.symbol = symbol;
     }
 }

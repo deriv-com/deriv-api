@@ -8,5 +8,7 @@ export default class Assets extends Immutable {
      * @param {DerivAPI} api
      */
     constructor(api) {
+        super();
+        this.api = api;
     }
 }

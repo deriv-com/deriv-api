@@ -1,6 +1,19 @@
 import Immutable from '../Types/Immutable';
 
-/** Abstract class for user accounts */
+/**
+ * Abstract class for user accounts
+ *
+ * @example
+ * const account = await api.accounts(yourToken);
+ *
+ * // Returns the open contracts of this account
+ * const openContracts = account.openContracts();
+ *
+ * const siblings = account.siblings;
+ *
+ * // Switches the API account to the first sibling
+ * siblings[0].switch();
+ */
 export default class Account extends Immutable {
     /**
      * @param {DerivAPI} api
@@ -34,6 +47,6 @@ export default class Account extends Immutable {
 
     /** Switches to this account */
     switch() {
-        this.api.changeAccount();
+        this.api.changeAccount(this);
     }
 }

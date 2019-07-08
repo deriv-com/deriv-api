@@ -2,6 +2,13 @@ import Stream from '../Types/Stream';
 
 /**
  * An abstract class for balance information
+ *
+ * @example
+ * const balance = accounts.balance;
+ *
+ * const formattedBalance = balance.format;
+ *
+ * balance.onUpdate().subscribe(balance => console.log)
  */
 export default class Balance extends Stream {
     /**

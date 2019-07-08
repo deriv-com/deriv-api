@@ -60,7 +60,7 @@ export default class TickStream extends Stream {
             .pipe(map(h => historyToTicks(h, this.pip)))
             .toPromise();
 
-        return this.list;
+        return this.freeze().list;
     }
 
     /**

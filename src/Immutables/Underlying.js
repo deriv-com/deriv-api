@@ -2,6 +2,16 @@ import Immutable from '../Types/Immutable';
 
 /**
  * Abstract class for an underlying
+ *
+ * @example
+ * const underlying = await api.underlying('R_100');
+ *
+ * const pipSized = underlying.pipSizedValue(123.1);
+ *
+ * // Same as api.tickStream(symbol);
+ * const tickStream = underlying.tickStream();
+ *
+ * if (underlying.isOpen) await contract.buy();
  */
 export default class Underlying extends Immutable {
     /**

@@ -17,8 +17,8 @@ export default class CandleStream extends Stream {
      */
     constructor(api, options) {
         super();
-        this.api     = api;
-        this.options = options;
+        this.api = api;
+        Object.assign(this, options);
     }
 
     // Called by the API to initialize the instance

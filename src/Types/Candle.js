@@ -1,3 +1,4 @@
+import Immutable from './Immutable';
 import CustomDate from './CustomDate';
 import MarketValue from './MarketValue';
 
@@ -14,13 +15,14 @@ import MarketValue from './MarketValue';
 /**
  * A candle object
  */
-export default class Candle {
+export default class Candle extends Immutable {
     /**
      * @returns {Candle}
      */
     constructor({
         epoch, open, high, low, close,
     }, pip) {
+        super();
         this.time  = new CustomDate(epoch);
         this.open  = new MarketValue(open, pip);
         this.high  = new MarketValue(high, pip);

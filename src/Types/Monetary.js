@@ -1,1 +1,4 @@
-export default class Monetary {}
+import Immutable from './Immutable';
+
+/** Keep money related values */
+export default class Monetary extends Immutable {}

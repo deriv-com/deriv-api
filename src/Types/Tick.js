@@ -1,3 +1,4 @@
+import Immutable from './Immutable';
 import CustomDate from './CustomDate';
 import MarketValue from './MarketValue';
 
@@ -13,10 +14,11 @@ import MarketValue from './MarketValue';
 /**
  * A wrapper class for Tick
  */
-export default class Tick {
+export default class Tick extends Immutable {
     constructor({
         epoch, quote, ask, bid,
     }, pip) {
+        super();
         this.epoch = new CustomDate(epoch);
         this.quote = new MarketValue(quote, pip);
         this.ask   = new MarketValue(ask, pip);

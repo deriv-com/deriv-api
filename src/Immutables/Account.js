@@ -27,6 +27,10 @@ export default class Account extends Immutable {
 
     // Called by the API to initialize the instance
     async init() {
+        /*
+         * this.balance = new Balance(this.api)
+         * await this.balance.init()
+         */
         return Promise.resolve(undefined);
     }
 

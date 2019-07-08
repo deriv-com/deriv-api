@@ -1,4 +1,6 @@
+import Immutable from './Immutable';
+
 /**
- * A custom date object to provide more flexibility to dates
+ * An alternative date object
  */
-export default class CustomDate extends Date {}
+export default class CustomDate extends Immutable  {}

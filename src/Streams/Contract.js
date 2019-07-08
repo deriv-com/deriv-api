@@ -13,6 +13,7 @@ import Stream from '../Types/Stream';
  * @property {Number|String} duration - duration with unit or duration in number
  * @property {String=} durationUnit - duration unit, required if duration is number
  * @property {String=} productType - 'multi_barrier' or 'basic'
+ * @property {Account=} account - The account that has this contract
  */
 
 /**
@@ -25,12 +26,42 @@ export default class Contract extends Stream {
      */
     constructor(api, options) {
         super();
-        this.api     = api;
-        this.options = options;
+        this.api = api;
+        Object.assign(this, options);
     }
 
     // Called by the API to initialize the instance
     async init() {
         return Promise.resolve(undefined);
+    }
+
+    /**
+     * Buys this contract
+     *
+     * @param {BuyParam} options
+     * @returns {Buy}
+     */
+    async buy({ maxPrice: price }) {
+        return this.api.buy({ buy: this.contractId, price });
+    }
+
+    /**
+     * Sells this contract
+     *
+     * @param {SellParam} options
+     * @returns {Sell}
+     */
+    async sell({ maxPrice: price }) {
+        return this.api.sell({ sell: this.contractId, price });
+    }
+
+    /** @returns {Boolean} */
+    get isExpired() {
+        return false;
+    }
+
+    /** @returns {String} - Current status of the contract */
+    get status() {
+        return false;
     }
 }

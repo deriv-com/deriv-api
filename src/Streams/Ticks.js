@@ -14,7 +14,7 @@ import Stream from '../Types/Stream';
  */
 
 /**
- * Contains ticks of one symbol
+ * Abstract class for ticks
  */
 export default class Ticks extends Stream {
     /**

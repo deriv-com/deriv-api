@@ -7,6 +7,9 @@ import Stream from '../Types/Stream';
  * @property {String} symbol - Symbol of the candles
  */
 
+/**
+ * An abstract class for Candles information
+ */
 export default class Candles extends Stream {
     /**
      * @param {DerivAPI} api

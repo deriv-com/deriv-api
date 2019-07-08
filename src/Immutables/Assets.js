@@ -1,7 +1,7 @@
 import Immutable from '../Types/Immutable';
 
 /**
- * Contains all information related to trading assets
+ * Abstract class for trading assets
  */
 export default class Assets extends Immutable {
     /**

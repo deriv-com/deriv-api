@@ -1,7 +1,7 @@
 import Immutable from '../Types/Immutable';
 
 /**
- * Contains all information related to a single underlying
+ * Abstract class for an underlying
  */
 export default class Underlying extends Immutable {
     /**

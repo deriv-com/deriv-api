@@ -7,14 +7,21 @@ import Ticks            from './Streams/Ticks';
 import Contract         from './Streams/Contract';
 
 /**
- * The default class of the DerivAPI module.
+ * The main class of the DerivAPI module. This class extends the minimum
+ * functionality provided by the {@link DerivAPIBasic} adding abstract objects
+ * that can be used to read data and interact with the API.
  *
  * @example
+ * // Returns an abstract ticks object
  * const ticks = api.ticks('R_100');
- * ticks.onUpdate().subscribe(console.log)
  *
- * @param {Object} options
- * For options details see: {@link DerivAPIBasic}
+ * // Subscribe to updates on the ticks object
+ * ticks.onUpdate().subscribe(console.log);
+ *
+ * // Read the history of ticks from the ticks object
+ * const ticksHistory = ticks.history();
+ *
+ * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */
 export default class DerivAPI extends DerivAPIBasic {
     constructor(options) {
@@ -22,53 +29,54 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
-     * A stream of ticks
+     * Provides a ticks stream and a history of last 1000 ticks available
      *
      * @param {String|TicksParam} options - symbol or a ticks parameter object
-     * @returns {Ticks} {@link Ticks}
+     * @returns {Ticks}
      */
     async ticks(options) {
     }
 
     /**
-     * A stream of candles (default granularity: 1 minute)
+     * Provides 1-minute candles stream and a history of last 1000 candles
      *
      * @param {String|CandlesParam} options - symbol or a candles parameter object
-     * @returns {Candles} {@link Candles}
+     * @returns {Candles}
      */
     async candles(options) {
     }
 
     /**
-     * A contract object with status and ability to buy/sell
+     * A contract object with latest status and ability to buy/sell
      *
-     * @param {ContractsParam} options
-     * @returns {Contract} {@link Contract}
+     * @param {ContractsParam} options - parameters defining the contract
+     * @returns {Contract}
      */
     async contract(options) {
     }
 
     /**
-     * An underlying object which has information about an underlying
+     * An underlying object, including contract groups, pip size, etc.
      *
-     * @param {String} symbol - The symbol for the expected underlying
-     * @returns {Underlying} {@link Underlying}
+     * @param {String} symbol - The underlying symbol
+     * @returns {Underlying}
      */
     async underlying(symbol) {
     }
 
     /**
-     * An account object, containing all information about the account
+     * An account object, including loginid, balance, contracts, etc.
      *
      * @param {String} token - Token to create the account with
-     * @returns {Account} {@link Account}
+     * @returns {Account}
      */
     async account(token) {
     }
 
     /**
-     * Information about all trading assets
-     * @returns {Assets} {@link Assets}
+     * Trading assets including multiple underlyings and trading times
+     *
+     * @returns {Assets}
      */
     async assets() {
     }

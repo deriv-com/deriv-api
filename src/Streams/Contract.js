@@ -15,6 +15,9 @@ import Stream from '../Types/Stream';
  * @property {String=} productType - 'multi_barrier' or 'basic'
  */
 
+/**
+ * Abstract class for contracts
+ */
 export default class Contract extends Stream {
     /**
      * @param {DerivAPI} api

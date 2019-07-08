@@ -1,7 +1,7 @@
 import Immutable from '../Types/Immutable';
 
 /**
- * Abstraction over user accounts
+ * Abstract class for user accounts
  */
 export default class Account extends Immutable {
     /**

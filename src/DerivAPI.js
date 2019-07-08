@@ -19,7 +19,10 @@ import Contract         from './Streams/Contract';
  * ticks.onUpdate().subscribe(console.log);
  *
  * // Read the last ticks available in the default range
- * const ticksHistory = await ticks.list;
+ * const ticksHistory = ticks.list;
+ *
+ * // Read the last 100 ticks until yesterday
+ * const olderHistory = await ticks.history({ count: 100, end: new Date(yesterday) });
  *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */

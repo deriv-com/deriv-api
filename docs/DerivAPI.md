@@ -37,40 +37,40 @@
     -   [openContracts][33]
     -   [closedContracts][34]
     -   [switch][35]
--   [Assets][36]
-    -   [Parameters][37]
--   [Immutable][38]
+-   [Immutable][36]
+-   [Assets][37]
+    -   [Parameters][38]
 -   [CandlesParam][39]
     -   [Properties][40]
 -   [CandleStream][41]
     -   [Parameters][42]
     -   [history][43]
         -   [Parameters][44]
--   [Stream][45]
--   [Range][46]
-    -   [Properties][47]
--   [TicksParam][48]
-    -   [Properties][49]
--   [TickStream][50]
-    -   [Parameters][51]
-    -   [onUpdate][52]
-    -   [list][53]
-    -   [history][54]
-        -   [Parameters][55]
--   [defaultRange][56]
--   [Tick][57]
-    -   [Properties][58]
--   [Tick][59]
-    -   [Parameters][60]
--   [CustomDate][61]
--   [MarketValue][62]
-    -   [Parameters][63]
-    -   [pipSize][64]
-    -   [pipSized][65]
--   [ContractsParam][66]
-    -   [Properties][67]
--   [Contract][68]
-    -   [Parameters][69]
+-   [Range][45]
+    -   [Properties][46]
+-   [TicksParam][47]
+    -   [Properties][48]
+-   [TickStream][49]
+    -   [Parameters][50]
+    -   [onUpdate][51]
+    -   [list][52]
+    -   [history][53]
+        -   [Parameters][54]
+-   [defaultRange][55]
+-   [Tick][56]
+    -   [Properties][57]
+-   [Tick][58]
+    -   [Parameters][59]
+-   [CustomDate][60]
+-   [MarketValue][61]
+    -   [Parameters][62]
+    -   [pipSize][63]
+    -   [pipSized][64]
+-   [ContractsParam][65]
+    -   [Properties][66]
+-   [Contract][67]
+    -   [Parameters][68]
+-   [Stream][69]
 
 ## DerivAPI
 
@@ -94,7 +94,10 @@ const ticks = api.ticks('R_100');
 ticks.onUpdate().subscribe(console.log);
 
 // Read the last ticks available in the default range
-const ticksHistory = await ticks.list;
+const ticksHistory = ticks.list;
+
+// Read the last 100 ticks until yesterday
+const olderHistory = await ticks.history({ count: 100, end: new Date(yesterday) });
 ```
 
 ### tickStream
@@ -276,6 +279,10 @@ Returns **[Array][86]&lt;[Contract][77]>** A list of all closed contracts
 
 Switches to this account
 
+## Immutable
+
+An abstract class for immutable objects
+
 ## Assets
 
 **Extends Immutable**
@@ -285,10 +292,6 @@ Abstract class for trading assets
 ### Parameters
 
 -   `api` **[DerivAPI][85]** 
-
-## Immutable
-
-An abstract class for immutable objects
 
 ## CandlesParam
 
@@ -318,10 +321,6 @@ An abstract class for Candles information
 -   `options` **[CandlesParam][74]?** 
 
 Returns **[Array][86]&lt;Candle>** 
-
-## Stream
-
-An abstract class for stream objects
 
 ## Range
 
@@ -449,6 +448,10 @@ Abstract class for contracts
 -   `api` **[DerivAPI][85]** 
 -   `options` **[ContractsParam][76]** 
 
+## Stream
+
+An abstract class for stream objects
+
 [1]: #derivapi
 
 [2]: #parameters
@@ -519,11 +522,11 @@ Abstract class for contracts
 
 [35]: #switch
 
-[36]: #assets-1
+[36]: #immutable
 
-[37]: #parameters-12
+[37]: #assets-1
 
-[38]: #immutable
+[38]: #parameters-12
 
 [39]: #candlesparam
 
@@ -537,55 +540,55 @@ Abstract class for contracts
 
 [44]: #parameters-14
 
-[45]: #stream
+[45]: #range
 
-[46]: #range
+[46]: #properties-1
 
-[47]: #properties-1
+[47]: #ticksparam
 
-[48]: #ticksparam
+[48]: #properties-2
 
-[49]: #properties-2
+[49]: #tickstream-1
 
-[50]: #tickstream-1
+[50]: #parameters-15
 
-[51]: #parameters-15
+[51]: #onupdate
 
-[52]: #onupdate
+[52]: #list
 
-[53]: #list
+[53]: #history-1
 
-[54]: #history-1
+[54]: #parameters-16
 
-[55]: #parameters-16
+[55]: #defaultrange
 
-[56]: #defaultrange
+[56]: #tick
 
-[57]: #tick
+[57]: #properties-3
 
-[58]: #properties-3
+[58]: #tick-1
 
-[59]: #tick-1
+[59]: #parameters-17
 
-[60]: #parameters-17
+[60]: #customdate
 
-[61]: #customdate
+[61]: #marketvalue
 
-[62]: #marketvalue
+[62]: #parameters-18
 
-[63]: #parameters-18
+[63]: #pipsize
 
-[64]: #pipsize
+[64]: #pipsized
 
-[65]: #pipsized
+[65]: #contractsparam
 
-[66]: #contractsparam
+[66]: #properties-4
 
-[67]: #properties-4
+[67]: #contract-1
 
-[68]: #contract-1
+[68]: #parameters-19
 
-[69]: #parameters-19
+[69]: #stream
 
 [70]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 

@@ -45,7 +45,7 @@ export default class TickStream extends Stream {
     }
 
     async init() {
-        const activeSymbols = await this.api.cache.activeSymbols({ active_symbols: 'brief' }).active_symbols;
+        const activeSymbols = (await this.api.cache.activeSymbols({ active_symbols: 'brief' })).active_symbols;
         this.pip            = activeSymbols.find(s => s.symbol === this.symbol).pip;
         const tickStream    = this.api.subscribe(requestParams(this.symbol, this.range));
 

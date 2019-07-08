@@ -11,4 +11,9 @@ export default class Assets extends Immutable {
         super();
         this.api = api;
     }
+
+    // Called by the API to initialize the instance
+    async init() {
+        return Promise.resolve(undefined);
+    }
 }

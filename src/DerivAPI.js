@@ -18,8 +18,8 @@ import Contract         from './Streams/Contract';
  * // Subscribe to updates on the ticks object
  * ticks.onUpdate().subscribe(console.log);
  *
- * // Read the history of ticks from the ticks object
- * const ticksHistory = ticks.history();
+ * // Read the last ticks available in the default range
+ * const ticksHistory = await ticks.list;
  *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */
@@ -29,7 +29,7 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
-     * Provides a ticks stream and a history of last 1000 ticks available
+     * Provides a ticks stream and a list of available ticks
      *
      * @param {String|TicksParam} options - symbol or a ticks parameter object
      * @returns {TickStream}
@@ -43,7 +43,7 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
-     * Provides 1-minute candles stream and a history of last 1000 candles
+     * Provides a list of available candles with the default granularity
      *
      * @param {String|CandlesParam} options - symbol or a candles parameter object
      * @returns {CandleStream}

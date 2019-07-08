@@ -29,7 +29,8 @@ export default class Contract extends Stream {
         this.options = options;
     }
 
+    // Called by the API to initialize the instance
     async init() {
-        return Promise.resolve();
+        return Promise.resolve(undefined);
     }
 }

@@ -13,4 +13,9 @@ export default class Underlying extends Immutable {
         this.api    = api;
         this.symbol = symbol;
     }
+
+    // Called by the API to initialize the instance
+    async init() {
+        return Promise.resolve(undefined);
+    }
 }

@@ -21,6 +21,11 @@ export default class CandleStream extends Stream {
         this.options = options;
     }
 
+    // Called by the API to initialize the instance
+    async init() {
+        return Promise.resolve(undefined);
+    }
+
     /**
      * @param {CandlesParam=} options
      * @returns {Candle[]}

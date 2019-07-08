@@ -12,6 +12,11 @@ export default class Account extends Immutable {
         this.token = token;
     }
 
+    // Called by the API to initialize the instance
+    async init() {
+        return Promise.resolve(undefined);
+    }
+
     /** @returns {Account} all the sibling accounts */
     get siblings() {
         return [];

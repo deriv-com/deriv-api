@@ -31,33 +31,33 @@
     -   [Examples][27]
 -   [Underlying][28]
     -   [Parameters][29]
--   [Immutable][30]
--   [Account][31]
-    -   [Parameters][32]
-    -   [siblings][33]
-    -   [openContracts][34]
-    -   [closedContracts][35]
-    -   [switch][36]
--   [Assets][37]
-    -   [Parameters][38]
+-   [Account][30]
+    -   [Parameters][31]
+    -   [siblings][32]
+    -   [openContracts][33]
+    -   [closedContracts][34]
+    -   [switch][35]
+-   [Assets][36]
+    -   [Parameters][37]
+-   [Immutable][38]
 -   [CandlesParam][39]
     -   [Properties][40]
 -   [CandleStream][41]
     -   [Parameters][42]
     -   [history][43]
         -   [Parameters][44]
--   [Range][45]
-    -   [Properties][46]
--   [TicksParam][47]
-    -   [Properties][48]
--   [TickStream][49]
-    -   [Parameters][50]
-    -   [onUpdate][51]
-    -   [list][52]
-    -   [history][53]
-        -   [Parameters][54]
--   [defaultRange][55]
--   [Stream][56]
+-   [Stream][45]
+-   [Range][46]
+    -   [Properties][47]
+-   [TicksParam][48]
+    -   [Properties][49]
+-   [TickStream][50]
+    -   [Parameters][51]
+    -   [onUpdate][52]
+    -   [list][53]
+    -   [history][54]
+        -   [Parameters][55]
+-   [defaultRange][56]
 -   [Tick][57]
     -   [Properties][58]
 -   [Tick][59]
@@ -93,13 +93,13 @@ const ticks = api.ticks('R_100');
 // Subscribe to updates on the ticks object
 ticks.onUpdate().subscribe(console.log);
 
-// Read the history of ticks from the ticks object
-const ticksHistory = ticks.history();
+// Read the last ticks available in the default range
+const ticksHistory = await ticks.list;
 ```
 
 ### tickStream
 
-Provides a ticks stream and a history of last 1000 ticks available
+Provides a ticks stream and a list of available ticks
 
 #### Parameters
 
@@ -109,7 +109,7 @@ Returns **[TickStream][73]**
 
 ### candleStream
 
-Provides 1-minute candles stream and a history of last 1000 candles
+Provides a list of available candles with the default granularity
 
 #### Parameters
 
@@ -249,10 +249,6 @@ Abstract class for an underlying
 -   `api` **[DerivAPI][85]** 
 -   `symbol` **[String][71]** 
 
-## Immutable
-
-An abstract class for immutable objects
-
 ## Account
 
 **Extends Immutable**
@@ -290,6 +286,10 @@ Abstract class for trading assets
 
 -   `api` **[DerivAPI][85]** 
 
+## Immutable
+
+An abstract class for immutable objects
+
 ## CandlesParam
 
 Type: [Object][70]
@@ -318,6 +318,10 @@ An abstract class for Candles information
 -   `options` **[CandlesParam][74]?** 
 
 Returns **[Array][86]&lt;Candle>** 
+
+## Stream
+
+An abstract class for stream objects
 
 ## Range
 
@@ -368,10 +372,6 @@ Returns **[Array][86]&lt;[Tick][89]>**
 ## defaultRange
 
 Default range of ticks: 1000 latest ticks
-
-## Stream
-
-An abstract class for stream objects
 
 ## Tick
 
@@ -507,23 +507,23 @@ Abstract class for contracts
 
 [29]: #parameters-10
 
-[30]: #immutable
+[30]: #account-1
 
-[31]: #account-1
+[31]: #parameters-11
 
-[32]: #parameters-11
+[32]: #siblings
 
-[33]: #siblings
+[33]: #opencontracts
 
-[34]: #opencontracts
+[34]: #closedcontracts
 
-[35]: #closedcontracts
+[35]: #switch
 
-[36]: #switch
+[36]: #assets-1
 
-[37]: #assets-1
+[37]: #parameters-12
 
-[38]: #parameters-12
+[38]: #immutable
 
 [39]: #candlesparam
 
@@ -537,29 +537,29 @@ Abstract class for contracts
 
 [44]: #parameters-14
 
-[45]: #range
+[45]: #stream
 
-[46]: #properties-1
+[46]: #range
 
-[47]: #ticksparam
+[47]: #properties-1
 
-[48]: #properties-2
+[48]: #ticksparam
 
-[49]: #tickstream-1
+[49]: #properties-2
 
-[50]: #parameters-15
+[50]: #tickstream-1
 
-[51]: #onupdate
+[51]: #parameters-15
 
-[52]: #list
+[52]: #onupdate
 
-[53]: #history-1
+[53]: #list
 
-[54]: #parameters-16
+[54]: #history-1
 
-[55]: #defaultrange
+[55]: #parameters-16
 
-[56]: #stream
+[56]: #defaultrange
 
 [57]: #tick
 

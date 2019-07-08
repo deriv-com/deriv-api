@@ -2,8 +2,8 @@ import DerivAPIBasic    from './DerivAPIBasic';
 import Underlying       from './Immutables/Underlying';
 import Account          from './Immutables/Account';
 import Assets           from './Immutables/Assets';
-import Candles          from './Streams/Candles';
-import Ticks            from './Streams/Ticks';
+import CandlesContainer          from './Streams/CandlesContainer';
+import TicksContainer            from './Streams/TicksContainer';
 import Contract         from './Streams/Contract';
 
 /**
@@ -32,7 +32,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * Provides a ticks stream and a history of last 1000 ticks available
      *
      * @param {String|TicksParam} options - symbol or a ticks parameter object
-     * @returns {Ticks}
+     * @returns {TicksContainer}
      */
     async ticks(options) {
     }
@@ -41,7 +41,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * Provides 1-minute candles stream and a history of last 1000 candles
      *
      * @param {String|CandlesParam} options - symbol or a candles parameter object
-     * @returns {Candles}
+     * @returns {CandlesContainer}
      */
     async candles(options) {
     }

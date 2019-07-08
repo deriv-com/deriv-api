@@ -31,14 +31,14 @@
     -   [Examples][27]
 -   [Underlying][28]
     -   [Parameters][29]
--   [Account][30]
-    -   [Parameters][31]
--   [Immutable][32]
+-   [Immutable][30]
+-   [Account][31]
+    -   [Parameters][32]
 -   [Assets][33]
     -   [Parameters][34]
 -   [CandlesParam][35]
     -   [Properties][36]
--   [Candles][37]
+-   [CandlesContainer][37]
     -   [Parameters][38]
     -   [history][39]
         -   [Parameters][40]
@@ -47,7 +47,7 @@
     -   [Properties][43]
 -   [TicksParam][44]
     -   [Properties][45]
--   [Ticks][46]
+-   [TicksContainer][46]
     -   [Parameters][47]
     -   [history][48]
         -   [Parameters][49]
@@ -89,7 +89,7 @@ Provides a ticks stream and a history of last 1000 ticks available
 
 -   `options` **([String][55] \| [TicksParam][56])** symbol or a ticks parameter object
 
-Returns **[Ticks][57]** 
+Returns **[TicksContainer][57]** 
 
 ### candles
 
@@ -99,7 +99,7 @@ Provides 1-minute candles stream and a history of last 1000 candles
 
 -   `options` **([String][55] \| [CandlesParam][58])** symbol or a candles parameter object
 
-Returns **[Candles][59]** 
+Returns **[CandlesContainer][59]** 
 
 ### contract
 
@@ -233,6 +233,10 @@ Abstract class for an underlying
 -   `api` **[DerivAPI][69]** 
 -   `symbol` **[String][55]** 
 
+## Immutable
+
+An abstract class for immutable objects
+
 ## Account
 
 **Extends Immutable**
@@ -243,10 +247,6 @@ Abstract class for user accounts
 
 -   `api` **[DerivAPI][69]** 
 -   `token` **[String][55]** 
-
-## Immutable
-
-An abstract class for immutable objects
 
 ## Assets
 
@@ -268,7 +268,7 @@ Type: [Object][54]
 -   `count` **[Number][66]** Number of candles returned by history
 -   `symbol` **[String][55]** Symbol of the candles
 
-## Candles
+## CandlesContainer
 
 **Extends Stream**
 
@@ -310,7 +310,7 @@ Type: [Object][54]
 -   `count` **[Number][66]** Number of ticks returned by history
 -   `symbol` **[String][55]** The ticks symbol
 
-## Ticks
+## TicksContainer
 
 **Extends Stream**
 
@@ -416,11 +416,11 @@ Abstract class for contracts
 
 [29]: #parameters-10
 
-[30]: #account-1
+[30]: #immutable
 
-[31]: #parameters-11
+[31]: #account-1
 
-[32]: #immutable
+[32]: #parameters-11
 
 [33]: #assets-1
 
@@ -430,7 +430,7 @@ Abstract class for contracts
 
 [36]: #properties
 
-[37]: #candles-1
+[37]: #candlescontainer
 
 [38]: #parameters-13
 
@@ -448,7 +448,7 @@ Abstract class for contracts
 
 [45]: #properties-2
 
-[46]: #ticks-1
+[46]: #tickscontainer
 
 [47]: #parameters-15
 
@@ -470,11 +470,11 @@ Abstract class for contracts
 
 [56]: #ticksparam
 
-[57]: #ticks
+[57]: #tickscontainer
 
 [58]: #candlesparam
 
-[59]: #candles
+[59]: #candlescontainer
 
 [60]: #contractsparam
 

@@ -10,7 +10,7 @@ import Stream from '../Types/Stream';
 /**
  * An abstract class for Candles information
  */
-export default class Candles extends Stream {
+export default class CandlesContainer extends Stream {
     /**
      * @param {DerivAPI} api
      * @param {CandlesParam=} options

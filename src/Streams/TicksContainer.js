@@ -16,7 +16,7 @@ import Stream from '../Types/Stream';
 /**
  * Abstract class for ticks
  */
-export default class Ticks extends Stream {
+export default class TicksContainer extends Stream {
     /**
      * @param {DerivAPI} api
      * @param {TicksParam} options

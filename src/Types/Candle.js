@@ -13,7 +13,8 @@ import MarketValue from './MarketValue';
  */
 
 /**
- * A candle object
+ * A wrapper class for Candle
+ *
  * @param {Object} options
  * @param {Number|String} options.epoch
  * @param {Number} options.open
@@ -23,17 +24,17 @@ import MarketValue from './MarketValue';
  * @param {Number} pip
  */
 export default class Candle extends Immutable {
-    /**
-     * @returns {Candle}
-     */
     constructor({
         epoch, open, high, low, close,
     }, pip) {
-        super();
-        this.time  = new CustomDate(epoch);
-        this.open  = new MarketValue(open, pip);
-        this.high  = new MarketValue(high, pip);
-        this.low   = new MarketValue(low, pip);
-        this.close = new MarketValue(close, pip);
+        const instance = {};
+
+        instance.time  = new CustomDate(epoch);
+        instance.open  = new MarketValue(open, pip);
+        instance.high  = new MarketValue(high, pip);
+        instance.low   = new MarketValue(low, pip);
+        instance.close = new MarketValue(close, pip);
+
+        super(instance);
     }
 }

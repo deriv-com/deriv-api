@@ -1,24 +1,22 @@
 import Stream from '../Types/Stream';
+import Candle from '../Types/Candle'; /* eslint-disable-line no-unused-vars */
+import { parseTicksOptions } from '../utils';
 
 /**
  * @typedef {Object} CandlesParam
  * @property {Number} granularity - Granularity in seconds
- * @property {Number} count - Number of candles returned by history
+ * @property {HistoryRange} range - A chunk of history to return with start and end time
  * @property {String} symbol - Symbol of the candles
  */
 
 /**
  * An abstract class for Candles stream returned from {@link DerivAPI#candleStream}
+ * @param {DerivAPI} api
+ * @param {CandlesParam=} options
  */
 export default class CandleStream extends Stream {
-    /**
-     * @param {DerivAPI} api
-     * @param {CandlesParam=} options
-     */
     constructor(api, options) {
-        super();
-        this.api = api;
-        Object.assign(this, options);
+        super({ api, ...parseTicksOptions(options) });
     }
 
     // Called by the API to initialize the instance

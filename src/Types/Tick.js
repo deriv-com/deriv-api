@@ -13,6 +13,7 @@ import MarketValue from './MarketValue';
 
 /**
  * A wrapper class for Tick
+ *
  * @param {Object} options
  * @param {Number|String} options.epoch
  * @param {Number} options.quote
@@ -24,10 +25,13 @@ export default class Tick extends Immutable {
     constructor({
         epoch, quote, ask, bid,
     }, pip) {
-        super();
-        this.epoch = new CustomDate(epoch);
-        this.quote = new MarketValue(quote, pip);
-        this.ask   = new MarketValue(ask, pip);
-        this.bid   = new MarketValue(bid, pip);
+        const instance = {};
+
+        instance.time  = new CustomDate(epoch);
+        instance.quote = new MarketValue(quote, pip);
+        instance.ask   = new MarketValue(ask, pip);
+        instance.bid   = new MarketValue(bid, pip);
+
+        super(instance);
     }
 }

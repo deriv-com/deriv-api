@@ -1,9 +1,15 @@
 import Immutable from './Immutable';
 
-/** A class for name of things
+/**
+ * A class for name of things
  *
- * @param {String} - full
- * @param {String} - short
+ * @param {String} full - Full form of the name
+ * @param {String} short - short form of the name
+ *
+ * @example
+ * const lc = account.landingCompany;
+ *
+ * console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
  */
 export default class Name extends Immutable {
     /** @returns {String} - alias for this.short */

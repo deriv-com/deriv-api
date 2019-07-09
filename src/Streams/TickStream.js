@@ -63,7 +63,7 @@ export default class TickStream extends Stream {
 
 
     /**
-     * An immutable list of Tick objects
+     * An immutable list of {@link Tick} objects
      *
      * @example
      * const ticks = tickStream.list;

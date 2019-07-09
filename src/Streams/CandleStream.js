@@ -27,9 +27,20 @@ export default class CandleStream extends Stream {
     }
 
     /**
+     * An immutable list of {@link Candle} objects
+     *
+     * @example
+     * const candles = candleStream.list;
+     */
+    get list() {
+        return [];
+    }
+
+    /**
      * @param {CandlesParam=} options
      * @returns {Candle[]}
      */
-    history() {
+    async history() {
+        return Promise.resolve(undefined);
     }
 }

@@ -1,4 +1,6 @@
 import Stream from '../Types/Stream';
+import Buy from '../Types/Buy'; /* eslint-disable-line no-unused-vars */
+import Sell from '../Types/Sell'; /* eslint-disable-line no-unused-vars */
 
 /**
  * @typedef {Object} ContractsParam
@@ -38,7 +40,7 @@ export default class Contract extends Stream {
     /**
      * Buys this contract
      *
-     * @param {BuyParam} options
+     * @param {BuyParam} buy
      * @returns {Buy}
      */
     async buy({ maxPrice: price }) {
@@ -48,7 +50,7 @@ export default class Contract extends Stream {
     /**
      * Sells this contract
      *
-     * @param {SellParam} options
+     * @param {SellParam} sell
      * @returns {Sell}
      */
     async sell({ maxPrice: price }) {

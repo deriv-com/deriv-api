@@ -8,7 +8,7 @@ import Stream from '../Types/Stream';
  */
 
 /**
- * An abstract class for Candles information
+ * An abstract class for Candles stream returned from {@link DerivAPI#candleStream}
  */
 export default class CandleStream extends Stream {
     /**
@@ -27,18 +27,25 @@ export default class CandleStream extends Stream {
     }
 
     /**
-     * An immutable list of {@link Candle} objects
+     * An immutable list of Candle objects
      *
      * @example
      * const candles = candleStream.list;
+     *
+     * @returns {Candle[]}
      */
     get list() {
         return [];
     }
 
     /**
-     * @param {CandlesParam=} options
-     * @returns {Candle[]}
+     * Resolves to a list of candles given the range
+     *
+     * @example
+     * const oldCandles = await candleStream.history({count: 10, end: yesterday})
+     *
+     * @param {HistoryRange=} range
+     * @returns {Promise<Candle[]>}
      */
     async history() {
         return Promise.resolve(undefined);

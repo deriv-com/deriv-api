@@ -17,7 +17,7 @@ import { parseRequestRange } from '../utils';
  */
 
 /**
- * Abstract class for ticks
+ * Abstract class for ticks stream returned by the {@link DerivAPI#tickStream}
  */
 export default class TickStream extends Stream {
     /**
@@ -48,7 +48,6 @@ export default class TickStream extends Stream {
         this.pip            = activeSymbols.find(s => s.symbol === this.symbol).pip;
         const tickStream    = this.api.subscribe(requestParams(this.symbol, this.range));
 
-        /** Called with every new tick in the stream */
         this.onUpdate = tickStream
             .pipe(skip(1))
             .pipe(map(t => wrapTick(t, this.pip)));
@@ -63,18 +62,25 @@ export default class TickStream extends Stream {
 
 
     /**
-     * An immutable list of {@link Tick} objects
+     * An immutable list of Tick objects
      *
      * @example
      * const ticks = tickStream.list;
+     *
+     * @returns {Tick[]}
      */
     get list() {
         return [...this._data.list];
     }
 
     /**
-     * @param {Range=} range
-     * @returns {Tick[]}
+     * Resolves to a list of Ticks using the given range
+     *
+     * @example
+     * const oldTicks = await tickStream.history({count: 10, end: yesterday})
+     *
+     * @param {HistoryRange=} range
+     * @returns {Promise<Tick[]>}
      */
     async history(range) {
         if (!range) return this.list;

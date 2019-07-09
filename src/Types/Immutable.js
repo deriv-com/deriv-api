@@ -6,7 +6,7 @@
 export default class Immutable {
     constructor(props = {}) {
         Object.keys(props).forEach((p) => { this[p] = props[p]; });
-        /**
+        /*
          * The main storage for the data in immutable objects
          *
          * Any access should be done through getters and streams

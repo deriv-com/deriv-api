@@ -4,7 +4,7 @@ import Tick   from '../Types/Tick';
 import { parseRequestRange } from '../utils';
 
 /**
- * @typedef {Object} Range
+ * @typedef {Object} HistoryRange
  * @property {Number|Date} start - An epoch in seconds or a Date object
  * @property {Number|Date} end -  An epoch in seconds or a Date object
  * @property {Number} count - Number of ticks returned by history
@@ -12,7 +12,7 @@ import { parseRequestRange } from '../utils';
 
 /**
  * @typedef {Object} TicksParam
- * @property {Range} range - A chunk of history to return with start and end time
+ * @property {HistoryRange} range - A chunk of history to return with start and end time
  * @property {String} symbol - The ticks symbol
  */
 
@@ -27,7 +27,6 @@ export default class TickStream extends Stream {
     constructor(api, options = {}) {
         super();
 
-        /** Default range of ticks: 1000 latest ticks */
         const defaultRange = {
             end  : 'latest',
             count: 1000,
@@ -39,7 +38,7 @@ export default class TickStream extends Stream {
             this.symbol = options;
             this.range  = defaultRange;
         } else {
-            this.range  = options.range ? options.range : defaultRange;
+            this.range  = { ...defaultRange, ...options.range };
             this.symbol = options.symbol;
         }
     }

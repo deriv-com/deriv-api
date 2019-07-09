@@ -76,7 +76,7 @@ export default class TickStream extends Stream {
      * @param {Range=} range
      * @returns {Tick[]}
      */
-    history(range) {
+    async history(range) {
         if (!range) return this.list;
         return this.api.cache.ticksHistory(requestParams(this.symbol, range))
             .then(h => historyToTicks(h, this.pip));

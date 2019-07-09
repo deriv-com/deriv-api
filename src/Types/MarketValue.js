@@ -3,9 +3,9 @@ import Immutable from './Immutable';
 /**
  * Keeps a market value and pip size
  *
- * @param {Object} options
- * @param {Number} options.value
- * @param {Number} options.pip
+ * @param {Object} market
+ * @param {Number} market.value
+ * @param {Number} market.pip
  */
 export default class MarketValue extends Immutable {
     /** Returns the pip size */

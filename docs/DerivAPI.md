@@ -36,16 +36,16 @@
         -   [Parameters][32]
     -   [tickStream][33]
     -   [candleStream][34]
--   [Immutable][35]
+-   [Account][35]
     -   [Parameters][36]
-    -   [\_data][37]
--   [Account][38]
-    -   [Parameters][39]
-    -   [Examples][40]
-    -   [siblings][41]
-    -   [openContracts][42]
-    -   [closedContracts][43]
-    -   [switch][44]
+    -   [Examples][37]
+    -   [siblings][38]
+    -   [openContracts][39]
+    -   [closedContracts][40]
+    -   [switch][41]
+-   [Immutable][42]
+    -   [Parameters][43]
+    -   [\_data][44]
 -   [Assets][45]
     -   [Parameters][46]
     -   [Examples][47]
@@ -59,28 +59,28 @@
     -   [history][55]
         -   [Parameters][56]
         -   [Examples][57]
--   [Candle][58]
-    -   [Properties][59]
--   [Candle][60]
-    -   [Parameters][61]
--   [CustomDate][62]
--   [MarketValue][63]
-    -   [Parameters][64]
-    -   [pipSize][65]
-    -   [pipSized][66]
--   [HistoryRange][67]
-    -   [Properties][68]
--   [TicksParam][69]
-    -   [Properties][70]
--   [TickStream][71]
-    -   [Parameters][72]
-    -   [list][73]
-        -   [Examples][74]
-    -   [history][75]
-        -   [Parameters][76]
-        -   [Examples][77]
--   [Stream][78]
-    -   [onUpdate][79]
+-   [Stream][58]
+    -   [onUpdate][59]
+        -   [Parameters][60]
+        -   [Examples][61]
+-   [Candle][62]
+    -   [Properties][63]
+-   [Candle][64]
+    -   [Parameters][65]
+-   [CustomDate][66]
+-   [MarketValue][67]
+    -   [Parameters][68]
+    -   [pipSize][69]
+    -   [pipSized][70]
+-   [HistoryRange][71]
+    -   [Properties][72]
+-   [TicksParam][73]
+    -   [Properties][74]
+-   [TickStream][75]
+    -   [Parameters][76]
+    -   [list][77]
+        -   [Examples][78]
+    -   [history][79]
         -   [Parameters][80]
         -   [Examples][81]
 -   [Tick][82]
@@ -307,20 +307,6 @@ Shortcut for api.tickStream(symbol)
 
 Shortcut for api.candleStream(symbol)
 
-## Immutable
-
-An abstract class for immutable objects
-
-### Parameters
-
--   `props` **[Object][96]** A list of properties to add for the immutable object (optional, default `{}`)
-
-### \_data
-
-The main storage for the data in immutable objects
-
-Any access should be done through getters and streams
-
 ## Account
 
 **Extends Immutable**
@@ -361,6 +347,20 @@ Returns **[Array][112]&lt;[Contract][103]>** A list of all closed contracts
 ### switch
 
 Switches to this account
+
+## Immutable
+
+An abstract class for immutable objects
+
+### Parameters
+
+-   `props` **[Object][96]** A list of properties to add for the immutable object (optional, default `{}`)
+
+### \_data
+
+The main storage for the data in immutable objects
+
+Any access should be done through getters and streams
 
 ## Assets
 
@@ -436,6 +436,32 @@ const oldCandles = await candleStream.history({count: 10, end: yesterday})
 
 Returns **[Promise][110]&lt;[Array][112]&lt;[Candle][115]>>** 
 
+## Stream
+
+**Extends Immutable**
+
+An abstract class for stream objects
+
+### onUpdate
+
+Listen on updates of a stream
+
+#### Parameters
+
+-   `callback` **[Function][109]** 
+
+#### Examples
+
+```javascript
+const tickStream = api.tickStream('R_100');
+
+tickStream.onUpdate(console.log);
+
+tickStream.onUpdate().subscribe(console.log);
+```
+
+Returns **Observable** 
+
 ## Candle
 
 Type: [Object][96]
@@ -478,9 +504,9 @@ Keeps a market value and pip size
 
 ### Parameters
 
--   `options` **[Object][96]** 
-    -   `options.value` **[Number][108]** 
-    -   `options.pip` **[Number][108]** 
+-   `market` **[Object][96]** 
+    -   `market.value` **[Number][108]** 
+    -   `market.pip` **[Number][108]** 
 
 ### pipSize
 
@@ -547,32 +573,6 @@ const oldTicks = await tickStream.history({count: 10, end: yesterday})
 ```
 
 Returns **[Promise][110]&lt;[Array][112]&lt;[Tick][120]>>** 
-
-## Stream
-
-**Extends Immutable**
-
-An abstract class for stream objects
-
-### onUpdate
-
-Listen on updates of a stream
-
-#### Parameters
-
--   `callback` **[Function][109]** 
-
-#### Examples
-
-```javascript
-const tickStream = api.tickStream('R_100');
-
-tickStream.onUpdate(console.log);
-
-tickStream.onUpdate().subscribe(console.log);
-```
-
-Returns **Observable** 
 
 ## Tick
 
@@ -728,25 +728,25 @@ Returns **[String][97]** Current status of the contract
 
 [34]: #candlestream-1
 
-[35]: #immutable
+[35]: #account-1
 
 [36]: #parameters-12
 
-[37]: #_data
+[37]: #examples-6
 
-[38]: #account-1
+[38]: #siblings
 
-[39]: #parameters-13
+[39]: #opencontracts
 
-[40]: #examples-6
+[40]: #closedcontracts
 
-[41]: #siblings
+[41]: #switch
 
-[42]: #opencontracts
+[42]: #immutable
 
-[43]: #closedcontracts
+[43]: #parameters-13
 
-[44]: #switch
+[44]: #_data
 
 [45]: #assets-1
 
@@ -774,49 +774,49 @@ Returns **[String][97]** Current status of the contract
 
 [57]: #examples-9
 
-[58]: #candle
+[58]: #stream
 
-[59]: #properties-1
+[59]: #onupdate
 
-[60]: #candle-1
+[60]: #parameters-17
 
-[61]: #parameters-17
+[61]: #examples-10
 
-[62]: #customdate
+[62]: #candle
 
-[63]: #marketvalue
+[63]: #properties-1
 
-[64]: #parameters-18
+[64]: #candle-1
 
-[65]: #pipsize
+[65]: #parameters-18
 
-[66]: #pipsized
+[66]: #customdate
 
-[67]: #historyrange
+[67]: #marketvalue
 
-[68]: #properties-2
+[68]: #parameters-19
 
-[69]: #ticksparam
+[69]: #pipsize
 
-[70]: #properties-3
+[70]: #pipsized
 
-[71]: #tickstream-2
+[71]: #historyrange
 
-[72]: #parameters-19
+[72]: #properties-2
 
-[73]: #list-1
+[73]: #ticksparam
 
-[74]: #examples-10
+[74]: #properties-3
 
-[75]: #history-1
+[75]: #tickstream-2
 
 [76]: #parameters-20
 
-[77]: #examples-11
+[77]: #list-1
 
-[78]: #stream
+[78]: #examples-11
 
-[79]: #onupdate
+[79]: #history-1
 
 [80]: #parameters-21
 

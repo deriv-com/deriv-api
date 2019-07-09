@@ -47,65 +47,65 @@
         -   [Parameters][43]
     -   [tickStream][44]
     -   [candleStream][45]
--   [SpotDurations][46]
-    -   [Properties][47]
--   [ForwardDurations][48]
-    -   [Properties][49]
--   [Durations][50]
-    -   [Properties][51]
--   [Units][52]
-    -   [Properties][53]
--   [Candle][54]
-    -   [name][55]
-    -   [barriers][56]
-    -   [basis][57]
-    -   [contractTypes][58]
-    -   [durations][59]
-    -   [units][60]
-    -   [forwardSessions][61]
-    -   [isForwardStarting][62]
--   [Candle][63]
-    -   [Properties][64]
-    -   [name][65]
-    -   [barriers][66]
-    -   [basis][67]
-    -   [contractTypes][68]
-    -   [durations][69]
-    -   [units][70]
-    -   [forwardSessions][71]
-    -   [isForwardStarting][72]
--   [Candle][73]
-    -   [Parameters][74]
-    -   [name][75]
-    -   [barriers][76]
-    -   [basis][77]
-    -   [contractTypes][78]
-    -   [durations][79]
-    -   [units][80]
-    -   [forwardSessions][81]
-    -   [isForwardStarting][82]
--   [DateRange][83]
-    -   [Parameters][84]
--   [Account][85]
-    -   [Parameters][86]
-    -   [Examples][87]
-    -   [siblings][88]
-    -   [openContracts][89]
-    -   [closedContracts][90]
-    -   [balance][91]
-    -   [loginid][92]
-    -   [statusCodes][93]
-    -   [landingCompany][94]
-    -   [apiTokens][95]
-    -   [transactionStream][96]
-    -   [switch][97]
--   [Immutable][98]
-    -   [Parameters][99]
--   [Name][100]
-    -   [Parameters][101]
-    -   [Examples][102]
-    -   [code][103]
-    -   [shortcode][104]
+-   [Name][46]
+    -   [Parameters][47]
+    -   [Examples][48]
+    -   [code][49]
+    -   [shortcode][50]
+-   [SpotDurations][51]
+    -   [Properties][52]
+-   [ForwardDurations][53]
+    -   [Properties][54]
+-   [Durations][55]
+    -   [Properties][56]
+-   [Units][57]
+    -   [Properties][58]
+-   [Candle][59]
+    -   [name][60]
+    -   [barriers][61]
+    -   [basis][62]
+    -   [contractTypes][63]
+    -   [durations][64]
+    -   [units][65]
+    -   [forwardSessions][66]
+    -   [isForwardStarting][67]
+-   [Candle][68]
+    -   [Properties][69]
+    -   [name][70]
+    -   [barriers][71]
+    -   [basis][72]
+    -   [contractTypes][73]
+    -   [durations][74]
+    -   [units][75]
+    -   [forwardSessions][76]
+    -   [isForwardStarting][77]
+-   [Candle][78]
+    -   [Parameters][79]
+    -   [name][80]
+    -   [barriers][81]
+    -   [basis][82]
+    -   [contractTypes][83]
+    -   [durations][84]
+    -   [units][85]
+    -   [forwardSessions][86]
+    -   [isForwardStarting][87]
+-   [DateRange][88]
+    -   [Parameters][89]
+-   [Immutable][90]
+    -   [Parameters][91]
+-   [Account][92]
+    -   [Parameters][93]
+    -   [Examples][94]
+    -   [siblings][95]
+    -   [openContracts][96]
+    -   [closedContracts][97]
+    -   [balance][98]
+    -   [loginid][99]
+    -   [statusCodes][100]
+    -   [landingCompany][101]
+    -   [apiTokens][102]
+    -   [transactionStream][103]
+    -   [switch][104]
 -   [Assets][105]
     -   [Parameters][106]
     -   [Examples][107]
@@ -173,6 +173,8 @@
 -   [Sell][169]
 -   [Monetary][170]
     -   [Parameters][171]
+    -   [display][172]
+    -   [format][173]
 
 ## DerivAPI
 
@@ -184,7 +186,7 @@ that can be used to read data and interact with the API.
 
 ### Parameters
 
--   `options` **[Object][172]** For options details see: [DerivAPIBasic][21]
+-   `options` **[Object][174]** For options details see: [DerivAPIBasic][21]
 
 ### Examples
 
@@ -208,9 +210,9 @@ Provides a ticks stream and a list of available ticks
 
 #### Parameters
 
--   `options` **([String][173] \| [TicksParam][174])** symbol or a ticks parameter object
+-   `options` **([String][175] \| [TicksParam][176])** symbol or a ticks parameter object
 
-Returns **[TickStream][175]** 
+Returns **[TickStream][177]** 
 
 ### candleStream
 
@@ -218,9 +220,9 @@ Provides a list of available candles with the default granularity
 
 #### Parameters
 
--   `options` **([String][173] \| [CandlesParam][176])** symbol or a candles parameter object
+-   `options` **([String][175] \| [CandlesParam][178])** symbol or a candles parameter object
 
-Returns **[CandleStream][177]** 
+Returns **[CandleStream][179]** 
 
 ### contract
 
@@ -228,9 +230,9 @@ A contract object with latest status and ability to buy/sell
 
 #### Parameters
 
--   `options` **[ContractsParam][178]** parameters defining the contract
+-   `options` **[ContractsParam][180]** parameters defining the contract
 
-Returns **[Contract][179]** 
+Returns **[Contract][181]** 
 
 ### underlying
 
@@ -238,9 +240,9 @@ An underlying object, including contract groups, pip size, etc.
 
 #### Parameters
 
--   `symbol` **[String][173]** The underlying symbol
+-   `symbol` **[String][175]** The underlying symbol
 
-Returns **[Underlying][180]** 
+Returns **[Underlying][182]** 
 
 ### account
 
@@ -248,9 +250,9 @@ An account object, including loginid, balance, contracts, etc.
 
 #### Parameters
 
--   `token` **[String][173]** Token to create the account with
+-   `token` **[String][175]** Token to create the account with
 
-Returns **[Account][181]** 
+Returns **[Account][183]** 
 
 ### balance
 
@@ -258,7 +260,7 @@ A balance stream
 
 #### Parameters
 
--   `token` **[String][173]** 
+-   `token` **[String][175]** 
 
 Returns **Balance** 
 
@@ -268,7 +270,7 @@ A transaction stream
 
 #### Parameters
 
--   `token` **[String][173]** 
+-   `token` **[String][175]** 
 
 Returns **TransactionStream** 
 
@@ -276,7 +278,7 @@ Returns **TransactionStream**
 
 Trading assets including multiple underlyings and trading times
 
-Returns **[Assets][182]** 
+Returns **[Assets][184]** 
 
 ### changeAccount
 
@@ -296,11 +298,11 @@ API.
 
 ### Parameters
 
--   `options` **[Object][172]**  (optional, default `{}`)
-    -   `options.connection` **[WebSocket][183]?** A ready to use connection
-    -   `options.endpoint` **[String][173]** API server to connect to (optional, default `'blue.binaryws.com'`)
-    -   `options.appId` **[Number][184]** Application ID of the API user (optional, default `1`)
-    -   `options.lang` **[String][173]** Language of the API communication (optional, default `'EN'`)
+-   `options` **[Object][174]**  (optional, default `{}`)
+    -   `options.connection` **[WebSocket][185]?** A ready to use connection
+    -   `options.endpoint` **[String][175]** API server to connect to (optional, default `'blue.binaryws.com'`)
+    -   `options.appId` **[Number][186]** Application ID of the API user (optional, default `1`)
+    -   `options.lang` **[String][175]** Language of the API communication (optional, default `'EN'`)
 
 ### Examples
 
@@ -315,8 +317,8 @@ Subscribe and call the given callback on each response
 
 #### Parameters
 
--   `request` **[Object][172]** A request object acceptable by the API
--   `callback` **[Function][185]** A callback to call on every new response
+-   `request` **[Object][174]** A request object acceptable by the API
+-   `callback` **[Function][187]** A callback to call on every new response
 
 #### Examples
 
@@ -324,7 +326,7 @@ Subscribe and call the given callback on each response
 await api.subscribeWithCallback({ ticks: 'R_100' }, console.log)
 ```
 
-Returns **[Promise][186]** Resolves to the first response or is rejected with an error
+Returns **[Promise][188]** Resolves to the first response or is rejected with an error
 
 ### subscribe
 
@@ -333,7 +335,7 @@ Errors should be handled by the user of the stream
 
 #### Parameters
 
--   `request` **[Object][172]** A request object acceptable by the API
+-   `request` **[Object][174]** A request object acceptable by the API
 
 #### Examples
 
@@ -359,7 +361,7 @@ API
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** API instance to get data that is not cached
+-   `api` **[DerivAPI][189]** API instance to get data that is not cached
 
 ### Examples
 
@@ -379,8 +381,8 @@ Abstract class for an underlying
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** 
--   `symbol` **[String][173]** 
+-   `api` **[DerivAPI][189]** 
+-   `symbol` **[String][175]** 
 
 ### Examples
 
@@ -397,23 +399,23 @@ if (underlying.isOpen) await contract.buy();
 
 ### name
 
-Returns **[Name][188]** The underlying name
+Returns **[Name][190]** The underlying name
 
 ### isOpen
 
-Returns **[Boolean][189]** is market open
+Returns **[Boolean][191]** is market open
 
 ### isTradingSuspended
 
-Returns **[Boolean][189]** is trading suspended
+Returns **[Boolean][191]** is trading suspended
 
 ### pipSize
 
-Returns **[Boolean][189]** pip size
+Returns **[Boolean][191]** pip size
 
 ### contractGroups
 
-Returns **[Object][172]** Contract Groups
+Returns **[Object][174]** Contract Groups
 
 ### pipSizedValue
 
@@ -431,9 +433,36 @@ Shortcut for api.tickStream(symbol)
 
 Shortcut for api.candleStream(symbol)
 
+## Name
+
+**Extends Immutable**
+
+A class for name of things
+
+### Parameters
+
+-   `full` **[String][175]** Full form of the name
+-   `short` **[String][175]** short form of the name
+
+### Examples
+
+```javascript
+const lc = account.landingCompany;
+
+console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
+```
+
+### code
+
+Returns **[String][175]** alias for this.short
+
+### shortcode
+
+Returns **[String][175]** alias for this.short
+
 ## SpotDurations
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
@@ -443,7 +472,7 @@ Type: [Object][172]
 
 ## ForwardDurations
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
@@ -451,21 +480,21 @@ Type: [Object][172]
 
 ## Durations
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `spot` **[SpotDurations][190]** 
--   `forward` **[ForwardDurations][191]** 
+-   `spot` **[SpotDurations][192]** 
+-   `forward` **[ForwardDurations][193]** 
 
 ## Units
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `spot` **[Name][188]** 
--   `forward` **[Name][188]** 
+-   `spot` **[Name][190]** 
+-   `forward` **[Name][190]** 
 
 ## Candle
 
@@ -475,79 +504,79 @@ A container for contract group info
 
 ### name
 
-Returns **[String][173]** contract name
+Returns **[String][175]** contract name
 
 ### barriers
 
-Returns **[Array][192]&lt;[Number][184]>** List of barriers
+Returns **[Array][194]&lt;[Number][186]>** List of barriers
 
 ### basis
 
-Returns **[String][173]** 'stake' or 'payout'
+Returns **[String][175]** 'stake' or 'payout'
 
 ### contractTypes
 
-Returns **[Array][192]&lt;[String][173]>** List of available contract types
+Returns **[Array][194]&lt;[String][175]>** List of available contract types
 
 ### durations
 
-Returns **[Durations][193]** Durations for spot and forward starting contracts
+Returns **[Durations][195]** Durations for spot and forward starting contracts
 
 ### units
 
-Returns **[Units][194]** Units for spot and forward starting contracts
+Returns **[Units][196]** Units for spot and forward starting contracts
 
 ### forwardSessions
 
-Returns **[Array][192]&lt;[DateRange][195]>** Durations for forward starting contracts
+Returns **[Array][194]&lt;[DateRange][197]>** Durations for forward starting contracts
 
 ### isForwardStarting
 
-Returns **[Boolean][189]** 
+Returns **[Boolean][191]** 
 
 ## Candle
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `time` **[CustomDate][196]** 
--   `open` **[MarketValue][197]** 
--   `high` **[MarketValue][197]** 
--   `low` **[MarketValue][197]** 
--   `close` **[MarketValue][197]** 
+-   `time` **[CustomDate][198]** 
+-   `open` **[MarketValue][199]** 
+-   `high` **[MarketValue][199]** 
+-   `low` **[MarketValue][199]** 
+-   `close` **[MarketValue][199]** 
 
 ### name
 
-Returns **[String][173]** contract name
+Returns **[String][175]** contract name
 
 ### barriers
 
-Returns **[Array][192]&lt;[Number][184]>** List of barriers
+Returns **[Array][194]&lt;[Number][186]>** List of barriers
 
 ### basis
 
-Returns **[String][173]** 'stake' or 'payout'
+Returns **[String][175]** 'stake' or 'payout'
 
 ### contractTypes
 
-Returns **[Array][192]&lt;[String][173]>** List of available contract types
+Returns **[Array][194]&lt;[String][175]>** List of available contract types
 
 ### durations
 
-Returns **[Durations][193]** Durations for spot and forward starting contracts
+Returns **[Durations][195]** Durations for spot and forward starting contracts
 
 ### units
 
-Returns **[Units][194]** Units for spot and forward starting contracts
+Returns **[Units][196]** Units for spot and forward starting contracts
 
 ### forwardSessions
 
-Returns **[Array][192]&lt;[DateRange][195]>** Durations for forward starting contracts
+Returns **[Array][194]&lt;[DateRange][197]>** Durations for forward starting contracts
 
 ### isForwardStarting
 
-Returns **[Boolean][189]** 
+Returns **[Boolean][191]** 
 
 ## Candle
 
@@ -557,45 +586,45 @@ A wrapper class for Candle
 
 ### Parameters
 
--   `candle` **[Object][172]** 
-    -   `candle.epoch` **([Number][184] \| [String][173])** 
-    -   `candle.open` **[Number][184]** 
-    -   `candle.high` **[Number][184]** 
-    -   `candle.low` **[Number][184]** 
-    -   `candle.close` **[Number][184]** 
--   `pip` **[Number][184]** 
+-   `candle` **[Object][174]** 
+    -   `candle.epoch` **([Number][186] \| [String][175])** 
+    -   `candle.open` **[Number][186]** 
+    -   `candle.high` **[Number][186]** 
+    -   `candle.low` **[Number][186]** 
+    -   `candle.close` **[Number][186]** 
+-   `pip` **[Number][186]** 
 
 ### name
 
-Returns **[String][173]** contract name
+Returns **[String][175]** contract name
 
 ### barriers
 
-Returns **[Array][192]&lt;[Number][184]>** List of barriers
+Returns **[Array][194]&lt;[Number][186]>** List of barriers
 
 ### basis
 
-Returns **[String][173]** 'stake' or 'payout'
+Returns **[String][175]** 'stake' or 'payout'
 
 ### contractTypes
 
-Returns **[Array][192]&lt;[String][173]>** List of available contract types
+Returns **[Array][194]&lt;[String][175]>** List of available contract types
 
 ### durations
 
-Returns **[Durations][193]** Durations for spot and forward starting contracts
+Returns **[Durations][195]** Durations for spot and forward starting contracts
 
 ### units
 
-Returns **[Units][194]** Units for spot and forward starting contracts
+Returns **[Units][196]** Units for spot and forward starting contracts
 
 ### forwardSessions
 
-Returns **[Array][192]&lt;[DateRange][195]>** Durations for forward starting contracts
+Returns **[Array][194]&lt;[DateRange][197]>** Durations for forward starting contracts
 
 ### isForwardStarting
 
-Returns **[Boolean][189]** 
+Returns **[Boolean][191]** 
 
 ## DateRange
 
@@ -605,8 +634,16 @@ A date range class
 
 ### Parameters
 
--   `open` **[CustomDate][196]** 
--   `close` **[CustomDate][196]** 
+-   `open` **[CustomDate][198]** 
+-   `close` **[CustomDate][198]** 
+
+## Immutable
+
+An abstract class for immutable objects
+
+### Parameters
+
+-   `props` **[Object][174]** A list of properties to add for the immutable object (optional, default `{}`)
 
 ## Account
 
@@ -616,8 +653,8 @@ Abstract class for user accounts
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** 
--   `token` **[String][173]** 
+-   `api` **[DerivAPI][189]** 
+-   `token` **[String][175]** 
 
 ### Examples
 
@@ -635,15 +672,15 @@ siblings[0].switch();
 
 ### siblings
 
-Returns **[Account][181]** all the sibling accounts
+Returns **[Account][183]** all the sibling accounts
 
 ### openContracts
 
-Returns **[Array][192]&lt;[Contract][179]>** A list of all open contracts
+Returns **[Array][194]&lt;[Contract][181]>** A list of all open contracts
 
 ### closedContracts
 
-Returns **[Array][192]&lt;[Contract][179]>** A list of all closed contracts
+Returns **[Array][194]&lt;[Contract][181]>** A list of all closed contracts
 
 ### balance
 
@@ -651,19 +688,19 @@ Returns **Balance** A stream of balance
 
 ### loginid
 
-Returns **[String][173]** 
+Returns **[String][175]** 
 
 ### statusCodes
 
-Returns **[Array][192]&lt;[String][173]>** A list of all status codes
+Returns **[Array][194]&lt;[String][175]>** A list of all status codes
 
 ### landingCompany
 
-Returns **[Name][188]** Name of the landing company
+Returns **[Name][190]** Name of the landing company
 
 ### apiTokens
 
-Returns **[Array][192]&lt;[String][173]>** A list of available API tokens
+Returns **[Array][194]&lt;[String][175]>** A list of available API tokens
 
 ### transactionStream
 
@@ -673,41 +710,6 @@ Returns **TransactionStream** A stream of transactions \*
 
 Switches to this account
 
-## Immutable
-
-An abstract class for immutable objects
-
-### Parameters
-
--   `props` **[Object][172]** A list of properties to add for the immutable object (optional, default `{}`)
-
-## Name
-
-**Extends Immutable**
-
-A class for name of things
-
-### Parameters
-
--   `full` **[String][173]** Full form of the name
--   `short` **[String][173]** short form of the name
-
-### Examples
-
-```javascript
-const lc = account.landingCompany;
-
-console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
-```
-
-### code
-
-Returns **[String][173]** alias for this.short
-
-### shortcode
-
-Returns **[String][173]** alias for this.short
-
 ## Assets
 
 **Extends Immutable**
@@ -716,7 +718,7 @@ Abstract class for trading assets
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** 
+-   `api` **[DerivAPI][189]** 
 
 ### Examples
 
@@ -731,40 +733,40 @@ const tradingTimes = assets.tradingTimes;
 
 ### underlyings
 
-Returns **[Array][192]&lt;[Underlying][180]>** 
+Returns **[Array][194]&lt;[Underlying][182]>** 
 
 ### openMarkets
 
-Returns **[Array][192]&lt;[Underlying][180]>** list of open markets
+Returns **[Array][194]&lt;[Underlying][182]>** list of open markets
 
 ### tradingTimes
 
-Returns **[Object][172]** 
+Returns **[Object][174]** 
 
 ### tradingDurations
 
-Returns **[Object][172]** 
+Returns **[Object][174]** 
 
 ## CandlesParam
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `granularity` **[Number][184]** Granularity in seconds
--   `range` **[HistoryRange][198]** A chunk of history to return with start and end time
--   `symbol` **[String][173]** Symbol of the candles
+-   `granularity` **[Number][186]** Granularity in seconds
+-   `range` **[HistoryRange][200]** A chunk of history to return with start and end time
+-   `symbol` **[String][175]** Symbol of the candles
 
 ## CandleStream
 
 **Extends Stream**
 
-An abstract class for Candles stream returned from [DerivAPI#candleStream][199]
+An abstract class for Candles stream returned from [DerivAPI#candleStream][201]
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** 
--   `options` **[CandlesParam][176]?** 
+-   `api` **[DerivAPI][189]** 
+-   `options` **[CandlesParam][178]?** 
 
 ### list
 
@@ -776,7 +778,7 @@ An immutable list of Candle objects
 const candles = candleStream.list;
 ```
 
-Returns **[Array][192]&lt;[Candle][200]>** 
+Returns **[Array][194]&lt;[Candle][202]>** 
 
 ### history
 
@@ -784,7 +786,7 @@ Resolves to a list of candles given the range
 
 #### Parameters
 
--   `range` **[HistoryRange][198]?** 
+-   `range` **[HistoryRange][200]?** 
 
 #### Examples
 
@@ -792,37 +794,37 @@ Resolves to a list of candles given the range
 const oldCandles = await candleStream.history({count: 10, end: yesterday})
 ```
 
-Returns **[Promise][186]&lt;[Array][192]&lt;[Candle][200]>>** 
+Returns **[Promise][188]&lt;[Array][194]&lt;[Candle][202]>>** 
 
 ## HistoryRange
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `start` **([Number][184] \| [Date][201])** An epoch in seconds or a Date object
--   `end` **([Number][184] \| [Date][201])**  An epoch in seconds or a Date object
--   `count` **[Number][184]** Number of ticks returned by history
+-   `start` **([Number][186] \| [Date][203])** An epoch in seconds or a Date object
+-   `end` **([Number][186] \| [Date][203])**  An epoch in seconds or a Date object
+-   `count` **[Number][186]** Number of ticks returned by history
 
 ## TicksParam
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `range` **[HistoryRange][198]** A chunk of history to return with start and end time
--   `symbol` **[String][173]** The ticks symbol
+-   `range` **[HistoryRange][200]** A chunk of history to return with start and end time
+-   `symbol` **[String][175]** The ticks symbol
 
 ## TickStream
 
 **Extends Stream**
 
-Abstract class for ticks stream returned by the [DerivAPI#tickStream][202]
+Abstract class for ticks stream returned by the [DerivAPI#tickStream][204]
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** 
--   `options` **[TicksParam][174]** 
+-   `api` **[DerivAPI][189]** 
+-   `options` **[TicksParam][176]** 
 
 ### list
 
@@ -834,7 +836,7 @@ An immutable list of Tick objects
 const ticks = tickStream.list;
 ```
 
-Returns **[Array][192]&lt;[Tick][203]>** 
+Returns **[Array][194]&lt;[Tick][205]>** 
 
 ### history
 
@@ -842,7 +844,7 @@ Resolves to a list of Ticks using the given range
 
 #### Parameters
 
--   `range` **[HistoryRange][198]?** 
+-   `range` **[HistoryRange][200]?** 
 
 #### Examples
 
@@ -850,7 +852,7 @@ Resolves to a list of Ticks using the given range
 const oldTicks = await tickStream.history({count: 10, end: yesterday})
 ```
 
-Returns **[Promise][186]&lt;[Array][192]&lt;[Tick][203]>>** 
+Returns **[Promise][188]&lt;[Array][194]&lt;[Tick][205]>>** 
 
 ## Stream
 
@@ -864,7 +866,7 @@ Listen on updates of a stream
 
 #### Parameters
 
--   `callback` **[Function][185]** 
+-   `callback` **[Function][187]** 
 
 #### Examples
 
@@ -880,14 +882,14 @@ Returns **Observable**
 
 ## Tick
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `time` **[CustomDate][196]** 
--   `quote` **[MarketValue][197]** 
--   `ask` **[MarketValue][197]** 
--   `bid` **[MarketValue][197]** 
+-   `time` **[CustomDate][198]** 
+-   `quote` **[MarketValue][199]** 
+-   `ask` **[MarketValue][199]** 
+-   `bid` **[MarketValue][199]** 
 
 ## Tick
 
@@ -897,12 +899,12 @@ A wrapper class for Tick
 
 ### Parameters
 
--   `tick` **[Object][172]** 
-    -   `tick.epoch` **([Number][184] \| [String][173])** 
-    -   `tick.quote` **[Number][184]** 
-    -   `tick.ask` **[Number][184]** 
-    -   `tick.bid` **[Number][184]** 
--   `pip` **[Number][184]** 
+-   `tick` **[Object][174]** 
+    -   `tick.epoch` **([Number][186] \| [String][175])** 
+    -   `tick.quote` **[Number][186]** 
+    -   `tick.ask` **[Number][186]** 
+    -   `tick.bid` **[Number][186]** 
+-   `pip` **[Number][186]** 
 
 ## CustomDate
 
@@ -918,9 +920,9 @@ Keeps a market value and pip size
 
 ### Parameters
 
--   `market` **[Object][172]** 
-    -   `market.value` **[Number][184]** 
-    -   `market.pip` **[Number][184]** 
+-   `market` **[Object][174]** 
+    -   `market.value` **[Number][186]** 
+    -   `market.pip` **[Number][186]** 
 
 ### pipSize
 
@@ -932,22 +934,22 @@ Returns the pipsized value
 
 ## ContractsParam
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `contractType` **[String][173]** 
--   `amount` **[Number][184]** 
--   `barrier` **[String][173]** 
--   `barrier2` **[String][173]** 
--   `dateExpiry` **([Number][184] \| [Date][201])** epoch in seconds or [Date][204]
--   `dateStart` **([Number][184] \| [Date][201])** epoch in seconds or [Date][204]
--   `Currency` **[String][173]?** Default is the account currency
--   `basis` **[String][173]** stake or payout
--   `duration` **([Number][184] \| [String][173])** duration with unit or duration in number
--   `durationUnit` **[String][173]?** duration unit, required if duration is number
--   `productType` **[String][173]?** 'multi_barrier' or 'basic'
--   `account` **[Account][181]?** The account that has this contract
+-   `contractType` **[String][175]** 
+-   `amount` **[Number][186]** 
+-   `barrier` **[String][175]** 
+-   `barrier2` **[String][175]** 
+-   `dateExpiry` **([Number][186] \| [Date][203])** epoch in seconds or [Date][206]
+-   `dateStart` **([Number][186] \| [Date][203])** epoch in seconds or [Date][206]
+-   `Currency` **[String][175]?** Default is the account currency
+-   `basis` **[String][175]** stake or payout
+-   `duration` **([Number][186] \| [String][175])** duration with unit or duration in number
+-   `durationUnit` **[String][175]?** duration unit, required if duration is number
+-   `productType` **[String][175]?** 'multi_barrier' or 'basic'
+-   `account` **[Account][183]?** The account that has this contract
 
 ## Contract
 
@@ -957,8 +959,8 @@ Abstract class for contracts
 
 ### Parameters
 
--   `api` **[DerivAPI][187]** 
--   `options` **[ContractsParam][178]** 
+-   `api` **[DerivAPI][189]** 
+-   `options` **[ContractsParam][180]** 
 
 ### Examples
 
@@ -976,10 +978,10 @@ Buys this contract
 
 #### Parameters
 
--   `buy` **[BuyParam][205]** 
+-   `buy` **[BuyParam][207]** 
     -   `buy.maxPrice`  
 
-Returns **[Buy][206]** 
+Returns **[Buy][208]** 
 
 ### sell
 
@@ -987,58 +989,58 @@ Sells this contract
 
 #### Parameters
 
--   `sell` **[SellParam][207]** 
+-   `sell` **[SellParam][209]** 
     -   `sell.maxPrice`  
 
-Returns **[Sell][208]** 
+Returns **[Sell][210]** 
 
 ### isExpired
 
-Returns **[Boolean][189]** 
+Returns **[Boolean][191]** 
 
 ### status
 
-Returns **[String][173]** Current status of the contract
+Returns **[String][175]** Current status of the contract
 
 ### sellPrice
 
-Returns **[Monetary][209]** Price at which the contract was sold
+Returns **[Monetary][211]** Price at which the contract was sold
 
 ### buyPrice
 
-Returns **[Monetary][209]** Price at which the contract was bought
+Returns **[Monetary][211]** Price at which the contract was bought
 
 ### type
 
-Returns **[String][173]** contract type
+Returns **[String][175]** contract type
 
 ### potentialPayout
 
-Returns **[Monetary][209]** The payout value before the contract was sold
+Returns **[Monetary][211]** The payout value before the contract was sold
 
 ### payout
 
-Returns **[Monetary][209]** The payout after selling the contract
+Returns **[Monetary][211]** The payout after selling the contract
 
 ### contractId
 
-Returns **[Number][184]** The contract ID after purchase
+Returns **[Number][186]** The contract ID after purchase
 
 ### purchaseTime
 
-Returns **[CustomDate][196]** Time of purchase
+Returns **[CustomDate][198]** Time of purchase
 
 ### isOpen
 
-Returns **[Boolean][189]** 
+Returns **[Boolean][191]** 
 
 ## BuyParam
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `maxPrice` **[Number][184]?** Maximum acceptable price for buyin the contract
+-   `maxPrice` **[Number][186]?** Maximum acceptable price for buyin the contract
 
 ## Buy
 
@@ -1048,11 +1050,11 @@ Wrapper around a Buy response
 
 ## SellParam
 
-Type: [Object][172]
+Type: [Object][174]
 
 ### Properties
 
--   `maxPrice` **[Number][184]?** Maximum acceptable price for selling the contract
+-   `maxPrice` **[Number][186]?** Maximum acceptable price for selling the contract
 
 ## Sell
 
@@ -1068,8 +1070,16 @@ Keep money related values
 
 ### Parameters
 
--   `Currency` **[String][173]** 
--   `Value` **[Number][184]** 
+-   `Currency` **[String][175]** 
+-   `Value` **[Number][186]** 
+
+### display
+
+Returns **[String][175]** decimal value based on currency
+
+### format
+
+Returns **[String][175]** comma separated decimal value based on currency
 
 [1]: #derivapi
 
@@ -1161,123 +1171,123 @@ Keep money related values
 
 [45]: #candlestream-1
 
-[46]: #spotdurations
+[46]: #name-1
 
-[47]: #properties
+[47]: #parameters-15
 
-[48]: #forwarddurations
+[48]: #examples-6
 
-[49]: #properties-1
+[49]: #code
 
-[50]: #durations
+[50]: #shortcode
 
-[51]: #properties-2
+[51]: #spotdurations
 
-[52]: #units
+[52]: #properties
 
-[53]: #properties-3
+[53]: #forwarddurations
 
-[54]: #candle
+[54]: #properties-1
 
-[55]: #name-1
+[55]: #durations
 
-[56]: #barriers
+[56]: #properties-2
 
-[57]: #basis
+[57]: #units
 
-[58]: #contracttypes
+[58]: #properties-3
 
-[59]: #durations-1
+[59]: #candle
 
-[60]: #units-1
+[60]: #name-2
 
-[61]: #forwardsessions
+[61]: #barriers
 
-[62]: #isforwardstarting
+[62]: #basis
 
-[63]: #candle-1
+[63]: #contracttypes
 
-[64]: #properties-4
+[64]: #durations-1
 
-[65]: #name-2
+[65]: #units-1
 
-[66]: #barriers-1
+[66]: #forwardsessions
 
-[67]: #basis-1
+[67]: #isforwardstarting
 
-[68]: #contracttypes-1
+[68]: #candle-1
 
-[69]: #durations-2
+[69]: #properties-4
 
-[70]: #units-2
+[70]: #name-3
 
-[71]: #forwardsessions-1
+[71]: #barriers-1
 
-[72]: #isforwardstarting-1
+[72]: #basis-1
 
-[73]: #candle-2
+[73]: #contracttypes-1
 
-[74]: #parameters-15
+[74]: #durations-2
 
-[75]: #name-3
+[75]: #units-2
 
-[76]: #barriers-2
+[76]: #forwardsessions-1
 
-[77]: #basis-2
+[77]: #isforwardstarting-1
 
-[78]: #contracttypes-2
+[78]: #candle-2
 
-[79]: #durations-3
+[79]: #parameters-16
 
-[80]: #units-3
+[80]: #name-4
 
-[81]: #forwardsessions-2
+[81]: #barriers-2
 
-[82]: #isforwardstarting-2
+[82]: #basis-2
 
-[83]: #daterange
+[83]: #contracttypes-2
 
-[84]: #parameters-16
+[84]: #durations-3
 
-[85]: #account-1
+[85]: #units-3
 
-[86]: #parameters-17
+[86]: #forwardsessions-2
 
-[87]: #examples-6
+[87]: #isforwardstarting-2
 
-[88]: #siblings
+[88]: #daterange
 
-[89]: #opencontracts
+[89]: #parameters-17
 
-[90]: #closedcontracts
+[90]: #immutable
 
-[91]: #balance-1
+[91]: #parameters-18
 
-[92]: #loginid
+[92]: #account-1
 
-[93]: #statuscodes
+[93]: #parameters-19
 
-[94]: #landingcompany
+[94]: #examples-7
 
-[95]: #apitokens
+[95]: #siblings
 
-[96]: #transactionstream-1
+[96]: #opencontracts
 
-[97]: #switch
+[97]: #closedcontracts
 
-[98]: #immutable
+[98]: #balance-1
 
-[99]: #parameters-18
+[99]: #loginid
 
-[100]: #name-4
+[100]: #statuscodes
 
-[101]: #parameters-19
+[101]: #landingcompany
 
-[102]: #examples-7
+[102]: #apitokens
 
-[103]: #code
+[103]: #transactionstream-1
 
-[104]: #shortcode
+[104]: #switch
 
 [105]: #assets-1
 
@@ -1413,78 +1423,82 @@ Keep money related values
 
 [171]: #parameters-31
 
-[172]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[172]: #display
 
-[173]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[173]: #format
 
-[174]: #ticksparam
+[174]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[175]: #tickstream
+[175]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[176]: #candlesparam
+[176]: #ticksparam
 
-[177]: #candlestream
+[177]: #tickstream
 
-[178]: #contractsparam
+[178]: #candlesparam
 
-[179]: #contract
+[179]: #candlestream
 
-[180]: #underlying
+[180]: #contractsparam
 
-[181]: #account
+[181]: #contract
 
-[182]: #assets
+[182]: #underlying
 
-[183]: https://developer.mozilla.org/docs/WebSockets
+[183]: #account
 
-[184]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[184]: #assets
 
-[185]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[185]: https://developer.mozilla.org/docs/WebSockets
 
-[186]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[186]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[187]: #derivapi
+[187]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
 
-[188]: #name
+[188]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[189]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[189]: #derivapi
 
-[190]: #spotdurations
+[190]: #name
 
-[191]: #forwarddurations
+[191]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[192]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[192]: #spotdurations
 
-[193]: #durations
+[193]: #forwarddurations
 
-[194]: #units
+[194]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[195]: #daterange
+[195]: #durations
 
-[196]: #customdate
+[196]: #units
 
-[197]: #marketvalue
+[197]: #daterange
 
-[198]: #historyrange
+[198]: #customdate
 
-[199]: #derivapicandlestream
+[199]: #marketvalue
 
-[200]: #candle
+[200]: #historyrange
 
-[201]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[201]: #derivapicandlestream
 
-[202]: #derivapitickstream
+[202]: #candle
 
-[203]: #tick
+[203]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[204]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[204]: #derivapitickstream
 
-[205]: #buyparam
+[205]: #tick
 
-[206]: #buy
+[206]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[207]: #sellparam
+[207]: #buyparam
 
-[208]: #sell
+[208]: #buy
 
-[209]: #monetary
+[209]: #sellparam
+
+[210]: #sell
+
+[211]: #monetary

@@ -18,18 +18,18 @@ import Stream from '../Types/Stream';
 
 /**
  * Abstract class for contracts
+ *
+ * @example
+ * const contract = account.contract({ contractType: 'CALL', ...options })
+ *
+ * const buy = await contract.buy();
+ *
+ * contract.onUpdate().subscribe(console.log)
+ *
+ * @param {DerivAPI} api
+ * @param {ContractsParam} options
  */
 export default class Contract extends Stream {
-    /**
-     * @param {DerivAPI} api
-     * @param {ContractsParam} options
-     */
-    constructor(api, options) {
-        super();
-        this.api = api;
-        Object.assign(this, options);
-    }
-
     // Called by the API to initialize the instance
     async init() {
         return Promise.resolve(undefined);

@@ -13,18 +13,11 @@ import Immutable from '../Types/Immutable';
  *
  * // Switches the API account to the first sibling
  * siblings[0].switch();
+ *
+ * @param {DerivAPI} api
+ * @param {String} token
  */
 export default class Account extends Immutable {
-    /**
-     * @param {DerivAPI} api
-     * @param {String} token
-     */
-    constructor(api, token) {
-        super();
-        this.api   = api;
-        this.token = token;
-    }
-
     // Called by the API to initialize the instance
     async init() {
         /*

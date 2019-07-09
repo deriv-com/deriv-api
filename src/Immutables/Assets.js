@@ -10,16 +10,10 @@ import Immutable from '../Types/Immutable';
  * const openMarkets = assets.openMarkets;
  *
  * const tradingTimes = assets.tradingTimes;
+ *
+ * @param {DerivAPI} api
  */
 export default class Assets extends Immutable {
-    /**
-     * @param {DerivAPI} api
-     */
-    constructor(api) {
-        super();
-        this.api = api;
-    }
-
     // Called by the API to initialize the instance
     async init() {
         /*

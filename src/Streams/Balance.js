@@ -9,16 +9,10 @@ import Stream from '../Types/Stream';
  * const formattedBalance = balance.format;
  *
  * balance.onUpdate().subscribe(balance => console.log)
+ *
+ * @param {DerivAPI} api
  */
 export default class Balance extends Stream {
-    /**
-     * @param {DerivAPI} api
-     */
-    constructor(api) {
-        super();
-        this.api = api;
-    }
-
     // Called by the API to initialize the instance
     async init() {
         /*

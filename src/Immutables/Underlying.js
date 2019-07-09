@@ -12,18 +12,11 @@ import Immutable from '../Types/Immutable';
  * const tickStream = underlying.tickStream();
  *
  * if (underlying.isOpen) await contract.buy();
+ *
+ * @param {DerivAPI} api
+ * @param {String} symbol
  */
 export default class Underlying extends Immutable {
-    /**
-     * @param {DerivAPI} api
-     * @param {String} symbol
-     */
-    constructor(api, symbol) {
-        super();
-        this.api    = api;
-        this.symbol = symbol;
-    }
-
     // Called by the API to initialize the instance
     async init() {
         /*
@@ -46,12 +39,12 @@ export default class Underlying extends Immutable {
     }
 
     /** Shortcut for api.tickStream(symbol) */
-    get tickStream() {
+    tickStream() {
         return this.api.tickStream(this.symbol);
     }
 
     /** Shortcut for api.candleStream(symbol) */
-    get candleStream() {
+    candleStream() {
         return this.api.candleStream(this.symbol);
     }
 }

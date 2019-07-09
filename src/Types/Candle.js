@@ -14,6 +14,13 @@ import MarketValue from './MarketValue';
 
 /**
  * A candle object
+ * @param {Object} options
+ * @param {Number|String} options.epoch
+ * @param {Number} options.open
+ * @param {Number} options.high
+ * @param {Number} options.low
+ * @param {Number} options.close
+ * @param {Number} pip
  */
 export default class Candle extends Immutable {
     /**

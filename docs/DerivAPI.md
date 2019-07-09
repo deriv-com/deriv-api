@@ -36,14 +36,14 @@
         -   [Parameters][32]
     -   [tickStream][33]
     -   [candleStream][34]
--   [Immutable][35]
--   [Account][36]
-    -   [Parameters][37]
-    -   [Examples][38]
-    -   [siblings][39]
-    -   [openContracts][40]
-    -   [closedContracts][41]
-    -   [switch][42]
+-   [Account][35]
+    -   [Parameters][36]
+    -   [Examples][37]
+    -   [siblings][38]
+    -   [openContracts][39]
+    -   [closedContracts][40]
+    -   [switch][41]
+-   [Immutable][42]
 -   [Assets][43]
     -   [Parameters][44]
     -   [Examples][45]
@@ -65,26 +65,26 @@
     -   [history][61]
         -   [Parameters][62]
 -   [defaultRange][63]
--   [Tick][64]
-    -   [Properties][65]
--   [Tick][66]
-    -   [Parameters][67]
--   [CustomDate][68]
--   [MarketValue][69]
-    -   [Parameters][70]
-    -   [pipSize][71]
-    -   [pipSized][72]
--   [ContractsParam][73]
-    -   [Properties][74]
--   [Contract][75]
-    -   [Parameters][76]
-    -   [buy][77]
-        -   [Parameters][78]
-    -   [sell][79]
-        -   [Parameters][80]
-    -   [isExpired][81]
-    -   [status][82]
--   [Stream][83]
+-   [Stream][64]
+-   [Tick][65]
+    -   [Properties][66]
+-   [Tick][67]
+    -   [Parameters][68]
+-   [CustomDate][69]
+-   [MarketValue][70]
+    -   [Parameters][71]
+    -   [pipSize][72]
+    -   [pipSized][73]
+-   [ContractsParam][74]
+    -   [Properties][75]
+-   [Contract][76]
+    -   [Parameters][77]
+    -   [buy][78]
+        -   [Parameters][79]
+    -   [sell][80]
+        -   [Parameters][81]
+    -   [isExpired][82]
+    -   [status][83]
 
 ## DerivAPI
 
@@ -295,10 +295,6 @@ Shortcut for api.tickStream(symbol)
 
 Shortcut for api.candleStream(symbol)
 
-## Immutable
-
-An abstract class for immutable objects
-
 ## Account
 
 **Extends Immutable**
@@ -339,6 +335,10 @@ Returns **[Array][100]&lt;[Contract][91]>** A list of all closed contracts
 ### switch
 
 Switches to this account
+
+## Immutable
+
+An abstract class for immutable objects
 
 ## Assets
 
@@ -444,6 +444,12 @@ Returns **[Array][100]&lt;[Tick][103]>**
 
 Default range of ticks: 1000 latest ticks
 
+## Stream
+
+**Extends Immutable**
+
+An abstract class for stream objects
+
 ## Tick
 
 Type: [Object][84]
@@ -463,12 +469,12 @@ A wrapper class for Tick
 
 ### Parameters
 
--   `$0` **[Object][84]** 
-    -   `$0.epoch`  
-    -   `$0.quote`  
-    -   `$0.ask`  
-    -   `$0.bid`  
--   `pip`  
+-   `options` **[Object][84]** 
+    -   `options.epoch` **([Number][96] \| [String][85])** 
+    -   `options.quote` **[Number][96]** 
+    -   `options.ask` **[Number][96]** 
+    -   `options.bid` **[Number][96]** 
+-   `pip` **[Number][96]** 
 
 ## CustomDate
 
@@ -555,12 +561,6 @@ Returns **[Boolean][107]**
 
 Returns **[String][85]** Current status of the contract
 
-## Stream
-
-**Extends Immutable**
-
-An abstract class for stream objects
-
 [1]: #derivapi
 
 [2]: #parameters
@@ -629,21 +629,21 @@ An abstract class for stream objects
 
 [34]: #candlestream-1
 
-[35]: #immutable
+[35]: #account-1
 
-[36]: #account-1
+[36]: #parameters-12
 
-[37]: #parameters-12
+[37]: #examples-6
 
-[38]: #examples-6
+[38]: #siblings
 
-[39]: #siblings
+[39]: #opencontracts
 
-[40]: #opencontracts
+[40]: #closedcontracts
 
-[41]: #closedcontracts
+[41]: #switch
 
-[42]: #switch
+[42]: #immutable
 
 [43]: #assets-1
 
@@ -687,45 +687,45 @@ An abstract class for stream objects
 
 [63]: #defaultrange
 
-[64]: #tick
+[64]: #stream
 
-[65]: #properties-3
+[65]: #tick
 
-[66]: #tick-1
+[66]: #properties-3
 
-[67]: #parameters-18
+[67]: #tick-1
 
-[68]: #customdate
+[68]: #parameters-18
 
-[69]: #marketvalue
+[69]: #customdate
 
-[70]: #parameters-19
+[70]: #marketvalue
 
-[71]: #pipsize
+[71]: #parameters-19
 
-[72]: #pipsized
+[72]: #pipsize
 
-[73]: #contractsparam
+[73]: #pipsized
 
-[74]: #properties-4
+[74]: #contractsparam
 
-[75]: #contract-1
+[75]: #properties-4
 
-[76]: #parameters-20
+[76]: #contract-1
 
-[77]: #buy
+[77]: #parameters-20
 
-[78]: #parameters-21
+[78]: #buy
 
-[79]: #sell
+[79]: #parameters-21
 
-[80]: #parameters-22
+[80]: #sell
 
-[81]: #isexpired
+[81]: #parameters-22
 
-[82]: #status
+[82]: #isexpired
 
-[83]: #stream
+[83]: #status
 
 [84]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 

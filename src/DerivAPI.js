@@ -102,6 +102,26 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
+     * A balance stream
+     *
+     * @param {String} token
+     * @returns {Balance}
+     */
+    async balance(token) {
+        return this.account(token).balance();
+    }
+
+    /**
+     * A transaction stream
+     *
+     * @param {String} token
+     * @returns {TransactionStream}
+     */
+    async transactionStream(token) {
+        return this.account(token).transactionStream();
+    }
+
+    /**
      * Trading assets including multiple underlyings and trading times
      *
      * @returns {Assets}
@@ -112,5 +132,12 @@ export default class DerivAPI extends DerivAPIBasic {
         await assets.init();
 
         return assets;
+    }
+
+    /**
+     * Changes the account to the given account
+     */
+    changeAccount(account) {
+        this.account = account;
     }
 }

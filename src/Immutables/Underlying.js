@@ -1,3 +1,5 @@
+import Name from '../Types/Name'; /* eslint-disable-line no-unused-vars */
+import ContractGroup from '../Types/ContractGroup'; /* eslint-disable-line no-unused-vars */
 import Immutable from '../Types/Immutable';
 
 /**
@@ -28,6 +30,31 @@ export default class Underlying extends Immutable {
          */
 
         return Promise.resolve(undefined);
+    }
+
+    /** @returns {Name} - The underlying name */
+    get name() {
+        return this._data.name;
+    }
+
+    /** @returns {Boolean} - is market open */
+    get isOpen() {
+        return this._data.isOpen;
+    }
+
+    /** @returns {Boolean} - is trading suspended */
+    get isTradingSuspended() {
+        return this._data.isTradingSuspended;
+    }
+
+    /** @returns {Boolean} - pip size */
+    get pipSize() {
+        return this._data.pipSize;
+    }
+
+    /** @returns {Object} - Contract Groups */
+    get contractGroups() {
+        return this._data.contractGroups;
     }
 
     /** Returns the pipSized display of the value in string */

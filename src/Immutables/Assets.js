@@ -17,15 +17,30 @@ export default class Assets extends Immutable {
     // Called by the API to initialize the instance
     async init() {
         /*
-         * this.tradingTimes = await this.api.cache.tradingTimes(...);
-         * this.tradingDurations = await this.api.cache.tradingDurations(...);
-         * this.underlyings = extractUnderlyings(this.activeSymbols);
+         * this._data.tradingTimes = await this.api.cache.tradingTimes(...);
+         * this._data.tradingDurations = await this.api.cache.tradingDurations(...);
+         * this._data.underlyings = extractUnderlyings(this.activeSymbols);
          */
         return Promise.resolve(undefined);
     }
 
-    /** Returns the current {@link Underlying} list for open markets */
+    /** @returns {Underlying[]} */
+    get underlyings() {
+        return [];
+    }
+
+    /** @returns {Underlying[]} list of open markets */
     get openMarkets() {
+        return [];
+    }
+
+    /** @returns {Object} */
+    get tradingTimes() {
+        return [];
+    }
+
+    /** @returns {Object} */
+    get tradingDurations() {
         return [];
     }
 }

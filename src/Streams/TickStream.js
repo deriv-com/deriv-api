@@ -54,13 +54,23 @@ export default class TickStream extends Stream {
             .pipe(skip(1))
             .pipe(map(t => wrapTick(t, this.pip)));
 
-        /** A list of Tick objects */
-        this.list = await tickStream
+        this._data.list = await tickStream
             .pipe(first())
             .pipe(map(h => historyToTicks(h, this.pip)))
             .toPromise();
 
         this.freeze();
+    }
+
+
+    /**
+     * An immutable list of Tick objects
+     *
+     * @example
+     * const ticks = tickStream.list;
+     */
+    get list() {
+        return [...this._data.list];
     }
 
     /**

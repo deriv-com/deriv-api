@@ -21,5 +21,6 @@ module.exports = {
         'no-use-before-define'               : 0,
         'no-useless-constructor'             : 0,
         'class-methods-use-this'             : 0,
+        'no-underscore-dangle'               : ['error', { "allow": ["_data"] }],
     },
 };

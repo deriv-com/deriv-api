@@ -54,18 +54,18 @@
     -   [Parameters][50]
     -   [history][51]
         -   [Parameters][52]
--   [Range][53]
-    -   [Properties][54]
--   [TicksParam][55]
-    -   [Properties][56]
--   [TickStream][57]
-    -   [Parameters][58]
-    -   [onUpdate][59]
-    -   [list][60]
-    -   [history][61]
-        -   [Parameters][62]
--   [defaultRange][63]
--   [Stream][64]
+-   [Stream][53]
+-   [Range][54]
+    -   [Properties][55]
+-   [TicksParam][56]
+    -   [Properties][57]
+-   [TickStream][58]
+    -   [Parameters][59]
+    -   [onUpdate][60]
+    -   [list][61]
+    -   [history][62]
+        -   [Parameters][63]
+-   [defaultRange][64]
 -   [Tick][65]
     -   [Properties][66]
 -   [Tick][67]
@@ -394,6 +394,12 @@ An abstract class for Candles information
 
 Returns **[Array][100]&lt;Candle>** 
 
+## Stream
+
+**Extends Immutable**
+
+An abstract class for stream objects
+
 ## Range
 
 Type: [Object][84]
@@ -443,12 +449,6 @@ Returns **[Array][100]&lt;[Tick][103]>**
 ## defaultRange
 
 Default range of ticks: 1000 latest ticks
-
-## Stream
-
-**Extends Immutable**
-
-An abstract class for stream objects
 
 ## Tick
 
@@ -665,29 +665,29 @@ Returns **[String][85]** Current status of the contract
 
 [52]: #parameters-15
 
-[53]: #range
+[53]: #stream
 
-[54]: #properties-1
+[54]: #range
 
-[55]: #ticksparam
+[55]: #properties-1
 
-[56]: #properties-2
+[56]: #ticksparam
 
-[57]: #tickstream-2
+[57]: #properties-2
 
-[58]: #parameters-16
+[58]: #tickstream-2
 
-[59]: #onupdate
+[59]: #parameters-16
 
-[60]: #list
+[60]: #onupdate
 
-[61]: #history-1
+[61]: #list
 
-[62]: #parameters-17
+[62]: #history-1
 
-[63]: #defaultrange
+[63]: #parameters-17
 
-[64]: #stream
+[64]: #defaultrange
 
 [65]: #tick
 

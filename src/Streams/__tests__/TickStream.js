@@ -11,10 +11,16 @@ beforeAll(() => {
     api = new DerivAPI();
 });
 
+afterAll(() => {
+    api.disconnect();
+});
+
 test('Request for a ticks history', async () => {
     const tickStream = await api.tickStream('R_100');
 
     expect(tickStream).toBeInstanceOf(TickStream);
+
+    expect(() => { tickStream.list = []; }).toThrow(Error);
 
     const ticks = tickStream.list; // last 1000 1-minute ticks
 

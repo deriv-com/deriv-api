@@ -4,6 +4,5 @@
 export default class Immutable {
     freeze() {
         Object.freeze(this);
-        return this;
     }
 }

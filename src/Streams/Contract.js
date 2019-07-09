@@ -1,6 +1,7 @@
 import Stream from '../Types/Stream';
 import Buy from '../Types/Buy'; /* eslint-disable-line no-unused-vars */
 import Sell from '../Types/Sell'; /* eslint-disable-line no-unused-vars */
+import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
 
 /**
  * @typedef {Object} ContractsParam

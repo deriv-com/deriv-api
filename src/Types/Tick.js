@@ -14,11 +14,11 @@ import MarketValue from './MarketValue';
 /**
  * A wrapper class for Tick
  *
- * @param {Object} options
- * @param {Number|String} options.epoch
- * @param {Number} options.quote
- * @param {Number} options.ask
- * @param {Number} options.bid
+ * @param {Object} tick
+ * @param {Number|String} tick.epoch
+ * @param {Number} tick.quote
+ * @param {Number} tick.ask
+ * @param {Number} tick.bid
  * @param {Number} pip
  */
 export default class Tick extends Immutable {

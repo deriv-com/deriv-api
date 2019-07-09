@@ -59,28 +59,28 @@
     -   [history][55]
         -   [Parameters][56]
         -   [Examples][57]
--   [Stream][58]
-    -   [onUpdate][59]
-        -   [Parameters][60]
-        -   [Examples][61]
--   [Candle][62]
-    -   [Properties][63]
--   [Candle][64]
-    -   [Parameters][65]
--   [CustomDate][66]
--   [MarketValue][67]
-    -   [Parameters][68]
-    -   [pipSize][69]
-    -   [pipSized][70]
--   [HistoryRange][71]
-    -   [Properties][72]
--   [TicksParam][73]
-    -   [Properties][74]
--   [TickStream][75]
-    -   [Parameters][76]
-    -   [list][77]
-        -   [Examples][78]
-    -   [history][79]
+-   [Candle][58]
+    -   [Properties][59]
+-   [Candle][60]
+    -   [Parameters][61]
+-   [CustomDate][62]
+-   [MarketValue][63]
+    -   [Parameters][64]
+    -   [pipSize][65]
+    -   [pipSized][66]
+-   [HistoryRange][67]
+    -   [Properties][68]
+-   [TicksParam][69]
+    -   [Properties][70]
+-   [TickStream][71]
+    -   [Parameters][72]
+    -   [list][73]
+        -   [Examples][74]
+    -   [history][75]
+        -   [Parameters][76]
+        -   [Examples][77]
+-   [Stream][78]
+    -   [onUpdate][79]
         -   [Parameters][80]
         -   [Examples][81]
 -   [Tick][82]
@@ -436,32 +436,6 @@ const oldCandles = await candleStream.history({count: 10, end: yesterday})
 
 Returns **[Promise][110]&lt;[Array][112]&lt;[Candle][115]>>** 
 
-## Stream
-
-**Extends Immutable**
-
-An abstract class for stream objects
-
-### onUpdate
-
-Listen on updates of a stream
-
-#### Parameters
-
--   `callback` **[Function][109]** 
-
-#### Examples
-
-```javascript
-const tickStream = api.tickStream('R_100');
-
-tickStream.onUpdate(console.log);
-
-tickStream.onUpdate().subscribe(console.log);
-```
-
-Returns **Observable** 
-
 ## Candle
 
 Type: [Object][96]
@@ -482,12 +456,12 @@ A wrapper class for Candle
 
 ### Parameters
 
--   `options` **[Object][96]** 
-    -   `options.epoch` **([Number][108] \| [String][97])** 
-    -   `options.open` **[Number][108]** 
-    -   `options.high` **[Number][108]** 
-    -   `options.low` **[Number][108]** 
-    -   `options.close` **[Number][108]** 
+-   `candle` **[Object][96]** 
+    -   `candle.epoch` **([Number][108] \| [String][97])** 
+    -   `candle.open` **[Number][108]** 
+    -   `candle.high` **[Number][108]** 
+    -   `candle.low` **[Number][108]** 
+    -   `candle.close` **[Number][108]** 
 -   `pip` **[Number][108]** 
 
 ## CustomDate
@@ -574,6 +548,32 @@ const oldTicks = await tickStream.history({count: 10, end: yesterday})
 
 Returns **[Promise][110]&lt;[Array][112]&lt;[Tick][120]>>** 
 
+## Stream
+
+**Extends Immutable**
+
+An abstract class for stream objects
+
+### onUpdate
+
+Listen on updates of a stream
+
+#### Parameters
+
+-   `callback` **[Function][109]** 
+
+#### Examples
+
+```javascript
+const tickStream = api.tickStream('R_100');
+
+tickStream.onUpdate(console.log);
+
+tickStream.onUpdate().subscribe(console.log);
+```
+
+Returns **Observable** 
+
 ## Tick
 
 Type: [Object][96]
@@ -593,11 +593,11 @@ A wrapper class for Tick
 
 ### Parameters
 
--   `options` **[Object][96]** 
-    -   `options.epoch` **([Number][108] \| [String][97])** 
-    -   `options.quote` **[Number][108]** 
-    -   `options.ask` **[Number][108]** 
-    -   `options.bid` **[Number][108]** 
+-   `tick` **[Object][96]** 
+    -   `tick.epoch` **([Number][108] \| [String][97])** 
+    -   `tick.quote` **[Number][108]** 
+    -   `tick.ask` **[Number][108]** 
+    -   `tick.bid` **[Number][108]** 
 -   `pip` **[Number][108]** 
 
 ## ContractsParam
@@ -774,49 +774,49 @@ Returns **[String][97]** Current status of the contract
 
 [57]: #examples-9
 
-[58]: #stream
+[58]: #candle
 
-[59]: #onupdate
+[59]: #properties-1
 
-[60]: #parameters-17
+[60]: #candle-1
 
-[61]: #examples-10
+[61]: #parameters-17
 
-[62]: #candle
+[62]: #customdate
 
-[63]: #properties-1
+[63]: #marketvalue
 
-[64]: #candle-1
+[64]: #parameters-18
 
-[65]: #parameters-18
+[65]: #pipsize
 
-[66]: #customdate
+[66]: #pipsized
 
-[67]: #marketvalue
+[67]: #historyrange
 
-[68]: #parameters-19
+[68]: #properties-2
 
-[69]: #pipsize
+[69]: #ticksparam
 
-[70]: #pipsized
+[70]: #properties-3
 
-[71]: #historyrange
+[71]: #tickstream-2
 
-[72]: #properties-2
+[72]: #parameters-19
 
-[73]: #ticksparam
+[73]: #list-1
 
-[74]: #properties-3
+[74]: #examples-10
 
-[75]: #tickstream-2
+[75]: #history-1
 
 [76]: #parameters-20
 
-[77]: #list-1
+[77]: #examples-11
 
-[78]: #examples-11
+[78]: #stream
 
-[79]: #history-1
+[79]: #onupdate
 
 [80]: #parameters-21
 

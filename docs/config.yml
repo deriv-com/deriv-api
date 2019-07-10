@@ -1,9 +1,9 @@
 toc:
     - name: Main Modules
       children:
-          - DerivAPI
-          - DerivAPIBasic
-    - name: Abstract objects
+          - name: DerivAPI
+          - name: DerivAPIBasic
+    - name: Abstract Objects
       children:
           - name: Immutables
             description: |
@@ -11,46 +11,46 @@ toc:
                 use of them, changing internal fields of these objects is blocked
                 and they do not receive updates.
             children:
-                - Account
-                - Assets
-                - Underlying
-                - Tick
-                - Candle
-                - Transaction
-                - ContractGroup
-                - Buy
-                - Sell
+                - name: Account
+                - name: Assets
+                - name: Underlying
+                - name: Tick
+                - name: Candle
+                - name: Transaction
+                - name: ContractGroup
+                - name: Buy
+                - name: Sell
           - name: Streams
             description: |
                 Live stream of data, plus some dynamically updated fields, you
                 can subscribe to changes using the `onUpdate` method on all of
                 these classes.
             children:
-                - Balance
-                - CandleStream
-                - Contract
-                - TickStream
-                - TransactionStream
+                - name: Balance
+                - name: CandleStream
+                - name: Contract
+                - name: TickStream
+                - name: TransactionStream
           - name: Types
             description: |
                 Container classes for data types, providing means to convert them
                 to other types and represent them to the UI. These are mostly
                 simpler objects used for representing data.
             children:
-                - MarketValue
-                - Monetary
-                - FullName
-                - CustomDate
-                - DateRange
-                - Duration
-                - DurationRange
-                - Immutable
-                - Stream
-    - name: Core functionality
+                - name: MarketValue
+                - name: Monetary
+                - name: FullName
+                - name: CustomDate
+                - name: DateRange
+                - name: Duration
+                - name: DurationRange
+                - name: Immutable
+                - name: Stream
+    - name: Core Functionality
       children:
-          - Cache
-          - SubscriptionManager
-          - Storage
+          - name: Cache
+          - name: SubscriptionManager
+          - name: Storage
     - name: Object References
       description: |
           These are plain JavaScript objects that are named to easily refer to
@@ -59,15 +59,15 @@ toc:
       children:
           - name: Parameters
             children:
-                - CandlesParam
-                - TicksParam
-                - ContractsParam
-                - BuyParam
-                - SellParam
-                - HistoryRange
+                - name: CandlesParam
+                - name: TicksParam
+                - name: ContractsParam
+                - name: BuyParam
+                - name: SellParam
+                - name: HistoryRange
           - name: Plain objects (returned from methods)
             children:
-                - SpotDurations
-                - ForwardDurations
-                - Durations
-                - Units
+                - name: SpotDurations
+                - name: ForwardDurations
+                - name: Durations
+                - name: Units

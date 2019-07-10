@@ -11,7 +11,7 @@ import Contract         from '../Streams/Contract';
  * const account = await api.accounts(yourToken);
  *
  * // Returns the open contracts of this account
- * const openContracts = account.openContracts();
+ * const openContracts = account.openContracts;
  *
  * const siblings = account.siblings;
  *

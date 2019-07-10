@@ -74,4 +74,14 @@ npm run docs
 npm run devel_docs
 ```
 
+## Serve docs on localhost and update on source code changes
 
+```
+npm run serve_docs
+```
+
+## Generate html version of the docs and publish it to gh-pages
+
+```
+npm run gh-pages
+```

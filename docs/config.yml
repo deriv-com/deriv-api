@@ -1,0 +1,24 @@
+toc:
+    - DerivAPI
+    - name: DerivAPIBasic
+      children:
+          - name: Immutables
+            description: |
+                Abstract objects that provide static content and methods to make
+                use of them, changing internal fields of these objects is blocked
+                and they do not receive updates.
+            children:
+                - Account
+                - Assets
+                - Underlying
+          - name: Streams
+            description: |
+                Live stream of data, plus some dynamically updated fields, you
+                can subscribe to changes using the `onUpdate` method on all of
+                these classes.
+            children:
+                - Balance
+                - CandleStream
+                - Contract
+                - TickStream
+                - TransactionStream

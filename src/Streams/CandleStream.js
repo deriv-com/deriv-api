@@ -21,7 +21,7 @@ export default class CandleStream extends Stream {
 
     // Called by the API to initialize the instance
     async init() {
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /**
@@ -33,7 +33,7 @@ export default class CandleStream extends Stream {
      * @returns {Candle[]}
      */
     get list() {
-        return [];
+        return this._data.list;
     }
 
     /**
@@ -45,7 +45,7 @@ export default class CandleStream extends Stream {
      * @param {HistoryRange=} range
      * @returns {Promise<Candle[]>}
      */
-    async history() {
-        return Promise.resolve(undefined);
+    async history(range) {
+        return range ? this.api.ticksHistory({ style: 'candles' }) : this._data.list;
     }
 }

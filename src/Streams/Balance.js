@@ -21,7 +21,7 @@ export default class Balance extends Stream {
          * this._data.balance = new Monetary(balance.balance, balance.currency)
          * this._data.onUpdate = this.api.subscribe({ balance: 1})
          */
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /** @returns {Monetary} */

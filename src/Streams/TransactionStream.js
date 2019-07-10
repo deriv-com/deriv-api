@@ -16,7 +16,7 @@ import Transaction from '../Types/Transaction'; /* eslint-disable-line no-unused
 export default class TransactionStream extends Stream {
     // Called by the API to initialize the instance
     async init() {
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /** @returns {Transaction[]} */

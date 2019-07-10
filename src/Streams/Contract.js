@@ -35,7 +35,7 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
 export default class Contract extends Stream {
     // Called by the API to initialize the instance
     async init() {
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /**
@@ -60,12 +60,12 @@ export default class Contract extends Stream {
 
     /** @returns {Boolean} */
     get isExpired() {
-        return false;
+        return this._data.isExpired;
     }
 
     /** @returns {String} - Current status of the contract */
     get status() {
-        return false;
+        return this._data.status;
     }
 
     /** @returns {Monetary} - Price at which the contract was sold */

@@ -29,7 +29,7 @@ export default class Underlying extends Immutable {
          * this.contractGroups = groupContracts(assetIndex)
          */
 
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /** @returns {Name} - The underlying name */
@@ -62,7 +62,7 @@ export default class Underlying extends Immutable {
         /*
          * return toPipSized(value, this.pip);
          */
-        return value;
+        return value.toFixed(this.pip.toString().length - 2);
     }
 
     /** Shortcut for api.tickStream(symbol) */

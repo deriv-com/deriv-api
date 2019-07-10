@@ -25,7 +25,7 @@ export default class Account extends Immutable {
          * this.balance = new Balance(this.api)
          * await this.balance.init()
          */
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /** @returns {Account} all the sibling accounts */

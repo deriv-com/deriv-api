@@ -21,26 +21,26 @@ export default class Assets extends Immutable {
          * this._data.tradingDurations = await this.api.cache.tradingDurations(...);
          * this._data.underlyings = extractUnderlyings(this.activeSymbols);
          */
-        return Promise.resolve(undefined);
+        return this;
     }
 
     /** @returns {Underlying[]} */
     get underlyings() {
-        return [];
+        return this._data.underlyings;
     }
 
     /** @returns {Underlying[]} list of open markets */
     get openMarkets() {
-        return [];
+        return this._data.underlyings.filter(u => u.isOpen());
     }
 
     /** @returns {Object} */
     get tradingTimes() {
-        return [];
+        return this._data.tradingTimes;
     }
 
     /** @returns {Object} */
     get tradingDurations() {
-        return [];
+        return this._data.tradingDurations;
     }
 }

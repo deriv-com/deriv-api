@@ -122,30 +122,30 @@
     -   [history][118]
         -   [Parameters][119]
         -   [Examples][120]
--   [HistoryRange][121]
-    -   [Properties][122]
--   [TicksParam][123]
-    -   [Properties][124]
--   [TickStream][125]
-    -   [Parameters][126]
-    -   [list][127]
-        -   [Examples][128]
-    -   [history][129]
-        -   [Parameters][130]
-        -   [Examples][131]
--   [Stream][132]
-    -   [onUpdate][133]
-        -   [Parameters][134]
-        -   [Examples][135]
--   [Tick][136]
-    -   [Properties][137]
--   [Tick][138]
-    -   [Parameters][139]
--   [CustomDate][140]
--   [MarketValue][141]
-    -   [Parameters][142]
-    -   [pipSize][143]
-    -   [pipSized][144]
+-   [Stream][121]
+    -   [onUpdate][122]
+        -   [Parameters][123]
+        -   [Examples][124]
+-   [CustomDate][125]
+-   [MarketValue][126]
+    -   [Parameters][127]
+    -   [pipSize][128]
+    -   [pipSized][129]
+-   [HistoryRange][130]
+    -   [Properties][131]
+-   [TicksParam][132]
+    -   [Properties][133]
+-   [TickStream][134]
+    -   [Parameters][135]
+    -   [list][136]
+        -   [Examples][137]
+    -   [history][138]
+        -   [Parameters][139]
+        -   [Examples][140]
+-   [Tick][141]
+    -   [Properties][142]
+-   [Tick][143]
+    -   [Parameters][144]
 -   [ContractsParam][145]
     -   [Properties][146]
 -   [Contract][147]
@@ -796,6 +796,58 @@ const oldCandles = await candleStream.history({count: 10, end: yesterday})
 
 Returns **[Promise][188]&lt;[Array][194]&lt;[Candle][202]>>** 
 
+## Stream
+
+**Extends Immutable**
+
+An abstract class for stream objects
+
+### onUpdate
+
+Listen on updates of a stream
+
+#### Parameters
+
+-   `callback` **[Function][187]** 
+
+#### Examples
+
+```javascript
+const tickStream = api.tickStream('R_100');
+
+tickStream.onUpdate(console.log);
+
+tickStream.onUpdate().subscribe(console.log);
+```
+
+Returns **Observable** 
+
+## CustomDate
+
+**Extends Immutable**
+
+An alternative date object
+
+## MarketValue
+
+**Extends Immutable**
+
+Keeps a market value and pip size
+
+### Parameters
+
+-   `market` **[Object][174]** 
+    -   `market.value` **[Number][186]** 
+    -   `market.pip` **[Number][186]** 
+
+### pipSize
+
+Returns the pip size
+
+### pipSized
+
+Returns the pipsized value
+
 ## HistoryRange
 
 Type: [Object][174]
@@ -854,32 +906,6 @@ const oldTicks = await tickStream.history({count: 10, end: yesterday})
 
 Returns **[Promise][188]&lt;[Array][194]&lt;[Tick][205]>>** 
 
-## Stream
-
-**Extends Immutable**
-
-An abstract class for stream objects
-
-### onUpdate
-
-Listen on updates of a stream
-
-#### Parameters
-
--   `callback` **[Function][187]** 
-
-#### Examples
-
-```javascript
-const tickStream = api.tickStream('R_100');
-
-tickStream.onUpdate(console.log);
-
-tickStream.onUpdate().subscribe(console.log);
-```
-
-Returns **Observable** 
-
 ## Tick
 
 Type: [Object][174]
@@ -905,32 +931,6 @@ A wrapper class for Tick
     -   `tick.ask` **[Number][186]** 
     -   `tick.bid` **[Number][186]** 
 -   `pip` **[Number][186]** 
-
-## CustomDate
-
-**Extends Immutable**
-
-An alternative date object
-
-## MarketValue
-
-**Extends Immutable**
-
-Keeps a market value and pip size
-
-### Parameters
-
--   `market` **[Object][174]** 
-    -   `market.value` **[Number][186]** 
-    -   `market.pip` **[Number][186]** 
-
-### pipSize
-
-Returns the pip size
-
-### pipSized
-
-Returns the pipsized value
 
 ## ContractsParam
 
@@ -1321,53 +1321,53 @@ Returns **[String][175]** comma separated decimal value based on currency
 
 [120]: #examples-10
 
-[121]: #historyrange
+[121]: #stream
 
-[122]: #properties-6
+[122]: #onupdate
 
-[123]: #ticksparam
+[123]: #parameters-23
 
-[124]: #properties-7
+[124]: #examples-11
 
-[125]: #tickstream-2
+[125]: #customdate
 
-[126]: #parameters-23
+[126]: #marketvalue
 
-[127]: #list-1
+[127]: #parameters-24
 
-[128]: #examples-11
+[128]: #pipsize-1
 
-[129]: #history-1
+[129]: #pipsized
 
-[130]: #parameters-24
+[130]: #historyrange
 
-[131]: #examples-12
+[131]: #properties-6
 
-[132]: #stream
+[132]: #ticksparam
 
-[133]: #onupdate
+[133]: #properties-7
 
-[134]: #parameters-25
+[134]: #tickstream-2
 
-[135]: #examples-13
+[135]: #parameters-25
 
-[136]: #tick
+[136]: #list-1
 
-[137]: #properties-8
+[137]: #examples-12
 
-[138]: #tick-1
+[138]: #history-1
 
 [139]: #parameters-26
 
-[140]: #customdate
+[140]: #examples-13
 
-[141]: #marketvalue
+[141]: #tick
 
-[142]: #parameters-27
+[142]: #properties-8
 
-[143]: #pipsize-1
+[143]: #tick-1
 
-[144]: #pipsized
+[144]: #parameters-27
 
 [145]: #contractsparam
 

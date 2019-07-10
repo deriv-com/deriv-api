@@ -27,10 +27,6 @@ import Contract         from './Streams/Contract';
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */
 export default class DerivAPI extends DerivAPIBasic {
-    constructor(options) {
-        super(options);
-    }
-
     /**
      * Provides a ticks stream and a list of available ticks
      *

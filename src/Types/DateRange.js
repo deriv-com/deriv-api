@@ -5,4 +5,13 @@ import Immutable from './Immutable';
  * @param {CustomDate} open
  * @param {CustomDate} close
  */
-export default class DateRange extends Immutable {}
+export default class DateRange extends Immutable {
+    /**
+     * @param {CustomDate|Date|Number} date
+     * @returns {Boolean}
+     */
+    isInRange(date) {
+        const { open, close } = this._data;
+        return date.isAfter(open) && date.isBefore(close);
+    }
+}

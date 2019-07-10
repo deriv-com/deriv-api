@@ -718,6 +718,22 @@ console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
 
 An alternative date object
 
+##### isBefore
+
+###### Parameters
+
+-   `date` **([CustomDate][89] \| [Date][106] \| [Number][82])** 
+
+Returns **[Boolean][88]** 
+
+##### isAfter
+
+###### Parameters
+
+-   `date` **([CustomDate][89] \| [Date][106] \| [Number][82])** 
+
+Returns **[Boolean][88]** 
+
 #### DateRange
 
 **Extends Immutable**
@@ -728,6 +744,14 @@ A date range class
 
 -   `open` **[CustomDate][89]** 
 -   `close` **[CustomDate][89]** 
+
+##### isInRange
+
+###### Parameters
+
+-   `date` **([CustomDate][89] \| [Date][106] \| [Number][82])** 
+
+Returns **[Boolean][88]** 
 
 #### Duration
 

@@ -1,17 +1,19 @@
 import Immutable from './Immutable';
+import CustomDate from './CustomDate';
 
 /** Class to keep duration ranges
  *
- * @param {Number} min
- * @param {Number} max
+ * @param {Duration} min
+ * @param {Duration} max
  */
 export default class DurationRange extends Immutable {
     /**
      * @param {CustomDate|Date|Number} date
      * @returns {Boolean}
      */
-    isInRange(date) {
-        const { min, max } = this._data;
-        return date.isAfter(min) && date.isBefore(max);
+    isInRange(rawDate) {
+        const date = new CustomDate(rawDate);
+
+        return date.isInRange(this);
     }
 }

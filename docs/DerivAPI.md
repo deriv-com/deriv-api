@@ -777,13 +777,14 @@ Class to keep duration ranges
 
 ##### Parameters
 
--   `min` **[Number][82]** 
--   `max` **[Number][82]** 
+-   `min` **[Duration][98]** 
+-   `max` **[Duration][98]** 
 
 ##### isInRange
 
 ###### Parameters
 
+-   `rawDate`  
 -   `date` **([CustomDate][89] \| [Date][106] \| [Number][82])** 
 
 Returns **[Boolean][88]** 

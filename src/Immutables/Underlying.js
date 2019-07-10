@@ -1,6 +1,6 @@
-import Name from '../Types/Name'; /* eslint-disable-line no-unused-vars */
-import ContractGroup from '../Types/ContractGroup'; /* eslint-disable-line no-unused-vars */
 import Immutable from '../Types/Immutable';
+import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
+import ContractGroup from './ContractGroup'; /* eslint-disable-line no-unused-vars */
 
 /**
  * Abstract class for an underlying
@@ -32,7 +32,7 @@ export default class Underlying extends Immutable {
         return this;
     }
 
-    /** @returns {Name} - The underlying name */
+    /** @returns {FullName} - The underlying name */
     get name() {
         return this._data.name;
     }

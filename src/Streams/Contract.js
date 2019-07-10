@@ -1,8 +1,8 @@
 import Stream from '../Types/Stream';
-import Buy from '../Types/Buy'; /* eslint-disable-line no-unused-vars */
-import Sell from '../Types/Sell'; /* eslint-disable-line no-unused-vars */
+import Buy from '../Immutables/Buy'; /* eslint-disable-line no-unused-vars */
+import Sell from '../Immutables/Sell'; /* eslint-disable-line no-unused-vars */
 import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
-
+import Duration from '../Types/Duration'; /* eslint-disable-line no-unused-vars */
 /**
  * @typedef {Object} ContractsParam
  * @property {String} contractType
@@ -105,6 +105,11 @@ export default class Contract extends Stream {
 
     /** @returns {Boolean} */
     get isOpen() {
-        return this.status === 'open';
+        return this._data.status === 'open';
+    }
+
+    /** @returns {Duration} */
+    get duration() {
+        return this._data.duration;
     }
 }

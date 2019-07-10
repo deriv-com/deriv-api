@@ -1,6 +1,6 @@
-import Immutable from './Immutable';
-import CustomDate from './CustomDate';
-import MarketValue from './MarketValue';
+import Immutable from '../Types/Immutable';
+import CustomDate from '../Types/CustomDate';
+import MarketValue from '../Types/MarketValue';
 
 /**
  * @typedef {Object} Tick

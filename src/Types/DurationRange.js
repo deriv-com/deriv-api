@@ -7,7 +7,7 @@ import Immutable from './Immutable';
  */
 export default class DurationRange extends Immutable {
     /**
-     * @param {CustomDate} date
+     * @param {CustomDate|Date|Number} date
      * @returns {Boolean}
      */
     isInRange(date) {

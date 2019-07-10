@@ -1,4 +1,4 @@
-import Immutable from './Immutable';
+import Immutable from '../Types/Immutable';
 
 /**
  * @typedef {Object} SellParam

@@ -1,6 +1,7 @@
-import Immutable from './Immutable';
-import Name from './Name'; /* eslint-disable-line no-unused-vars */
-import DateRange from './DateRange'; /* eslint-disable-line no-unused-vars */
+import Immutable from '../Types/Immutable';
+import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
+import DateRange from '../Types/DateRange'; /* eslint-disable-line no-unused-vars */
+import DurationRange from '../Types/DurationRange'; /* eslint-disable-line no-unused-vars */
 
 /**
  * @typedef {Object} SpotDurations
@@ -26,12 +27,12 @@ import DateRange from './DateRange'; /* eslint-disable-line no-unused-vars */
 /**
  * @typedef {Object} Units
  *
- * @property {Name} spot
- * @property {Name} forward
+ * @property {FullName} spot
+ * @property {FullName} forward
  */
 
 /** A container for contract group info */
-export default class Candle extends Immutable {
+export default class ContractGroup extends Immutable {
     /** @returns {String} - contract name */
     get name() {
         return this._data.name;

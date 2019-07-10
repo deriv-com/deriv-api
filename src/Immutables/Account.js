@@ -1,5 +1,7 @@
 import Immutable from '../Types/Immutable';
-import Name from '../Types/Name'; /* eslint-disable-line no-unused-vars */
+import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
+import Balance from '../Streams/Balance'; /* eslint-disable-line no-unused-vars */
+import TransactionStream from '../Streams/TransactionStream'; /* eslint-disable-line no-unused-vars */
 
 /**
  * Abstract class for user accounts
@@ -58,7 +60,7 @@ export default class Account extends Immutable {
         return this._data.statusCodes;
     }
 
-    /** @returns {Name} - Name of the landing company */
+    /** @returns {FullName} - Name of the landing company */
     get landingCompany() {
         return this._data.landingCompany;
     }

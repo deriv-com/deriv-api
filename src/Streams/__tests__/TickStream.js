@@ -1,7 +1,7 @@
 import WebSocket    from 'ws';
 import TickStream from '../TickStream';
 import DerivAPI     from '../../DerivAPI';
-import Tick       from '../../Types/Tick';
+import Tick       from '../../Immutables/Tick';
 
 let api;
 

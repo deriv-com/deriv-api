@@ -1,6 +1,6 @@
 import { map, first, skip } from 'rxjs/operators';
 import Stream from '../Types/Stream';
-import Tick   from '../Types/Tick';
+import Tick   from '../Immutables/Tick';
 import { parseRequestRange, parseTicksOptions } from '../utils';
 
 /**

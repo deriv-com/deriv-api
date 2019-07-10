@@ -10,15 +10,8 @@ import Immutable from './Immutable';
  * const lc = account.landingCompany;
  *
  * console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
+ *
+ * @property {String} code - alias for this.short
+ * @property {String} shortcode - alias for this.short
  */
-export default class FullName extends Immutable {
-    /** @returns {String} - alias for this.short */
-    get code() {
-        return this._data.short;
-    }
-
-    /** @returns {String} - alias for this.short */
-    get shortcode() {
-        return this._data.short;
-    }
-}
+export default class FullName extends Immutable {}

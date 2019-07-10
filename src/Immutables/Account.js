@@ -19,6 +19,17 @@ import TransactionStream from '../Streams/TransactionStream'; /* eslint-disable-
  *
  * @param {DerivAPI} api
  * @param {String} token
+ *
+ * @property {Account[]} siblings
+ * @property {Contract[]} contracts
+ * @property {Contract[]} openContracts
+ * @property {Contract[]} closedContracts
+ * @property {Balance} balance
+ * @property {String} loginid
+ * @property {String[]} statusCodes
+ * @property {FullName} landingCompany
+ * @property {String[]} apiTokens
+ * @property {TransactionStream} transactionStream
  */
 export default class Account extends Immutable {
     // Called by the API to initialize the instance
@@ -28,51 +39,6 @@ export default class Account extends Immutable {
          * await this.balance.init()
          */
         return this;
-    }
-
-    /** @returns {Account} all the sibling accounts */
-    get siblings() {
-        return this._data.siblings;
-    }
-
-    /** @returns {Contract[]} A list of all open contracts */
-    get openContracts() {
-        return this._data.contracts.filter(c => c.isOpen);
-    }
-
-    /** @returns {Contract[]} A list of all closed contracts */
-    get closedContracts() {
-        return this._data.contracts.filter(c => !c.isOpen);
-    }
-
-    /** @returns {Balance} - A stream of balance */
-    balance() {
-        return this._data.balance;
-    }
-
-    /** @returns {String} */
-    get loginid() {
-        return this._data.loginid;
-    }
-
-    /** @returns {String[]} - A list of all status codes */
-    get statusCodes() {
-        return this._data.statusCodes;
-    }
-
-    /** @returns {FullName} - Name of the landing company */
-    get landingCompany() {
-        return this._data.landingCompany;
-    }
-
-    /** @returns {String[]} - A list of available API tokens */
-    get apiTokens() {
-        return this._data.apiTokens;
-    }
-
-    /** @returns {TransactionStream} - A stream of transactions * */
-    transactionStream() {
-        return this._data.transactionStream;
     }
 
     /** Switches to this account */

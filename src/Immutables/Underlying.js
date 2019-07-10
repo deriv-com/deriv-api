@@ -17,6 +17,13 @@ import ContractGroup from './ContractGroup'; /* eslint-disable-line no-unused-va
  *
  * @param {DerivAPI} api
  * @param {String} symbol
+ *
+ * @property {FullName} name
+ * @property {Boolean} isOpen
+ * @property {Boolean} isTradingSuspended
+ * @property {Number} pipSize
+ * @property {Object} contractGroups
+ * @property {Object} contractGroups
  */
 export default class Underlying extends Immutable {
     // Called by the API to initialize the instance
@@ -30,31 +37,6 @@ export default class Underlying extends Immutable {
          */
 
         return this;
-    }
-
-    /** @returns {FullName} - The underlying name */
-    get name() {
-        return this._data.name;
-    }
-
-    /** @returns {Boolean} - is market open */
-    get isOpen() {
-        return this._data.isOpen;
-    }
-
-    /** @returns {Boolean} - is trading suspended */
-    get isTradingSuspended() {
-        return this._data.isTradingSuspended;
-    }
-
-    /** @returns {Boolean} - pip size */
-    get pipSize() {
-        return this._data.pipSize;
-    }
-
-    /** @returns {Object} - Contract Groups */
-    get contractGroups() {
-        return this._data.contractGroups;
     }
 
     /** Returns the pipSized display of the value in string */

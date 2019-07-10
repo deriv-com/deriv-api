@@ -12,6 +12,12 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
  * balance.onUpdate().subscribe(balance => console.log)
  *
  * @param {DerivAPI} api
+ *
+ * @property {Monetary} amount
+ * @property {Number} value - numeric balance value
+ * @property {String} currency - currency of the amount
+ * @property {String} display - display value of amount (decimal point)
+ * @property {String} format - formatted amount (decimal point, comma separated)
  */
 export default class Balance extends Stream {
     // Called by the API to initialize the instance
@@ -22,30 +28,5 @@ export default class Balance extends Stream {
          * this._data.onUpdate = this.api.subscribe({ balance: 1})
          */
         return this;
-    }
-
-    /** @returns {Monetary} */
-    get amount() {
-        return this._data.amount;
-    }
-
-    /** @returns {Number} numeric balance value */
-    get value() {
-        return this._data.amount.value;
-    }
-
-    /** @returns {String} currency of the _data.amount. */
-    get currency() {
-        return this._data.amount.currency;
-    }
-
-    /** @returns {String} display value of _data.amount.(decimal point) */
-    get display() {
-        return this._data.amount.display();
-    }
-
-    /** @returns {String} formatted _data.amount.(decimal point, comma separated) */
-    get format() {
-        return this._data.amount.format();
     }
 }

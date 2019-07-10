@@ -70,4 +70,4 @@ toc:
                 - name: SpotDurations
                 - name: ForwardDurations
                 - name: Durations
-                - name: Units
+                - name: DurationUnits

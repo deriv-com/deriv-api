@@ -31,6 +31,18 @@ import Duration from '../Types/Duration'; /* eslint-disable-line no-unused-vars 
  *
  * @param {DerivAPI} api
  * @param {ContractsParam} options
+ *
+ * @property {String} status - Current status of the contract
+ * @property {Monetary} sellPrice - Price at which the contract was sold
+ * @property {Monetary} buyPrice - Price at which the contract was bought
+ * @property {String} type - contract type
+ * @property {Monetary} potentialPayout - The payout value before the contract was sold
+ * @property {Monetary} payout - The payout after selling the contract
+ * @property {Number} contractId - The contract ID after purchase
+ * @property {CustomDate} purchaseTime - Time of purchase
+ * @property {Boolean} isExpired
+ * @property {Boolean} isOpen
+ * @property {Duration} duration
  */
 export default class Contract extends Stream {
     // Called by the API to initialize the instance
@@ -56,60 +68,5 @@ export default class Contract extends Stream {
      */
     async sell({ maxPrice: price }) {
         return this.api.sell({ sell: this.contractId, price });
-    }
-
-    /** @returns {Boolean} */
-    get isExpired() {
-        return this._data.isExpired;
-    }
-
-    /** @returns {String} - Current status of the contract */
-    get status() {
-        return this._data.status;
-    }
-
-    /** @returns {Monetary} - Price at which the contract was sold */
-    get sellPrice() {
-        return this._data.sellPrice;
-    }
-
-    /** @returns {Monetary} - Price at which the contract was bought */
-    get buyPrice() {
-        return this._data.buyPrice;
-    }
-
-    /** @returns {String} - contract type */
-    get type() {
-        return this.contractType;
-    }
-
-    /** @returns {Monetary} - The payout value before the contract was sold */
-    get potentialPayout() {
-        return this._data.potentialPayout;
-    }
-
-    /** @returns {Monetary} - The payout after selling the contract */
-    get payout() {
-        return this._data.payout;
-    }
-
-    /** @returns {Number} - The contract ID after purchase */
-    get contractId() {
-        return this._data.contractId;
-    }
-
-    /** @returns {CustomDate} - Time of purchase */
-    get purchaseTime() {
-        return this._data.purchaseTime;
-    }
-
-    /** @returns {Boolean} */
-    get isOpen() {
-        return this._data.status === 'open';
-    }
-
-    /** @returns {Duration} */
-    get duration() {
-        return this._data.duration;
     }
 }

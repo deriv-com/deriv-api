@@ -4,15 +4,8 @@ import Immutable from './Immutable';
  *
  * @param {String} Currency
  * @param {Number} Value
+ *
+ * @property {String} display - decimal value based on currency
+ * @property {String} format - comma separated decimal value based on currency
  */
-export default class Monetary extends Immutable {
-    /** @returns {String} decimal value based on currency */
-    get display() {
-        return this.value.toFixed(2);
-    }
-
-    /** @returns {String} comma separated decimal value based on currency */
-    get format() {
-        return this.value.toFixed(2);
-    }
-}
+export default class Monetary extends Immutable {}

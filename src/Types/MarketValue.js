@@ -6,15 +6,8 @@ import Immutable from './Immutable';
  * @param {Object} market
  * @param {Number} market.value
  * @param {Number} market.pip
+ *
+ * @property {Number} pipSize
+ * @property {Number} pipSized - the pipsized value
  */
-export default class MarketValue extends Immutable {
-    /** Returns the pip size */
-    get pipSize() {
-        return this.pip.toString().length - 2;
-    }
-
-    /** Returns the pipsized value */
-    pipSized() {
-        return this.value.toFixed(this.pipSize);
-    }
-}
+export default class MarketValue extends Immutable {}

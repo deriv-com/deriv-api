@@ -12,6 +12,11 @@ import Immutable from '../Types/Immutable';
  * const tradingTimes = assets.tradingTimes;
  *
  * @param {DerivAPI} api
+ *
+ * @property {Underlying[]} underlyings
+ * @property {Underlying[]} openMarkets
+ * @property {Object} tradingTimes
+ * @property {Object} tradingDurations
  */
 export default class Assets extends Immutable {
     // Called by the API to initialize the instance
@@ -22,25 +27,5 @@ export default class Assets extends Immutable {
          * this._data.underlyings = extractUnderlyings(this.activeSymbols);
          */
         return this;
-    }
-
-    /** @returns {Underlying[]} */
-    get underlyings() {
-        return this._data.underlyings;
-    }
-
-    /** @returns {Underlying[]} list of open markets */
-    get openMarkets() {
-        return this._data.underlyings.filter(u => u.isOpen());
-    }
-
-    /** @returns {Object} */
-    get tradingTimes() {
-        return this._data.tradingTimes;
-    }
-
-    /** @returns {Object} */
-    get tradingDurations() {
-        return this._data.tradingDurations;
     }
 }

@@ -20,6 +20,8 @@ import { parseRequestRange, parseTicksOptions } from '../utils';
  * Abstract class for ticks stream returned by the {@link DerivAPI#tickStream}
  * @param {DerivAPI} api
  * @param {TicksParam} options
+ *
+ * @property {Tick[]} list - An immutable list of ticks
  */
 export default class TickStream extends Stream {
     constructor(api, options) {
@@ -42,14 +44,6 @@ export default class TickStream extends Stream {
     }
 
 
-    /**
-     * An immutable list of Tick objects
-     *
-     * @example
-     * const ticks = tickStream.list;
-     *
-     * @returns {Tick[]}
-     */
     get list() {
         return [...this._data.list];
     }

@@ -4,25 +4,10 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
 
 /**
  * A class for transaction objects
+ *
+ * @property {String} action
+ * @property {Monetary} amount
+ * @property {Number} transactionId
+ * @property {CustomDate} time
  */
-export default class Transaction extends Immutable {
-    /** @returns {String} */
-    get action() {
-        return this._data.action;
-    }
-
-    /** @returns {Monetary} */
-    get amount() {
-        return this._data.amount;
-    }
-
-    /** @returns {Number} */
-    get transactionId() {
-        return this._data.transactionId;
-    }
-
-    /** @returns {CustomDate} */
-    get time() {
-        return this._data.time;
-    }
-}
+export default class Transaction extends Immutable {}

@@ -3,16 +3,6 @@ import CustomDate from '../Types/CustomDate';
 import MarketValue from '../Types/MarketValue';
 
 /**
- * @typedef {Object} Candle
- *
- * @property {CustomDate} time
- * @property {MarketValue} open
- * @property {MarketValue} high
- * @property {MarketValue} low
- * @property {MarketValue} close
- */
-
-/**
  * A wrapper class for Candle
  *
  * @param {Object} candle
@@ -22,6 +12,12 @@ import MarketValue from '../Types/MarketValue';
  * @param {Number} candle.low
  * @param {Number} candle.close
  * @param {Number} pip
+ *
+ * @property {CustomDate} time
+ * @property {MarketValue} open
+ * @property {MarketValue} high
+ * @property {MarketValue} low
+ * @property {MarketValue} close
  */
 export default class Candle extends Immutable {
     constructor({

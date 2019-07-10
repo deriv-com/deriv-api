@@ -13,6 +13,8 @@ import { parseTicksOptions } from '../utils';
  * An abstract class for Candles stream returned from {@link DerivAPI#candleStream}
  * @param {DerivAPI} api
  * @param {CandlesParam=} options
+ *
+ * @property {Candle[]} list - An immutable list of candles
  */
 export default class CandleStream extends Stream {
     constructor(api, options) {
@@ -22,18 +24,6 @@ export default class CandleStream extends Stream {
     // Called by the API to initialize the instance
     async init() {
         return this;
-    }
-
-    /**
-     * An immutable list of Candle objects
-     *
-     * @example
-     * const candles = candleStream.list;
-     *
-     * @returns {Candle[]}
-     */
-    get list() {
-        return this._data.list;
     }
 
     /**

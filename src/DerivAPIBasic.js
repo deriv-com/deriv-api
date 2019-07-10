@@ -9,6 +9,8 @@ import {
     ConstructionError,
     ResponseError,
 }                       from './Types/errors';
+import './Storage';
+import './SubscriptionManager';
 
 /**
  * The minimum functionality provided by DerivAPI, provides direct calls to the

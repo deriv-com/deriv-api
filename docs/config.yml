@@ -1,7 +1,10 @@
 toc:
-    - name: Main module
+    - name: Main Modules
       children:
           - DerivAPI
+          - DerivAPIBasic
+    - name: Abstract objects
+      children:
           - name: Immutables
             description: |
                 Abstract objects that provide static content and methods to make
@@ -43,9 +46,8 @@ toc:
                 - DurationRange
                 - Immutable
                 - Stream
-    - name: Basic functionality
+    - name: Core functionality
       children:
-          - DerivAPIBasic
           - Cache
           - SubscriptionManager
           - Storage

@@ -1,6 +1,7 @@
 import Immutable from '../Types/Immutable';
 import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
 import ContractGroup from './ContractGroup'; /* eslint-disable-line no-unused-vars */
+import Contract         from '../Streams/Contract';
 
 /**
  * Abstract class for an underlying
@@ -55,5 +56,19 @@ export default class Underlying extends Immutable {
     /** Shortcut for api.candleStream(symbol) */
     candleStream() {
         return this.api.candleStream(this.symbol);
+    }
+
+    /**
+     * A contract object with latest market values, cannot be bought or sold
+     *
+     * @param {ContractsParam} options - parameters defining the contract
+     * @returns {Contract}
+     */
+    async contract(options) {
+        const contract = new Contract({ symbol: this.symbol, ...options });
+
+        await contract.init();
+
+        return contract;
     }
 }

@@ -2,6 +2,7 @@ import Immutable from '../Types/Immutable';
 import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
 import Balance from '../Streams/Balance'; /* eslint-disable-line no-unused-vars */
 import TransactionStream from '../Streams/TransactionStream'; /* eslint-disable-line no-unused-vars */
+import Contract         from '../Streams/Contract';
 
 /**
  * Abstract class for user accounts
@@ -26,6 +27,7 @@ import TransactionStream from '../Streams/TransactionStream'; /* eslint-disable-
  * @property {Contract[]} closedContracts
  * @property {Balance} balance
  * @property {String} loginid
+ * @property {String} currency
  * @property {String[]} statusCodes
  * @property {FullName} landingCompany
  * @property {String[]} apiTokens
@@ -39,6 +41,20 @@ export default class Account extends Immutable {
          * await this.balance.init()
          */
         return this;
+    }
+
+    /**
+     * A contract object with latest status and ability to buy/sell
+     *
+     * @param {ContractsParam} options - parameters defining the contract
+     * @returns {Contract}
+     */
+    async contract(options) {
+        const contract = new Contract(this.api, { currency: this.currency, ...options });
+
+        await contract.init();
+
+        return contract;
     }
 
     /** Switches to this account */

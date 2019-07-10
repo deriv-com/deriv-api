@@ -56,7 +56,7 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
-     * A contract object with latest status and ability to buy/sell
+     * A contract object with latest market values, cannot be bought or sold
      *
      * @param {ContractsParam} options - parameters defining the contract
      * @returns {Contract}

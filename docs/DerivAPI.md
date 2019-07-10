@@ -125,7 +125,7 @@ Returns **[CandleStream][73]**
 
 #### contract
 
-A contract object with latest status and ability to buy/sell
+A contract object with latest market values, cannot be bought or sold
 
 ##### Parameters
 
@@ -282,6 +282,7 @@ Abstract class for user accounts
 -   `closedContracts` **[Array][86]&lt;[Contract][75]>** 
 -   `balance` **[Balance][78]** 
 -   `loginid` **[String][69]** 
+-   `currency` **[String][69]** 
 -   `statusCodes` **[Array][86]&lt;[String][69]>** 
 -   `landingCompany` **[FullName][87]** 
 -   `apiTokens` **[Array][86]&lt;[String][69]>** 
@@ -300,6 +301,16 @@ const siblings = account.siblings;
 // Switches the API account to the first sibling
 siblings[0].switch();
 ```
+
+##### contract
+
+A contract object with latest status and ability to buy/sell
+
+###### Parameters
+
+-   `options` **[ContractsParam][74]** parameters defining the contract
+
+Returns **[Contract][75]** 
 
 ##### switch
 
@@ -381,6 +392,16 @@ Shortcut for api.tickStream(symbol)
 ##### candleStream
 
 Shortcut for api.candleStream(symbol)
+
+##### contract
+
+A contract object with latest market values, cannot be bought or sold
+
+###### Parameters
+
+-   `options` **[ContractsParam][74]** parameters defining the contract
+
+Returns **[Contract][75]** 
 
 #### Tick
 

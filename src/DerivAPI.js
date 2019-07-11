@@ -1,10 +1,11 @@
-import DerivAPIBasic    from './DerivAPIBasic';
-import Underlying       from './Immutables/Underlying';
 import Account          from './Immutables/Account';
 import Assets           from './Immutables/Assets';
+import DerivAPIBasic    from './DerivAPIBasic';
+import Underlying       from './Immutables/Underlying';
 import CandleStream     from './Streams/CandleStream';
-import TickStream       from './Streams/TickStream';
 import Contract         from './Streams/Contract';
+import TickStream       from './Streams/TickStream';
+import WebsiteStatus    from './Streams/WebsiteStatus';
 
 /**
  * The main class of the DerivAPI module. This class extends the minimum
@@ -131,9 +132,28 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
-     * Changes the account to the given account
+     * Website status stream
+     *
+     * @returns {WebsiteStatus}
      */
-    changeAccount(account) {
-        this.account = account;
+    async websiteStatus() {
+        const wsStream = new WebsiteStatus(this);
+
+        await wsStream.init();
+
+        return wsStream;
+    }
+
+    /**
+     * Changes the account to the given account
+     *
+     * @param {Account} account - Account to authenticate API with
+     *
+     * @returns {Promise<Account>} Authenticated account
+     */
+    async changeAccount(account) {
+        this.authAccount = await this.account(account.token);
+
+        return this.authAccount;
     }
 }

@@ -22,6 +22,7 @@ import Contract         from '../Streams/Contract';
  * @param {String} token
  *
  * @property {Account[]} siblings
+ * @property {Boolean} isAuthenticated - If API is authenticated with this account
  * @property {Contract[]} contracts
  * @property {Contract[]} openContracts
  * @property {Contract[]} closedContracts
@@ -58,7 +59,7 @@ export default class Account extends Immutable {
     }
 
     /** Switches to this account */
-    switch() {
-        this.api.changeAccount(this);
+    async switch() {
+        return this.api.changeAccount(this);
     }
 }

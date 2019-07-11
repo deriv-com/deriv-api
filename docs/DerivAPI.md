@@ -1046,6 +1046,7 @@ An abstract class for website status info
 ### Properties
 
 -   `status` **[String][74]** 'up', 'down'
+-   `isWebsiteUp` **[Boolean][93]** 
 -   `currencies` **[Object][73]** 
 -   `country` **[String][74]** 
 -   `callLimits` **[Array][92]&lt;[Object][73]>** 

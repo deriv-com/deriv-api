@@ -10,6 +10,7 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
  * @param {DerivAPI} api
  *
  * @property {String} status - 'up', 'down'
+ * @property {Boolean} isWebsiteUp
  * @property {Object} currencies
  * @property {String} country
  * @property {Object[]} callLimits

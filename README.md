@@ -70,6 +70,8 @@ npm run docs
 
 ## Regenerate docs automatically on source code edit
 
+Needs `inotify` to work.
+
 ```
 npm run devel_docs
 ```

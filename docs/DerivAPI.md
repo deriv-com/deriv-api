@@ -703,7 +703,11 @@ An abstract class for website status info
 ##### Examples
 
 ```javascript
-api.websiteStatus().onUpdate(s => console.log(`Site is ${s.status}`))
+const websiteStatus = await api.websiteStatus();
+
+const isWebsiteUp = websiteStatus.isWebsiteUp;
+
+websiteStatus.onUpdate(s => console.log(`Site is ${s.status}`));
 ```
 
 ### Types

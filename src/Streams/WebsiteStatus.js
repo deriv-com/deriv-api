@@ -5,7 +5,11 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
  * An abstract class for website status info
  *
  * @example
- * api.websiteStatus().onUpdate(s => console.log(`Site is ${s.status}`))
+ * const websiteStatus = await api.websiteStatus();
+ *
+ * const isWebsiteUp = websiteStatus.isWebsiteUp;
+ *
+ * websiteStatus.onUpdate(s => console.log(`Site is ${s.status}`));
  *
  * @param {DerivAPI} api
  *

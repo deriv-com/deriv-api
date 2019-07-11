@@ -7,7 +7,7 @@ import Immutable from './Immutable';
  * @param {Number} market.value
  * @param {Number} market.pip
  *
- * @property {Number} pipSize
- * @property {Number} pipSized - the pipsized value
+ * @property {Number} pip_size
+ * @property {Number} pip_sized - the pipsized value
  */
 export default class MarketValue extends Immutable {}

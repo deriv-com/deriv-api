@@ -271,10 +271,10 @@ const ticks = api.ticks('R_100');
 ticks.onUpdate().subscribe(console.log);
 
 // Read the last ticks available in the default range
-const ticksHistory = ticks.list;
+const ticks_history = ticks.list;
 
 // Read the last 100 ticks until yesterday
-const olderHistory = await ticks.history({ count: 100, end: new Date(yesterday) });
+const older_history = await ticks.history({ count: 100, end: new Date(yesterday) });
 ```
 
 #### tickStream
@@ -382,14 +382,14 @@ API.
 -   `options` **[Object][242]**  (optional, default `{}`)
     -   `options.connection` **[WebSocket][257]?** A ready to use connection
     -   `options.endpoint` **[String][243]** API server to connect to (optional, default `'blue.binaryws.com'`)
-    -   `options.appId` **[Number][258]** Application ID of the API user (optional, default `1`)
+    -   `options.app_id` **[Number][258]** Application ID of the API user (optional, default `1`)
     -   `options.lang` **[String][243]** Language of the API communication (optional, default `'EN'`)
 
 #### Examples
 
 ```javascript
 const apiFromOpenConnection = new DerivAPI({ connection });
-const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', appId: 1234 });
+const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: 1234 });
 ```
 
 #### subscribeWithCallback
@@ -459,25 +459,25 @@ Abstract class for user accounts
 ##### Properties
 
 -   `siblings` **[Array][261]&lt;[Account][251]>** 
--   `isAuthenticated` **[Boolean][262]** If API is authenticated with this account
+-   `is_authenticated` **[Boolean][262]** If A_p_i is authenticated with this account
 -   `contracts` **[Array][261]&lt;[Contract][249]>** 
--   `openContracts` **[Array][261]&lt;[Contract][249]>** 
--   `closedContracts` **[Array][261]&lt;[Contract][249]>** 
+-   `open_contracts` **[Array][261]&lt;[Contract][249]>** 
+-   `closed_contracts` **[Array][261]&lt;[Contract][249]>** 
 -   `balance` **[Balance][252]** 
 -   `loginid` **[String][243]** 
 -   `currency` **[String][243]** 
--   `statusCodes` **[Array][261]&lt;[String][243]>** 
--   `landingCompany` **[FullName][263]** 
--   `apiTokens` **[Array][261]&lt;[String][243]>** 
--   `transactionStream` **[TransactionStream][253]** 
+-   `status_codes` **[Array][261]&lt;[String][243]>** 
+-   `landing_company` **Full_name** 
+-   `api_tokens` **[Array][261]&lt;[String][243]>** 
+-   `transaction_stream` **Transaction_stream** 
 
 ##### Examples
 
 ```javascript
-const account = await api.accounts(yourToken);
+const account = await api.accounts(your_token);
 
 // Returns the open contracts of this account
-const openContracts = account.openContracts;
+const open_contracts = account.open_contracts;
 
 const siblings = account.siblings;
 
@@ -512,9 +512,9 @@ Abstract class for trading assets
 ##### Properties
 
 -   `underlyings` **[Array][261]&lt;[Underlying][250]>** 
--   `openMarkets` **[Array][261]&lt;[Underlying][250]>** 
--   `tradingTimes` **[Object][242]** 
--   `tradingDurations` **[Object][242]** 
+-   `open_markets` **[Array][261]&lt;[Underlying][250]>** 
+-   `trading_times` **[Object][242]** 
+-   `trading_durations` **[Object][242]** 
 
 ##### Examples
 
@@ -522,9 +522,9 @@ Abstract class for trading assets
 const assets = await api.assets();
 
 // Get the current open markets
-const openMarkets = assets.openMarkets;
+const open_markets = assets.open_markets;
 
-const tradingTimes = assets.tradingTimes;
+const trading_times = assets.trading_times;
 ```
 
 #### Underlying
@@ -541,23 +541,23 @@ Abstract class for an underlying
 ##### Properties
 
 -   `name` **[FullName][263]** 
--   `isOpen` **[Boolean][262]** 
--   `isTradingSuspended` **[Boolean][262]** 
--   `pipSize` **[Number][258]** 
--   `contractGroups` **[Object][242]** 
--   `contractGroups` **[Object][242]** 
+-   `is_open` **[Boolean][262]** 
+-   `is_trading_suspended` **[Boolean][262]** 
+-   `pip_size` **[Number][258]** 
+-   `contract_groups` **[Object][242]** 
+-   `contract_groups` **[Object][242]** 
 
 ##### Examples
 
 ```javascript
 const underlying = await api.underlying('R_100');
 
-const pipSized = underlying.pipSizedValue(123.1);
+const pip_sized = underlying.pipSizedValue(123.1);
 
 // Same as api.tickStream(symbol);
-const tickStream = underlying.tickStream();
+const tick_stream = underlying.tickStream();
 
-if (underlying.isOpen) await contract.buy();
+if (underlying.is_open) await contract.buy();
 ```
 
 ##### pipSizedValue
@@ -642,7 +642,7 @@ A class for transaction objects
 
 -   `action` **[String][243]** 
 -   `amount` **[Monetary][266]** 
--   `transactionId` **[Number][258]** 
+-   `transaction_id` **[Number][258]** 
 -   `time` **[CustomDate][264]** 
 
 #### ContractGroup
@@ -656,11 +656,11 @@ A container for contract group info
 -   `name` **[String][243]** 
 -   `barriers` **[Array][261]&lt;[Number][258]>** 
 -   `basis` **[String][243]** 'stake' or 'payout'
--   `contractTypes` **[Array][261]&lt;[String][243]>** 
+-   `contract_types` **[Array][261]&lt;[String][243]>** 
 -   `durations` **[Durations][267]** Durations for spot and forward starting contracts
--   `durationUnits` **[DurationUnits][268]** Duration units for spot and forward starting contracts
--   `forwardSessions` **[Array][261]&lt;[DateRange][269]>** 
--   `isForwardStarting` **[Boolean][262]** 
+-   `duration_units` **[DurationUnits][268]** Duration units for spot and forward starting contracts
+-   `forward_sessions` **[Array][261]&lt;[DateRange][269]>** 
+-   `is_forward_starting` **[Boolean][262]** 
 
 #### Buy
 
@@ -704,7 +704,7 @@ An abstract class for balance information
 ```javascript
 const balance = accounts.balance;
 
-const formattedBalance = balance.format;
+const formatted_balance = balance.format;
 
 balance.onUpdate().subscribe(balance => console.log)
 ```
@@ -735,7 +735,7 @@ Resolves to a list of candles given the range
 ###### Examples
 
 ```javascript
-const oldCandles = await candleStream.history({count: 10, end: yesterday})
+const old_candles = await candle_stream.history({count: 10, end: yesterday})
 ```
 
 Returns **[Promise][256]&lt;[Array][261]&lt;[Candle][271]>>** 
@@ -754,21 +754,21 @@ Abstract class for contracts
 ##### Properties
 
 -   `status` **[String][243]** Current status of the contract
--   `sellPrice` **[Monetary][266]** Price at which the contract was sold
--   `buyPrice` **[Monetary][266]** Price at which the contract was bought
+-   `sell_price` **[Monetary][266]** Price at which the contract was sold
+-   `buy_price` **[Monetary][266]** Price at which the contract was bought
 -   `type` **[String][243]** contract type
--   `potentialPayout` **[Monetary][266]** The payout value before the contract was sold
+-   `potential_payout` **[Monetary][266]** The payout value before the contract was sold
 -   `payout` **[Monetary][266]** The payout after selling the contract
--   `contractId` **[Number][258]** The contract ID after purchase
--   `purchaseTime` **[CustomDate][264]** Time of purchase
--   `isExpired` **[Boolean][262]** 
--   `isOpen` **[Boolean][262]** 
+-   `contract_id` **[Number][258]** The contract ID after purchase
+-   `purchase_time` **[CustomDate][264]** Time of purchase
+-   `is_expired` **[Boolean][262]** 
+-   `is_open` **[Boolean][262]** 
 -   `duration` **[Duration][273]** 
 
 ##### Examples
 
 ```javascript
-const contract = account.contract({ contractType: 'CALL', ...options })
+const contract = account.contract({ contract_type: 'CALL', ...options })
 
 const buy = await contract.buy();
 
@@ -782,7 +782,7 @@ Buys this contract
 ###### Parameters
 
 -   `buy` **[BuyParam][274]** 
-    -   `buy.maxPrice`  
+    -   `buy.max_price`  
 
 Returns **[Buy][275]** 
 
@@ -793,7 +793,7 @@ Sells this contract
 ###### Parameters
 
 -   `sell` **[SellParam][276]** 
-    -   `sell.maxPrice`  
+    -   `sell.max_price`  
 
 Returns **[Sell][277]** 
 
@@ -823,7 +823,7 @@ Resolves to a list of Ticks using the given range
 ###### Examples
 
 ```javascript
-const oldTicks = await tickStream.history({count: 10, end: yesterday})
+const old_ticks = await tickStream.history({count: 10, end: yesterday})
 ```
 
 Returns **[Promise][256]&lt;[Array][261]&lt;[Tick][279]>>** 
@@ -845,11 +845,11 @@ A stream of transactions
 ##### Examples
 
 ```javascript
-const txStream = accounts.transactionStream;
+const tx_stream = accounts.transaction_stream;
 
-const txList = txStream.list;
+const tx_list = tx_stream.list;
 
-txStream.onUpdate(console.log)
+tx_stream.onUpdate(console.log)
 ```
 
 #### WebsiteStatus
@@ -865,21 +865,21 @@ An abstract class for website status info
 ##### Properties
 
 -   `status` **[String][243]** 'up', 'down'
--   `isWebsiteUp` **[Boolean][262]** 
+-   `is_website_up` **[Boolean][262]** 
 -   `currencies` **[Object][242]** 
 -   `country` **[String][243]** 
--   `callLimits` **[Array][261]&lt;[Object][242]>** 
+-   `call_limits` **[Array][261]&lt;[Object][242]>** 
 -   `languages` **[Array][261]&lt;[String][243]>** 
--   `termsAndCondtionsVersion` **[String][243]** 
+-   `terms_and_condtions_version` **[String][243]** 
 
 ##### Examples
 
 ```javascript
-const websiteStatus = await api.websiteStatus();
+const website_status = await api.websiteStatus();
 
-const isWebsiteUp = websiteStatus.isWebsiteUp;
+const is_website_up = website_status.is_website_up;
 
-websiteStatus.onUpdate(s => console.log(`Site is ${s.status}`));
+website_status.onUpdate(s => console.log(`Site is ${s.status}`));
 ```
 
 ### Types
@@ -903,8 +903,8 @@ Keeps a market value and pip size
 
 ##### Properties
 
--   `pipSize` **[Number][258]** 
--   `pipSized` **[Number][258]** the pipsized value
+-   `pip_size` **[Number][258]** 
+-   `pip_sized` **[Number][258]** the pipsized value
 
 #### Monetary
 
@@ -941,7 +941,7 @@ A class for keeping short and full name of things
 ##### Examples
 
 ```javascript
-const lc = account.landingCompany;
+const lc = account.landing_company;
 
 console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
 ```
@@ -1018,7 +1018,7 @@ Class to keep duration ranges
 
 ###### Parameters
 
--   `rawDate`  
+-   `raw_date`  
 -   `date` **([CustomDate][264] \| [Date][281] \| [Number][258])** 
 
 Returns **[Boolean][262]** 
@@ -1048,11 +1048,11 @@ Listen on updates of a stream
 ###### Examples
 
 ```javascript
-const tickStream = api.tickStream('R_100');
+const tick_stream = api.tickStream('R_100');
 
-tickStream.onUpdate(console.log);
+tick_stream.onUpdate(console.log);
 
-tickStream.onUpdate().subscribe(console.log);
+tick_stream.onUpdate().subscribe(console.log);
 ```
 
 Returns **Observable** 
@@ -1080,7 +1080,7 @@ API
 const symbols = await api.activeSymbols();
 
 // Read the data from cache if available
-const cachedSymbols = await api.cache.activeSymbols();
+const cached_symbols = await api.cache.activeSymbols();
 ```
 
 ### SubscriptionManager
@@ -1153,17 +1153,17 @@ Type: [Object][242]
 
 ##### Properties
 
--   `contractType` **[String][243]** 
+-   `contract_type` **[String][243]** 
 -   `amount` **[Number][258]** 
 -   `barrier` **[String][243]** 
 -   `barrier2` **[String][243]** 
--   `dateExpiry` **([Number][258] \| [Date][281])** epoch in seconds or [Date][282]
--   `dateStart` **([Number][258] \| [Date][281])** epoch in seconds or [Date][282]
+-   `date_expiry` **([Number][258] \| [Date][281])** epoch in seconds or [Date][282]
+-   `date_start` **([Number][258] \| [Date][281])** epoch in seconds or [Date][282]
 -   `Currency` **[String][243]?** Default is the account currency
 -   `basis` **[String][243]** stake or payout
 -   `duration` **([Number][258] \| [String][243])** duration with unit or duration in number
--   `durationUnit` **[String][243]?** duration unit, required if duration is number
--   `productType` **[String][243]?** 'multi_barrier' or 'basic'
+-   `duration_unit` **[String][243]?** duration unit, required if duration is number
+-   `product_type` **[String][243]?** 'multi_barrier' or 'basic'
 -   `account` **[Account][251]?** The account that has this contract
 
 #### BuyParam
@@ -1172,7 +1172,7 @@ Type: [Object][242]
 
 ##### Properties
 
--   `maxPrice` **[Number][258]?** Maximum acceptable price for buyin the contract
+-   `max_price` **[Number][258]?** Maximum acceptable price for buyin the contract
 
 #### SellParam
 
@@ -1180,7 +1180,7 @@ Type: [Object][242]
 
 ##### Properties
 
--   `maxPrice` **[Number][258]?** Maximum acceptable price for selling the contract
+-   `max_price` **[Number][258]?** Maximum acceptable price for selling the contract
 
 #### HistoryRange
 

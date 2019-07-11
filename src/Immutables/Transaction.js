@@ -7,7 +7,7 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
  *
  * @property {String} action
  * @property {Monetary} amount
- * @property {Number} transactionId
+ * @property {Number} transaction_id
  * @property {CustomDate} time
  */
 export default class Transaction extends Immutable {}

@@ -7,7 +7,7 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
  * @example
  * const balance = accounts.balance;
  *
- * const formattedBalance = balance.format;
+ * const formatted_balance = balance.format;
  *
  * balance.onUpdate().subscribe(balance => console.log)
  *
@@ -25,7 +25,7 @@ export default class Balance extends Stream {
         /*
          * const balance = await this.api.balance(...);
          * this._data.balance = new Monetary(balance.balance, balance.currency)
-         * this._data.onUpdate = this.api.subscribe({ balance: 1})
+         * this._data.on_update = this.api.subscribe({ balance: 1})
          */
         return this;
     }

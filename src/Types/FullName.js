@@ -7,7 +7,7 @@ import Immutable from './Immutable';
  * @param {String} short - short form of the name
  *
  * @example
- * const lc = account.landingCompany;
+ * const lc = account.landing_company;
  *
  * console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
  *

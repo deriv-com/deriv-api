@@ -11,7 +11,7 @@ import { ConstructionError } from './Types/errors';
  * const symbols = await api.activeSymbols();
  *
  * // Read the data from cache if available
- * const cachedSymbols = await api.cache.activeSymbols();
+ * const cached_symbols = await api.cache.activeSymbols();
  *
  * @param {DerivAPI} api - API instance to get data that is not cached
  */
@@ -53,11 +53,11 @@ export default class Cache extends DerivAPICalls {
 }
 
 function objectToCacheKey(obj) {
-    const clonedObj = { ...obj };
+    const cloned_object = { ...obj };
 
-    delete clonedObj.req_id;
-    delete clonedObj.passthrough;
-    delete clonedObj.subscribe;
+    delete cloned_object.req_id;
+    delete cloned_object.passthrough;
+    delete cloned_object.subscribe;
 
-    return serialize(clonedObj);
+    return serialize(cloned_object);
 }

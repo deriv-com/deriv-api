@@ -29,15 +29,15 @@ export default class TickStream extends Stream {
     }
 
     async init() {
-        const activeSymbols = (await this.api.cache.activeSymbols('brief')).active_symbols;
-        this._data.pip      = activeSymbols.find(s => s.symbol === this.symbol).pip;
-        const tickStream    = this.api.subscribe(requestParams(this.symbol, this.range));
+        const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
+        this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
+        const tick_stream        = this.api.subscribe(parseParams(this.symbol, this.range));
 
-        this._data.onUpdate = tickStream
+        this._data.onUpdate = tick_stream
             .pipe(skip(1))
             .pipe(map(t => wrapTick(t, this._data.pip)));
 
-        this._data.list = await tickStream
+        this._data.list = await tick_stream
             .pipe(first(), map(h => historyToTicks(h, this._data.pip)))
             .toPromise();
     }
@@ -51,14 +51,14 @@ export default class TickStream extends Stream {
      * Resolves to a list of Ticks using the given range
      *
      * @example
-     * const oldTicks = await tickStream.history({count: 10, end: yesterday})
+     * const old_ticks = await tickStream.history({count: 10, end: yesterday})
      *
      * @param {HistoryRange=} range
      * @returns {Promise<Tick[]>}
      */
     async history(range) {
         if (!range) return this.list;
-        return this.api.cache.ticksHistory(requestParams(this.symbol, range))
+        return this.api.cache.ticksHistory(parseParams(this.symbol, range))
             .then(h => historyToTicks(h, this._data.pip));
     }
 }
@@ -79,7 +79,7 @@ function wrapTick({ tick }, pip) {
     return new Tick(tick, pip);
 }
 
-function requestParams(symbol, range) {
+function parseParams(symbol, range) {
     return {
         ticks_history: symbol,
         style        : 'ticks',

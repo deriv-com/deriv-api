@@ -16,21 +16,21 @@ afterAll(() => {
 });
 
 test('Request for a ticks history', async () => {
-    const tickStream = await api.tickStream('R_100');
+    const tick_stream = await api.tickStream('R_100');
 
-    expect(tickStream).toBeInstanceOf(TickStream);
+    expect(tick_stream).toBeInstanceOf(TickStream);
 
-    expect(() => { tickStream.list = []; }).toThrow(Error);
+    expect(() => { tick_stream.list = []; }).toThrow(Error);
 
-    const ticks = tickStream.list; // last 1000 1-minute ticks
+    const ticks = tick_stream.list; // last 1000 1-minute ticks
 
     expect(ticks).toBeInstanceOf(Array);
     expect(ticks).toHaveLength(1000);
     expect(ticks.slice(-1)[0]).toBeInstanceOf(Tick);
 
-    const oldTicks = await tickStream.history({ count: 100, end: new Date() });
+    const old_ticks = await tick_stream.history({ count: 100, end: new Date() });
 
-    expect(oldTicks).toBeInstanceOf(Array);
-    expect(oldTicks).toHaveLength(100);
-    expect(oldTicks.slice(-1)[0]).toBeInstanceOf(Tick);
+    expect(old_ticks).toBeInstanceOf(Array);
+    expect(old_ticks).toHaveLength(100);
+    expect(old_ticks.slice(-1)[0]).toBeInstanceOf(Tick);
 });

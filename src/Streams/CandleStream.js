@@ -30,7 +30,7 @@ export default class CandleStream extends Stream {
      * Resolves to a list of candles given the range
      *
      * @example
-     * const oldCandles = await candleStream.history({count: 10, end: yesterday})
+     * const old_candles = await candle_stream.history({count: 10, end: yesterday})
      *
      * @param {HistoryRange=} range
      * @returns {Promise<Candle[]>}

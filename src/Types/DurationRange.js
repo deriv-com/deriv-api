@@ -11,8 +11,8 @@ export default class DurationRange extends Immutable {
      * @param {CustomDate|Date|Number} date
      * @returns {Boolean}
      */
-    isInRange(rawDate) {
-        const date = new CustomDate(rawDate);
+    isInRange(raw_date) {
+        const date = new CustomDate(raw_date);
 
         return date.isInRange(this);
     }

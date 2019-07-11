@@ -8,11 +8,11 @@ export default class Stream extends Immutable {
      * Listen on updates of a stream
      *
      * @example
-     * const tickStream = api.tickStream('R_100');
+     * const tick_stream = api.tickStream('R_100');
      *
-     * tickStream.onUpdate(console.log);
+     * tick_stream.onUpdate(console.log);
      *
-     * tickStream.onUpdate().subscribe(console.log);
+     * tick_stream.onUpdate().subscribe(console.log);
      *
      * @param {Function} callback
      * @returns {Observable}

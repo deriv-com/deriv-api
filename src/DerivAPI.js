@@ -20,10 +20,10 @@ import WebsiteStatus    from './Streams/WebsiteStatus';
  * ticks.onUpdate().subscribe(console.log);
  *
  * // Read the last ticks available in the default range
- * const ticksHistory = ticks.list;
+ * const ticks_history = ticks.list;
  *
  * // Read the last 100 ticks until yesterday
- * const olderHistory = await ticks.history({ count: 100, end: new Date(yesterday) });
+ * const older_history = await ticks.history({ count: 100, end: new Date(yesterday) });
  *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */
@@ -35,11 +35,11 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {TickStream}
      */
     async tickStream(options) {
-        const tickStream = new TickStream(this, options);
+        const tick_stream = new TickStream(this, options);
 
-        await tickStream.init();
+        await tick_stream.init();
 
-        return tickStream;
+        return tick_stream;
     }
 
     /**
@@ -49,11 +49,11 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {CandleStream}
      */
     async candleStream(options) {
-        const candleStream = new CandleStream(this, options);
+        const candle_stream = new CandleStream(this, options);
 
-        await candleStream.init();
+        await candle_stream.init();
 
-        return candleStream;
+        return candle_stream;
     }
 
     /**
@@ -137,11 +137,11 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {WebsiteStatus}
      */
     async websiteStatus() {
-        const wsStream = new WebsiteStatus(this);
+        const website_status_stream = new WebsiteStatus(this);
 
-        await wsStream.init();
+        await website_status_stream.init();
 
-        return wsStream;
+        return website_status_stream;
     }
 
     /**
@@ -152,8 +152,8 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Promise<Account>} Authenticated account
      */
     async changeAccount(account) {
-        this.authAccount = await this.account(account.token);
+        this.auth_account = await this.account(account.token);
 
-        return this.authAccount;
+        return this.auth_account;
     }
 }

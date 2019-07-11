@@ -19,19 +19,19 @@ import './SubscriptionManager';
  *
  * @example
  * const apiFromOpenConnection = new DerivAPI({ connection });
- * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', appId: 1234 });
+ * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: 1234 });
  *
  * @param {Object} options
  * @param {WebSocket=} options.connection - A ready to use connection
  * @param {String} options.endpoint - API server to connect to
- * @param {Number} options.appId - Application ID of the API user
+ * @param {Number} options.app_id - Application ID of the API user
  * @param {String} options.lang - Language of the API communication
  */
 export default class DerivAPIBasic extends DerivAPICalls {
     constructor({
         connection,
         endpoint = 'blue.binaryws.com',
-        appId    = 1,
+        app_id    = 1,
         lang     = 'EN',
     } = {}) {
         super();
@@ -41,7 +41,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         } else {
             this.shouldReconnect = true;
             this.connectionArgs  = {
-                appId,
+                app_id,
                 endpointUrl: getUrl(endpoint),
                 lang       : lang.toUpperCase(),
             };
@@ -66,10 +66,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
             );
         }
 
-        const { endpointUrl, lang, appId } = this.connectionArgs;
+        const { endpointUrl, lang, app_id } = this.connectionArgs;
 
         this.connection = new WebSocket(
-            `${endpointUrl.toString()}websockets/v3?l=${lang}&app_id=${appId}`,
+            `${endpointUrl.toString()}websockets/v3?l=${lang}&app_id=${app_id}`,
         );
     }
 

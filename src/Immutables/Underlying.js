@@ -9,34 +9,26 @@ import Contract         from '../Streams/Contract';
  * @example
  * const underlying = await api.underlying('R_100');
  *
- * const pipSized = underlying.pipSizedValue(123.1);
+ * const pip_sized = underlying.pipSizedValue(123.1);
  *
  * // Same as api.tickStream(symbol);
- * const tickStream = underlying.tickStream();
+ * const tick_stream = underlying.tickStream();
  *
- * if (underlying.isOpen) await contract.buy();
+ * if (underlying.is_open) await contract.buy();
  *
  * @param {DerivAPI} api
  * @param {String} symbol
  *
  * @property {FullName} name
- * @property {Boolean} isOpen
- * @property {Boolean} isTradingSuspended
- * @property {Number} pipSize
- * @property {Object} contractGroups
- * @property {Object} contractGroups
+ * @property {Boolean} is_open
+ * @property {Boolean} is_trading_suspended
+ * @property {Number} pip_size
+ * @property {Object} contract_groups
+ * @property {Object} contract_groups
  */
 export default class Underlying extends Immutable {
     // Called by the API to initialize the instance
     async init() {
-        /*
-         * const market = activeSymbols.find(s => s.symbol === this.symbol)
-         * this.isOpen = market.exchange_is_open;
-         * this.pip = market.pip
-         * this.isTradingSuspended = market.is_trading_suspended
-         * this.contractGroups = groupContracts(assetIndex)
-         */
-
         return this;
     }
 

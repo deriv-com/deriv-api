@@ -37,10 +37,10 @@ import DurationRange from '../Types/DurationRange'; /* eslint-disable-line no-un
  * @property {String} name
  * @property {Number[]} barriers
  * @property {String} basis - 'stake' or 'payout'
- * @property {String[]} contractTypes
+ * @property {String[]} contract_types
  * @property {Durations} durations - Durations for spot and forward starting contracts
- * @property {DurationUnits} durationUnits - Duration units for spot and forward starting contracts
- * @property {DateRange[]} forwardSessions
- * @property {Boolean} isForwardStarting
+ * @property {DurationUnits} duration_units - Duration units for spot and forward starting contracts
+ * @property {DateRange[]} forward_sessions
+ * @property {Boolean} is_forward_starting
  */
 export default class ContractGroup extends Immutable {}

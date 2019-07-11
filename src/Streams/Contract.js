@@ -5,17 +5,17 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
 import Duration from '../Types/Duration'; /* eslint-disable-line no-unused-vars */
 /**
  * @typedef {Object} ContractsParam
- * @property {String} contractType
+ * @property {String} contract_type
  * @property {Number} amount
  * @property {String} barrier
  * @property {String} barrier2
- * @property {Number|Date} dateExpiry - epoch in seconds or {@link Date}
- * @property {Number|Date} dateStart - epoch in seconds or {@link Date}
+ * @property {Number|Date} date_expiry - epoch in seconds or {@link Date}
+ * @property {Number|Date} date_start - epoch in seconds or {@link Date}
  * @property {String=} Currency - Default is the account currency
  * @property {String} basis - stake or payout
  * @property {Number|String} duration - duration with unit or duration in number
- * @property {String=} durationUnit - duration unit, required if duration is number
- * @property {String=} productType - 'multi_barrier' or 'basic'
+ * @property {String=} duration_unit - duration unit, required if duration is number
+ * @property {String=} product_type - 'multi_barrier' or 'basic'
  * @property {Account=} account - The account that has this contract
  */
 
@@ -23,7 +23,7 @@ import Duration from '../Types/Duration'; /* eslint-disable-line no-unused-vars 
  * Abstract class for contracts
  *
  * @example
- * const contract = account.contract({ contractType: 'CALL', ...options })
+ * const contract = account.contract({ contract_type: 'CALL', ...options })
  *
  * const buy = await contract.buy();
  *
@@ -33,15 +33,15 @@ import Duration from '../Types/Duration'; /* eslint-disable-line no-unused-vars 
  * @param {ContractsParam} options
  *
  * @property {String} status - Current status of the contract
- * @property {Monetary} sellPrice - Price at which the contract was sold
- * @property {Monetary} buyPrice - Price at which the contract was bought
+ * @property {Monetary} sell_price - Price at which the contract was sold
+ * @property {Monetary} buy_price - Price at which the contract was bought
  * @property {String} type - contract type
- * @property {Monetary} potentialPayout - The payout value before the contract was sold
+ * @property {Monetary} potential_payout - The payout value before the contract was sold
  * @property {Monetary} payout - The payout after selling the contract
- * @property {Number} contractId - The contract ID after purchase
- * @property {CustomDate} purchaseTime - Time of purchase
- * @property {Boolean} isExpired
- * @property {Boolean} isOpen
+ * @property {Number} contract_id - The contract ID after purchase
+ * @property {CustomDate} purchase_time - Time of purchase
+ * @property {Boolean} is_expired
+ * @property {Boolean} is_open
  * @property {Duration} duration
  */
 export default class Contract extends Stream {
@@ -56,8 +56,8 @@ export default class Contract extends Stream {
      * @param {BuyParam} buy
      * @returns {Buy}
      */
-    async buy({ maxPrice: price }) {
-        return this.api.buy({ buy: this.contractId, price });
+    async buy({ max_price: price }) {
+        return this.api.buy({ buy: this.contract_id, price });
     }
 
     /**
@@ -66,7 +66,7 @@ export default class Contract extends Stream {
      * @param {SellParam} sell
      * @returns {Sell}
      */
-    async sell({ maxPrice: price }) {
-        return this.api.sell({ sell: this.contractId, price });
+    async sell({ max_price: price }) {
+        return this.api.sell({ sell: this.contract_id, price });
     }
 }

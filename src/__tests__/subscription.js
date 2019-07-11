@@ -27,16 +27,16 @@ test('Subscribe calling api.subscribeWithCallback without callback', async () =>
 });
 
 test('Subscribe by calling api.subscribeWithCallback and callback', async () => {
-    const mockFn = jest.fn();
+    const mock_fn = jest.fn();
 
     const response = await api.subscribeWithCallback(
         { website_status: 1 },
-        mockFn,
+        mock_fn,
     );
 
     expect(response.msg_type).toBe('website_status');
 
-    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mock_fn).toHaveBeenCalledTimes(1);
 });
 
 test('Subscribe with api.subscribe should return an Observable', async () => {
@@ -44,19 +44,19 @@ test('Subscribe with api.subscribe should return an Observable', async () => {
 
     expect(source).toBeInstanceOf(Observable);
 
-    const mockFn = jest.fn();
-    source.subscribe(mockFn);
+    const mock_fn = jest.fn();
+    source.subscribe(mock_fn);
 
-    expect(mockFn).toHaveBeenCalledTimes(0);
+    expect(mock_fn).toHaveBeenCalledTimes(0);
 
-    const twoResponses = await source
+    const two_responses = await source
         .pipe(
             take(2),
             toArray(),
         )
         .toPromise();
 
-    expect(mockFn).toHaveBeenCalledTimes(2);
+    expect(mock_fn).toHaveBeenCalledTimes(2);
 
-    expect(twoResponses).toBeInstanceOf(Array);
+    expect(two_responses).toBeInstanceOf(Array);
 });

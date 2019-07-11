@@ -5,11 +5,11 @@ import Transaction from '../Immutables/Transaction'; /* eslint-disable-line no-u
  * A stream of transactions
  *
  * @example
- * const txStream = accounts.transactionStream;
+ * const tx_stream = accounts.transaction_stream;
  *
- * const txList = txStream.list;
+ * const tx_list = tx_stream.list;
  *
- * txStream.onUpdate(console.log)
+ * tx_stream.onUpdate(console.log)
  *
  * @param {DerivAPI} api
  *

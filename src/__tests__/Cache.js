@@ -18,7 +18,7 @@ afterAll(() => {
 test('Constructing DerivAPI', async () => {
     expect((await api.ping()).ping).toBe('pong');
 
-    const startTime = parseInt(new Date().getTime() / 1000, 10);
+    const start_time = parseInt(new Date().getTime() / 1000, 10);
 
     // await inside for loop to make it slow, if replace with api.ping()
     // tests should fail
@@ -27,7 +27,7 @@ test('Constructing DerivAPI', async () => {
         expect((await api.cache.ping()).ping).toBe('pong');
     }
 
-    const endTime = parseInt(new Date().getTime() / 1000, 10);
+    const end_time = parseInt(new Date().getTime() / 1000, 10);
 
-    expect(startTime).toBe(endTime);
+    expect(start_time).toBe(end_time);
 });

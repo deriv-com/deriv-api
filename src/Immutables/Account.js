@@ -8,10 +8,10 @@ import Contract         from '../Streams/Contract';
  * Abstract class for user accounts
  *
  * @example
- * const account = await api.accounts(yourToken);
+ * const account = await api.accounts(your_token);
  *
  * // Returns the open contracts of this account
- * const openContracts = account.openContracts;
+ * const open_contracts = account.open_contracts;
  *
  * const siblings = account.siblings;
  *
@@ -22,17 +22,17 @@ import Contract         from '../Streams/Contract';
  * @param {String} token
  *
  * @property {Account[]} siblings
- * @property {Boolean} isAuthenticated - If API is authenticated with this account
+ * @property {Boolean} is_authenticated - If A_p_i is authenticated with this account
  * @property {Contract[]} contracts
- * @property {Contract[]} openContracts
- * @property {Contract[]} closedContracts
+ * @property {Contract[]} open_contracts
+ * @property {Contract[]} closed_contracts
  * @property {Balance} balance
  * @property {String} loginid
  * @property {String} currency
- * @property {String[]} statusCodes
- * @property {FullName} landingCompany
- * @property {String[]} apiTokens
- * @property {TransactionStream} transactionStream
+ * @property {String[]} status_codes
+ * @property {Full_name} landing_company
+ * @property {String[]} api_tokens
+ * @property {Transaction_stream} transaction_stream
  */
 export default class Account extends Immutable {
     // Called by the API to initialize the instance

@@ -121,9 +121,9 @@
                       </a></li>
                       
                       <li><a
-                        href='#derivapiwebsitestatus'
+                        href='#derivapiwebsitestatusstream'
                         class='regular pre-open'>
-                        #websiteStatus
+                        #websiteStatusStream
                       </a></li>
                       
                       <li><a
@@ -472,9 +472,9 @@
               
                 
                 <li><a
-                  href='#websitestatus'
+                  href='#websitestatusstream'
                   class="">
-                  WebsiteStatus
+                  WebsiteStatusStream
                   
                 </a>
                 
@@ -1925,10 +1925,10 @@ that can be used to read data and interact with the API.</p>
 ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
 
 <span class="hljs-comment">// Read the last ticks available in the default range</span>
-<span class="hljs-keyword">const</span> ticksHistory = ticks.list;
+<span class="hljs-keyword">const</span> ticks_history = ticks.list;
 
 <span class="hljs-comment">// Read the last 100 ticks until yesterday</span>
-<span class="hljs-keyword">const</span> olderHistory = <span class="hljs-keyword">await</span> ticks.history({ <span class="hljs-attr">count</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">end</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(yesterday) });</pre>
+<span class="hljs-keyword">const</span> older_history = <span class="hljs-keyword">await</span> ticks.history({ <span class="hljs-attr">count</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">end</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(yesterday) });</pre>
     
   
 
@@ -2474,11 +2474,11 @@ ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
       </div>
     </div>
   
-    <div class='border-bottom' id='derivapiwebsitestatus'>
+    <div class='border-bottom' id='derivapiwebsitestatusstream'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>websiteStatus()</span>
+            <span class='code strong strong truncate'>websiteStatusStream()</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2488,7 +2488,7 @@ ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
 
   <p>Website status stream</p>
 
-    <div class='pre p1 fill-light mt0'>websiteStatus(): <a href="#websitestatus">WebsiteStatus</a></div>
+    <div class='pre p1 fill-light mt0'>websiteStatusStream(): <a href="#websitestatusstream">WebsiteStatusStream</a></div>
   
   
 
@@ -2506,7 +2506,7 @@ ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#websitestatus">WebsiteStatus</a></code>:
+      <code><a href="#websitestatusstream">WebsiteStatusStream</a></code>:
         
 
       
@@ -2690,7 +2690,7 @@ API.
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.appId</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  <td class='break-word'><span class='code bold'>options.app_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   
     (default <code>1</code>)
   </td>
@@ -2730,7 +2730,7 @@ API.
     
       
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> apiFromOpenConnection = <span class="hljs-keyword">new</span> DerivAPI({ connection });
-<span class="hljs-keyword">const</span> apiFromEndpoint = <span class="hljs-keyword">new</span> DerivAPI({ <span class="hljs-attr">endpoint</span>: <span class="hljs-string">'ws.binaryws.com'</span>, <span class="hljs-attr">appId</span>: <span class="hljs-number">1234</span> });</pre>
+<span class="hljs-keyword">const</span> apiFromEndpoint = <span class="hljs-keyword">new</span> DerivAPI({ <span class="hljs-attr">endpoint</span>: <span class="hljs-string">'ws.binaryws.com'</span>, <span class="hljs-attr">app_id</span>: <span class="hljs-number">1234</span> });</pre>
     
   
 
@@ -3059,8 +3059,8 @@ and they do not receive updates.</p>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isAuthenticated</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
-          : If API is authenticated with this account
+          <span class='code bold'>is_authenticated</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          : If A_p_i is authenticated with this account
 
           
         </div>
@@ -3072,13 +3072,13 @@ and they do not receive updates.</p>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>openContracts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#contract">Contract</a>>)</code>
+          <span class='code bold'>open_contracts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#contract">Contract</a>>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>closedContracts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#contract">Contract</a>>)</code>
+          <span class='code bold'>closed_contracts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#contract">Contract</a>>)</code>
           
           
         </div>
@@ -3102,25 +3102,25 @@ and they do not receive updates.</p>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>statusCodes</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
+          <span class='code bold'>status_codes</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>landingCompany</span> <code class='quiet'>(<a href="#fullname">FullName</a>)</code>
+          <span class='code bold'>landing_company</span> <code class='quiet'>(Full_name)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>apiTokens</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
+          <span class='code bold'>api_tokens</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>transactionStream</span> <code class='quiet'>(<a href="#transactionstream">TransactionStream</a>)</code>
+          <span class='code bold'>transaction_stream</span> <code class='quiet'>(Transaction_stream)</code>
           
           
         </div>
@@ -3136,10 +3136,10 @@ and they do not receive updates.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> api.accounts(yourToken);
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> account = <span class="hljs-keyword">await</span> api.accounts(your_token);
 
 <span class="hljs-comment">// Returns the open contracts of this account</span>
-<span class="hljs-keyword">const</span> openContracts = account.openContracts;
+<span class="hljs-keyword">const</span> open_contracts = account.open_contracts;
 
 <span class="hljs-keyword">const</span> siblings = account.siblings;
 
@@ -3341,19 +3341,19 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>openMarkets</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#underlying">Underlying</a>>)</code>
+          <span class='code bold'>open_markets</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#underlying">Underlying</a>>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>tradingTimes</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          <span class='code bold'>trading_times</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>tradingDurations</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          <span class='code bold'>trading_durations</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
           
           
         </div>
@@ -3372,9 +3372,9 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> assets = <span class="hljs-keyword">await</span> api.assets();
 
 <span class="hljs-comment">// Get the current open markets</span>
-<span class="hljs-keyword">const</span> openMarkets = assets.openMarkets;
+<span class="hljs-keyword">const</span> open_markets = assets.open_markets;
 
-<span class="hljs-keyword">const</span> tradingTimes = assets.tradingTimes;</pre>
+<span class="hljs-keyword">const</span> trading_times = assets.trading_times;</pre>
     
   
 
@@ -3457,31 +3457,31 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isOpen</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          <span class='code bold'>is_open</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isTradingSuspended</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          <span class='code bold'>is_trading_suspended</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>pipSize</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+          <span class='code bold'>pip_size</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>contractGroups</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          <span class='code bold'>contract_groups</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>contractGroups</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          <span class='code bold'>contract_groups</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
           
           
         </div>
@@ -3499,12 +3499,12 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
       
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> underlying = <span class="hljs-keyword">await</span> api.underlying(<span class="hljs-string">'R_100'</span>);
 
-<span class="hljs-keyword">const</span> pipSized = underlying.pipSizedValue(<span class="hljs-number">123.1</span>);
+<span class="hljs-keyword">const</span> pip_sized = underlying.pipSizedValue(<span class="hljs-number">123.1</span>);
 
 <span class="hljs-comment">// Same as api.tickStream(symbol);</span>
-<span class="hljs-keyword">const</span> tickStream = underlying.tickStream();
+<span class="hljs-keyword">const</span> tick_stream = underlying.tickStream();
 
-<span class="hljs-keyword">if</span> (underlying.isOpen) <span class="hljs-keyword">await</span> contract.buy();</pre>
+<span class="hljs-keyword">if</span> (underlying.is_open) <span class="hljs-keyword">await</span> contract.buy();</pre>
     
   
 
@@ -4121,7 +4121,7 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>transactionId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+          <span class='code bold'>transaction_id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
           
           
         </div>
@@ -4212,7 +4212,7 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>contractTypes</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
+          <span class='code bold'>contract_types</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
           
           
         </div>
@@ -4225,20 +4225,20 @@ siblings[<span class="hljs-number">0</span>].switch();</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>durationUnits</span> <code class='quiet'>(<a href="#durationunits">DurationUnits</a>)</code>
+          <span class='code bold'>duration_units</span> <code class='quiet'>(<a href="#durationunits">DurationUnits</a>)</code>
           : Duration units for spot and forward starting contracts
 
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>forwardSessions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#daterange">DateRange</a>>)</code>
+          <span class='code bold'>forward_sessions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#daterange">DateRange</a>>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isForwardStarting</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          <span class='code bold'>is_forward_starting</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
           
           
         </div>
@@ -4489,7 +4489,7 @@ these classes.</p>
       
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> balance = accounts.balance;
 
-<span class="hljs-keyword">const</span> formattedBalance = balance.format;
+<span class="hljs-keyword">const</span> formatted_balance = balance.format;
 
 balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-params">balance</span> =&gt;</span> <span class="hljs-built_in">console</span>.log)</pre>
     
@@ -4647,7 +4647,7 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> oldCandles = <span class="hljs-keyword">await</span> candleStream.history({<span class="hljs-attr">count</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">end</span>: yesterday})</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> old_candles = <span class="hljs-keyword">await</span> candle_stream.history({<span class="hljs-attr">count</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">end</span>: yesterday})</pre>
     
   
 
@@ -4743,14 +4743,14 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>sellPrice</span> <code class='quiet'>(<a href="#monetary">Monetary</a>)</code>
+          <span class='code bold'>sell_price</span> <code class='quiet'>(<a href="#monetary">Monetary</a>)</code>
           : Price at which the contract was sold
 
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>buyPrice</span> <code class='quiet'>(<a href="#monetary">Monetary</a>)</code>
+          <span class='code bold'>buy_price</span> <code class='quiet'>(<a href="#monetary">Monetary</a>)</code>
           : Price at which the contract was bought
 
           
@@ -4764,7 +4764,7 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>potentialPayout</span> <code class='quiet'>(<a href="#monetary">Monetary</a>)</code>
+          <span class='code bold'>potential_payout</span> <code class='quiet'>(<a href="#monetary">Monetary</a>)</code>
           : The payout value before the contract was sold
 
           
@@ -4778,27 +4778,27 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>contractId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+          <span class='code bold'>contract_id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
           : The contract ID after purchase
 
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>purchaseTime</span> <code class='quiet'>(<a href="#customdate">CustomDate</a>)</code>
+          <span class='code bold'>purchase_time</span> <code class='quiet'>(<a href="#customdate">CustomDate</a>)</code>
           : Time of purchase
 
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isExpired</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          <span class='code bold'>is_expired</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isOpen</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          <span class='code bold'>is_open</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
           
           
         </div>
@@ -4820,7 +4820,7 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> contract = account.contract({ <span class="hljs-attr">contractType</span>: <span class="hljs-string">'CALL'</span>, ...options })
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> contract = account.contract({ <span class="hljs-attr">contract_type</span>: <span class="hljs-string">'CALL'</span>, ...options })
 
 <span class="hljs-keyword">const</span> buy = <span class="hljs-keyword">await</span> contract.buy();
 
@@ -4883,7 +4883,7 @@ contract.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log)</p
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>buy.maxPrice</span> <code class='quiet'>any</code>
+  <td class='break-word'><span class='code bold'>buy.max_price</span> <code class='quiet'>any</code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -4975,7 +4975,7 @@ contract.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log)</p
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>sell.maxPrice</span> <code class='quiet'>any</code>
+  <td class='break-word'><span class='code bold'>sell.max_price</span> <code class='quiet'>any</code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -5170,7 +5170,7 @@ contract.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log)</p
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> oldTicks = <span class="hljs-keyword">await</span> tickStream.history({<span class="hljs-attr">count</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">end</span>: yesterday})</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> old_ticks = <span class="hljs-keyword">await</span> tickStream.history({<span class="hljs-attr">count</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">end</span>: yesterday})</pre>
     
   
 
@@ -5268,11 +5268,11 @@ contract.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log)</p
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> txStream = accounts.transactionStream;
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> tx_stream = accounts.transaction_stream;
 
-<span class="hljs-keyword">const</span> txList = txStream.list;
+<span class="hljs-keyword">const</span> tx_list = tx_stream.list;
 
-txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
+tx_stream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
     
   
 
@@ -5293,8 +5293,8 @@ txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='websitestatus'>
-      WebsiteStatus
+    <h3 class='fl m0' id='websitestatusstream'>
+      WebsiteStatusStream
     </h3>
     
     
@@ -5303,7 +5303,7 @@ txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
 
   <p>An abstract class for website status info</p>
 
-    <div class='pre p1 fill-light mt0'>new WebsiteStatus(api: <a href="#derivapi">DerivAPI</a>)</div>
+    <div class='pre p1 fill-light mt0'>new WebsiteStatusStream(api: <a href="#derivapi">DerivAPI</a>)</div>
   
   
     <p>
@@ -5348,7 +5348,7 @@ txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>isWebsiteUp</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          <span class='code bold'>is_website_up</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
           
           
         </div>
@@ -5366,7 +5366,7 @@ txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>callLimits</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
+          <span class='code bold'>call_limits</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
           
           
         </div>
@@ -5378,7 +5378,7 @@ txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>termsAndCondtionsVersion</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+          <span class='code bold'>terms_and_condtions_version</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
           
           
         </div>
@@ -5394,11 +5394,11 @@ txStream.onUpdate(<span class="hljs-built_in">console</span>.log)</pre>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> websiteStatus = <span class="hljs-keyword">await</span> api.websiteStatus();
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> website_status = <span class="hljs-keyword">await</span> api.websiteStatus();
 
-<span class="hljs-keyword">const</span> isWebsiteUp = websiteStatus.isWebsiteUp;
+<span class="hljs-keyword">const</span> is_website_up = website_status.is_website_up;
 
-websiteStatus.onUpdate(<span class="hljs-function"><span class="hljs-params">s</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Site is <span class="hljs-subst">${s.status}</span>`</span>));</pre>
+website_status.onUpdate(<span class="hljs-function"><span class="hljs-params">s</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Site is <span class="hljs-subst">${s.status}</span>`</span>));</pre>
     
   
 
@@ -5515,13 +5515,13 @@ simpler objects used for representing data.</p>
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>pipSize</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+          <span class='code bold'>pip_size</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
           
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>pipSized</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+          <span class='code bold'>pip_sized</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
           : the pipsized value
 
           
@@ -5730,7 +5730,7 @@ simpler objects used for representing data.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> lc = account.landingCompany;
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> lc = account.landing_company;
 
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Landing Company: <span class="hljs-subst">${lc.full}</span>, Short code: <span class="hljs-subst">${lc.short}</span>`</span>);</pre>
     
@@ -6261,7 +6261,7 @@ simpler objects used for representing data.</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>isInRange(rawDate, date)</span>
+            <span class='code strong strong truncate'>isInRange(raw_date, date)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -6270,7 +6270,7 @@ simpler objects used for representing data.</p>
   
 
   
-    <div class='pre p1 fill-light mt0'>isInRange(rawDate: any, date: (<a href="#customdate">CustomDate</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+    <div class='pre p1 fill-light mt0'>isInRange(raw_date: any, date: (<a href="#customdate">CustomDate</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
   
   
 
@@ -6287,7 +6287,7 @@ simpler objects used for representing data.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>rawDate</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>raw_date</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -6514,11 +6514,11 @@ simpler objects used for representing data.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> tickStream = api.tickStream(<span class="hljs-string">'R_100'</span>);
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> tick_stream = api.tickStream(<span class="hljs-string">'R_100'</span>);
 
-tickStream.onUpdate(<span class="hljs-built_in">console</span>.log);
+tick_stream.onUpdate(<span class="hljs-built_in">console</span>.log);
 
-tickStream.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);</pre>
+tick_stream.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);</pre>
     
   
 
@@ -6624,7 +6624,7 @@ API</p>
 <span class="hljs-keyword">const</span> symbols = <span class="hljs-keyword">await</span> api.activeSymbols();
 
 <span class="hljs-comment">// Read the data from cache if available</span>
-<span class="hljs-keyword">const</span> cachedSymbols = <span class="hljs-keyword">await</span> api.cache.activeSymbols();</pre>
+<span class="hljs-keyword">const</span> cached_symbols = <span class="hljs-keyword">await</span> api.cache.activeSymbols();</pre>
     
   
 
@@ -6981,7 +6981,7 @@ in this codebase.</p>
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>contractType</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+          <span class='code bold'>contract_type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
           
           
         </div>
@@ -7005,7 +7005,7 @@ in this codebase.</p>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>dateExpiry</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
+          <span class='code bold'>date_expiry</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
           : epoch in seconds or 
 <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>
 
@@ -7013,7 +7013,7 @@ in this codebase.</p>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>dateStart</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
+          <span class='code bold'>date_start</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>))</code>
           : epoch in seconds or 
 <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>
 
@@ -7042,14 +7042,14 @@ in this codebase.</p>
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>durationUnit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?)</code>
+          <span class='code bold'>duration_unit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?)</code>
           : duration unit, required if duration is number
 
           
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>productType</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?)</code>
+          <span class='code bold'>product_type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?)</code>
           : 'multi_barrier' or 'basic'
 
           
@@ -7120,7 +7120,7 @@ in this codebase.</p>
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>maxPrice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          <span class='code bold'>max_price</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
           : Maximum acceptable price for buyin the contract
 
           
@@ -7184,7 +7184,7 @@ in this codebase.</p>
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>maxPrice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
+          <span class='code bold'>max_price</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?)</code>
           : Maximum acceptable price for selling the contract
 
           

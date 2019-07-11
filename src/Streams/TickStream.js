@@ -38,8 +38,7 @@ export default class TickStream extends Stream {
             .pipe(map(t => wrapTick(t, this._data.pip)));
 
         this._data.list = await tickStream
-            .pipe(first())
-            .pipe(map(h => historyToTicks(h, this._data.pip)))
+            .pipe(first(), map(h => historyToTicks(h, this._data.pip)))
             .toPromise();
     }
 

@@ -1,9 +1,11 @@
 /**
  * Subscription Manager - manage subscription channels
  *
- * Makes sure there is always one subscription channel for all requests of
- * subscriptions, and forgets channels that don't have subscribers. It also
- * ensures that subscriptions are revived after connection drop.
+ * Makes sure there is always only one subscription channel for all requests of
+ * subscriptions, keeps a history of received values for the subscription of ticks
+ * and forgets channels that do not have subscribers. It also ensures that
+ * subscriptions are revived after connection drop/account changed.
+ *
  *
  * @example
  * // This one creates a new subscription assuming it is the first one for R_100

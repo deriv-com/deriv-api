@@ -33,7 +33,7 @@ export default class TickStream extends Stream {
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
         const tick_stream        = this.api.subscribe(parseParams(this.symbol, this.range));
 
-        this._data.onUpdate = tick_stream
+        this._data.on_update = tick_stream
             .pipe(skip(1))
             .pipe(map(t => wrapTick(t, this._data.pip)));
 

@@ -19,8 +19,8 @@ export default class Stream extends Immutable {
      */
     onUpdate(callback) {
         if (callback) {
-            this._data.onUpdate.subscribe(callback);
+            this._data.on_update.subscribe(callback);
         }
-        return this._data.onUpdate;
+        return this._data.on_update;
     }
 }

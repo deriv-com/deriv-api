@@ -14,7 +14,7 @@
         -   [balance][10]
         -   [transactionStream][11]
         -   [assets][12]
-        -   [websiteStatus][13]
+        -   [websiteStatusStream][13]
         -   [changeAccount][14]
     -   [DerivAPIBasic][15]
         -   [Parameters][16]
@@ -39,7 +39,7 @@
         -   [Contract][35]
         -   [TickStream][36]
         -   [TransactionStream][37]
-        -   [WebsiteStatus][38]
+        -   [WebsiteStatusStream][38]
     -   [Types][39]
         -   [MarketValue][40]
         -   [Monetary][41]
@@ -353,11 +353,11 @@ Trading assets including multiple underlyings and trading times
 
 Returns **[Assets][254]** 
 
-#### websiteStatus
+#### websiteStatusStream
 
 Website status stream
 
-Returns **[WebsiteStatus][255]** 
+Returns **[WebsiteStatusStream][255]** 
 
 #### changeAccount
 
@@ -852,7 +852,7 @@ const tx_list = tx_stream.list;
 tx_stream.onUpdate(console.log)
 ```
 
-#### WebsiteStatus
+#### WebsiteStatusStream
 
 **Extends Stream**
 
@@ -2340,7 +2340,7 @@ Type: [Object][242]
 
 [12]: #assets
 
-[13]: #websitestatus
+[13]: #websitestatusstream
 
 [14]: #changeaccount
 
@@ -2390,7 +2390,7 @@ Type: [Object][242]
 
 [37]: #transactionstream-1
 
-[38]: #websitestatus-1
+[38]: #websitestatusstream-1
 
 [39]: #types
 
@@ -2794,7 +2794,7 @@ Type: [Object][242]
 
 [239]: #parameters-88
 
-[240]: #websitestatus-2
+[240]: #websitestatus
 
 [241]: #parameters-89
 
@@ -2824,7 +2824,7 @@ Type: [Object][242]
 
 [254]: #assets
 
-[255]: #websitestatus
+[255]: #websitestatusstream
 
 [256]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 

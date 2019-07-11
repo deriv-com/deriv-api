@@ -31,7 +31,7 @@ toc:
                 - Contract
                 - TickStream
                 - TransactionStream
-                - WebsiteStatus
+                - WebsiteStatusStream
           - name: Types
             description: |
                 Container classes for data types, providing means to convert them

@@ -21,7 +21,7 @@ import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars 
  * @property {String[]} languages
  * @property {String} terms_and_condtions_version
  */
-export default class WebsiteStatus extends Stream {
+export default class WebsiteStatusStream extends Stream {
     // Called by the API to initialize the instance
     async init() {
         return this;

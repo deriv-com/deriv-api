@@ -5,7 +5,7 @@ import Underlying       from './Immutables/Underlying';
 import CandleStream     from './Streams/CandleStream';
 import Contract         from './Streams/Contract';
 import TickStream       from './Streams/TickStream';
-import WebsiteStatus    from './Streams/WebsiteStatus';
+import WebsiteStatusStream    from './Streams/WebsiteStatusStream';
 
 /**
  * The main class of the DerivAPI module. This class extends the minimum
@@ -134,10 +134,10 @@ export default class DerivAPI extends DerivAPIBasic {
     /**
      * Website status stream
      *
-     * @returns {WebsiteStatus}
+     * @returns {WebsiteStatusStream}
      */
-    async websiteStatus() {
-        const website_status_stream = new WebsiteStatus(this);
+    async websiteStatusStream() {
+        const website_status_stream = new WebsiteStatusStream(this);
 
         await website_status_stream.init();
 

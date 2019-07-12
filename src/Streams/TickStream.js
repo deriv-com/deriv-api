@@ -34,12 +34,16 @@ export default class TickStream extends Stream {
         const tick_stream        = this.api.subscribe(parseParams(this.symbol, this.range));
 
         this._data.on_update = tick_stream
-            .pipe(skip(1))
-            .pipe(map(t => wrapTick(t, this._data.pip)));
+            .pipe(skip(1), map(t => wrapTick(t, this._data.pip)));
 
         this._data.list = await tick_stream
             .pipe(first(), map(h => historyToTicks(h, this._data.pip)))
             .toPromise();
+
+        this.onUpdate((tick) => {
+            this._data.list.push(tick);
+            this._data.list.shift();
+        });
     }
 
 

@@ -897,6 +897,8 @@ Keeps a market value and pip size
 
 ##### Parameters
 
+-   `value`  
+-   `pip`  
 -   `market` **[Object][242]** 
     -   `market.value` **[Number][258]** 
     -   `market.pip` **[Number][258]** 
@@ -952,7 +954,27 @@ console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
 
 An alternative date object
 
+##### Parameters
+
+-   `date`  
+
 ##### isBefore
+
+###### Parameters
+
+-   `date` **([CustomDate][264] \| [Date][281] \| [Number][258])** 
+
+Returns **[Boolean][262]** 
+
+##### isSameOrAfter
+
+###### Parameters
+
+-   `date` **([CustomDate][264] \| [Date][281] \| [Number][258])** 
+
+Returns **[Boolean][262]** 
+
+##### isSameOrBefore
 
 ###### Parameters
 

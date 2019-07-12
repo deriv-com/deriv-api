@@ -42,3 +42,7 @@ export function parseRequestRange({ start, end, count } = {}) {
 
     return request;
 }
+
+export function toPipSize(pip) {
+    return pip.toString().length - 2;
+}

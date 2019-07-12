@@ -1,0 +1,74 @@
+toc:
+    - name: Main Modules
+      children:
+          - DerivAPI
+          - DerivAPIBasic
+    - name: Abstract Objects
+      children:
+          - name: Immutables
+            description: |
+                Abstract objects that provide static content and methods to make
+                use of them, changing internal fields of these objects is blocked
+                and they do not receive updates.
+            children:
+                - Account
+                - Assets
+                - Underlying
+                - Tick
+                - Candle
+                - Transaction
+                - ContractGroup
+                - Buy
+                - Sell
+          - name: Streams
+            description: |
+                Live stream of data, plus some dynamically updated fields, you
+                can subscribe to changes using the `onUpdate` method on all of
+                these classes.
+            children:
+                - Balance
+                - CandleStream
+                - Contract
+                - TickStream
+                - TransactionStream
+                - WebsiteStatusStream
+          - name: Types
+            description: |
+                Container classes for data types, providing means to convert them
+                to other types and represent them to the UI. These are mostly
+                simpler objects used for representing data.
+            children:
+                - MarketValue
+                - Monetary
+                - FullName
+                - CustomDate
+                - DateRange
+                - Duration
+                - DurationRange
+                - Immutable
+                - Stream
+    - name: Core Functionality
+      children:
+          - Cache
+          - SubscriptionManager
+          - Storage
+    - name: Object References
+      description: |
+          These are plain JavaScript objects that are named to easily refer to
+          them in this documentation, they don't physically exist as a class
+          in this codebase.
+      children:
+          - name: Parameters
+            children:
+                - CandlesParam
+                - TicksParam
+                - ContractsParam
+                - BuyParam
+                - SellParam
+                - HistoryRange
+          - name: Plain objects (returned from methods)
+            children:
+                - SpotDurations
+                - ForwardDurations
+                - Durations
+                - DurationUnits

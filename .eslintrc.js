@@ -18,5 +18,8 @@ module.exports = {
         'no-multi-spaces'                    : 0,
         'no-param-reassign'                  : ['error', {'props': false }],
         'no-plusplus'                        : 0,
+        'no-use-before-define'               : 0,
+        'camelcase'                          : 0,
+        'no-underscore-dangle'               : ['error', { "allow": ["_data"] }],
     },
 };

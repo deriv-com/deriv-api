@@ -1,5 +1,5 @@
 import WS       from 'ws';
-import DerivAPI from './DerivAPI';
+import DerivAPI from '../DerivAPI';
 
 let api;
 
@@ -29,5 +29,5 @@ test('API construction with endpoint and appId', () => {
 });
 
 test('API construction with endpoint', () => {
-    expect(() => new DerivAPI({ endpoint: 1, appId: 1 })).toThrow();
+    expect(() => new DerivAPI({ endpoint: 1, app_id: 1 })).toThrow();
 });

@@ -4,21 +4,7 @@ Async Websocket API for deriv.app
 
 Code Coverage: [![codecov](https://codecov.io/gh/binary-com/deriv-api/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/deriv-api)
 
-## To install dependencies
-
-```
-npm install
-```
-
-## To run the tests
-
-```
-npm test
-```
-
-## How to use Deriv API
-
-### Start a new connection
+# Usage
 
 There are two ways to establish a connection:
 
@@ -37,81 +23,67 @@ There are two ways to establish a connection:
     const api = new DerivAPI({ endpoint: 'ws://...', appId: 1003, lang: 'EN' });
     ```
 
-### Making a request
+For more detailed examples see the [wiki](https://github.com/binary-com/deriv-api/wiki)
+See also: [DerivAPI reference](docs/DerivAPI.md)
 
-1. **Normal requests** return a promise:
-    ```js
-    const ping = await api.ping();
-    console.log(ping.ping); // pong
-    ```
+# Development
 
-2. **Streaming calls:** There are two ways to subscribe to a stream.
+```
+npm install
+```
 
-    2.1. Using a callback:
+## To run the tests
 
-      ```js
-      const cbTicks = (response) => { console.log('Current tick is: %s', response.tick.quote); };
-      const ticks   = api.subscribeWithCallback(
-          { ticks: 'R_100' },
-          cbTicks,
-      );
-      ```
+```
+npm test
+```
 
-    2.2. As an observer:
+## Run tests automatically on source code edits
 
-      ```js
-      const source  = api.subscribe({ ticks: 'R_100' });
-      const cbTicks = (response) => { console.log('Current tick is: %s', response.tick.quote); };
-      source.subscribe(cbTicks);
-      const firstTick = await sourse.pipe(first()).toPromise() // RxJS 6
-      ```
+```
+npm run devel
+```
 
-3. There are abstractions such as `account`, `contract`, `underlying`, etc.
+## Run linter
 
-    e.g. **`underlying:`**
+```
+npm run syntax
+```
 
-    - To initialise with default values:
-      ```js
-      const r100Instance = await api.underlying('R_100');
-      // access underlying information according to active_symbols:
-      console.log(r100Instance.symbol);                 // R_100
-      console.log(r100Instance.display_name);           // Volatility 100 Index
-      console.log(r100Instance.market);                 // volidx
-      console.log(r100Instance.market_display_name);    // Volatility Indices
-      console.log(r100Instance.submarket);              // random_index
-      console.log(r100Instance.submarket_display_name); // Continuous Indices
-      console.log(r100Instance.pip);                    // 0.01
-      ...
-      ```
+## Run all tests (lint + js tests)
 
-    - Retrieve the latest 10 ticks:
-      ```js
-      const r100History = await r100Instance.ticksHistory({ end: 'latest', count: 10 });
-      ```
+```
+npm run test_all
+```
 
-    - Retrieve the latest 10 ticks and subscribe:
-      ```js
-      r100Instance.ticksHistorySubscribe({ end: 'latest', count: 10 }, cbTicks);
-      ```
+## Prettify the code (done automatically on commit)
 
-    - Trading Times of the symbol:
-      ```js
-      const r100TradingTimesInfo = await r100Instance.tradingTimes(); // today
-      const r100TradingTimesInfo = await r100Instance.tradingTimes('2019-06-28');
-      ```
+```
+npm run prettify
+```
 
-    - Asset Index of the symbol:
-      ```js
-      const r100AssetIndexInfo = await r100Instance.assetIndex(); // default values
-      const r100AssetIndexInfo = await r100Instance.assetIndex({ landing_company: 'svg' });
-      ```
+## Generate documentations
 
-    - Available contracts of the symbol:
-      ```js
-      const r100ContractsInfo = await r100Instance.contractsFor(); // default values
-      const r100ContractsInfo = await r100Instance.contractsFor({
-          landing_company: 'svg',
-          product_type   : 'basic',
-          currency       : 'USD',
-      });
-      ```
+```
+npm run docs
+```
+
+## Regenerate docs automatically on source code edit
+
+Needs `inotify` to work.
+
+```
+npm run devel_docs
+```
+
+## Serve docs on localhost and update on source code changes
+
+```
+npm run serve_docs
+```
+
+## Generate html version of the docs and publish it to gh-pages
+
+```
+npm run gh-pages
+```

@@ -1,7 +1,20 @@
+import serialize from 'json-stable-stringify';
 import DerivAPICalls from './DerivAPICalls';
-import { ConstructionError } from './lib/error';
-import { objectToCacheKey } from './lib/utils';
+import { ConstructionError } from './Types/errors';
 
+/**
+ * Cache - An in-memory cache used to prevent sending redundant requests to the
+ * API
+ *
+ * @example
+ * // Read the latest active symbols
+ * const symbols = await api.activeSymbols();
+ *
+ * // Read the data from cache if available
+ * const cached_symbols = await api.cache.activeSymbols();
+ *
+ * @param {DerivAPI} api - API instance to get data that is not cached
+ */
 export default class Cache extends DerivAPICalls {
     constructor(api) {
         if (!api) {
@@ -37,4 +50,14 @@ export default class Cache extends DerivAPICalls {
 
         this.storage[key] = response;
     }
+}
+
+function objectToCacheKey(obj) {
+    const cloned_object = { ...obj };
+
+    delete cloned_object.req_id;
+    delete cloned_object.passthrough;
+    delete cloned_object.subscribe;
+
+    return serialize(cloned_object);
 }

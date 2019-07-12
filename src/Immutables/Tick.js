@@ -16,12 +16,15 @@ import MarketValue from '../Types/MarketValue';
  * @property {MarketValue} quote
  * @property {MarketValue} ask
  * @property {MarketValue} bid
+ * @property {Object} raw - The raw data received from API
  */
 export default class Tick extends Immutable {
-    constructor({
-        epoch, quote, ask, bid,
-    }, pip) {
-        const instance = {};
+    constructor(raw, pip) {
+        const {
+            epoch, quote, ask, bid,
+        } = raw;
+
+        const instance = { raw };
 
         instance.time  = new CustomDate(epoch);
         instance.quote = new MarketValue(quote, pip);

@@ -13,23 +13,28 @@ import MarketValue from '../Types/MarketValue';
  * @param {Number} candle.close
  * @param {Number} pip
  *
- * @property {CustomDate} time
+ * @property {CustomDate} time - The current time of the candle
+ * @property {CustomDate} open_time - The time that candle opened
  * @property {MarketValue} open
  * @property {MarketValue} high
  * @property {MarketValue} low
  * @property {MarketValue} close
+ * @property {Object} raw - The raw data received from API
  */
 export default class Candle extends Immutable {
-    constructor({
-        epoch, open, high, low, close,
-    }, pip) {
-        const instance = {};
+    constructor(raw, pip) {
+        const {
+            epoch, open, high, low, close, open_time,
+        } = raw;
 
-        instance.time  = new CustomDate(epoch);
-        instance.open  = new MarketValue(open, pip);
-        instance.high  = new MarketValue(high, pip);
-        instance.low   = new MarketValue(low, pip);
-        instance.close = new MarketValue(close, pip);
+        const instance = { raw };
+
+        instance.time      = new CustomDate(epoch);
+        instance.open_time = open_time ? new CustomDate(open_time) : new CustomDate(epoch);
+        instance.open      = new MarketValue(open, pip);
+        instance.high      = new MarketValue(high, pip);
+        instance.low       = new MarketValue(low, pip);
+        instance.close     = new MarketValue(close, pip);
 
         super(instance);
     }

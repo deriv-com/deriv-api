@@ -15,11 +15,12 @@ export default class Stream extends Immutable {
      * tick_stream.onUpdate().subscribe(console.log);
      *
      * @param {Function} callback
+     * @param {Function} on_error
      * @returns {Observable}
      */
-    onUpdate(callback) {
+    onUpdate(callback, on_error) {
         if (callback) {
-            this._data.on_update.subscribe(callback);
+            this._data.on_update.subscribe(callback, on_error || (() => {}));
         }
         return this._data.on_update;
     }

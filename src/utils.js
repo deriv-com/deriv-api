@@ -19,13 +19,14 @@ const defaultRange = {
     count: 1000,
 };
 
-export function parseTicksOptions(options = {}) {
-    const parsed = {};
+export function parseHistoryArgs(options = {}) {
+    let parsed = {};
 
     if (typeof options === 'string') {
         parsed.symbol = options;
         parsed.range  = defaultRange;
     } else {
+        parsed        = { ...options };
         parsed.range  = { ...defaultRange, ...options.range };
         parsed.symbol = options.symbol;
     }

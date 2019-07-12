@@ -12,15 +12,19 @@ export default class CustomObservable extends Observable {
         this.observers = observers;
     }
 
+    get openObservers() {
+        return this.observers.filter(o => !o.closed);
+    }
+
     publish(obj) {
-        this.observers.forEach(e => e.next(obj));
+        this.openObservers.forEach(e => e.next(obj));
     }
 
     error(errorMessage) {
-        this.observers.forEach(e => e.error(errorMessage));
+        this.openObservers.forEach(e => e.error(errorMessage));
     }
 
     complete() {
-        this.observers.forEach(e => e.complete());
+        this.openObservers.forEach(e => e.complete());
     }
 }

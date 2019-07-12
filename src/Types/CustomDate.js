@@ -1,6 +1,8 @@
-import Moment    from 'moment';
+import Moment              from 'moment';
 
-import Immutable from './Immutable';
+import { isInMiliSeconds } from '../utils';
+
+import Immutable           from './Immutable';
 
 /**
  * An alternative date object
@@ -9,7 +11,9 @@ import Immutable from './Immutable';
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
-        super({ date: new Moment(date) });
+        const miliseconds = typeof date === 'number' && !isInMiliSeconds(date) ? date * 1000 : date;
+
+        super({ date: new Moment(miliseconds) });
     }
 
     /**

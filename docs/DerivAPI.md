@@ -594,12 +594,13 @@ A wrapper class for Tick
 
 ##### Parameters
 
+-   `raw`  
+-   `pip` **[Number][258]** 
 -   `tick` **[Object][242]** 
     -   `tick.epoch` **([Number][258] \| [String][243])** 
     -   `tick.quote` **[Number][258]** 
     -   `tick.ask` **[Number][258]** 
     -   `tick.bid` **[Number][258]** 
--   `pip` **[Number][258]** 
 
 ##### Properties
 
@@ -607,6 +608,7 @@ A wrapper class for Tick
 -   `quote` **[MarketValue][265]** 
 -   `ask` **[MarketValue][265]** 
 -   `bid` **[MarketValue][265]** 
+-   `raw` **[Object][242]** The raw data received from API
 
 #### Candle
 
@@ -616,21 +618,24 @@ A wrapper class for Candle
 
 ##### Parameters
 
+-   `raw`  
+-   `pip` **[Number][258]** 
 -   `candle` **[Object][242]** 
     -   `candle.epoch` **([Number][258] \| [String][243])** 
     -   `candle.open` **[Number][258]** 
     -   `candle.high` **[Number][258]** 
     -   `candle.low` **[Number][258]** 
     -   `candle.close` **[Number][258]** 
--   `pip` **[Number][258]** 
 
 ##### Properties
 
--   `time` **[CustomDate][264]** 
+-   `time` **[CustomDate][264]** The current time of the candle
+-   `open_time` **[CustomDate][264]** The time that candle opened
 -   `open` **[MarketValue][265]** 
 -   `high` **[MarketValue][265]** 
 -   `low` **[MarketValue][265]** 
 -   `close` **[MarketValue][265]** 
+-   `raw` **[Object][242]** The raw data received from API
 
 #### Transaction
 
@@ -1063,6 +1068,7 @@ Listen on updates of a stream
 ###### Parameters
 
 -   `callback` **[Function][259]** 
+-   `on_error` **[Function][259]** 
 
 ###### Examples
 

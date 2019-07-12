@@ -2,7 +2,7 @@ import { map, first, skip }                     from 'rxjs/operators';
 
 import Tick                                     from '../Immutables/Tick';
 import Stream                                   from '../Types/Stream';
-import { parseRequestRange, parseTicksOptions } from '../utils';
+import { parseRequestRange, parseHistoryArgs }  from '../utils';
 
 /**
  * @typedef {Object} HistoryRange
@@ -26,13 +26,13 @@ import { parseRequestRange, parseTicksOptions } from '../utils';
  */
 export default class TickStream extends Stream {
     constructor(api, options) {
-        super({ api, ...parseTicksOptions(options) });
+        super({ api, ...parseHistoryArgs(options) });
     }
 
     async init() {
         const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
-        const tick_stream        = this.api.subscribe(parseParams(this.symbol, this.range));
+        const tick_stream        = this.api.subscribe(toTicksHistoryParam(this));
 
         this._data.on_update = tick_stream
             .pipe(skip(1), map(t => wrapTick(t, this._data.pip)));
@@ -63,7 +63,8 @@ export default class TickStream extends Stream {
      */
     async history(range) {
         if (!range) return this.list;
-        return this.api.cache.ticksHistory(parseParams(this.symbol, range))
+
+        return this.api.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
             .then(h => historyToTicks(h, this._data.pip));
     }
 }
@@ -84,7 +85,7 @@ function wrapTick({ tick }, pip) {
     return new Tick(tick, pip);
 }
 
-function parseParams(symbol, range) {
+function toTicksHistoryParam({ symbol, range }) {
     return {
         ticks_history: symbol,
         style        : 'ticks',

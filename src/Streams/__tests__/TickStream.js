@@ -1,12 +1,13 @@
-import { first }       from 'rxjs/operators';
-import WebSocket       from 'ws';
+import { first }  from 'rxjs/operators';
+import WebSocket  from 'ws';
 
-import DerivAPI        from '../../DerivAPI';
-import Tick            from '../../Immutables/Tick';
-import TickStream      from '../TickStream';
+import DerivAPI   from '../../DerivAPI';
+import Tick       from '../../Immutables/Tick';
+import TickStream from '../TickStream';
 
 let api;
 let tick_stream;
+const count = 1000;
 
 beforeAll(async () => {
     global.WebSocket = WebSocket;
@@ -28,7 +29,7 @@ test('Request for a ticks history', async () => {
     const ticks = tick_stream.list; // last 1000 1-minute ticks
 
     expect(ticks).toBeInstanceOf(Array);
-    expect(ticks).toHaveLength(1000);
+    expect(ticks).toHaveLength(count);
     expect(ticks.slice(-1)[0]).toBeInstanceOf(Tick);
 
     const old_ticks = await tick_stream.history({ count: 100, end: new Date() });
@@ -43,7 +44,7 @@ test('list stays up to date with the last tick', async () => {
 
     expect(tick_stream.list.slice(-1)[0]).toEqual(recent_tick);
 
-    expect(tick_stream.list).toHaveLength(1000);
+    expect(tick_stream.list).toHaveLength(count);
 });
 
 test('Check individual ticks', async () => {

@@ -1,5 +1,5 @@
-import Immutable from './Immutable';
 import CustomDate from './CustomDate';
+import Immutable  from './Immutable';
 
 /** Class to keep duration ranges
  *

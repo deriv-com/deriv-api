@@ -1,5 +1,5 @@
-import Stream from '../Types/Stream';
-import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
+import '../Types/Monetary';
+import Stream   from '../Types/Stream';
 
 /**
  * An abstract class for balance information

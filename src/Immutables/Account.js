@@ -1,8 +1,8 @@
-import Immutable from '../Types/Immutable';
-import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
-import Balance from '../Streams/Balance'; /* eslint-disable-line no-unused-vars */
-import TransactionStream from '../Streams/TransactionStream'; /* eslint-disable-line no-unused-vars */
-import Contract         from '../Streams/Contract';
+import '../Streams/Balance';
+import '../Streams/TransactionStream';
+import '../Types/FullName';
+import Contract          from '../Streams/Contract';
+import Immutable         from '../Types/Immutable';
 
 /**
  * Abstract class for user accounts

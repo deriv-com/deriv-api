@@ -1,7 +1,9 @@
-import Immutable from '../Types/Immutable';
-import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
-import ContractGroup from './ContractGroup'; /* eslint-disable-line no-unused-vars */
+import '../Types/FullName';
+
+import './ContractGroup';
+
 import Contract         from '../Streams/Contract';
+import Immutable        from '../Types/Immutable';
 
 /**
  * Abstract class for an underlying

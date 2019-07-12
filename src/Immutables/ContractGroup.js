@@ -1,7 +1,7 @@
-import Immutable from '../Types/Immutable';
-import FullName from '../Types/FullName'; /* eslint-disable-line no-unused-vars */
-import DateRange from '../Types/DateRange'; /* eslint-disable-line no-unused-vars */
-import DurationRange from '../Types/DurationRange'; /* eslint-disable-line no-unused-vars */
+import '../Types/DateRange';
+import '../Types/DurationRange';
+import '../Types/FullName';
+import Immutable     from '../Types/Immutable';
 
 /**
  * @typedef {Object} SpotDurations

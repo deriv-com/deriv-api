@@ -1,5 +1,5 @@
-import Immutable from '../Types/Immutable';
-import CustomDate from '../Types/CustomDate';
+import CustomDate  from '../Types/CustomDate';
+import Immutable   from '../Types/Immutable';
 import MarketValue from '../Types/MarketValue';
 
 /**

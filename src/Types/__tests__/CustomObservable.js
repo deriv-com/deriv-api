@@ -1,9 +1,10 @@
-import { interval }     from 'rxjs';
 import {
     catchError,
     take,
     toArray,
 }                       from 'rxjs/operators';
+import { interval }     from 'rxjs';
+
 import CustomObservable from '../CustomObservable';
 
 test('Pure observable', async () => {

@@ -1,16 +1,18 @@
+import './Storage';
+import './SubscriptionManager';
+
 import { first }        from 'rxjs/operators';
-import DerivAPICalls    from './DerivAPICalls';
-import CustomPromise    from './Types/CustomPromise';
-import CustomObservable from './Types/CustomObservable';
+
 import Cache            from './Cache';
+import DerivAPICalls    from './DerivAPICalls';
+import CustomObservable from './Types/CustomObservable';
+import CustomPromise    from './Types/CustomPromise';
 import {
     APIError,
     CallError,
     ConstructionError,
     ResponseError,
 }                       from './Types/errors';
-import './Storage';
-import './SubscriptionManager';
 
 /**
  * The minimum functionality provided by DerivAPI, provides direct calls to the

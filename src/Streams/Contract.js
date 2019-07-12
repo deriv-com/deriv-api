@@ -1,8 +1,9 @@
-import Stream from '../Types/Stream';
-import Buy from '../Immutables/Buy'; /* eslint-disable-line no-unused-vars */
-import Sell from '../Immutables/Sell'; /* eslint-disable-line no-unused-vars */
-import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
-import Duration from '../Types/Duration'; /* eslint-disable-line no-unused-vars */
+import '../Immutables/Buy';
+import '../Immutables/Sell';
+import '../Types/Duration';
+import '../Types/Monetary';
+import Stream   from '../Types/Stream';
+
 /**
  * @typedef {Object} ContractsParam
  * @property {String} contract_type

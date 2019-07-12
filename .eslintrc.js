@@ -4,6 +4,7 @@ module.exports = {
     ],
     plugins: [
         'align-assignments',
+        'arca',
     ],
     env: {
         browser: true,
@@ -21,5 +22,8 @@ module.exports = {
         'no-use-before-define'               : 0,
         'camelcase'                          : 0,
         'no-underscore-dangle'               : ['error', { "allow": ["_data"] }],
+		'arca/import-align'                  : 2,
+		'arca/import-ordering'               : 2,
+		'arca/newline-after-import-section'  : 2,
     },
 };

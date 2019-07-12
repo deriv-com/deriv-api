@@ -1,4 +1,5 @@
-import Moment from 'moment';
+import Moment    from 'moment';
+
 import Immutable from './Immutable';
 
 /**

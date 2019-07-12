@@ -1,5 +1,5 @@
-import Stream from '../Types/Stream';
 import Transaction from '../Immutables/Transaction'; /* eslint-disable-line no-unused-vars */
+import Stream      from '../Types/Stream';
 
 /**
  * A stream of transactions

@@ -1,5 +1,5 @@
-import Stream from '../Types/Stream';
-import Candle from '../Immutables/Candle'; /* eslint-disable-line no-unused-vars */
+import '../Immutables/Candle';
+import Stream                from '../Types/Stream';
 import { parseTicksOptions } from '../utils';
 
 /**

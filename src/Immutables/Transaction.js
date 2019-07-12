@@ -1,6 +1,6 @@
-import Immutable from '../Types/Immutable';
-import CustomDate from '../Types/CustomDate'; /* eslint-disable-line no-unused-vars */
-import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
+import '../Types/CustomDate';
+import '../Types/Monetary';
+import Immutable  from '../Types/Immutable';
 
 /**
  * A class for transaction objects

@@ -1,9 +1,10 @@
-import { Observable } from 'rxjs';
 import {
     take,
     toArray,
 }                     from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import WS             from 'ws';
+
 import DerivAPI       from '../DerivAPI';
 
 let api;

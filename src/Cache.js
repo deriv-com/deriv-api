@@ -1,5 +1,6 @@
-import serialize from 'json-stable-stringify';
-import DerivAPICalls from './DerivAPICalls';
+import serialize             from 'json-stable-stringify';
+
+import DerivAPICalls         from './DerivAPICalls';
 import { ConstructionError } from './Types/errors';
 
 /**

@@ -1,5 +1,6 @@
-import Immutable from './Immutable';
 import { toPipSize } from '../utils';
+
+import Immutable     from './Immutable';
 
 /**
  * Keeps a market value and pip size

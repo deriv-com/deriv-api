@@ -1,8 +1,9 @@
-import WebSocket    from 'ws';
 import { first }       from 'rxjs/operators';
-import TickStream from '../TickStream';
-import DerivAPI     from '../../DerivAPI';
-import Tick       from '../../Immutables/Tick';
+import WebSocket       from 'ws';
+
+import DerivAPI        from '../../DerivAPI';
+import Tick            from '../../Immutables/Tick';
+import TickStream      from '../TickStream';
 
 let api;
 let tick_stream;

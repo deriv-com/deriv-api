@@ -4,9 +4,8 @@ import { toPipSize } from '../utils';
 /**
  * Keeps a market value and pip size
  *
- * @param {Object} market
- * @param {Number} market.value
- * @param {Number} market.pip
+ * @param {Number} value
+ * @param {Number} pip
  *
  * @property {Number} pip_size
  * @property {Number} pip_sized - the pipsized value

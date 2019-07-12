@@ -4,7 +4,7 @@ import Immutable from './Immutable';
 /**
  * An alternative date object
  *
- * @param
+ * @param {CustomDate|Date|Number} date
  */
 export default class CustomDate extends Immutable {
     constructor(date) {

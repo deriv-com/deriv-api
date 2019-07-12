@@ -897,11 +897,8 @@ Keeps a market value and pip size
 
 ##### Parameters
 
--   `value`  
--   `pip`  
--   `market` **[Object][242]** 
-    -   `market.value` **[Number][258]** 
-    -   `market.pip` **[Number][258]** 
+-   `value` **[Number][258]** 
+-   `pip` **[Number][258]** 
 
 ##### Properties
 
@@ -956,7 +953,7 @@ An alternative date object
 
 ##### Parameters
 
--   `date`  
+-   `date` **([CustomDate][264] \| [Date][281] \| [Number][258])** 
 
 ##### isBefore
 

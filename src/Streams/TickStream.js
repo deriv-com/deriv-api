@@ -43,8 +43,7 @@ export default class TickStream extends Stream {
         );
 
         this.onUpdate((tick) => {
-            this._data.list.push(tick);
-            this._data.list.shift();
+            this._data.list = [...this._data.list.slice(1), tick];
         });
 
         this._data.list = await tick_stream

@@ -39,8 +39,7 @@ export default class CandleStream extends Stream {
         );
 
         this.onUpdate((candle) => {
-            this._data.list.push(candle);
-            this._data.list.shift();
+            this._data.list = [...this._data.list.slice(1), candle];
         });
 
         this._data.list = await candle_stream

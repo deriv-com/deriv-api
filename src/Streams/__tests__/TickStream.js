@@ -40,8 +40,12 @@ test('Request for a ticks history', async () => {
 });
 
 test('list stays up to date with the last tick', async () => {
+    const last_tick = tick_stream.list.slice(-1)[0];
+
     const recent_tick = await tick_stream.onUpdate().pipe(first()).toPromise();
 
+    // Tick was pushed to the end of the list
+    expect(tick_stream.list.slice(-2)[0]).toEqual(last_tick);
     expect(tick_stream.list.slice(-1)[0]).toEqual(recent_tick);
 
     expect(tick_stream.list).toHaveLength(count);

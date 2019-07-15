@@ -1,5 +1,7 @@
-import '../Types/Monetary';
-import Stream   from '../Types/Stream';
+import { first, map } from 'rxjs/operators';
+
+import Monetary       from '../Types/Monetary';
+import Stream         from '../Types/Stream';
 
 /**
  * An abstract class for balance information
@@ -20,13 +22,25 @@ import Stream   from '../Types/Stream';
  * @property {String} format - formatted amount (decimal point, comma separated)
  */
 export default class Balance extends Stream {
+    constructor(api) {
+        super({ api });
+    }
+
     // Called by the API to initialize the instance
     async init() {
-        /*
-         * const balance = await this.api.balance(...);
-         * this._data.balance = new Monetary(balance.balance, balance.currency)
-         * this._data.on_update = this.api.subscribe({ balance: 1})
-         */
-        return this;
+        const source = this.api.subscribe({ balance: 1 })
+            .pipe(map(wrapBalance));
+
+        this._data.amount = await source.pipe(first()).toPromise();
+
+        this._data.on_update = source;
+
+        this.onUpdate((amount) => {
+            Object.assign(this._data, { amount, ...amount });
+        });
     }
+}
+
+function wrapBalance({ balance: { balance, currency } }) {
+    return new Monetary(balance, currency);
 }

@@ -1,5 +1,4 @@
 import { first }  from 'rxjs/operators';
-import WebSocket  from 'ws';
 
 import DerivAPI   from '../../DerivAPI';
 import Tick       from '../../Immutables/Tick';
@@ -10,8 +9,6 @@ let tick_stream;
 const count = 1000;
 
 beforeAll(async () => {
-    global.WebSocket = WebSocket;
-
     api = new DerivAPI();
 
     tick_stream = await api.tickStream('R_100');

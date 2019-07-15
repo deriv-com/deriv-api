@@ -882,11 +882,13 @@ Keep money related values
 
 ##### Parameters
 
--   `Currency` **[String][240]** 
--   `Value` **[Number][253]** 
+-   `value` **[Number][253]** 
+-   `currency` **[String][240]** 
 
 ##### Properties
 
+-   `value` **[Number][253]** 
+-   `currency` **[String][240]** 
 -   `display` **[String][240]** decimal value based on currency
 -   `format` **[String][240]** comma separated decimal value based on currency
 

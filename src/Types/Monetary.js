@@ -2,10 +2,24 @@ import Immutable from './Immutable';
 
 /** Keep money related values
  *
- * @param {String} Currency
- * @param {Number} Value
+ * @param {String} currency
+ * @param {Number} value
  *
+ * @property {Number} value
+ * @property {String} currency
  * @property {String} display - decimal value based on currency
  * @property {String} format - comma separated decimal value based on currency
  */
-export default class Monetary extends Immutable {}
+export default class Monetary extends Immutable {
+    constructor(value, currency) {
+        super({ value, currency });
+    }
+
+    get display() {
+        return this.value.toFixed(2);
+    }
+
+    get format() {
+        return this.display();
+    }
+}

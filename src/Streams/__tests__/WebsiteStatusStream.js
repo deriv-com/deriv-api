@@ -1,5 +1,3 @@
-import WebSocket           from 'ws';
-
 import DerivAPI            from '../../DerivAPI';
 import WebsiteStatusStream from '../WebsiteStatusStream';
 
@@ -7,8 +5,6 @@ let api;
 let website_status_stream;
 
 beforeAll(async () => {
-    global.WebSocket = WebSocket;
-
     api = new DerivAPI();
 
     website_status_stream = await api.websiteStatusStream();

@@ -1,5 +1,4 @@
 import { first }    from 'rxjs/operators';
-import WebSocket    from 'ws';
 
 import DerivAPI     from '../../DerivAPI';
 import Candle       from '../../Immutables/Candle';
@@ -10,8 +9,6 @@ let candle_stream;
 const count = 1000;
 
 beforeAll(async () => {
-    global.WebSocket = WebSocket;
-
     api = new DerivAPI();
 
     candle_stream = await api.candleStream('R_100');

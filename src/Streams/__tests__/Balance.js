@@ -47,6 +47,7 @@ test('Request for balance', async () => {
 
     expect(new_balance.currency).toEqual(balance.currency);
     expect(new_balance.value).toEqual(4000);
+    expect(new_balance.display).toEqual('4000.00');
 });
 
 function sendMessage(type, obj) {

@@ -23,6 +23,10 @@ test('Request for website status', async () => {
 
     expect(() => { website_status_stream.status = 'down'; }).toThrow(Error);
 
+    expect(typeof website_status_stream.country).toBe('string');
+    expect(typeof website_status_stream.is_website_up).toBe('boolean');
+    expect(typeof website_status_stream.terms_and_condtions_version).toBe('string');
+
     expect(website_status_stream.currencies).toBeInstanceOf(Object);
     expect(Object.keys(website_status_stream.currencies)).toContain('USD');
 

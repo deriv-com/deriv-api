@@ -1,5 +1,7 @@
-import Monetary from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
-import Stream   from '../Types/Stream';
+import { map, first }                     from 'rxjs/operators';
+
+import Monetary                           from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
+import Stream                             from '../Types/Stream';
 
 /**
  * An abstract class for website status info
@@ -22,8 +24,35 @@ import Stream   from '../Types/Stream';
  * @property {String} terms_and_condtions_version
  */
 export default class WebsiteStatusStream extends Stream {
+    constructor(api) {
+        super({ api });
+    }
+
     // Called by the API to initialize the instance
     async init() {
-        return this;
+        const website_status_stream = this.api.subscribe({ website_status: 1 });
+
+        this._data.on_update = website_status_stream.pipe(map(wrapWebsiteStatus));
+
+        this.onUpdate((website_status) => {
+            Object.assign(this._data, website_status);
+        });
+
+        await website_status_stream.pipe(first()).toPromise();
     }
+
+    get is_website_up() {
+        return this._data.status === 'up';
+    }
+}
+
+function wrapWebsiteStatus({ website_status }) {
+    return {
+        status                     : website_status.site_status,
+        currencies                 : website_status.currencies_config,
+        country                    : website_status.clients_country,
+        call_limits                : website_status.api_call_limits,
+        languages                  : website_status.supported_languages,
+        terms_and_condtions_version: website_status.terms_conditions_version,
+    };
 }

@@ -36,6 +36,7 @@ export default class TickStream extends Stream {
 
         this._data.on_update = tick_stream.pipe(map(t => wrapTick(t, this._data.pip)));
 
+        // Can't use on_update, because we need to skip first then wrap
         tick_stream.pipe(skip(1), map(t => wrapTick(t, this._data.pip))).subscribe((tick) => {
             this._data.list.push(tick);
             this._data.list.shift();

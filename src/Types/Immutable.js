@@ -14,6 +14,15 @@ export default class Immutable {
         this._data = {};
 
         // Don't allow any other change, every other property can be added to _data
-        return Object.freeze(this);
+        return new Proxy(Object.freeze(this), {
+            get(target, name) {
+                if (name in target) {
+                    return target[name];
+                }
+
+                // Add all properties of _data to the object getter
+                return target._data[name];
+            },
+        });
     }
 }

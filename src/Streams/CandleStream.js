@@ -32,6 +32,7 @@ export default class CandleStream extends Stream {
 
         this._data.on_update = candle_stream.pipe(map(t => wrapCandle(t, this._data.pip)));
 
+        // Can't use on_update, because we need to skip first then wrap
         candle_stream.pipe(skip(1), map(t => wrapCandle(t, this._data.pip))).subscribe((candle) => {
             this._data.list.push(candle);
             this._data.list.shift();

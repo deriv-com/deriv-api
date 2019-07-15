@@ -17,9 +17,9 @@ import Stream                             from '../Types/Stream';
  *
  * @property {String} status - 'up', 'down'
  * @property {Boolean} is_website_up
- * @property {Object} currencies
  * @property {String} country
- * @property {Object[]} call_limits
+ * @property {Object} currencies
+ * @property {Object} call_limits
  * @property {String[]} languages
  * @property {String} terms_and_condtions_version
  */

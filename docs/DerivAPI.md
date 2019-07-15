@@ -871,9 +871,9 @@ An abstract class for website status info
 
 -   `status` **[String][243]** 'up', 'down'
 -   `is_website_up` **[Boolean][262]** 
--   `currencies` **[Object][242]** 
 -   `country` **[String][243]** 
--   `call_limits` **[Array][261]&lt;[Object][242]>** 
+-   `currencies` **[Object][242]** 
+-   `call_limits` **[Object][242]** 
 -   `languages` **[Array][261]&lt;[String][243]>** 
 -   `terms_and_condtions_version` **[String][243]** 
 

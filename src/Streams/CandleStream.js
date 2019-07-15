@@ -1,4 +1,6 @@
-import { map, first, skip }                       from 'rxjs/operators';
+import {
+    map, first, skip, share,
+}                from 'rxjs/operators';
 
 import Candle                                     from '../Immutables/Candle';
 
@@ -30,10 +32,13 @@ export default class CandleStream extends Stream {
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
         const candle_stream      = this.api.subscribe(toTicksHistoryParam(this));
 
-        this._data.on_update = candle_stream.pipe(map(t => wrapCandle(t, this._data.pip)));
+        this._data.on_update = candle_stream.pipe(
+            skip(1),
+            map(t => wrapCandle(t, this._data.pip)),
+            share(),
+        );
 
-        // Can't use on_update, because we need to skip first then wrap
-        candle_stream.pipe(skip(1), map(t => wrapCandle(t, this._data.pip))).subscribe((candle) => {
+        this.onUpdate((candle) => {
             this._data.list.push(candle);
             this._data.list.shift();
         });

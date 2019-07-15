@@ -1,4 +1,6 @@
-import { map, first, skip }                     from 'rxjs/operators';
+import {
+    map, first, skip, share,
+}              from 'rxjs/operators';
 
 import Tick                                     from '../Immutables/Tick';
 import Stream                                   from '../Types/Stream';
@@ -34,10 +36,13 @@ export default class TickStream extends Stream {
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
         const tick_stream        = this.api.subscribe(toTicksHistoryParam(this));
 
-        this._data.on_update = tick_stream.pipe(map(t => wrapTick(t, this._data.pip)));
+        this._data.on_update = tick_stream.pipe(
+            skip(1),
+            map(t => wrapTick(t, this._data.pip)),
+            share(),
+        );
 
-        // Can't use on_update, because we need to skip first then wrap
-        tick_stream.pipe(skip(1), map(t => wrapTick(t, this._data.pip))).subscribe((tick) => {
+        this.onUpdate((tick) => {
             this._data.list.push(tick);
             this._data.list.shift();
         });

@@ -16,12 +16,13 @@ import Immutable         from '../Types/Immutable';
  * const siblings = account.siblings;
  *
  * // Switches the API account to the first sibling
- * siblings[0].switch();
+ * // The existing account instance is not authorized anymore and should be discarded
+ * const sibling = await api.account(loginidToToken(siblings[0].loginid));
  *
  * @param {DerivAPI} api
  * @param {String} token
  *
- * @property {Account[]} siblings
+ * @property {Object[]} siblings
  * @property {Boolean} is_authenticated - If A_p_i is authenticated with this account
  * @property {Contract[]} contracts
  * @property {Contract[]} open_contracts
@@ -56,10 +57,5 @@ export default class Account extends Immutable {
         await contract.init();
 
         return contract;
-    }
-
-    /** Switches to this account */
-    async switch() {
-        return this.api.changeAccount(this);
     }
 }

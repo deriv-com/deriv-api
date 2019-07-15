@@ -32,7 +32,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * Provides a ticks stream and a list of available ticks
      *
      * @param {String|TicksParam} options - symbol or a ticks parameter object
-     * @returns {TickStream}
+     * @returns {Promise<TickStream>}
      */
     async tickStream(options) {
         const tick_stream = new TickStream(this, options);
@@ -46,7 +46,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * Provides a list of available candles with the default granularity
      *
      * @param {String|CandlesParam} options - symbol or a candles parameter object
-     * @returns {CandleStream}
+     * @returns {Promise<CandleStream>}
      */
     async candleStream(options) {
         const candle_stream = new CandleStream(this, options);
@@ -60,7 +60,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * A contract object with latest market values, cannot be bought or sold
      *
      * @param {ContractsParam} options - parameters defining the contract
-     * @returns {Contract}
+     * @returns {Promise<Contract>}
      */
     async contract(options) {
         const contract = new Contract(this, options);
@@ -74,7 +74,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * An underlying object, including contract groups, pip size, etc.
      *
      * @param {String} symbol - The underlying symbol
-     * @returns {Underlying}
+     * @returns {Promise<Underlying>}
      */
     async underlying(symbol) {
         const underlying = new Underlying(this, symbol);
@@ -88,7 +88,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * An account object, including loginid, balance, contracts, etc.
      *
      * @param {String} token - Token to create the account with
-     * @returns {Account}
+     * @returns {Promise<Account>}
      */
     async account(token) {
         const account = new Account(this, token);
@@ -99,29 +99,9 @@ export default class DerivAPI extends DerivAPIBasic {
     }
 
     /**
-     * A balance stream
-     *
-     * @param {String} token
-     * @returns {Balance}
-     */
-    async balance(token) {
-        return this.account(token).balance();
-    }
-
-    /**
-     * A transaction stream
-     *
-     * @param {String} token
-     * @returns {TransactionStream}
-     */
-    async transactionStream(token) {
-        return this.account(token).transactionStream();
-    }
-
-    /**
      * Trading assets including multiple underlyings and trading times
      *
-     * @returns {Assets}
+     * @returns {Promise<Assets>}
      */
     async assets() {
         const assets = new Assets(this);
@@ -134,7 +114,7 @@ export default class DerivAPI extends DerivAPIBasic {
     /**
      * Website status stream
      *
-     * @returns {WebsiteStatusStream}
+     * @returns {Promise<WebsiteStatusStream>}
      */
     async websiteStatusStream() {
         const website_status_stream = new WebsiteStatusStream(this);
@@ -142,18 +122,5 @@ export default class DerivAPI extends DerivAPIBasic {
         await website_status_stream.init();
 
         return website_status_stream;
-    }
-
-    /**
-     * Changes the account to the given account
-     *
-     * @param {Account} account - Account to authenticate API with
-     *
-     * @returns {Promise<Account>} Authenticated account
-     */
-    async changeAccount(account) {
-        this.auth_account = await this.account(account.token);
-
-        return this.auth_account;
     }
 }

@@ -2,10 +2,10 @@ import './Storage';
 import './SubscriptionManager';
 
 import { first }        from 'rxjs/operators';
+import { Subject }      from 'rxjs';
 
 import Cache            from './Cache';
 import DerivAPICalls    from './DerivAPICalls';
-import CustomObservable from './Types/CustomObservable';
 import CustomPromise    from './Types/CustomPromise';
 import {
     APIError,
@@ -56,7 +56,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
         this.reqId           = 0;
         this.connected       = new CustomPromise();
-        this.sanityErrors    = new CustomObservable();
+        this.sanityErrors    = new Subject();
         this.cache           = new Cache(this);
         this.pendingRequests = {};
     }
@@ -81,7 +81,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     async send(request) {
-        const pending = new CustomObservable();
+        const pending = new Subject();
 
         request.req_id = request.req_id || ++this.reqId;
 
@@ -154,7 +154,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
     onMessage(msg) {
         if (!msg.data) {
-            this.sanityErrors.publish(
+            this.sanityErrors.next(
                 new APIError(
                     'Something went wrong while receiving the response from API.',
                 ),
@@ -169,10 +169,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
             if (response.error) {
                 this.pendingRequests[reqId].error(new ResponseError(response));
             } else {
-                this.pendingRequests[reqId].publish(response);
+                this.pendingRequests[reqId].next(response);
             }
         } else {
-            this.sanityErrors.publish(new APIError('Extra response'));
+            this.sanityErrors.next(new APIError('Extra response'));
         }
     }
 

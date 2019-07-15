@@ -30,17 +30,16 @@ export default class CandleStream extends Stream {
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
         const candle_stream      = this.api.subscribe(toTicksHistoryParam(this));
 
-        this._data.on_update = candle_stream
-            .pipe(skip(1), map(t => wrapCandle(t, this._data.pip)));
+        this._data.on_update = candle_stream.pipe(map(t => wrapCandle(t, this._data.pip)));
+
+        candle_stream.pipe(skip(1), map(t => wrapCandle(t, this._data.pip))).subscribe((candle) => {
+            this._data.list.push(candle);
+            this._data.list.shift();
+        });
 
         this._data.list = await candle_stream
             .pipe(first(), map(h => historyToCandles(h, this._data.pip)))
             .toPromise();
-
-        this.onUpdate((candle) => {
-            this._data.list.push(candle);
-            this._data.list.shift();
-        });
     }
 
 

@@ -47,4 +47,12 @@ export default class CustomDate extends Immutable {
     isAfter(date) {
         return this.date.isAfter(date);
     }
+
+    /**
+     * @param {CustomDate|Date|Number} date
+     * @returns {Boolean}
+     */
+    isSame(date) {
+        return this.date.isSame(date);
+    }
 }

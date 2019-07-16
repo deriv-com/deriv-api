@@ -34,9 +34,9 @@ export default class Ticks extends Stream {
     async init() {
         const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
-        const tick_stream        = this.api.subscribe(toTicksHistoryParam(this));
+        const ticks              = this.api.subscribe(toTicksHistoryParam(this));
 
-        this._data.on_update = tick_stream.pipe(
+        this._data.on_update = ticks.pipe(
             skip(1),
             map(t => wrapTick(t, this._data.pip)),
             share(),
@@ -46,7 +46,7 @@ export default class Ticks extends Stream {
             this._data.list = [...this._data.list.slice(1), tick];
         });
 
-        this._data.list = await tick_stream
+        this._data.list = await ticks
             .pipe(first(), map(h => historyToTicks(h, this._data.pip)))
             .toPromise();
     }

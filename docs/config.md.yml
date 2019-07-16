@@ -27,11 +27,11 @@ toc:
                 these classes.
             children:
                 - Balance
-                - CandleStream
+                - Candles
                 - Contract
-                - TickStream
-                - TransactionStream
-                - WebsiteStatusStream
+                - Ticks
+                - Transactions
+                - WebsiteStatus
           - name: Types
             description: |
                 Container classes for data types, providing means to convert them

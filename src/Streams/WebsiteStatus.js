@@ -23,7 +23,7 @@ import Stream                             from '../Types/Stream';
  * @property {String[]} languages
  * @property {String} terms_and_condtions_version
  */
-export default class WebsiteStatusStream extends Stream {
+export default class WebsiteStatus extends Stream {
     constructor(api) {
         super({ api });
     }

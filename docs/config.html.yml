@@ -1,8 +1,7 @@
 toc:
     - name: Main Modules
-      children:
-          - name: DerivAPI
-          - name: DerivAPIBasic
+    - DerivAPI
+    - DerivAPIBasic
     - name: Abstract Objects
     - name: Immutables
       description: |

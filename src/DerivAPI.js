@@ -25,11 +25,15 @@ import WebsiteStatus from './Streams/WebsiteStatus';
  * // Read the last 100 ticks until yesterday
  * const older_history = await ticks.history({ count: 100, end: new Date(yesterday) });
  *
+ * // Access to low-level API
+ * const api_basic = api.basic;
+ *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
+ * @property {DerivAPIBasic} basic - Basic API, used for making low-level calls to the API
  */
 export default class DerivAPI {
     constructor(options) {
-        this.api = new DerivAPIBasic(options);
+        this.basic = new DerivAPIBasic(options);
     }
 
     /**
@@ -39,7 +43,7 @@ export default class DerivAPI {
      * @returns {Promise<Ticks>}
      */
     async ticks(options) {
-        const ticks = new Ticks(this.api, options);
+        const ticks = new Ticks(this.basic, options);
 
         await ticks.init();
 
@@ -53,7 +57,7 @@ export default class DerivAPI {
      * @returns {Promise<Candles>}
      */
     async candles(options) {
-        const candles = new Candles(this.api, options);
+        const candles = new Candles(this.basic, options);
 
         await candles.init();
 
@@ -67,7 +71,7 @@ export default class DerivAPI {
      * @returns {Promise<Contract>}
      */
     async contract(options) {
-        const contract = new Contract(this.api, options);
+        const contract = new Contract(this.basic, options);
 
         await contract.init();
 
@@ -81,7 +85,7 @@ export default class DerivAPI {
      * @returns {Promise<Underlying>}
      */
     async underlying(symbol) {
-        const underlying = new Underlying(this.api, symbol);
+        const underlying = new Underlying(this.basic, symbol);
 
         await underlying.init();
 
@@ -95,7 +99,7 @@ export default class DerivAPI {
      * @returns {Promise<Account>}
      */
     async account(token) {
-        const account = new Account(this.api, token);
+        const account = new Account(this.basic, token);
 
         await account.init();
 
@@ -108,7 +112,7 @@ export default class DerivAPI {
      * @returns {Promise<Assets>}
      */
     async assets() {
-        const assets = new Assets(this.api);
+        const assets = new Assets(this.basic);
 
         await assets.init();
 
@@ -121,7 +125,7 @@ export default class DerivAPI {
      * @returns {Promise<WebsiteStatus>}
      */
     async websiteStatus() {
-        const website_status = new WebsiteStatus(this.api);
+        const website_status = new WebsiteStatus(this.basic);
 
         await website_status.init();
 

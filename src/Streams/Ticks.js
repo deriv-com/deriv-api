@@ -26,7 +26,7 @@ import { parseRequestRange, parseHistoryArgs }  from '../utils';
  *
  * @property {Tick[]} list - An immutable list of ticks
  */
-export default class TickStream extends Stream {
+export default class Ticks extends Stream {
     constructor(api, options) {
         super({ api, ...parseHistoryArgs(options) });
     }

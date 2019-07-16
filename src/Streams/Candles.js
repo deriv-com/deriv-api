@@ -22,7 +22,7 @@ import { parseRequestRange, parseHistoryArgs }    from '../utils';
  *
  * @property {Candle[]} list - An immutable list of candles
  */
-export default class CandleStream extends Stream {
+export default class Candles extends Stream {
     constructor(api, options) {
         super({ api, granularity: 60, ...parseHistoryArgs(options) });
     }

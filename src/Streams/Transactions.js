@@ -15,7 +15,7 @@ import Stream      from '../Types/Stream';
  *
  * @property {Transaction[]} list - An immutable list of transactions
  */
-export default class TransactionStream extends Stream {
+export default class Transactions extends Stream {
     // Called by the API to initialize the instance
     async init() {
         return this;

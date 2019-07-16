@@ -36,8 +36,20 @@ export default class Balance extends Stream {
         this._data.on_update = source;
 
         this.onUpdate((amount) => {
-            Object.assign(this._data, { amount, ...amount });
+            this._data.amount = amount;
         });
+    }
+
+    get display() {
+        return this._data.amount.display;
+    }
+
+    get value() {
+        return this._data.amount.value;
+    }
+
+    get currency() {
+        return this._data.amount.currency;
     }
 }
 

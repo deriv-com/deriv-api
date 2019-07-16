@@ -36,6 +36,7 @@ test('Request for balance', async () => {
 
     expect(balance.value).toEqual(balance.amount.value);
     expect(balance.value).toEqual(1000);
+    expect(balance.display).toEqual('1000.00');
 
     sendMessage('balance', { balance: 2000, currency: 'USD' });
 

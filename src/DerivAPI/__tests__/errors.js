@@ -1,7 +1,7 @@
-import { first } from 'rxjs/operators';
-import WS        from 'ws';
+import { first }     from 'rxjs/operators';
+import WS            from 'ws';
 
-import DerivAPI  from '../DerivAPI';
+import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 
@@ -10,7 +10,7 @@ beforeAll(() => {
         'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
     );
 
-    api = new DerivAPI({ connection });
+    api = new DerivAPIBasic({ connection });
 });
 
 afterAll(() => {

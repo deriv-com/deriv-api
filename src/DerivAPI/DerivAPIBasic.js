@@ -5,14 +5,14 @@ import { first }        from 'rxjs/operators';
 import { Subject }      from 'rxjs';
 
 import Cache            from './Cache';
+import CustomPromise    from './CustomPromise';
 import DerivAPICalls    from './DerivAPICalls';
-import CustomPromise    from './Types/CustomPromise';
 import {
     APIError,
     CallError,
     ConstructionError,
     ResponseError,
-}                       from './Types/errors';
+}                       from './errors';
 
 /**
  * The minimum functionality provided by DerivAPI, provides direct calls to the

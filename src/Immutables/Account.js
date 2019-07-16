@@ -1,5 +1,5 @@
 import '../Streams/Balance';
-import '../Streams/TransactionStream';
+import '../Streams/Transactions';
 import '../Types/FullName';
 import Contract          from '../Streams/Contract';
 import Immutable         from '../Types/Immutable';

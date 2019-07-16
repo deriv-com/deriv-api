@@ -1,4 +1,4 @@
-import DerivAPI from '../DerivAPI';
+import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 global.WebSocket    = jest.fn();
@@ -7,7 +7,7 @@ const { WebSocket } = global;
 beforeAll(() => {
     WebSocket.prototype.close = jest.fn();
 
-    api = new DerivAPI({ app_id: 4000, endpoint: 'ws://localhost', lang: 'fr' });
+    api = new DerivAPIBasic({ app_id: 4000, endpoint: 'ws://localhost', lang: 'fr' });
 
     // Set the connection to ready state with a delay
     setTimeout(() => {
@@ -50,7 +50,7 @@ test('API auto reconnect', async () => {
 test('API does not reconnect if connection is passed', async () => {
     const connection = new WebSocket('ws://localhost');
 
-    const api_with_connection = new DerivAPI({ connection });
+    const api_with_connection = new DerivAPIBasic({ connection });
 
     api_with_connection.connection.onclose();
 

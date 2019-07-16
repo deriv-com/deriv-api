@@ -1,7 +1,7 @@
 import serialize             from 'json-stable-stringify';
 
 import DerivAPICalls         from './DerivAPICalls';
-import { ConstructionError } from './Types/errors';
+import { ConstructionError } from './errors';
 
 /**
  * Cache - An in-memory cache used to prevent sending redundant requests to the
@@ -14,7 +14,7 @@ import { ConstructionError } from './Types/errors';
  * // Read the data from cache if available
  * const cached_symbols = await api.cache.activeSymbols();
  *
- * @param {DerivAPI} api - API instance to get data that is not cached
+ * @param {DerivAPIBasic} api - API instance to get data that is not cached
  */
 export default class Cache extends DerivAPICalls {
     constructor(api) {

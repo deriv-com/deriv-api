@@ -1,7 +1,7 @@
-import { first } from 'rxjs/operators';
+import { first }     from 'rxjs/operators';
 
-import DerivAPI  from '../../DerivAPI';
-import Balance   from '../Balance';
+import DerivAPIBasic from '../../DerivAPI/DerivAPIBasic';
+import Balance       from '../Balance';
 
 let api;
 let balance;
@@ -10,7 +10,7 @@ let req_id;
 global.WebSocket = jest.fn();
 
 beforeAll(async () => {
-    api = new DerivAPI();
+    api = new DerivAPIBasic();
 
     api.connection.readyState = 1;
     api.connection.onopen();

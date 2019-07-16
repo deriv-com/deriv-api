@@ -1,11 +1,11 @@
-import DerivAPIBasic          from './DerivAPIBasic';
-import Account                from './Immutables/Account';
-import Assets                 from './Immutables/Assets';
-import Underlying             from './Immutables/Underlying';
-import CandleStream           from './Streams/CandleStream';
-import Contract               from './Streams/Contract';
-import TickStream             from './Streams/TickStream';
-import WebsiteStatusStream    from './Streams/WebsiteStatusStream';
+import DerivAPIBasic from './DerivAPI/DerivAPIBasic';
+import Account       from './Immutables/Account';
+import Assets        from './Immutables/Assets';
+import Underlying    from './Immutables/Underlying';
+import Candles       from './Streams/Candles';
+import Contract      from './Streams/Contract';
+import Ticks         from './Streams/Ticks';
+import WebsiteStatus from './Streams/WebsiteStatus';
 
 /**
  * The main class of the DerivAPI module. This class extends the minimum
@@ -27,33 +27,37 @@ import WebsiteStatusStream    from './Streams/WebsiteStatusStream';
  *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */
-export default class DerivAPI extends DerivAPIBasic {
+export default class Deriv {
+    constructor(options) {
+        this.api = new DerivAPIBasic(options);
+    }
+
     /**
      * Provides a ticks stream and a list of available ticks
      *
      * @param {String|TicksParam} options - symbol or a ticks parameter object
-     * @returns {Promise<TickStream>}
+     * @returns {Promise<Ticks>}
      */
-    async tickStream(options) {
-        const tick_stream = new TickStream(this, options);
+    async ticks(options) {
+        const ticks = new Ticks(this.api, options);
 
-        await tick_stream.init();
+        await ticks.init();
 
-        return tick_stream;
+        return ticks;
     }
 
     /**
      * Provides a list of available candles with the default granularity
      *
      * @param {String|CandlesParam} options - symbol or a candles parameter object
-     * @returns {Promise<CandleStream>}
+     * @returns {Promise<Candles>}
      */
-    async candleStream(options) {
-        const candle_stream = new CandleStream(this, options);
+    async candles(options) {
+        const candles = new Candles(this.api, options);
 
-        await candle_stream.init();
+        await candles.init();
 
-        return candle_stream;
+        return candles;
     }
 
     /**
@@ -63,7 +67,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Promise<Contract>}
      */
     async contract(options) {
-        const contract = new Contract(this, options);
+        const contract = new Contract(this.api, options);
 
         await contract.init();
 
@@ -77,7 +81,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Promise<Underlying>}
      */
     async underlying(symbol) {
-        const underlying = new Underlying(this, symbol);
+        const underlying = new Underlying(this.api, symbol);
 
         await underlying.init();
 
@@ -91,7 +95,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Promise<Account>}
      */
     async account(token) {
-        const account = new Account(this, token);
+        const account = new Account(this.api, token);
 
         await account.init();
 
@@ -104,7 +108,7 @@ export default class DerivAPI extends DerivAPIBasic {
      * @returns {Promise<Assets>}
      */
     async assets() {
-        const assets = new Assets(this);
+        const assets = new Assets(this.api);
 
         await assets.init();
 
@@ -114,13 +118,13 @@ export default class DerivAPI extends DerivAPIBasic {
     /**
      * Website status stream
      *
-     * @returns {Promise<WebsiteStatusStream>}
+     * @returns {Promise<WebsiteStatus>}
      */
-    async websiteStatusStream() {
-        const website_status_stream = new WebsiteStatusStream(this);
+    async websiteStatus() {
+        const website_status = new WebsiteStatus(this.api);
 
-        await website_status_stream.init();
+        await website_status.init();
 
-        return website_status_stream;
+        return website_status;
     }
 }

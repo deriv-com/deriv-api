@@ -1,6 +1,6 @@
-import WS       from 'ws';
+import WS            from 'ws';
 
-import DerivAPI from '../DerivAPI';
+import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 
@@ -9,14 +9,14 @@ beforeAll(() => {
         'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
     );
 
-    api = new DerivAPI({ connection });
+    api = new DerivAPIBasic({ connection });
 });
 
 afterAll(() => {
     api.disconnect();
 });
 
-test('Constructing DerivAPI', async () => {
+test('Constructing DerivAPIBasic', async () => {
     expect((await api.ping()).ping).toBe('pong');
 
     const start_time = parseInt(new Date().getTime() / 1000, 10);

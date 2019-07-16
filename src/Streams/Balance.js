@@ -40,16 +40,20 @@ export default class Balance extends Stream {
         });
     }
 
-    get display() {
-        return this._data.amount.display;
-    }
-
     get value() {
         return this._data.amount.value;
     }
 
     get currency() {
         return this._data.amount.currency;
+    }
+
+    get display() {
+        return this._data.amount.display;
+    }
+
+    get format() {
+        return this._data.amount.format;
     }
 }
 

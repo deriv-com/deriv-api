@@ -24,11 +24,11 @@ toc:
           can subscribe to changes using the `onUpdate` method on all of
           these classes.
     - Balance
-    - CandleStream
+    - Candles
     - Contract
-    - TickStream
-    - TransactionStream
-    - WebsiteStatusStream
+    - Ticks
+    - Transactions
+    - WebsiteStatus
     - name: Types
       description: |
           Container classes for data types, providing means to convert them

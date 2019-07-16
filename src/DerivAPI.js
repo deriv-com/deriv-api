@@ -27,7 +27,7 @@ import WebsiteStatus from './Streams/WebsiteStatus';
  *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
  */
-export default class Deriv {
+export default class DerivAPI {
     constructor(options) {
         this.api = new DerivAPIBasic(options);
     }

@@ -431,18 +431,22 @@ Abstract class for user accounts
 
 ##### Properties
 
--   `siblings` **[Array][258]&lt;[Object][240]>** 
--   `is_authenticated` **[Boolean][259]** If A_p_i is authenticated with this account
--   `contracts` **[Array][258]&lt;[Contract][249]>** 
--   `open_contracts` **[Array][258]&lt;[Contract][249]>** 
--   `closed_contracts` **[Array][258]&lt;[Contract][249]>** 
--   `balance` **[Balance][260]** 
 -   `loginid` **[String][242]** 
+-   `user_id` **[String][242]** 
+-   `email` **[String][242]** 
+-   `country` **[String][242]** 
 -   `currency` **[String][242]** 
--   `status_codes` **[Array][258]&lt;[String][242]>** 
--   `landing_company` **Full_name** 
--   `api_tokens` **[Array][258]&lt;[String][242]>** 
--   `transaction_stream` **Transaction_stream** 
+-   `risk` **[String][242]** 
+-   `show_authentication` **[Boolean][258]** 
+-   `landing_company` **[FullName][259]** 
+-   `balance` **[Balance][260]** 
+-   `transactions` **[Transactions][261]** 
+-   `status_codes` **[Array][262]&lt;[String][242]>** 
+-   `siblings` **[Array][262]&lt;[Object][240]>** 
+-   `contracts` **[Array][262]&lt;[Contract][249]>** 
+-   `open_contracts` **[Array][262]&lt;[Contract][249]>** 
+-   `closed_contracts` **[Array][262]&lt;[Contract][249]>** 
+-   `api_tokens` **[Array][262]&lt;[String][242]>** 
 
 ##### Examples
 
@@ -481,8 +485,8 @@ Abstract class for trading assets
 
 ##### Properties
 
--   `underlyings` **[Array][258]&lt;[Underlying][250]>** 
--   `open_markets` **[Array][258]&lt;[Underlying][250]>** 
+-   `underlyings` **[Array][262]&lt;[Underlying][250]>** 
+-   `open_markets` **[Array][262]&lt;[Underlying][250]>** 
 -   `trading_times` **[Object][240]** 
 -   `trading_durations` **[Object][240]** 
 
@@ -510,9 +514,9 @@ Abstract class for an underlying
 
 ##### Properties
 
--   `name` **[FullName][261]** 
--   `is_open` **[Boolean][259]** 
--   `is_trading_suspended` **[Boolean][259]** 
+-   `name` **[FullName][259]** 
+-   `is_open` **[Boolean][258]** 
+-   `is_trading_suspended` **[Boolean][258]** 
 -   `pip_size` **[Number][255]** 
 -   `contract_groups` **[Object][240]** 
 -   `contract_groups` **[Object][240]** 
@@ -574,10 +578,10 @@ A wrapper class for Tick
 
 ##### Properties
 
--   `time` **[CustomDate][262]** 
--   `quote` **[MarketValue][263]** 
--   `ask` **[MarketValue][263]** 
--   `bid` **[MarketValue][263]** 
+-   `time` **[CustomDate][263]** 
+-   `quote` **[MarketValue][264]** 
+-   `ask` **[MarketValue][264]** 
+-   `bid` **[MarketValue][264]** 
 -   `raw` **[Object][240]** The raw data received from API
 
 #### Candle
@@ -599,12 +603,12 @@ A wrapper class for Candle
 
 ##### Properties
 
--   `time` **[CustomDate][262]** The current time of the candle
--   `open_time` **[CustomDate][262]** The time that candle opened
--   `open` **[MarketValue][263]** 
--   `high` **[MarketValue][263]** 
--   `low` **[MarketValue][263]** 
--   `close` **[MarketValue][263]** 
+-   `time` **[CustomDate][263]** The current time of the candle
+-   `open_time` **[CustomDate][263]** The time that candle opened
+-   `open` **[MarketValue][264]** 
+-   `high` **[MarketValue][264]** 
+-   `low` **[MarketValue][264]** 
+-   `close` **[MarketValue][264]** 
 -   `raw` **[Object][240]** The raw data received from API
 
 #### Transaction
@@ -639,15 +643,15 @@ A class for transaction objects
 -   `longcode` **[String][242]** 
 -   `id` **[Number][255]** transaction ID
 -   `contract_id` **[Number][255]** 
--   `symbol` **[FullName][261]** 
--   `amount` **[Monetary][264]** 
--   `balance` **[Monetary][264]** 
--   `high_barrier` **[MarketValue][263]** 
--   `low_barrier` **[MarketValue][263]** 
--   `barrier` **[MarketValue][263]** 
--   `purchase_time` **[CustomDate][262]** 
--   `date_expiry` **[CustomDate][262]** 
--   `time` **[CustomDate][262]** 
+-   `symbol` **[FullName][259]** 
+-   `amount` **[Monetary][265]** 
+-   `balance` **[Monetary][265]** 
+-   `high_barrier` **[MarketValue][264]** 
+-   `low_barrier` **[MarketValue][264]** 
+-   `barrier` **[MarketValue][264]** 
+-   `purchase_time` **[CustomDate][263]** 
+-   `date_expiry` **[CustomDate][263]** 
+-   `time` **[CustomDate][263]** 
 
 #### ContractGroup
 
@@ -658,13 +662,13 @@ A container for contract group info
 ##### Properties
 
 -   `name` **[String][242]** 
--   `barriers` **[Array][258]&lt;[Number][255]>** 
+-   `barriers` **[Array][262]&lt;[Number][255]>** 
 -   `basis` **[String][242]** 'stake' or 'payout'
--   `contract_types` **[Array][258]&lt;[String][242]>** 
--   `durations` **[Durations][265]** Durations for spot and forward starting contracts
--   `duration_units` **[DurationUnits][266]** Duration units for spot and forward starting contracts
--   `forward_sessions` **[Array][258]&lt;[DateRange][267]>** 
--   `is_forward_starting` **[Boolean][259]** 
+-   `contract_types` **[Array][262]&lt;[String][242]>** 
+-   `durations` **[Durations][266]** Durations for spot and forward starting contracts
+-   `duration_units` **[DurationUnits][267]** Duration units for spot and forward starting contracts
+-   `forward_sessions` **[Array][262]&lt;[DateRange][268]>** 
+-   `is_forward_starting` **[Boolean][258]** 
 
 #### Buy
 
@@ -697,7 +701,7 @@ An abstract class for balance information
 
 ##### Properties
 
--   `amount` **[Monetary][264]** 
+-   `amount` **[Monetary][265]** 
 -   `value` **[Number][255]** numeric balance value
 -   `currency` **[String][242]** currency of the amount
 -   `display` **[String][242]** display value of amount (decimal point)
@@ -717,7 +721,7 @@ balance.onUpdate().subscribe(balance => console.log)
 
 **Extends Stream**
 
-An abstract class for Candles stream returned from [DerivAPI#candleStream][268]
+An abstract class for Candles stream returned from [DerivAPI#candleStream][269]
 
 ##### Parameters
 
@@ -726,7 +730,7 @@ An abstract class for Candles stream returned from [DerivAPI#candleStream][268]
 
 ##### Properties
 
--   `list` **[Array][258]&lt;[Candle][269]>** An immutable list of candles
+-   `list` **[Array][262]&lt;[Candle][270]>** An immutable list of candles
 
 ##### history
 
@@ -734,7 +738,7 @@ Resolves to a list of candles given the range
 
 ###### Parameters
 
--   `range` **[HistoryRange][270]?** 
+-   `range` **[HistoryRange][271]?** 
 
 ###### Examples
 
@@ -742,7 +746,7 @@ Resolves to a list of candles given the range
 const old_candles = await candle_stream.history({count: 10, end: yesterday})
 ```
 
-Returns **[Promise][244]&lt;[Array][258]&lt;[Candle][269]>>** 
+Returns **[Promise][244]&lt;[Array][262]&lt;[Candle][270]>>** 
 
 #### Contract
 
@@ -758,16 +762,16 @@ Abstract class for contracts
 ##### Properties
 
 -   `status` **[String][242]** Current status of the contract
--   `sell_price` **[Monetary][264]** Price at which the contract was sold
--   `buy_price` **[Monetary][264]** Price at which the contract was bought
+-   `sell_price` **[Monetary][265]** Price at which the contract was sold
+-   `buy_price` **[Monetary][265]** Price at which the contract was bought
 -   `type` **[String][242]** contract type
--   `potential_payout` **[Monetary][264]** The payout value before the contract was sold
--   `payout` **[Monetary][264]** The payout after selling the contract
+-   `potential_payout` **[Monetary][265]** The payout value before the contract was sold
+-   `payout` **[Monetary][265]** The payout after selling the contract
 -   `contract_id` **[Number][255]** The contract ID after purchase
--   `purchase_time` **[CustomDate][262]** Time of purchase
--   `is_expired` **[Boolean][259]** 
--   `is_open` **[Boolean][259]** 
--   `duration` **[Duration][271]** 
+-   `purchase_time` **[CustomDate][263]** Time of purchase
+-   `is_expired` **[Boolean][258]** 
+-   `is_open` **[Boolean][258]** 
+-   `duration` **[Duration][272]** 
 
 ##### Examples
 
@@ -785,10 +789,10 @@ Buys this contract
 
 ###### Parameters
 
--   `buy` **[BuyParam][272]** 
+-   `buy` **[BuyParam][273]** 
     -   `buy.max_price`  
 
-Returns **[Buy][273]** 
+Returns **[Buy][274]** 
 
 ##### sell
 
@@ -796,16 +800,16 @@ Sells this contract
 
 ###### Parameters
 
--   `sell` **[SellParam][274]** 
+-   `sell` **[SellParam][275]** 
     -   `sell.max_price`  
 
-Returns **[Sell][275]** 
+Returns **[Sell][276]** 
 
 #### Ticks
 
 **Extends Stream**
 
-Abstract class for ticks stream returned by the [DerivAPI#tickStream][276]
+Abstract class for ticks stream returned by the [DerivAPI#tickStream][277]
 
 ##### Parameters
 
@@ -814,7 +818,7 @@ Abstract class for ticks stream returned by the [DerivAPI#tickStream][276]
 
 ##### Properties
 
--   `list` **[Array][258]&lt;[Tick][277]>** An immutable list of ticks
+-   `list` **[Array][262]&lt;[Tick][278]>** An immutable list of ticks
 
 ##### history
 
@@ -822,7 +826,7 @@ Resolves to a list of Ticks using the given range
 
 ###### Parameters
 
--   `range` **[HistoryRange][270]?** 
+-   `range` **[HistoryRange][271]?** 
 
 ###### Examples
 
@@ -830,7 +834,7 @@ Resolves to a list of Ticks using the given range
 const old_ticks = await tickStream.history({count: 10, end: yesterday})
 ```
 
-Returns **[Promise][244]&lt;[Array][258]&lt;[Tick][277]>>** 
+Returns **[Promise][244]&lt;[Array][262]&lt;[Tick][278]>>** 
 
 #### Transactions
 
@@ -844,7 +848,7 @@ A stream of transactions
 
 ##### Properties
 
--   `list` **[Array][258]&lt;[Transaction][278]>** An immutable list of transactions
+-   `list` **[Array][262]&lt;[Transaction][279]>** An immutable list of transactions
 
 ##### Examples
 
@@ -869,11 +873,11 @@ An abstract class for website status info
 ##### Properties
 
 -   `status` **[String][242]** 'up', 'down'
--   `is_website_up` **[Boolean][259]** 
+-   `is_website_up` **[Boolean][258]** 
 -   `country` **[String][242]** 
 -   `currencies` **[Object][240]** 
 -   `call_limits` **[Object][240]** 
--   `languages` **[Array][258]&lt;[String][242]>** 
+-   `languages` **[Array][262]&lt;[String][242]>** 
 -   `terms_and_condtions_version` **[String][242]** 
 
 ##### Examples
@@ -962,47 +966,47 @@ An alternative date object
 
 ##### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
 ##### isBefore
 
 ###### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 ##### isSameOrAfter
 
 ###### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 ##### isSameOrBefore
 
 ###### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 ##### isAfter
 
 ###### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 ##### isSame
 
 ###### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 #### DateRange
 
@@ -1012,16 +1016,16 @@ A date range class
 
 ##### Parameters
 
--   `open` **[CustomDate][262]** 
--   `close` **[CustomDate][262]** 
+-   `open` **[CustomDate][263]** 
+-   `close` **[CustomDate][263]** 
 
 ##### isInRange
 
 ###### Parameters
 
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 #### Duration
 
@@ -1032,7 +1036,7 @@ Class to keep durations
 ##### Parameters
 
 -   `value` **[Number][255]** 
--   `unit` **([String][242] \| [FullName][261])** 
+-   `unit` **([String][242] \| [FullName][259])** 
 
 ##### Properties
 
@@ -1047,17 +1051,17 @@ Class to keep duration ranges
 
 ##### Parameters
 
--   `min` **[Duration][271]** 
--   `max` **[Duration][271]** 
+-   `min` **[Duration][272]** 
+-   `max` **[Duration][272]** 
 
 ##### isInRange
 
 ###### Parameters
 
 -   `raw_date`  
--   `date` **([CustomDate][262] \| [Date][279] \| [Number][255])** 
+-   `date` **([CustomDate][263] \| [Date][280] \| [Number][255])** 
 
-Returns **[Boolean][259]** 
+Returns **[Boolean][258]** 
 
 #### Immutable
 
@@ -1172,7 +1176,7 @@ Type: [Object][240]
 ##### Properties
 
 -   `granularity` **[Number][255]** Granularity in seconds
--   `range` **[HistoryRange][270]** A chunk of history to return with start and end time
+-   `range` **[HistoryRange][271]** A chunk of history to return with start and end time
 -   `symbol` **[String][242]** Symbol of the candles
 
 #### TicksParam
@@ -1181,7 +1185,7 @@ Type: [Object][240]
 
 ##### Properties
 
--   `range` **[HistoryRange][270]** A chunk of history to return with start and end time
+-   `range` **[HistoryRange][271]** A chunk of history to return with start and end time
 -   `symbol` **[String][242]** The ticks symbol
 
 #### ContractsParam
@@ -1194,8 +1198,8 @@ Type: [Object][240]
 -   `amount` **[Number][255]** 
 -   `barrier` **[String][242]** 
 -   `barrier2` **[String][242]** 
--   `date_expiry` **([Number][255] \| [Date][279])** epoch in seconds or [Date][280]
--   `date_start` **([Number][255] \| [Date][279])** epoch in seconds or [Date][280]
+-   `date_expiry` **([Number][255] \| [Date][280])** epoch in seconds or [Date][281]
+-   `date_start` **([Number][255] \| [Date][280])** epoch in seconds or [Date][281]
 -   `Currency` **[String][242]?** Default is the account currency
 -   `basis` **[String][242]** stake or payout
 -   `duration` **([Number][255] \| [String][242])** duration with unit or duration in number
@@ -1225,8 +1229,8 @@ Type: [Object][240]
 
 ##### Properties
 
--   `start` **([Number][255] \| [Date][279])** An epoch in seconds or a Date object
--   `end` **([Number][255] \| [Date][279])**  An epoch in seconds or a Date object
+-   `start` **([Number][255] \| [Date][280])** An epoch in seconds or a Date object
+-   `end` **([Number][255] \| [Date][280])**  An epoch in seconds or a Date object
 -   `count` **[Number][255]** Number of ticks returned by history
 
 ### Plain objects (returned from methods)
@@ -1240,9 +1244,9 @@ Type: [Object][240]
 
 ##### Properties
 
--   `daily` **[DurationRange][281]** 
--   `intraday` **[DurationRange][281]** 
--   `tick` **[DurationRange][281]** 
+-   `daily` **[DurationRange][282]** 
+-   `intraday` **[DurationRange][282]** 
+-   `tick` **[DurationRange][282]** 
 
 #### ForwardDurations
 
@@ -1250,7 +1254,7 @@ Type: [Object][240]
 
 ##### Properties
 
--   `intraday` **[DurationRange][281]** 
+-   `intraday` **[DurationRange][282]** 
 
 #### Durations
 
@@ -1258,8 +1262,8 @@ Type: [Object][240]
 
 ##### Properties
 
--   `spot` **[SpotDurations][282]** 
--   `forward` **[ForwardDurations][283]** 
+-   `spot` **[SpotDurations][283]** 
+-   `forward` **[ForwardDurations][284]** 
 
 #### DurationUnits
 
@@ -1267,8 +1271,8 @@ Type: [Object][240]
 
 ##### Properties
 
--   `spot` **[FullName][261]** 
--   `forward` **[FullName][261]** 
+-   `spot` **[FullName][259]** 
+-   `forward` **[FullName][259]** 
 
 ## accountClosure
 
@@ -1421,7 +1425,7 @@ Type: [Object][240]
 
 -   `args` **[Object][240]**  (optional, default `{}`)
     -   `args.add_to_login_history` **Any** [Optional] Send this when you use api tokens for authorization and want to track activity using login_history call.
-    -   `args.authorize` **[String][242]** Authentication token. May be retrieved from [https://www.binary.com/en/user/security/api_tokenws.html][284]
+    -   `args.authorize` **[String][242]** Authentication token. May be retrieved from [https://www.binary.com/en/user/security/api_tokenws.html][285]
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.
     -   `args.req_id` **[Number][255]** [Optional] Used to map request to response.
 
@@ -2059,7 +2063,7 @@ Type: [Object][240]
 
 -   `args` **[Object][240]**  (optional, default `{}`)
     -   `args.date_of_birth` **[String][242]** Date of birth format: yyyy-mm-dd. Only required for clients with real-money accounts.
-    -   `args.new_password` **[String][242]** New password for validation (length within 6-25 chars, accepts any printable ASCII characters, need to include capital and lowercase letters with numbers). Password strength is evaluated with: [http://archive.geekwisdom.com/js/passwordmeter.js][285]
+    -   `args.new_password` **[String][242]** New password for validation (length within 6-25 chars, accepts any printable ASCII characters, need to include capital and lowercase letters with numbers). Password strength is evaluated with: [http://archive.geekwisdom.com/js/passwordmeter.js][286]
     -   `args.passthrough` **Any** Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.
     -   `args.req_id` **[Number][255]** Optional field to map request to response
     -   `args.reset_password` **[Number][255]** \-
@@ -2867,58 +2871,60 @@ Type: [Object][240]
 
 [257]: #derivapi
 
-[258]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[258]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[259]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[259]: #fullname
 
 [260]: #balance
 
-[261]: #fullname
+[261]: #transactions
 
-[262]: #customdate
+[262]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[263]: #marketvalue
+[263]: #customdate
 
-[264]: #monetary
+[264]: #marketvalue
 
-[265]: #durations
+[265]: #monetary
 
-[266]: #durationunits
+[266]: #durations
 
-[267]: #daterange
+[267]: #durationunits
 
-[268]: DerivAPI#candleStream
+[268]: #daterange
 
-[269]: #candle
+[269]: DerivAPI#candleStream
 
-[270]: #historyrange
+[270]: #candle
 
-[271]: #duration
+[271]: #historyrange
 
-[272]: #buyparam
+[272]: #duration
 
-[273]: #buy
+[273]: #buyparam
 
-[274]: #sellparam
+[274]: #buy
 
-[275]: #sell
+[275]: #sellparam
 
-[276]: DerivAPI#tickStream
+[276]: #sell
 
-[277]: #tick
+[277]: DerivAPI#tickStream
 
-[278]: #transaction
+[278]: #tick
 
-[279]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[279]: #transaction
 
 [280]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[281]: #durationrange
+[281]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[282]: #spotdurations
+[282]: #durationrange
 
-[283]: #forwarddurations
+[283]: #spotdurations
 
-[284]: https://www.binary.com/en/user/security/api_tokenws.html
+[284]: #forwarddurations
 
-[285]: http://archive.geekwisdom.com/js/passwordmeter.js
+[285]: https://www.binary.com/en/user/security/api_tokenws.html
+
+[286]: http://archive.geekwisdom.com/js/passwordmeter.js

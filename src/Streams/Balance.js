@@ -1,4 +1,5 @@
 import { first, map } from 'rxjs/operators';
+import { concat, of } from 'rxjs';
 
 import Monetary       from '../Types/Monetary';
 import Stream         from '../Types/Stream';
@@ -27,9 +28,14 @@ export default class Balance extends Stream {
     }
 
     // Called by the API to initialize the instance
-    async init() {
-        const source = this.api.subscribe({ balance: 1 })
-            .pipe(map(wrapBalance));
+    async init(initial_balance) {
+        let source = this.api.subscribe({ balance: 1 });
+
+        if (initial_balance) {
+            source = concat(of(initial_balance), source);
+        }
+
+        source = source.pipe(map(wrapBalance));
 
         this._data.amount = await source.pipe(first()).toPromise();
 

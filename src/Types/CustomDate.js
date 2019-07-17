@@ -11,9 +11,7 @@ import Immutable           from './Immutable';
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
-        const miliseconds = typeof date === 'number' && !isInMiliSeconds(date) ? date * 1000 : date;
-
-        super({ date: new Moment(miliseconds) });
+        super({ date: new Moment(toMiliseconds(date)) });
     }
 
     /**
@@ -21,7 +19,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isBefore(date) {
-        return this.date.isBefore(date);
+        return this.date.isBefore(toMiliseconds(date));
     }
 
     /**
@@ -29,7 +27,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSameOrAfter(date) {
-        return this.date.isSameOrAfter(date);
+        return this.date.isSameOrAfter(toMiliseconds(date));
     }
 
     /**
@@ -37,7 +35,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSameOrBefore(date) {
-        return this.date.isSameOrBefore(date);
+        return this.date.isSameOrBefore(toMiliseconds(date));
     }
 
     /**
@@ -45,7 +43,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isAfter(date) {
-        return this.date.isAfter(date);
+        return this.date.isAfter(toMiliseconds(date));
     }
 
     /**
@@ -53,6 +51,10 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSame(date) {
-        return this.date.isSame(date);
+        return this.date.isSame(toMiliseconds(date));
     }
+}
+
+function toMiliseconds(date) {
+    return typeof date === 'number' && !isInMiliSeconds(date) ? date * 1000 : date;
 }

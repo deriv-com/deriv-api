@@ -43,7 +43,6 @@ toc:
                 - FullName
                 - CustomDate
                 - DateRange
-                - Duration
                 - DurationRange
                 - Immutable
                 - Stream

@@ -23,4 +23,8 @@ export default class MarketValue extends Immutable {
     get pip_sized() {
         return this.value.toFixed(this.pip_size);
     }
+
+    get display() {
+        return this.pip_sized;
+    }
 }

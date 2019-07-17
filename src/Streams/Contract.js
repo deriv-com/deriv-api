@@ -8,7 +8,7 @@ import Monetary                   from '../Types/Monetary';
 import Spot                       from '../Types/Spot';
 import Stream                     from '../Types/Stream';
 
-import { renameFieldsForRequest } from '../utils';
+import { mapApiFields }           from '../utils';
 
 const field_mapping = {
     expiry_time: 'date_expiry',
@@ -67,7 +67,7 @@ export default class Contract extends Stream {
 
     // Called by the API to initialize the instance
     async init({ currency, symbol } = {}) {
-        const request = renameFieldsForRequest({
+        const request = mapApiFields({
             currency,
             symbol,
             proposal: 1,

@@ -64,15 +64,15 @@ test('Request for transactions', async () => {
 });
 
 test('Check transaction object', async () => {
-    const now = new Date();
+    const now = parseInt((new Date().getTime()) / 1000, 10);
 
     sendMessage('transaction', {
         ...tx_template,
-        action        : 'buy',
-        amount        : 100,
-        barrier       : 123.4,
-        time          : now.getTime(),
-        transaction_id: 1234,
+        action          : 'buy',
+        amount          : 100,
+        barrier         : 123.4,
+        transaction_id  : 1234,
+        transaction_time: now,
     });
 
     const [transaction] = transactions.list.slice(-1);

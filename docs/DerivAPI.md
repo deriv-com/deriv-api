@@ -643,7 +643,7 @@ A class for transaction objects
     -   `transaction.transaction_id` **[Number][258]** 
     -   `transaction.contract_id` **[Number][258]** 
     -   `transaction.purchase_time` **[Number][258]** 
-    -   `transaction.date_expiry` **[Number][258]** 
+    -   `transaction.expiry_time` **[Number][258]** 
     -   `transaction.transaction_time` **[Number][258]** 
 -   `pip` **[Number][258]** 
 
@@ -660,7 +660,7 @@ A class for transaction objects
 -   `low_barrier` **[MarketValue][267]** 
 -   `barrier` **[MarketValue][267]** 
 -   `purchase_time` **[CustomDate][266]** 
--   `date_expiry` **[CustomDate][266]** 
+-   `expiry_time` **[CustomDate][266]** 
 -   `time` **[CustomDate][266]** 
 -   `raw` **[Object][243]** The raw data received from API
 

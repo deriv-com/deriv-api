@@ -48,7 +48,7 @@ export function toPipSize(pip) {
     return pip.toString().length - 2;
 }
 
-export function renameFieldsForRequest(request, mapping) {
+export function mapApiFields(request, mapping) {
     const clone = { ...request };
 
     Object.keys(clone).forEach((field) => {

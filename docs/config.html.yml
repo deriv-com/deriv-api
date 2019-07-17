@@ -54,7 +54,7 @@ toc:
     - name: Parameters
     - CandlesParam
     - TicksParam
-    - ContractsParam
+    - ContractParam
     - BuyParam
     - SellParam
     - HistoryRange

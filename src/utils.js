@@ -47,3 +47,17 @@ export function parseRequestRange({ start, end, count } = {}) {
 export function toPipSize(pip) {
     return pip.toString().length - 2;
 }
+
+export function renameFieldsForRequest(request, mapping) {
+    const clone = { ...request };
+
+    Object.keys(clone).forEach((field) => {
+        if (field in mapping) {
+            const value = delete clone[field];
+
+            clone[mapping[field]] = value;
+        }
+    });
+
+    return clone;
+}

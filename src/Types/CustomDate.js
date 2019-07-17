@@ -11,7 +11,7 @@ import Immutable           from './Immutable';
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
-        super({ date: new Moment(toMiliseconds(date)) });
+        super({ date: new Moment(standardizeDate(date)) });
     }
 
     /**
@@ -19,7 +19,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isBefore(date) {
-        return this.date.isBefore(toMiliseconds(date));
+        return this.date.isBefore(standardizeDate(date));
     }
 
     /**
@@ -27,7 +27,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSameOrAfter(date) {
-        return this.date.isSameOrAfter(toMiliseconds(date));
+        return this.date.isSameOrAfter(standardizeDate(date));
     }
 
     /**
@@ -35,7 +35,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSameOrBefore(date) {
-        return this.date.isSameOrBefore(toMiliseconds(date));
+        return this.date.isSameOrBefore(standardizeDate(date));
     }
 
     /**
@@ -43,7 +43,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isAfter(date) {
-        return this.date.isAfter(toMiliseconds(date));
+        return this.date.isAfter(standardizeDate(date));
     }
 
     /**
@@ -51,10 +51,22 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSame(date) {
-        return this.date.isSame(toMiliseconds(date));
+        return this.date.isSame(standardizeDate(date));
     }
 }
 
-function toMiliseconds(date) {
-    return typeof date === 'number' && !isInMiliSeconds(date) ? date * 1000 : date;
+function standardizeDate(arg) {
+    let date = arg;
+
+    date = typeof date === 'string' ? date * 1 : date;
+
+    if (typeof date === 'number') return !isInMiliSeconds(date) ? date * 1000 : date;
+
+    if (date instanceof CustomDate) return date.date;
+
+    if (date instanceof Date) return date;
+
+    if (date instanceof Moment) return date;
+
+    throw new Error(`Unknown date of type: ${typeof date} is given`);
 }

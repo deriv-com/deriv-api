@@ -11,8 +11,9 @@ import Immutable from './Immutable';
  *
  * console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
  *
- * @property {String} short
  * @property {String} full
+ * @property {String} long - alias for this.full
+ * @property {String} short
  * @property {String} code - alias for this.short
  * @property {String} shortcode - alias for this.short
  */
@@ -27,5 +28,9 @@ export default class FullName extends Immutable {
 
     get shortcode() {
         return this.short;
+    }
+
+    get long() {
+        return this.full;
     }
 }

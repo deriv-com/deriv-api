@@ -687,6 +687,33 @@ A container for contract group info
 
 Wrapper around a Buy response
 
+##### Parameters
+
+-   `buy`  
+    -   `buy.buy_price` **[Monetary][268]** 
+    -   `buy.balance_after` **[Monetary][268]** 
+    -   `buy.payout` **[Monetary][268]** 
+    -   `buy.start_time` **[CustomDate][266]** 
+    -   `buy.purchase_time` **[CustomDate][266]** 
+    -   `buy.contract_id` **[Number][258]** 
+    -   `buy.transaction_id` **[Number][258]** 
+    -   `buy.longcode` **[String][245]** 
+    -   `buy.shortcode` **[String][245]** 
+-   `currency` **[String][245]** 
+
+##### Properties
+
+-   `price` **[Monetary][268]** 
+-   `balance_after` **[Monetary][268]** 
+-   `payout` **[Monetary][268]** 
+-   `start_time` **[CustomDate][266]** 
+-   `purchase_time` **[CustomDate][266]** 
+-   `contract_id` **[Number][258]** 
+-   `transaction_id` **[Number][258]** 
+-   `code` **[FullName][262]** contains short and long code
+-   `longcode` **[String][245]** 
+-   `shortcode` **[String][245]** 
+
 #### Sell
 
 **Extends Immutable**
@@ -779,12 +806,14 @@ Abstract class for contracts
 -   `type` **[String][245]** contract type
 -   `potential_payout` **[Monetary][268]** The payout value before the contract was sold
 -   `payout` **[Monetary][268]** The payout after selling the contract
--   `contract_id` **[Number][258]** The contract ID after purchase
+-   `id` **[Number][258]** The contract ID after purchase
 -   `purchase_time` **[CustomDate][266]** Time of purchase
--   `date_start` **[CustomDate][266]** Start time of the contract (estimated for proposal)
+-   `start_time` **[CustomDate][266]** Start time of the contract (estimated for proposal)
 -   `is_expired` **[Boolean][261]** 
 -   `is_open` **[Boolean][261]** 
--   `duration` **Duration** 
+-   `longcode` **[String][245]** 
+-   `shortcode` **[String][245]** 
+-   `code` **[FullName][262]** contains long and short code
 
 ##### Examples
 
@@ -802,8 +831,8 @@ Buys this contract
 
 ###### Parameters
 
--   `buy` **[BuyParam][275]** 
-    -   `buy.max_price`  
+-   `buy` **[BuyParam][275]**  (optional, default `{}`)
+    -   `buy.max_price`   (optional, default `this.ask_price.value`)
 
 Returns **[Buy][276]** 
 
@@ -958,8 +987,9 @@ A class for keeping short and full name of things
 
 ##### Properties
 
--   `short` **[String][245]** 
 -   `full` **[String][245]** 
+-   `long` **[String][245]** alias for this.full
+-   `short` **[String][245]** 
 -   `code` **[String][245]** alias for this.short
 -   `shortcode` **[String][245]** alias for this.short
 
@@ -1195,9 +1225,8 @@ Type: [Object][243]
 -   `amount` **[Number][258]** 
 -   `barrier` **[String][245]** 
 -   `barrier2` **[String][245]** 
--   `longcode` **[String][245]** 
--   `date_expiry` **([Number][258] \| [Date][282])** epoch in seconds or [Date][283]
--   `date_start` **([Number][258] \| [Date][282])** epoch in seconds or [Date][283]
+-   `expiry_time` **([Number][258] \| [Date][282])** epoch in seconds or [Date][283]
+-   `start_time` **([Number][258] \| [Date][282])** epoch in seconds or [Date][283]
 -   `Currency` **[String][245]?** Default is the account currency
 -   `basis` **[String][245]** stake or payout
 -   `duration` **([Number][258] \| [String][245])** duration with unit or duration in number

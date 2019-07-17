@@ -1,12 +1,19 @@
-import '../Immutables/Buy';
 import '../Immutables/Sell';
 
-import { first, map } from 'rxjs/operators';
+import { first, map }             from 'rxjs/operators';
 
-import CustomDate     from '../Types/CustomDate';
-import Monetary       from '../Types/Monetary';
-import Spot           from '../Types/Spot';
-import Stream         from '../Types/Stream';
+import Buy                        from '../Immutables/Buy';
+import CustomDate                 from '../Types/CustomDate';
+import Monetary                   from '../Types/Monetary';
+import Spot                       from '../Types/Spot';
+import Stream                     from '../Types/Stream';
+
+import { renameFieldsForRequest } from '../utils';
+
+const field_mapping = {
+    expiry_time: 'date_expiry',
+    start_time : 'date_start',
+};
 
 /**
  * @typedef {Object} ContractParam
@@ -14,9 +21,8 @@ import Stream         from '../Types/Stream';
  * @property {Number} amount
  * @property {String} barrier
  * @property {String} barrier2
- * @property {String} longcode
- * @property {Number|Date} date_expiry - epoch in seconds or {@link Date}
- * @property {Number|Date} date_start - epoch in seconds or {@link Date}
+ * @property {Number|Date} expiry_time - epoch in seconds or {@link Date}
+ * @property {Number|Date} start_time - epoch in seconds or {@link Date}
  * @property {String=} Currency - Default is the account currency
  * @property {String} basis - stake or payout
  * @property {Number|String} duration - duration with unit or duration in number
@@ -45,12 +51,14 @@ import Stream         from '../Types/Stream';
  * @property {String} type - contract type
  * @property {Monetary} potential_payout - The payout value before the contract was sold
  * @property {Monetary} payout - The payout after selling the contract
- * @property {Number} contract_id - The contract ID after purchase
+ * @property {Number} id - The contract ID after purchase
  * @property {CustomDate} purchase_time - Time of purchase
- * @property {CustomDate} date_start - Start time of the contract (estimated for proposal)
+ * @property {CustomDate} start_time - Start time of the contract (estimated for proposal)
  * @property {Boolean} is_expired
  * @property {Boolean} is_open
- * @property {Duration} duration
+ * @property {String} longcode
+ * @property {String} shortcode
+ * @property {FullName} code - contains long and short code
  */
 export default class Contract extends Stream {
     constructor(api, request) {
@@ -59,16 +67,20 @@ export default class Contract extends Stream {
 
     // Called by the API to initialize the instance
     async init({ currency, symbol } = {}) {
-        const request            = {
-            currency, symbol, proposal: 1, ...this.request,
-        };
+        const request = renameFieldsForRequest({
+            currency,
+            symbol,
+            proposal: 1,
+            ...this.request,
+        }, field_mapping);
+
         const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
         const active_symbol      = active_symbols.find(s => s.symbol === request.symbol);
 
         const proposals = this.api.subscribe(request);
 
         this._data.on_update = proposals.pipe(
-            map(p => proposalToContract(p, { currency, ...active_symbol })),
+            map(p => proposalToContract(p, { ...request, ...active_symbol })),
         );
 
         this._data.status  = 'proposal';
@@ -87,8 +99,30 @@ export default class Contract extends Stream {
      * @param {BuyParam} buy
      * @returns {Buy}
      */
-    async buy({ max_price: price }) {
-        return this.api.buy({ buy: this.contract_id, price });
+    async buy({ max_price: price = this.ask_price.value } = {}) {
+        const { buy } = await this.api.buy({ buy: this.id, price });
+
+        const wrappedBuy = new Buy(buy, this.currency);
+
+        this._data.id = wrappedBuy.contract_id;
+
+        [
+            'purchase_time',
+            'start_time',
+            'transaction_id',
+            'buy_price',
+            'payout',
+            'longcode',
+            'shortcode',
+            'code',
+        ].forEach((field) => {
+            this._data[field] = wrappedBuy[field];
+        });
+
+        this._data.status  = 'open';
+        this._data.is_open = true;
+
+        return wrappedBuy;
     }
 
     /**
@@ -98,14 +132,14 @@ export default class Contract extends Stream {
      * @returns {Sell}
      */
     async sell({ max_price: price }) {
-        return this.api.sell({ sell: this.contract_id, price });
+        return this.api.sell({ sell: this.id, price });
     }
 }
 
 function proposalToContract({ proposal }, { currency, pip }) {
     return {
         ask_price : new Monetary(proposal.ask_price, currency),
-        date_start: new CustomDate(proposal.date_start),
+        start_time: new CustomDate(proposal.date_start),
         longcode  : proposal.longcode,
         payout    : new Monetary(proposal.payout, currency),
         spot      : new Spot(proposal.spot, pip, proposal.spot_time),

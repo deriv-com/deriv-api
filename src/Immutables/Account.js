@@ -84,7 +84,7 @@ export default class Account extends Immutable {
     /**
      * A contract object with latest status and ability to buy/sell
      *
-     * @param {ContractsParam} options - parameters defining the contract
+     * @param {ContractParam} options - parameters defining the contract
      * @returns {Contract}
      */
     async contract(options) {

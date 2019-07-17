@@ -5,23 +5,29 @@ import MarketValue from '../Types/MarketValue';
 import Monetary    from '../Types/Monetary';
 
 /**
+ * @typeof {Object} TransactionParams
+ */
+
+/**
  * A class for transaction objects
  *
- * @param {String} action
- * @param {String} currency
- * @param {Number} amount
- * @param {Number} balance
- * @param {String|Number} high_barrier
- * @param {String|Number} low_barrier
- * @param {String|Number} barrier
- * @param {String} longcode
- * @param {String} symbol
- * @param {String} display_name - Belongs to symbol
- * @param {Number} transaction_id
- * @param {Number} contract_id
- * @param {Number} purchase_time
- * @param {Number} date_expiry
- * @param {Number} transaction_time
+ * @param {Object} transaction
+ * @param {String} transaction.action
+ * @param {String} transaction.currency
+ * @param {Number} transaction.amount
+ * @param {Number} transaction.balance
+ * @param {String|Number} transaction.high_barrier
+ * @param {String|Number} transaction.low_barrier
+ * @param {String|Number} transaction.barrier
+ * @param {String} transaction.longcode
+ * @param {String} transaction.symbol
+ * @param {String} transaction.display_name - Belongs to symbol
+ * @param {Number} transaction.transaction_id
+ * @param {Number} transaction.contract_id
+ * @param {Number} transaction.purchase_time
+ * @param {Number} transaction.date_expiry
+ * @param {Number} transaction.transaction_time
+ * @param {Number} pip
  *
  * @property {String} action
  * @property {String} longcode
@@ -36,9 +42,10 @@ import Monetary    from '../Types/Monetary';
  * @property {CustomDate} purchase_time
  * @property {CustomDate} date_expiry
  * @property {CustomDate} time
+ * @property {Object} raw - The raw data received from API
  */
 export default class Transaction extends Immutable {
-    constructor(raw, pip) {
+    constructor(transaction, pip) {
         const {
             action,
             currency,
@@ -55,9 +62,9 @@ export default class Transaction extends Immutable {
             purchase_time,
             date_expiry,
             transaction_time,
-        } = raw;
+        } = transaction;
 
-        const instance = { raw };
+        const instance = { raw: transaction };
 
         instance.action      = action;
         instance.longcode    = longcode;

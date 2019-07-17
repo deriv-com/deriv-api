@@ -5,7 +5,7 @@ import '../Types/Monetary';
 import Stream   from '../Types/Stream';
 
 /**
- * @typedef {Object} ContractsParam
+ * @typedef {Object} ContractParam
  * @property {String} contract_type
  * @property {Number} amount
  * @property {String} barrier
@@ -31,7 +31,7 @@ import Stream   from '../Types/Stream';
  * contract.onUpdate().subscribe(console.log)
  *
  * @param {DerivAPI} api
- * @param {ContractsParam} options
+ * @param {ContractParam} options
  *
  * @property {String} status - Current status of the contract
  * @property {Monetary} sell_price - Price at which the contract was sold

@@ -22,12 +22,12 @@ import MarketValue from '../Types/MarketValue';
  * @property {Object} raw - The raw data received from API
  */
 export default class Candle extends Immutable {
-    constructor(raw, pip) {
+    constructor(candle, pip) {
         const {
             epoch, open, high, low, close, open_time,
-        } = raw;
+        } = candle;
 
-        const instance = { raw };
+        const instance = { raw: candle };
 
         instance.time      = new CustomDate(epoch);
         instance.open_time = open_time ? new CustomDate(open_time) : new CustomDate(epoch);

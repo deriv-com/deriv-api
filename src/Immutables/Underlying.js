@@ -55,7 +55,7 @@ export default class Underlying extends Immutable {
     /**
      * A contract object with latest market values, cannot be bought or sold
      *
-     * @param {ContractsParam} options - parameters defining the contract
+     * @param {ContractParam} options - parameters defining the contract
      * @returns {Contract}
      */
     async contract(options) {

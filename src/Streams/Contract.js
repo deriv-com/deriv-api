@@ -1,14 +1,19 @@
 import '../Immutables/Sell';
 
-import { first, map }             from 'rxjs/operators';
+import { first, map }   from 'rxjs/operators';
 
-import Buy                        from '../Immutables/Buy';
-import CustomDate                 from '../Types/CustomDate';
-import Monetary                   from '../Types/Monetary';
-import Spot                       from '../Types/Spot';
-import Stream                     from '../Types/Stream';
+import { Subject }      from 'rxjs';
 
-import { mapApiFields }           from '../utils';
+import Buy              from '../Immutables/Buy';
+import Tick             from '../Immutables/Tick';
+import CustomDate       from '../Types/CustomDate';
+import MarketValue      from '../Types/MarketValue';
+import Monetary         from '../Types/Monetary';
+import Profit           from '../Types/Profit';
+import Spot             from '../Types/Spot';
+import Stream           from '../Types/Stream';
+
+import { mapApiFields } from '../utils';
 
 const field_mapping = {
     expiry_time: 'date_expiry',
@@ -44,21 +49,40 @@ const field_mapping = {
  * @param {DerivAPI} api
  * @param {ContractParam} request
  *
- * @property {String} status - Current status of the contract
- * @property {Monetary} sell_price - Price at which the contract was sold
- * @property {Monetary} buy_price - Price at which the contract was bought
- * @property {Monetary} ask_price - Price of the current contract proposal
+ * @property {String} status - 'proposal', 'open', 'expired', 'sold', 'won', 'lost'
+ * @property {Monetary} ask_price - Price to pay to buy a contract
  * @property {String} type - contract type
- * @property {Monetary} potential_payout - The payout value before the contract was sold
- * @property {Monetary} payout - The payout after selling the contract
- * @property {Number} id - The contract ID after purchase
- * @property {CustomDate} purchase_time - Time of purchase
- * @property {CustomDate} start_time - Start time of the contract (estimated for proposal)
- * @property {Boolean} is_expired
- * @property {Boolean} is_open
+ * @property {Monetary} payout - Potential or realized payout
  * @property {String} longcode
- * @property {String} shortcode
- * @property {FullName} code - contains long and short code
+ * @property {String} symbol
+ * @property {String} currency
+ * @property {Spot} current_spot
+ * @property {CustomDate} start_time - Start time of the contract (estimated for proposal)
+ * @property {Monetary=} buy_price - (After buy)
+ * @property {Monetary=} bid_price - (After buy)
+ * @property {Monetary=} sell_price - (After sell)
+ * @property {Profit=} profit - Potential or realized profit (After buy)
+ * @property {Number=} id - The contract ID (After buy)
+ * @property {CustomDate=} purchase_time - (After buy)
+ * @property {CustomDate=} expiry_time - (After buy)
+ * @property {CustomDate=} sell_time - (After sell)
+ * @property {Number=} barrier_count - (For contracts with barrier)
+ * @property {MarketValue=} high_barrier - (For contracts with two barriers)
+ * @property {MarketValue=} low_barrier - (For contracts with two barriers)
+ * @property {MarketValue=} barrier - (For contracts with one barrier)
+ * @property {Number=} tick_count - (For tick contracts)
+ * @property {Tick[]=} ticks - (For tick contracts)
+ * @property {Number=} multiplier - (For loopback contracts)
+ * @property {String=} shortcode
+ * @property {String=} validation_error
+ * @property {Boolean=} is_forward_starting
+ * @property {Boolean=} is_intraday
+ * @property {Boolean=} is_path_dependent
+ * @property {Boolean=} is_valid_to_sell
+ * @property {Spot=} entry_spot
+ * @property {Spot=} exit_spot
+ * @property {Object=} audit_details
+ * @property {FullName=} code - only if both short and long codes are available
  */
 export default class Contract extends Stream {
     constructor(api, request) {
@@ -74,20 +98,24 @@ export default class Contract extends Stream {
             ...this.request,
         }, field_mapping);
 
+        this._data.type     = request.contract_type;
+        this._data.symbol   = request.symbol;
+        this._data.currency = request.currency;
+
         const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
-        const active_symbol      = active_symbols.find(s => s.symbol === request.symbol);
+        this._data.active_symbol = active_symbols.find(s => s.symbol === request.symbol);
 
-        const proposals = this.api.subscribe(request);
+        this._data.on_update = new Subject();
 
-        this._data.on_update = proposals.pipe(
-            map(p => proposalToContract(p, { ...request, ...active_symbol })),
-        );
+        this.api.subscribe(request).pipe(
+            map(p => proposalToContract(p, { ...request, ...this.active_symbol })),
+        ).subscribe(p => this.on_update.next(p));
 
         this._data.status  = 'proposal';
         this._data.is_open = false;
 
-        this.onUpdate((proposal) => {
-            Object.assign(this._data, proposal);
+        this.onUpdate((contract) => {
+            Object.assign(this._data, contract);
         });
 
         await this.onUpdate().pipe(first()).toPromise();
@@ -104,13 +132,13 @@ export default class Contract extends Stream {
 
         const wrappedBuy = new Buy(buy, this.currency);
 
-        this._data.id = wrappedBuy.contract_id;
+        this._data.id              = wrappedBuy.contract_id;
+        this._data.buy_transaction = wrappedBuy.transaction_id;
+        this._data.buy_price       = wrappedBuy.price;
 
         [
             'purchase_time',
             'start_time',
-            'transaction_id',
-            'buy_price',
             'payout',
             'longcode',
             'shortcode',
@@ -121,6 +149,13 @@ export default class Contract extends Stream {
 
         this._data.status  = 'open';
         this._data.is_open = true;
+
+        this.api.subscribe({
+            proposal_open_contract: 1,
+            contract_id           : buy.contract_id,
+        }).pipe(
+            map(o => openContractToContract(o, this.active_symbol.pip)),
+        ).subscribe(p => this.on_update.next(p));
 
         return wrappedBuy;
     }
@@ -138,10 +173,51 @@ export default class Contract extends Stream {
 
 function proposalToContract({ proposal }, { currency, pip }) {
     return {
-        ask_price : new Monetary(proposal.ask_price, currency),
-        start_time: new CustomDate(proposal.date_start),
-        longcode  : proposal.longcode,
-        payout    : new Monetary(proposal.payout, currency),
-        spot      : new Spot(proposal.spot, pip, proposal.spot_time),
+        ask_price   : new Monetary(proposal.ask_price, currency),
+        start_time  : new CustomDate(proposal.date_start),
+        longcode    : proposal.longcode,
+        payout      : new Monetary(proposal.payout, currency),
+        current_spot: new Spot(proposal.spot, pip, proposal.spot_time),
     };
+}
+
+function openContractToContract({ proposal_open_contract: poc }, pip) {
+    const toBarrier = value => new MarketValue(value, pip);
+    const toMoney   = value => new Monetary(value, poc.currency);
+    const toProfit  = (value, percentage) => new Profit(value, poc.currency, percentage);
+    const toSpot    = (value, time) => new Spot(value, pip, time);
+    const toTime    = time => new CustomDate(time);
+
+    return {
+        status             : poc.status,
+        payout             : toMoney(poc.payout),
+        current_spot       : toSpot(poc.current_spot, poc.current_spot_time),
+        start_time         : toTime(poc.date_start),
+        bid_price          : toMoney(poc.bid_price),
+        sell_price         : toMoney(poc.sell_price),
+        profit             : toProfit(poc.profit, poc.profit_percentage),
+        expiry_time        : toTime(poc.date_expiry),
+        sell_time          : toTime(poc.sell_time),
+        high_barrier       : toBarrier(poc.high_barrier),
+        low_barrier        : toBarrier(poc.low_barrier),
+        barrier            : toBarrier(poc.barrier),
+        ticks              : wrapPocTicks(poc.tick_stream, pip),
+        entry_spot         : toSpot(poc.entry_spot, poc.entry_spot_time),
+        exit_spot          : toSpot(poc.exit_spot, poc.exit_spot_time),
+        is_forward_starting: poc.is_forward_starting,
+        is_intraday        : poc.is_intraday,
+        is_path_dependent  : poc.is_path_dependent,
+        is_valid_to_sell   : poc.is_valid_to_sell,
+        validation_error   : poc.validation_error,
+        multiplier         : poc.multiplier,
+        tick_count         : poc.tick_count,
+        barrier_count      : poc.barrier_count,
+        audit_details      : poc.audit_details,
+        buy_transaction    : poc.transaction_ids.buy,
+        sell_transaction   : poc.transaction_ids.sell,
+    };
+}
+
+function wrapPocTicks(ticks = [], pip) {
+    return ticks.map(({ epoch, tick: quote }) => new Tick({ epoch, quote }, pip));
 }

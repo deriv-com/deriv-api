@@ -8,6 +8,9 @@ import Immutable           from './Immutable';
  * An alternative date object
  *
  * @param {CustomDate|Date|Number} date
+ *
+ * @property {Number} epoch
+ * @property {Number} epoch_miliseconds
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
@@ -53,6 +56,14 @@ export default class CustomDate extends Immutable {
     isSame(date) {
         return this.date.isSame(standardizeDate(date));
     }
+
+    get epoch_miliseconds() {
+        return +this.date;
+    }
+
+    get epoch() {
+        return this.date.unix(Number);
+    }
 }
 
 function standardizeDate(arg) {
@@ -67,6 +78,8 @@ function standardizeDate(arg) {
     if (date instanceof Date) return date;
 
     if (date instanceof Moment) return date;
+
+    if (date === undefined) return date;
 
     throw new Error(`Unknown date of type: ${typeof date} is given`);
 }

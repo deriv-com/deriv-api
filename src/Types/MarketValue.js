@@ -1,5 +1,3 @@
-import { toPipSize } from '../utils';
-
 import Immutable     from './Immutable';
 
 /**
@@ -17,7 +15,7 @@ export default class MarketValue extends Immutable {
     }
 
     get pip_size() {
-        return toPipSize(this.pip);
+        return this.pip.toString().length - 2;
     }
 
     get pip_sized() {

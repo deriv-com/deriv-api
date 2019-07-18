@@ -36,9 +36,6 @@ export default class Underlying extends Immutable {
 
     /** Returns the pipSized display of the value in string */
     pipSizedValue(value) {
-        /*
-         * return toPipSized(value, this.pip);
-         */
         return value.toFixed(this.pip.toString().length - 2);
     }
 

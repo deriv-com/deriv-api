@@ -107,9 +107,9 @@ test('Buying a contract', async () => {
     expect(buy.purchase_time.isSame(buy_response.purchase_time)).toBeTruthy();
     expect(buy.start_time.isSame(buy_response.start_time)).toBeTruthy();
 
-    expect(buy.purchase_time.isSame(contract.purchase_time)).toBeTruthy();
-    expect(buy.contract_id).toBe(contract.id);
-    expect(buy.transaction_id).toBe(contract.transaction_id);
+    expect(contract.purchase_time.isSame(buy.purchase_time)).toBeTruthy();
+    expect(contract.id).toBe(buy.contract_id);
+    expect(contract.transaction_id).toBe(buy.transaction_id);
     expect(contract.status).toBe('open');
     expect(contract.is_open).toBeTruthy();
 });

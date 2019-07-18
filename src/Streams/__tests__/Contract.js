@@ -59,7 +59,9 @@ const open_contract_response = {
     current_spot_time         : now,
     entry_spot                : 1234.5,
     entry_spot_display_value  : '1234.50',
-    entry_spot_time           : now,
+    entry_tick                : 1234.5,
+    entry_tick_display_value  : '1234.50',
+    entry_tick_time           : now,
     currency                  : 'USD',
     barrier_count             : 1,
     date_settlement           : now + 61,
@@ -166,9 +168,9 @@ test('Receiving contract updates while open', async () => {
         current_spot,
         current_spot_display_value,
         current_spot_time,
-        entry_spot,
-        entry_spot_display_value,
-        entry_spot_time,
+        entry_tick,
+        entry_tick_display_value,
+        entry_tick_time,
         date_expiry,
         longcode,
         shortcode,
@@ -179,9 +181,9 @@ test('Receiving contract updates while open', async () => {
     expect(contract.current_spot.display).toBe(current_spot_display_value);
     expect(contract.current_spot.time.isSame(current_spot_time)).toBeTruthy();
 
-    expect(contract.entry_spot.value).toBe(entry_spot);
-    expect(contract.entry_spot.display).toBe(entry_spot_display_value);
-    expect(contract.entry_spot.time.isSame(entry_spot_time)).toBeTruthy();
+    expect(contract.entry_spot.value).toBe(entry_tick);
+    expect(contract.entry_spot.display).toBe(entry_tick_display_value);
+    expect(contract.entry_spot.time.isSame(entry_tick_time)).toBeTruthy();
 
     expect(contract.buy_price).toEqual(buy.price);
 

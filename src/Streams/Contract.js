@@ -202,7 +202,7 @@ function openContractToContract({ proposal_open_contract: poc }, pip) {
         low_barrier        : toBarrier(poc.low_barrier),
         barrier            : toBarrier(poc.barrier),
         ticks              : wrapPocTicks(poc.tick_stream, pip),
-        entry_spot         : toSpot(poc.entry_spot, poc.entry_spot_time),
+        entry_spot         : toSpot(poc.entry_tick, poc.entry_tick_time),
         exit_spot          : toSpot(poc.exit_spot, poc.exit_spot_time),
         is_forward_starting: poc.is_forward_starting,
         is_intraday        : poc.is_intraday,

@@ -247,6 +247,31 @@ test('Open contract update - valid to sell', async () => {
     expect(contract.is_valid_to_sell).toBeTruthy();
 });
 
+test('Open contract update - valid to sell', async () => {
+    sendMessage('proposal_open_contract', {
+        ...open_contract_response,
+        ticks_count: 2,
+        tick_stream: [
+            {
+                tick              : 90.1,
+                tick_display_value: '90.10',
+                epoch             : now,
+            },
+            {
+                tick              : 92.4,
+                tick_display_value: '92.40',
+                epoch             : now + 2,
+            },
+        ],
+    });
+
+    expect(contract.ticks[0].quote.display).toBe('90.10');
+    expect(contract.ticks[0].time.epoch).toBe(now);
+
+    expect(contract.ticks[1].quote.display).toBe('92.40');
+    expect(contract.ticks[1].time.epoch).toBe(now + 2);
+});
+
 function sendMessage(type, obj) {
     api.connection.onmessage({
         data: JSON.stringify({

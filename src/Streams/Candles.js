@@ -32,11 +32,11 @@ export default class Candles extends Stream {
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
         const candle_stream      = this.api.subscribe(toTicksHistoryParam(this));
 
-        this._data.on_update = candle_stream.pipe(
+        this.addSource(candle_stream.pipe(
             skip(1),
             map(t => wrapCandle(t, this._data.pip)),
             share(),
-        );
+        ));
 
         this.onUpdate((candle) => {
             this._data.list = [...this._data.list.slice(1), candle];

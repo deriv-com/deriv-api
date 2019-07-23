@@ -16,20 +16,30 @@ beforeAll(async () => {
     api.connection.onopen();
 
     balance = new Balance(api);
+});
+
+test('Initiallize balance with initial value', async () => {
+    expect(balance).toBeInstanceOf(Balance);
 
     // Make a call to onmessage immediately after send is called
     api.connection.send = jest.fn((msg) => {
         ({ req_id } = JSON.parse(msg));
 
-        sendMessage('balance', { balance: 0, currency: 'USD' });
+        sendMessage('balance', { balance: 200, currency: 'USD' });
     });
 
-    await balance.init();
+    // Set initial balance
+    const promise = balance.init({ balance: 100, currency: 'USD' });
+
+    // Check initial balance
+    expect(balance.value).toEqual(100);
+    expect(balance.display).toEqual('100.00');
+    expect(balance.currency).toEqual('USD');
+
+    await promise;
 });
 
 test('Request for balance', async () => {
-    expect(balance).toBeInstanceOf(Balance);
-
     expect(() => { balance.currency = 'AUD'; }).toThrow(Error);
 
     sendMessage('balance', { balance: 1000, currency: 'USD' });

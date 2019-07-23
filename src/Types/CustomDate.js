@@ -1,8 +1,13 @@
-import Moment              from 'moment';
+import isSameOrAfter       from 'dayjs/plugin/isSameOrAfter';
+import isSameOrBefore      from 'dayjs/plugin/isSameOrBefore';
+import dayjs               from 'dayjs';
 
 import { isInMiliSeconds } from '../utils';
 
 import Immutable           from './Immutable';
+
+dayjs.extend(isSameOrBefore);
+dayjs.extend(isSameOrAfter);
 
 /**
  * An alternative date object
@@ -14,7 +19,7 @@ import Immutable           from './Immutable';
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
-        super({ date: new Moment(standardizeDate(date)) });
+        super({ date: dayjs(standardizeDate(date)) });
     }
 
     /**
@@ -58,11 +63,11 @@ export default class CustomDate extends Immutable {
     }
 
     get epoch_miliseconds() {
-        return +this.date;
+        return this.date.valueOf();
     }
 
     get epoch() {
-        return this.date.unix(Number);
+        return this.date.unix();
     }
 }
 
@@ -77,7 +82,7 @@ function standardizeDate(arg) {
 
     if (date instanceof Date) return date;
 
-    if (date instanceof Moment) return date;
+    if (date instanceof dayjs) return date;
 
     if (date === undefined) return date;
 

@@ -36,11 +36,11 @@ export default class Ticks extends Stream {
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
         const ticks              = this.api.subscribe(toTicksHistoryParam(this));
 
-        this._data.on_update = ticks.pipe(
+        this.addSource(ticks.pipe(
             skip(1),
             map(t => wrapTick(t, this._data.pip)),
             share(),
-        );
+        ));
 
         this.onUpdate((tick) => {
             this._data.list = [...this._data.list.slice(1), tick];

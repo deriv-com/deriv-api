@@ -1,8 +1,6 @@
 
 import { first, map }   from 'rxjs/operators';
 
-import { Subject }      from 'rxjs';
-
 import Buy              from '../Immutables/Buy';
 import Sell             from '../Immutables/Sell';
 import Tick             from '../Immutables/Tick';
@@ -109,11 +107,9 @@ export default class Contract extends Stream {
         this._data.symbol   = new FullName(request.symbol, this._data.active_symbol.display_name);
         this._data.currency = request.currency;
 
-        this._data.on_update = new Subject();
-
-        this.api.subscribe(request).pipe(
+        this.addSource(this.api.subscribe(request).pipe(
             map(p => proposalToContract(p, { ...request, ...this.active_symbol })),
-        ).subscribe(p => this.on_update.next(p));
+        ));
 
         this._data.status = 'proposal';
 
@@ -152,12 +148,12 @@ export default class Contract extends Stream {
 
         this._data.status = 'open';
 
-        this.api.subscribe({
+        this.addSource(this.api.subscribe({
             proposal_open_contract: 1,
             contract_id           : buy.contract_id,
         }).pipe(
             map(o => openContractToContract(o, this.active_symbol.pip)),
-        ).subscribe(p => this.on_update.next(p));
+        ));
 
         return wrappedBuy;
     }

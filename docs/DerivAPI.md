@@ -1152,6 +1152,10 @@ An abstract class for immutable objects
 
 An abstract class for stream objects
 
+##### Parameters
+
+-   `args`  
+
 ##### onUpdate
 
 Listen on updates of a stream

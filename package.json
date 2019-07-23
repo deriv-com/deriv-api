@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose",
+    "build": "webpack --config webpack.config.js",
     "coverage": "codecov",
     "devel": "npm test -- --watch --notify --onlyChanged",
     "lint": "eslint",
@@ -45,11 +46,14 @@
     "eslint-plugin-import": "^2.18.0",
     "husky": "^2.4.1",
     "jest": "^24.8.0",
+    "webpack": "^4.36.1",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.6",
     "ws": "^7.0.1"
   },
   "dependencies": {
+    "dayjs": "^1.8.15",
     "json-stable-stringify": "^1.0.1",
-    "moment": "^2.24.0",
     "rxjs": "^6.5.2"
   }
 }

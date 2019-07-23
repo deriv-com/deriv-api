@@ -1,9 +1,15 @@
-import Immutable from './Immutable';
+import { Subject } from 'rxjs';
+
+import Immutable   from './Immutable';
 
 /**
  * An abstract class for stream objects
  */
 export default class Stream extends Immutable {
+    constructor(args) {
+        super({ on_update: new Subject(), ...args });
+    }
+
     /**
      * Listen on updates of a stream
      *
@@ -20,8 +26,16 @@ export default class Stream extends Immutable {
      */
     onUpdate(callback, on_error) {
         if (callback) {
-            this._data.on_update.subscribe(callback, on_error || (() => {}));
+            this.on_update.subscribe(callback, on_error || (() => {}));
         }
-        return this._data.on_update;
+        return this.on_update;
+    }
+
+    next(value) {
+        this.on_update.next(value);
+    }
+
+    addSource(source) {
+        source.subscribe(v => this.next(v));
     }
 }

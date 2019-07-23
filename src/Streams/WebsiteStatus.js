@@ -32,7 +32,7 @@ export default class WebsiteStatus extends Stream {
     async init() {
         const website_status_stream = this.api.subscribe({ website_status: 1 });
 
-        this._data.on_update = website_status_stream.pipe(map(wrapWebsiteStatus));
+        this.addSource(website_status_stream.pipe(map(wrapWebsiteStatus)));
 
         this.onUpdate((website_status) => {
             Object.assign(this._data, website_status);

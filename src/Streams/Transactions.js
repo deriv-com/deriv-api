@@ -38,11 +38,11 @@ export default class Transactions extends Stream {
         this._data.active_symbols = (await this.api.cache.activeSymbols('brief')).active_symbols;
         const transactions        = this.api.subscribe({ transaction: 1 });
 
-        this._data.on_update = transactions.pipe(
+        this.addSource(transactions.pipe(
             skip(1),
             map(t => wrapTransaction(t, this._data.active_symbols)),
             share(),
-        );
+        ));
 
         this.onUpdate((transaction) => {
             if (this._data.list.length < max_tx_size) {

@@ -12,7 +12,7 @@ import Immutable from './Immutable';
  */
 export default class Monetary extends Immutable {
     constructor(value, currency) {
-        super({ value, currency });
+        super({ value: +value, currency });
     }
 
     get display() {

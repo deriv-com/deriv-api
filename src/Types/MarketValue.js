@@ -11,7 +11,7 @@ import Immutable     from './Immutable';
  */
 export default class MarketValue extends Immutable {
     constructor(value, pip) {
-        super({ value, pip });
+        super({ value: +value, pip });
     }
 
     get pip_size() {

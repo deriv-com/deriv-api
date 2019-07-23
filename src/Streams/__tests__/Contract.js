@@ -3,8 +3,9 @@ import Contract      from '../Contract';
 
 let api;
 let contract;
-let global_req_id;
+const req_ids = {};
 let buy;
+let sell;
 
 global.WebSocket = jest.fn();
 
@@ -64,6 +65,7 @@ const open_contract_response = {
     entry_tick_time           : now,
     currency                  : 'USD',
     barrier_count             : 1,
+    barrier                   : '1234.5',
     date_settlement           : now + 61,
     date_expiry               : now + 61,
     longcode                  : 'Win payout if Volatility 100 Index is strictly higher than entry spot plus 0.10 at 1 minute after contract start time.',
@@ -78,6 +80,15 @@ const open_contract_response = {
     is_valid_to_sell          : 0,
     transaction_ids           : { buy: 98765 },
     underlying                : 'R_100',
+    display_name              : 'Volatility 100 Index',
+};
+
+const sell_response = {
+    reference_id  : 98765,
+    balance_after : 1001,
+    sold_for      : 1.51,
+    transaction_id: 98766,
+    contract_id   : 12345678,
 };
 
 beforeAll(async () => {
@@ -90,13 +101,23 @@ beforeAll(async () => {
 
     // Make a call to onmessage immediately after send is called
     api.connection.send = jest.fn((msg) => {
-        const request                              = JSON.parse(msg);
-        const { req_id, active_symbols, proposal } = request;
+        const request    = JSON.parse(msg);
+        const { req_id } = request;
 
-        global_req_id = req_id;
+        const initial_responses = {
+            active_symbols        : [{ symbol: 'R_100', pip: 0.01, display_name: 'Volatility 100 Index' }],
+            proposal              : proposal_response,
+            buy                   : buy_response,
+            sell                  : sell_response,
+            proposal_open_contract: open_contract_response,
+        };
 
-        if (active_symbols) sendMessage('active_symbols', [{ symbol: 'R_100', pip: 0.01 }]);
-        if (proposal) sendMessage('proposal', proposal_response);
+        Object.keys(initial_responses).forEach((method) => {
+            if (method in request) {
+                req_ids[method] = req_id;
+                sendMessage(method, initial_responses[method]);
+            }
+        });
     });
 
     await contract.init();
@@ -136,9 +157,9 @@ test('Proposal update', async () => {
 });
 
 test('Buying a contract', async () => {
-    setTimeout(() => sendMessage('buy', buy_response), 100);
-
     buy = await contract.buy();
+
+    expect(buy.balance_after.value).toBe(buy_response.balance_after);
 
     expect(buy.price.value).toBe(buy_response.buy_price);
     expect(buy.price.display).toBe(buy_response.buy_price.toFixed(2));
@@ -154,8 +175,6 @@ test('Buying a contract', async () => {
 });
 
 test('Receiving contract updates while open', async () => {
-    sendMessage('proposal_open_contract', open_contract_response);
-
     const {
         buy_price,
         bid_price,
@@ -163,6 +182,7 @@ test('Receiving contract updates while open', async () => {
         profit_percentage,
         payout,
         display_value,
+        display_name,
         date_start,
         purchase_time,
         current_spot,
@@ -171,6 +191,7 @@ test('Receiving contract updates while open', async () => {
         entry_tick,
         entry_tick_display_value,
         entry_tick_time,
+        barrier,
         date_expiry,
         longcode,
         shortcode,
@@ -184,6 +205,8 @@ test('Receiving contract updates while open', async () => {
     expect(contract.entry_spot.value).toBe(entry_tick);
     expect(contract.entry_spot.display).toBe(entry_tick_display_value);
     expect(contract.entry_spot.time.isSame(entry_tick_time)).toBeTruthy();
+
+    expect(contract.barrier.display).toBe((+barrier).toFixed(2));
 
     expect(contract.buy_price).toEqual(buy.price);
 
@@ -202,21 +225,25 @@ test('Receiving contract updates while open', async () => {
     expect(contract.code.long).toBe(longcode);
     expect(contract.code.short).toBe(shortcode);
 
-    expect(contract.symbol).toBe(underlying);
+    expect(contract.symbol.short).toBe(underlying);
+    expect(contract.symbol.long).toBe(display_name);
 
-    [
-        'currency',
-        'barrier_count',
-        'shortcode',
-        'longcode',
-        'validation_error',
-        'is_forward_starting',
-        'is_intraday',
-        'is_path_dependent',
-        'is_valid_to_sell',
-    ].forEach((field) => {
-        expect(contract[field]).toBe(open_contract_response[field]);
-    });
+    const checkFieldInPoc = field => expect(contract[field]).toBe(open_contract_response[field]);
+
+    checkFieldInPoc('currency');
+    checkFieldInPoc('barrier_count');
+    checkFieldInPoc('shortcode');
+    checkFieldInPoc('longcode');
+    checkFieldInPoc('validation_error');
+
+    const checkFlagInPoc = (field) => {
+        expect(contract[field]).toBe(!!open_contract_response[field]);
+    };
+
+    checkFlagInPoc('is_forward_starting');
+    checkFlagInPoc('is_intraday');
+    checkFlagInPoc('is_path_dependent');
+    checkFlagInPoc('is_valid_to_sell');
 });
 
 test('Open contract update - new spot', async () => {
@@ -248,6 +275,8 @@ test('Open contract update - valid to sell', async () => {
 });
 
 test('Open contract update - valid to sell', async () => {
+    // This is not a tick contract and shouldn't have a tick_stream
+    // but I was just too lazy to create a new contract for this one test.
     sendMessage('proposal_open_contract', {
         ...open_contract_response,
         ticks_count: 2,
@@ -272,10 +301,69 @@ test('Open contract update - valid to sell', async () => {
     expect(contract.ticks[1].time.epoch).toBe(now + 2);
 });
 
+test('Selling an open contract', async () => {
+    sell = await contract.sell();
+
+    expect(sell.buy_transaction).toBe(buy.transaction_id);
+    expect(sell.balance_after.value).toBe(sell_response.balance_after);
+    expect(sell.price.value).toBe(sell_response.sold_for);
+    expect(sell.transaction_id).toBe(sell_response.transaction_id);
+    expect(sell.contract_id).toBe(sell_response.contract_id);
+    expect(sell.contract_id).toBe(buy.contract_id);
+
+    expect(contract.id).toBe(sell.contract_id);
+    expect(contract.sell_price).toBe(sell.price);
+    expect(contract.sell_transaction).toBe(sell.transaction_id);
+    expect(contract.status).toBe('sold');
+    expect(contract.is_sold).toBeTruthy();
+});
+
+test('Open contract updates after sell', async () => {
+    const spot = {
+        value  : 1222.3,
+        display: '1222.30',
+        time   : now + 4,
+    };
+    sendMessage('proposal_open_contract', {
+        ...open_contract_response,
+        current_spot              : spot.value,
+        current_spot_display_value: spot.display,
+        current_spot_time         : spot.time,
+        exit_spot                 : spot.value,
+        exit_spot_display_value   : spot.display,
+        exit_spot_time            : spot.time,
+        sell_spot                 : spot.value,
+        sell_spot_display_value   : spot.display,
+        sell_spot_time            : spot.time,
+        sell_time                 : spot.time,
+        status                    : 'sold',
+        is_settleable             : 1,
+        is_valid_to_sell          : 0,
+        is_expired                : 0,
+    });
+
+    const checkSpotInPoc = (field) => {
+        expect(contract[field].value).toBe(spot.value);
+        expect(contract[field].display).toBe(spot.display);
+        expect(contract[field].time.isSame(spot.time)).toBeTruthy();
+    };
+
+    checkSpotInPoc('current_spot');
+    checkSpotInPoc('exit_spot');
+    checkSpotInPoc('sell_spot');
+
+    expect(contract.sell_time.epoch).toBe(now + 4);
+    expect(contract.is_settleable).toBeTruthy();
+    expect(contract.is_sold).toBeTruthy();
+    expect(contract.is_expired).toBeFalsy();
+    expect(contract.is_open).toBeFalsy();
+    expect(contract.is_valid_to_sell).toBeFalsy();
+});
+
 function sendMessage(type, obj) {
     api.connection.onmessage({
         data: JSON.stringify({
-            req_id  : global_req_id,
+            req_id  : req_ids[type],
             msg_type: type,
             [type]  : obj,
         }),

@@ -721,7 +721,25 @@ Wrapper around a Buy response
 
 **Extends Immutable**
 
-The wrapper around a sell response
+Wrapper around a Sell response
+
+##### Parameters
+
+-   `sell`  
+    -   `sell.sold_for` **[Monetary][271]** sell price
+    -   `sell.balance_after` **[Monetary][271]** 
+    -   `sell.contract_id` **[Number][261]** 
+    -   `sell.transaction_id` **[Number][261]** sell transaction
+    -   `sell.reference_id` **[Number][261]** buy transaction
+-   `currency` **[String][248]** 
+
+##### Properties
+
+-   `price` **[Monetary][271]** 
+-   `balance_after` **[Monetary][271]** 
+-   `contract_id` **[Number][261]** 
+-   `transaction_id` **[Number][261]** 
+-   `buy_transaction` **[Number][261]** 
 
 ### Streams
 
@@ -831,7 +849,10 @@ Abstract class for contracts
 -   `is_forward_starting` **[Boolean][264]?** 
 -   `is_intraday` **[Boolean][264]?** 
 -   `is_path_dependent` **[Boolean][264]?** 
--   `is_valid_to_sell` **[Boolean][264]?** 
+-   `is_valid_to_sell` **[Boolean][264]?** We still allow a sell call, let API handle the error
+-   `is_expired` **[Boolean][264]?** 
+-   `is_settleable` **[Boolean][264]?** 
+-   `is_open` **[Boolean][264]?** Is this contract still open
 -   `entry_spot` **[Spot][278]?** 
 -   `exit_spot` **[Spot][278]?** 
 -   `audit_details` **[Object][246]?** 
@@ -864,8 +885,8 @@ Sells this contract
 
 ###### Parameters
 
--   `sell` **[SellParam][283]** 
-    -   `sell.max_price`  
+-   `sell` **[SellParam][283]** zero price means sell at market (optional, default `{}`)
+    -   `sell.max_price`   (optional, default `0`)
 
 Returns **[Sell][284]** 
 

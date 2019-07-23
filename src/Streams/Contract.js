@@ -1,12 +1,13 @@
-import '../Immutables/Sell';
 
 import { first, map }   from 'rxjs/operators';
 
 import { Subject }      from 'rxjs';
 
 import Buy              from '../Immutables/Buy';
+import Sell             from '../Immutables/Sell';
 import Tick             from '../Immutables/Tick';
 import CustomDate       from '../Types/CustomDate';
+import FullName         from '../Types/FullName';
 import MarketValue      from '../Types/MarketValue';
 import Monetary         from '../Types/Monetary';
 import Profit           from '../Types/Profit';
@@ -78,7 +79,10 @@ const field_mapping = {
  * @property {Boolean=} is_forward_starting
  * @property {Boolean=} is_intraday
  * @property {Boolean=} is_path_dependent
- * @property {Boolean=} is_valid_to_sell
+ * @property {Boolean=} is_valid_to_sell - We still allow a sell call, let API handle the error
+ * @property {Boolean=} is_expired
+ * @property {Boolean=} is_settleable
+ * @property {Boolean=} is_open - Is this contract still open
  * @property {Spot=} entry_spot
  * @property {Spot=} exit_spot
  * @property {Object=} audit_details
@@ -98,12 +102,12 @@ export default class Contract extends Stream {
             ...this.request,
         }, field_mapping);
 
-        this._data.type     = request.contract_type;
-        this._data.symbol   = request.symbol;
-        this._data.currency = request.currency;
-
         const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
         this._data.active_symbol = active_symbols.find(s => s.symbol === request.symbol);
+
+        this._data.type     = request.contract_type;
+        this._data.symbol   = new FullName(request.symbol, this._data.active_symbol.display_name);
+        this._data.currency = request.currency;
 
         this._data.on_update = new Subject();
 
@@ -111,8 +115,7 @@ export default class Contract extends Stream {
             map(p => proposalToContract(p, { ...request, ...this.active_symbol })),
         ).subscribe(p => this.on_update.next(p));
 
-        this._data.status  = 'proposal';
-        this._data.is_open = false;
+        this._data.status = 'proposal';
 
         this.onUpdate((contract) => {
             Object.assign(this._data, contract);
@@ -147,8 +150,7 @@ export default class Contract extends Stream {
             this._data[field] = wrappedBuy[field];
         });
 
-        this._data.status  = 'open';
-        this._data.is_open = true;
+        this._data.status = 'open';
 
         this.api.subscribe({
             proposal_open_contract: 1,
@@ -163,11 +165,37 @@ export default class Contract extends Stream {
     /**
      * Sells this contract
      *
-     * @param {SellParam} sell
+     * @param {SellParam} sell - zero price means sell at market
      * @returns {Sell}
      */
-    async sell({ max_price: price }) {
-        return this.api.sell({ sell: this.id, price });
+    async sell({ max_price: price = 0 } = {}) {
+        const { sell } = await this.api.sell({ sell: this.id, price });
+
+        const wrappedSell = new Sell(sell, this.currency);
+
+        this._data.sell_transaction = wrappedSell.transaction_id;
+        this._data.sell_price       = wrappedSell.price;
+
+        this._data.status = 'sold';
+
+        return wrappedSell;
+    }
+
+    get is_open() {
+        return this._data.status === 'open';
+    }
+
+    get is_sold() {
+        switch (this._data.status) {
+            case 'sold':
+                return 1;
+            case 'won':
+                return 1;
+            case 'lost':
+                return 1;
+            default:
+                return 0;
+        }
     }
 }
 
@@ -189,26 +217,29 @@ function openContractToContract({ proposal_open_contract: poc }, pip) {
     const toTime    = time => new CustomDate(time);
 
     return {
+        is_expired         : !!poc.is_expired,
+        is_forward_starting: !!poc.is_forward_starting,
+        is_intraday        : !!poc.is_intraday,
+        is_path_dependent  : !!poc.is_path_dependent,
+        is_settleable      : !!poc.is_settleable,
+        is_valid_to_sell   : !!poc.is_valid_to_sell,
         status             : poc.status,
-        payout             : toMoney(poc.payout),
-        current_spot       : toSpot(poc.current_spot, poc.current_spot_time),
-        start_time         : toTime(poc.date_start),
-        bid_price          : toMoney(poc.bid_price),
-        sell_price         : toMoney(poc.sell_price),
-        profit             : toProfit(poc.profit, poc.profit_percentage),
-        expiry_time        : toTime(poc.date_expiry),
-        sell_time          : toTime(poc.sell_time),
+        validation_error   : poc.validation_error,
+        barrier            : toBarrier(poc.barrier),
         high_barrier       : toBarrier(poc.high_barrier),
         low_barrier        : toBarrier(poc.low_barrier),
-        barrier            : toBarrier(poc.barrier),
-        ticks              : wrapPocTicks(poc.tick_stream, pip),
+        bid_price          : toMoney(poc.bid_price),
+        payout             : toMoney(poc.payout),
+        sell_price         : toMoney(poc.sell_price),
+        profit             : toProfit(poc.profit, poc.profit_percentage),
+        current_spot       : toSpot(poc.current_spot, poc.current_spot_time),
         entry_spot         : toSpot(poc.entry_tick, poc.entry_tick_time),
         exit_spot          : toSpot(poc.exit_spot, poc.exit_spot_time),
-        is_forward_starting: poc.is_forward_starting,
-        is_intraday        : poc.is_intraday,
-        is_path_dependent  : poc.is_path_dependent,
-        is_valid_to_sell   : poc.is_valid_to_sell,
-        validation_error   : poc.validation_error,
+        sell_spot          : toSpot(poc.sell_spot, poc.sell_spot_time),
+        expiry_time        : toTime(poc.date_expiry),
+        start_time         : toTime(poc.date_start),
+        sell_time          : toTime(poc.sell_time),
+        ticks              : wrapPocTicks(poc.tick_stream, pip),
         multiplier         : poc.multiplier,
         tick_count         : poc.tick_count,
         barrier_count      : poc.barrier_count,

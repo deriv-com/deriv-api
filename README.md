@@ -87,3 +87,15 @@ npm run serve_docs
 ```
 npm run gh-pages
 ```
+
+## Build the package
+
+```
+npm run build
+```
+
+## Run examples
+
+```
+DERIV_TOKEN=YourTokenHere npm run examples
+```

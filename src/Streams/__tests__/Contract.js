@@ -338,6 +338,7 @@ test('Open contract updates after sell', async () => {
         sell_time                 : spot.time,
         status                    : 'sold',
         is_settleable             : 1,
+        is_sold                   : 1,
         is_valid_to_sell          : 0,
         is_expired                : 0,
     });

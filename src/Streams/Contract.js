@@ -114,7 +114,7 @@ export default class Contract extends Stream {
 
         this._data.status = 'proposal';
 
-        this.onUpdate((contract) => {
+        this.beforeUpdate((contract) => {
             const { is_expired } = contract;
 
             if (is_expired) {
@@ -124,7 +124,7 @@ export default class Contract extends Stream {
             Object.assign(this._data, contract);
         });
 
-        await this.onUpdate().pipe(first()).toPromise();
+        await this.beforeUpdate().pipe(first()).toPromise();
     }
 
     /**
@@ -179,7 +179,8 @@ export default class Contract extends Stream {
         this._data.sell_transaction = wrappedSell.transaction_id;
         this._data.sell_price       = wrappedSell.price;
 
-        this._data.status = 'sold';
+        this._data.status  = 'sold';
+        this._data.is_sold = true;
 
         return wrappedSell;
     }

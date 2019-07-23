@@ -42,7 +42,7 @@ export default class Ticks extends Stream {
             share(),
         ));
 
-        this.onUpdate((tick) => {
+        this.beforeUpdate((tick) => {
             this._data.list = [...this._data.list.slice(1), tick];
         });
 

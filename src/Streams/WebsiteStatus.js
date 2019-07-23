@@ -34,7 +34,7 @@ export default class WebsiteStatus extends Stream {
 
         this.addSource(website_status_stream.pipe(map(wrapWebsiteStatus)));
 
-        this.onUpdate((website_status) => {
+        this.beforeUpdate((website_status) => {
             Object.assign(this._data, website_status);
         });
 

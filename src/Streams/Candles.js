@@ -38,7 +38,7 @@ export default class Candles extends Stream {
             share(),
         ));
 
-        this.onUpdate((candle) => {
+        this.beforeUpdate((candle) => {
             this._data.list = [...this._data.list.slice(1), candle];
         });
 

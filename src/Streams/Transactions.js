@@ -44,7 +44,7 @@ export default class Transactions extends Stream {
             share(),
         ));
 
-        this.onUpdate((transaction) => {
+        this.beforeUpdate((transaction) => {
             if (this._data.list.length < max_tx_size) {
                 this._data.list.push(transaction);
             } else {

@@ -36,7 +36,7 @@ export default class Balance extends Stream {
 
         this.addSource(source);
 
-        this.onUpdate((amount) => {
+        this.beforeUpdate((amount) => {
             this._data.amount = amount;
         });
     }

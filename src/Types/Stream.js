@@ -7,7 +7,11 @@ import Immutable   from './Immutable';
  */
 export default class Stream extends Immutable {
     constructor(args) {
-        super({ on_update: new Subject(), ...args });
+        super({
+            on_update    : new Subject(),
+            before_update: new Subject(),
+            ...args,
+        });
     }
 
     /**
@@ -31,11 +35,24 @@ export default class Stream extends Immutable {
         return this.on_update;
     }
 
+    beforeUpdate(callback, on_error) {
+        if (callback) {
+            this.before_update.subscribe(callback, on_error || (() => {}));
+        }
+        return this.before_update;
+    }
+
     next(value) {
+        this.before_update.next(value);
         this.on_update.next(value);
     }
 
+    error(error) {
+        this.before_update.error(error);
+        this.on_update.error(error);
+    }
+
     addSource(source) {
-        source.subscribe(v => this.next(v));
+        source.subscribe(v => this.next(v), this.error.bind(this));
     }
 }

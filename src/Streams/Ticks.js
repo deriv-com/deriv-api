@@ -68,6 +68,7 @@ export default class Ticks extends Stream {
     async history(range) {
         if (!range) return this.list;
 
+        // TODO: Do we need cache? In case of 'end' it can be buggy
         return this.api.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
             .then(h => historyToTicks(h, this._data.pip));
     }

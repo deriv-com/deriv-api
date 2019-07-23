@@ -55,9 +55,9 @@ async function main() {
     // Wait until the contract is sold
     await contract.onUpdate().pipe(find(({ is_sold }) => is_sold)).toPromise();
 
-	const { profit, status } = contract;
+    const { profit, status } = contract;
 
-	console.log(`You ${status}: ${profit.currency} ${profit.display}`);
+    console.log(`You ${status}: ${profit.currency} ${profit.display}`);
 }
 
 main().catch(console.error);

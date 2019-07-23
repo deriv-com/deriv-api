@@ -833,6 +833,7 @@ Abstract class for contracts
 -   `bid_price` **[Monetary][271]?** (After buy)
 -   `sell_price` **[Monetary][271]?** (After sell)
 -   `profit` **[Profit][279]?** Potential or realized profit (After buy)
+-   `proposal_id` **[Number][261]?** The proposal ID used to buy
 -   `id` **[Number][261]?** The contract ID (After buy)
 -   `purchase_time` **[CustomDate][269]?** (After buy)
 -   `expiry_time` **[CustomDate][269]?** (After buy)
@@ -2450,8 +2451,10 @@ Keep money related values
 
 ### Properties
 
--   `value` **[Number][261]** 
+-   `value` **[Number][261]** Absolute value of the profit
 -   `percentage` **[Number][261]** 
+-   `sign` **[Number][261]** 0: no profit, 1: positive profit, -1: loss
+-   `is_win` **[Boolean][264]** True if the initial profit is positive
 -   `currency` **[String][248]** 
 -   `display` **[String][248]** decimal value based on currency
 -   `format` **[String][248]** comma separated decimal value based on currency

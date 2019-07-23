@@ -61,6 +61,7 @@ const field_mapping = {
  * @property {Monetary=} bid_price - (After buy)
  * @property {Monetary=} sell_price - (After sell)
  * @property {Profit=} profit - Potential or realized profit (After buy)
+ * @property {Number=} proposal_id - The proposal ID used to buy
  * @property {Number=} id - The contract ID (After buy)
  * @property {CustomDate=} purchase_time - (After buy)
  * @property {CustomDate=} expiry_time - (After buy)
@@ -114,6 +115,12 @@ export default class Contract extends Stream {
         this._data.status = 'proposal';
 
         this.onUpdate((contract) => {
+            const { is_expired } = contract;
+
+            if (is_expired) {
+                this.api.sellExpired().catch(() => {}); // Ignore failures
+            }
+
             Object.assign(this._data, contract);
         });
 
@@ -127,7 +134,7 @@ export default class Contract extends Stream {
      * @returns {Buy}
      */
     async buy({ max_price: price = this.ask_price.value } = {}) {
-        const { buy } = await this.api.buy({ buy: this.id, price });
+        const { buy } = await this.api.buy({ buy: this.proposal_id, price });
 
         const wrappedBuy = new Buy(buy, this.currency);
 
@@ -180,19 +187,6 @@ export default class Contract extends Stream {
     get is_open() {
         return this._data.status === 'open';
     }
-
-    get is_sold() {
-        switch (this._data.status) {
-            case 'sold':
-                return 1;
-            case 'won':
-                return 1;
-            case 'lost':
-                return 1;
-            default:
-                return 0;
-        }
-    }
 }
 
 function proposalToContract({ proposal }, { currency, pip }) {
@@ -202,6 +196,8 @@ function proposalToContract({ proposal }, { currency, pip }) {
         longcode    : proposal.longcode,
         payout      : new Monetary(proposal.payout, currency),
         current_spot: new Spot(proposal.spot, pip, proposal.spot_time),
+        proposal_id : proposal.id,
+        status      : 'proposal',
     };
 }
 
@@ -218,6 +214,7 @@ function openContractToContract({ proposal_open_contract: poc }, pip) {
         is_intraday        : !!poc.is_intraday,
         is_path_dependent  : !!poc.is_path_dependent,
         is_settleable      : !!poc.is_settleable,
+        is_sold            : !!poc.is_sold,
         is_valid_to_sell   : !!poc.is_valid_to_sell,
         status             : poc.status,
         validation_error   : poc.validation_error,

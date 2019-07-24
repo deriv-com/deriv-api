@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = [{
     mode: 'production',
-    entry: './src/DerivAPI/DerivAPIBasic.js',
+    entry: './src/deriv_api/DerivAPIBasic.js',
     output: {
         library: 'DerivAPIBasic',
         libraryTarget: 'commonjs2',

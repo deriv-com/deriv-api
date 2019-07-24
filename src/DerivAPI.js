@@ -1,11 +1,11 @@
-import DerivAPIBasic from './DerivAPI/DerivAPIBasic';
-import Account       from './Immutables/Account';
-import Assets        from './Immutables/Assets';
-import Underlying    from './Immutables/Underlying';
-import Candles       from './Streams/Candles';
-import Contract      from './Streams/Contract';
-import Ticks         from './Streams/Ticks';
-import WebsiteStatus from './Streams/WebsiteStatus';
+import DerivAPIBasic from './deriv_api/DerivAPIBasic';
+import Account       from './immutables/Account';
+import Assets        from './immutables/Assets';
+import Underlying    from './immutables/Underlying';
+import Candles       from './streams/Candles';
+import Contract      from './streams/Contract';
+import Ticks         from './streams/Ticks';
+import WebsiteStatus from './streams/WebsiteStatus';
 
 /**
  * The main class of the DerivAPI module. This class extends the minimum

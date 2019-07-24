@@ -1,5 +1,5 @@
+import Monetary   from '../Fields/Monetary';
 import Immutable  from '../Types/Immutable';
-import Monetary   from '../Types/Monetary';
 
 /**
  * @typedef {Object} SellParam

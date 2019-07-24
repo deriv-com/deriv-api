@@ -1,6 +1,6 @@
-import CustomDate  from '../Types/CustomDate';
+import CustomDate  from '../Fields/CustomDate';
+import MarketValue from '../Fields/MarketValue';
 import Immutable   from '../Types/Immutable';
-import MarketValue from '../Types/MarketValue';
 
 /**
  * A wrapper class for Tick

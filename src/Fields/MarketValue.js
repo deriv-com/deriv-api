@@ -1,4 +1,4 @@
-import Immutable     from './Immutable';
+import Immutable     from '../Types/Immutable';
 
 /**
  * Keeps a market value and pip size

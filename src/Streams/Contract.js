@@ -1,15 +1,15 @@
 
 import { first, map }   from 'rxjs/operators';
 
+import CustomDate       from '../Fields/CustomDate';
+import FullName         from '../Fields/FullName';
+import MarketValue      from '../Fields/MarketValue';
+import Monetary         from '../Fields/Monetary';
+import Profit           from '../Fields/Profit';
+import Spot             from '../Fields/Spot';
 import Buy              from '../Immutables/Buy';
 import Sell             from '../Immutables/Sell';
 import Tick             from '../Immutables/Tick';
-import CustomDate       from '../Types/CustomDate';
-import FullName         from '../Types/FullName';
-import MarketValue      from '../Types/MarketValue';
-import Monetary         from '../Types/Monetary';
-import Profit           from '../Types/Profit';
-import Spot             from '../Types/Spot';
 import Stream           from '../Types/Stream';
 
 import { mapApiFields } from '../utils';

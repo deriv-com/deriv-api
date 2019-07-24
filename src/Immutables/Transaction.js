@@ -1,8 +1,8 @@
-import CustomDate  from '../Types/CustomDate';
-import FullName    from '../Types/FullName';
+import CustomDate  from '../Fields/CustomDate';
+import FullName    from '../Fields/FullName';
+import MarketValue from '../Fields/MarketValue';
+import Monetary    from '../Fields/Monetary';
 import Immutable   from '../Types/Immutable';
-import MarketValue from '../Types/MarketValue';
-import Monetary    from '../Types/Monetary';
 
 /**
  * @typeof {Object} TransactionParams

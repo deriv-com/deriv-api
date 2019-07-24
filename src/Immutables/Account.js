@@ -1,7 +1,7 @@
+import FullName     from '../Fields/FullName';
 import Balance      from '../Streams/Balance';
 import Contract     from '../Streams/Contract';
 import Transactions from '../Streams/Transactions';
-import FullName     from '../Types/FullName';
 import Immutable    from '../Types/Immutable';
 
 /**

@@ -1,6 +1,6 @@
-import '../Types/DateRange';
-import '../Types/DurationRange';
-import '../Types/FullName';
+import '../Fields/DateRange';
+import '../Fields/DurationRange';
+import '../Fields/FullName';
 import Immutable     from '../Types/Immutable';
 
 /**

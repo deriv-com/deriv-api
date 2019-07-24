@@ -1,4 +1,4 @@
-import Immutable from './Immutable';
+import Immutable from '../Types/Immutable';
 
 /**
  * A class for keeping short and full name of things

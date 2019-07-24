@@ -1,7 +1,7 @@
-import CustomDate from '../Types/CustomDate';
-import FullName   from '../Types/FullName';
+import CustomDate from '../Fields/CustomDate';
+import FullName   from '../Fields/FullName';
+import Monetary   from '../Fields/Monetary';
 import Immutable  from '../Types/Immutable';
-import Monetary   from '../Types/Monetary';
 
 /**
  * @typedef {Object} BuyParam

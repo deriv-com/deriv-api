@@ -1,4 +1,4 @@
-import '../Types/FullName';
+import '../Fields/FullName';
 
 import './ContractGroup';
 

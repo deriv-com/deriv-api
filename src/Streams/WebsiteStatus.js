@@ -1,6 +1,6 @@
 import { map, first }                     from 'rxjs/operators';
 
-import Monetary                           from '../Types/Monetary'; /* eslint-disable-line no-unused-vars */
+import Monetary                           from '../Fields/Monetary'; /* eslint-disable-line no-unused-vars */
 import Stream                             from '../Types/Stream';
 
 /**

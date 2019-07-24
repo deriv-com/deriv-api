@@ -2,9 +2,9 @@ import isSameOrAfter       from 'dayjs/plugin/isSameOrAfter';
 import isSameOrBefore      from 'dayjs/plugin/isSameOrBefore';
 import dayjs               from 'dayjs';
 
-import { isInMiliSeconds } from '../utils';
+import Immutable           from '../Types/Immutable';
 
-import Immutable           from './Immutable';
+import { isInMiliSeconds } from '../utils';
 
 dayjs.extend(isSameOrBefore);
 dayjs.extend(isSameOrAfter);

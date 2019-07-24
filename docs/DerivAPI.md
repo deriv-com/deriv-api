@@ -525,7 +525,6 @@ Abstract class for an underlying
 -   `is_trading_suspended` **[Boolean][264]** 
 -   `pip_size` **[Number][261]** 
 -   `contract_groups` **[Object][246]** 
--   `contract_groups` **[Object][246]** 
 
 ##### Examples
 

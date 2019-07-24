@@ -26,7 +26,6 @@ import Immutable        from '../Types/Immutable';
  * @property {Boolean} is_trading_suspended
  * @property {Number} pip_size
  * @property {Object} contract_groups
- * @property {Object} contract_groups
  */
 export default class Underlying extends Immutable {
     // Called by the API to initialize the instance

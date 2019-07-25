@@ -25,4 +25,9 @@ export default class Immutable {
             },
         });
     }
+
+    /** Override to initialize an immutable object asynchronously */
+    async init() {
+        return this;
+    }
 }

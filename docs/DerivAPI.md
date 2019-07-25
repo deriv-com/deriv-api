@@ -1146,6 +1146,10 @@ An abstract class for immutable objects
 
 -   `props` **[Object][246]** A list of properties to add for the immutable object (optional, default `{}`)
 
+##### init
+
+Override to initialize an immutable object asynchronously
+
 #### Stream
 
 **Extends Immutable**

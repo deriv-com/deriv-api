@@ -18,10 +18,6 @@ beforeAll(() => {
     api.connection.onopen();
 });
 
-afterAll(() => {
-    api.disconnect();
-});
-
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);
     expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?l=FR&app_id=4000');

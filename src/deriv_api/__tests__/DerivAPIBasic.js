@@ -12,10 +12,6 @@ beforeAll(() => {
     api = new DerivAPIBasic({ connection });
 });
 
-afterAll(() => {
-    api.disconnect();
-});
-
 test('Constructing DerivAPIBasic', async () => {
     expect(api).toBeInstanceOf(DerivAPIBasic);
 

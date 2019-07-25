@@ -35,8 +35,8 @@ export default class Transactions extends Stream {
 
     // Called by the API to initialize the instance
     async init() {
-        this._data.active_symbols = (await this.api.cache.activeSymbols('brief')).active_symbols;
-        const transactions        = this.api.subscribe({ transaction: 1 });
+        this._data.active_symbols = (await this.api.basic.cache.activeSymbols('brief')).active_symbols;
+        const transactions        = this.api.basic.subscribe({ transaction: 1 });
 
         this.addSource(transactions.pipe(
             skip(1),

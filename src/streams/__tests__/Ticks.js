@@ -1,23 +1,19 @@
-import { first }     from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
-import Tick          from '../../immutables/Tick';
-import Ticks         from '../Ticks';
+import DerivAPI  from '../../DerivAPI';
+import Tick      from '../../immutables/Tick';
+import Ticks     from '../Ticks';
 
 let api;
 let ticks;
 const count = 1000;
 
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    api = new DerivAPI();
 
     ticks = new Ticks(api, 'R_100');
 
     await ticks.init();
-});
-
-afterAll(() => {
-    api.disconnect();
 });
 
 test('Request for a ticks history', async () => {

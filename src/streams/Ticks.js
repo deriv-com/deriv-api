@@ -32,9 +32,9 @@ export default class Ticks extends Stream {
     }
 
     async init() {
-        const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
+        const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
-        const ticks              = this.api.subscribe(toTicksHistoryParam(this));
+        const ticks              = this.api.basic.subscribe(toTicksHistoryParam(this));
 
         this.addSource(ticks.pipe(
             skip(1),
@@ -69,7 +69,7 @@ export default class Ticks extends Stream {
         if (!range) return this.list;
 
         // TODO: Do we need cache? In case of 'end' it can be buggy
-        return this.api.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
+        return this.api.basic.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
             .then(h => historyToTicks(h, this._data.pip));
     }
 }

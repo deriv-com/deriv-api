@@ -30,7 +30,7 @@ export default class WebsiteStatus extends Stream {
 
     // Called by the API to initialize the instance
     async init() {
-        const website_status_stream = this.api.subscribe({ website_status: 1 });
+        const website_status_stream = this.api.basic.subscribe({ website_status: 1 });
 
         this.addSource(website_status_stream.pipe(map(wrapWebsiteStatus)));
 

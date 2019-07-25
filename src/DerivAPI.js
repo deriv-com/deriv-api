@@ -43,7 +43,7 @@ export default class DerivAPI {
      * @returns {Promise<Ticks>}
      */
     async ticks(options) {
-        const ticks = new Ticks(this.basic, options);
+        const ticks = new Ticks(this, options);
 
         await ticks.init();
 
@@ -57,7 +57,7 @@ export default class DerivAPI {
      * @returns {Promise<Candles>}
      */
     async candles(options) {
-        const candles = new Candles(this.basic, options);
+        const candles = new Candles(this, options);
 
         await candles.init();
 
@@ -71,7 +71,7 @@ export default class DerivAPI {
      * @returns {Promise<Contract>}
      */
     async contract(options) {
-        const contract = new Contract(this.basic, options);
+        const contract = new Contract(this, options);
 
         await contract.init();
 
@@ -85,7 +85,7 @@ export default class DerivAPI {
      * @returns {Promise<Underlying>}
      */
     async underlying(symbol) {
-        const underlying = new Underlying(this.basic, symbol);
+        const underlying = new Underlying(this, symbol);
 
         await underlying.init();
 
@@ -99,7 +99,7 @@ export default class DerivAPI {
      * @returns {Promise<Account>}
      */
     async account(token) {
-        const account = new Account(this.basic, token);
+        const account = new Account(this, token);
 
         await account.init();
 
@@ -112,7 +112,7 @@ export default class DerivAPI {
      * @returns {Promise<Assets>}
      */
     async assets() {
-        const assets = new Assets(this.basic);
+        const assets = new Assets(this);
 
         await assets.init();
 
@@ -125,7 +125,7 @@ export default class DerivAPI {
      * @returns {Promise<WebsiteStatus>}
      */
     async websiteStatus() {
-        const website_status = new WebsiteStatus(this.basic);
+        const website_status = new WebsiteStatus(this);
 
         await website_status.init();
 

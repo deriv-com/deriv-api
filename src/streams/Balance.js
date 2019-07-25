@@ -30,7 +30,7 @@ export default class Balance extends Stream {
     async init(initial_balance) {
         this._data.amount = wrapBalance({ balance: initial_balance });
 
-        const source = this.api.subscribe({ balance: 1 }).pipe(map(wrapBalance), share());
+        const source = this.api.basic.subscribe({ balance: 1 }).pipe(map(wrapBalance), share());
 
         this._data.amount = await source.pipe(first()).toPromise();
 

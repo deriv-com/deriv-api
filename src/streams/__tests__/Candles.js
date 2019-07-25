@@ -1,23 +1,19 @@
-import { first }     from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
-import Candle        from '../../immutables/Candle';
-import Candles       from '../Candles';
+import DerivAPI  from '../../DerivAPI';
+import Candle    from '../../immutables/Candle';
+import Candles   from '../Candles';
 
 let api;
 let candle_stream;
 const count = 1000;
 
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    api = new DerivAPI();
 
     candle_stream = new Candles(api, 'R_100');
 
     await candle_stream.init();
-});
-
-afterAll(() => {
-    api.disconnect();
 });
 
 test('Request for a candles history', async () => {

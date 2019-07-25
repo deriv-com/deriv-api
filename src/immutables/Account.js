@@ -46,7 +46,7 @@ export default class Account extends Immutable {
 
     // Called by the API to initialize the instance
     async init() {
-        const { authorize } = await this.api.authorize(this.token);
+        const { authorize } = await this.api.basic.authorize(this.token);
 
         ['email', 'country', 'currency', 'loginid', 'user_id', 'fullname'].forEach((field) => {
             this._data[field] = authorize[field];
@@ -64,7 +64,7 @@ export default class Account extends Immutable {
             landing_company_fullname,
         );
 
-        const { get_account_status } = await this.api.getAccountStatus();
+        const { get_account_status } = await this.api.basic.getAccountStatus();
 
         this._data.risk = get_account_status.risk_classification;
         // eslint-disable-next-line eqeqeq

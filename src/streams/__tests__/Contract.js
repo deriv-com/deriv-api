@@ -1,13 +1,12 @@
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
-import Contract      from '../Contract';
+import DerivAPI          from '../../DerivAPI';
+import { TestWebSocket } from '../../test_utils';
+import Contract          from '../Contract';
 
 let api;
+let connection;
 let contract;
-const req_ids = {};
 let buy;
 let sell;
-
-global.WebSocket = jest.fn();
 
 const proposal_request = {
     amount       : 1,
@@ -92,33 +91,17 @@ const sell_response = {
 };
 
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    connection = new TestWebSocket({
+        active_symbols        : [{ symbol: 'R_100', pip: 0.01, display_name: 'Volatility 100 Index' }],
+        proposal              : proposal_response,
+        buy                   : buy_response,
+        sell                  : sell_response,
+        proposal_open_contract: open_contract_response,
+    });
 
-    api.connection.readyState = 1;
-    api.connection.onopen();
+    api = new DerivAPI({ connection });
 
     contract = new Contract(api, proposal_request);
-
-    // Make a call to onmessage immediately after send is called
-    api.connection.send = jest.fn((msg) => {
-        const request    = JSON.parse(msg);
-        const { req_id } = request;
-
-        const initial_responses = {
-            active_symbols        : [{ symbol: 'R_100', pip: 0.01, display_name: 'Volatility 100 Index' }],
-            proposal              : proposal_response,
-            buy                   : buy_response,
-            sell                  : sell_response,
-            proposal_open_contract: open_contract_response,
-        };
-
-        Object.keys(initial_responses).forEach((method) => {
-            if (method in request) {
-                req_ids[method] = req_id;
-                sendMessage(method, initial_responses[method]);
-            }
-        });
-    });
 
     await contract.init();
 });
@@ -143,7 +126,7 @@ test('Request for proposal contract', async () => {
 test('Proposal update', async () => {
     const { spot_time, date_start } = proposal_response;
 
-    sendMessage('proposal', {
+    connection.receive('proposal', {
         ...proposal_response,
         spot      : 1234.6,
         spot_time : spot_time + 1,
@@ -247,7 +230,7 @@ test('Receiving contract updates while open', async () => {
 });
 
 test('Open contract update - new spot', async () => {
-    sendMessage('proposal_open_contract', {
+    connection.receive('proposal_open_contract', {
         ...open_contract_response,
         current_spot              : 1222.2,
         current_spot_display_value: '1222.20',
@@ -260,7 +243,7 @@ test('Open contract update - new spot', async () => {
 });
 
 test('Open contract update - valid to sell', async () => {
-    sendMessage('proposal_open_contract', {
+    connection.receive('proposal_open_contract', {
         ...open_contract_response,
         current_spot              : 1222.3,
         current_spot_display_value: '1222.30',
@@ -277,7 +260,7 @@ test('Open contract update - valid to sell', async () => {
 test('Open contract update - valid to sell', async () => {
     // This is not a tick contract and shouldn't have a tick_stream
     // but I was just too lazy to create a new contract for this one test.
-    sendMessage('proposal_open_contract', {
+    connection.receive('proposal_open_contract', {
         ...open_contract_response,
         ticks_count: 2,
         tick_stream: [
@@ -324,7 +307,7 @@ test('Open contract updates after sell', async () => {
         display: '1222.30',
         time   : now + 4,
     };
-    sendMessage('proposal_open_contract', {
+    connection.receive('proposal_open_contract', {
         ...open_contract_response,
         current_spot              : spot.value,
         current_spot_display_value: spot.display,
@@ -360,13 +343,3 @@ test('Open contract updates after sell', async () => {
     expect(contract.is_open).toBeFalsy();
     expect(contract.is_valid_to_sell).toBeFalsy();
 });
-
-function sendMessage(type, obj) {
-    api.connection.onmessage({
-        data: JSON.stringify({
-            req_id  : req_ids[type],
-            msg_type: type,
-            [type]  : obj,
-        }),
-    });
-}

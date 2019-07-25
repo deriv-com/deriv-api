@@ -13,10 +13,6 @@ beforeAll(() => {
     api = new DerivAPIBasic({ connection });
 });
 
-afterAll(() => {
-    api.disconnect();
-});
-
 test('Request ticks for InvalidSymbol', async () => {
     await expect(api.ticks({ ticks: 'InvalidSymbol' })).rejects.toBeInstanceOf(
         Error,

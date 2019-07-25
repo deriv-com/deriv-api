@@ -101,14 +101,14 @@ export default class Contract extends Stream {
             ...this.request,
         }, field_mapping);
 
-        const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
+        const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
         this._data.active_symbol = active_symbols.find(s => s.symbol === request.symbol);
 
         this._data.type     = request.contract_type;
         this._data.symbol   = new FullName(request.symbol, this._data.active_symbol.display_name);
         this._data.currency = request.currency;
 
-        this.addSource(this.api.subscribe(request).pipe(
+        this.addSource(this.api.basic.subscribe(request).pipe(
             map(p => proposalToContract(p, { ...request, ...this.active_symbol })),
         ));
 
@@ -118,7 +118,7 @@ export default class Contract extends Stream {
             const { is_expired } = contract;
 
             if (is_expired) {
-                this.api.sellExpired().catch(() => {}); // Ignore failures
+                this.api.basic.sellExpired().catch(() => {}); // Ignore failures
             }
 
             Object.assign(this._data, contract);
@@ -134,7 +134,7 @@ export default class Contract extends Stream {
      * @returns {Buy}
      */
     async buy({ max_price: price = this.ask_price.value } = {}) {
-        const { buy } = await this.api.buy({ buy: this.proposal_id, price });
+        const { buy } = await this.api.basic.buy({ buy: this.proposal_id, price });
 
         const wrappedBuy = new Buy(buy, this.currency);
 
@@ -155,7 +155,7 @@ export default class Contract extends Stream {
 
         this._data.status = 'open';
 
-        this.addSource(this.api.subscribe({
+        this.addSource(this.api.basic.subscribe({
             proposal_open_contract: 1,
             contract_id           : buy.contract_id,
         }).pipe(
@@ -172,7 +172,7 @@ export default class Contract extends Stream {
      * @returns {Sell}
      */
     async sell({ max_price: price = 0 } = {}) {
-        const { sell } = await this.api.sell({ sell: this.id, price });
+        const { sell } = await this.api.basic.sell({ sell: this.id, price });
 
         const wrappedSell = new Sell(sell, this.currency);
 

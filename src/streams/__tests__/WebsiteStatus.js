@@ -1,19 +1,15 @@
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
+import DerivAPI      from '../../DerivAPI';
 import WebsiteStatus from '../WebsiteStatus';
 
 let api;
 let website_status;
 
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    api = new DerivAPI();
 
     website_status = new WebsiteStatus(api);
 
     await website_status.init();
-});
-
-afterAll(() => {
-    api.disconnect();
 });
 
 test('Request for website status', async () => {

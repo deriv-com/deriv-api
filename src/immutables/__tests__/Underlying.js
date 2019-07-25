@@ -1,5 +1,6 @@
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
-import Underlying    from '../Underlying';
+import DerivAPI          from '../../DerivAPI';
+import { TestWebSocket } from '../../test_utils';
+import Underlying        from '../Underlying';
 
 const symbol = 'R_100';
 
@@ -19,37 +20,18 @@ const active_symbols_response = [
     },
 ];
 
-const req_ids = {};
-
 let api;
+let connection;
 let underlying;
 
-global.WebSocket = jest.fn();
-
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    connection = new TestWebSocket({
+        active_symbols: active_symbols_response,
+    });
 
-    api.connection.readyState = 1;
-    api.connection.onopen();
+    api = new DerivAPI({ connection });
 
     underlying = new Underlying(api, symbol);
-
-    // Make a call to onmessage immediately after send is called
-    api.connection.send = jest.fn((msg) => {
-        const request    = JSON.parse(msg);
-        const { req_id } = request;
-
-        const initial_responses = {
-            active_symbols: active_symbols_response,
-        };
-
-        Object.keys(initial_responses).forEach((method) => {
-            if (method in request) {
-                req_ids[method] = req_id;
-                sendMessage(method, initial_responses[method]);
-            }
-        });
-    });
 
     await underlying.init();
 });
@@ -67,13 +49,3 @@ test('Account instance', async () => {
     expect(underlying.pip_size).toBe(2);
     expect(underlying.toPipSized(12.3)).toBe('12.30');
 });
-
-function sendMessage(type, obj) {
-    api.connection.onmessage({
-        data: JSON.stringify({
-            req_id  : req_ids[type],
-            msg_type: type,
-            [type]  : obj,
-        }),
-    });
-}

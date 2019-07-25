@@ -1,34 +1,23 @@
-import { first }     from 'rxjs/operators';
+import { first }         from 'rxjs/operators';
 
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
-import Transaction   from '../../immutables/Transaction';
-import Transactions  from '../Transactions';
+import DerivAPI          from '../../DerivAPI';
+import Transaction       from '../../immutables/Transaction';
+import { TestWebSocket } from '../../test_utils';
+import Transactions      from '../Transactions';
 
 let api;
+let connection;
 let transactions;
-let global_req_id;
-
-global.WebSocket = jest.fn();
 
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    connection = new TestWebSocket({
+        active_symbols: [{ symbol: 'R_100', pip: 0.01 }],
+        transaction   : {},
+    });
 
-    api.connection.readyState = 1;
-    api.connection.onopen();
+    api = new DerivAPI({ connection });
 
     transactions = new Transactions(api);
-
-    // Make a call to onmessage immediately after send is called
-    api.connection.send = jest.fn((msg) => {
-        const request                    = JSON.parse(msg);
-        const { req_id, active_symbols } = request;
-
-        global_req_id = req_id;
-
-        if (active_symbols) return sendMessage('active_symbols', [{ symbol: 'R_100', pip: 0.01 }]);
-
-        return sendMessage('transaction', {});
-    });
 
     await transactions.init();
 });
@@ -48,13 +37,13 @@ test('Request for transactions', async () => {
     expect(transactions.list).toBeInstanceOf(Array);
     expect(transactions.list).toHaveLength(0);
 
-    sendMessage('transaction', { action: 'buy', ...tx_template });
+    connection.receive('transaction', { action: 'buy', ...tx_template });
 
     const current_transaction = transactions.list.slice(-1)[0];
 
     expect(current_transaction).toBeInstanceOf(Transaction);
 
-    setTimeout(() => sendMessage('transaction', { action: 'sell', ...tx_template }), 100);
+    setTimeout(() => connection.receive('transaction', { action: 'sell', ...tx_template }), 100);
 
     const last_transaction = await transactions.onUpdate().pipe(first()).toPromise();
 
@@ -66,7 +55,7 @@ test('Request for transactions', async () => {
 test('Check transaction object', async () => {
     const now = parseInt((new Date().getTime()) / 1000, 10);
 
-    sendMessage('transaction', {
+    connection.receive('transaction', {
         ...tx_template,
         action          : 'buy',
         amount          : 100,
@@ -82,13 +71,3 @@ test('Check transaction object', async () => {
     expect(transaction.time.isSame(now)).toBeTruthy();
     expect(transaction.id).toEqual(1234);
 });
-
-function sendMessage(type, obj) {
-    api.connection.onmessage({
-        data: JSON.stringify({
-            req_id  : global_req_id,
-            msg_type: type,
-            [type]  : obj,
-        }),
-    });
-}

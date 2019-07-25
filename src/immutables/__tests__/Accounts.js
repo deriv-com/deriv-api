@@ -1,16 +1,13 @@
-import DerivAPIBasic from '../../deriv_api/DerivAPIBasic';
-import Balance       from '../../streams/Balance';
-import Transactions  from '../../streams/Transactions';
-import Account       from '../Account';
-
-let api;
-let account;
-let global_req_id;
+import DerivAPI          from '../../DerivAPI';
+import Balance           from '../../streams/Balance';
+import Transactions      from '../../streams/Transactions';
+import { TestWebSocket } from '../../test_utils';
+import Account           from '../Account';
 
 const valid_token   = 'ValidToken';
 const invalid_token = 'InvalidToken';
 
-const authorize = {
+const authorize_response = {
     account_list: [
         {
             loginid: 'CR384605',
@@ -32,42 +29,28 @@ const authorize = {
     user_id                      : 123456,
 };
 
-const account_status = {
+const account_status_response = {
     prompt_client_to_authenticate: 0,
     risk_classification          : 'low',
     status                       : ['S1', 'S2'],
 };
 
-global.WebSocket = jest.fn();
+let api;
+let connection;
+let account;
 
 beforeAll(async () => {
-    api = new DerivAPIBasic();
+    connection = new TestWebSocket({
+        active_symbols    : [{ symbol: 'R_100', pip: 0.01 }],
+        authorize         : authorize_response,
+        balance           : { balance: 1000, currency: 'USD' },
+        get_account_status: account_status_response,
+        transaction       : {},
+    });
 
-    api.connection.readyState = 1;
-    api.connection.onopen();
+    api = new DerivAPI({ connection });
 
     account = new Account(api, valid_token);
-
-    // Make a call to onmessage immediately after send is called
-    api.connection.send = jest.fn((msg) => {
-        const request = JSON.parse(msg);
-        const {
-            req_id,
-            active_symbols,
-            balance,
-            get_account_status,
-            transaction,
-        } = request;
-
-        global_req_id = req_id;
-
-        if (active_symbols) return sendMessage('active_symbols', [{ symbol: 'R_100', pip: 0.01 }]);
-        if (balance) return sendMessage('balance', { balance: 1000, currency: 'USD' });
-        if (get_account_status) return sendMessage('get_account_status', account_status);
-        if (transaction) return sendMessage('transaction', {});
-
-        return sendMessage('authorize', authorize);
-    });
 
     await account.init();
 });
@@ -78,13 +61,13 @@ test('Account instance', async () => {
     expect(() => { account.loginid = 'CR1234'; }).toThrow(Error);
 
     ['email', 'country', 'currency', 'loginid', 'user_id', 'fullname'].forEach((field) => {
-        expect(account[field]).toBe(authorize[field]);
+        expect(account[field]).toBe(authorize_response[field]);
     });
 
-    expect(account.siblings).toEqual(authorize.account_list);
+    expect(account.siblings).toEqual(authorize_response.account_list);
 
-    expect(account.landing_company.short).toBe(authorize.landing_company_name);
-    expect(account.landing_company.full).toBe(authorize.landing_company_fullname);
+    expect(account.landing_company.short).toBe(authorize_response.landing_company_name);
+    expect(account.landing_company.full).toBe(authorize_response.landing_company_fullname);
 });
 
 test('Account balance', async () => {
@@ -92,8 +75,8 @@ test('Account balance', async () => {
 
     expect(balance).toBeInstanceOf(Balance);
 
-    expect(balance.display).toBe(`${authorize.balance.toFixed(2)}`);
-    expect(balance.currency).toBe(authorize.currency);
+    expect(balance.display).toBe(`${authorize_response.balance.toFixed(2)}`);
+    expect(balance.currency).toBe(authorize_response.currency);
 });
 
 test('Account transactions', async () => {
@@ -114,48 +97,23 @@ test('Account contracts', async () => {
 test('Account status', async () => {
     const { status_codes, risk, show_authentication } = account;
 
-    expect(status_codes).toEqual(account_status.status);
-    expect(risk).toEqual(account_status.risk_classification);
+    expect(status_codes).toEqual(account_status_response.status);
+    expect(risk).toEqual(account_status_response.risk_classification);
     expect(typeof show_authentication).toBe('boolean');
 
     if (show_authentication) {
-        expect(account_status.prompt_client_to_authenticate).toBeTruthy();
+        expect(account_status_response.prompt_client_to_authenticate).toBeTruthy();
     } else {
-        expect(account_status.prompt_client_to_authenticate).toBeFalsy();
+        expect(account_status_response.prompt_client_to_authenticate).toBeFalsy();
     }
 });
 
 test('Account with invalid token', async () => {
-    api.connection.send = jest.fn((msg) => {
-        const request    = JSON.parse(msg);
-        const { req_id } = request;
-
-        global_req_id = req_id;
-
-        return sendError('authorize', { code: 'InvalidToken', message: 'The token is invalid.' });
+    connection.replaceResponse('authorize', {
+        error: { code: 'InvalidToken', message: 'The token is invalid.' },
     });
 
     const new_account = new Account(api, invalid_token);
 
     await expect(new_account.init()).rejects.toBeInstanceOf(Error);
 });
-
-function sendMessage(type, obj) {
-    api.connection.onmessage({
-        data: JSON.stringify({
-            req_id  : global_req_id,
-            msg_type: type,
-            [type]  : obj,
-        }),
-    });
-}
-
-function sendError(type, obj) {
-    api.connection.onmessage({
-        data: JSON.stringify({
-            req_id  : global_req_id,
-            msg_type: type,
-            error   : obj,
-        }),
-    });
-}

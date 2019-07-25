@@ -17,10 +17,6 @@ beforeAll(() => {
     api = new DerivAPIBasic({ connection });
 });
 
-afterAll(() => {
-    api.disconnect();
-});
-
 test('Subscribe calling api.subscribeWithCallback without callback', async () => {
     expect(
         api.subscribeWithCallback({ website_status: 1 }),

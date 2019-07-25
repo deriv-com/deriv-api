@@ -5,7 +5,7 @@
   "description": "Websocket API for Deriv applications",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --forceExit",
     "build": "webpack --config webpack.config.js",
     "examples": "npm run build -- --display=none; for e in examples/*; do node $e; done",
     "coverage": "codecov",

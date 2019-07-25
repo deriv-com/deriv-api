@@ -28,9 +28,9 @@ export default class Candles extends Stream {
     }
 
     async init() {
-        const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
+        const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
         this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
-        const candle_stream      = this.api.subscribe(toTicksHistoryParam(this));
+        const candle_stream      = this.api.basic.subscribe(toTicksHistoryParam(this));
 
         this.addSource(candle_stream.pipe(
             skip(1),
@@ -64,7 +64,7 @@ export default class Candles extends Stream {
     async history(range) {
         if (!range) return this.list;
 
-        return this.api.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
+        return this.api.basic.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
             .then(h => historyToCandles(h, this._data.pip));
     }
 }

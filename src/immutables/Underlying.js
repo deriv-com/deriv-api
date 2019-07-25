@@ -1,9 +1,9 @@
-import '../fields/FullName';
-
 import './ContractGroup';
 
-import Contract         from '../streams/Contract';
-import Immutable        from '../types/Immutable';
+import FullName       from '../fields/FullName';
+import Contract       from '../streams/Contract';
+import Immutable      from '../types/Immutable';
+import { toPipSized } from '../utils';
 
 /**
  * Abstract class for an underlying
@@ -24,28 +24,46 @@ import Immutable        from '../types/Immutable';
  * @property {FullName} name
  * @property {Boolean} is_open
  * @property {Boolean} is_trading_suspended
+ * @property {Number} pip
  * @property {Number} pip_size
  * @property {Object} contract_groups
  */
 export default class Underlying extends Immutable {
+    constructor(api, symbol) {
+        super({ api, symbol });
+    }
+
     // Called by the API to initialize the instance
     async init() {
-        return this;
+        const { active_symbols } = (await this.api.cache.activeSymbols('brief'));
+        const ul_info            = active_symbols.find(s => s.symbol === this.symbol);
+
+        this._data.is_open              = ul_info.exchange_is_open;
+        this._data.is_trading_suspended = ul_info.is_trading_suspended;
+        this._data.pip                  = ul_info.pip;
+
+        this._data.name       = new FullName(ul_info.symbol, ul_info.display_name);
+        this._data.market     = new FullName(ul_info.market, ul_info.market_display_name);
+        this._data.sub_market = new FullName(ul_info.submarket, ul_info.submarket_display_name);
+    }
+
+    get pip_size() {
+        return toPipSized(this._data.pip);
     }
 
     /** Returns the pipSized display of the value in string */
-    pipSizedValue(value) {
-        return value.toFixed(this.pip.toString().length - 2);
+    toPipSized(value) {
+        return value.toFixed(this.pip_size);
     }
 
-    /** Shortcut for api.tickStream(symbol) */
-    tickStream() {
-        return this.api.tickStream(this.symbol);
+    /** Shortcut for api.ticks(symbol) */
+    ticks() {
+        return this.api.ticks(this.symbol);
     }
 
-    /** Shortcut for api.candleStream(symbol) */
-    candleStream() {
-        return this.api.candleStream(this.symbol);
+    /** Shortcut for api.candles(symbol) */
+    candles() {
+        return this.api.candles(this.symbol);
     }
 
     /**

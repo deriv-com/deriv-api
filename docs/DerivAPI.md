@@ -523,6 +523,7 @@ Abstract class for an underlying
 -   `name` **[FullName][265]** 
 -   `is_open` **[Boolean][264]** 
 -   `is_trading_suspended` **[Boolean][264]** 
+-   `pip` **[Number][261]** 
 -   `pip_size` **[Number][261]** 
 -   `contract_groups` **[Object][246]** 
 
@@ -539,7 +540,7 @@ const tick_stream = underlying.tickStream();
 if (underlying.is_open) await contract.buy();
 ```
 
-##### pipSizedValue
+##### toPipSized
 
 Returns the pipSized display of the value in string
 
@@ -547,13 +548,13 @@ Returns the pipSized display of the value in string
 
 -   `value`  
 
-##### tickStream
+##### ticks
 
-Shortcut for api.tickStream(symbol)
+Shortcut for api.ticks(symbol)
 
-##### candleStream
+##### candles
 
-Shortcut for api.candleStream(symbol)
+Shortcut for api.candles(symbol)
 
 ##### contract
 
@@ -997,6 +998,7 @@ Keeps a market value and pip size
 
 -   `pip_size` **[Number][261]** 
 -   `pip_sized` **[Number][261]** the pipsized value
+-   `display` **[Number][261]** alias for `pip_size`
 
 #### Monetary
 
@@ -1031,10 +1033,10 @@ A class for keeping short and full name of things
 ##### Properties
 
 -   `full` **[String][248]** 
--   `long` **[String][248]** alias for this.full
+-   `long` **[String][248]** alias for `full`
 -   `short` **[String][248]** 
--   `code` **[String][248]** alias for this.short
--   `shortcode` **[String][248]** alias for this.short
+-   `code` **[String][248]** alias for `short`
+-   `shortcode` **[String][248]** alias for `short`
 
 ##### Examples
 

@@ -57,3 +57,7 @@ export function mapApiFields(request, mapping) {
 
     return clone;
 }
+
+export function toPipSized(pip) {
+    return Math.abs(Math.log10(pip));
+}

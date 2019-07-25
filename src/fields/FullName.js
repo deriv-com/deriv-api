@@ -12,10 +12,10 @@ import Immutable from '../types/Immutable';
  * console.log(`Landing Company: ${lc.full}, Short code: ${lc.short}`);
  *
  * @property {String} full
- * @property {String} long - alias for this.full
+ * @property {String} long      - alias for `full`
  * @property {String} short
- * @property {String} code - alias for this.short
- * @property {String} shortcode - alias for this.short
+ * @property {String} code      - alias for `short`
+ * @property {String} shortcode - alias for `short`
  */
 export default class FullName extends Immutable {
     constructor(short_name, full) {

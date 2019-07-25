@@ -4,7 +4,7 @@ import Immutable from '../types/Immutable';
  * A class for keeping short and full name of things
  *
  * @param {String} short - short form of the name
- * @param {String} full - Full form of the name
+ * @param {String} full  - Full form of the name
  *
  * @example
  * const lc = account.landing_company;

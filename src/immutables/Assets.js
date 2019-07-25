@@ -15,8 +15,8 @@ import Immutable from '../types/Immutable';
  *
  * @property {Underlying[]} underlyings
  * @property {Underlying[]} open_markets
- * @property {Object} trading_times
- * @property {Object} trading_durations
+ * @property {Object}       trading_times
+ * @property {Object}       trading_durations
  */
 export default class Assets extends Immutable {
     // Called by the API to initialize the instance

@@ -23,17 +23,17 @@ import {
  * const apiFromOpenConnection = new DerivAPI({ connection });
  * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: 1234 });
  *
- * @param {Object} options
+ * @param {Object}     options
  * @param {WebSocket=} options.connection - A ready to use connection
- * @param {String} options.endpoint - API server to connect to
- * @param {Number} options.app_id - Application ID of the API user
- * @param {String} options.lang - Language of the API communication
+ * @param {String}     options.endpoint   - API server to connect to
+ * @param {Number}     options.app_id     - Application ID of the API user
+ * @param {String}     options.lang       - Language of the API communication
  */
 export default class DerivAPIBasic extends DerivAPICalls {
     constructor({
         connection,
         endpoint = 'blue.binaryws.com',
-        app_id    = 1,
+        app_id   = 1,
         lang     = 'EN',
     } = {}) {
         super();
@@ -105,7 +105,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
      * @example
      * await api.subscribeWithCallback({ ticks: 'R_100' }, console.log)
      *
-     * @param {Object} request - A request object acceptable by the API
+     * @param {Object}   request  - A request object acceptable by the API
      * @param {Function} callback - A callback to call on every new response
      *
      * @returns {Promise} - Resolves to the first response or is rejected with an error

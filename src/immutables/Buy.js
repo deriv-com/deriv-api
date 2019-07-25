@@ -5,34 +5,34 @@ import Immutable  from '../types/Immutable';
 
 /**
  * @typedef {Object} BuyParam
- * @property {Number=} max_price - Maximum acceptable price for buyin the contract
+ * @property {Number=} max_price - Maximum acceptable price for buying the contract
  */
 
 /**
  * Wrapper around a Buy response
  *
  * @param buy
- * @param {Monetary} buy.buy_price
- * @param {Monetary} buy.balance_after
- * @param {Monetary} buy.payout
+ * @param {Monetary}   buy.buy_price
+ * @param {Monetary}   buy.balance_after
+ * @param {Monetary}   buy.payout
  * @param {CustomDate} buy.start_time
  * @param {CustomDate} buy.purchase_time
- * @param {Number} buy.contract_id
- * @param {Number} buy.transaction_id
- * @param {String} buy.longcode
- * @param {String} buy.shortcode
- * @param {String} currency
+ * @param {Number}     buy.contract_id
+ * @param {Number}     buy.transaction_id
+ * @param {String}     buy.longcode
+ * @param {String}     buy.shortcode
+ * @param {String}     currency
  *
- * @property {Monetary} price
- * @property {Monetary} balance_after
- * @property {Monetary} payout
+ * @property {Monetary}   price
+ * @property {Monetary}   balance_after
+ * @property {Monetary}   payout
  * @property {CustomDate} start_time
  * @property {CustomDate} purchase_time
- * @property {Number} contract_id
- * @property {Number} transaction_id
- * @property {FullName} code - contains short and long code
- * @property {String} longcode
- * @property {String} shortcode
+ * @property {Number}     contract_id
+ * @property {Number}     transaction_id
+ * @property {FullName}   code - contains short and long code
+ * @property {String}     longcode
+ * @property {String}     shortcode
  */
 export default class Buy extends Immutable {
     constructor(buy, currency) {

@@ -26,6 +26,7 @@ export default class Stream extends Immutable {
      *
      * @param {Function} callback
      * @param {Function} on_error
+     *
      * @returns {Observable}
      */
     onUpdate(callback, on_error) {

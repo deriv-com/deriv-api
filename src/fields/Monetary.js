@@ -1,14 +1,15 @@
 import Immutable from '../types/Immutable';
 
-/** Keep money related values
+/**
+ * Keeps money related values
  *
  * @param {String} currency
  * @param {Number} value
  *
  * @property {Number} value
  * @property {String} currency
- * @property {String} display - decimal value based on currency
- * @property {String} format - comma separated decimal value based on currency
+ * @property {String} display  - decimal value based on currency
+ * @property {String} format   - comma separated decimal value based on currency
  */
 export default class Monetary extends Immutable {
     constructor(value, currency) {

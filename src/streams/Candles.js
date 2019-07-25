@@ -1,23 +1,27 @@
 import {
     map, first, skip, share,
-}                from 'rxjs/operators';
+}                       from 'rxjs/operators';
 
-import Candle                                     from '../immutables/Candle';
+import Candle           from '../immutables/Candle';
 
 
-import Stream                                     from '../types/Stream';
-import { parseRequestRange, parseHistoryArgs }    from '../utils';
+import Stream           from '../types/Stream';
+import {
+    parseRequestRange,
+    parseHistoryArgs,
+}                       from '../utils';
 
 /**
  * @typedef {Object} CandlesParam
- * @property {Number} granularity - Granularity in seconds
- * @property {HistoryRange} range - A chunk of history to return with start and end time
- * @property {String} symbol - Symbol of the candles
+ *
+ * @property {Number}       granularity - Granularity in seconds
+ * @property {HistoryRange} range       - A chunk of history to return with start and end time
+ * @property {String}       symbol      - Symbol of the candles
  */
 
 /**
  * An abstract class for Candles stream returned from {@link DerivAPI#candleStream}
- * @param {DerivAPI} api
+ * @param {DerivAPI}      api
  * @param {CandlesParam=} options
  *
  * @property {Candle[]} list - An immutable list of candles

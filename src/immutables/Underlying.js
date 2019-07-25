@@ -19,14 +19,14 @@ import { toPipSized } from '../utils';
  * if (underlying.is_open) await contract.buy();
  *
  * @param {DerivAPI} api
- * @param {String} symbol
+ * @param {String}   symbol
  *
  * @property {FullName} name
- * @property {Boolean} is_open
- * @property {Boolean} is_trading_suspended
- * @property {Number} pip
- * @property {Number} pip_size
- * @property {Object} contract_groups
+ * @property {Boolean}  is_open
+ * @property {Boolean}  is_trading_suspended
+ * @property {Number}   pip
+ * @property {Number}   pip_size
+ * @property {Object}   contract_groups
  */
 export default class Underlying extends Immutable {
     constructor(api, symbol) {

@@ -20,24 +20,24 @@ import Immutable    from '../types/Immutable';
  * const sibling = await api.account(loginidToToken(siblings[0].loginid));
  *
  * @param {DerivAPI} api
- * @param {String} token
+ * @param {String}   token
  *
- * @property {String} loginid
- * @property {String} user_id
- * @property {String} email
- * @property {String} country
- * @property {String} currency
- * @property {String} risk
- * @property {Boolean} show_authentication
- * @property {FullName} landing_company
- * @property {Balance} balance
+ * @property {String}       loginid
+ * @property {String}       user_id
+ * @property {String}       email
+ * @property {String}       country
+ * @property {String}       currency
+ * @property {String}       risk
+ * @property {Boolean}      show_authentication
+ * @property {FullName}     landing_company
+ * @property {Balance}      balance
  * @property {Transactions} transactions
- * @property {String[]} status_codes
- * @property {Object[]} siblings
- * @property {Contract[]} contracts
- * @property {Contract[]} open_contracts
- * @property {Contract[]} closed_contracts
- * @property {String[]} api_tokens
+ * @property {String[]}     status_codes
+ * @property {Object[]}     siblings
+ * @property {Contract[]}   contracts
+ * @property {Contract[]}   open_contracts
+ * @property {Contract[]}   closed_contracts
+ * @property {String[]}     api_tokens
  */
 export default class Account extends Immutable {
     constructor(api, token) {

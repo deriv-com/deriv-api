@@ -1,27 +1,32 @@
 import {
     map, first, skip, share,
-}              from 'rxjs/operators';
+}                      from 'rxjs/operators';
 
-import Tick                                     from '../immutables/Tick';
-import Stream                                   from '../types/Stream';
-import { parseRequestRange, parseHistoryArgs }  from '../utils';
+import Tick            from '../immutables/Tick';
+import Stream          from '../types/Stream';
+import {
+    parseRequestRange,
+    parseHistoryArgs,
+}                      from '../utils';
 
 /**
  * @typedef {Object} HistoryRange
+ *
  * @property {Number|Date} start - An epoch in seconds or a Date object
- * @property {Number|Date} end -  An epoch in seconds or a Date object
- * @property {Number} count - Number of ticks returned by history
+ * @property {Number|Date} end   -  An epoch in seconds or a Date object
+ * @property {Number}      count - Number of ticks returned by history
  */
 
 /**
  * @typedef {Object} TicksParam
- * @property {HistoryRange} range - A chunk of history to return with start and end time
- * @property {String} symbol - The ticks symbol
+ *
+ * @property {HistoryRange} range  - A chunk of history to return with start and end time
+ * @property {String}       symbol - The ticks symbol
  */
 
 /**
  * Abstract class for ticks stream returned by the {@link DerivAPI#tickStream}
- * @param {DerivAPI} api
+ * @param {DerivAPI}   api
  * @param {TicksParam} options
  *
  * @property {Tick[]} list - An immutable list of ticks

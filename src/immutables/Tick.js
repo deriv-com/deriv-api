@@ -5,18 +5,18 @@ import Immutable   from '../types/Immutable';
 /**
  * A wrapper class for Tick
  *
- * @param {Object} tick
+ * @param {Object}        tick
  * @param {Number|String} tick.epoch
- * @param {Number} tick.quote
- * @param {Number} tick.ask
- * @param {Number} tick.bid
- * @param {Number} pip
+ * @param {Number}        tick.quote
+ * @param {Number}        tick.ask
+ * @param {Number}        tick.bid
+ * @param {Number}        pip
  *
- * @property {CustomDate} time
+ * @property {CustomDate}  time
  * @property {MarketValue} quote
  * @property {MarketValue} ask
  * @property {MarketValue} bid
- * @property {Object} raw - The raw data received from API
+ * @property {Object}      raw - The raw data received from API
  */
 export default class Tick extends Immutable {
     constructor(tick, pip) {

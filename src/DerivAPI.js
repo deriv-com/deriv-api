@@ -29,6 +29,7 @@ import WebsiteStatus from './streams/WebsiteStatus';
  * const api_basic = api.basic;
  *
  * @param {Object} options - For options details see: {@link DerivAPIBasic}
+ *
  * @property {DerivAPIBasic} basic - Basic API, used for making low-level calls to the API
  */
 export default class DerivAPI {

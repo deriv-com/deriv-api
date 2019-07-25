@@ -1,7 +1,7 @@
-import { map, first }                     from 'rxjs/operators';
+import { map, first } from 'rxjs/operators';
 
-import Monetary                           from '../fields/Monetary'; /* eslint-disable-line no-unused-vars */
-import Stream                             from '../types/Stream';
+import Monetary       from '../fields/Monetary'; /* eslint-disable-line no-unused-vars */
+import Stream         from '../types/Stream';
 
 /**
  * An abstract class for website status info
@@ -15,13 +15,13 @@ import Stream                             from '../types/Stream';
  *
  * @param {DerivAPI} api
  *
- * @property {String} status - 'up', 'down'
- * @property {Boolean} is_website_up
- * @property {String} country
- * @property {Object} currencies
- * @property {Object} call_limits
+ * @property {String}   status - 'up', 'down'
+ * @property {Boolean}  is_website_up
+ * @property {String}   country
+ * @property {Object}   currencies
+ * @property {Object}   call_limits
  * @property {String[]} languages
- * @property {String} terms_and_condtions_version
+ * @property {String}   terms_and_conditions_version
  */
 export default class WebsiteStatus extends Stream {
     constructor(api) {

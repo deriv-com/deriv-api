@@ -2,7 +2,8 @@ import Immutable  from '../types/Immutable';
 
 import CustomDate from './CustomDate';
 
-/** Class to keep duration ranges
+/**
+ * Class to keep duration ranges
  *
  * @param {Duration} min
  * @param {Duration} max

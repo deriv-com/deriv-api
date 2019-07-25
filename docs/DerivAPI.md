@@ -964,7 +964,7 @@ An abstract class for website status info
 -   `currencies` **[Object][246]** 
 -   `call_limits` **[Object][246]** 
 -   `languages` **[Array][268]&lt;[String][248]>** 
--   `terms_and_condtions_version` **[String][248]** 
+-   `terms_and_conditions_version` **[String][248]** 
 
 ##### Examples
 
@@ -1004,7 +1004,7 @@ Keeps a market value and pip size
 
 **Extends Immutable**
 
-Keep money related values
+Keeps money related values
 
 ##### Parameters
 
@@ -1059,7 +1059,7 @@ An alternative date object
 ##### Properties
 
 -   `epoch` **[Number][261]** 
--   `epoch_miliseconds` **[Number][261]** 
+-   `epoch_milliseconds` **[Number][261]** 
 
 ##### isBefore
 
@@ -1298,7 +1298,7 @@ Type: [Object][246]
 
 ##### Properties
 
--   `max_price` **[Number][261]?** Maximum acceptable price for buyin the contract
+-   `max_price` **[Number][261]?** Maximum acceptable price for buying the contract
 
 #### SellParam
 
@@ -2446,7 +2446,7 @@ Type: [Object][246]
 
 **Extends Monetary**
 
-Keep money related values
+Keeps money related values
 
 ### Parameters
 

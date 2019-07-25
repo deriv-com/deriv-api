@@ -3,7 +3,6 @@ import isSameOrBefore      from 'dayjs/plugin/isSameOrBefore';
 import dayjs               from 'dayjs';
 
 import Immutable           from '../types/Immutable';
-
 import { isInMiliSeconds } from '../utils';
 
 dayjs.extend(isSameOrBefore);
@@ -15,7 +14,7 @@ dayjs.extend(isSameOrAfter);
  * @param {CustomDate|Date|Number} date
  *
  * @property {Number} epoch
- * @property {Number} epoch_miliseconds
+ * @property {Number} epoch_milliseconds
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
@@ -62,7 +61,7 @@ export default class CustomDate extends Immutable {
         return this.date.isSame(standardizeDate(date));
     }
 
-    get epoch_miliseconds() {
+    get epoch_milliseconds() {
         return this.date.valueOf();
     }
 

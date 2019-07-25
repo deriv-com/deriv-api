@@ -7,9 +7,9 @@ import MarketValue   from './MarketValue';
  * @param {Number} value
  * @param {Number} pip
  *
- * @property {Number} pip_size
- * @property {Number} pip_sized - the pipsized value
- * @property {CustomDate} time - the spot time
+ * @property {Number}     pip_size
+ * @property {Number}     pip_sized - the pipsized value
+ * @property {CustomDate} time      - the spot time
  */
 export default class Spot extends MarketValue {
     constructor(value, pip, time) {

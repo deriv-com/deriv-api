@@ -1,6 +1,7 @@
 import Immutable from '../types/Immutable';
 
-/** A date range class
+/**
+ * A date range class
  *
  * @param {CustomDate} open
  * @param {CustomDate} close

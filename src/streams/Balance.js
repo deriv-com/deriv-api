@@ -16,10 +16,10 @@ import Stream                from '../types/Stream';
  * @param {DerivAPI} api
  *
  * @property {Monetary} amount
- * @property {Number} value - numeric balance value
- * @property {String} currency - currency of the amount
- * @property {String} display - display value of amount (decimal point)
- * @property {String} format - formatted amount (decimal point, comma separated)
+ * @property {Number}   value    - numeric balance value
+ * @property {String}   currency - currency of the amount
+ * @property {String}   display  - display value of amount (decimal point)
+ * @property {String}   format   - formatted amount (decimal point, comma separated)
  */
 export default class Balance extends Stream {
     constructor(api) {

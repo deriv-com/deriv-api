@@ -11,38 +11,38 @@ import Immutable   from '../types/Immutable';
 /**
  * A class for transaction objects
  *
- * @param {Object} transaction
- * @param {String} transaction.action
- * @param {String} transaction.currency
- * @param {Number} transaction.amount
- * @param {Number} transaction.balance
+ * @param {Object}        transaction
+ * @param {String}        transaction.action
+ * @param {String}        transaction.currency
+ * @param {Number}        transaction.amount
+ * @param {Number}        transaction.balance
  * @param {String|Number} transaction.high_barrier
  * @param {String|Number} transaction.low_barrier
  * @param {String|Number} transaction.barrier
- * @param {String} transaction.longcode
- * @param {String} transaction.symbol
- * @param {String} transaction.display_name - Belongs to symbol
- * @param {Number} transaction.transaction_id
- * @param {Number} transaction.contract_id
- * @param {Number} transaction.purchase_time
- * @param {Number} transaction.expiry_time
- * @param {Number} transaction.transaction_time
- * @param {Number} pip
+ * @param {String}        transaction.longcode
+ * @param {String}        transaction.symbol
+ * @param {String}        transaction.display_name - Belongs to symbol
+ * @param {Number}        transaction.transaction_id
+ * @param {Number}        transaction.contract_id
+ * @param {Number}        transaction.purchase_time
+ * @param {Number}        transaction.expiry_time
+ * @param {Number}        transaction.transaction_time
+ * @param {Number}        pip
  *
- * @property {String} action
- * @property {String} longcode
- * @property {Number} id - transaction ID
- * @property {Number} contract_id
- * @property {FullName} symbol
- * @property {Monetary} amount
- * @property {Monetary} balance
+ * @property {String}      action
+ * @property {String}      longcode
+ * @property {Number}      id           - transaction ID
+ * @property {Number}      contract_id
+ * @property {FullName}    symbol
+ * @property {Monetary}    amount
+ * @property {Monetary}    balance
  * @property {MarketValue} high_barrier
  * @property {MarketValue} low_barrier
  * @property {MarketValue} barrier
- * @property {CustomDate} purchase_time
- * @property {CustomDate} expiry_time
- * @property {CustomDate} time
- * @property {Object} raw - The raw data received from API
+ * @property {CustomDate}  purchase_time
+ * @property {CustomDate}  expiry_time
+ * @property {CustomDate}  time
+ * @property {Object}      raw          - The raw data received from API
  */
 export default class Transaction extends Immutable {
     constructor(transaction, pip) {

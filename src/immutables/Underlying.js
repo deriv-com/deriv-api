@@ -1,4 +1,4 @@
-import './ContractGroup';
+import './trade_config/TradeType';
 
 import FullName       from '../fields/FullName';
 import Contract       from '../streams/Contract';

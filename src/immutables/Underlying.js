@@ -1,9 +1,8 @@
-import './trade_config/TradeType';
+import FullName        from '../fields/FullName';
+import Immutable       from '../types/Immutable';
+import { toPipSized }  from '../utils';
 
-import FullName       from '../fields/FullName';
-import Contract       from '../streams/Contract';
-import Immutable      from '../types/Immutable';
-import { toPipSized } from '../utils';
+import ContractOptions from './ContractOptions';
 
 /**
  * Abstract class for an underlying
@@ -21,12 +20,13 @@ import { toPipSized } from '../utils';
  * @param {DerivAPI} api
  * @param {String}   symbol
  *
- * @property {FullName} name
- * @property {Boolean}  is_open
- * @property {Boolean}  is_trading_suspended
- * @property {Number}   pip
- * @property {Number}   pip_size
- * @property {Object}   contract_groups
+ * @property {FullName}        name
+ * @property {Boolean}         is_open
+ * @property {Boolean}         is_trading_suspended
+ * @property {Number}          pip
+ * @property {Number}          pip_size
+ * @property {Object}          contract_groups
+ * @property {ContractOptions} A contract object with its symbol set to the underlying
  */
 export default class Underlying extends Immutable {
     constructor(api, symbol) {
@@ -66,17 +66,7 @@ export default class Underlying extends Immutable {
         return this.api.candles(this.symbol);
     }
 
-    /**
-     * A contract object with latest market values, cannot be bought or sold
-     *
-     * @param {ContractParam} options - parameters defining the contract
-     * @returns {Contract}
-     */
-    async contract(options) {
-        const contract = new Contract({ symbol: this.symbol, ...options });
-
-        await contract.init();
-
-        return contract;
+    get contract_options() {
+        return new ContractOptions({ symbol: this.symbol });
     }
 }

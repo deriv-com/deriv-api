@@ -13,14 +13,16 @@ import Immutable from '../types/Immutable';
  */
 export default class Monetary extends Immutable {
     constructor(value, currency) {
-        super({ value: +value, currency });
+        super();
+        this._data.value    = +value;
+        this._data.currency = currency;
     }
 
     get display() {
-        return this.value.toFixed(2);
+        return this._data.value.toFixed(2);
     }
 
     get format() {
-        return this.display();
+        return this._data.display();
     }
 }

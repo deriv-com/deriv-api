@@ -1,8 +1,9 @@
-import FullName     from '../fields/FullName';
-import Balance      from '../streams/Balance';
-import Contract     from '../streams/Contract';
-import Transactions from '../streams/Transactions';
-import Immutable    from '../types/Immutable';
+import FullName        from '../fields/FullName';
+import Balance         from '../streams/Balance';
+import Transactions    from '../streams/Transactions';
+import Immutable       from '../types/Immutable';
+
+import ContractOptions from './ContractOptions';
 
 /**
  * Abstract class for user accounts
@@ -22,22 +23,23 @@ import Immutable    from '../types/Immutable';
  * @param {DerivAPI} api
  * @param {String}   token
  *
- * @property {String}       loginid
- * @property {String}       user_id
- * @property {String}       email
- * @property {String}       country
- * @property {String}       currency
- * @property {String}       risk
- * @property {Boolean}      show_authentication
- * @property {FullName}     landing_company
- * @property {Balance}      balance
- * @property {Transactions} transactions
- * @property {String[]}     status_codes
- * @property {Object[]}     siblings
- * @property {Contract[]}   contracts
- * @property {Contract[]}   open_contracts
- * @property {Contract[]}   closed_contracts
- * @property {String[]}     api_tokens
+ * @property {String}          loginid
+ * @property {String}          user_id
+ * @property {String}          email
+ * @property {String}          country
+ * @property {String}          currency
+ * @property {String}          risk
+ * @property {Boolean}         show_authentication
+ * @property {FullName}        landing_company
+ * @property {Balance}         balance
+ * @property {Transactions}    transactions
+ * @property {String[]}        status_codes
+ * @property {Object[]}        siblings
+ * @property {Contract[]}      contracts
+ * @property {Contract[]}      open_contracts
+ * @property {Contract[]}      closed_contracts
+ * @property {String[]}        api_tokens
+ * @property {ContractOptions} A contract object with its currency set to the account currency
  */
 export default class Account extends Immutable {
     constructor(api, token) {
@@ -81,17 +83,7 @@ export default class Account extends Immutable {
         this._data.transactions.init();
     }
 
-    /**
-     * A contract object with latest status and ability to buy/sell
-     *
-     * @param {ContractParam} options - parameters defining the contract
-     * @returns {Contract}
-     */
-    async contract(options) {
-        const contract = new Contract(this.api, { currency: this.currency, ...options });
-
-        await contract.init();
-
-        return contract;
+    get contract_options() {
+        return new ContractOptions({ currency: this._data.currency });
     }
 }

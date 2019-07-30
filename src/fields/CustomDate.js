@@ -15,10 +15,12 @@ dayjs.extend(isSameOrAfter);
  *
  * @property {Number} epoch
  * @property {Number} epoch_milliseconds
+ * @property {Date} date
  */
 export default class CustomDate extends Immutable {
     constructor(date) {
-        super({ date: dayjs(standardizeDate(date)) });
+        super();
+        this._data.internal = this.wrapDate(date);
     }
 
     /**
@@ -26,7 +28,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isBefore(date) {
-        return this.date.isBefore(standardizeDate(date));
+        return this._data.internal.isBefore(this.wrapDate(date));
     }
 
     /**
@@ -34,7 +36,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSameOrAfter(date) {
-        return this.date.isSameOrAfter(standardizeDate(date));
+        return this._data.internal.isSameOrAfter(this.wrapDate(date));
     }
 
     /**
@@ -42,7 +44,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSameOrBefore(date) {
-        return this.date.isSameOrBefore(standardizeDate(date));
+        return this._data.internal.isSameOrBefore(this.wrapDate(date));
     }
 
     /**
@@ -50,7 +52,7 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isAfter(date) {
-        return this.date.isAfter(standardizeDate(date));
+        return this._data.internal.isAfter(this.wrapDate(date));
     }
 
     /**
@@ -58,32 +60,36 @@ export default class CustomDate extends Immutable {
      * @returns {Boolean}
      */
     isSame(date) {
-        return this.date.isSame(standardizeDate(date));
+        return this._data.internal.isSame(this.wrapDate(date));
+    }
+
+    wrapDate(arg) {
+        let date = arg;
+
+        date = typeof date === 'string' ? date * 1 : date;
+
+        if (typeof date === 'number') return dayjs(!isInMiliSeconds(date) ? date * 1000 : date);
+
+        if (date instanceof Date) return dayjs(date);
+
+        if (date instanceof dayjs) return date;
+
+        if (date instanceof this.constructor) return date.internal;
+
+        if (date === undefined) return dayjs();
+
+        throw new Error(`Unknown date of type: ${typeof date} is given`);
     }
 
     get epoch_milliseconds() {
-        return this.date.valueOf();
+        return this._data.internal.valueOf();
     }
 
     get epoch() {
-        return this.date.unix();
+        return this._data.internal.unix();
     }
-}
 
-function standardizeDate(arg) {
-    let date = arg;
-
-    date = typeof date === 'string' ? date * 1 : date;
-
-    if (typeof date === 'number') return !isInMiliSeconds(date) ? date * 1000 : date;
-
-    if (date instanceof CustomDate) return date.date;
-
-    if (date instanceof Date) return date;
-
-    if (date instanceof dayjs) return date;
-
-    if (date === undefined) return date;
-
-    throw new Error(`Unknown date of type: ${typeof date} is given`);
+    get date() {
+        return this._data.internal.toDate();
+    }
 }

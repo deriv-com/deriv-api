@@ -19,6 +19,7 @@ toc:
                 - Transaction
                 - Buy
                 - Sell
+                - ContractOptions
           - name: Streams
             description: |
                 Live stream of data, plus some dynamically updated fields, you
@@ -31,7 +32,7 @@ toc:
                 - Ticks
                 - Transactions
                 - WebsiteStatus
-          - name: Types
+          - name: Fields
             description: |
                 Container classes for data types, providing means to convert them
                 to other types and represent them to the UI. These are mostly
@@ -41,10 +42,20 @@ toc:
                 - Monetary
                 - FullName
                 - CustomDate
-                - DateRange
-                - DurationRange
                 - Immutable
                 - Stream
+                - Barrier
+                - Profit
+                - Spot
+          - name: Inputs
+            description: |
+                Fields that accept setting their values, they provide their
+                acceptable range of values through their min and max properties
+            children:
+                - BarrierInput
+                - MonetaryInput
+                - DurationInput
+                - CustomDateInput
     - name: Core Functionality
       children:
           - Cache
@@ -60,13 +71,7 @@ toc:
             children:
                 - CandlesParam
                 - TicksParam
-                - ContractParam
                 - BuyParam
                 - SellParam
+                - ContractParam
                 - HistoryRange
-          - name: Plain objects (returned from methods)
-            children:
-                - SpotDurations
-                - ForwardDurations
-                - Durations
-                - DurationUnits

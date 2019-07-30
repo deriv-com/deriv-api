@@ -13,7 +13,9 @@ import { toPipSized } from '../utils';
  */
 export default class MarketValue extends Immutable {
     constructor(value, pip) {
-        super({ value: +value, pip });
+        super({ pip });
+
+        this._data.value = +value;
     }
 
     get pip_size() {
@@ -21,7 +23,7 @@ export default class MarketValue extends Immutable {
     }
 
     get pip_sized() {
-        return this.value.toFixed(this.pip_size);
+        return this._data.value.toFixed(this.pip_size);
     }
 
     get display() {

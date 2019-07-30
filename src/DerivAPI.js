@@ -68,7 +68,7 @@ export default class DerivAPI {
     /**
      * A contract object with latest market values, cannot be bought or sold
      *
-     * @param {ContractParam} options - parameters defining the contract
+     * @param {ContractOptions} options - parameters defining the contract
      * @returns {Promise<Contract>}
      */
     async contract(options) {

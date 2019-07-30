@@ -28,17 +28,31 @@ toc:
     - Ticks
     - Transactions
     - WebsiteStatus
-    - name: Types
+    - name: Fields
       description: |
           Container classes for data types, providing means to convert them
           to other types and represent them to the UI. These are mostly
           simpler objects used for representing data.
+
+    - Barrier
+    - CustomDate
+    - FullName
     - MarketValue
     - Monetary
-    - FullName
-    - CustomDate
-    - DateRange
-    - DurationRange
+    - Profit
+    - Spot
+    - name: Inputs
+      description: |
+          These are input fields that accept values to be set on them and provide
+          min and max for that value.
+
+    - BarrierInput
+    - CustomDateInput
+    - MonetaryInput
+    - DurationInput
+    - name: Types
+      description: |
+          Types internally used for immutable and stream objects
     - Immutable
     - Stream
     - name: Core Functionality
@@ -53,9 +67,9 @@ toc:
     - name: Parameters
     - CandlesParam
     - TicksParam
-    - ContractParam
     - BuyParam
     - SellParam
+    - ContractParam
     - HistoryRange
     - name: Plain objects (returned from methods)
     - SpotDurations

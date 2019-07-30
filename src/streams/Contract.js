@@ -1,4 +1,3 @@
-
 import { first, map }   from 'rxjs/operators';
 
 import CustomDate       from '../fields/CustomDate';
@@ -8,6 +7,7 @@ import Monetary         from '../fields/Monetary';
 import Profit           from '../fields/Profit';
 import Spot             from '../fields/Spot';
 import Buy              from '../immutables/Buy';
+import ContractOptions  from '../immutables/ContractOptions';
 import Sell             from '../immutables/Sell';
 import Tick             from '../immutables/Tick';
 import Stream           from '../types/Stream';
@@ -20,23 +20,6 @@ const field_mapping = {
 };
 
 /**
- * @typedef {Object} ContractParam
- *
- * @property {String}        contract_type
- * @property {Number}        amount
- * @property {String}        barrier
- * @property {String}        barrier2
- * @property {Number|Date}   expiry_time   - epoch in seconds or {@link Date}
- * @property {Number|Date}   start_time    - epoch in seconds or {@link Date}
- * @property {String=}       Currency      - Default is the account currency
- * @property {String}        basis         - stake or payout
- * @property {Number|String} duration      - duration with unit or duration in number
- * @property {String=}       duration_unit - duration unit, required if duration is number
- * @property {String=}       product_type  - 'multi_barrier' or 'basic'
- * @property {Account=}      account       - The account that has this contract
- */
-
-/**
  * Abstract class for contracts
  *
  * @example
@@ -47,60 +30,64 @@ const field_mapping = {
  * contract.onUpdate().subscribe(console.log)
  *
  * @param {DerivAPI}      api
- * @param {ContractParam} request
+ * @param {ContractOptions|ContractParam} options
  *
- * @property {String}       status              - 'proposal', 'open', 'expired', 'sold', 'won', 'lost'
- * @property {Monetary}     ask_price           - Price to pay to buy a contract
- * @property {String}       type                - contract type
- * @property {Monetary}     payout              - Potential or realized payout
+ * @property {String}       status              'proposal', 'open', 'expired', 'sold', 'won', 'lost'
+ * @property {Monetary}     ask_price           Price to pay to buy a contract
+ * @property {String}       type                contract type
+ * @property {Monetary}     payout              Potential or realized payout
  * @property {String}       longcode
  * @property {String}       symbol
  * @property {String}       currency
  * @property {Spot}         current_spot
- * @property {CustomDate}   start_time          - Start time of the contract (estimated for proposal)
- * @property {Monetary=}    buy_price           - (After buy)
- * @property {Monetary=}    bid_price           - (After buy)
- * @property {Monetary=}    sell_price          - (After sell)
- * @property {Profit=}      profit              - Potential or realized profit (After buy)
- * @property {Number=}      proposal_id         - The proposal ID used to buy
- * @property {Number=}      id                  - The contract ID (After buy)
- * @property {CustomDate=}  purchase_time       - (After buy)
- * @property {CustomDate=}  expiry_time         - (After buy)
- * @property {CustomDate=}  sell_time           - (After sell)
- * @property {Number=}      barrier_count       - (For contracts with barrier)
- * @property {MarketValue=} high_barrier        - (For contracts with two barriers)
- * @property {MarketValue=} low_barrier         - (For contracts with two barriers)
- * @property {MarketValue=} barrier             - (For contracts with one barrier)
- * @property {Number=}      tick_count          - (For tick contracts)
- * @property {Tick[]=}      ticks               - (For tick contracts)
- * @property {Number=}      multiplier          - (For loopback contracts)
+ * @property {CustomDate}   start_time          Start time of the contract (estimated for proposal)
+ * @property {Monetary=}    buy_price           (After buy)
+ * @property {Monetary=}    bid_price           (After buy)
+ * @property {Monetary=}    sell_price          (After sell)
+ * @property {Profit=}      profit              Potential or realized profit (After buy)
+ * @property {Number=}      proposal_id         The proposal ID used to buy
+ * @property {Number=}      id                  The contract ID (After buy)
+ * @property {CustomDate=}  purchase_time       (After buy)
+ * @property {CustomDate=}  expiry_time         (After buy)
+ * @property {CustomDate=}  sell_time           (After sell)
+ * @property {Number=}      barrier_count       (For contracts with barrier)
+ * @property {MarketValue=} high_barrier        (For contracts with two barriers)
+ * @property {MarketValue=} low_barrier         (For contracts with two barriers)
+ * @property {MarketValue=} barrier             (For contracts with one barrier)
+ * @property {Number=}      tick_count          (For tick contracts)
+ * @property {Tick[]=}      ticks               (For tick contracts)
+ * @property {Number=}      multiplier          (For loopback contracts)
  * @property {String=}      shortcode
  * @property {String=}      validation_error
  * @property {Boolean=}     is_forward_starting
  * @property {Boolean=}     is_intraday
  * @property {Boolean=}     is_path_dependent
- * @property {Boolean=}     is_valid_to_sell    - We still allow a sell call, let API handle the error
+ * @property {Boolean=}     is_valid_to_sell    We still allow a sell call, let API handle the error
  * @property {Boolean=}     is_expired
  * @property {Boolean=}     is_settleable
- * @property {Boolean=}     is_open             - Is this contract still open
+ * @property {Boolean=}     is_open             Is this contract still open
  * @property {Spot=}        entry_spot
  * @property {Spot=}        exit_spot
  * @property {Object=}      audit_details
- * @property {FullName=}    code                - only if both short and long codes are available
+ * @property {FullName=}    code                only if both short and long codes are available
  */
 export default class Contract extends Stream {
-    constructor(api, request) {
-        super({ api, request });
+    constructor(api, options) {
+        super({ api, options });
     }
 
     // Called by the API to initialize the instance
     async init({ currency, symbol } = {}) {
-        const request = mapApiFields({
+        const contract_param = this.options instanceof ContractOptions
+            ? this.options.contract_param
+            : mapApiFields({ ...this.options }, field_mapping);
+
+        const request = {
             currency,
             symbol,
             proposal: 1,
-            ...this.request,
-        }, field_mapping);
+            ...contract_param,
+        };
 
         const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
         this._data.active_symbol = active_symbols.find(s => s.symbol === request.symbol);
@@ -169,7 +156,7 @@ export default class Contract extends Stream {
     /**
      * Sells this contract
      *
-     * @param {SellParam} sell - zero price means sell at market
+     * @param {SellParam} sell zero price means sell at market
      * @returns {Sell}
      */
     async sell({ max_price: price = 0 } = {}) {

@@ -47,15 +47,6 @@ toc:
                 - Barrier
                 - Profit
                 - Spot
-          - name: Inputs
-            description: |
-                Fields that accept setting their values, they provide their
-                acceptable range of values through their min and max properties
-            children:
-                - BarrierInput
-                - MonetaryInput
-                - DurationInput
-                - CustomDateInput
     - name: Core Functionality
       children:
           - Cache

@@ -20,6 +20,22 @@ const field_mapping = {
 };
 
 /**
+ * @typedef {Object} ContractParam
+ *
+ * @property {String}        contract_type
+ * @property {Number}        amount
+ * @property {String}        barrier
+ * @property {String}        barrier2
+ * @property {Number|Date}   expiry_time   epoch in seconds or {@link Date}
+ * @property {Number|Date}   start_time    epoch in seconds or {@link Date}
+ * @property {String=}       Currency      Default is the account currency
+ * @property {String}        basis         stake or payout
+ * @property {Number|String} duration      duration with unit or duration in number
+ * @property {String=}       duration_unit duration unit, required if duration is number
+ * @property {String=}       product_type  'multi_barrier' or 'basic'
+ */
+
+/**
  * Abstract class for contracts
  *
  * @example

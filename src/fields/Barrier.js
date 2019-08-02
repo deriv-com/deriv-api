@@ -12,7 +12,7 @@ import MarketValue from './MarketValue';
  */
 export default class Barrier extends MarketValue {
     constructor(value, pip) {
-        super(pip);
+        super(value, pip);
 
         const barrier = this.wrapBarrier(value);
 
@@ -37,5 +37,16 @@ export default class Barrier extends MarketValue {
             value      : +value,
             sign,
         };
+    }
+
+    get pip_sized() {
+        const pip_sized = this._data.value.toFixed(this.pip_size);
+
+        if (this._data.sign === -1) {
+            return `-${pip_sized}`;
+        } if (this._data.sign === 1) {
+            return `+${pip_sized}`;
+        }
+        return pip_sized;
     }
 }

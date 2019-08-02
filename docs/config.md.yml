@@ -38,13 +38,14 @@ toc:
                 to other types and represent them to the UI. These are mostly
                 simpler objects used for representing data.
             children:
+                - Barrier
+                - CustomDate
+                - DateRange
+                - Duration
+                - DurationRange
+                - FullName
                 - MarketValue
                 - Monetary
-                - FullName
-                - CustomDate
-                - Immutable
-                - Stream
-                - Barrier
                 - Profit
                 - Spot
     - name: Core Functionality

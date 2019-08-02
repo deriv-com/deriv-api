@@ -34,8 +34,12 @@ toc:
           to other types and represent them to the UI. These are mostly
           simpler objects used for representing data.
 
+      
     - Barrier
     - CustomDate
+    - DateRange
+    - Duration
+    - DurationRange
     - FullName
     - MarketValue
     - Monetary

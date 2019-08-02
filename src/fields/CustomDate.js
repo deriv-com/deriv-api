@@ -81,6 +81,17 @@ export default class CustomDate extends Immutable {
         throw new Error(`Unknown date of type: ${typeof date} is given`);
     }
 
+    /**
+     * Adds a duration to the current date
+     *
+     * @param {Duration|Object} duration - Accepts { value: ..., unit: ... }
+     *
+     * @returns {CustomDate}
+     */
+    addDuration(duration) {
+        return this._data.internal.add(duration.value, duration.unit);
+    }
+
     get epoch_milliseconds() {
         return this._data.internal.valueOf();
     }

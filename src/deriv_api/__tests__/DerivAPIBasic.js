@@ -1,17 +1,20 @@
-import DerivAPIBasic from '../DerivAPIBasic';
+import { TestWebSocket } from '../../test_utils';
+
+import DerivAPIBasic     from '../DerivAPIBasic';
 
 let api;
+let connection;
+const response = {};
 
 test('Constructing DerivAPIBasic', async () => {
     expect(api).toBeInstanceOf(DerivAPIBasic);
 
-    const response = await api.ping();
-    expect(response.ping).toBe('pong');
+    expect((await api.ping()).ping).toBe('pong');
 });
 
 test('API construction with endpoint and appId', () => {
     expect(
-        new DerivAPIBasic({ endpoint: 'ws.binaryws.com', appId: 1 }),
+        new DerivAPIBasic({ endpoint: 'localhost', appId: 1 }),
     ).toBeInstanceOf(DerivAPIBasic);
 });
 
@@ -20,9 +23,8 @@ test('API construction with endpoint', () => {
 });
 
 beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
+    response.ping = 'pong';
+    connection    = new TestWebSocket(response);
 
     api = new DerivAPIBasic({ connection });
 });

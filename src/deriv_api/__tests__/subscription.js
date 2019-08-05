@@ -1,12 +1,15 @@
 import {
     take,
     toArray,
-}                     from 'rxjs/operators';
-import { Observable } from 'rxjs';
+}                        from 'rxjs/operators';
+import { Observable }    from 'rxjs';
 
-import DerivAPIBasic  from '../DerivAPIBasic';
+import { TestWebSocket } from '../../test_utils';
+
+import DerivAPIBasic     from '../DerivAPIBasic';
 
 let api;
+let connection;
 
 test('Subscribe calling api.subscribeWithCallback without callback', async () => {
     expect(
@@ -37,6 +40,10 @@ test('Subscribe with api.subscribe should return an Observable', async () => {
 
     expect(mock_fn).toHaveBeenCalledTimes(0);
 
+    connection.receiveLater('tick', {
+        ask   : 1600.29, bid   : 1599.89, epoch : 1564978428, id    : 'b7ba02da-353e-2189-d6f3-3d8907ad7109', quote : 1600.09, symbol: 'R_100',
+    });
+
     const two_responses = await source
         .pipe(
             take(2),
@@ -50,9 +57,17 @@ test('Subscribe with api.subscribe should return an Observable', async () => {
 });
 
 beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
+    connection = new TestWebSocket({
+        ping          : 'pong',
+        website_status: {},
+        ticks         : {
+            ask   : 1600.29,
+            bid   : 1599.89,
+            epoch : 1564978428,
+            quote : 1600.09,
+            symbol: 'R_100',
+        },
+    });
 
     api = new DerivAPIBasic({ connection });
 });

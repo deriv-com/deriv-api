@@ -1,6 +1,9 @@
-import DerivAPI from '../DerivAPIBasic';
+import { TestWebSocket } from '../../test_utils';
+
+import DerivAPI          from '../DerivAPIBasic';
 
 let api;
+let connection;
 
 test('Constructing DerivAPIBasic', async () => {
     expect((await api.ping()).ping).toBe('pong');
@@ -20,9 +23,9 @@ test('Constructing DerivAPIBasic', async () => {
 });
 
 beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
+    connection = new TestWebSocket({
+        ping: 'pong',
+    }, 100);
 
     api = new DerivAPI({ connection });
 });

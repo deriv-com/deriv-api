@@ -1,8 +1,11 @@
-import { first }     from 'rxjs/operators';
+import { first }         from 'rxjs/operators';
 
-import DerivAPIBasic from '../DerivAPIBasic';
+import { TestWebSocket } from '../../test_utils';
+
+import DerivAPIBasic     from '../DerivAPIBasic';
 
 let api;
+let connection;
 
 test('Request ticks for InvalidSymbol', async () => {
     await expect(api.ticks({ ticks: 'InvalidSymbol' })).rejects.toBeInstanceOf(
@@ -27,9 +30,9 @@ test('Subscribe to ticks with Observables 1', async () => {
 });
 
 beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
+    connection = new TestWebSocket({
+        ticks: { error: {} },
+    });
 
     api = new DerivAPIBasic({ connection });
 });

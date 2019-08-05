@@ -1,7 +1,8 @@
 export class TestWebSocket { // eslint-disable-line import/prefer-default-export
-    constructor(acceptable_responses) {
+    constructor(acceptable_responses, delay) {
         this.method_to_req_id     = {};
         this.acceptable_responses = acceptable_responses;
+        this.delay                = delay;
 
         setTimeout(() => {
             this.readyState = 1;
@@ -21,10 +22,16 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
                     } else {
                         this.method_to_req_id.ohlc = req_id;
                     }
+                } else if (method === 'ticks') {
+                    this.method_to_req_id.tick = req_id;
                 }
                 this.method_to_req_id[method] = req_id;
 
-                this.receive(method, this.acceptable_responses[method]);
+                if (this.delay) {
+                    this.receiveDelay(method, this.acceptable_responses[method], this.delay);
+                } else {
+                    this.receive(method, this.acceptable_responses[method]);
+                }
             }
         });
     }
@@ -44,7 +51,7 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
             }
         }
 
-        if ('error' in payload) {
+        if (payload instanceof Object && 'error' in payload) {
             this.onmessage({
                 data: JSON.stringify({
                     error   : payload,
@@ -63,9 +70,13 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
         }
     }
 
-    receiveLater(...args) {
+    receiveDelay(method, payload, delay) {
         setTimeout(() => {
-            this.receive(...args);
-        }, 0);
+            this.receive(method, payload);
+        }, delay);
+    }
+
+    receiveLater(...args) {
+        this.receiveDelay(...args, 0);
     }
 }

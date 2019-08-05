@@ -90,6 +90,12 @@
                         #websiteStatus
                       </a></li>
                       
+                      <li><a
+                        href='#derivapicontractoptions'
+                        class='regular pre-open'>
+                        #contractOptions
+                      </a></li>
+                      
                     </ul>
                   
                   
@@ -1946,7 +1952,7 @@ ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
 
   <p>A contract object with latest market values, cannot be bought or sold</p>
 
-    <div class='pre p1 fill-light mt0'>contract(options: <a href="#contractoptions">ContractOptions</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#contract">Contract</a>></div>
+    <div class='pre p1 fill-light mt0'>contract(options: <a href="#contractparam">ContractParam</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#contract">Contract</a>></div>
   
   
 
@@ -1963,7 +1969,7 @@ ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#contractoptions">ContractOptions</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#contractparam">ContractParam</a>)</code>
 	    parameters defining the contract
 
           </div>
@@ -2227,6 +2233,74 @@ ticks.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log);
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#websitestatus">WebsiteStatus</a>></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='derivapicontractoptions'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>contractOptions(symbol)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Request contract options to display in UI</p>
+
+    <div class='pre p1 fill-light mt0'>contractOptions(symbol: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#contractoptions">ContractOptions</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>symbol</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#contractoptions">ContractOptions</a>></code>:
         
 
       
@@ -2799,13 +2873,6 @@ and they do not receive updates.</p>
           
         </div>
       
-        <div class='space-bottom0'>
-          <span class='code bold'>A</span> <code class='quiet'>(<a href="#contractoptions">ContractOptions</a>)</code>
-          : contract object with its currency set to the account currency
-
-          
-        </div>
-      
     </div>
   
 
@@ -3043,13 +3110,6 @@ and they do not receive updates.</p>
         <div class='space-bottom0'>
           <span class='code bold'>contract_groups</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
           
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>A</span> <code class='quiet'>(<a href="#contractoptions">ContractOptions</a>)</code>
-          : contract object with its symbol set to the underlying
-
           
         </div>
       
@@ -4716,7 +4776,7 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
 
   <p>Abstract class for contracts</p>
 
-    <div class='pre p1 fill-light mt0'>new Contract(api: <a href="#derivapi">DerivAPI</a>, options: (<a href="#contractoptions">ContractOptions</a> | <a href="#contractparam">ContractParam</a>))</div>
+    <div class='pre p1 fill-light mt0'>new Contract(api: <a href="#derivapi">DerivAPI</a>, options: <a href="#contractparam">ContractParam</a>)</div>
   
   
     <p>
@@ -4748,7 +4808,7 @@ balance.onUpdate().subscribe(<span class="hljs-function"><span class="hljs-param
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>((<a href="#contractoptions">ContractOptions</a> | <a href="#contractparam">ContractParam</a>))</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#contractparam">ContractParam</a>)</code>
 	    
           </div>
           

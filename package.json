@@ -3,7 +3,8 @@
   "type": "module",
   "version": "1.0.0-beta",
   "description": "Websocket API for Deriv applications",
-  "main": "index.js",
+  "main": "DerivAPI.js",
+  "files": ["dist/*.js"],
   "scripts": {
     "test": "jest --verbose --forceExit",
     "build": "webpack --config webpack.config.js",

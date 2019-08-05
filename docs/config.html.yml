@@ -14,7 +14,7 @@ toc:
     - Tick
     - Candle
     - Transaction
-    - ContractGroup
+    - ContractOptions
     - Buy
     - Sell
     - name: Streams
@@ -66,9 +66,4 @@ toc:
     - SellParam
     - ContractParam
     - HistoryRange
-    - name: Plain objects (returned from methods)
-    - SpotDurations
-    - ForwardDurations
-    - Durations
-    - DurationUnits
     - name: API Calls

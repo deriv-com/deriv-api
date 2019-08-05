@@ -1,7 +1,7 @@
 {
-  "name": "binary-api",
+  "name": "deriv-api",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "description": "Websocket API for Deriv applications",
   "main": "index.js",
   "scripts": {

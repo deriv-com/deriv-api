@@ -1,12 +1,11 @@
 import { first }     from 'rxjs/operators';
-import WS            from 'ws';
 
 import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 
 beforeAll(() => {
-    const connection = new WS(
+    const connection = new WebSocket(
         'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
     );
 

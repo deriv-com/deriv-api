@@ -8,14 +8,6 @@ let api;
 let ticks;
 const count = 1000;
 
-beforeAll(async () => {
-    api = new DerivAPI();
-
-    ticks = new Ticks(api, 'R_100');
-
-    await ticks.init();
-});
-
 test('Request for a ticks history', async () => {
     expect(ticks).toBeInstanceOf(Ticks);
 
@@ -50,4 +42,12 @@ test('Check individual ticks', async () => {
     expect(first_tick.quote.pip_size).toEqual(2);
     expect(first_tick.quote.pip_sized).toEqual(first_tick.quote.value.toFixed(2));
     expect(first_tick.time.isSameOrBefore(new Date())).toBeTruthy();
+});
+
+beforeAll(async () => {
+    api = new DerivAPI();
+
+    ticks = new Ticks(api, 'R_100');
+
+    await ticks.init();
 });

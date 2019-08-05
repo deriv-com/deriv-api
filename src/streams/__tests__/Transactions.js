@@ -5,22 +5,8 @@ import Transaction       from '../../immutables/Transaction';
 import { TestWebSocket } from '../../test_utils';
 import Transactions      from '../Transactions';
 
-let api;
 let connection;
 let transactions;
-
-beforeAll(async () => {
-    connection = new TestWebSocket({
-        active_symbols: [{ symbol: 'R_100', pip: 0.01 }],
-        transaction   : {},
-    });
-
-    api = new DerivAPI({ connection });
-
-    transactions = new Transactions(api);
-
-    await transactions.init();
-});
 
 const tx_template = {
     symbol      : 'R_100',
@@ -70,4 +56,17 @@ test('Check transaction object', async () => {
     expect(transaction.barrier.pip_sized).toEqual('123.40');
     expect(transaction.time.isSame(now)).toBeTruthy();
     expect(transaction.id).toEqual(1234);
+});
+
+beforeAll(async () => {
+    connection = new TestWebSocket({
+        active_symbols: [{ symbol: 'R_100', pip: 0.01 }],
+        transaction   : {},
+    });
+
+    const api = new DerivAPI({ connection });
+
+    transactions = new Transactions(api);
+
+    await transactions.init();
 });

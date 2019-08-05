@@ -4,14 +4,6 @@ import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 
-beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
-
-    api = new DerivAPIBasic({ connection });
-});
-
 test('Request ticks for InvalidSymbol', async () => {
     await expect(api.ticks({ ticks: 'InvalidSymbol' })).rejects.toBeInstanceOf(
         Error,
@@ -32,4 +24,12 @@ test('Subscribe to ticks with Observables 1', async () => {
             .pipe(first())
             .toPromise(),
     ).rejects.toBeInstanceOf(Error);
+});
+
+beforeAll(() => {
+    const connection = new WebSocket(
+        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
+    );
+
+    api = new DerivAPIBasic({ connection });
 });

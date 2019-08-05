@@ -4,20 +4,6 @@ let api;
 global.WebSocket    = jest.fn();
 const { WebSocket } = global;
 
-beforeAll(() => {
-    WebSocket.prototype.close = jest.fn();
-
-    api = new DerivAPIBasic({ app_id: 4000, endpoint: 'ws://localhost', lang: 'fr' });
-
-    // Set the connection to ready state with a delay
-    setTimeout(() => {
-        WebSocket.prototype.readyState = 1;
-    }, 1000);
-
-    // Make an open connection
-    api.connection.onopen();
-});
-
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);
     expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?l=FR&app_id=4000');
@@ -52,4 +38,18 @@ test('API does not reconnect if connection is passed', async () => {
 
     // If reconnect was issued, 4 calls were seen
     expect(WebSocket).toHaveBeenCalledTimes(3);
+});
+
+beforeAll(() => {
+    WebSocket.prototype.close = jest.fn();
+
+    api = new DerivAPIBasic({ app_id: 4000, endpoint: 'ws://localhost', lang: 'fr' });
+
+    // Set the connection to ready state with a delay
+    setTimeout(() => {
+        WebSocket.prototype.readyState = 1;
+    }, 1000);
+
+    // Make an open connection
+    api.connection.onopen();
 });

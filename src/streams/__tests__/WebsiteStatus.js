@@ -4,14 +4,6 @@ import WebsiteStatus from '../WebsiteStatus';
 let api;
 let website_status;
 
-beforeAll(async () => {
-    api = new DerivAPI();
-
-    website_status = new WebsiteStatus(api);
-
-    await website_status.init();
-});
-
 test('Request for website status', async () => {
     expect(website_status).toBeInstanceOf(WebsiteStatus);
 
@@ -35,4 +27,12 @@ test('Request for website status', async () => {
     } else {
         expect(website_status.status).toBe('down');
     }
+});
+
+beforeAll(async () => {
+    api = new DerivAPI();
+
+    website_status = new WebsiteStatus(api);
+
+    await website_status.init();
 });

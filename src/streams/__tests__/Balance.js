@@ -4,19 +4,8 @@ import DerivAPI          from '../../DerivAPI';
 import { TestWebSocket } from '../../test_utils';
 import Balance           from '../Balance';
 
-let api;
 let connection;
 let balance;
-
-beforeAll(async () => {
-    connection = new TestWebSocket({
-        balance: { balance: 200, currency: 'USD' },
-    });
-
-    api = new DerivAPI({ connection });
-
-    balance = new Balance(api);
-});
 
 test('Initiallize balance with initial value', async () => {
     expect(balance).toBeInstanceOf(Balance);
@@ -52,4 +41,14 @@ test('Request for balance', async () => {
     expect(new_balance.currency).toEqual(balance.currency);
     expect(new_balance.value).toEqual(4000);
     expect(new_balance.display).toEqual('4000.00');
+});
+
+beforeAll(async () => {
+    connection = new TestWebSocket({
+        balance: { balance: 200, currency: 'USD' },
+    });
+
+    const api = new DerivAPI({ connection });
+
+    balance = new Balance(api);
 });

@@ -2,14 +2,6 @@ import DerivAPI from '../DerivAPIBasic';
 
 let api;
 
-beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
-
-    api = new DerivAPI({ connection });
-});
-
 test('Constructing DerivAPIBasic', async () => {
     expect((await api.ping()).ping).toBe('pong');
 
@@ -25,4 +17,12 @@ test('Constructing DerivAPIBasic', async () => {
     const end_time = parseInt(new Date().getTime() / 1000, 10);
 
     expect(start_time).toBe(end_time);
+});
+
+beforeAll(() => {
+    const connection = new WebSocket(
+        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
+    );
+
+    api = new DerivAPI({ connection });
 });

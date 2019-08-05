@@ -8,14 +8,6 @@ import DerivAPIBasic  from '../DerivAPIBasic';
 
 let api;
 
-beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
-
-    api = new DerivAPIBasic({ connection });
-});
-
 test('Subscribe calling api.subscribeWithCallback without callback', async () => {
     expect(
         api.subscribeWithCallback({ website_status: 1 }),
@@ -55,4 +47,12 @@ test('Subscribe with api.subscribe should return an Observable', async () => {
     expect(mock_fn).toHaveBeenCalledTimes(2);
 
     expect(two_responses).toBeInstanceOf(Array);
+});
+
+beforeAll(() => {
+    const connection = new WebSocket(
+        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
+    );
+
+    api = new DerivAPIBasic({ connection });
 });

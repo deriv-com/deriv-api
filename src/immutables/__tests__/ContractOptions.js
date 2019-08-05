@@ -3,130 +3,17 @@ import CustomDate        from '../../fields/CustomDate';
 import { TestWebSocket } from '../../test_utils';
 import ContractOptions   from '../ContractOptions';
 
-const contracts_for     = {
-    available: [
-        {
-            barrier_category         : 'euro_atm',
-            barriers                 : 0,
-            contract_category        : 'callput',
-            contract_category_display: 'Up/Down',
-            contract_display         : 'Lower',
-            contract_type            : 'PUT',
-            exchange_name            : 'RANDOM',
-            expiry_type              : 'intraday',
-            market                   : 'volidx',
-            max_contract_duration    : '1d',
-            min_contract_duration    : '15s',
-            sentiment                : 'down',
-            start_type               : 'spot',
-            submarket                : 'random_index',
-            underlying_symbol        : 'R_50',
-        },
-        {
-            barrier_category         : 'euro_atm',
-            barriers                 : 0,
-            contract_category        : 'callput',
-            contract_category_display: 'Up/Down',
-            contract_display         : 'Higher',
-            contract_type            : 'CALL',
-            exchange_name            : 'RANDOM',
-            expiry_type              : 'intraday',
-            forward_starting_options : [
-                {
-                    close: 1564790399,
-                    date : 1564704000,
-                    open : 1564704000,
-                },
-                {
-                    close: 1564876799,
-                    date : 1564790400,
-                    open : 1564790400,
-                },
-                {
-                    close: 1564963199,
-                    date : 1564876800,
-                    open : 1564876800,
-                },
-            ],
-            market               : 'volidx',
-            max_contract_duration: '1d',
-            min_contract_duration: '2m',
-            sentiment            : 'up',
-            start_type           : 'forward',
-            submarket            : 'random_index',
-            underlying_symbol    : 'R_50',
-        },
-        {
-            barrier_category         : 'euro_non_atm',
-            barriers                 : 2,
-            contract_category        : 'callputspread',
-            contract_category_display: 'Call Spread/Put Spread',
-            contract_display         : 'Call Spread',
-            contract_type            : 'CALLSPREAD',
-            exchange_name            : 'RANDOM',
-            expiry_type              : 'intraday',
-            high_barrier             : '+0.0914',
-            low_barrier              : -0.0914,
-            market                   : 'volidx',
-            max_contract_duration    : '1d',
-            min_contract_duration    : '15s',
-            sentiment                : 'up',
-            start_type               : 'spot',
-            submarket                : 'random_index',
-            underlying_symbol        : 'R_50',
-        },
-        {
-            barrier                  : '324.9305',
-            barrier_category         : 'euro_non_atm',
-            barriers                 : 1,
-            contract_category        : 'callput',
-            contract_category_display: 'Up/Down',
-            contract_display         : 'Higher',
-            contract_type            : 'CALL',
-            exchange_name            : 'RANDOM',
-            expiry_type              : 'daily',
-            market                   : 'volidx',
-            max_contract_duration    : '365d',
-            min_contract_duration    : '1d',
-            sentiment                : 'up',
-            start_type               : 'spot',
-            submarket                : 'random_index',
-            underlying_symbol        : 'R_50',
-        },
-    ],
-};
-const payout_currencies = ['BTC', 'USD'];
-const active_symbols    = [
-    {
-        pip   : 0.0001,
-        symbol: 'R_50',
-    },
-];
+const response = {};
 
-
-let api;
 let contract_options;
 let category;
 
-beforeAll(async () => {
-    const connection = new TestWebSocket({
-        contracts_for,
-        payout_currencies,
-        active_symbols,
-    });
-
-    api = new DerivAPI({ connection });
-
-    contract_options = new ContractOptions(api, 'R_50');
-
-    await contract_options.init();
-});
 
 test('Contract options has all the valid options', () => {
     expect(contract_options).toBeInstanceOf(ContractOptions);
     expect(() => { contract_options.categories = []; }).toThrow(Error);
     expect(new Set(Object.keys(contract_options.categories))).toEqual(new Set(['risefall', 'higherlower', 'callputspread']));
-    expect(contract_options.currencies).toEqual(payout_currencies);
+    expect(contract_options.currencies).toEqual(response.payout_currencies);
 });
 
 test('Category object', () => {
@@ -180,3 +67,112 @@ function isDurationValid({ min, max }) {
     const date = new CustomDate();
     return min.addToDate(date).isBefore(max.addToDate(date));
 }
+
+beforeAll(async () => {
+    response.contracts_for     = {
+        available: [
+            {
+                barrier_category         : 'euro_atm',
+                barriers                 : 0,
+                contract_category        : 'callput',
+                contract_category_display: 'Up/Down',
+                contract_display         : 'Lower',
+                contract_type            : 'PUT',
+                exchange_name            : 'RANDOM',
+                expiry_type              : 'intraday',
+                market                   : 'volidx',
+                max_contract_duration    : '1d',
+                min_contract_duration    : '15s',
+                sentiment                : 'down',
+                start_type               : 'spot',
+                submarket                : 'random_index',
+                underlying_symbol        : 'R_50',
+            },
+            {
+                barrier_category         : 'euro_atm',
+                barriers                 : 0,
+                contract_category        : 'callput',
+                contract_category_display: 'Up/Down',
+                contract_display         : 'Higher',
+                contract_type            : 'CALL',
+                exchange_name            : 'RANDOM',
+                expiry_type              : 'intraday',
+                forward_starting_options : [
+                    {
+                        close: 1564790399,
+                        date : 1564704000,
+                        open : 1564704000,
+                    },
+                    {
+                        close: 1564876799,
+                        date : 1564790400,
+                        open : 1564790400,
+                    },
+                    {
+                        close: 1564963199,
+                        date : 1564876800,
+                        open : 1564876800,
+                    },
+                ],
+                market               : 'volidx',
+                max_contract_duration: '1d',
+                min_contract_duration: '2m',
+                sentiment            : 'up',
+                start_type           : 'forward',
+                submarket            : 'random_index',
+                underlying_symbol    : 'R_50',
+            },
+            {
+                barrier_category         : 'euro_non_atm',
+                barriers                 : 2,
+                contract_category        : 'callputspread',
+                contract_category_display: 'Call Spread/Put Spread',
+                contract_display         : 'Call Spread',
+                contract_type            : 'CALLSPREAD',
+                exchange_name            : 'RANDOM',
+                expiry_type              : 'intraday',
+                high_barrier             : '+0.0914',
+                low_barrier              : -0.0914,
+                market                   : 'volidx',
+                max_contract_duration    : '1d',
+                min_contract_duration    : '15s',
+                sentiment                : 'up',
+                start_type               : 'spot',
+                submarket                : 'random_index',
+                underlying_symbol        : 'R_50',
+            },
+            {
+                barrier                  : '324.9305',
+                barrier_category         : 'euro_non_atm',
+                barriers                 : 1,
+                contract_category        : 'callput',
+                contract_category_display: 'Up/Down',
+                contract_display         : 'Higher',
+                contract_type            : 'CALL',
+                exchange_name            : 'RANDOM',
+                expiry_type              : 'daily',
+                market                   : 'volidx',
+                max_contract_duration    : '365d',
+                min_contract_duration    : '1d',
+                sentiment                : 'up',
+                start_type               : 'spot',
+                submarket                : 'random_index',
+                underlying_symbol        : 'R_50',
+            },
+        ],
+    };
+    response.payout_currencies = ['BTC', 'USD'];
+    response.active_symbols    = [
+        {
+            pip   : 0.0001,
+            symbol: 'R_50',
+        },
+    ];
+    const connection           = new TestWebSocket(response);
+
+    const api = new DerivAPI({ connection });
+
+    contract_options = new ContractOptions(api, 'R_50');
+
+    await contract_options.init();
+});

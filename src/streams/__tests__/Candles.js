@@ -8,14 +8,6 @@ let api;
 let candle_stream;
 const count = 1000;
 
-beforeAll(async () => {
-    api = new DerivAPI();
-
-    candle_stream = new Candles(api, 'R_100');
-
-    await candle_stream.init();
-});
-
 test('Request for a candles history', async () => {
     expect(candle_stream).toBeInstanceOf(Candles);
 
@@ -53,4 +45,12 @@ test('Check individual candles', async () => {
     expect(first_candle.close.pip_sized).toEqual(first_candle.close.value.toFixed(2));
     expect(first_candle.time.isSameOrBefore(new Date())).toBeTruthy();
     expect(first_candle.open_time.isSameOrBefore(new Date())).toBeTruthy();
+});
+
+beforeAll(async () => {
+    api = new DerivAPI();
+
+    candle_stream = new Candles(api, 'R_100');
+
+    await candle_stream.init();
 });

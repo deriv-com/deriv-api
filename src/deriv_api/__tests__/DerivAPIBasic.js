@@ -2,14 +2,6 @@ import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 
-beforeAll(() => {
-    const connection = new WebSocket(
-        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
-    );
-
-    api = new DerivAPIBasic({ connection });
-});
-
 test('Constructing DerivAPIBasic', async () => {
     expect(api).toBeInstanceOf(DerivAPIBasic);
 
@@ -25,4 +17,12 @@ test('API construction with endpoint and appId', () => {
 
 test('API construction with endpoint', () => {
     expect(() => new DerivAPIBasic({ endpoint: 1, app_id: 1 })).toThrow();
+});
+
+beforeAll(() => {
+    const connection = new WebSocket(
+        'wss://blue.binaryws.com/websockets/v3?app_id=1&l=EN',
+    );
+
+    api = new DerivAPIBasic({ connection });
 });

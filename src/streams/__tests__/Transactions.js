@@ -29,7 +29,7 @@ test('Request for transactions', async () => {
 
     expect(current_transaction).toBeInstanceOf(Transaction);
 
-    setTimeout(() => connection.receive('transaction', { action: 'sell', ...tx_template }), 100);
+    connection.receiveLater('transaction', { action: 'sell', ...tx_template });
 
     const last_transaction = await transactions.onUpdate().pipe(first()).toPromise();
 

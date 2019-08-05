@@ -15,7 +15,15 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
 
         Object.keys(this.acceptable_responses).forEach((method) => {
             if (method in request) {
+                if (method === 'ticks_history' && request.subscribe) {
+                    if (request.style === 'ticks') {
+                        this.method_to_req_id.tick = req_id;
+                    } else {
+                        this.method_to_req_id.ohlc = req_id;
+                    }
+                }
                 this.method_to_req_id[method] = req_id;
+
                 this.receive(method, this.acceptable_responses[method]);
             }
         });
@@ -26,22 +34,38 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
     }
 
     receive(method, payload) {
+        let type = method;
+
+        if (method === 'ticks_history') {
+            if (payload instanceof Array) {
+                type = 'candles';
+            } else {
+                type = 'history';
+            }
+        }
+
         if ('error' in payload) {
             this.onmessage({
                 data: JSON.stringify({
                     error   : payload,
-                    msg_type: method,
+                    msg_type: type,
                     req_id  : this.method_to_req_id[method],
                 }),
             });
         } else {
             this.onmessage({
                 data: JSON.stringify({
-                    [method]: payload,
-                    msg_type: method,
+                    [type]  : payload,
+                    msg_type: type,
                     req_id  : this.method_to_req_id[method],
                 }),
             });
         }
+    }
+
+    receiveLater(...args) {
+        setTimeout(() => {
+            this.receive(...args);
+        }, 0);
     }
 }

@@ -1,7 +1,6 @@
 import DerivAPI      from '../../DerivAPI';
 import WebsiteStatus from '../WebsiteStatus';
 
-let api;
 let website_status;
 
 test('Request for website status', async () => {
@@ -30,7 +29,7 @@ test('Request for website status', async () => {
 });
 
 beforeAll(async () => {
-    api = new DerivAPI();
+    const api = new DerivAPI();
 
     website_status = new WebsiteStatus(api);
 

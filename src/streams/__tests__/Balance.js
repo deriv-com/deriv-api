@@ -34,7 +34,7 @@ test('Request for balance', async () => {
 
     expect(balance.value).toEqual(2000);
 
-    setTimeout(() => connection.receive('balance', { balance: 4000, currency: 'USD' }), 100);
+    connection.receiveLater('balance', { balance: 4000, currency: 'USD' });
 
     const new_balance = await balance.onUpdate().pipe(first()).toPromise();
 

@@ -1,8 +1,7 @@
 toc:
     - name: Main Modules
-      children:
-          - name: DerivAPI
-          - name: DerivAPIBasic
+    - DerivAPI
+    - DerivAPIBasic
     - name: Abstract Objects
     - name: Immutables
       description: |
@@ -24,23 +23,31 @@ toc:
           can subscribe to changes using the `onUpdate` method on all of
           these classes.
     - Balance
-    - CandleStream
+    - Candles
     - Contract
-    - TickStream
-    - TransactionStream
-    - WebsiteStatusStream
-    - name: Types
+    - Ticks
+    - Transactions
+    - WebsiteStatus
+    - name: Fields
       description: |
           Container classes for data types, providing means to convert them
           to other types and represent them to the UI. These are mostly
           simpler objects used for representing data.
-    - MarketValue
-    - Monetary
-    - FullName
+
+      
+    - Barrier
     - CustomDate
     - DateRange
     - Duration
     - DurationRange
+    - FullName
+    - MarketValue
+    - Monetary
+    - Profit
+    - Spot
+    - name: Types
+      description: |
+          Types internally used for immutable and stream objects
     - Immutable
     - Stream
     - name: Core Functionality
@@ -55,9 +62,9 @@ toc:
     - name: Parameters
     - CandlesParam
     - TicksParam
-    - ContractsParam
     - BuyParam
     - SellParam
+    - ContractParam
     - HistoryRange
     - name: Plain objects (returned from methods)
     - SpotDurations

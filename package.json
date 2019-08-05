@@ -5,10 +5,13 @@
   "description": "Websocket API for Deriv applications",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --forceExit",
+    "build": "webpack --config webpack.config.js",
+    "examples": "npm run build -- --display=none; for e in examples/*; do node $e; done",
     "coverage": "codecov",
     "devel": "npm test -- --watch --notify --onlyChanged",
-    "syntax": "eslint 'src/**/*.js'",
+    "lint": "eslint",
+    "syntax": "npm run lint 'src/**/*.js'",
     "test_all": "npm test && npm run syntax",
     "prettify": "eslint --fix 'src/**/*.js' src/",
     "docs": "documentation build src/DerivAPI.js --config docs/config.md.yml -f md -o docs/DerivAPI.md --markdown-toc-max-depth 4",
@@ -40,12 +43,16 @@
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-align-assignments": "^1.0.0",
+    "eslint-plugin-arca": "^0.8.1",
     "eslint-plugin-import": "^2.18.0",
     "husky": "^2.4.1",
     "jest": "^24.8.0",
-    "ws": "^7.0.1"
+    "webpack": "^4.36.1",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "dayjs": "^1.8.15",
     "json-stable-stringify": "^1.0.1",
     "rxjs": "^6.5.2"
   }

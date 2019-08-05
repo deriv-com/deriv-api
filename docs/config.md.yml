@@ -17,9 +17,9 @@ toc:
                 - Tick
                 - Candle
                 - Transaction
-                - ContractGroup
                 - Buy
                 - Sell
+                - ContractOptions
           - name: Streams
             description: |
                 Live stream of data, plus some dynamically updated fields, you
@@ -27,26 +27,27 @@ toc:
                 these classes.
             children:
                 - Balance
-                - CandleStream
+                - Candles
                 - Contract
-                - TickStream
-                - TransactionStream
-                - WebsiteStatusStream
-          - name: Types
+                - Ticks
+                - Transactions
+                - WebsiteStatus
+          - name: Fields
             description: |
                 Container classes for data types, providing means to convert them
                 to other types and represent them to the UI. These are mostly
                 simpler objects used for representing data.
             children:
-                - MarketValue
-                - Monetary
-                - FullName
+                - Barrier
                 - CustomDate
                 - DateRange
                 - Duration
                 - DurationRange
-                - Immutable
-                - Stream
+                - FullName
+                - MarketValue
+                - Monetary
+                - Profit
+                - Spot
     - name: Core Functionality
       children:
           - Cache
@@ -62,13 +63,7 @@ toc:
             children:
                 - CandlesParam
                 - TicksParam
-                - ContractsParam
                 - BuyParam
                 - SellParam
+                - ContractParam
                 - HistoryRange
-          - name: Plain objects (returned from methods)
-            children:
-                - SpotDurations
-                - ForwardDurations
-                - Durations
-                - DurationUnits

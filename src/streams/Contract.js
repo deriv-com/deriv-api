@@ -113,7 +113,11 @@ export default class Contract extends Stream {
         this._data.currency = request.currency;
 
         this.addSource(this.api.basic.subscribe(request).pipe(
-            map(p => proposalToContract(p, { ...request, ...this.active_symbol })),
+            map(p => proposalToContract(p, {
+                ...request,
+                ...this.active_symbol,
+                lang: this.api.basic.lang,
+            })),
         ));
 
         this._data.status = 'proposal';
@@ -140,7 +144,7 @@ export default class Contract extends Stream {
     async buy({ max_price: price = this.ask_price.value } = {}) {
         const { buy } = await this.api.basic.buy({ buy: this.proposal_id, price });
 
-        const wrappedBuy = new Buy(buy, this.currency);
+        const wrappedBuy = new Buy(buy, this.currency, this.api.basic.lang);
 
         this._data.id              = wrappedBuy.contract_id;
         this._data.buy_transaction = wrappedBuy.transaction_id;
@@ -163,7 +167,7 @@ export default class Contract extends Stream {
             proposal_open_contract: 1,
             contract_id           : buy.contract_id,
         }).pipe(
-            map(o => openContractToContract(o, this.active_symbol.pip)),
+            map(o => openContractToContract(o, this.active_symbol.pip, this.api.basic.lang)),
         ));
 
         return wrappedBuy;
@@ -178,7 +182,7 @@ export default class Contract extends Stream {
     async sell({ max_price: price = 0 } = {}) {
         const { sell } = await this.api.basic.sell({ sell: this.id, price });
 
-        const wrappedSell = new Sell(sell, this.currency);
+        const wrappedSell = new Sell(sell, this.currency, this.api.basic.lang);
 
         this._data.sell_transaction = wrappedSell.transaction_id;
         this._data.sell_price       = wrappedSell.price;
@@ -194,21 +198,21 @@ export default class Contract extends Stream {
     }
 }
 
-function proposalToContract({ proposal }, { currency, pip }) {
+function proposalToContract({ proposal }, { currency, pip, lang }) {
     return {
-        ask_price   : new Monetary(proposal.ask_price, currency),
+        ask_price   : new Monetary(proposal.ask_price, currency, lang),
         start_time  : new CustomDate(proposal.date_start),
         longcode    : proposal.longcode,
-        payout      : new Monetary(proposal.payout, currency),
+        payout      : new Monetary(proposal.payout, currency, lang),
         current_spot: new Spot(proposal.spot, pip, proposal.spot_time),
         proposal_id : proposal.id,
         status      : 'proposal',
     };
 }
 
-function openContractToContract({ proposal_open_contract: poc }, pip) {
+function openContractToContract({ proposal_open_contract: poc }, pip, lang) {
     const toBarrier = value => new MarketValue(value, pip);
-    const toMoney   = value => new Monetary(value, poc.currency);
+    const toMoney   = value => new Monetary(value, poc.currency, lang);
     const toProfit  = (value, percentage) => new Profit(value, poc.currency, percentage);
     const toSpot    = (value, time) => new Spot(value, pip, time);
     const toTime    = time => new CustomDate(time);

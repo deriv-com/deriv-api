@@ -32,7 +32,7 @@ test('Account balance', async () => {
 
     expect(balance).toBeInstanceOf(Balance);
 
-    expect(balance.display).toBe(`${response.authorize.balance.toFixed(2)}`);
+    expect(balance.display).toBe('1,000.00');
     expect(balance.currency).toBe(response.authorize.currency);
 });
 

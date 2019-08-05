@@ -606,6 +606,7 @@ A wrapper class for Candle
 
 -   `transaction`  
 -   `pip`  
+-   `lang`  
 
 #### Transaction
 
@@ -632,6 +633,7 @@ A class for transaction objects
     -   `transaction.expiry_time` **[Number][262]** 
     -   `transaction.transaction_time` **[Number][262]** 
 -   `pip` **[Number][262]** 
+-   `lang`  
 
 ##### Properties
 
@@ -669,6 +671,7 @@ Wrapper around a Buy response
     -   `buy.longcode` **[String][249]** 
     -   `buy.shortcode` **[String][249]** 
 -   `currency` **[String][249]** 
+-   `lang`  
 
 ##### Properties
 
@@ -698,6 +701,7 @@ Wrapper around a Sell response
     -   `sell.transaction_id` **[Number][262]** sell transaction
     -   `sell.reference_id` **[Number][262]** buy transaction
 -   `currency` **[String][249]** 
+-   `lang`  
 
 ##### Properties
 
@@ -1188,6 +1192,7 @@ Keeps money related values
 
 -   `value` **[Number][262]** 
 -   `currency` **[String][249]** 
+-   `lang`  
 
 ##### Properties
 

@@ -33,8 +33,8 @@ import WebsiteStatus from './streams/WebsiteStatus';
  * @property {DerivAPIBasic} basic - Basic API, used for making low-level calls to the API
  */
 export default class DerivAPI {
-    constructor(options) {
-        this.basic = new DerivAPIBasic(options);
+    constructor(...options) {
+        this.basic = new DerivAPIBasic(...options);
     }
 
     /**

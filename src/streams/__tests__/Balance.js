@@ -28,7 +28,7 @@ test('Request for balance', async () => {
 
     expect(balance.value).toEqual(balance.amount.value);
     expect(balance.value).toEqual(1000);
-    expect(balance.display).toEqual('1000.00');
+    expect(balance.display).toEqual('1,000.00');
 
     connection.receive('balance', { balance: 2000, currency: 'USD' });
 
@@ -40,7 +40,7 @@ test('Request for balance', async () => {
 
     expect(new_balance.currency).toEqual(balance.currency);
     expect(new_balance.value).toEqual(4000);
-    expect(new_balance.display).toEqual('4000.00');
+    expect(new_balance.display).toEqual('4,000.00');
 });
 
 beforeAll(async () => {

@@ -1,4 +1,5 @@
-import Immutable from '../types/Immutable';
+import Immutable        from '../types/Immutable';
+import { displayMoney } from '../utils';
 
 /**
  * Keeps money related values
@@ -12,17 +13,18 @@ import Immutable from '../types/Immutable';
  * @property {String} format   - comma separated decimal value based on currency
  */
 export default class Monetary extends Immutable {
-    constructor(value, currency) {
+    constructor(value, currency, lang) {
         super();
         this._data.value    = +value;
         this._data.currency = currency;
+        this._data.lang     = lang;
     }
 
     get display() {
-        return this._data.value.toFixed(2);
+        return displayMoney(this._data.value, this._data.currency, this._data.lang);
     }
 
     get format() {
-        return this._data.display();
+        return this._data.display;
     }
 }

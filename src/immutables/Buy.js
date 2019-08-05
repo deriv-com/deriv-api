@@ -35,12 +35,12 @@ import Immutable  from '../types/Immutable';
  * @property {String}     shortcode
  */
 export default class Buy extends Immutable {
-    constructor(buy, currency) {
+    constructor(buy, currency, lang) {
         const instance = { raw: buy };
 
-        instance.price         = new Monetary(buy.buy_price, currency);
-        instance.balance_after = new Monetary(buy.balance_after, currency);
-        instance.payout        = new Monetary(buy.payout, currency);
+        instance.price         = new Monetary(buy.buy_price, currency, lang);
+        instance.balance_after = new Monetary(buy.balance_after, currency, lang);
+        instance.payout        = new Monetary(buy.payout, currency, lang);
 
         instance.start_time    = new CustomDate(buy.start_time);
         instance.purchase_time = new CustomDate(buy.purchase_time);

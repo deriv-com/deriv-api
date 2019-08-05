@@ -54,6 +54,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.connection.onclose   = this.onClose.bind(this);
         this.connection.onmessage = this.onMessage.bind(this);
 
+        this.lang            = lang;
         this.reqId           = 0;
         this.connected       = new CustomPromise();
         this.sanityErrors    = new Subject();

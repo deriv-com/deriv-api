@@ -45,7 +45,7 @@ import Immutable   from '../types/Immutable';
  * @property {Object}      raw          - The raw data received from API
  */
 export default class Transaction extends Immutable {
-    constructor(transaction, pip) {
+    constructor(transaction, pip, lang) {
         const {
             action,
             currency,
@@ -73,8 +73,8 @@ export default class Transaction extends Immutable {
 
         instance.symbol = new FullName(symbol, display_name);
 
-        instance.amount  = new Monetary(amount, currency);
-        instance.balance = new Monetary(balance, currency);
+        instance.amount  = new Monetary(amount, currency, lang);
+        instance.balance = new Monetary(balance, currency, lang);
 
         if (high_barrier) instance.high_barrier = new MarketValue(high_barrier, pip);
         if (low_barrier) instance.low_barrier = new MarketValue(low_barrier, pip);

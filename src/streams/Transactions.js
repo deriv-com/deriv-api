@@ -40,7 +40,7 @@ export default class Transactions extends Stream {
 
         this.addSource(transactions.pipe(
             skip(1),
-            map(t => wrapTransaction(t, this._data.active_symbols)),
+            map(t => wrapTransaction(t, this._data.active_symbols, this.api.basic.lang)),
             share(),
         ));
 
@@ -57,8 +57,8 @@ export default class Transactions extends Stream {
     }
 }
 
-function wrapTransaction({ transaction }, active_symbols) {
+function wrapTransaction({ transaction }, active_symbols, lang) {
     const { pip } = active_symbols.find(s => s.symbol === transaction.symbol);
 
-    return new Transaction(mapApiFields(transaction, field_mapping), pip);
+    return new Transaction(mapApiFields(transaction, field_mapping), pip, lang);
 }

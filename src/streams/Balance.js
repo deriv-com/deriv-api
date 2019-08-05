@@ -28,9 +28,10 @@ export default class Balance extends Stream {
 
     // Called by the API to initialize the instance
     async init(initial_balance) {
-        this._data.amount = wrapBalance({ balance: initial_balance });
+        this._data.amount = wrapBalance({ balance: initial_balance }, this.api.basic.lang);
 
-        const source = this.api.basic.subscribe({ balance: 1 }).pipe(map(wrapBalance), share());
+        const source = this.api.basic.subscribe({ balance: 1 })
+            .pipe(map(b => wrapBalance(b, this.api.basic.lang)), share());
 
         this._data.amount = await source.pipe(first()).toPromise();
 
@@ -58,6 +59,6 @@ export default class Balance extends Stream {
     }
 }
 
-function wrapBalance({ balance: { balance, currency } }) {
-    return new Monetary(balance, currency);
+function wrapBalance({ balance: { balance, currency } }, lang) {
+    return new Monetary(balance, currency, lang);
 }

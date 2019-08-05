@@ -61,3 +61,36 @@ export function mapApiFields(request, mapping) {
 export function toPipSized(pip) {
     return Math.abs(Math.log10(pip));
 }
+
+const moneyOptions = {
+    BTC: {
+        maximumFractionDigits: 8,
+        minimumFractionDigits: 8,
+    },
+    ETH: {
+        maximumFractionDigits: 8,
+        minimumFractionDigits: 8,
+    },
+    LTC: {
+        maximumFractionDigits: 8,
+        minimumFractionDigits: 8,
+    },
+    UST: {
+        maximumFractionDigits: 8,
+        minimumFractionDigits: 8,
+    },
+    default: {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2,
+    },
+};
+
+export function displayMoney(value, currency, lang) {
+    const options = currency in moneyOptions ? moneyOptions[currency] : moneyOptions.default;
+
+    if (typeof Intl === 'undefined') {
+        return value.toFixed(options.maximumFractionDigits);
+    }
+
+    return new Intl.NumberFormat(lang, { ...options, currency }).format(value);
+}

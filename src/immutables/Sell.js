@@ -24,11 +24,11 @@ import Immutable  from '../types/Immutable';
  * @property {Number}   buy_transaction
  */
 export default class Sell extends Immutable {
-    constructor(sell, currency) {
+    constructor(sell, currency, lang) {
         const instance = { raw: sell };
 
-        instance.price         = new Monetary(sell.sold_for, currency);
-        instance.balance_after = new Monetary(sell.balance_after, currency);
+        instance.price         = new Monetary(sell.sold_for, currency, lang);
+        instance.balance_after = new Monetary(sell.balance_after, currency, lang);
 
         instance.contract_id     = sell.contract_id;
         instance.transaction_id  = sell.transaction_id;

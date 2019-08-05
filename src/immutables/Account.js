@@ -3,8 +3,6 @@ import Balance         from '../streams/Balance';
 import Transactions    from '../streams/Transactions';
 import Immutable       from '../types/Immutable';
 
-import ContractOptions from './ContractOptions';
-
 /**
  * Abstract class for user accounts
  *
@@ -39,7 +37,6 @@ import ContractOptions from './ContractOptions';
  * @property {Contract[]}      open_contracts
  * @property {Contract[]}      closed_contracts
  * @property {String[]}        api_tokens
- * @property {ContractOptions} A contract object with its currency set to the account currency
  */
 export default class Account extends Immutable {
     constructor(api, token) {
@@ -81,9 +78,5 @@ export default class Account extends Immutable {
 
         this._data.transactions = new Transactions(this.api);
         this._data.transactions.init();
-    }
-
-    get contract_options() {
-        return new ContractOptions({ currency: this._data.currency });
     }
 }

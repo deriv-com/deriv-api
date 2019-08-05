@@ -26,7 +26,6 @@ import ContractOptions from './ContractOptions';
  * @property {Number}          pip
  * @property {Number}          pip_size
  * @property {Object}          contract_groups
- * @property {ContractOptions} A contract object with its symbol set to the underlying
  */
 export default class Underlying extends Immutable {
     constructor(api, symbol) {
@@ -66,7 +65,7 @@ export default class Underlying extends Immutable {
         return this.api.candles(this.symbol);
     }
 
-    get contract_options() {
-        return new ContractOptions({ symbol: this.symbol });
+    async contractOptions() {
+        return new ContractOptions(this.api, this.symbol);
     }
 }

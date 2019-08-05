@@ -7,7 +7,6 @@ import Monetary         from '../fields/Monetary';
 import Profit           from '../fields/Profit';
 import Spot             from '../fields/Spot';
 import Buy              from '../immutables/Buy';
-import ContractOptions  from '../immutables/ContractOptions';
 import Sell             from '../immutables/Sell';
 import Tick             from '../immutables/Tick';
 import Stream           from '../types/Stream';
@@ -46,7 +45,7 @@ const field_mapping = {
  * contract.onUpdate().subscribe(console.log)
  *
  * @param {DerivAPI}      api
- * @param {ContractOptions|ContractParam} options
+ * @param {ContractParam} options
  *
  * @property {String}       status              'proposal', 'open', 'expired', 'sold', 'won', 'lost'
  * @property {Monetary}     ask_price           Price to pay to buy a contract
@@ -94,9 +93,7 @@ export default class Contract extends Stream {
 
     // Called by the API to initialize the instance
     async init({ currency, symbol } = {}) {
-        const contract_param = this.options instanceof ContractOptions
-            ? this.options.contract_param
-            : mapApiFields({ ...this.options }, field_mapping);
+        const contract_param = mapApiFields({ ...this.options }, field_mapping);
 
         const request = {
             currency,

@@ -1,11 +1,12 @@
-import DerivAPIBasic from './deriv_api/DerivAPIBasic';
-import Account       from './immutables/Account';
-import Assets        from './immutables/Assets';
-import Underlying    from './immutables/Underlying';
-import Candles       from './streams/Candles';
-import Contract      from './streams/Contract';
-import Ticks         from './streams/Ticks';
-import WebsiteStatus from './streams/WebsiteStatus';
+import DerivAPIBasic   from './deriv_api/DerivAPIBasic';
+import Account         from './immutables/Account';
+import Assets          from './immutables/Assets';
+import ContractOptions from './immutables/ContractOptions';
+import Underlying      from './immutables/Underlying';
+import Candles         from './streams/Candles';
+import Contract        from './streams/Contract';
+import Ticks           from './streams/Ticks';
+import WebsiteStatus   from './streams/WebsiteStatus';
 
 /**
  * The main class of the DerivAPI module. This class extends the minimum
@@ -68,7 +69,7 @@ export default class DerivAPI {
     /**
      * A contract object with latest market values, cannot be bought or sold
      *
-     * @param {ContractOptions} options - parameters defining the contract
+     * @param {ContractParam} options - parameters defining the contract
      * @returns {Promise<Contract>}
      */
     async contract(options) {
@@ -131,5 +132,18 @@ export default class DerivAPI {
         await website_status.init();
 
         return website_status;
+    }
+
+    /**
+     * Request contract options to display in UI
+     *
+     * @returns {Promise<ContractOptions>}
+     */
+    async contractOptions(symbol) {
+        const contract_options = new ContractOptions(this, symbol);
+
+        await contract_options.init();
+
+        return contract_options;
     }
 }

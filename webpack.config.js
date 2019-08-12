@@ -6,9 +6,11 @@ module.exports = [
         mode  : 'production',
         entry : './src/deriv_api/DerivAPIBasic.js',
         output: {
-            library      : 'DerivAPIBasic',
-            libraryTarget: 'umd',
             filename     : 'DerivAPIBasic.js',
+            globalObject : "typeof self !== 'undefined' ? self : this", // Because webpack sucks
+            library      : 'DerivAPIBasic',
+            libraryExport: 'default',
+            libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
     },
@@ -19,9 +21,11 @@ module.exports = [
         mode  : 'production',
         entry : './src/DerivAPI.js',
         output: {
-            library      : 'DerivAPI',
-            libraryTarget: 'umd',
             filename     : 'DerivAPI.js',
+            globalObject : "typeof self !== 'undefined' ? self : this", // Because webpack sucks
+            library      : 'DerivAPI',
+            libraryExport: 'default',
+            libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
     },

@@ -7,7 +7,7 @@ module.exports = [
         entry : './src/deriv_api/DerivAPIBasic.js',
         output: {
             library      : 'DerivAPIBasic',
-            libraryTarget: 'commonjs2',
+            libraryTarget: 'umd',
             filename     : 'DerivAPIBasic.js',
             path         : path.resolve(__dirname, 'dist'),
         },
@@ -20,7 +20,7 @@ module.exports = [
         entry : './src/DerivAPI.js',
         output: {
             library      : 'DerivAPI',
-            libraryTarget: 'commonjs2',
+            libraryTarget: 'umd',
             filename     : 'DerivAPI.js',
             path         : path.resolve(__dirname, 'dist'),
         },

@@ -44,7 +44,7 @@ export default class ContractOptions extends Immutable {
     async init() {
         const { contracts_for } = await this.api.basic.cache.contractsFor(this.symbol);
 
-        const { active_symbols } = await this.api.basic.cache.activeSymbols();
+        const { active_symbols } = await this.api.basic.cache.activeSymbols('brief');
         const { pip }            = active_symbols.find(seconds => seconds.symbol === this.symbol);
 
         const { payout_currencies } = await this.api.basic.cache.payoutCurrencies();

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>binary-api 1.0.0 | Documentation</title>
+  <title>deriv-api 1.0.0-beta.3 | Documentation</title>
   <meta name='description' content='Websocket API for Deriv applications'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -14,8 +14,8 @@
     <div class='flex'>
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>binary-api</h3>
-          <div class='mb1'><code>1.0.0</code></div>
+          <h3 class='mb0 no-anchor'>deriv-api</h3>
+          <div class='mb1'><code>1.0.0-beta.3</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -249,36 +249,6 @@
                   href='#transaction'
                   class="">
                   Transaction
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#transaction'
-                  class="">
-                  Transaction
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#contractoptions'
-                  class="">
-                  ContractOptions
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#contractoptions'
-                  class="">
-                  ContractOptions
                   
                 </a>
                 
@@ -1671,6 +1641,36 @@
                   href='#websitestatus'
                   class="">
                   websiteStatus
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#transactionparams'
+                  class="">
+                  TransactionParams
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#expirytype'
+                  class="">
+                  ExpiryType
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#contractcategory'
+                  class="">
+                  ContractCategory
                   
                 </a>
                 
@@ -3652,89 +3652,6 @@ and they do not receive updates.</p>
   </div>
   
 
-  
-    <div class='pre p1 fill-light mt0'>new Transaction(transaction: any, pip: any, lang: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#immutable">Immutable</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>transaction</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>pip</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>lang</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='transaction'>
-      Transaction
-    </h3>
-    
-    
-  </div>
-  
-
   <p>A class for transaction objects</p>
 
     <div class='pre p1 fill-light mt0'>new Transaction(transaction: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, pip: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, lang: any)</div>
@@ -4047,239 +3964,6 @@ and they do not receive updates.</p>
   </div>
   
 
-  
-    <div class='pre p1 fill-light mt0'>new ContractOptions(api: any, symbol: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#immutable">Immutable</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>api</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>symbol</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>duration</span> <code class='quiet'>(<a href="#durationrange">DurationRange</a>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>barriers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-          
-          
-            <ul>
-              
-                <li><code>barriers.high</code> <a href="#barrier">Barrier</a>
-                  
-                  </li>
-              
-                <li><code>barriers.low</code> <a href="#barrier">Barrier</a>
-                  
-                  </li>
-              
-                <li><code>barriers.single</code> <a href="#barrier">Barrier</a>
-                  
-                  </li>
-              
-            </ul>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='contractoptions'>
-      ContractOptions
-    </h3>
-    
-    
-  </div>
-  
-
-  
-    <div class='pre p1 fill-light mt0'>new ContractOptions(api: any, symbol: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#immutable">Immutable</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>api</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>symbol</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>name</span> <code class='quiet'>(<a href="#fullname">FullName</a>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>has_end_time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
-          : Is end time available for the contract (hardcoded X) )
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>contract_types</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>bases</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>forward_starting</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-          
-          
-            <ul>
-              
-                <li><code>forward_starting.1564531200</code> <a href="#daterange">DateRange</a>
-                  
-                  </li>
-              
-            </ul>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>expiry_types</span> <code class='quiet'>(ExpiryType)</code>
-          
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='contractoptions'>
-      ContractOptions
-    </h3>
-    
-    
-  </div>
-  
-
   <p>Abstract objects for options needed to create a contract</p>
 
     <div class='pre p1 fill-light mt0'>new ContractOptions(api: any, symbol: any)</div>
@@ -4333,7 +4017,7 @@ and they do not receive updates.</p>
           
             <ul>
               
-                <li><code>categories.higherlower</code> ContractCategory
+                <li><code>categories.higherlower</code> <a href="#contractcategory">ContractCategory</a>
                   
                   </li>
               
@@ -20388,6 +20072,245 @@ in this codebase.</p>
     </div>
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='transactionparams'>
+      TransactionParams
+    </h3>
+    
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>TransactionParams</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='expirytype'>
+      ExpiryType
+    </h3>
+    
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>ExpiryType</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>duration</span> <code class='quiet'>(<a href="#durationrange">DurationRange</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>barriers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          
+          
+            <ul>
+              
+                <li><code>barriers.high</code> <a href="#barrier">Barrier</a>
+                  
+                  </li>
+              
+                <li><code>barriers.low</code> <a href="#barrier">Barrier</a>
+                  
+                  </li>
+              
+                <li><code>barriers.single</code> <a href="#barrier">Barrier</a>
+                  
+                  </li>
+              
+            </ul>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='contractcategory'>
+      ContractCategory
+    </h3>
+    
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>ContractCategory</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>name</span> <code class='quiet'>(<a href="#fullname">FullName</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>has_end_time</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</code>
+          : Is end time available for the contract (hardcoded X) )
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>contract_types</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>bases</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>forward_starting</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          
+          
+            <ul>
+              
+                <li><code>forward_starting.1564531200</code> <a href="#daterange">DateRange</a>
+                  
+                  </li>
+              
+            </ul>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>expiry_types</span> <code class='quiet'>(<a href="#expirytype">ExpiryType</a>)</code>
+          
+          
+        </div>
+      
+    </div>
   
 
   

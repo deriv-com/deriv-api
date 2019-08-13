@@ -6,7 +6,7 @@ import FullName       from '../fields/FullName';
 import Immutable      from '../types/Immutable';
 
 /**
- * @typeof {Object} ExpiryType
+ * @typedef {Object} ExpiryType
  *
  * @property {DurationRange} duration
  * @property {Object} barriers
@@ -16,7 +16,7 @@ import Immutable      from '../types/Immutable';
  */
 
 /**
- * @typeof {Object} ContractCategory
+ * @typedef {Object} ContractCategory
  *
  * @property {FullName} name
  * @property {Boolean} has_end_time - Is end time available for the contract (hardcoded X) )

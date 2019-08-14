@@ -6,7 +6,7 @@ import FullName       from '../fields/FullName';
 import Immutable      from '../types/Immutable';
 
 /**
- * @typeof {Object} ExpiryType
+ * @typedef {Object} ExpiryType
  *
  * @property {DurationRange} duration
  * @property {Object} barriers
@@ -16,7 +16,7 @@ import Immutable      from '../types/Immutable';
  */
 
 /**
- * @typeof {Object} ContractCategory
+ * @typedef {Object} ContractCategory
  *
  * @property {FullName} name
  * @property {Boolean} has_end_time - Is end time available for the contract (hardcoded X) )
@@ -44,7 +44,7 @@ export default class ContractOptions extends Immutable {
     async init() {
         const { contracts_for } = await this.api.basic.cache.contractsFor(this.symbol);
 
-        const { active_symbols } = await this.api.basic.cache.activeSymbols();
+        const { active_symbols } = await this.api.basic.cache.activeSymbols('brief');
         const { pip }            = active_symbols.find(seconds => seconds.symbol === this.symbol);
 
         const { payout_currencies } = await this.api.basic.cache.payoutCurrencies();

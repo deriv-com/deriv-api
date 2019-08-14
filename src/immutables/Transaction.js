@@ -5,7 +5,7 @@ import Monetary    from '../fields/Monetary';
 import Immutable   from '../types/Immutable';
 
 /**
- * @typeof {Object} TransactionParams
+ * @typedef {Object} TransactionParams
  */
 
 /**

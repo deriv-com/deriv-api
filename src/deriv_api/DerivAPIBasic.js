@@ -1,7 +1,11 @@
 import './Storage';
 import './SubscriptionManager';
 
-import { first }        from 'rxjs/operators';
+import {
+    first,
+    filter,
+    share,
+}                       from 'rxjs/operators';
 import { Subject }      from 'rxjs';
 
 import Cache            from './Cache';
@@ -28,6 +32,8 @@ import {
  * @param {String}     options.endpoint   - API server to connect to
  * @param {Number}     options.app_id     - Application ID of the API user
  * @param {String}     options.lang       - Language of the API communication
+ *
+ * @property {Observable} events
  */
 export default class DerivAPIBasic extends DerivAPICalls {
     constructor({
@@ -50,9 +56,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
             this.connect();
         }
 
-        this.connection.onopen    = this.onOpen.bind(this);
-        this.connection.onclose   = this.onClose.bind(this);
-        this.connection.onmessage = this.onMessage.bind(this);
+        this.connection.onopen    = this.openHandler.bind(this);
+        this.connection.onclose   = this.closeHandler.bind(this);
+        this.connection.onmessage = this.messageHandler.bind(this);
 
         this.lang            = lang;
         this.reqId           = 0;
@@ -60,6 +66,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.sanityErrors    = new Subject();
         this.cache           = new Cache(this);
         this.pendingRequests = {};
+        this.events          = new Subject();
     }
 
     connect() {
@@ -93,6 +100,11 @@ export default class DerivAPIBasic extends DerivAPICalls {
         const sendRequest = pending.pipe(first()).toPromise();
 
         this.connection.send(JSON.stringify(request));
+
+        this.events.next({
+            name: 'send',
+            data: request,
+        });
 
         const response = await sendRequest;
         this.cache.set(request, response);
@@ -145,15 +157,19 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return this.pendingRequests[request.req_id];
     }
 
-    onOpen() {
+    openHandler() {
+        this.events.next({
+            name: 'open',
+        });
+
         if (this.connection.readyState === 1) {
             this.connected.resolve();
         } else {
-            setTimeout(this.onOpen.bind(this), 50);
+            setTimeout(this.openHandler.bind(this), 50);
         }
     }
 
-    onMessage(msg) {
+    messageHandler(msg) {
         if (!msg.data) {
             this.sanityErrors.next(
                 new APIError(
@@ -164,7 +180,13 @@ export default class DerivAPIBasic extends DerivAPICalls {
         }
 
         const response = JSON.parse(msg.data);
-        const reqId    = response.req_id;
+
+        this.events.next({
+            name: 'message',
+            data: response,
+        });
+
+        const reqId = response.req_id;
 
         if (reqId in this.pendingRequests) {
             if (response.error) {
@@ -182,10 +204,35 @@ export default class DerivAPIBasic extends DerivAPICalls {
      * passed as an argument, in that case reconnecting should be handled in the
      * API user side.
      * */
-    onClose() {
+    closeHandler() {
+        this.events.next({
+            name: 'close',
+        });
+
         if (this.shouldReconnect) {
             this.connect();
         }
+    }
+
+    /**
+     * @returns {Observable} for close events
+     */
+    onClose() {
+        return this.events.pipe(filter(e => e.name === 'close'), share());
+    }
+
+    /**
+     * @returns {Observable} for open events
+     */
+    onOpen() {
+        return this.events.pipe(filter(e => e.name === 'open'), share());
+    }
+
+    /**
+     * @returns {Observable} for new messages
+     */
+    onMessage() {
+        return this.events.pipe(filter(e => e.name === 'message'), share());
     }
 }
 

@@ -381,6 +381,7 @@ API.
     -   `options.endpoint` **[String][256]** API server to connect to (optional, default `'blue.binaryws.com'`)
     -   `options.app_id` **[Number][270]** Application ID of the API user (optional, default `1`)
     -   `options.lang` **[String][256]** Language of the API communication (optional, default `'EN'`)
+    -   `options.storage`  
 
 #### Properties
 

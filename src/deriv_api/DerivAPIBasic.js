@@ -37,6 +37,7 @@ import {
  */
 export default class DerivAPIBasic extends DerivAPICalls {
     constructor({
+        storage,
         connection,
         endpoint = 'blue.binaryws.com',
         app_id   = 1,
@@ -68,6 +69,11 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.pendingRequests = {};
         this.events          = new Subject();
         this.fetch_types     = {};
+
+        if (storage) {
+            // We first lookup this.cache, then hit the API
+            this.storage = new Cache(this.cache, storage);
+        }
     }
 
     connect() {
@@ -109,6 +115,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
         const response = await sendRequest;
         this.cache.set(request, response);
+        if (this.storage) {
+            this.storage.set(request, response);
+        }
 
         return response;
     }

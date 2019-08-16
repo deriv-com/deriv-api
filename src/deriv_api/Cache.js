@@ -14,42 +14,37 @@ import { ConstructionError } from './errors';
  * // Read the data from cache if available
  * const cached_symbols = await api.cache.activeSymbols();
  *
- * @param {DerivAPIBasic} api - API instance to get data that is not cached
+ * @param {DerivAPIBasic} api API instance to get data that is not cached
+ * @param {Object} storage A storage instance to use for caching
  */
 export default class Cache extends DerivAPICalls {
-    constructor(api) {
+    constructor(api, storage) {
         if (!api) {
             throw new ConstructionError('Cache object needs an API to work');
         }
         super();
         this.api     = api;
-        this.storage = {};
+        this.storage = storage;
     }
 
-    async send(obj) {
-        if (this.has(obj)) {
-            return this.get(obj);
+    async send(request) {
+        if (await this.has(request)) {
+            return this.get(request);
         }
 
-        return this.api.send(obj);
+        return this.api.send(request);
     }
 
-    has(request) {
-        const key = objectToCacheKey(request);
-
-        return (key in this.storage);
+    async has(request) {
+        return this.storage.has(objectToCacheKey(request));
     }
 
-    get(request) {
-        const key = objectToCacheKey(request);
-
-        return this.storage[key];
+    async get(request) {
+        return this.storage.get(objectToCacheKey(request));
     }
 
-    set(request, response) {
-        const key = objectToCacheKey(request);
-
-        this.storage[key] = response;
+    async set(request, response) {
+        return this.storage.set(objectToCacheKey(request), response);
     }
 }
 

@@ -1,4 +1,3 @@
-import './Storage';
 import './SubscriptionManager';
 
 import {
@@ -11,6 +10,7 @@ import { Subject }      from 'rxjs';
 import Cache            from './Cache';
 import CustomPromise    from './CustomPromise';
 import DerivAPICalls    from './DerivAPICalls';
+import InMemory         from './InMemory';
 import {
     APIError,
     CallError,
@@ -64,7 +64,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.reqId           = 0;
         this.connected       = new CustomPromise();
         this.sanityErrors    = new Subject();
-        this.cache           = new Cache(this);
+        this.cache           = new Cache(this, new InMemory());
         this.pendingRequests = {};
         this.events          = new Subject();
         this.fetch_types     = {};
@@ -190,6 +190,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         const reqId = response.req_id;
 
         if (reqId in this.pendingRequests) {
+            const fetch = this.fetch_types[response.msg_type];
+            if (fetch && fetch.isPending()) {
+                fetch.resolve(response);
+            }
             if (response.error) {
                 this.pendingRequests[reqId].error(new ResponseError(response));
             } else {
@@ -238,13 +242,19 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
     /**
      * @param {String} types One or more types to fetch the data for
+     *
+     * @returns {Promise<Object>|Promise<Array>} Resolves to a single response or an array
      */
-    fetch(...types) {
+    async fetch(...types) {
         types.forEach((type) => {
-            if (type in this.fetch_types) {
+            if (!(type in this.fetch_types)) {
                 this.fetch_types[type] = new CustomPromise();
             }
         });
+
+        // Single item fetch is returned as a single item, not a list
+        if (types.length === 1) return this.fetch_types[types[0]];
+
         return Promise.all(types.map(type => this.fetch_types[type]));
     }
 }

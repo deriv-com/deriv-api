@@ -67,6 +67,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.cache           = new Cache(this);
         this.pendingRequests = {};
         this.events          = new Subject();
+        this.fetch_types     = {};
     }
 
     connect() {
@@ -233,6 +234,18 @@ export default class DerivAPIBasic extends DerivAPICalls {
      */
     onMessage() {
         return this.events.pipe(filter(e => e.name === 'message'), share());
+    }
+
+    /**
+     * @param {String} types One or more types to fetch the data for
+     */
+    fetch(...types) {
+        types.forEach((type) => {
+            if (type in this.fetch_types) {
+                this.fetch_types[type] = new CustomPromise();
+            }
+        });
+        return Promise.all(types.map(type => this.fetch_types[type]));
     }
 }
 

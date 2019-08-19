@@ -16,8 +16,6 @@ export class APIError extends errorFactory('APIError') {}
 
 export class ConstructionError extends errorFactory('ConstructionError') {}
 
-export class CallError extends errorFactory('CallError') {}
-
 export class ResponseError extends Error {
     constructor(response) {
         const { code, message, details } = response.error;

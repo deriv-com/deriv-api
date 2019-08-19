@@ -1,22 +1,22 @@
-import './SubscriptionManager';
-
 import {
     first,
     filter,
     share,
-}                       from 'rxjs/operators';
-import { Subject }      from 'rxjs';
+} from 'rxjs/operators';
 
-import Cache            from './Cache';
-import CustomPromise    from './CustomPromise';
-import DerivAPICalls    from './DerivAPICalls';
-import InMemory         from './InMemory';
+import { Subject }         from 'rxjs';
+
+import Cache               from './Cache';
+import CustomPromise       from './CustomPromise';
+import DerivAPICalls       from './DerivAPICalls';
+import InMemory            from './InMemory';
+import SubscriptionManager from './SubscriptionManager';
+
 import {
     APIError,
-    CallError,
     ConstructionError,
     ResponseError,
-}                       from './errors';
+} from './errors';
 
 /**
  * The minimum functionality provided by DerivAPI, provides direct calls to the
@@ -69,6 +69,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.pendingRequests       = {};
         this.events                = new Subject();
         this.expect_response_types = {};
+        this.subscription_manager  = new SubscriptionManager(this);
 
         if (storage) {
             // We first lookup this.cache, then hit the API
@@ -95,25 +96,30 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.connection.close();
     }
 
-    async send(request) {
+    sendAndGetSource(request) {
         const pending = new Subject();
 
         request.req_id = request.req_id || ++this.reqId;
 
         this.pendingRequests[request.req_id] = pending;
 
-        await this.connected;
+        this.connected
+            .then(() => {
+                this.connection.send(JSON.stringify(request));
+            })
+            .catch(e => pending.error(e));
 
-        const sendRequest = pending.pipe(first()).toPromise();
+        return pending;
+    }
 
-        this.connection.send(JSON.stringify(request));
-
+    async send(request) {
         this.events.next({
             name: 'send',
             data: request,
         });
 
-        const response = await sendRequest;
+        const response = await this.sendAndGetSource(request).pipe(first()).toPromise();
+
         this.cache.set(request, response);
         if (this.storage) {
             this.storage.set(request, response);
@@ -122,49 +128,16 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return response;
     }
 
-    /**
-     * Subscribe and call the given callback on each response
-     *
-     * @example
-     * await api.subscribeWithCallback({ ticks: 'R_100' }, console.log)
-     *
-     * @param {Object}   request  - A request object acceptable by the API
-     * @param {Function} callback - A callback to call on every new response
-     *
-     * @returns {Promise} - Resolves to the first response or is rejected with an error
-     * */
-    async subscribeWithCallback(request, callback) {
-        if (!callback) {
-            throw new CallError('A callback is required for subscription');
-        }
-
-        const source = this.subscribe(request);
-
-        // Ignoring the failures in observable, because we send a promise back
-        source.subscribe(callback, () => {});
-
-        return source.pipe(first()).toPromise();
+    subscribe(request) {
+        return this.subscription_manager.subscribe(request);
     }
 
-    /**
-     * Subscribe to a given request, returns a stream of new responses,
-     * Errors should be handled by the user of the stream
-     *
-     * @example
-     * const ticks = api.subscribe({ ticks: 'R_100' });
-     * ticks.subscribe(console.log) // Print every new tick
-     *
-     * @param {Object} request - A request object acceptable by the API
-     *
-     * @returns {Observable} - An RxJS Observable
-     */
-    subscribe(request) {
-        request.subscribe = 1;
+    async forget(id) {
+        return this.subscription_manager.forget(id);
+    }
 
-        // Ignore the promise failure, we expect the observable to handle error
-        this.send(request).catch(() => {});
-
-        return this.pendingRequests[request.req_id];
+    async forgetAll(...types) {
+        return this.subscription_manager.forgetAll(...types);
     }
 
     openHandler() {

@@ -13,12 +13,6 @@ test('Request ticks for InvalidSymbol', async () => {
     );
 });
 
-test('Subscribe to ticks with callback', async () => {
-    await expect(
-        api.subscribeWithCallback({ ticks: 'InvalidSymbolCallback' }, () => {}),
-    ).rejects.toBeInstanceOf(Error);
-});
-
 test('Subscribe to ticks with Observables 1', async () => {
     const obj = { ticks: 'InvalidSymbolObservable1' };
     await expect(

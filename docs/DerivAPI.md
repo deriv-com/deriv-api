@@ -25,7 +25,7 @@
         -   [onClose][21]
         -   [onOpen][22]
         -   [onMessage][23]
-        -   [fetch][24]
+        -   [expectResponse][24]
 -   [Abstract Objects][25]
     -   [Immutables][26]
         -   [Account][27]
@@ -243,13 +243,13 @@
     -   [Parameters][239]
 -   [InMemory][240]
 -   [TransactionParams][241]
--   [Immutable][242]
-    -   [Parameters][243]
-    -   [init][244]
--   [ExpiryType][245]
-    -   [Properties][246]
--   [ContractCategory][247]
-    -   [Properties][248]
+-   [ExpiryType][242]
+    -   [Properties][243]
+-   [ContractCategory][244]
+    -   [Properties][245]
+-   [Immutable][246]
+    -   [Parameters][247]
+    -   [init][248]
 -   [Stream][249]
     -   [Parameters][250]
     -   [onUpdate][251]
@@ -447,11 +447,11 @@ Returns **Observable** for open events
 
 Returns **Observable** for new messages
 
-#### fetch
+#### expectResponse
 
 ##### Parameters
 
--   `types` **[String][256]** One or more types to fetch the data for
+-   `types` **[String][256]** Expect these types to be received by the API
 
 Returns **([Promise][258]&lt;[Object][254]> | [Promise][258]&lt;[Array][272]>)** Resolves to a single response or an array
 
@@ -2447,18 +2447,6 @@ An in memory storage which can be used for caching
 
 Type: [Object][254]
 
-## Immutable
-
-An abstract class for immutable objects
-
-### Parameters
-
--   `props` **[Object][254]** A list of properties to add for the immutable object (optional, default `{}`)
-
-### init
-
-Override to initialize an immutable object asynchronously
-
 ## ExpiryType
 
 Type: [Object][254]
@@ -2484,6 +2472,18 @@ Type: [Object][254]
 -   `forward_starting` **[Object][254]** 
     -   `forward_starting.1564531200` **[DateRange][301]** 
 -   `expiry_types` **[ExpiryType][302]** 
+
+## Immutable
+
+An abstract class for immutable objects
+
+### Parameters
+
+-   `props` **[Object][254]** A list of properties to add for the immutable object (optional, default `{}`)
+
+### init
+
+Override to initialize an immutable object asynchronously
 
 ## Stream
 
@@ -2562,7 +2562,7 @@ Returns **Observable**
 
 [23]: #onmessage
 
-[24]: #fetch
+[24]: #expectresponse
 
 [25]: #abstract-objects
 
@@ -2998,19 +2998,19 @@ Returns **Observable**
 
 [241]: #transactionparams
 
-[242]: #immutable
+[242]: #expirytype
 
-[243]: #parameters-90
+[243]: #properties-2
 
-[244]: #init
+[244]: #contractcategory
 
-[245]: #expirytype
+[245]: #properties-3
 
-[246]: #properties-2
+[246]: #immutable
 
-[247]: #contractcategory
+[247]: #parameters-90
 
-[248]: #properties-3
+[248]: #init
 
 [249]: #stream
 

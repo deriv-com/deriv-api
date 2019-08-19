@@ -8,9 +8,9 @@ let response;
 test('Fetch the response of a single type', async () => {
     api.ping();
 
-    const fetch = await api.fetch('ping');
+    const expected_response = await api.expectResponse('ping');
 
-    expect(fetch.ping).toEqual(response.ping);
+    expect(expected_response.ping).toEqual(response.ping);
 });
 
 test('Fetch multiple responses', async () => {
@@ -18,11 +18,11 @@ test('Fetch multiple responses', async () => {
     api.websiteStatus();
     api.ping();
 
-    const fetch = await api.fetch('ping', 'website_status', 'ticks');
+    const expected_responses = await api.expectResponse('ping', 'website_status', 'ticks');
 
-    expect(fetch).toBeInstanceOf(Array);
+    expect(expected_responses).toBeInstanceOf(Array);
 
-    expect(fetch.map(r => r.msg_type)).toEqual(['ping', 'website_status', 'ticks']);
+    expect(expected_responses.map(r => r.msg_type)).toEqual(['ping', 'website_status', 'ticks']);
 });
 
 beforeAll(() => {

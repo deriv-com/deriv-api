@@ -61,14 +61,14 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.connection.onclose   = this.closeHandler.bind(this);
         this.connection.onmessage = this.messageHandler.bind(this);
 
-        this.lang            = lang;
-        this.reqId           = 0;
-        this.connected       = new CustomPromise();
-        this.sanityErrors    = new Subject();
-        this.cache           = new Cache(this, new InMemory());
-        this.pendingRequests = {};
-        this.events          = new Subject();
-        this.fetch_types     = {};
+        this.lang                  = lang;
+        this.reqId                 = 0;
+        this.connected             = new CustomPromise();
+        this.sanityErrors          = new Subject();
+        this.cache                 = new Cache(this, new InMemory());
+        this.pendingRequests       = {};
+        this.events                = new Subject();
+        this.expect_response_types = {};
 
         if (storage) {
             // We first lookup this.cache, then hit the API
@@ -199,9 +199,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
         const reqId = response.req_id;
 
         if (reqId in this.pendingRequests) {
-            const fetch = this.fetch_types[response.msg_type];
-            if (fetch && fetch.isPending()) {
-                fetch.resolve(response);
+            const expect_response = this.expect_response_types[response.msg_type];
+            if (expect_response && expect_response.isPending()) {
+                expect_response.resolve(response);
             }
             if (response.error) {
                 this.pendingRequests[reqId].error(new ResponseError(response));
@@ -250,21 +250,21 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     /**
-     * @param {String} types One or more types to fetch the data for
+     * @param {String} types Expect these types to be received by the API
      *
      * @returns {Promise<Object>|Promise<Array>} Resolves to a single response or an array
      */
-    async fetch(...types) {
+    async expectResponse(...types) {
         types.forEach((type) => {
-            if (!(type in this.fetch_types)) {
-                this.fetch_types[type] = new CustomPromise();
+            if (!(type in this.expect_response_types)) {
+                this.expect_response_types[type] = new CustomPromise();
             }
         });
 
-        // Single item fetch is returned as a single item, not a list
-        if (types.length === 1) return this.fetch_types[types[0]];
+        // expect on a single response returns a single response, not a list
+        if (types.length === 1) return this.expect_response_types[types[0]];
 
-        return Promise.all(types.map(type => this.fetch_types[type]));
+        return Promise.all(types.map(type => this.expect_response_types[type]));
     }
 }
 

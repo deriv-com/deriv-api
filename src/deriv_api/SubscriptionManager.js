@@ -73,7 +73,7 @@ export default class SubscriptionManager {
     }
 
     async forgetAll(...types) {
-        const forget_response = await this.api.send({ forget_all: [types] });
+        const forget_response = await this.api.send({ forget_all: types });
 
         this.removeBySubsIds(...forget_response.forget_all);
 

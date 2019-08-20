@@ -39,6 +39,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
     constructor({
         storage,
         connection,
+        cache    = new InMemory(),
         endpoint = 'blue.binaryws.com',
         app_id   = 1,
         lang     = 'EN',
@@ -65,7 +66,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.reqId                 = 0;
         this.connected             = new CustomPromise();
         this.sanityErrors          = new Subject();
-        this.cache                 = new Cache(this, new InMemory());
+        this.cache                 = new Cache(this, cache);
         this.pendingRequests       = {};
         this.events                = new Subject();
         this.expect_response_types = {};

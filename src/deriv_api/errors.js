@@ -15,19 +15,3 @@ export function errorFactory(type) {
 export class APIError extends errorFactory('APIError') {}
 
 export class ConstructionError extends errorFactory('ConstructionError') {}
-
-export class ResponseError extends Error {
-    constructor(response) {
-        const { code, message, details } = response.error;
-
-        super();
-        this.type    = 'ResponseError';
-        this.code    = code;
-        this.message = message;
-        this.details = details;
-    }
-
-    toString() {
-        return `${this.code}: ${this.message}`;
-    }
-}

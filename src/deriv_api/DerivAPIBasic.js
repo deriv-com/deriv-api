@@ -15,7 +15,6 @@ import SubscriptionManager from './SubscriptionManager';
 import {
     APIError,
     ConstructionError,
-    ResponseError,
 } from './errors';
 
 /**
@@ -178,7 +177,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
                 expect_response.resolve(response);
             }
             if (response.error) {
-                this.pendingRequests[reqId].error(new ResponseError(response));
+                this.pendingRequests[reqId].error(response);
             } else {
                 this.pendingRequests[reqId].next(response);
             }

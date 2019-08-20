@@ -8,9 +8,7 @@ let api;
 let connection;
 
 test('Request ticks for InvalidSymbol', async () => {
-    await expect(api.ticks({ ticks: 'InvalidSymbol' })).rejects.toBeInstanceOf(
-        Error,
-    );
+    await expect(api.ticks({ ticks: 'InvalidSymbol' })).rejects;
 });
 
 test('Subscribe to ticks with Observables 1', async () => {
@@ -20,7 +18,7 @@ test('Subscribe to ticks with Observables 1', async () => {
             .subscribe(obj)
             .pipe(first())
             .toPromise(),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects;
 });
 
 beforeAll(() => {

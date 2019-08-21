@@ -42,7 +42,15 @@ export default class Cache extends DerivAPICalls {
         return this.storage.get(objectToCacheKey(request));
     }
 
+    async getByType(type) {
+        return this.storage.get(type);
+    }
+
     async set(request, response) {
-        return this.storage.set(objectToCacheKey(request), response);
+        const key = objectToCacheKey(request);
+        return Promise.all([
+            this.storage.set(response.msg_type, response),
+            this.storage.set(key, response),
+        ]);
     }
 }

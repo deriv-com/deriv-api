@@ -16,6 +16,19 @@ export default class CustomPromise extends Promise {
         this.state = 'pending';
     }
 
+    static wrap(promise) {
+        if (promise instanceof this) return promise;
+
+        const custom_promise = new this();
+
+        promise.then(
+            custom_promise.resolve.bind(custom_promise),
+            custom_promise.reject.bind(custom_promise),
+        );
+
+        return custom_promise;
+    }
+
     resolve(data) {
         this.resolveCallback(data);
 

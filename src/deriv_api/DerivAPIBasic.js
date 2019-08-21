@@ -222,6 +222,12 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return this.events.pipe(filter(e => e.name === 'message'), share());
     }
 
+    async getMsgTypeFromCache(type) {
+        const cache = this.storage || this.cache;
+
+        return cache.getByType(type);
+    }
+
     /**
      * @param {String} types Expect these types to be received by the API
      *
@@ -230,7 +236,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
     async expectResponse(...types) {
         types.forEach((type) => {
             if (!(type in this.expect_response_types)) {
-                this.expect_response_types[type] = new CustomPromise();
+                this.expect_response_types[type] = transformUndefinedToPromise(
+                    this.getMsgTypeFromCache(type),
+                );
             }
         });
 
@@ -262,4 +270,12 @@ function getUrl(originalEndpoint) {
     }
 
     return url;
+}
+
+function transformUndefinedToPromise(promise) {
+    return CustomPromise.wrap(promise.then((value) => {
+        if (!value) return new CustomPromise();
+
+        return value;
+    }));
 }

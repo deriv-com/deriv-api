@@ -1,6 +1,8 @@
-import { filter, first, finalize } from 'rxjs/operators';
+import {
+    filter, first, finalize, share,
+} from 'rxjs/operators';
 
-import { objectToCacheKey }        from './utils';
+import { objectToCacheKey }               from './utils';
 
 /**
  * Subscription Manager - manage subscription channels
@@ -64,6 +66,7 @@ export default class SubscriptionManager {
                 // Forget subscriptions, but don't complain if failed
                 this.forget(this.key_to_subs_id[key]).then(() => {}, () => {});
             }),
+            share(),
         );
 
         this.sources[key] = source;

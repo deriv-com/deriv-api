@@ -1,4 +1,6 @@
-import { objectToCacheKey }  from './utils';
+import { filter, first, finalize } from 'rxjs/operators';
+
+import { objectToCacheKey }        from './utils';
 
 /**
  * Subscription Manager - manage subscription channels
@@ -21,7 +23,7 @@ export default class SubscriptionManager {
         this.api            = api;
         this.sources        = {};
         this.subs_id_to_key = {};
-        this.observers      = {};
+        this.key_to_subs_id = {};
     }
 
     /**
@@ -53,13 +55,23 @@ export default class SubscriptionManager {
     }
 
     createNewSource(request) {
-        const source = this.api.sendAndGetSource(request);
-
         const key = toKey(request);
+
+        const source = this.api.sendAndGetSource(request).pipe(
+            finalize(() => {
+                if (!(key in this.key_to_subs_id)) return;
+
+                // Forget subscriptions, but don't complain if failed
+                this.forget(this.key_to_subs_id[key]).then(() => {}, () => {});
+            }),
+        );
 
         this.sources[key] = source;
 
-        this.observers[key] = source.subscribe(this.saveSubsId(key), this.removeKeyOnError(key));
+        source.pipe(
+            filter(({ subscription }) => subscription),
+            first(),
+        ).toPromise().then(this.saveSubsId(key), this.removeKeyOnError(key));
 
         return source;
     }
@@ -67,7 +79,7 @@ export default class SubscriptionManager {
     async forget(id) {
         const forget_response = await this.api.send({ forget: id });
 
-        this.removeBySubsIds(id);
+        this.completeSubsByIds(id);
 
         return forget_response;
     }
@@ -75,30 +87,33 @@ export default class SubscriptionManager {
     async forgetAll(...types) {
         const forget_response = await this.api.send({ forget_all: types });
 
-        this.removeBySubsIds(...forget_response.forget_all);
+        this.completeSubsByIds(...forget_response.forget_all);
 
         return forget_response;
     }
 
-    removeBySubsIds(...subs_ids) {
+    completeSubsByIds(...subs_ids) {
         subs_ids.forEach((id) => {
-            delete this.sources[this.subs_id_to_key[id]];
+            const key = this.subs_id_to_key[id];
+
             delete this.subs_id_to_key[id];
+
+            if (key) {
+                this.sources[key].complete();
+                delete this.sources[key];
+                delete this.key_to_subs_id[key];
+            }
         });
     }
 
     saveSubsId(key) {
-        return ({ subscription }) => {
-            if (!subscription) return;
-
-            const { id } = subscription;
+        return (args) => {
+            const { subscription } = args;
+            const { id }           = subscription;
 
             if (!(id in this.subs_id_to_key)) {
-                this.subs_id_to_key[id] = key;
-
-                // We've got what we're looking for, time to stop observing
-                this.observers[key].unsubscribe();
-                delete this.observers[key];
+                this.subs_id_to_key[id]  = key;
+                this.key_to_subs_id[key] = id;
             }
         };
     }
@@ -106,7 +121,10 @@ export default class SubscriptionManager {
     removeKeyOnError(key) {
         return () => {
             delete this.sources[key];
-            delete this.observers[key];
+
+            const subs_id = this.key_to_subs_id[key];
+
+            delete this.subs_id_to_key[subs_id];
         };
     }
 }

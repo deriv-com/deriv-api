@@ -64,6 +64,7 @@ beforeAll(async () => {
 
     connection = new TestWebSocket({
         active_symbols: [{ symbol: 'R_100', pip: 0.01 }],
+        forget        : 1,
         ...response,
     });
 

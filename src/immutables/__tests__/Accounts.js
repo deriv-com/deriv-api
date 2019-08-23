@@ -108,6 +108,7 @@ beforeAll(async () => {
         active_symbols: [{ symbol: 'R_100', pip: 0.01 }],
         balance       : { balance: 1000, currency: 'USD' },
         transaction   : {},
+        forget        : 1,
         ...response,
     });
 

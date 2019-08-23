@@ -64,6 +64,7 @@ beforeAll(() => {
             quote : 1600.09,
             symbol: 'R_100',
         },
+        forget: 1,
     });
 
     api = new DerivAPIBasic({ connection });

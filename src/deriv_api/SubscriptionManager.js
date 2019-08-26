@@ -22,10 +22,11 @@ import { objectToCacheKey }               from './utils';
  */
 export default class SubscriptionManager {
     constructor(api) {
-        this.api            = api;
-        this.sources        = {};
-        this.subs_id_to_key = {};
-        this.key_to_subs_id = {};
+        this.api                   = api;
+        this.sources               = {};
+        this.subs_id_to_key        = {};
+        this.key_to_subs_id        = {};
+        this.subs_ids_per_msg_type = [];
     }
 
     /**
@@ -90,7 +91,13 @@ export default class SubscriptionManager {
     async forgetAll(...types) {
         const forget_response = await this.api.send({ forget_all: types });
 
-        this.completeSubsByIds(...forget_response.forget_all);
+        // To include subscriptions that were automatically unsubscribed
+        // for example a proposal subscription is auto-unsubscribed after buy
+        const subs_ids = [];
+
+        types.forEach(type => subs_ids.push(...(this.subs_ids_per_msg_type[type] || [])));
+
+        this.completeSubsByIds(...subs_ids);
 
         return forget_response;
     }
@@ -111,12 +118,18 @@ export default class SubscriptionManager {
 
     saveSubsId(key) {
         return (args) => {
-            const { subscription } = args;
-            const { id }           = subscription;
+            const {
+                subscription,
+                msg_type,
+            } = args;
+
+            const { id } = subscription;
 
             if (!(id in this.subs_id_to_key)) {
-                this.subs_id_to_key[id]  = key;
-                this.key_to_subs_id[key] = id;
+                this.subs_id_to_key[id]              = key;
+                this.key_to_subs_id[key]             = id;
+                this.subs_ids_per_msg_type[msg_type] = this.subs_ids_per_msg_type[msg_type] || [];
+                this.subs_ids_per_msg_type[msg_type].push(id);
             }
         };
     }

@@ -59,6 +59,18 @@ test('Subscribe then forget then subscribe again', async () => {
     await api.forget(second_response.subscription.id);
 });
 
+test('Forget all will remove the subscription for the types', async () => {
+    const source = api.subscribe({ ticks: 'R_100' });
+
+    await api.forgetAll('ticks');
+
+    const source2 = api.subscribe({ ticks: 'R_100' });
+
+    expect(source).not.toBe(source2);
+
+    await api.forgetAll('ticks');
+});
+
 describe('Check sources', () => {
     let source_R_100_1;
     let source_R_100_2;
@@ -91,8 +103,9 @@ describe('Check sources', () => {
 
 beforeAll(() => {
     connection = new TestWebSocket({
-        ticks : {},
-        forget: 1,
+        ticks     : {},
+        forget    : 1,
+        forget_all: {},
     });
 
     api = new DerivAPIBasic({ connection });

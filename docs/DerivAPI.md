@@ -243,9 +243,9 @@
     -   [Parameters][239]
 -   [InMemory][240]
 -   [TransactionParams][241]
--   [ExpiryType][242]
+-   [ContractCategory][242]
     -   [Properties][243]
--   [ContractCategory][244]
+-   [ExpiryType][244]
     -   [Properties][245]
 -   [Immutable][246]
     -   [Parameters][247]
@@ -381,6 +381,7 @@ API.
     -   `options.endpoint` **[String][256]** API server to connect to (optional, default `'blue.binaryws.com'`)
     -   `options.app_id` **[Number][270]** Application ID of the API user (optional, default `1`)
     -   `options.lang` **[String][256]** Language of the API communication (optional, default `'EN'`)
+    -   `options.brand` **[String][256]** Brand name (optional, default `''`)
     -   `options.storage`  
     -   `options.cache`   (optional, default `new InMemory()`)
 
@@ -2435,18 +2436,6 @@ An in memory storage which can be used for caching
 
 Type: [Object][254]
 
-## ExpiryType
-
-Type: [Object][254]
-
-### Properties
-
--   `duration` **[DurationRange][298]** 
--   `barriers` **[Object][254]** 
-    -   `barriers.high` **[Barrier][299]** 
-    -   `barriers.low` **[Barrier][299]** 
-    -   `barriers.single` **[Barrier][299]** 
-
 ## ContractCategory
 
 Type: [Object][254]
@@ -2458,8 +2447,20 @@ Type: [Object][254]
 -   `contract_types` **[Array][271]&lt;[String][256]>** 
 -   `bases` **[Array][271]&lt;[String][256]>** 
 -   `forward_starting` **[Object][254]** 
-    -   `forward_starting.1564531200` **[DateRange][300]** 
--   `expiry_types` **[ExpiryType][301]** 
+    -   `forward_starting.1564531200` **[DateRange][298]** 
+-   `expiry_types` **[ExpiryType][299]** 
+
+## ExpiryType
+
+Type: [Object][254]
+
+### Properties
+
+-   `duration` **[DurationRange][300]** 
+-   `barriers` **[Object][254]** 
+    -   `barriers.high` **[Barrier][301]** 
+    -   `barriers.low` **[Barrier][301]** 
+    -   `barriers.single` **[Barrier][301]** 
 
 ## Immutable
 
@@ -2986,11 +2987,11 @@ Returns **Observable**
 
 [241]: #transactionparams
 
-[242]: #expirytype
+[242]: #contractcategory
 
 [243]: #properties-2
 
-[244]: #contractcategory
+[244]: #expirytype
 
 [245]: #properties-3
 
@@ -3098,12 +3099,12 @@ Returns **Observable**
 
 [297]: http://archive.geekwisdom.com/js/passwordmeter.js
 
-[298]: #durationrange
+[298]: #daterange
 
-[299]: #barrier
+[299]: #expirytype
 
-[300]: #daterange
+[300]: #durationrange
 
-[301]: #expirytype
+[301]: #barrier
 
 [302]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

@@ -31,6 +31,7 @@ import {
  * @param {String}     options.endpoint   - API server to connect to
  * @param {Number}     options.app_id     - Application ID of the API user
  * @param {String}     options.lang       - Language of the API communication
+ * @param {String}     options.brand      - Brand name
  *
  * @property {Observable} events
  */
@@ -42,6 +43,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         endpoint = 'blue.binaryws.com',
         app_id   = 1,
         lang     = 'EN',
+        brand    = '',
     } = {}) {
         super();
 
@@ -53,6 +55,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
                 app_id,
                 endpointUrl: getUrl(endpoint),
                 lang       : lang.toUpperCase(),
+                brand      : brand.toLowerCase(),
             };
             this.connect();
         }
@@ -85,10 +88,15 @@ export default class DerivAPIBasic extends DerivAPICalls {
             );
         }
 
-        const { endpointUrl, lang, app_id } = this.connectionArgs;
+        const {
+            endpointUrl,
+            lang,
+            app_id,
+            brand,
+        } = this.connectionArgs;
 
         this.connection = new WebSocket(
-            `${endpointUrl.toString()}websockets/v3?l=${lang}&app_id=${app_id}`,
+            `${endpointUrl.toString()}websockets/v3?app_id=${app_id}&l=${lang}&brand=${brand}`,
         );
     }
 

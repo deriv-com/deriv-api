@@ -1,5 +1,5 @@
 import {
-    filter, first, finalize, share,
+    first, finalize, share,
 } from 'rxjs/operators';
 
 import { objectToCacheKey }               from './utils';
@@ -72,10 +72,7 @@ export default class SubscriptionManager {
 
         this.sources[key] = source;
 
-        source.pipe(
-            filter(({ subscription }) => subscription),
-            first(),
-        ).toPromise().then(this.saveSubsId(key), this.removeKeyOnError(key));
+        source.pipe(first()).toPromise().then(this.saveSubsId(key), this.removeKeyOnError(key));
 
         return source;
     }
@@ -108,12 +105,7 @@ export default class SubscriptionManager {
 
             delete this.subs_id_to_key[id];
 
-            if (key) {
-                const source = this.sources[key];
-                delete this.sources[key];
-                delete this.key_to_subs_id[key];
-                source.complete();
-            }
+            this.completeSubsByKey(key);
         });
     }
 
@@ -124,6 +116,10 @@ export default class SubscriptionManager {
                 msg_type,
             } = args;
 
+            // If the response doesn't have a subs id, it's not a subscription, so complete source
+            // Useful for poc for sold contract which never returns subscription
+            if (!subscription) return this.completeSubsByKey(key);
+
             const { id } = subscription;
 
             if (!(id in this.subs_id_to_key)) {
@@ -132,17 +128,31 @@ export default class SubscriptionManager {
                 this.subs_ids_per_msg_type[msg_type] = this.subs_ids_per_msg_type[msg_type] || [];
                 this.subs_ids_per_msg_type[msg_type].push(id);
             }
+
+            return key;
         };
     }
 
     removeKeyOnError(key) {
-        return () => {
-            delete this.sources[key];
+        return () => this.completeSubsByKey(key);
+    }
 
-            const subs_id = this.key_to_subs_id[key];
+    completeSubsByKey(key) {
+        if (!key) return;
 
-            delete this.subs_id_to_key[subs_id];
-        };
+        // Delete the source
+        const source = this.sources[key];
+        delete this.sources[key];
+
+        // Delete the subs id if exists
+        const subs_id = this.key_to_subs_id[key];
+        delete this.subs_id_to_key[subs_id];
+
+        // Delete the key
+        delete this.key_to_subs_id[key];
+
+        // Mark the source completed
+        source.complete();
     }
 }
 

@@ -109,9 +109,10 @@ export default class SubscriptionManager {
             delete this.subs_id_to_key[id];
 
             if (key) {
-                this.sources[key].complete();
+                const source = this.sources[key];
                 delete this.sources[key];
                 delete this.key_to_subs_id[key];
+                source.complete();
             }
         });
     }

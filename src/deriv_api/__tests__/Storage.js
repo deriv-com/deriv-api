@@ -8,7 +8,7 @@ let connection;
 let storage;
 
 test('Constructing DerivAPIBasic', async () => {
-    expect(Object.keys(storage.store).length).toBe(0);
+    expect(Object.keys(storage.store).length).toBe(1);
 
     expect((await api.ping()).ping).toBe('pong');
 

@@ -31,7 +31,11 @@ export default class Cache extends DerivAPICalls {
             return this.get(request);
         }
 
-        return this.api.send(request);
+        const response = await this.api.send(request);
+
+        await this.set(request, response);
+
+        return response;
     }
 
     async has(request) {

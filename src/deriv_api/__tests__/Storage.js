@@ -7,7 +7,7 @@ let api;
 let connection;
 let storage;
 
-test('Constructing DerivAPIBasic', async () => {
+test.skip('Constructing DerivAPIBasic', async () => {
     expect(Object.keys(storage.store).length).toBe(1);
 
     expect((await api.ping()).ping).toBe('pong');
@@ -28,6 +28,27 @@ test('Constructing DerivAPIBasic', async () => {
     const end_time = parseInt(new Date().getTime() / 1000, 10);
 
     expect(start_time).toBe(end_time);
+});
+
+test('Fetching from storage updates the cache', async () => {
+    // Avoid API call, because it updates cache
+    api.storage.storage.store['{"active_symbols":"brief"}'] = {
+        active_symbols: {},
+        msg_type      : 'active_symbols',
+        req_id        : 2,
+    };
+
+    expect((await api.cache.activeSymbols('brief')).active_symbols).toEqual({});
+
+    // Storage is updated with a new response
+    api.storage.storage.store['{"active_symbols":"brief"}'] = {
+        active_symbols: { new: 1 },
+        msg_type      : 'active_symbols',
+        req_id        : 3,
+    };
+
+    // Cache still uses the previous version, not the new response
+    expect((await api.cache.activeSymbols('brief')).active_symbols).not.toEqual({ new: 1 });
 });
 
 beforeAll(() => {

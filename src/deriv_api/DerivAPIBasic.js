@@ -65,16 +65,17 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.reqId                 = 0;
         this.connected             = new CustomPromise();
         this.sanityErrors          = new Subject();
-        this.cache                 = new Cache(this, cache);
         this.pendingRequests       = {};
         this.events                = new Subject();
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
 
         if (storage) {
-            // We first lookup this.cache, then hit the API
-            this.storage = new Cache(this.cache, storage);
+            this.storage = new Cache(this, storage);
         }
+
+        // If we have the storage look that one up
+        this.cache = new Cache(this.storage ? this.storage : this, cache);
     }
 
     connect() {
@@ -231,7 +232,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         types.forEach((type) => {
             if (!(type in this.expect_response_types)) {
                 this.expect_response_types[type] = transformUndefinedToPromise(
-                    this.cache.getByMsgType(type),
+                    this.cache.getByMsgType(type).then((value) => {
+                        if (!value && this.storage) return this.storage.getByMsgType(type);
+                        return value;
+                    }),
                 );
             }
         });

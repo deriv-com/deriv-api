@@ -1,9 +1,11 @@
 import { TestWebSocket } from '../../test_utils';
 
 import DerivAPIBasic     from '../DerivAPIBasic';
+import InMemory          from '../InMemory';
 
 let api;
 let response;
+let storage;
 
 test('Fetch the response of a single type', async () => {
     api.ping();
@@ -25,6 +27,17 @@ test('Fetch multiple responses', async () => {
     expect(expected_responses.map(r => r.msg_type)).toEqual(['ping', 'website_status', 'ticks']);
 });
 
+test('Fetch existing response from the storage', async () => {
+    // Storage is updated with a new response
+    api.storage.storage.store.by_msg_type.active_symbols = {
+        active_symbols: { new: 1 },
+        msg_type      : 'active_symbols',
+        req_id        : 3,
+    };
+
+    expect((await api.expectResponse('active_symbols')).active_symbols).toEqual({ new: 1 });
+});
+
 beforeAll(() => {
     response         = {
         ping          : 'pong',
@@ -35,5 +48,7 @@ beforeAll(() => {
     };
     const connection = new TestWebSocket(response);
 
-    api = new DerivAPIBasic({ connection });
+    storage = new InMemory();
+
+    api = new DerivAPIBasic({ connection, storage });
 });

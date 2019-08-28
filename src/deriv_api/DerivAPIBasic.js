@@ -92,6 +92,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
             );
         }
 
+        this.events.next({
+            name: 'connect',
+        });
+
         const {
             endpointUrl,
             lang,
@@ -210,6 +214,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         });
 
         if (this.shouldReconnect) {
+            this.events.next({
+                name: 'reconnecting',
+            });
+
             this.connect();
         }
     }

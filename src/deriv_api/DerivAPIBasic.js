@@ -49,6 +49,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
     } = {}) {
         super();
 
+        this.events = new Subject();
+
         if (connection) {
             this.connection = connection;
         } else {
@@ -64,16 +66,11 @@ export default class DerivAPIBasic extends DerivAPICalls {
             this.connect();
         }
 
-        this.connection.onopen    = this.openHandler.bind(this);
-        this.connection.onclose   = this.closeHandler.bind(this);
-        this.connection.onmessage = this.messageHandler.bind(this);
-
         this.lang                  = lang;
         this.reqId                 = 0;
         this.connected             = new CustomPromise();
         this.sanityErrors          = new Subject();
         this.pendingRequests       = {};
-        this.events                = new Subject();
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
 
@@ -83,6 +80,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
         // If we have the storage look that one up
         this.cache = new Cache(this.storage ? this.storage : this, cache);
+
+        this.connection.onopen    = this.openHandler.bind(this);
+        this.connection.onclose   = this.closeHandler.bind(this);
+        this.connection.onmessage = this.messageHandler.bind(this);
     }
 
     connect() {

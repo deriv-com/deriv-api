@@ -14,12 +14,12 @@ test('Constructing DerivAPIBasic', async () => {
 
 test('API construction with endpoint and appId', () => {
     expect(
-        new DerivAPIBasic({ endpoint: 'localhost', appId: 1 }),
+        new DerivAPIBasic({ endpoint: 'localhost', app_id: 12345 }),
     ).toBeInstanceOf(DerivAPIBasic);
 });
 
 test('API construction with endpoint', () => {
-    expect(() => new DerivAPIBasic({ endpoint: 1, app_id: 1 })).toThrow();
+    expect(() => new DerivAPIBasic({ endpoint: 1, app_id: 12345 })).toThrow();
 });
 
 beforeAll(() => {

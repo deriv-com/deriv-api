@@ -7,7 +7,7 @@ let api;
 let connection;
 let storage;
 
-test.skip('Constructing DerivAPIBasic', async () => {
+test('Constructing DerivAPIBasic', async () => {
     expect(Object.keys(storage.store).length).toBe(1);
 
     expect((await api.ping()).ping).toBe('pong');

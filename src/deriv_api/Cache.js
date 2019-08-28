@@ -3,8 +3,12 @@ import { ConstructionError } from './errors';
 import { objectToCacheKey }  from './utils';
 
 /**
- * Cache - An in-memory cache used to prevent sending redundant requests to the
- * API
+ * Cache - A class for implementing in-memory and persistent cache
+ *
+ * The real implementation of the underlying cache is delegated to the storage
+ * object (See the params).
+ *
+ * The storage object needs to implement the API.
  *
  * @example
  * // Read the latest active symbols
@@ -42,14 +46,17 @@ export default class Cache extends DerivAPICalls {
         return this.storage.has(objectToCacheKey(request));
     }
 
+    /* Redirected to the method defined by the storage */
     async get(request) {
         return this.storage.get(objectToCacheKey(request));
     }
 
+    /* Redirected to the method defined by the storage */
     async getByMsgType(type) {
         return this.storage.getByMsgType(type);
     }
 
+    /* Redirected to the method defined by the storage */
     async set(request, response) {
         return this.storage.set(objectToCacheKey(request), response);
     }

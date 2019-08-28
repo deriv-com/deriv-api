@@ -34,14 +34,16 @@ import {
  * @param {String}     options.brand      - Brand name
  *
  * @property {Observable} events
+ * @property {Cache} cache - Temporary cache default to @link{InMemory}
+ * @property {Cache} storage - If specified, uses a more presistent cache (local storage, etc.)
  */
 export default class DerivAPIBasic extends DerivAPICalls {
     constructor({
         storage,
+        app_id,
         connection,
         cache    = new InMemory(),
-        endpoint = 'blue.binaryws.com',
-        app_id   = 1,
+        endpoint = 'frontend.binaryws.com',
         lang     = 'EN',
         brand    = '',
     } = {}) {
@@ -50,6 +52,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
         if (connection) {
             this.connection = connection;
         } else {
+            if (!app_id) throw Error('An app_id is required to connect to the API');
+
             this.shouldReconnect = true;
             this.connectionArgs  = {
                 app_id,

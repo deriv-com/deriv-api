@@ -15,10 +15,14 @@ import { objectToCacheKey }               from './utils';
  *
  * @example
  * // This one creates a new subscription assuming it is the first one for R_100
- * api.subscribe({ ticks: 'R_100' }, console.log);
+ * const subscriber1 = api.subscribe({ ticks: 'R_100' }, console.log);
  *
  * // This one uses the existing subscription to R_100
- * api.subscribe({ ticks: 'R_100' }, console.log);
+ * const subscriber2 = api.subscribe({ ticks: 'R_100' }, console.log);
+ *
+ * subscriber1.unsubscribe(); // no API forget yet
+ * subscriber2.unsubscribe(); // Issues API forget
+ *
  */
 export default class SubscriptionManager {
     constructor(api) {

@@ -243,13 +243,13 @@
     -   [Parameters][239]
 -   [InMemory][240]
 -   [TransactionParams][241]
--   [ContractCategory][242]
-    -   [Properties][243]
--   [ExpiryType][244]
-    -   [Properties][245]
--   [Immutable][246]
-    -   [Parameters][247]
-    -   [init][248]
+-   [Immutable][242]
+    -   [Parameters][243]
+    -   [init][244]
+-   [ExpiryType][245]
+    -   [Properties][246]
+-   [ContractCategory][247]
+    -   [Properties][248]
 -   [Stream][249]
     -   [Parameters][250]
     -   [onUpdate][251]
@@ -2436,32 +2436,6 @@ An in memory storage which can be used for caching
 
 Type: [Object][254]
 
-## ContractCategory
-
-Type: [Object][254]
-
-### Properties
-
--   `name` **[FullName][274]** 
--   `has_end_time` **[Boolean][273]** Is end time available for the contract (hardcoded X) )
--   `contract_types` **[Array][271]&lt;[String][256]>** 
--   `bases` **[Array][271]&lt;[String][256]>** 
--   `forward_starting` **[Object][254]** 
-    -   `forward_starting.1564531200` **[DateRange][298]** 
--   `expiry_types` **[ExpiryType][299]** 
-
-## ExpiryType
-
-Type: [Object][254]
-
-### Properties
-
--   `duration` **[DurationRange][300]** 
--   `barriers` **[Object][254]** 
-    -   `barriers.high` **[Barrier][301]** 
-    -   `barriers.low` **[Barrier][301]** 
-    -   `barriers.single` **[Barrier][301]** 
-
 ## Immutable
 
 An abstract class for immutable objects
@@ -2473,6 +2447,32 @@ An abstract class for immutable objects
 ### init
 
 Override to initialize an immutable object asynchronously
+
+## ExpiryType
+
+Type: [Object][254]
+
+### Properties
+
+-   `duration` **[DurationRange][298]** 
+-   `barriers` **[Object][254]** 
+    -   `barriers.high` **[Barrier][299]** 
+    -   `barriers.low` **[Barrier][299]** 
+    -   `barriers.single` **[Barrier][299]** 
+
+## ContractCategory
+
+Type: [Object][254]
+
+### Properties
+
+-   `name` **[FullName][274]** 
+-   `has_end_time` **[Boolean][273]** Is end time available for the contract (hardcoded X) )
+-   `contract_types` **[Array][271]&lt;[String][256]>** 
+-   `bases` **[Array][271]&lt;[String][256]>** 
+-   `forward_starting` **[Object][254]** 
+    -   `forward_starting.1564531200` **[DateRange][300]** 
+-   `expiry_types` **[ExpiryType][301]** 
 
 ## Stream
 
@@ -2987,19 +2987,19 @@ Returns **Observable**
 
 [241]: #transactionparams
 
-[242]: #contractcategory
+[242]: #immutable
 
-[243]: #properties-2
+[243]: #parameters-91
 
-[244]: #expirytype
+[244]: #init
 
-[245]: #properties-3
+[245]: #expirytype
 
-[246]: #immutable
+[246]: #properties-2
 
-[247]: #parameters-91
+[247]: #contractcategory
 
-[248]: #init
+[248]: #properties-3
 
 [249]: #stream
 
@@ -3099,12 +3099,12 @@ Returns **Observable**
 
 [297]: http://archive.geekwisdom.com/js/passwordmeter.js
 
-[298]: #daterange
+[298]: #durationrange
 
-[299]: #expirytype
+[299]: #barrier
 
-[300]: #durationrange
+[300]: #daterange
 
-[301]: #barrier
+[301]: #expirytype
 
 [302]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

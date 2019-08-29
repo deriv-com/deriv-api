@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>deriv-api 1.0.0-beta.3 | Documentation</title>
+  <title>deriv-api 1.0.0-beta.19 | Documentation</title>
   <meta name='description' content='Websocket API for Deriv applications'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>deriv-api</h3>
-          <div class='mb1'><code>1.0.0-beta.3</code></div>
+          <div class='mb1'><code>1.0.0-beta.19</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -119,21 +119,33 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#derivapibasicsubscribewithcallback'
+                        href='#derivapibasicclosehandler'
                         class='regular pre-open'>
-                        #subscribeWithCallback
-                      </a></li>
-                      
-                      <li><a
-                        href='#derivapibasicsubscribe'
-                        class='regular pre-open'>
-                        #subscribe
+                        #closeHandler
                       </a></li>
                       
                       <li><a
                         href='#derivapibasiconclose'
                         class='regular pre-open'>
                         #onClose
+                      </a></li>
+                      
+                      <li><a
+                        href='#derivapibasiconopen'
+                        class='regular pre-open'>
+                        #onOpen
+                      </a></li>
+                      
+                      <li><a
+                        href='#derivapibasiconmessage'
+                        class='regular pre-open'>
+                        #onMessage
+                      </a></li>
+                      
+                      <li><a
+                        href='#derivapibasicexpectresponse'
+                        class='regular pre-open'>
+                        #expectResponse
                       </a></li>
                       
                     </ul>
@@ -679,20 +691,28 @@
                 
                 <li><a
                   href='#subscriptionmanager'
-                  class="">
+                  class=" toggle-sibling">
                   SubscriptionManager
-                  
+                  <span class='icon'>▸</span>
                 </a>
                 
-                </li>
-              
-                
-                <li><a
-                  href='#storage'
-                  class="">
-                  Storage
+                <div class='toggle-target display-none'>
                   
-                </a>
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#subscriptionmanagersubscribe'
+                        class='regular pre-open'>
+                        #subscribe
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
@@ -1278,6 +1298,16 @@
               
                 
                 <li><a
+                  href='#notificationevent'
+                  class="">
+                  notificationEvent
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#oauthapps'
                   class="">
                   oauthApps
@@ -1641,6 +1671,16 @@
                   href='#websitestatus'
                   class="">
                   websiteStatus
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#inmemory'
+                  class="">
+                  InMemory
                   
                 </a>
                 
@@ -2385,6 +2425,15 @@ API.
             <tbody class='mt1'>
               
                 <tr>
+  <td class='break-word'><span class='code bold'>options.app_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Application ID of the API user
+</span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>options.connection</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/WebSockets">WebSocket</a>?</code>
   </td>
   <td class='break-word'><span>A ready to use connection
@@ -2396,20 +2445,9 @@ API.
                 <tr>
   <td class='break-word'><span class='code bold'>options.endpoint</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   
-    (default <code>&#39;blue.binaryws.com&#39;</code>)
+    (default <code>&#39;frontend.binaryws.com&#39;</code>)
   </td>
   <td class='break-word'><span>API server to connect to
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>options.app_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
-  
-    (default <code>1</code>)
-  </td>
-  <td class='break-word'><span>Application ID of the API user
 </span></td>
 </tr>
 
@@ -2426,6 +2464,35 @@ API.
 
 
               
+                <tr>
+  <td class='break-word'><span class='code bold'>options.brand</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  
+    (default <code>&#39;&#39;</code>)
+  </td>
+  <td class='break-word'><span>Brand name
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.storage</span> <code class='quiet'>any</code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.cache</span> <code class='quiet'>any</code>
+  
+    (default <code>new InMemory()</code>)
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
+              
             </tbody>
           </table>
           
@@ -2434,6 +2501,31 @@ API.
     </div>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>events</span> <code class='quiet'>(Observable)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>cache</span> <code class='quiet'>(<a href="#cache">Cache</a>)</code>
+          : Temporary cache default to @link{InMemory}
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>storage</span> <code class='quiet'>(<a href="#cache">Cache</a>)</code>
+          : If specified, uses a more presistent cache (local storage, etc.)
+
+          
+        </div>
+      
+    </div>
   
 
   
@@ -2455,11 +2547,11 @@ API.
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='derivapibasicsubscribewithcallback'>
+    <div class='border-bottom' id='derivapibasicclosehandler'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>subscribeWithCallback(request, callback)</span>
+            <span class='code strong strong truncate'>closeHandler()</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2467,94 +2559,11 @@ API.
 
   
 
-  <p>Subscribe and call the given callback on each response</p>
+  <p>Reconnects to the API in case of connection error, unless connection is
+passed as an argument, in that case reconnecting should be handled in the
+API user side.</p>
 
-    <div class='pre p1 fill-light mt0'>subscribeWithCallback(request: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>request</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    A request object acceptable by the API
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    A callback to call on every new response
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
-        Resolves to the first response or is rejected with an error
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">await</span> api.subscribeWithCallback({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> }, <span class="hljs-built_in">console</span>.log)</pre>
-    
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='derivapibasicsubscribe'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>subscribe(request)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>Subscribe to a given request, returns a stream of new responses,
-Errors should be handled by the user of the stream</p>
-
-    <div class='pre p1 fill-light mt0'>subscribe(request: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): Observable</div>
+    <div class='pre p1 fill-light mt0'>closeHandler()</div>
   
   
 
@@ -2566,42 +2575,13 @@ Errors should be handled by the user of the stream</p>
   
 
   
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>request</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    A request object acceptable by the API
 
-          </div>
-          
-        </div>
-      
-    </div>
   
 
   
 
   
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>Observable</code>:
-        An RxJS Observable
 
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ticks = api.subscribe({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> });
-ticks.subscribe(<span class="hljs-built_in">console</span>.log) <span class="hljs-comment">// Print every new tick</span></pre>
-    
   
 
   
@@ -2628,11 +2608,8 @@ ticks.subscribe(<span class="hljs-built_in">console</span>.log) <span class="hlj
 
   
 
-  <p>Reconnects to the API in case of connection error, unless connection is
-passed as an argument, in that case reconnecting should be handled in the
-API user side.</p>
-
-    <div class='pre p1 fill-light mt0'>onClose()</div>
+  
+    <div class='pre p1 fill-light mt0'>onClose(): Observable</div>
   
   
 
@@ -2647,6 +2624,190 @@ API user side.</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Observable</code>:
+        for close events
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='derivapibasiconopen'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>onOpen()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>onOpen(): Observable</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Observable</code>:
+        for open events
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='derivapibasiconmessage'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>onMessage()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>onMessage(): Observable</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Observable</code>:
+        for new messages
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='derivapibasicexpectresponse'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>expectResponse(types)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>expectResponse(types: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>types</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    Expect these types to be received by the API
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>>)</code>:
+        Resolves to a single response or an array
+
+      
+    
   
 
   
@@ -7545,10 +7706,12 @@ tick_stream.onUpdate().subscribe(<span class="hljs-built_in">console</span>.log)
   </div>
   
 
-  <p>Cache - An in-memory cache used to prevent sending redundant requests to the
-API</p>
+  <p>Cache - A class for implementing in-memory and persistent cache</p>
+<p>The real implementation of the underlying cache is delegated to the storage
+object (See the params).</p>
+<p>The storage object needs to implement the API.</p>
 
-    <div class='pre p1 fill-light mt0'>new Cache(api: <a href="#derivapibasic">DerivAPIBasic</a>)</div>
+    <div class='pre p1 fill-light mt0'>new Cache(api: <a href="#derivapibasic">DerivAPIBasic</a>, storage: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
     <p>
@@ -7574,6 +7737,15 @@ API</p>
           <div>
             <span class='code bold'>api</span> <code class='quiet'>(<a href="#derivapibasic">DerivAPIBasic</a>)</code>
 	    API instance to get data that is not cached
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>storage</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    A storage instance to use for caching
 
           </div>
           
@@ -7631,7 +7803,7 @@ subscriptions, keeps a history of received values for the subscription of ticks
 and forgets channels that do not have subscribers. It also ensures that
 subscriptions are revived after connection drop/account changed.</p>
 
-    <div class='pre p1 fill-light mt0'>new SubscriptionManager()</div>
+    <div class='pre p1 fill-light mt0'>new SubscriptionManager(api: any)</div>
   
   
 
@@ -7642,6 +7814,19 @@ subscriptions are revived after connection drop/account changed.</p>
   
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>api</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
   
 
   
@@ -7655,10 +7840,84 @@ subscriptions are revived after connection drop/account changed.</p>
     
       
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// This one creates a new subscription assuming it is the first one for R_100</span>
-api.subscribeWithCallback({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> }, <span class="hljs-built_in">console</span>.log);
+<span class="hljs-keyword">const</span> subscriber1 = api.subscribe({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> }, <span class="hljs-built_in">console</span>.log);
 
 <span class="hljs-comment">// This one uses the existing subscription to R_100</span>
-api.subscribeWithCallback({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> }, <span class="hljs-built_in">console</span>.log);</pre>
+<span class="hljs-keyword">const</span> subscriber2 = api.subscribe({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> }, <span class="hljs-built_in">console</span>.log);
+
+subscriber1.unsubscribe(); <span class="hljs-comment">// no API forget yet</span>
+subscriber2.unsubscribe(); <span class="hljs-comment">// Issues API forget</span></pre>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='subscriptionmanagersubscribe'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>subscribe(request)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Subscribe to a given request, returns a stream of new responses,
+Errors should be handled by the user of the stream</p>
+
+    <div class='pre p1 fill-light mt0'>subscribe(request: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): Observable</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>request</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    A request object acceptable by the API
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Observable</code>:
+        An RxJS Observable
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> ticks = api.subscribe({ <span class="hljs-attr">ticks</span>: <span class="hljs-string">'R_100'</span> });
+ticks.subscribe(<span class="hljs-built_in">console</span>.log) <span class="hljs-comment">// Print every new tick</span></pre>
     
   
 
@@ -7671,61 +7930,10 @@ api.subscribeWithCallback({ <span class="hljs-attr">ticks</span>: <span class="h
   
 </section>
 
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
+      </div>
+    </div>
   
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='storage'>
-      Storage
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Storage - A permanent storage for data, kept in browser and is useful for
-data that is valid over extended periods of time.</p>
-
-    <div class='pre p1 fill-light mt0'>new Storage()</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#cache">Cache</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Read the data from storage if available</span>
-<span class="hljs-keyword">const</span> cachedSymbols = <span class="hljs-keyword">await</span> api.storage.activeSymbols();</pre>
-    
-  
-
-  
+</div>
 
   
 
@@ -13297,7 +13505,7 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.address</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>[Optional]
- The address of the user. The maximum length of the address is 128 characters.
+ The address of the user. The maximum length of this address field is 128 characters.
 </span></td>
 </tr>
 
@@ -13345,7 +13553,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.investPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>the investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.
+  <td class='break-word'><span>The investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.
 </span></td>
 </tr>
 
@@ -13400,7 +13608,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Client's name. The maximum length of name is 128 characters.
+  <td class='break-word'><span>Client's name. The maximum length here is 101 characters.
 </span></td>
 </tr>
 
@@ -14267,7 +14475,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.first_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -14303,7 +14511,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.last_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -14641,7 +14849,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.first_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -14650,7 +14858,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.last_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -14953,6 +15161,120 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.verification_code</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>Email verification code (received from a verify_email call, which must be done first).
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='notificationevent'>
+      notificationEvent
+    </h3>
+    
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>notificationEvent(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.category</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>The category or nature of the event.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.event</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>The name of the event.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.notification_event</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 1.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional]
+ Used to pass data through the websocket, which may be retrieved via the echo_req output field.
 </span></td>
 </tr>
 
@@ -15679,7 +16001,7 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.ping</span> <code class='quiet'>Any</code>
+  <td class='break-word'><span class='code bold'>args.ping</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>Must be 1.
 </span></td>
@@ -18353,7 +18675,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.first_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
+  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
 </span></td>
 </tr>
 
@@ -18362,7 +18684,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.last_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
+  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
 </span></td>
 </tr>
 
@@ -19780,6 +20102,15 @@ in this codebase.</p>
 
               
                 <tr>
+  <td class='break-word'><span class='code bold'>args.accounts</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>Optional field to control the list of accounts returned when account_from or account_to is not provided. 'Brief' will only include standard trading accounts and can be faster.
+</span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>args.amount</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>-
@@ -20070,6 +20401,54 @@ in this codebase.</p>
         </div>
       
     </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='inmemory'>
+      InMemory
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An in memory storage which can be used for caching</p>
+
+    <div class='pre p1 fill-light mt0'>new InMemory()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
   
 
   

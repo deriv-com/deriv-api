@@ -144,17 +144,19 @@ export default class DerivAPIBasic extends DerivAPICalls {
             data: request,
         });
 
-        const response = await this.sendAndGetSource(request).pipe(first()).toPromise();
+        const response_promise = this.sendAndGetSource(request).pipe(first()).toPromise();
 
-        this.cache.set(request, response);
-        if (this.storage) {
-            this.storage.set(request, response);
-        }
+        response_promise.then((response) => {
+            this.cache.set(request, response);
+            if (this.storage) {
+                this.storage.set(request, response);
+            }
+        });
 
-        const send_is_called = this.callMiddleware('sendIsCalled', { response, args });
+        const send_is_called = this.callMiddleware('sendIsCalled', { response_promise, args });
         if (send_is_called) return send_is_called;
 
-        return response;
+        return response_promise;
     }
 
     callMiddleware(name, args) {

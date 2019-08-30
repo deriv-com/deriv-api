@@ -151,7 +151,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
             if (this.storage) {
                 this.storage.set(request, response);
             }
-        });
+        }, () => {}); // Ignore errors here
 
         const send_is_called = this.callMiddleware('sendIsCalled', { response_promise, args });
         if (send_is_called) return send_is_called;

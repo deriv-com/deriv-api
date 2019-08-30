@@ -32,6 +32,7 @@ import {
  * @param {Number}     options.app_id     - Application ID of the API user
  * @param {String}     options.lang       - Language of the API communication
  * @param {String}     options.brand      - Brand name
+ * @param {Object}     options.middleware - A middleware to call on certain API actions
  *
  * @property {Observable} events
  * @property {Cache} cache - Temporary cache default to @link{InMemory}
@@ -42,10 +43,11 @@ export default class DerivAPIBasic extends DerivAPICalls {
         storage,
         app_id,
         connection,
-        cache    = new InMemory(),
-        endpoint = 'frontend.binaryws.com',
-        lang     = 'EN',
-        brand    = '',
+        cache      = new InMemory(),
+        endpoint   = 'frontend.binaryws.com',
+        lang       = 'EN',
+        brand      = '',
+        middleware = {},
     } = {}) {
         super();
 
@@ -70,6 +72,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.reqId                 = 0;
         this.connected             = new CustomPromise();
         this.sanityErrors          = new Subject();
+        this.middleware            = middleware;
         this.pendingRequests       = {};
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
@@ -130,7 +133,12 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return pending;
     }
 
-    async send(request) {
+    async send(...args) {
+        const send_will_be_called = this.callMiddleware('sendWillBeCalled', { args });
+        if (send_will_be_called) return send_will_be_called;
+
+        const [request] = args;
+
         this.events.next({
             name: 'send',
             data: request,
@@ -143,7 +151,16 @@ export default class DerivAPIBasic extends DerivAPICalls {
             this.storage.set(request, response);
         }
 
+        const send_is_called = this.callMiddleware('sendIsCalled', { response, args });
+        if (send_is_called) return send_is_called;
+
         return response;
+    }
+
+    callMiddleware(name, args) {
+        if (!(name in this.middleware)) return undefined;
+
+        return this.middleware[name](args);
     }
 
     subscribe(request) {

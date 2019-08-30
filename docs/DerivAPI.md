@@ -384,6 +384,7 @@ API.
     -   `options.endpoint` **[String][258]** API server to connect to (optional, default `'frontend.binaryws.com'`)
     -   `options.lang` **[String][258]** Language of the API communication (optional, default `'EN'`)
     -   `options.brand` **[String][258]** Brand name (optional, default `''`)
+    -   `options.middleware` **[Object][256]** A middleware to call on certain API actions (optional, default `{}`)
     -   `options.storage`  
     -   `options.cache`   (optional, default `new InMemory()`)
 

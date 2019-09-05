@@ -101,11 +101,22 @@ describe('Check sources', () => {
     });
 });
 
+test('Subscribe to buy adds a source for poc', async () => {
+    const source = api.subscribe({ buy: 1 });
+
+    const { buy: { contract_id } } = await source.pipe(first()).toPromise();
+
+    const source2 = api.subscribe({ proposal_open_contract: 1, contract_id });
+
+    expect(source).toBe(source2);
+});
+
 beforeAll(() => {
     connection = new TestWebSocket({
         ticks     : {},
         forget    : 1,
         forget_all: {},
+        buy       : { contract_id: 1 },
     });
 
     api = new DerivAPIBasic({ connection });

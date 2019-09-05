@@ -76,7 +76,18 @@ export default class SubscriptionManager {
 
         this.sources[key] = source;
 
-        source.pipe(first()).toPromise().then(this.saveSubsId(key), this.removeKeyOnError(key));
+        source.pipe(first()).toPromise()
+            .then((response) => {
+                if (request.buy) {
+                    const poc_key         = toKey({
+                        contract_id           : response.buy.contract_id,
+                        proposal_open_contract: 1,
+                    });
+                    this.sources[poc_key] = this.sources[key];
+                }
+                return response;
+            })
+            .then(this.saveSubsId(key), this.removeKeyOnError(key));
 
         return source;
     }
@@ -114,11 +125,11 @@ export default class SubscriptionManager {
     }
 
     saveSubsId(key) {
-        return (args) => {
+        return (response) => {
             const {
                 subscription,
                 msg_type,
-            } = args;
+            } = response;
 
             // If the response doesn't have a subs id, it's not a subscription, so complete source
             // Useful for poc for sold contract which never returns subscription
@@ -133,7 +144,7 @@ export default class SubscriptionManager {
                 this.subs_ids_per_msg_type[msg_type].push(id);
             }
 
-            return key;
+            return response;
         };
     }
 

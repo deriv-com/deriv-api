@@ -62,6 +62,7 @@ test('Subscribe then forget then subscribe again', async () => {
 test('Forget all will remove the subscription for the types', async () => {
     const source = api.subscribe({ ticks: 'R_100' });
 
+    await source.pipe(first()).toPromise();
     await api.forgetAll('ticks');
 
     const source2 = api.subscribe({ ticks: 'R_100' });

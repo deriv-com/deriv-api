@@ -1,6 +1,7 @@
 import {
     take,
     toArray,
+    first,
 }                        from 'rxjs/operators';
 import { Observable }    from 'rxjs';
 
@@ -11,19 +12,15 @@ import DerivAPIBasic     from '../DerivAPIBasic';
 let api;
 let connection;
 
-test('Subscribe calling api.subscribeWithCallback without callback', async () => {
-    expect(
-        api.subscribeWithCallback({ website_status: 1 }),
-    ).rejects.toBeInstanceOf(Error);
-});
-
 test('Subscribe by calling api.subscribeWithCallback and callback', async () => {
     const mock_fn = jest.fn();
 
-    const response = await api.subscribeWithCallback(
+    const source = api.subscribe(
         { website_status: 1 },
-        mock_fn,
     );
+    source.subscribe(mock_fn);
+
+    const response = await source.pipe(first()).toPromise();
 
     expect(response.msg_type).toBe('website_status');
 
@@ -67,6 +64,7 @@ beforeAll(() => {
             quote : 1600.09,
             symbol: 'R_100',
         },
+        forget: 1,
     });
 
     api = new DerivAPIBasic({ connection });

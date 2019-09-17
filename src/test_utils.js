@@ -3,6 +3,7 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
         this.method_to_req_id     = {};
         this.acceptable_responses = acceptable_responses;
         this.delay                = delay;
+        this.req_id_to_subs_id    = {};
 
         setTimeout(() => {
             this.readyState = 1;
@@ -11,8 +12,12 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
     }
 
     send(msg) {
-        const request    = JSON.parse(msg);
-        const { req_id } = request;
+        const request               = JSON.parse(msg);
+        const { req_id, subscribe } = request;
+
+        if (subscribe) {
+            this.req_id_to_subs_id[req_id] = Math.random();
+        }
 
         Object.keys(this.acceptable_responses).forEach((method) => {
             if (method in request) {
@@ -51,12 +56,16 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
             }
         }
 
+        const req_id       = this.method_to_req_id[method];
+        const subscription = req_id in this.req_id_to_subs_id
+            ? { id: this.req_id_to_subs_id[req_id] }
+            : undefined;
         if (payload instanceof Object && 'error' in payload) {
             this.onmessage({
                 data: JSON.stringify({
                     error   : payload,
                     msg_type: type,
-                    req_id  : this.method_to_req_id[method],
+                    req_id,
                 }),
             });
         } else {
@@ -64,7 +73,8 @@ export class TestWebSocket { // eslint-disable-line import/prefer-default-export
                 data: JSON.stringify({
                     [type]  : payload,
                     msg_type: type,
-                    req_id  : this.method_to_req_id[method],
+                    subscription,
+                    req_id,
                 }),
             });
         }

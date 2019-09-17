@@ -53,7 +53,6 @@ toc:
     - name: Core Functionality
     - Cache
     - SubscriptionManager
-    - Storage
     - name: Object References
       description: |
           These are plain JavaScript objects that are named to easily refer to

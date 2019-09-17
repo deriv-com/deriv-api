@@ -72,7 +72,7 @@ test('Account with invalid token', async () => {
 
     const new_account = new Account(api, invalid_token);
 
-    await expect(new_account.init()).rejects.toBeInstanceOf(Error);
+    await expect(new_account.init()).rejects;
 });
 
 beforeAll(async () => {
@@ -108,6 +108,7 @@ beforeAll(async () => {
         active_symbols: [{ symbol: 'R_100', pip: 0.01 }],
         balance       : { balance: 1000, currency: 'USD' },
         transaction   : {},
+        forget        : 1,
         ...response,
     });
 

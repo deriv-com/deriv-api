@@ -6,7 +6,7 @@ const { WebSocket } = global;
 
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);
-    expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?l=FR&app_id=4000');
+    expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?app_id=4000&l=FR&brand=deriv');
 });
 
 test('API can send a request', async () => {
@@ -43,7 +43,12 @@ test('API does not reconnect if connection is passed', async () => {
 beforeAll(() => {
     WebSocket.prototype.close = jest.fn();
 
-    api = new DerivAPIBasic({ app_id: 4000, endpoint: 'ws://localhost', lang: 'fr' });
+    api = new DerivAPIBasic({
+        app_id  : 4000,
+        endpoint: 'ws://localhost',
+        lang    : 'fr',
+        brand   : 'deriv',
+    });
 
     // Set the connection to ready state with a delay
     setTimeout(() => {

@@ -13,6 +13,17 @@ module.exports = [
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
+        module: {
+            rules : [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                    }
+                },
+            ]
+        },
     },
     {
         plugins: [
@@ -27,6 +38,17 @@ module.exports = [
             libraryExport: 'default',
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
+        },
+        module: {
+            rules : [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                    }
+                },
+            ]
         },
     },
 ];

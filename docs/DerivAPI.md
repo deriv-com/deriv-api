@@ -239,13 +239,13 @@
 -   [websiteStatus][235]
     -   [Parameters][236]
 -   [TransactionParams][237]
--   [ExpiryType][238]
-    -   [Properties][239]
--   [ContractCategory][240]
-    -   [Properties][241]
--   [Immutable][242]
-    -   [Parameters][243]
-    -   [init][244]
+-   [Immutable][238]
+    -   [Parameters][239]
+    -   [init][240]
+-   [ExpiryType][241]
+    -   [Properties][242]
+-   [ContractCategory][243]
+    -   [Properties][244]
 -   [Stream][245]
     -   [Parameters][246]
     -   [onUpdate][247]
@@ -2427,6 +2427,18 @@ Type: [Object][250]
 
 Type: [Object][250]
 
+## Immutable
+
+An abstract class for immutable objects
+
+### Parameters
+
+-   `props` **[Object][250]** A list of properties to add for the immutable object (optional, default `{}`)
+
+### init
+
+Override to initialize an immutable object asynchronously
+
 ## ExpiryType
 
 Type: [Object][250]
@@ -2452,18 +2464,6 @@ Type: [Object][250]
 -   `forward_starting` **[Object][250]** 
     -   `forward_starting.1564531200` **[DateRange][297]** 
 -   `expiry_types` **[ExpiryType][298]** 
-
-## Immutable
-
-An abstract class for immutable objects
-
-### Parameters
-
--   `props` **[Object][250]** A list of properties to add for the immutable object (optional, default `{}`)
-
-### init
-
-Override to initialize an immutable object asynchronously
 
 ## Stream
 
@@ -2970,19 +2970,19 @@ Returns **Observable**
 
 [237]: #transactionparams
 
-[238]: #expirytype
+[238]: #immutable
 
-[239]: #properties-1
+[239]: #parameters-90
 
-[240]: #contractcategory
+[240]: #init
 
-[241]: #properties-2
+[241]: #expirytype
 
-[242]: #immutable
+[242]: #properties-1
 
-[243]: #parameters-90
+[243]: #contractcategory
 
-[244]: #init
+[244]: #properties-2
 
 [245]: #stream
 

@@ -5,7 +5,9 @@
   "description": "Websocket API for Deriv applications",
   "main": "dist/DerivAPI.js",
   "unpkg": "dist/DerivAPI.js",
-  "files": ["dist/*.js"],
+  "files": [
+    "dist/*.js"
+  ],
   "scripts": {
     "test": "jest --verbose --forceExit",
     "build": "webpack --config webpack.config.js",
@@ -42,7 +44,7 @@
     "@babel/preset-env": "^7.4.5",
     "babel-jest": "^24.8.0",
     "codecov": "^3.5.0",
-    "documentation": "^11.0.1",
+    "documentation": "^12.1.2",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-align-assignments": "^1.0.0",

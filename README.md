@@ -119,43 +119,43 @@ See also: [DerivAPI reference](docs/DerivAPI.md)
 npm install
 ```
 
-## To run the tests
+#### To run the tests
 
 ```
 npm test
 ```
 
-## Run tests automatically on source code edits
+#### Run tests automatically on source code edits
 
 ```
 npm run devel
 ```
 
-## Run linter
+#### Run linter
 
 ```
 npm run syntax
 ```
 
-## Run all tests (lint + js tests)
+#### Run all tests (lint + js tests)
 
 ```
 npm run test_all
 ```
 
-## Prettify the code (done automatically on commit)
+#### Prettify the code (done automatically on commit)
 
 ```
 npm run prettify
 ```
 
-## Generate documentations
+#### Generate documentations
 
 ```
 npm run docs
 ```
 
-## Regenerate docs automatically on source code edit
+#### Regenerate docs automatically on source code edit
 
 Needs `inotify` to work.
 
@@ -163,25 +163,25 @@ Needs `inotify` to work.
 npm run devel_docs
 ```
 
-## Serve docs on localhost and update on source code changes
+#### Serve docs on localhost and update on source code changes
 
 ```
 npm run serve_docs
 ```
 
-## Generate html version of the docs and publish it to gh-pages
+#### Generate html version of the docs and publish it to gh-pages
 
 ```
 npm run gh-pages
 ```
 
-## Build the package
+#### Build the package
 
 ```
 npm run build
 ```
 
-## Run examples
+#### Run examples
 
 ```
 DERIV_TOKEN=YourTokenHere npm run examples

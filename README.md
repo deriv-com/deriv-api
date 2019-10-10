@@ -32,7 +32,7 @@ or if the `DerivAPI` library is already imported, can be accessed using `api.bas
 const api = new DerivAPI({...args});
 const basic = api.basic;
 
-basic.ping.then(console.log);
+basic.ping().then(console.log);
 ```
 
 ## ES6 modules

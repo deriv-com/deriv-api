@@ -6,8 +6,16 @@ Code Coverage: [![codecov](https://codecov.io/gh/binary-com/deriv-api/branch/mas
 
 # Installation
 
+## NPM
+
 ```
-npm install --save @deriv/deriv-api
+npm install @deriv/deriv-api
+```
+
+## yarn
+
+```
+yarn add @deriv/deriv-api
 ```
 
 # Usage

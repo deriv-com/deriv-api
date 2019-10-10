@@ -73,7 +73,7 @@ const DerivAPIBasic = require('@deriv/deriv-api/dist/DerivAPIBasic');
 const api = new DerivAPIBasic({app_id: /* your app_id */ });
 ```
 
-## Using the script tag
+## Using the HTML script tag
 
 ### Complete API
 

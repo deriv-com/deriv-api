@@ -20,6 +20,21 @@ yarn add @deriv/deriv-api
 
 # Usage
 
+## Basic library
+
+The basic library is a lighter version of the Deriv API, suitable for apps that
+want to directly deal with API calls.
+
+It can either be imported as a separate module (to reduce the final bundle size)
+or if the `DerivAPI` library is already imported, can be accessed using `api.basic`.
+
+```js
+const api = new DerivAPI({...args});
+const basic = api.basic;
+
+basic.ping.then(console.log);
+```
+
 ## ES6 modules
 
 ### Complete API
@@ -97,21 +112,6 @@ There are two ways to establish a connection:
 
 For more detailed examples see the [wiki](https://github.com/binary-com/deriv-api/wiki)
 See also: [DerivAPI reference](docs/DerivAPI.md)
-
-## Basic library
-
-The basic library is a lighter version of the Deriv API, suitable for apps that
-want to directly deal with API calls.
-
-It can either be imported as a separate module (to reduce the final bundle size)
-or if the `DerivAPI` library is already imported, can be accessed using `api.basic`.
-
-```js
-const api = new DerivAPI({...args});
-const basic = api.basic;
-
-basic.ping.then(console.log);
-```
 
 # Development
 

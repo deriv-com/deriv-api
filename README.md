@@ -6,13 +6,13 @@ Code Coverage: [![codecov](https://codecov.io/gh/binary-com/deriv-api/branch/mas
 
 # Installation
 
-## NPM
+#### NPM
 
 ```
 npm install @deriv/deriv-api
 ```
 
-## yarn
+#### yarn
 
 ```
 yarn add @deriv/deriv-api
@@ -37,7 +37,7 @@ basic.ping().then(console.log);
 
 ## ES6 modules
 
-### Complete API
+#### Complete API
 
 ```js
 import DerivAPI from '@deriv/deriv-api';
@@ -45,7 +45,7 @@ import DerivAPI from '@deriv/deriv-api';
 const api = new DerivAPI({app_id: /* your app_id */ });
 ```
 
-### Basic API
+#### Basic API
 
 ```js
 // Smaller bundle size, dealing only with the low-level library
@@ -56,7 +56,7 @@ const api = new DerivAPIBasic({app_id: /* your app_id */ });
 
 ## CommonJS modules
 
-### Complete API
+#### Complete API
 
 ```js
 const DerivAPI = require('@deriv/deriv-api');
@@ -64,7 +64,7 @@ const DerivAPI = require('@deriv/deriv-api');
 const api = new DerivAPI({app_id: /* your app_id */ });
 ```
 
-### Basic API
+#### Basic API
 
 ```js
 // Smaller bundle size, dealing only with the low-level library
@@ -75,7 +75,7 @@ const api = new DerivAPIBasic({app_id: /* your app_id */ });
 
 ## Using the HTML script tag
 
-### Complete API
+#### Complete API
 
 ```html
 <script src="https://unpkg.com/@deriv/deriv-api/dist/DerivAPI.js"></script>
@@ -85,7 +85,7 @@ const api = new DerivAPI({app_id: /* your app_id */ });
 </script>
 ```
 
-### Basic API
+#### Basic API
 
 ```html
 <script src="https://unpkg.com/@deriv/deriv-api/dist/DerivAPIBasic.js"></script>
@@ -110,7 +110,7 @@ There are two ways to establish a connection:
     const api = new DerivAPI({ endpoint: 'ws://...', app_id: /* your app_id */, lang: 'EN' });
     ```
 
-## Documentation
+# Documentation
 
 #### Wiki
 

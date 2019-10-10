@@ -116,6 +116,8 @@ See also: [DerivAPI reference](docs/DerivAPI.md)
 # Development
 
 ```
+git clone https://github.com/binary-com/deriv-api
+cd deriv-api
 npm install
 ```
 

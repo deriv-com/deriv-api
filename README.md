@@ -1,4 +1,4 @@
-# deriv-api
+# DerivAPI
 
 Async Websocket API for deriv.app
 

@@ -107,7 +107,7 @@ There are two ways to establish a connection:
 
 2. Pass the arguments needed to create a connection:
     ```js
-    const api = new DerivAPI({ endpoint: 'ws://...', app_id: 1003, lang: 'EN' });
+    const api = new DerivAPI({ endpoint: 'ws://...', app_id: /* your app_id */, lang: 'EN' });
     ```
 
 For more detailed examples see the [wiki](https://github.com/binary-com/deriv-api/wiki)

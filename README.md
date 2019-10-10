@@ -110,8 +110,17 @@ There are two ways to establish a connection:
     const api = new DerivAPI({ endpoint: 'ws://...', app_id: /* your app_id */, lang: 'EN' });
     ```
 
-For more detailed examples see the [wiki](https://github.com/binary-com/deriv-api/wiki)
-See also: [DerivAPI reference](docs/DerivAPI.md)
+## Documentation
+
+#### Wiki
+
+There is a short tutorial about how to use Deriv API in the [wiki page](https://github.com/binary-com/deriv-api/wiki).
+
+#### API reference
+
+The complete API reference is hosted [here](https://binary-com.github.io/deriv-api/)
+
+The above reference in one page: [DerivAPI reference](docs/DerivAPI.md)
 
 # Development
 

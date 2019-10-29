@@ -197,3 +197,9 @@ npm run build
 ```
 DERIV_TOKEN=YourTokenHere npm run examples
 ```
+
+#### Publish to npm
+
+```
+npm run prepublish && npm publish
+```

@@ -47,7 +47,7 @@ const field_mapping = {
  * @param {DerivAPI}      api
  * @param {ContractParam} options
  *
- * @property {String}       status              'proposal', 'open', 'expired', 'sold', 'won', 'lost'
+ * @property {String}       status              'proposal', 'buying', 'open', 'expired', 'sold', 'won', 'lost'
  * @property {Monetary}     ask_price           Price to pay to buy a contract
  * @property {String}       type                contract type
  * @property {Monetary}     payout              Potential or realized payout
@@ -119,7 +119,7 @@ export default class Contract extends Stream {
 
         this._data.status = 'proposal';
 
-        this.beforeUpdate((contract) => {
+        const subscriber = this.beforeUpdate((contract) => {
             const { is_expired } = contract;
 
             if (is_expired) {
@@ -127,6 +127,10 @@ export default class Contract extends Stream {
             }
 
             Object.assign(this._data, contract);
+
+            if (this.is_closed) {
+                subscriber.unsubscribe();
+            }
         });
 
         await this.beforeUpdate().pipe(first()).toPromise();
@@ -139,7 +143,8 @@ export default class Contract extends Stream {
      * @returns {Buy}
      */
     async buy({ max_price: price = this.ask_price.value } = {}) {
-        const { buy } = await this.api.basic.buy({ buy: this.proposal_id, price });
+        this._data.status = 'buying';
+        const { buy }     = await this.api.basic.buy({ buy: this.proposal_id, price });
 
         const wrappedBuy = new Buy(buy, this.currency, this.api.basic.lang);
 
@@ -190,8 +195,16 @@ export default class Contract extends Stream {
         return wrappedSell;
     }
 
+    get is_opening() {
+        return ['proposal', 'buying'].includes(this._data.status);
+    }
+
     get is_open() {
-        return this._data.status === 'open';
+        return ['expired', 'open'].includes(this._data.status);
+    }
+
+    get is_closed() {
+        return ['won', 'lost', 'sold'].includes(this._data.status);
     }
 }
 

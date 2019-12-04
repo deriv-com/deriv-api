@@ -1,3 +1,6 @@
+import {
+    finalize, share,
+} from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 import Immutable   from './Immutable';
@@ -7,11 +10,30 @@ import Immutable   from './Immutable';
  */
 export default class Stream extends Immutable {
     constructor(args) {
+        const before_update = new Subject().pipe(
+            finalize(() => this.finalize('before')),
+            share(),
+        );
+
+        const on_update = new Subject().pipe(
+            finalize(() => this.finalize('on')),
+            share(),
+        );
+
         super({
-            on_update    : new Subject(),
-            before_update: new Subject(),
+            on_update,
+            before_update,
+            subscribers: [],
+            unfinalized: {},
             ...args,
         });
+    }
+
+    finalize(type) {
+        --this.unfinalized[type];
+        if (!this.unfinalized.on && !this.unfinalized.before) {
+            this.subscribers.forEach(s => s.unsubscribe());
+        }
     }
 
     /**
@@ -30,15 +52,17 @@ export default class Stream extends Immutable {
      * @returns {Observable}
      */
     onUpdate(callback, on_error) {
+        this.unfinalized.on = 1;
         if (callback) {
-            this.on_update.subscribe(callback, on_error || (() => {}));
+            return this.on_update.subscribe(callback, on_error || (() => {}));
         }
         return this.on_update;
     }
 
     beforeUpdate(callback, on_error) {
+        this.unfinalized.before = 1;
         if (callback) {
-            this.before_update.subscribe(callback, on_error || (() => {}));
+            return this.before_update.subscribe(callback, on_error || (() => {}));
         }
         return this.before_update;
     }
@@ -54,6 +78,6 @@ export default class Stream extends Immutable {
     }
 
     addSource(source) {
-        source.subscribe(v => this.next(v), this.error.bind(this));
+        this.subscribers.push(source.subscribe(v => this.next(v), e => this.error(e)));
     }
 }

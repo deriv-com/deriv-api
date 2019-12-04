@@ -30,4 +30,8 @@ export default class Profit extends Monetary {
             this._data.sign = -1;
         }
     }
+
+    get signed() {
+        return this._data.sign * this._data.value;
+    }
 }

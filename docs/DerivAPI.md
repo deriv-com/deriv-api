@@ -810,7 +810,7 @@ Abstract class for contracts
 
 ##### Properties
 
--   `status` **[String][258]** 'proposal', 'open', 'expired', 'sold', 'won', 'lost'
+-   `status` **[String][258]** 'proposal', 'buying', 'open', 'expired', 'sold', 'won', 'lost'
 -   `ask_price` **[Monetary][282]** Price to pay to buy a contract
 -   `type` **[String][258]** contract type
 -   `payout` **[Monetary][282]** Potential or realized payout

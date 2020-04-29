@@ -1,9 +1,10 @@
 export class TestWebSocket { // eslint-disable-line import/prefer-default-export
-    constructor(acceptable_responses, delay) {
+    constructor(acceptable_responses, delay, url) {
         this.method_to_req_id     = {};
         this.acceptable_responses = acceptable_responses;
         this.delay                = delay;
         this.req_id_to_subs_id    = {};
+        this.url                  = url;
 
         setTimeout(() => {
             this.readyState = 1;

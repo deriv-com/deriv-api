@@ -1272,6 +1272,7 @@ Errors should be handled by the user of the stream
 ##### Parameters
 
 -   `request` **[Object][256]** A request object acceptable by the API
+-   `should_force`  
 
 ##### Examples
 

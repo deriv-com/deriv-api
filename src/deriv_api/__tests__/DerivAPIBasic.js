@@ -22,6 +22,13 @@ test('API construction with endpoint', () => {
     expect(() => new DerivAPIBasic({ endpoint: 1, app_id: 12345 })).toThrow();
 });
 
+test('API should change endpoint', () => {
+    const new_api = new DerivAPIBasic({ endpoint: 'first', app_id: 12345 });
+    new_api.changeSocket(new TestWebSocket(response, undefined, 'second'));
+
+    expect(new_api.connection.url).toBe('second');
+});
+
 beforeAll(() => {
     response.ping = 'pong';
     connection    = new TestWebSocket(response);

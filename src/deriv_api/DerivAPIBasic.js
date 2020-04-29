@@ -112,6 +112,34 @@ export default class DerivAPIBasic extends DerivAPICalls {
         );
     }
 
+    changeSocket(new_socket) {
+        console.log('subscription_manager: ', this.subscription_manager);
+        this.connection.onclose = () => null;
+
+        const active_subscriptions = Object.keys(this.subscription_manager.sources);
+        // this.subscription_manager  = new SubscriptionManager(this);
+
+        try {
+            this.connection.close();
+        } catch (e) {
+            // catch error
+        }
+        this.connection           = new_socket;
+        this.connection.onclose   = this.closeHandler.bind(this);
+        this.connection.onmessage = this.messageHandler.bind(this);
+
+        console.log('active_subscriptions: ', active_subscriptions);
+
+        this.connection.onopen = async () => {
+            console.log('onopen');
+            await this.send({ authorize: 'a1-FzZYnl3ypbE9I1Is5mLFjTZGbt0FS' });
+            active_subscriptions.forEach((subscription_request) => {
+                this.subscription_manager.subscribe(JSON.parse(subscription_request), true);
+            });
+            this.connection.onopen = this.openHandler.bind(this);
+        };
+    }
+
     disconnect() {
         this.shouldReconnect = false; // prevents re-connecting automatically
         this.connection.close();

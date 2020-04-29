@@ -46,8 +46,8 @@ export default class SubscriptionManager {
      *
      * @returns {Observable} - An RxJS Observable
      */
-    subscribe(request) {
-        if (this.sourceExists(request)) {
+    subscribe(request, should_force) {
+        if (this.sourceExists(request) && !should_force) {
             return this.getSource(request);
         }
 

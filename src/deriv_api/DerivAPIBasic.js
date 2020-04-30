@@ -112,12 +112,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
         );
     }
 
-    changeSocket(new_socket) {
-        console.log('subscription_manager: ', this.subscription_manager);
+    changeSocket({ new_socket, authorize_token }) {
         this.connection.onclose = () => null;
-
-        const active_subscriptions = Object.keys(this.subscription_manager.sources);
-        // this.subscription_manager  = new SubscriptionManager(this);
 
         try {
             this.connection.close();
@@ -128,14 +124,12 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.connection.onclose   = this.closeHandler.bind(this);
         this.connection.onmessage = this.messageHandler.bind(this);
 
-        console.log('active_subscriptions: ', active_subscriptions);
-
         this.connection.onopen = async () => {
-            console.log('onopen');
-            await this.send({ authorize: 'a1-FzZYnl3ypbE9I1Is5mLFjTZGbt0FS' });
-            active_subscriptions.forEach((subscription_request) => {
-                this.subscription_manager.subscribe(JSON.parse(subscription_request), true);
-            });
+            if (authorize_token) {
+                await this.send({ authorize: authorize_token });
+            }
+            this.subscription_manager.refreshActiveSubs();
+
             this.connection.onopen = this.openHandler.bind(this);
         };
     }

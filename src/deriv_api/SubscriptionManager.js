@@ -82,7 +82,7 @@ export default class SubscriptionManager {
         const source = this.api.sendAndGetSource(request).pipe(
             finalize(() => {
                 if (!(key in this.key_to_subs_id)) return;
-
+                console.log('this.key_to_subs_id[key]', this.key_to_subs_id[key]);
                 // Forget subscriptions, but don't complain if failed
                 this.forget(this.key_to_subs_id[key]).then(() => {}, () => {});
             }),
@@ -149,6 +149,15 @@ export default class SubscriptionManager {
         }
 
         return undefined;
+    }
+
+    refreshActiveSubs() {
+        const active_subscriptions = Object.keys(this.sources);
+
+        // update subs_ids_per_msg_type, subs_id_to_key, key_to_subs_id
+        active_subscriptions.forEach((subscription_request) => {
+            this.subscribe(JSON.parse(subscription_request), true);
+        });
     }
 
     removeKeyOnError(key) {

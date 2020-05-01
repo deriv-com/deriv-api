@@ -50,8 +50,8 @@ export default class SubscriptionManager {
         if (this.sourceExists(request)) {
             return this.getSource(request);
         }
-
-        return this.createNewSource({ ...request, subscribe: 1 });
+        request.subscribe = 1;
+        return this.createNewSource(request);
     }
 
     getSource(request) {

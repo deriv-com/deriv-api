@@ -139,7 +139,7 @@ export default class SubscriptionManager {
         // Useful for poc for sold contract which never returns subscription
         if (!subscription) {
             // subscribing to proposal open contract without any open positions doesn't send subscription id
-            // We should not complete that subscription in order to receive poc of later
+            // We should not complete that subscription in order to receive poc of contracts purchased later
             if (echo_req && echo_req.subscribe) return undefined;
 
             return this.completeSubsByKey(key);

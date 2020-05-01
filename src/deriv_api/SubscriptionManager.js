@@ -134,10 +134,16 @@ export default class SubscriptionManager {
         });
     }
 
-    saveSubsId(key, { subscription, msg_type }) {
+    saveSubsId(key, { echo_req, subscription, msg_type }) {
         // If the response doesn't have a subs id, it's not a subscription, so complete source
         // Useful for poc for sold contract which never returns subscription
-        if (!subscription) return this.completeSubsByKey(key);
+        if (!subscription) {
+            // subscribing to proposal open contract without any open positions doesn't send subscription id
+            // We should not complete that subscription in order to receive poc of later
+            if (echo_req && echo_req.subscribe) return undefined;
+
+            return this.completeSubsByKey(key);
+        }
 
         const { id } = subscription;
 

@@ -51,7 +51,7 @@ export default class SubscriptionManager {
             return this.getSource(request);
         }
 
-        return this.createNewSource({ ...request, subscribe: 1 });
+        return this.createNewSource({ ...request, subscribe: 1 }, should_force);
     }
 
     getSource(request) {
@@ -82,7 +82,6 @@ export default class SubscriptionManager {
         const source = this.api.sendAndGetSource(request).pipe(
             finalize(() => {
                 if (!(key in this.key_to_subs_id)) return;
-                console.log('this.key_to_subs_id[key]', this.key_to_subs_id[key]);
                 // Forget subscriptions, but don't complain if failed
                 this.forget(this.key_to_subs_id[key]).then(() => {}, () => {});
             }),
@@ -152,11 +151,26 @@ export default class SubscriptionManager {
     }
 
     refreshActiveSubs() {
-        const active_subscriptions = Object.keys(this.sources);
+        const active_subscriptions          = Object.keys(this.sources);
+        const active_subscriptions_promises = active_subscriptions
+            .map(active_subscription => this.api.send(
+                { ...JSON.parse(active_subscription), subscribe: 1 },
+            ));
 
-        // update subs_ids_per_msg_type, subs_id_to_key, key_to_subs_id
-        active_subscriptions.forEach((subscription_request) => {
-            this.subscribe(JSON.parse(subscription_request), true);
+        Promise.all(active_subscriptions_promises).then((values) => {
+            this.subs_id_to_key = {};
+            values.forEach((val, idx) => {
+                // find subscription id
+                const req    = active_subscriptions[idx];
+                const sub_id = val.subscription.id;
+                // keys to sub_id
+                this.key_to_subs_id[req] = sub_id;
+                // sub_id_to_key
+                this.subs_id_to_key[sub_id] = req;
+
+                this.subs_ids_per_msg_type[val.msg_type] = [];
+                this.subs_ids_per_msg_type[val.msg_type] = [sub_id];
+            });
         });
     }
 

@@ -128,6 +128,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
             if (authorize_token) {
                 await this.send({ authorize: authorize_token });
             }
+
             this.subscription_manager.refreshActiveSubs();
 
             this.connection.onopen = this.openHandler.bind(this);

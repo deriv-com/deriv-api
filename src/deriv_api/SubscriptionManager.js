@@ -124,6 +124,8 @@ export default class SubscriptionManager {
     }
 
     forgetAll(...types) {
+        // To include subscriptions that were automatically unsubscribed
+        // for example a proposal subscription is auto-unsubscribed after buy
         types.forEach((type) => {
             (this.subs_per_msg_type[type] || []).forEach(key => this.completeSubsByKey(key));
             this.subs_per_msg_type[type] = [];

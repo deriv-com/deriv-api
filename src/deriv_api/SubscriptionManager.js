@@ -2,6 +2,8 @@ import {
     first, finalize, share,
 } from 'rxjs/operators';
 
+import { APIError }                       from './errors';
+
 import { objectToCacheKey }               from './utils';
 
 /**
@@ -31,7 +33,12 @@ export default class SubscriptionManager {
         this.subs_id_to_key         = {};
         this.key_to_subs_id         = {};
         this.buy_key_to_contract_id = {};
-        this.subs_ids_per_msg_type  = [];
+        this.subs_per_msg_type      = [];
+        // streams_list is the list of subscriptions msg_types available.
+        // Please add/remove based on current available streams in api.
+        // Refer https://developers.binary.com/
+        this.streams_list = ['balance', 'candles', 'p2p_advertiser', 'p2p_order', 'proposal',
+            'proposal_array', 'proposal_open_contract', 'ticks', 'ticks_history', 'transaction', 'website_status'];
     }
 
     /**
@@ -91,6 +98,8 @@ export default class SubscriptionManager {
 
         this.sources[key] = source;
 
+        this.saveSubsPerMsgType(request, key);
+
         source.pipe(first()).toPromise()
             .then((response) => {
                 if (request.buy) {
@@ -115,11 +124,10 @@ export default class SubscriptionManager {
     forgetAll(...types) {
         // To include subscriptions that were automatically unsubscribed
         // for example a proposal subscription is auto-unsubscribed after buy
-        const subs_ids = [];
-
-        types.forEach(type => subs_ids.push(...(this.subs_ids_per_msg_type[type] || [])));
-
-        this.completeSubsByIds(...subs_ids);
+        types.forEach((type) => {
+            (this.subs_per_msg_type[type] || []).forEach(key => this.completeSubsByKey(key));
+            this.subs_per_msg_type[type] = [];
+        });
 
         return this.api.send({ forget_all: types });
     }
@@ -134,7 +142,7 @@ export default class SubscriptionManager {
         });
     }
 
-    saveSubsId(key, { subscription, msg_type }) {
+    saveSubsId(key, { subscription }) {
         // If the response doesn't have a subs id, it's not a subscription, so complete source
         // Useful for poc for sold contract which never returns subscription
         if (!subscription) return this.completeSubsByKey(key);
@@ -142,13 +150,22 @@ export default class SubscriptionManager {
         const { id } = subscription;
 
         if (!(id in this.subs_id_to_key)) {
-            this.subs_id_to_key[id]              = key;
-            this.key_to_subs_id[key]             = id;
-            this.subs_ids_per_msg_type[msg_type] = this.subs_ids_per_msg_type[msg_type] || [];
-            this.subs_ids_per_msg_type[msg_type].push(id);
+            this.subs_id_to_key[id]  = key;
+            this.key_to_subs_id[key] = id;
         }
 
         return undefined;
+    }
+
+    saveSubsPerMsgType(request, key) {
+        const msg_type = this.getMsgType(request);
+
+        if (msg_type) {
+            this.subs_per_msg_type[msg_type] = this.subs_per_msg_type[msg_type] || [];
+            this.subs_per_msg_type[msg_type].push(key);
+        } else {
+            this.api.sanityErrors.next(new APIError('Subscription type is not found in deriv-api'));
+        }
     }
 
     removeKeyOnError(key) {
@@ -156,7 +173,7 @@ export default class SubscriptionManager {
     }
 
     completeSubsByKey(key) {
-        if (!key) return;
+        if (!key || !this.sources[key]) return;
 
         // Delete the source
         const source = this.sources[key];
@@ -174,6 +191,10 @@ export default class SubscriptionManager {
 
         // Mark the source completed
         source.complete();
+    }
+
+    getMsgType(request) {
+        return this.streams_list.find(stream_key => stream_key in request);
     }
 }
 

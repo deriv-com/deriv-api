@@ -215,6 +215,11 @@ export default class DerivAPIBasic extends DerivAPICalls {
             }
             if (response.error) {
                 this.pendingRequests[reqId].error(response);
+            } else if (this.pendingRequests[reqId].isStopped && response.subscription) {
+                // Source is already marked as completed. In this case we should
+                // send a forget request with the subscription id and ignore the response received.
+                const { id } = response.subscription;
+                this.forget(id);
             } else {
                 this.pendingRequests[reqId].next(response);
             }

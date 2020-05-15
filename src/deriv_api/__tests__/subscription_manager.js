@@ -72,6 +72,17 @@ test('Forget all will remove the subscription for the types', async () => {
     await api.forgetAll('ticks');
 });
 
+test('Sends a extra forget request when there is a response for the source which is already marked as completed', async () => {
+    api.subscribe({ ticks: 'R_100' });
+
+    await api.forgetAll('ticks');
+
+    const forget_spy = jest.spyOn(api, 'forget');
+    connection.receive('tick', {});
+
+    expect(forget_spy).toHaveBeenCalled();
+});
+
 describe('Check sources', () => {
     let source_R_100_1;
     let source_R_100_2;

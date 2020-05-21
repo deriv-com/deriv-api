@@ -117,6 +117,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.connection.close();
     }
 
+    isConnectionClosed() {
+        return this.connection.readyState === 2 || this.connection.readyState === 3;
+    }
+
     sendAndGetSource(request) {
         const pending = new Subject();
 
@@ -126,6 +130,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
         this.connected
             .then(() => {
+                if (this.isConnectionClosed()) return;
+
                 this.connection.send(JSON.stringify(request));
             })
             .catch(e => pending.error(e));

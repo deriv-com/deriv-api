@@ -1,6 +1,6 @@
 {
   "name": "@deriv/deriv-api",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Websocket API for Deriv applications",
   "main": "dist/DerivAPI.js",
   "unpkg": "dist/DerivAPI.js",

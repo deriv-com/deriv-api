@@ -27,7 +27,7 @@ async function main() {
 
         const contract = await api.contract({
             contract_type: 'CALL',
-            currency: currency,
+            currency,
             amount: 10,
             duration: 5,
             duration_unit: 't',

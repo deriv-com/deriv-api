@@ -37,14 +37,6 @@ basic.ping().then(console.log);
 
 ## ES6 modules
 
-#### Complete API
-
-```js
-import DerivAPI from '@deriv/deriv-api';
-
-const api = new DerivAPI({app_id: /* your app_id */ });
-```
-
 #### Basic API
 
 ```js
@@ -56,14 +48,6 @@ const api = new DerivAPIBasic({app_id: /* your app_id */ });
 
 ## CommonJS modules
 
-#### Complete API
-
-```js
-const DerivAPI = require('@deriv/deriv-api');
-
-const api = new DerivAPI({app_id: /* your app_id */ });
-```
-
 #### Basic API
 
 ```js
@@ -74,16 +58,6 @@ const api = new DerivAPIBasic({app_id: /* your app_id */ });
 ```
 
 ## Using the HTML script tag
-
-#### Complete API
-
-```html
-<script src="https://unpkg.com/@deriv/deriv-api/dist/DerivAPI.js"></script>
-<script>
-const api = new DerivAPI({app_id: /* your app_id */ });
-/* rest of your code */
-</script>
-```
 
 #### Basic API
 

@@ -219,7 +219,15 @@ export default class DerivAPIBasic extends DerivAPICalls {
             if (expect_response && expect_response.isPending()) {
                 expect_response.resolve(response);
             }
-            if (response.error) {
+
+            const request = response.echo_req;
+            // When one of the child subscriptions of `proposal_open_contract` has an error in the response,
+            // it should be handled in the callback of consumer instead. Calling `error()` with parent subscription
+            // will mark the parent subscription as complete and all child subscriptions will be forgotten.
+            const is_parent_subscription = request && request.proposal_open_contract
+                                            && !request.contract_id;
+
+            if (response.error && !is_parent_subscription) {
                 this.pendingRequests[reqId].error(response);
             } else if (this.pendingRequests[reqId].isStopped && response.subscription) {
                 // Source is already marked as completed. In this case we should

@@ -4,6 +4,10 @@ Async Websocket API for deriv-app
 
 Code Coverage: [![codecov](https://codecov.io/gh/binary-com/deriv-api/branch/master/graph/badge.svg)](https://codecov.io/gh/binary-com/deriv-api)
 
+### Requirement:
+   
+Node.js (v12.18.0 or higher is recommended)
+
 # Installation
 
 #### NPM

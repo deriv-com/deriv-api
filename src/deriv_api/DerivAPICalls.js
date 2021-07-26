@@ -115,7 +115,6 @@ export default class DerivAPICalls {
      * @param {Number} args.req_id - [Optional] Used to map request to response.
      */
     activeSymbols(args = {}) {
-        console.trace('activeSymbols');
         const config = {
             active_symbols: {
                 required: 1,

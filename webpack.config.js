@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = [
     {
-        mode  : 'production',
+        mode  : 'development',
         entry : './src/deriv_api/DerivAPIBasic.js',
         output: {
             filename     : 'DerivAPIBasic.js',
@@ -14,22 +14,22 @@ module.exports = [
             path         : path.resolve(__dirname, 'dist'),
         },
         module: {
-            rules : [
+            rules: [
                 {
-                    test: /\.js$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
-                    use: {
+                    use    : {
                         loader: 'babel-loader',
-                    }
+                    },
                 },
-            ]
+            ],
         },
     },
     {
         plugins: [
             new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         ],
-        mode  : 'production',
+        mode  : 'development',
         entry : './src/DerivAPI.js',
         output: {
             filename     : 'DerivAPI.js',
@@ -40,15 +40,15 @@ module.exports = [
             path         : path.resolve(__dirname, 'dist'),
         },
         module: {
-            rules : [
+            rules: [
                 {
-                    test: /\.js$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
-                    use: {
+                    use    : {
                         loader: 'babel-loader',
-                    }
+                    },
                 },
-            ]
+            ],
         },
     },
 ];

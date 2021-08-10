@@ -5,6 +5,7 @@ import {
 } from 'rxjs/operators';
 
 import { Subject }         from 'rxjs';
+import WebSocket from 'ws';
 
 import Cache               from './Cache';
 import CustomPromise       from './CustomPromise';

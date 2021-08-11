@@ -8,7 +8,6 @@ const response = {};
 let connection;
 let underlying;
 
-
 test('Account instance', async () => {
     expect(underlying).toBeInstanceOf(Underlying);
 

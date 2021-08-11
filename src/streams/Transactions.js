@@ -4,7 +4,6 @@ import {
 
 import Transaction      from '../immutables/Transaction';
 import Stream           from '../types/Stream';
-
 import { mapApiFields } from '../utils';
 
 const max_tx_size = 5000;
@@ -12,7 +11,6 @@ const max_tx_size = 5000;
 const field_mapping = {
     expiry_time: 'date_expiry',
 };
-
 
 /**
  * A stream of transactions
@@ -40,7 +38,7 @@ export default class Transactions extends Stream {
 
         this.addSource(transactions.pipe(
             skip(1),
-            map(t => wrapTransaction(t, this._data.active_symbols, this.api.basic.lang)),
+            map((t) => wrapTransaction(t, this._data.active_symbols, this.api.basic.lang)),
             share(),
         ));
 
@@ -58,7 +56,7 @@ export default class Transactions extends Stream {
 }
 
 function wrapTransaction({ transaction }, active_symbols, lang) {
-    const { pip } = active_symbols.find(s => s.symbol === transaction.symbol);
+    const { pip } = active_symbols.find((s) => s.symbol === transaction.symbol);
 
     return new Transaction(mapApiFields(transaction, field_mapping), pip, lang);
 }

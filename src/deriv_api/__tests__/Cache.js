@@ -1,5 +1,4 @@
 import { TestWebSocket } from '../../test_utils';
-
 import DerivAPI          from '../DerivAPIBasic';
 
 let api;

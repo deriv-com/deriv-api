@@ -16,7 +16,6 @@ export default class Duration extends Immutable {
         super({ value, unit });
     }
 
-
     /**
      * Adds this duration to a date object
      *

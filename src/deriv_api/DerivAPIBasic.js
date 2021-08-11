@@ -3,16 +3,14 @@ import {
     filter,
     share,
 } from 'rxjs/operators';
-
 import { Subject }         from 'rxjs';
-import WebSocket from 'ws';
+import WebSocket           from 'ws';
 
 import Cache               from './Cache';
 import CustomPromise       from './CustomPromise';
 import DerivAPICalls       from './DerivAPICalls';
 import InMemory            from './InMemory';
 import SubscriptionManager from './SubscriptionManager';
-
 import {
     APIError,
     ConstructionError,
@@ -135,7 +133,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
                 this.connection.send(JSON.stringify(request));
             })
-            .catch(e => pending.error(e));
+            .catch((e) => pending.error(e));
 
         return pending;
     }
@@ -266,21 +264,21 @@ export default class DerivAPIBasic extends DerivAPICalls {
      * @returns {Observable} for close events
      */
     onClose() {
-        return this.events.pipe(filter(e => e.name === 'close'), share());
+        return this.events.pipe(filter((e) => e.name === 'close'), share());
     }
 
     /**
      * @returns {Observable} for open events
      */
     onOpen() {
-        return this.events.pipe(filter(e => e.name === 'open'), share());
+        return this.events.pipe(filter((e) => e.name === 'open'), share());
     }
 
     /**
      * @returns {Observable} for new messages
      */
     onMessage() {
-        return this.events.pipe(filter(e => e.name === 'message'), share());
+        return this.events.pipe(filter((e) => e.name === 'message'), share());
     }
 
     /**
@@ -303,7 +301,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         // expect on a single response returns a single response, not a list
         if (types.length === 1) return this.expect_response_types[types[0]];
 
-        return Promise.all(types.map(type => this.expect_response_types[type]));
+        return Promise.all(types.map((type) => this.expect_response_types[type]));
     }
 }
 

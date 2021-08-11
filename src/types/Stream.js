@@ -54,6 +54,6 @@ export default class Stream extends Immutable {
     }
 
     addSource(source) {
-        source.subscribe(v => this.next(v), this.error.bind(this));
+        source.subscribe((v) => this.next(v), this.error.bind(this));
     }
 }

@@ -2,7 +2,6 @@ import Barrier        from '../fields/Barrier';
 import DateRange      from '../fields/DateRange';
 import DurationRange  from '../fields/DurationRange';
 import FullName       from '../fields/FullName';
-
 import Immutable      from '../types/Immutable';
 
 /**
@@ -45,7 +44,7 @@ export default class ContractOptions extends Immutable {
         const { contracts_for } = await this.api.basic.cache.contractsFor(this.symbol);
 
         const { active_symbols } = await this.api.basic.cache.activeSymbols('brief');
-        const { pip }            = active_symbols.find(seconds => seconds.symbol === this.symbol);
+        const { pip }            = active_symbols.find((seconds) => seconds.symbol === this.symbol);
 
         const { payout_currencies } = await this.api.basic.cache.payoutCurrencies();
 
@@ -88,7 +87,6 @@ function groupByCategories(contracts_for, pip) {
             duration: new DurationRange(info.min_contract_duration, info.max_contract_duration),
             barriers: getBarriers(info, pip),
         };
-
 
         if (info.expiry_type === 'tick') {
             category.expiry_types.ticks = expiry_type;

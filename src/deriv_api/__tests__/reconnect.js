@@ -1,22 +1,19 @@
+import WebSocket     from 'ws';
+
 import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
-global.WebSocket    = jest.fn();
-const { WebSocket } = global;
-
+// global.WebSocket    = jest.fn();
+// const { WebSocket } = global;
+jest.mock('ws');
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);
     expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?app_id=4000&l=FR&brand=deriv');
 });
 
+const expected_response = { ping: 'pong', req_id: 1 };
 test('API can send a request', async () => {
-    const expected_request  = { ping: 1,      req_id: 1 };
-    const expected_response = { ping: 'pong', req_id: 1 };
-
-    // Make a call to onmessage immediately after send is called
-    WebSocket.prototype.send = jest.fn(() => api.connection.onmessage({
-        data: JSON.stringify(expected_response),
-    }));
+    const expected_request = { ping: 1,      req_id: 1 };
 
     const response = await api.ping();
 
@@ -41,7 +38,12 @@ test('API does not reconnect if connection is passed', async () => {
 });
 
 beforeAll(() => {
+    // jest.spyOn(WebSocket.prototype, 'close').mockImplementation(jest.fn());
     WebSocket.prototype.close = jest.fn();
+    // Make a call to onmessage immediately after send is called
+    WebSocket.prototype.send = jest.fn(() => api.connection.onmessage({
+        data: JSON.stringify(expected_response),
+    }));
 
     api = new DerivAPIBasic({
         app_id  : 4000,

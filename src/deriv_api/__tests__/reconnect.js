@@ -11,11 +11,11 @@ test('Is websocket instance created', () => {
     expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?app_id=4000&l=FR&brand=deriv');
 });
 
-const expected_response = { ping: 'pong', req_id: 1 };
+let expected_response;
 test('API can send a request', async () => {
     const expected_request = { ping: 1,      req_id: 1 };
-
-    const response = await api.ping();
+    expected_response      = { ping: 'pong', req_id: 1 };
+    const response         = await api.ping();
 
     expect(response).toEqual(expected_response);
     expect(WebSocket.prototype.send).toHaveBeenCalledWith(JSON.stringify(expected_request));

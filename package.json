@@ -23,11 +23,6 @@
     "devel_docs": "while :; do clear; inotifywait -r src/ && npm run docs || break; done",
     "prepublish": "npm run test_all && npm run build"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run docs && npm run prettify && git add ."
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binary-com/deriv-api.git"

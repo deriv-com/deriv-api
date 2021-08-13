@@ -1,5 +1,6 @@
-const path    = require('path');
-const webpack = require('webpack');
+const path          = require('path');
+const webpack       = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = [
     {
@@ -13,16 +14,17 @@ module.exports = [
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
-        module: {
-            rules : [
+        externals: [nodeExternals()], // fix https://github.com/websockets/ws/issues/1126
+        module   : {
+            rules: [
                 {
-                    test: /\.js$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
-                    use: {
+                    use    : {
                         loader: 'babel-loader',
-                    }
+                    },
                 },
-            ]
+            ],
         },
     },
     {
@@ -39,16 +41,17 @@ module.exports = [
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
-        module: {
-            rules : [
+        externals: [nodeExternals()],
+        module   : {
+            rules: [
                 {
-                    test: /\.js$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
-                    use: {
+                    use    : {
                         loader: 'babel-loader',
-                    }
+                    },
                 },
-            ]
+            ],
         },
     },
 ];

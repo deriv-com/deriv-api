@@ -1,11 +1,11 @@
-import WebSocket     from 'ws';
+import WebSocket     from 'isomorphic-ws';
 
 import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
 // global.WebSocket    = jest.fn();
 // const { WebSocket } = global;
-jest.mock('ws');
+jest.mock('isomorphic-ws');
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);
     expect(WebSocket).toHaveBeenCalledWith('ws://localhost/websockets/v3?app_id=4000&l=FR&brand=deriv');

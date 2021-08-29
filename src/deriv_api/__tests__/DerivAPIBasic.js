@@ -4,7 +4,7 @@ import DerivAPIBasic     from '../DerivAPIBasic';
 let api;
 let connection;
 const response = {};
-jest.mock('ws');
+jest.mock('isomorphic-ws');
 test('Constructing DerivAPIBasic', async () => {
     expect(api).toBeInstanceOf(DerivAPIBasic);
 

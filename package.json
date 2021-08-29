@@ -52,12 +52,13 @@
     "webpack": "^5.49.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-node-externals": "^3.0.0",
+    "ws": "^8.2.1"
   },
   "dependencies": {
     "dayjs": "^1.10.6",
+    "isomorphic-ws": "^4.0.1",
     "json-stable-stringify": "^1.0.1",
-    "rxjs": "^7.3.0",
-    "ws": "^8.0.0"
+    "rxjs": "^7.3.0"
   }
 }

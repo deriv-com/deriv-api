@@ -3,8 +3,6 @@ import WebSocket     from 'isomorphic-ws';
 import DerivAPIBasic from '../DerivAPIBasic';
 
 let api;
-// global.WebSocket    = jest.fn();
-// const { WebSocket } = global;
 jest.mock('isomorphic-ws');
 test('Is websocket instance created', () => {
     expect(api.connection).toBeInstanceOf(WebSocket);

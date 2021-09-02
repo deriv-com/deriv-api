@@ -149,6 +149,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
             data: request,
         });
 
+        this.deleteFromExpectResponse(request);
+
         const response_promise = this.sendAndGetSource(request).pipe(first()).toPromise();
 
         response_promise.then((response) => {
@@ -302,6 +304,15 @@ export default class DerivAPIBasic extends DerivAPICalls {
         if (types.length === 1) return this.expect_response_types[types[0]];
 
         return Promise.all(types.map((type) => this.expect_response_types[type]));
+    }
+
+    deleteFromExpectResponse(request) {
+        const response_type = Object.keys(this.expect_response_types)
+            .find((type) => type in request);
+        if (this.expect_response_types[response_type]
+            && !this.expect_response_types[response_type].isPending()) {
+            delete this.expect_response_types[response_type];
+        }
     }
 }
 

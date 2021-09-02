@@ -1,5 +1,5 @@
-const path          = require('path');
-const webpack       = require('webpack');
+const path    = require('path');
+const webpack = require('webpack');
 
 module.exports = [
     {
@@ -13,7 +13,7 @@ module.exports = [
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
-        module   : {
+        module: {
             rules: [
                 {
                     test   : /\.js$/,
@@ -39,8 +39,7 @@ module.exports = [
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
-        externals: [nodeExternals()],
-        module   : {
+        module: {
             rules: [
                 {
                     test   : /\.js$/,

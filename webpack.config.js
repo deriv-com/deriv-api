@@ -1,6 +1,5 @@
 const path          = require('path');
 const webpack       = require('webpack');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = [
     {
@@ -14,7 +13,6 @@ module.exports = [
             libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
-        externals: [nodeExternals()], // fix https://github.com/websockets/ws/issues/1126
         module   : {
             rules: [
                 {

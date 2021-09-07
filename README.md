@@ -170,6 +170,12 @@ npm run gh-pages
 npm run build
 ```
 
+### Rebuild the pacakge automatically on source code changes with inline-source-map
+
+```
+npm run build_dev
+```
+
 #### Run examples
 
 ```

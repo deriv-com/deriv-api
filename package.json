@@ -13,7 +13,7 @@
     "examples": "npm run build -- --display=none; for e in examples/*; do node $e; done",
     "coverage": "codecov",
     "devel": "npm test -- --watch --notify --onlyChanged",
-    "watch": "webpack --watch --config webpack.dev.js",
+    "build_dev": "webpack --watch --config webpack.dev.js",
     "lint": "eslint",
     "syntax": "npm run lint 'src/**/*.js'",
     "test_all": "npm test && npm run syntax",

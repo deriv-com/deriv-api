@@ -2796,7 +2796,7 @@ Type: [Object][328]
     -   `args.granularity` **[Number][343]** [Optional] Only applicable for style: `candles`. Candle time-dimension width setting. (default: `60`).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.req_id` **[Number][343]** [Optional] Used to map request to response.
-    -   `args.start` **[Number][343]** [Optional] Epoch value representing the earliest boundary of the returned ticks. -   For `"style": "ticks"`: this will default to 1 day ago.
+    -   `args.start` **[Number][343]** [Optional] Epoch value representing the earliest boundary of the returned ticks.-   For `"style": "ticks"`: this will default to 1 day ago.
         -   For `"style": "candles"`: it will default to 1 day ago if count or granularity is undefined.
     -   `args.style` **[String][330]** [Optional] The tick-output style.
     -   `args.subscribe` **[Number][343]** [Optional] 1 - to send updates whenever a new tick is received.

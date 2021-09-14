@@ -13,6 +13,10 @@ if (!token) {
     process.exit(1);
 }
 
+/**
+ * If we want to use the Deriv-API library in the Nodejs environment we can create ready to use connection
+ * and pass it to the `DerivAPI` constructor.
+ */
 const connection = new WS(`wss://frontend.binaryws.com/websockets/v3?app_id=${app_id}&l=${lang}&brand=${brand}`);
 
 const api = new DerivAPI({ app_id, connection });

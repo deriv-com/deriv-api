@@ -58,6 +58,7 @@
     "dayjs": "^1.10.6",
     "isomorphic-ws": "^4.0.1",
     "json-stable-stringify": "^1.0.1",
-    "rxjs": "^7.3.0"
+    "rxjs": "^7.3.0",
+    "ws": "^8.2.1"
   }
 }

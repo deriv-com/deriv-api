@@ -1,4 +1,4 @@
-global.WebSocket = require('isomorphic-ws');
+global.WebSocket = require('ws');
 const { find } = require('rxjs/operators');
 const DerivAPI = require('../dist/DerivAPI');
 

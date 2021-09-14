@@ -1,4 +1,8 @@
 import WebSocket           from 'isomorphic-ws';
+// const WebSocket = require('isomorphic-ws')
+
+console.log('ramin0', WebSocket)
+
 import {
     first,
     filter,
@@ -106,6 +110,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
             brand,
         } = this.connectionArgs;
 
+        console.log('ramin', WebSocket);
         this.connection = new WebSocket(
             `${endpointUrl.toString()}websockets/v3?app_id=${app_id}&l=${lang}&brand=${brand}`,
         );

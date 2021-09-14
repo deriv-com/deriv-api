@@ -9,9 +9,11 @@ module.exports = [
         output: {
             filename     : 'DerivAPIBasic.js',
             globalObject : "typeof self !== 'undefined' ? self : this", // Because webpack sucks
-            library      : 'DerivAPIBasic',
+            library      : {
+                name: 'DerivAPIBasic',
+                type: '',
+            },
             libraryExport: 'default',
-            libraryTarget: 'umd',
             path         : path.resolve(__dirname, 'dist'),
         },
         module: {

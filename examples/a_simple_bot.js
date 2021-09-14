@@ -1,17 +1,21 @@
-global.WebSocket = require('ws');
+const WS = require('ws');
 const { find } = require('rxjs/operators');
 const DerivAPI = require('../dist/DerivAPI');
 
 const token = process.env.DERIV_TOKEN;
 const app_id = process.env.APP_ID || 1234;
 const expected_payout = process.env.EXPECTED_PAYOUT || 19;
+const lang       = 'EN';
+const brand      = '';
 
 if (!token) {
     console.error('DERIV_TOKEN environment variable is not set');
     process.exit(1);
 }
 
-const api = new DerivAPI({ app_id });
+const connection = new WS(`wss://frontend.binaryws.com/websockets/v3?app_id=${app_id}&l=${lang}&brand=${brand}`);
+
+const api = new DerivAPI({ app_id, connection });
 
 async function main() {
     try {

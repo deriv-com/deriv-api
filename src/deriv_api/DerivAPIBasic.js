@@ -76,6 +76,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.pendingRequests       = {};
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
+        this.timeoutObject         = '';
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -87,6 +88,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.connection.onopen    = this.openHandler.bind(this);
         this.connection.onclose   = this.closeHandler.bind(this);
         this.connection.onmessage = this.messageHandler.bind(this);
+        this.connection.onerror   = this.errorHandler.bind(this);
     }
 
     connect() {
@@ -107,9 +109,13 @@ export default class DerivAPIBasic extends DerivAPICalls {
             brand,
         } = this.connectionArgs;
 
+        let time = new Date();
+        console.log(`before connect${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
         this.connection = new WebSocket(
             `${endpointUrl.toString()}websockets/v3?app_id=${app_id}&l=${lang}&brand=${brand}`,
         );
+        time            = new Date();
+        console.log(`after connect${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
     }
 
     disconnect() {
@@ -118,6 +124,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     isConnectionClosed() {
+        console.log('is connection closed');
         return this.connection.readyState === 2 || this.connection.readyState === 3;
     }
 
@@ -185,14 +192,34 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return this.subscription_manager.forgetAll(...types);
     }
 
+    ping() {
+        console.log('ping called');
+        console.log(this.connection.readyState);
+        // console.log(this.connection);
+        this.connection.send(JSON.stringify('{"ping": 1}'));
+        console.log('after calling send');
+        this.timeoutObject = setTimeout(this.connect.bind(this), 5000);
+        // this.timeoutObject = setTimeout(this.closeHandler.bind(this), 5000);
+        console.log('after tm function');
+    }
+
+    pong() {
+        console.log('clear timeout');
+        clearTimeout(this.timeoutObject);
+    }
+
     openHandler() {
+        console.log('openHandler');
         this.events.next({
             name: 'open',
         });
-
+        setInterval(this.ping.bind(this), 30000);
+        console.log('after set interval');
         if (this.connection.readyState === 1) {
+            console.log('openHandler readystate = 1');
             this.connected.resolve();
         } else {
+            console.log('open Handler else part');
             setTimeout(this.openHandler.bind(this), 50);
         }
     }
@@ -208,6 +235,11 @@ export default class DerivAPIBasic extends DerivAPICalls {
         }
 
         const response = JSON.parse(msg.data);
+        console.log(response.ping);
+        if (response.ping === 'pong') {
+            this.pong().bind(this);
+            return;
+        }
 
         this.events.next({
             name: 'message',
@@ -253,8 +285,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.events.next({
             name: 'close',
         });
-
+        console.log('close handler');
         if (this.shouldReconnect) {
+            console.log('closeHandler reconnect?');
             this.events.next({
                 name: 'reconnecting',
             });
@@ -263,10 +296,20 @@ export default class DerivAPIBasic extends DerivAPICalls {
         }
     }
 
+    errorHandler(error) {
+        console.log(error);
+        this.sanityErrors.next(
+            new APIError(
+                'Something went wrong while receiving the response from API.',
+            ),
+        );
+    }
+
     /**
      * @returns {Observable} for close events
      */
     onClose() {
+        console.log('onClose');
         return this.events.pipe(filter(e => e.name === 'close'), share());
     }
 
@@ -281,6 +324,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
      * @returns {Observable} for new messages
      */
     onMessage() {
+        console.log('onMessage');
         return this.events.pipe(filter(e => e.name === 'message'), share());
     }
 

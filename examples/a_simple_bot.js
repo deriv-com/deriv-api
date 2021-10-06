@@ -63,8 +63,10 @@ async function main() {
         console.log(`You ${status}: ${profit.currency} ${profit.display}`);
 
     } catch (err) {
+        console.log('simple bot catch')
         console.error(err);
     } finally {
+        console.log("calling disconnect");
         // Close the connection and exit
         api.basic.disconnect();
     }

@@ -10,11 +10,8 @@ if (!token) {
     console.error('DERIV_TOKEN environment variable is not set');
     process.exit(1);
 }
-const api = new DerivAPI({ app_id });
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+const api = new DerivAPI({ app_id });
 
 async function main() {
     try {
@@ -27,12 +24,6 @@ async function main() {
         balance.onUpdate(() => {
             console.log(`Your new balance is: ${balance.currency} ${balance.display}`);
         });
-
-	console.log("=============================going to call auth based");
-	await sleep(30000);
-	console.log("going to call auth based");
-	const accountStatus = await api.basic.getAccountStatus({ get_account_status: 1 });
-	console.log(accountStatus);
 
         const contract = await api.contract({
             contract_type: 'CALL',

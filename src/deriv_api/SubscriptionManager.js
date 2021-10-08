@@ -86,6 +86,7 @@ export default class SubscriptionManager {
     createNewSource(request) {
         const key = toKey(request);
 
+        console.log('AM I called from subcription calling this.api.sendAndGetSource');
         const source = this.api.sendAndGetSource(request).pipe(
             finalize(() => {
                 if (!(key in this.key_to_subs_id)) return;
@@ -109,6 +110,7 @@ export default class SubscriptionManager {
                     };
                 }
                 this.saveSubsId(key, response);
+                console.log('source pipe');
             }, this.removeKeyOnError(key));
 
 

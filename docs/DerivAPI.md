@@ -246,13 +246,13 @@
     -   [Parameters][242]
 -   [InMemory][243]
 -   [TransactionParams][244]
--   [Immutable][245]
-    -   [Parameters][246]
-    -   [init][247]
--   [ExpiryType][248]
-    -   [Properties][249]
--   [ContractCategory][250]
-    -   [Properties][251]
+-   [ContractCategory][245]
+    -   [Properties][246]
+-   [ExpiryType][247]
+    -   [Properties][248]
+-   [Immutable][249]
+    -   [Parameters][250]
+    -   [init][251]
 -   [Stream][252]
     -   [Parameters][253]
     -   [onUpdate][254]
@@ -2464,30 +2464,6 @@ An in memory storage which can be used for caching
 
 Type: [Object][257]
 
-## Immutable
-
-An abstract class for immutable objects
-
-### Parameters
-
--   `props` **[Object][257]** A list of properties to add for the immutable object (optional, default `{}`)
-
-### init
-
-Override to initialize an immutable object asynchronously
-
-## ExpiryType
-
-Type: [Object][257]
-
-### Properties
-
--   `duration` **[DurationRange][302]** 
--   `barriers` **[Object][257]** 
-    -   `barriers.high` **[Barrier][303]** 
-    -   `barriers.low` **[Barrier][303]** 
-    -   `barriers.single` **[Barrier][303]** 
-
 ## ContractCategory
 
 Type: [Object][257]
@@ -2499,8 +2475,32 @@ Type: [Object][257]
 -   `contract_types` **[Array][275]&lt;[String][259]>** 
 -   `bases` **[Array][275]&lt;[String][259]>** 
 -   `forward_starting` **[Object][257]** 
-    -   `forward_starting.1564531200` **[DateRange][304]** 
--   `expiry_types` **[ExpiryType][305]** 
+    -   `forward_starting.1564531200` **[DateRange][302]** 
+-   `expiry_types` **[ExpiryType][303]** 
+
+## ExpiryType
+
+Type: [Object][257]
+
+### Properties
+
+-   `duration` **[DurationRange][304]** 
+-   `barriers` **[Object][257]** 
+    -   `barriers.high` **[Barrier][305]** 
+    -   `barriers.low` **[Barrier][305]** 
+    -   `barriers.single` **[Barrier][305]** 
+
+## Immutable
+
+An abstract class for immutable objects
+
+### Parameters
+
+-   `props` **[Object][257]** A list of properties to add for the immutable object (optional, default `{}`)
+
+### init
+
+Override to initialize an immutable object asynchronously
 
 ## Stream
 
@@ -3021,19 +3021,19 @@ Returns **Observable**
 
 [244]: #transactionparams
 
-[245]: #immutable
+[245]: #contractcategory
 
-[246]: #parameters-92
+[246]: #properties-2
 
-[247]: #init
+[247]: #expirytype
 
-[248]: #expirytype
+[248]: #properties-3
 
-[249]: #properties-2
+[249]: #immutable
 
-[250]: #contractcategory
+[250]: #parameters-92
 
-[251]: #properties-3
+[251]: #init
 
 [252]: #stream
 
@@ -3135,12 +3135,12 @@ Returns **Observable**
 
 [301]: http://archive.geekwisdom.com/js/passwordmeter.js
 
-[302]: #durationrange
+[302]: #daterange
 
-[303]: #barrier
+[303]: #expirytype
 
-[304]: #daterange
+[304]: #durationrange
 
-[305]: #expirytype
+[305]: #barrier
 
 [306]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

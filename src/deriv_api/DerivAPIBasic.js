@@ -282,11 +282,13 @@ export default class DerivAPIBasic extends DerivAPICalls {
      */
     reconnect() {
         this.pong(); // clear all previous timeout
-        this.connect();
-        this.connection.onopen    = this.openHandler.bind(this);
-        this.connection.onclose   = this.closeHandler.bind(this);
-        this.connection.onmessage = this.messageHandler.bind(this);
-        this.connection.onerror   = this.errorHandler.bind(this);
+        if (this.shouldReconnect) {
+            this.connect();
+            this.connection.onopen    = this.openHandler.bind(this);
+            this.connection.onclose   = this.closeHandler.bind(this);
+            this.connection.onmessage = this.messageHandler.bind(this);
+            this.connection.onerror   = this.errorHandler.bind(this);
+        }
     }
 
     errorHandler() {

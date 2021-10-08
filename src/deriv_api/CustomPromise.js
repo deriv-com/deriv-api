@@ -1,5 +1,6 @@
 export default class CustomPromise extends Promise {
     constructor(cb = () => {}) {
+        console.log('constructor');
         let resolve; let
             reject;
 
@@ -17,6 +18,7 @@ export default class CustomPromise extends Promise {
     }
 
     static wrap(promise) {
+        console.log('wrap');
         if (promise instanceof this) return promise;
 
         const custom_promise = new this();
@@ -30,6 +32,7 @@ export default class CustomPromise extends Promise {
     }
 
     resolve(data) {
+        console.log('resolve');
         this.resolveCallback(data);
 
         this.state = 'resolved';
@@ -38,6 +41,7 @@ export default class CustomPromise extends Promise {
     }
 
     reject(error) {
+        console.log('reject');
         this.rejectCallback(error);
 
         this.state = 'rejected';
@@ -46,14 +50,17 @@ export default class CustomPromise extends Promise {
     }
 
     isPending() {
+        console.log('ispending');
         return this.state === 'pending';
     }
 
     isRejected() {
+        console.log('rejected');
         return this.state === 'rejected';
     }
 
     isResolved() {
+        console.log('resolved');
         return this.state === 'resolved';
     }
 }

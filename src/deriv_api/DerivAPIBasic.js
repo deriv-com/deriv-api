@@ -77,6 +77,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
         this.reconnect_timeout     = '';
+        this.keep_alive_interval   = '';
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -206,7 +207,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         });
         if (this.shouldReconnect) {
             this.pong(); // clear previous timeouts
-            setInterval(this.keepAlivePing.bind(this), 30000);
+            this.keep_alive_interval = setInterval(this.keepAlivePing.bind(this), 30000);
         }
         if (this.connection.readyState === 1) {
             this.connected.resolve();
@@ -288,6 +289,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
      */
     reconnect() {
         if (this.shouldReconnect) {
+            clearInterval(this.keep_alive_interval);
             this.pong(); // clear all previous timeout
             this.connect();
             this.connectionHandlers();

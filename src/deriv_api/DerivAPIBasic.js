@@ -76,7 +76,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.pendingRequests       = {};
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
-        this.timeoutObject         = '';
+        this.reconnect_timeout     = '';
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -85,6 +85,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         // If we have the storage look that one up
         this.cache = new Cache(this.storage ? this.storage : this, cache);
 
+        this.connectionHandlers();
+    }
+
+    connectionHandlers() {
         this.connection.onopen    = this.openHandler.bind(this);
         this.connection.onclose   = this.closeHandler.bind(this);
         this.connection.onmessage = this.messageHandler.bind(this);
@@ -187,21 +191,23 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return this.subscription_manager.forgetAll(...types);
     }
 
-    keeplive_ping() {
+    keepAlivePing() {
         this.ping({ ping: 1 });
-        this.timeoutObject = setTimeout(this.reconnect.bind(this), 5000);
+        this.reconnect_timeout = setTimeout(this.reconnect.bind(this), 5000);
     }
 
     pong() {
-        clearTimeout(this.timeoutObject);
+        clearTimeout(this.reconnect_timeout);
     }
 
     openHandler() {
         this.events.next({
             name: 'open',
         });
-        this.pong(); // clear previous timeouts
-        setInterval(this.keeplive_ping.bind(this), 30000);
+        if (this.shouldReconnect) {
+            this.pong(); // clear previous timeouts
+            setInterval(this.keepAlivePing.bind(this), 30000);
+        }
         if (this.connection.readyState === 1) {
             this.connected.resolve();
         } else {
@@ -220,7 +226,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         }
         const response = JSON.parse(msg.data);
 
-        if (response.ping === 'pong') {
+        if (this.reconnect_timeout && response.ping === 'pong') {
             this.pong();
         }
 
@@ -281,13 +287,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
      * Clears previous connection keeplive ping timeout and connect & assign the handles
      */
     reconnect() {
-        this.pong(); // clear all previous timeout
         if (this.shouldReconnect) {
+            this.pong(); // clear all previous timeout
             this.connect();
-            this.connection.onopen    = this.openHandler.bind(this);
-            this.connection.onclose   = this.closeHandler.bind(this);
-            this.connection.onmessage = this.messageHandler.bind(this);
-            this.connection.onerror   = this.errorHandler.bind(this);
+            this.connectionHandlers();
         }
     }
 

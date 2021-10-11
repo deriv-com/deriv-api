@@ -249,9 +249,9 @@
 -   [Immutable][245]
     -   [Parameters][246]
     -   [init][247]
--   [ContractCategory][248]
+-   [ExpiryType][248]
     -   [Properties][249]
--   [ExpiryType][250]
+-   [ContractCategory][250]
     -   [Properties][251]
 -   [Stream][252]
     -   [Parameters][253]
@@ -2476,6 +2476,18 @@ An abstract class for immutable objects
 
 Override to initialize an immutable object asynchronously
 
+## ExpiryType
+
+Type: [Object][257]
+
+### Properties
+
+-   `duration` **[DurationRange][302]** 
+-   `barriers` **[Object][257]** 
+    -   `barriers.high` **[Barrier][303]** 
+    -   `barriers.low` **[Barrier][303]** 
+    -   `barriers.single` **[Barrier][303]** 
+
 ## ContractCategory
 
 Type: [Object][257]
@@ -2487,20 +2499,8 @@ Type: [Object][257]
 -   `contract_types` **[Array][275]&lt;[String][259]>** 
 -   `bases` **[Array][275]&lt;[String][259]>** 
 -   `forward_starting` **[Object][257]** 
-    -   `forward_starting.1564531200` **[DateRange][302]** 
--   `expiry_types` **[ExpiryType][303]** 
-
-## ExpiryType
-
-Type: [Object][257]
-
-### Properties
-
--   `duration` **[DurationRange][304]** 
--   `barriers` **[Object][257]** 
-    -   `barriers.high` **[Barrier][305]** 
-    -   `barriers.low` **[Barrier][305]** 
-    -   `barriers.single` **[Barrier][305]** 
+    -   `forward_starting.1564531200` **[DateRange][304]** 
+-   `expiry_types` **[ExpiryType][305]** 
 
 ## Stream
 
@@ -3027,11 +3027,11 @@ Returns **Observable**
 
 [247]: #init
 
-[248]: #contractcategory
+[248]: #expirytype
 
 [249]: #properties-2
 
-[250]: #expirytype
+[250]: #contractcategory
 
 [251]: #properties-3
 
@@ -3135,12 +3135,12 @@ Returns **Observable**
 
 [301]: http://archive.geekwisdom.com/js/passwordmeter.js
 
-[302]: #daterange
+[302]: #durationrange
 
-[303]: #expirytype
+[303]: #barrier
 
-[304]: #durationrange
+[304]: #daterange
 
-[305]: #barrier
+[305]: #expirytype
 
 [306]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

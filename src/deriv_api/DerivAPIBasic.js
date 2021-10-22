@@ -76,8 +76,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.pendingRequests       = {};
         this.expect_response_types = {};
         this.subscription_manager  = new SubscriptionManager(this);
-        this.reconnect_timeout     = '';
-        this.keep_alive_interval   = '';
+        this.reconnect_timeout     = false;
+        this.keep_alive_interval   = false;
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -198,7 +198,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     pong() {
-        clearTimeout(this.reconnect_timeout);
+        if (this.reconnect_timeout) {
+            clearTimeout(this.reconnect_timeout);
+            this.reconnect_timeout = false;
+        }
     }
 
     openHandler() {
@@ -206,7 +209,6 @@ export default class DerivAPIBasic extends DerivAPICalls {
             name: 'open',
         });
         if (this.shouldReconnect) {
-            this.pong(); // clear previous timeouts
             this.keep_alive_interval = setInterval(this.keepAlivePing.bind(this), 30000);
         }
         if (this.connection.readyState === 1) {
@@ -289,7 +291,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
      */
     reconnect() {
         if (this.shouldReconnect) {
-            clearInterval(this.keep_alive_interval);
+            if (this.keep_alive_interval) {
+                clearInterval(this.keep_alive_interval);
+                this.keep_alive_interval = false;
+            }
             this.pong(); // clear all previous timeout
             this.connect();
             this.connectionHandlers();

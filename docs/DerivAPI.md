@@ -20,317 +20,318 @@
         -   [Properties][16]
         -   [Examples][17]
         -   [closeHandler][18]
-        -   [onClose][19]
-        -   [onOpen][20]
-        -   [onMessage][21]
-        -   [expectResponse][22]
--   [Abstract Objects][23]
-    -   [Immutables][24]
-        -   [Account][25]
-        -   [Assets][26]
-        -   [Underlying][27]
-        -   [Tick][28]
-        -   [Candle][29]
-        -   [Transaction][30]
-        -   [Buy][31]
-        -   [Sell][32]
-        -   [ContractOptions][33]
-    -   [Streams][34]
-        -   [Balance][35]
-        -   [Candles][36]
-        -   [Contract][37]
-        -   [Ticks][38]
-        -   [Transactions][39]
-        -   [WebsiteStatus][40]
-    -   [Fields][41]
-        -   [Barrier][42]
-        -   [CustomDate][43]
-        -   [DateRange][44]
-        -   [Duration][45]
-        -   [DurationRange][46]
-        -   [FullName][47]
-        -   [MarketValue][48]
-        -   [Monetary][49]
-        -   [Profit][50]
-        -   [Spot][51]
--   [Core Functionality][52]
-    -   [Cache][53]
-        -   [Parameters][54]
-        -   [Examples][55]
-    -   [SubscriptionManager][56]
-        -   [Parameters][57]
-        -   [Examples][58]
-        -   [subscribe][59]
--   [Object References][60]
-    -   [Parameters][61]
-        -   [CandlesParam][62]
-        -   [TicksParam][63]
-        -   [BuyParam][64]
-        -   [SellParam][65]
-        -   [ContractParam][66]
-        -   [HistoryRange][67]
--   [accountClosure][68]
-    -   [Parameters][69]
--   [accountSecurity][70]
-    -   [Parameters][71]
--   [accountStatistics][72]
-    -   [Parameters][73]
--   [activeSymbols][74]
-    -   [Parameters][75]
--   [affiliateAccountAdd][76]
-    -   [Parameters][77]
--   [apiToken][78]
-    -   [Parameters][79]
--   [appDelete][80]
-    -   [Parameters][81]
--   [appGet][82]
-    -   [Parameters][83]
--   [appList][84]
-    -   [Parameters][85]
--   [appMarkupDetails][86]
-    -   [Parameters][87]
--   [appRegister][88]
-    -   [Parameters][89]
--   [appUpdate][90]
-    -   [Parameters][91]
--   [assetIndex][92]
-    -   [Parameters][93]
--   [authorize][94]
-    -   [Parameters][95]
--   [balance][96]
-    -   [Parameters][97]
--   [buy][98]
-    -   [Parameters][99]
--   [buyContractForMultipleAccounts][100]
-    -   [Parameters][101]
--   [cancel][102]
-    -   [Parameters][103]
--   [cashier][104]
-    -   [Parameters][105]
--   [cashierPayments][106]
-    -   [Parameters][107]
--   [cashierWithdrawalCancel][108]
-    -   [Parameters][109]
--   [changePassword][110]
-    -   [Parameters][111]
--   [contractUpdate][112]
-    -   [Parameters][113]
--   [contractUpdateHistory][114]
-    -   [Parameters][115]
--   [contractsFor][116]
-    -   [Parameters][117]
--   [copyStart][118]
-    -   [Parameters][119]
--   [copyStop][120]
-    -   [Parameters][121]
--   [copytradingList][122]
-    -   [Parameters][123]
--   [copytradingStatistics][124]
-    -   [Parameters][125]
--   [documentUpload][126]
-    -   [Parameters][127]
--   [economicCalendar][128]
-    -   [Parameters][129]
--   [exchangeRates][130]
-    -   [Parameters][131]
--   [forget][132]
-    -   [Parameters][133]
--   [forgetAll][134]
-    -   [Parameters][135]
--   [getAccountStatus][136]
-    -   [Parameters][137]
--   [getFinancialAssessment][138]
-    -   [Parameters][139]
--   [getLimits][140]
-    -   [Parameters][141]
--   [getSelfExclusion][142]
-    -   [Parameters][143]
--   [getSettings][144]
-    -   [Parameters][145]
--   [identityVerificationDocumentAdd][146]
-    -   [Parameters][147]
--   [landingCompany][148]
-    -   [Parameters][149]
--   [landingCompanyDetails][150]
-    -   [Parameters][151]
--   [linkWallet][152]
-    -   [Parameters][153]
--   [loginHistory][154]
-    -   [Parameters][155]
--   [logout][156]
-    -   [Parameters][157]
--   [mt5Deposit][158]
-    -   [Parameters][159]
--   [mt5GetSettings][160]
-    -   [Parameters][161]
--   [mt5LoginList][162]
-    -   [Parameters][163]
--   [mt5NewAccount][164]
-    -   [Parameters][165]
--   [mt5PasswordChange][166]
-    -   [Parameters][167]
--   [mt5PasswordCheck][168]
-    -   [Parameters][169]
--   [mt5PasswordReset][170]
-    -   [Parameters][171]
--   [mt5Withdrawal][172]
-    -   [Parameters][173]
--   [newAccountMaltainvest][174]
-    -   [Parameters][175]
--   [newAccountReal][176]
-    -   [Parameters][177]
--   [newAccountVirtual][178]
-    -   [Parameters][179]
--   [newAccountWallet][180]
-    -   [Parameters][181]
--   [notificationEvent][182]
-    -   [Parameters][183]
--   [oauthApps][184]
-    -   [Parameters][185]
--   [p2pAdvertCreate][186]
-    -   [Parameters][187]
--   [p2pAdvertInfo][188]
-    -   [Parameters][189]
--   [p2pAdvertList][190]
-    -   [Parameters][191]
--   [p2pAdvertUpdate][192]
-    -   [Parameters][193]
--   [p2pAdvertiserAdverts][194]
-    -   [Parameters][195]
--   [p2pAdvertiserCreate][196]
-    -   [Parameters][197]
--   [p2pAdvertiserInfo][198]
-    -   [Parameters][199]
--   [p2pAdvertiserPaymentMethods][200]
-    -   [Parameters][201]
--   [p2pAdvertiserRelations][202]
-    -   [Parameters][203]
--   [p2pAdvertiserUpdate][204]
-    -   [Parameters][205]
--   [p2pChatCreate][206]
-    -   [Parameters][207]
--   [p2pOrderCancel][208]
-    -   [Parameters][209]
--   [p2pOrderConfirm][210]
-    -   [Parameters][211]
--   [p2pOrderCreate][212]
-    -   [Parameters][213]
--   [p2pOrderDispute][214]
-    -   [Parameters][215]
--   [p2pOrderInfo][216]
-    -   [Parameters][217]
--   [p2pOrderList][218]
-    -   [Parameters][219]
--   [p2pPaymentMethods][220]
-    -   [Parameters][221]
--   [paymentMethods][222]
-    -   [Parameters][223]
--   [paymentagentCreate][224]
-    -   [Parameters][225]
--   [paymentagentDetails][226]
-    -   [Parameters][227]
--   [paymentagentList][228]
-    -   [Parameters][229]
--   [paymentagentTransfer][230]
-    -   [Parameters][231]
--   [paymentagentWithdraw][232]
-    -   [Parameters][233]
--   [payoutCurrencies][234]
-    -   [Parameters][235]
--   [ping][236]
-    -   [Parameters][237]
--   [portfolio][238]
-    -   [Parameters][239]
--   [profitTable][240]
-    -   [Parameters][241]
--   [proposal][242]
-    -   [Parameters][243]
--   [proposalOpenContract][244]
-    -   [Parameters][245]
--   [realityCheck][246]
-    -   [Parameters][247]
--   [requestReport][248]
-    -   [Parameters][249]
--   [resetPassword][250]
-    -   [Parameters][251]
--   [residenceList][252]
-    -   [Parameters][253]
--   [revokeOauthApp][254]
-    -   [Parameters][255]
--   [sell][256]
-    -   [Parameters][257]
--   [sellContractForMultipleAccounts][258]
-    -   [Parameters][259]
--   [sellExpired][260]
-    -   [Parameters][261]
--   [serviceToken][262]
-    -   [Parameters][263]
--   [setAccountCurrency][264]
-    -   [Parameters][265]
--   [setFinancialAssessment][266]
-    -   [Parameters][267]
--   [setSelfExclusion][268]
-    -   [Parameters][269]
--   [setSettings][270]
-    -   [Parameters][271]
--   [statement][272]
-    -   [Parameters][273]
--   [statesList][274]
-    -   [Parameters][275]
--   [ticks][276]
-    -   [Parameters][277]
--   [ticksHistory][278]
-    -   [Parameters][279]
--   [time][280]
-    -   [Parameters][281]
--   [tncApproval][282]
-    -   [Parameters][283]
--   [topupVirtual][284]
-    -   [Parameters][285]
--   [tradingDurations][286]
-    -   [Parameters][287]
--   [tradingPlatformAccounts][288]
-    -   [Parameters][289]
--   [tradingPlatformDeposit][290]
-    -   [Parameters][291]
--   [tradingPlatformInvestorPasswordChange][292]
-    -   [Parameters][293]
--   [tradingPlatformInvestorPasswordReset][294]
-    -   [Parameters][295]
--   [tradingPlatformNewAccount][296]
-    -   [Parameters][297]
--   [tradingPlatformPasswordChange][298]
-    -   [Parameters][299]
--   [tradingPlatformPasswordReset][300]
-    -   [Parameters][301]
--   [tradingPlatformWithdrawal][302]
-    -   [Parameters][303]
--   [tradingServers][304]
-    -   [Parameters][305]
--   [tradingTimes][306]
-    -   [Parameters][307]
--   [transaction][308]
-    -   [Parameters][309]
--   [transferBetweenAccounts][310]
-    -   [Parameters][311]
--   [verifyEmail][312]
-    -   [Parameters][313]
--   [websiteStatus][314]
-    -   [Parameters][315]
--   [InMemory][316]
--   [TransactionParams][317]
--   [Immutable][318]
-    -   [Parameters][319]
-    -   [init][320]
--   [ExpiryType][321]
-    -   [Properties][322]
--   [ContractCategory][323]
-    -   [Properties][324]
--   [Stream][325]
-    -   [Parameters][326]
-    -   [onUpdate][327]
-        -   [Parameters][328]
-        -   [Examples][329]
+        -   [reconnect][19]
+        -   [onClose][20]
+        -   [onOpen][21]
+        -   [onMessage][22]
+        -   [expectResponse][23]
+-   [Abstract Objects][24]
+    -   [Immutables][25]
+        -   [Account][26]
+        -   [Assets][27]
+        -   [Underlying][28]
+        -   [Tick][29]
+        -   [Candle][30]
+        -   [Transaction][31]
+        -   [Buy][32]
+        -   [Sell][33]
+        -   [ContractOptions][34]
+    -   [Streams][35]
+        -   [Balance][36]
+        -   [Candles][37]
+        -   [Contract][38]
+        -   [Ticks][39]
+        -   [Transactions][40]
+        -   [WebsiteStatus][41]
+    -   [Fields][42]
+        -   [Barrier][43]
+        -   [CustomDate][44]
+        -   [DateRange][45]
+        -   [Duration][46]
+        -   [DurationRange][47]
+        -   [FullName][48]
+        -   [MarketValue][49]
+        -   [Monetary][50]
+        -   [Profit][51]
+        -   [Spot][52]
+-   [Core Functionality][53]
+    -   [Cache][54]
+        -   [Parameters][55]
+        -   [Examples][56]
+    -   [SubscriptionManager][57]
+        -   [Parameters][58]
+        -   [Examples][59]
+        -   [subscribe][60]
+-   [Object References][61]
+    -   [Parameters][62]
+        -   [CandlesParam][63]
+        -   [TicksParam][64]
+        -   [BuyParam][65]
+        -   [SellParam][66]
+        -   [ContractParam][67]
+        -   [HistoryRange][68]
+-   [accountClosure][69]
+    -   [Parameters][70]
+-   [accountSecurity][71]
+    -   [Parameters][72]
+-   [accountStatistics][73]
+    -   [Parameters][74]
+-   [activeSymbols][75]
+    -   [Parameters][76]
+-   [affiliateAccountAdd][77]
+    -   [Parameters][78]
+-   [apiToken][79]
+    -   [Parameters][80]
+-   [appDelete][81]
+    -   [Parameters][82]
+-   [appGet][83]
+    -   [Parameters][84]
+-   [appList][85]
+    -   [Parameters][86]
+-   [appMarkupDetails][87]
+    -   [Parameters][88]
+-   [appRegister][89]
+    -   [Parameters][90]
+-   [appUpdate][91]
+    -   [Parameters][92]
+-   [assetIndex][93]
+    -   [Parameters][94]
+-   [authorize][95]
+    -   [Parameters][96]
+-   [balance][97]
+    -   [Parameters][98]
+-   [buy][99]
+    -   [Parameters][100]
+-   [buyContractForMultipleAccounts][101]
+    -   [Parameters][102]
+-   [cancel][103]
+    -   [Parameters][104]
+-   [cashier][105]
+    -   [Parameters][106]
+-   [cashierPayments][107]
+    -   [Parameters][108]
+-   [cashierWithdrawalCancel][109]
+    -   [Parameters][110]
+-   [changePassword][111]
+    -   [Parameters][112]
+-   [contractUpdate][113]
+    -   [Parameters][114]
+-   [contractUpdateHistory][115]
+    -   [Parameters][116]
+-   [contractsFor][117]
+    -   [Parameters][118]
+-   [copyStart][119]
+    -   [Parameters][120]
+-   [copyStop][121]
+    -   [Parameters][122]
+-   [copytradingList][123]
+    -   [Parameters][124]
+-   [copytradingStatistics][125]
+    -   [Parameters][126]
+-   [documentUpload][127]
+    -   [Parameters][128]
+-   [economicCalendar][129]
+    -   [Parameters][130]
+-   [exchangeRates][131]
+    -   [Parameters][132]
+-   [forget][133]
+    -   [Parameters][134]
+-   [forgetAll][135]
+    -   [Parameters][136]
+-   [getAccountStatus][137]
+    -   [Parameters][138]
+-   [getFinancialAssessment][139]
+    -   [Parameters][140]
+-   [getLimits][141]
+    -   [Parameters][142]
+-   [getSelfExclusion][143]
+    -   [Parameters][144]
+-   [getSettings][145]
+    -   [Parameters][146]
+-   [identityVerificationDocumentAdd][147]
+    -   [Parameters][148]
+-   [landingCompany][149]
+    -   [Parameters][150]
+-   [landingCompanyDetails][151]
+    -   [Parameters][152]
+-   [linkWallet][153]
+    -   [Parameters][154]
+-   [loginHistory][155]
+    -   [Parameters][156]
+-   [logout][157]
+    -   [Parameters][158]
+-   [mt5Deposit][159]
+    -   [Parameters][160]
+-   [mt5GetSettings][161]
+    -   [Parameters][162]
+-   [mt5LoginList][163]
+    -   [Parameters][164]
+-   [mt5NewAccount][165]
+    -   [Parameters][166]
+-   [mt5PasswordChange][167]
+    -   [Parameters][168]
+-   [mt5PasswordCheck][169]
+    -   [Parameters][170]
+-   [mt5PasswordReset][171]
+    -   [Parameters][172]
+-   [mt5Withdrawal][173]
+    -   [Parameters][174]
+-   [newAccountMaltainvest][175]
+    -   [Parameters][176]
+-   [newAccountReal][177]
+    -   [Parameters][178]
+-   [newAccountVirtual][179]
+    -   [Parameters][180]
+-   [newAccountWallet][181]
+    -   [Parameters][182]
+-   [notificationEvent][183]
+    -   [Parameters][184]
+-   [oauthApps][185]
+    -   [Parameters][186]
+-   [p2pAdvertCreate][187]
+    -   [Parameters][188]
+-   [p2pAdvertInfo][189]
+    -   [Parameters][190]
+-   [p2pAdvertList][191]
+    -   [Parameters][192]
+-   [p2pAdvertUpdate][193]
+    -   [Parameters][194]
+-   [p2pAdvertiserAdverts][195]
+    -   [Parameters][196]
+-   [p2pAdvertiserCreate][197]
+    -   [Parameters][198]
+-   [p2pAdvertiserInfo][199]
+    -   [Parameters][200]
+-   [p2pAdvertiserPaymentMethods][201]
+    -   [Parameters][202]
+-   [p2pAdvertiserRelations][203]
+    -   [Parameters][204]
+-   [p2pAdvertiserUpdate][205]
+    -   [Parameters][206]
+-   [p2pChatCreate][207]
+    -   [Parameters][208]
+-   [p2pOrderCancel][209]
+    -   [Parameters][210]
+-   [p2pOrderConfirm][211]
+    -   [Parameters][212]
+-   [p2pOrderCreate][213]
+    -   [Parameters][214]
+-   [p2pOrderDispute][215]
+    -   [Parameters][216]
+-   [p2pOrderInfo][217]
+    -   [Parameters][218]
+-   [p2pOrderList][219]
+    -   [Parameters][220]
+-   [p2pPaymentMethods][221]
+    -   [Parameters][222]
+-   [paymentMethods][223]
+    -   [Parameters][224]
+-   [paymentagentCreate][225]
+    -   [Parameters][226]
+-   [paymentagentDetails][227]
+    -   [Parameters][228]
+-   [paymentagentList][229]
+    -   [Parameters][230]
+-   [paymentagentTransfer][231]
+    -   [Parameters][232]
+-   [paymentagentWithdraw][233]
+    -   [Parameters][234]
+-   [payoutCurrencies][235]
+    -   [Parameters][236]
+-   [ping][237]
+    -   [Parameters][238]
+-   [portfolio][239]
+    -   [Parameters][240]
+-   [profitTable][241]
+    -   [Parameters][242]
+-   [proposal][243]
+    -   [Parameters][244]
+-   [proposalOpenContract][245]
+    -   [Parameters][246]
+-   [realityCheck][247]
+    -   [Parameters][248]
+-   [requestReport][249]
+    -   [Parameters][250]
+-   [resetPassword][251]
+    -   [Parameters][252]
+-   [residenceList][253]
+    -   [Parameters][254]
+-   [revokeOauthApp][255]
+    -   [Parameters][256]
+-   [sell][257]
+    -   [Parameters][258]
+-   [sellContractForMultipleAccounts][259]
+    -   [Parameters][260]
+-   [sellExpired][261]
+    -   [Parameters][262]
+-   [serviceToken][263]
+    -   [Parameters][264]
+-   [setAccountCurrency][265]
+    -   [Parameters][266]
+-   [setFinancialAssessment][267]
+    -   [Parameters][268]
+-   [setSelfExclusion][269]
+    -   [Parameters][270]
+-   [setSettings][271]
+    -   [Parameters][272]
+-   [statement][273]
+    -   [Parameters][274]
+-   [statesList][275]
+    -   [Parameters][276]
+-   [ticks][277]
+    -   [Parameters][278]
+-   [ticksHistory][279]
+    -   [Parameters][280]
+-   [time][281]
+    -   [Parameters][282]
+-   [tncApproval][283]
+    -   [Parameters][284]
+-   [topupVirtual][285]
+    -   [Parameters][286]
+-   [tradingDurations][287]
+    -   [Parameters][288]
+-   [tradingPlatformAccounts][289]
+    -   [Parameters][290]
+-   [tradingPlatformDeposit][291]
+    -   [Parameters][292]
+-   [tradingPlatformInvestorPasswordChange][293]
+    -   [Parameters][294]
+-   [tradingPlatformInvestorPasswordReset][295]
+    -   [Parameters][296]
+-   [tradingPlatformNewAccount][297]
+    -   [Parameters][298]
+-   [tradingPlatformPasswordChange][299]
+    -   [Parameters][300]
+-   [tradingPlatformPasswordReset][301]
+    -   [Parameters][302]
+-   [tradingPlatformWithdrawal][303]
+    -   [Parameters][304]
+-   [tradingServers][305]
+    -   [Parameters][306]
+-   [tradingTimes][307]
+    -   [Parameters][308]
+-   [transaction][309]
+    -   [Parameters][310]
+-   [transferBetweenAccounts][311]
+    -   [Parameters][312]
+-   [verifyEmail][313]
+    -   [Parameters][314]
+-   [websiteStatus][315]
+    -   [Parameters][316]
+-   [InMemory][317]
+-   [TransactionParams][318]
+-   [Immutable][319]
+    -   [Parameters][320]
+    -   [init][321]
+-   [ContractCategory][322]
+    -   [Properties][323]
+-   [ExpiryType][324]
+    -   [Properties][325]
+-   [Stream][326]
+    -   [Parameters][327]
+    -   [onUpdate][328]
+        -   [Parameters][329]
+        -   [Examples][330]
 
 ## Main Modules
 
@@ -345,11 +346,11 @@ that can be used to read data and interact with the API.
 
 #### Parameters
 
--   `options` **[Object][330]** For options details see: [DerivAPIBasic][14]
+-   `options` **[Object][331]** For options details see: [DerivAPIBasic][14]
 
 #### Properties
 
--   `basic` **[DerivAPIBasic][331]** Basic API, used for making low-level calls to the API
+-   `basic` **[DerivAPIBasic][332]** Basic API, used for making low-level calls to the API
 
 #### Examples
 
@@ -376,9 +377,9 @@ Provides a ticks stream and a list of available ticks
 
 ##### Parameters
 
--   `options` **([String][332] \| [TicksParam][333])** symbol or a ticks parameter object
+-   `options` **([String][333] \| [TicksParam][334])** symbol or a ticks parameter object
 
-Returns **[Promise][334]&lt;[Ticks][335]>** 
+Returns **[Promise][335]&lt;[Ticks][336]>** 
 
 #### candles
 
@@ -386,9 +387,9 @@ Provides a list of available candles with the default granularity
 
 ##### Parameters
 
--   `options` **([String][332] \| [CandlesParam][336])** symbol or a candles parameter object
+-   `options` **([String][333] \| [CandlesParam][337])** symbol or a candles parameter object
 
-Returns **[Promise][334]&lt;[Candles][337]>** 
+Returns **[Promise][335]&lt;[Candles][338]>** 
 
 #### contract
 
@@ -396,9 +397,9 @@ A contract object with latest market values, cannot be bought or sold
 
 ##### Parameters
 
--   `options` **[ContractParam][338]** parameters defining the contract
+-   `options` **[ContractParam][339]** parameters defining the contract
 
-Returns **[Promise][334]&lt;[Contract][339]>** 
+Returns **[Promise][335]&lt;[Contract][340]>** 
 
 #### underlying
 
@@ -406,9 +407,9 @@ An underlying object, including contract groups, pip size, etc.
 
 ##### Parameters
 
--   `symbol` **[String][332]** The underlying symbol
+-   `symbol` **[String][333]** The underlying symbol
 
-Returns **[Promise][334]&lt;[Underlying][340]>** 
+Returns **[Promise][335]&lt;[Underlying][341]>** 
 
 #### account
 
@@ -416,21 +417,21 @@ An account object, including loginid, balance, contracts, etc.
 
 ##### Parameters
 
--   `token` **[String][332]** Token to create the account with
+-   `token` **[String][333]** Token to create the account with
 
-Returns **[Promise][334]&lt;[Account][341]>** 
+Returns **[Promise][335]&lt;[Account][342]>** 
 
 #### assets
 
 Trading assets including multiple underlyings and trading times
 
-Returns **[Promise][334]&lt;[Assets][342]>** 
+Returns **[Promise][335]&lt;[Assets][343]>** 
 
 #### websiteStatus
 
 Website status stream
 
-Returns **[Promise][334]&lt;[WebsiteStatus][343]>** 
+Returns **[Promise][335]&lt;[WebsiteStatus][344]>** 
 
 #### contractOptions
 
@@ -440,7 +441,7 @@ Request contract options to display in UI
 
 -   `symbol`  
 
-Returns **[Promise][334]&lt;[ContractOptions][344]>** 
+Returns **[Promise][335]&lt;[ContractOptions][345]>** 
 
 ### DerivAPIBasic
 
@@ -448,25 +449,25 @@ Returns **[Promise][334]&lt;[ContractOptions][344]>**
 
 The minimum functionality provided by DerivAPI, provides direct calls to the
 API.
-`api.cache` is available if you want to use the cached data (see [Cache][53])
+`api.cache` is available if you want to use the cached data (see [Cache][54])
 
 #### Parameters
 
--   `options` **[Object][330]**  (optional, default `{}`)
-    -   `options.app_id` **[Number][345]** Application ID of the API user
-    -   `options.connection` **[WebSocket][346]?** A ready to use connection
-    -   `options.endpoint` **[String][332]** API server to connect to (optional, default `'frontend.binaryws.com'`)
-    -   `options.lang` **[String][332]** Language of the API communication (optional, default `'EN'`)
-    -   `options.brand` **[String][332]** Brand name (optional, default `''`)
-    -   `options.middleware` **[Object][330]** A middleware to call on certain API actions (optional, default `{}`)
+-   `options` **[Object][331]**  (optional, default `{}`)
+    -   `options.app_id` **[Number][346]** Application ID of the API user
+    -   `options.connection` **[WebSocket][347]?** A ready to use connection
+    -   `options.endpoint` **[String][333]** API server to connect to (optional, default `'frontend.binaryws.com'`)
+    -   `options.lang` **[String][333]** Language of the API communication (optional, default `'EN'`)
+    -   `options.brand` **[String][333]** Brand name (optional, default `''`)
+    -   `options.middleware` **[Object][331]** A middleware to call on certain API actions (optional, default `{}`)
     -   `options.storage`  
     -   `options.cache`   (optional, default `new InMemory()`)
 
 #### Properties
 
 -   `events` **Observable** 
--   `cache` **[Cache][347]** Temporary cache default to @link{InMemory}
--   `storage` **[Cache][347]** If specified, uses a more presistent cache (local storage, etc.)
+-   `cache` **[Cache][348]** Temporary cache default to @link{InMemory}
+-   `storage` **[Cache][348]** If specified, uses a more presistent cache (local storage, etc.)
 
 #### Examples
 
@@ -480,6 +481,10 @@ const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: 1234
 Reconnects to the API in case of connection error, unless connection is
 passed as an argument, in that case reconnecting should be handled in the
 API user side.
+
+#### reconnect
+
+Clears previous connection keeplive ping timeout and connect & assign the handles
 
 #### onClose
 
@@ -497,9 +502,9 @@ Returns **Observable** for new messages
 
 ##### Parameters
 
--   `types` **[String][332]** Expect these types to be received by the API
+-   `types` **[String][333]** Expect these types to be received by the API
 
-Returns **([Promise][334]&lt;[Object][330]> | [Promise][334]&lt;[Array][348]>)** Resolves to a single response or an array
+Returns **([Promise][335]&lt;[Object][331]> | [Promise][335]&lt;[Array][349]>)** Resolves to a single response or an array
 
 ## Abstract Objects
 
@@ -521,27 +526,27 @@ Abstract class for user accounts
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
--   `token` **[String][332]** 
+-   `api` **[DerivAPI][350]** 
+-   `token` **[String][333]** 
 
 ##### Properties
 
--   `loginid` **[String][332]** 
--   `user_id` **[String][332]** 
--   `email` **[String][332]** 
--   `country` **[String][332]** 
--   `currency` **[String][332]** 
--   `risk` **[String][332]** 
--   `show_authentication` **[Boolean][350]** 
--   `landing_company` **[FullName][351]** 
--   `balance` **[Balance][352]** 
--   `transactions` **[Transactions][353]** 
--   `status_codes` **[Array][348]&lt;[String][332]>** 
--   `siblings` **[Array][348]&lt;[Object][330]>** 
--   `contracts` **[Array][348]&lt;[Contract][339]>** 
--   `open_contracts` **[Array][348]&lt;[Contract][339]>** 
--   `closed_contracts` **[Array][348]&lt;[Contract][339]>** 
--   `api_tokens` **[Array][348]&lt;[String][332]>** 
+-   `loginid` **[String][333]** 
+-   `user_id` **[String][333]** 
+-   `email` **[String][333]** 
+-   `country` **[String][333]** 
+-   `currency` **[String][333]** 
+-   `risk` **[String][333]** 
+-   `show_authentication` **[Boolean][351]** 
+-   `landing_company` **[FullName][352]** 
+-   `balance` **[Balance][353]** 
+-   `transactions` **[Transactions][354]** 
+-   `status_codes` **[Array][349]&lt;[String][333]>** 
+-   `siblings` **[Array][349]&lt;[Object][331]>** 
+-   `contracts` **[Array][349]&lt;[Contract][340]>** 
+-   `open_contracts` **[Array][349]&lt;[Contract][340]>** 
+-   `closed_contracts` **[Array][349]&lt;[Contract][340]>** 
+-   `api_tokens` **[Array][349]&lt;[String][333]>** 
 
 ##### Examples
 
@@ -566,14 +571,14 @@ Abstract class for trading assets
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
+-   `api` **[DerivAPI][350]** 
 
 ##### Properties
 
--   `underlyings` **[Array][348]&lt;[Underlying][340]>** 
--   `open_markets` **[Array][348]&lt;[Underlying][340]>** 
--   `trading_times` **[Object][330]** 
--   `trading_durations` **[Object][330]** 
+-   `underlyings` **[Array][349]&lt;[Underlying][341]>** 
+-   `open_markets` **[Array][349]&lt;[Underlying][341]>** 
+-   `trading_times` **[Object][331]** 
+-   `trading_durations` **[Object][331]** 
 
 ##### Examples
 
@@ -594,17 +599,17 @@ Abstract class for an underlying
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
--   `symbol` **[String][332]** 
+-   `api` **[DerivAPI][350]** 
+-   `symbol` **[String][333]** 
 
 ##### Properties
 
--   `name` **[FullName][351]** 
--   `is_open` **[Boolean][350]** 
--   `is_trading_suspended` **[Boolean][350]** 
--   `pip` **[Number][345]** 
--   `pip_size` **[Number][345]** 
--   `contract_groups` **[Object][330]** 
+-   `name` **[FullName][352]** 
+-   `is_open` **[Boolean][351]** 
+-   `is_trading_suspended` **[Boolean][351]** 
+-   `pip` **[Number][346]** 
+-   `pip_size` **[Number][346]** 
+-   `contract_groups` **[Object][331]** 
 
 ##### Examples
 
@@ -643,20 +648,20 @@ A wrapper class for Tick
 
 ##### Parameters
 
--   `tick` **[Object][330]** 
-    -   `tick.epoch` **([Number][345] \| [String][332])** 
-    -   `tick.quote` **[Number][345]** 
-    -   `tick.ask` **[Number][345]** 
-    -   `tick.bid` **[Number][345]** 
--   `pip` **[Number][345]** 
+-   `tick` **[Object][331]** 
+    -   `tick.epoch` **([Number][346] \| [String][333])** 
+    -   `tick.quote` **[Number][346]** 
+    -   `tick.ask` **[Number][346]** 
+    -   `tick.bid` **[Number][346]** 
+-   `pip` **[Number][346]** 
 
 ##### Properties
 
--   `time` **[CustomDate][354]** 
--   `quote` **[MarketValue][355]** 
--   `ask` **[MarketValue][355]** 
--   `bid` **[MarketValue][355]** 
--   `raw` **[Object][330]** The raw data received from API
+-   `time` **[CustomDate][355]** 
+-   `quote` **[MarketValue][356]** 
+-   `ask` **[MarketValue][356]** 
+-   `bid` **[MarketValue][356]** 
+-   `raw` **[Object][331]** The raw data received from API
 
 #### Candle
 
@@ -666,23 +671,23 @@ A wrapper class for Candle
 
 ##### Parameters
 
--   `candle` **[Object][330]** 
-    -   `candle.epoch` **([Number][345] \| [String][332])** 
-    -   `candle.open` **[Number][345]** 
-    -   `candle.high` **[Number][345]** 
-    -   `candle.low` **[Number][345]** 
-    -   `candle.close` **[Number][345]** 
--   `pip` **[Number][345]** 
+-   `candle` **[Object][331]** 
+    -   `candle.epoch` **([Number][346] \| [String][333])** 
+    -   `candle.open` **[Number][346]** 
+    -   `candle.high` **[Number][346]** 
+    -   `candle.low` **[Number][346]** 
+    -   `candle.close` **[Number][346]** 
+-   `pip` **[Number][346]** 
 
 ##### Properties
 
--   `time` **[CustomDate][354]** The current time of the candle
--   `open_time` **[CustomDate][354]** The time that candle opened
--   `open` **[MarketValue][355]** 
--   `high` **[MarketValue][355]** 
--   `low` **[MarketValue][355]** 
--   `close` **[MarketValue][355]** 
--   `raw` **[Object][330]** The raw data received from API
+-   `time` **[CustomDate][355]** The current time of the candle
+-   `open_time` **[CustomDate][355]** The time that candle opened
+-   `open` **[MarketValue][356]** 
+-   `high` **[MarketValue][356]** 
+-   `low` **[MarketValue][356]** 
+-   `close` **[MarketValue][356]** 
+-   `raw` **[Object][331]** The raw data received from API
 
 #### Transaction
 
@@ -692,41 +697,41 @@ A class for transaction objects
 
 ##### Parameters
 
--   `transaction` **[Object][330]** 
-    -   `transaction.action` **[String][332]** 
-    -   `transaction.currency` **[String][332]** 
-    -   `transaction.amount` **[Number][345]** 
-    -   `transaction.balance` **[Number][345]** 
-    -   `transaction.high_barrier` **([String][332] \| [Number][345])** 
-    -   `transaction.low_barrier` **([String][332] \| [Number][345])** 
-    -   `transaction.barrier` **([String][332] \| [Number][345])** 
-    -   `transaction.longcode` **[String][332]** 
-    -   `transaction.symbol` **[String][332]** 
-    -   `transaction.display_name` **[String][332]** Belongs to symbol
-    -   `transaction.transaction_id` **[Number][345]** 
-    -   `transaction.contract_id` **[Number][345]** 
-    -   `transaction.purchase_time` **[Number][345]** 
-    -   `transaction.expiry_time` **[Number][345]** 
-    -   `transaction.transaction_time` **[Number][345]** 
--   `pip` **[Number][345]** 
+-   `transaction` **[Object][331]** 
+    -   `transaction.action` **[String][333]** 
+    -   `transaction.currency` **[String][333]** 
+    -   `transaction.amount` **[Number][346]** 
+    -   `transaction.balance` **[Number][346]** 
+    -   `transaction.high_barrier` **([String][333] \| [Number][346])** 
+    -   `transaction.low_barrier` **([String][333] \| [Number][346])** 
+    -   `transaction.barrier` **([String][333] \| [Number][346])** 
+    -   `transaction.longcode` **[String][333]** 
+    -   `transaction.symbol` **[String][333]** 
+    -   `transaction.display_name` **[String][333]** Belongs to symbol
+    -   `transaction.transaction_id` **[Number][346]** 
+    -   `transaction.contract_id` **[Number][346]** 
+    -   `transaction.purchase_time` **[Number][346]** 
+    -   `transaction.expiry_time` **[Number][346]** 
+    -   `transaction.transaction_time` **[Number][346]** 
+-   `pip` **[Number][346]** 
 -   `lang`  
 
 ##### Properties
 
--   `action` **[String][332]** 
--   `longcode` **[String][332]** 
--   `id` **[Number][345]** transaction ID
--   `contract_id` **[Number][345]** 
--   `symbol` **[FullName][351]** 
--   `amount` **[Monetary][356]** 
--   `balance` **[Monetary][356]** 
--   `high_barrier` **[MarketValue][355]** 
--   `low_barrier` **[MarketValue][355]** 
--   `barrier` **[MarketValue][355]** 
--   `purchase_time` **[CustomDate][354]** 
--   `expiry_time` **[CustomDate][354]** 
--   `time` **[CustomDate][354]** 
--   `raw` **[Object][330]** The raw data received from API
+-   `action` **[String][333]** 
+-   `longcode` **[String][333]** 
+-   `id` **[Number][346]** transaction ID
+-   `contract_id` **[Number][346]** 
+-   `symbol` **[FullName][352]** 
+-   `amount` **[Monetary][357]** 
+-   `balance` **[Monetary][357]** 
+-   `high_barrier` **[MarketValue][356]** 
+-   `low_barrier` **[MarketValue][356]** 
+-   `barrier` **[MarketValue][356]** 
+-   `purchase_time` **[CustomDate][355]** 
+-   `expiry_time` **[CustomDate][355]** 
+-   `time` **[CustomDate][355]** 
+-   `raw` **[Object][331]** The raw data received from API
 
 #### Buy
 
@@ -737,30 +742,30 @@ Wrapper around a Buy response
 ##### Parameters
 
 -   `buy`  
-    -   `buy.buy_price` **[Monetary][356]** 
-    -   `buy.balance_after` **[Monetary][356]** 
-    -   `buy.payout` **[Monetary][356]** 
-    -   `buy.start_time` **[CustomDate][354]** 
-    -   `buy.purchase_time` **[CustomDate][354]** 
-    -   `buy.contract_id` **[Number][345]** 
-    -   `buy.transaction_id` **[Number][345]** 
-    -   `buy.longcode` **[String][332]** 
-    -   `buy.shortcode` **[String][332]** 
--   `currency` **[String][332]** 
+    -   `buy.buy_price` **[Monetary][357]** 
+    -   `buy.balance_after` **[Monetary][357]** 
+    -   `buy.payout` **[Monetary][357]** 
+    -   `buy.start_time` **[CustomDate][355]** 
+    -   `buy.purchase_time` **[CustomDate][355]** 
+    -   `buy.contract_id` **[Number][346]** 
+    -   `buy.transaction_id` **[Number][346]** 
+    -   `buy.longcode` **[String][333]** 
+    -   `buy.shortcode` **[String][333]** 
+-   `currency` **[String][333]** 
 -   `lang`  
 
 ##### Properties
 
--   `price` **[Monetary][356]** 
--   `balance_after` **[Monetary][356]** 
--   `payout` **[Monetary][356]** 
--   `start_time` **[CustomDate][354]** 
--   `purchase_time` **[CustomDate][354]** 
--   `contract_id` **[Number][345]** 
--   `transaction_id` **[Number][345]** 
--   `code` **[FullName][351]** contains short and long code
--   `longcode` **[String][332]** 
--   `shortcode` **[String][332]** 
+-   `price` **[Monetary][357]** 
+-   `balance_after` **[Monetary][357]** 
+-   `payout` **[Monetary][357]** 
+-   `start_time` **[CustomDate][355]** 
+-   `purchase_time` **[CustomDate][355]** 
+-   `contract_id` **[Number][346]** 
+-   `transaction_id` **[Number][346]** 
+-   `code` **[FullName][352]** contains short and long code
+-   `longcode` **[String][333]** 
+-   `shortcode` **[String][333]** 
 
 #### Sell
 
@@ -771,21 +776,21 @@ Wrapper around a Sell response
 ##### Parameters
 
 -   `sell`  
-    -   `sell.sold_for` **[Monetary][356]** sell price
-    -   `sell.balance_after` **[Monetary][356]** 
-    -   `sell.contract_id` **[Number][345]** 
-    -   `sell.transaction_id` **[Number][345]** sell transaction
-    -   `sell.reference_id` **[Number][345]** buy transaction
--   `currency` **[String][332]** 
+    -   `sell.sold_for` **[Monetary][357]** sell price
+    -   `sell.balance_after` **[Monetary][357]** 
+    -   `sell.contract_id` **[Number][346]** 
+    -   `sell.transaction_id` **[Number][346]** sell transaction
+    -   `sell.reference_id` **[Number][346]** buy transaction
+-   `currency` **[String][333]** 
 -   `lang`  
 
 ##### Properties
 
--   `price` **[Monetary][356]** 
--   `balance_after` **[Monetary][356]** 
--   `contract_id` **[Number][345]** 
--   `transaction_id` **[Number][345]** 
--   `buy_transaction` **[Number][345]** 
+-   `price` **[Monetary][357]** 
+-   `balance_after` **[Monetary][357]** 
+-   `contract_id` **[Number][346]** 
+-   `transaction_id` **[Number][346]** 
+-   `buy_transaction` **[Number][346]** 
 
 #### ContractOptions
 
@@ -800,10 +805,10 @@ Abstract objects for options needed to create a contract
 
 ##### Properties
 
--   `categories` **[Object][330]** 
-    -   `categories.higherlower` **[ContractCategory][357]** 
--   `currencies` **[Object][330]** 
-    -   `currencies.usd` **[String][332]** Example
+-   `categories` **[Object][331]** 
+    -   `categories.higherlower` **[ContractCategory][358]** 
+-   `currencies` **[Object][331]** 
+    -   `currencies.usd` **[String][333]** Example
 
 ### Streams
 
@@ -820,15 +825,15 @@ An abstract class for balance information
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
+-   `api` **[DerivAPI][350]** 
 
 ##### Properties
 
--   `amount` **[Monetary][356]** 
--   `value` **[Number][345]** numeric balance value
--   `currency` **[String][332]** currency of the amount
--   `display` **[String][332]** display value of amount (decimal point)
--   `format` **[String][332]** formatted amount (decimal point, comma separated)
+-   `amount` **[Monetary][357]** 
+-   `value` **[Number][346]** numeric balance value
+-   `currency` **[String][333]** currency of the amount
+-   `display` **[String][333]** display value of amount (decimal point)
+-   `format` **[String][333]** formatted amount (decimal point, comma separated)
 
 ##### Examples
 
@@ -844,16 +849,16 @@ balance.onUpdate().subscribe(balance => console.log)
 
 **Extends Stream**
 
-An abstract class for Candles stream returned from [DerivAPI#candleStream][358]
+An abstract class for Candles stream returned from [DerivAPI#candleStream][359]
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
--   `options` **[CandlesParam][336]?** 
+-   `api` **[DerivAPI][350]** 
+-   `options` **[CandlesParam][337]?** 
 
 ##### Properties
 
--   `list` **[Array][348]&lt;[Candle][359]>** An immutable list of candles
+-   `list` **[Array][349]&lt;[Candle][360]>** An immutable list of candles
 
 ##### history
 
@@ -861,7 +866,7 @@ Resolves to a list of candles given the range
 
 ###### Parameters
 
--   `range` **[HistoryRange][360]?** 
+-   `range` **[HistoryRange][361]?** 
 
 ###### Examples
 
@@ -869,7 +874,7 @@ Resolves to a list of candles given the range
 const old_candles = await candle_stream.history({count: 10, end: yesterday})
 ```
 
-Returns **[Promise][334]&lt;[Array][348]&lt;[Candle][359]>>** 
+Returns **[Promise][335]&lt;[Array][349]&lt;[Candle][360]>>** 
 
 #### Contract
 
@@ -879,49 +884,49 @@ Abstract class for contracts
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
--   `options` **[ContractParam][338]** 
+-   `api` **[DerivAPI][350]** 
+-   `options` **[ContractParam][339]** 
 
 ##### Properties
 
--   `status` **[String][332]** 'proposal', 'open', 'expired', 'sold', 'won', 'lost'
--   `ask_price` **[Monetary][356]** Price to pay to buy a contract
--   `type` **[String][332]** contract type
--   `payout` **[Monetary][356]** Potential or realized payout
--   `longcode` **[String][332]** 
--   `symbol` **[String][332]** 
--   `currency` **[String][332]** 
--   `current_spot` **[Spot][361]** 
--   `start_time` **[CustomDate][354]** Start time of the contract (estimated for proposal)
--   `buy_price` **[Monetary][356]?** (After buy)
--   `bid_price` **[Monetary][356]?** (After buy)
--   `sell_price` **[Monetary][356]?** (After sell)
--   `profit` **[Profit][362]?** Potential or realized profit (After buy)
--   `proposal_id` **[Number][345]?** The proposal ID used to buy
--   `id` **[Number][345]?** The contract ID (After buy)
--   `purchase_time` **[CustomDate][354]?** (After buy)
--   `expiry_time` **[CustomDate][354]?** (After buy)
--   `sell_time` **[CustomDate][354]?** (After sell)
--   `barrier_count` **[Number][345]?** (For contracts with barrier)
--   `high_barrier` **[MarketValue][355]?** (For contracts with two barriers)
--   `low_barrier` **[MarketValue][355]?** (For contracts with two barriers)
--   `barrier` **[MarketValue][355]?** (For contracts with one barrier)
--   `tick_count` **[Number][345]?** (For tick contracts)
--   `ticks` **[Array][348]&lt;[Tick][363]>?** (For tick contracts)
--   `multiplier` **[Number][345]?** (For loopback contracts)
--   `shortcode` **[String][332]?** 
--   `validation_error` **[String][332]?** 
--   `is_forward_starting` **[Boolean][350]?** 
--   `is_intraday` **[Boolean][350]?** 
--   `is_path_dependent` **[Boolean][350]?** 
--   `is_valid_to_sell` **[Boolean][350]?** We still allow a sell call, let API handle the error
--   `is_expired` **[Boolean][350]?** 
--   `is_settleable` **[Boolean][350]?** 
--   `is_open` **[Boolean][350]?** Is this contract still open
--   `entry_spot` **[Spot][361]?** 
--   `exit_spot` **[Spot][361]?** 
--   `audit_details` **[Object][330]?** 
--   `code` **[FullName][351]?** only if both short and long codes are available
+-   `status` **[String][333]** 'proposal', 'open', 'expired', 'sold', 'won', 'lost'
+-   `ask_price` **[Monetary][357]** Price to pay to buy a contract
+-   `type` **[String][333]** contract type
+-   `payout` **[Monetary][357]** Potential or realized payout
+-   `longcode` **[String][333]** 
+-   `symbol` **[String][333]** 
+-   `currency` **[String][333]** 
+-   `current_spot` **[Spot][362]** 
+-   `start_time` **[CustomDate][355]** Start time of the contract (estimated for proposal)
+-   `buy_price` **[Monetary][357]?** (After buy)
+-   `bid_price` **[Monetary][357]?** (After buy)
+-   `sell_price` **[Monetary][357]?** (After sell)
+-   `profit` **[Profit][363]?** Potential or realized profit (After buy)
+-   `proposal_id` **[Number][346]?** The proposal ID used to buy
+-   `id` **[Number][346]?** The contract ID (After buy)
+-   `purchase_time` **[CustomDate][355]?** (After buy)
+-   `expiry_time` **[CustomDate][355]?** (After buy)
+-   `sell_time` **[CustomDate][355]?** (After sell)
+-   `barrier_count` **[Number][346]?** (For contracts with barrier)
+-   `high_barrier` **[MarketValue][356]?** (For contracts with two barriers)
+-   `low_barrier` **[MarketValue][356]?** (For contracts with two barriers)
+-   `barrier` **[MarketValue][356]?** (For contracts with one barrier)
+-   `tick_count` **[Number][346]?** (For tick contracts)
+-   `ticks` **[Array][349]&lt;[Tick][364]>?** (For tick contracts)
+-   `multiplier` **[Number][346]?** (For loopback contracts)
+-   `shortcode` **[String][333]?** 
+-   `validation_error` **[String][333]?** 
+-   `is_forward_starting` **[Boolean][351]?** 
+-   `is_intraday` **[Boolean][351]?** 
+-   `is_path_dependent` **[Boolean][351]?** 
+-   `is_valid_to_sell` **[Boolean][351]?** We still allow a sell call, let API handle the error
+-   `is_expired` **[Boolean][351]?** 
+-   `is_settleable` **[Boolean][351]?** 
+-   `is_open` **[Boolean][351]?** Is this contract still open
+-   `entry_spot` **[Spot][362]?** 
+-   `exit_spot` **[Spot][362]?** 
+-   `audit_details` **[Object][331]?** 
+-   `code` **[FullName][352]?** only if both short and long codes are available
 
 ##### Examples
 
@@ -939,10 +944,10 @@ Buys this contract
 
 ###### Parameters
 
--   `buy` **[BuyParam][364]**  (optional, default `{}`)
+-   `buy` **[BuyParam][365]**  (optional, default `{}`)
     -   `buy.max_price`   (optional, default `this.ask_price.value`)
 
-Returns **[Buy][365]** 
+Returns **[Buy][366]** 
 
 ##### sell
 
@@ -950,25 +955,25 @@ Sells this contract
 
 ###### Parameters
 
--   `sell` **[SellParam][366]** zero price means sell at market (optional, default `{}`)
+-   `sell` **[SellParam][367]** zero price means sell at market (optional, default `{}`)
     -   `sell.max_price`   (optional, default `0`)
 
-Returns **[Sell][367]** 
+Returns **[Sell][368]** 
 
 #### Ticks
 
 **Extends Stream**
 
-Abstract class for ticks stream returned by the [DerivAPI#tickStream][368]
+Abstract class for ticks stream returned by the [DerivAPI#tickStream][369]
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
--   `options` **[TicksParam][333]** 
+-   `api` **[DerivAPI][350]** 
+-   `options` **[TicksParam][334]** 
 
 ##### Properties
 
--   `list` **[Array][348]&lt;[Tick][363]>** An immutable list of ticks
+-   `list` **[Array][349]&lt;[Tick][364]>** An immutable list of ticks
 
 ##### history
 
@@ -976,7 +981,7 @@ Resolves to a list of Ticks using the given range
 
 ###### Parameters
 
--   `range` **[HistoryRange][360]?** 
+-   `range` **[HistoryRange][361]?** 
 
 ###### Examples
 
@@ -984,7 +989,7 @@ Resolves to a list of Ticks using the given range
 const old_ticks = await tickStream.history({count: 10, end: yesterday})
 ```
 
-Returns **[Promise][334]&lt;[Array][348]&lt;[Tick][363]>>** 
+Returns **[Promise][335]&lt;[Array][349]&lt;[Tick][364]>>** 
 
 #### Transactions
 
@@ -994,11 +999,11 @@ A stream of transactions
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
+-   `api` **[DerivAPI][350]** 
 
 ##### Properties
 
--   `list` **[Array][348]&lt;[Transaction][369]>** An immutable list of transactions
+-   `list` **[Array][349]&lt;[Transaction][370]>** An immutable list of transactions
 
 ##### Examples
 
@@ -1018,17 +1023,17 @@ An abstract class for website status info
 
 ##### Parameters
 
--   `api` **[DerivAPI][349]** 
+-   `api` **[DerivAPI][350]** 
 
 ##### Properties
 
--   `status` **[String][332]** 'up', 'down'
--   `is_website_up` **[Boolean][350]** 
--   `country` **[String][332]** 
--   `currencies` **[Object][330]** 
--   `call_limits` **[Object][330]** 
--   `languages` **[Array][348]&lt;[String][332]>** 
--   `terms_and_conditions_version` **[String][332]** 
+-   `status` **[String][333]** 'up', 'down'
+-   `is_website_up` **[Boolean][351]** 
+-   `country` **[String][333]** 
+-   `currencies` **[Object][331]** 
+-   `call_limits` **[Object][331]** 
+-   `languages` **[Array][349]&lt;[String][333]>** 
+-   `terms_and_conditions_version` **[String][333]** 
 
 ##### Examples
 
@@ -1055,14 +1060,14 @@ A barrier info, either absolute or relative
 
 ##### Parameters
 
--   `value` **[Number][345]** 
--   `pip` **[Number][345]** 
+-   `value` **[Number][346]** 
+-   `pip` **[Number][346]** 
 
 ##### Properties
 
--   `type` **[String][332]** 'relative' or 'absolute'
--   `sign` **[Number][345]** 0, -1, +1
--   `is_relative` **[Boolean][350]** 
+-   `type` **[String][333]** 'relative' or 'absolute'
+-   `sign` **[Number][346]** 0, -1, +1
+-   `is_relative` **[Boolean][351]** 
 
 #### CustomDate
 
@@ -1072,53 +1077,53 @@ An alternative date object
 
 ##### Parameters
 
--   `date` **([CustomDate][354] \| [Date][370] \| [Number][345])** 
+-   `date` **([CustomDate][355] \| [Date][371] \| [Number][346])** 
 
 ##### Properties
 
--   `epoch` **[Number][345]** 
--   `epoch_milliseconds` **[Number][345]** 
--   `date` **[Date][370]** 
+-   `epoch` **[Number][346]** 
+-   `epoch_milliseconds` **[Number][346]** 
+-   `date` **[Date][371]** 
 
 ##### isBefore
 
 ###### Parameters
 
--   `date` **([CustomDate][354] \| [Date][370] \| [Number][345])** 
+-   `date` **([CustomDate][355] \| [Date][371] \| [Number][346])** 
 
-Returns **[Boolean][350]** 
+Returns **[Boolean][351]** 
 
 ##### isSameOrAfter
 
 ###### Parameters
 
--   `date` **([CustomDate][354] \| [Date][370] \| [Number][345])** 
+-   `date` **([CustomDate][355] \| [Date][371] \| [Number][346])** 
 
-Returns **[Boolean][350]** 
+Returns **[Boolean][351]** 
 
 ##### isSameOrBefore
 
 ###### Parameters
 
--   `date` **([CustomDate][354] \| [Date][370] \| [Number][345])** 
+-   `date` **([CustomDate][355] \| [Date][371] \| [Number][346])** 
 
-Returns **[Boolean][350]** 
+Returns **[Boolean][351]** 
 
 ##### isAfter
 
 ###### Parameters
 
--   `date` **([CustomDate][354] \| [Date][370] \| [Number][345])** 
+-   `date` **([CustomDate][355] \| [Date][371] \| [Number][346])** 
 
-Returns **[Boolean][350]** 
+Returns **[Boolean][351]** 
 
 ##### isSame
 
 ###### Parameters
 
--   `date` **([CustomDate][354] \| [Date][370] \| [Number][345])** 
+-   `date` **([CustomDate][355] \| [Date][371] \| [Number][346])** 
 
-Returns **[Boolean][350]** 
+Returns **[Boolean][351]** 
 
 ##### addDuration
 
@@ -1126,9 +1131,9 @@ Adds a duration to the current date
 
 ###### Parameters
 
--   `duration` **([Duration][371] \| [Object][330])** Accepts { value: ..., unit: ... }
+-   `duration` **([Duration][372] \| [Object][331])** Accepts { value: ..., unit: ... }
 
-Returns **[CustomDate][354]** 
+Returns **[CustomDate][355]** 
 
 #### DateRange
 
@@ -1138,8 +1143,8 @@ An abstract class for date range
 
 ##### Parameters
 
--   `min` **[CustomDate][354]** 
--   `max` **[CustomDate][354]** 
+-   `min` **[CustomDate][355]** 
+-   `max` **[CustomDate][355]** 
 
 #### Duration
 
@@ -1149,12 +1154,12 @@ Duration object
 
 ##### Parameters
 
--   `duration` **[String][332]** 
+-   `duration` **[String][333]** 
 
 ##### Properties
 
--   `value` **[Number][345]** 
--   `unit` **[String][332]** 
+-   `value` **[Number][346]** 
+-   `unit` **[String][333]** 
 
 ##### addToDate
 
@@ -1162,9 +1167,9 @@ Adds this duration to a date object
 
 ###### Parameters
 
--   `date` **[CustomDate][354]** 
+-   `date` **[CustomDate][355]** 
 
-Returns **[CustomDate][354]** 
+Returns **[CustomDate][355]** 
 
 #### DurationRange
 
@@ -1174,8 +1179,8 @@ An abstract class for date range
 
 ##### Parameters
 
--   `min` **[Duration][371]** 
--   `max` **[Duration][371]** 
+-   `min` **[Duration][372]** 
+-   `max` **[Duration][372]** 
 
 #### FullName
 
@@ -1186,16 +1191,16 @@ A class for keeping short and full name of things
 ##### Parameters
 
 -   `short_name`  
--   `full` **[String][332]** Full form of the name
--   `short` **[String][332]** short form of the name
+-   `full` **[String][333]** Full form of the name
+-   `short` **[String][333]** short form of the name
 
 ##### Properties
 
--   `full` **[String][332]** 
--   `long` **[String][332]** alias for `full`
--   `short` **[String][332]** 
--   `code` **[String][332]** alias for `short`
--   `shortcode` **[String][332]** alias for `short`
+-   `full` **[String][333]** 
+-   `long` **[String][333]** alias for `full`
+-   `short` **[String][333]** 
+-   `code` **[String][333]** alias for `short`
+-   `shortcode` **[String][333]** alias for `short`
 
 ##### Examples
 
@@ -1213,14 +1218,14 @@ Keeps a market value and pip size
 
 ##### Parameters
 
--   `value` **[Number][345]** 
--   `pip` **[Number][345]** 
+-   `value` **[Number][346]** 
+-   `pip` **[Number][346]** 
 
 ##### Properties
 
--   `pip_size` **[Number][345]** 
--   `pip_sized` **[Number][345]** the pipsized value
--   `display` **[Number][345]** alias for `pip_size`
+-   `pip_size` **[Number][346]** 
+-   `pip_sized` **[Number][346]** the pipsized value
+-   `display` **[Number][346]** alias for `pip_size`
 
 #### Monetary
 
@@ -1230,16 +1235,16 @@ Keeps money related values
 
 ##### Parameters
 
--   `value` **[Number][345]** 
--   `currency` **[String][332]** 
+-   `value` **[Number][346]** 
+-   `currency` **[String][333]** 
 -   `lang`  
 
 ##### Properties
 
--   `value` **[Number][345]** 
--   `currency` **[String][332]** 
--   `display` **[String][332]** decimal value based on currency
--   `format` **[String][332]** comma separated decimal value based on currency
+-   `value` **[Number][346]** 
+-   `currency` **[String][333]** 
+-   `display` **[String][333]** decimal value based on currency
+-   `format` **[String][333]** comma separated decimal value based on currency
 
 #### Profit
 
@@ -1249,19 +1254,19 @@ Keeps money related values
 
 ##### Parameters
 
--   `value` **[Number][345]** 
--   `currency` **[String][332]** 
--   `percentage` **[Number][345]** 
+-   `value` **[Number][346]** 
+-   `currency` **[String][333]** 
+-   `percentage` **[Number][346]** 
 
 ##### Properties
 
--   `value` **[Number][345]** Absolute value of the profit
--   `percentage` **[Number][345]** 
--   `sign` **[Number][345]** 0: no profit, 1: positive profit, -1: loss
--   `is_win` **[Boolean][350]** True if the initial profit is positive
--   `currency` **[String][332]** 
--   `display` **[String][332]** decimal value based on currency
--   `format` **[String][332]** comma separated decimal value based on currency
+-   `value` **[Number][346]** Absolute value of the profit
+-   `percentage` **[Number][346]** 
+-   `sign` **[Number][346]** 0: no profit, 1: positive profit, -1: loss
+-   `is_win` **[Boolean][351]** True if the initial profit is positive
+-   `currency` **[String][333]** 
+-   `display` **[String][333]** decimal value based on currency
+-   `format` **[String][333]** comma separated decimal value based on currency
 
 #### Spot
 
@@ -1271,15 +1276,15 @@ Keeps a market value at a time
 
 ##### Parameters
 
--   `value` **[Number][345]** 
--   `pip` **[Number][345]** 
+-   `value` **[Number][346]** 
+-   `pip` **[Number][346]** 
 -   `time`  
 
 ##### Properties
 
--   `pip_size` **[Number][345]** 
--   `pip_sized` **[Number][345]** the pipsized value
--   `time` **[CustomDate][354]** the spot time
+-   `pip_size` **[Number][346]** 
+-   `pip_sized` **[Number][346]** the pipsized value
+-   `time` **[CustomDate][355]** the spot time
 
 ## Core Functionality
 
@@ -1299,8 +1304,8 @@ The storage object needs to implement the API.
 
 #### Parameters
 
--   `api` **[DerivAPIBasic][331]** API instance to get data that is not cached
--   `storage` **[Object][330]** A storage instance to use for caching
+-   `api` **[DerivAPIBasic][332]** API instance to get data that is not cached
+-   `storage` **[Object][331]** A storage instance to use for caching
 
 #### Examples
 
@@ -1345,7 +1350,7 @@ Errors should be handled by the user of the stream
 
 ##### Parameters
 
--   `request` **[Object][330]** A request object acceptable by the API
+-   `request` **[Object][331]** A request object acceptable by the API
 
 ##### Examples
 
@@ -1370,790 +1375,790 @@ in this codebase.
 
 #### CandlesParam
 
-Type: [Object][330]
+Type: [Object][331]
 
 ##### Properties
 
--   `granularity` **[Number][345]** Granularity in seconds
--   `range` **[HistoryRange][360]** A chunk of history to return with start and end time
--   `symbol` **[String][332]** Symbol of the candles
+-   `granularity` **[Number][346]** Granularity in seconds
+-   `range` **[HistoryRange][361]** A chunk of history to return with start and end time
+-   `symbol` **[String][333]** Symbol of the candles
 
 #### TicksParam
 
-Type: [Object][330]
+Type: [Object][331]
 
 ##### Properties
 
--   `range` **[HistoryRange][360]** A chunk of history to return with start and end time
--   `symbol` **[String][332]** The ticks symbol
+-   `range` **[HistoryRange][361]** A chunk of history to return with start and end time
+-   `symbol` **[String][333]** The ticks symbol
 
 #### BuyParam
 
-Type: [Object][330]
+Type: [Object][331]
 
 ##### Properties
 
--   `max_price` **[Number][345]?** Maximum acceptable price for buying the contract
+-   `max_price` **[Number][346]?** Maximum acceptable price for buying the contract
 
 #### SellParam
 
-Type: [Object][330]
+Type: [Object][331]
 
 ##### Properties
 
--   `max_price` **[Number][345]?** Maximum acceptable price for selling the contract
+-   `max_price` **[Number][346]?** Maximum acceptable price for selling the contract
 
 #### ContractParam
 
-Type: [Object][330]
+Type: [Object][331]
 
 ##### Properties
 
--   `contract_type` **[String][332]** 
--   `amount` **[Number][345]** 
--   `barrier` **[String][332]** 
--   `barrier2` **[String][332]** 
--   `expiry_time` **([Number][345] \| [Date][370])** epoch in seconds or [Date][372]
--   `start_time` **([Number][345] \| [Date][370])** epoch in seconds or [Date][372]
--   `Currency` **[String][332]?** Default is the account currency
--   `basis` **[String][332]** stake or payout
--   `duration` **([Number][345] \| [String][332])** duration with unit or duration in number
--   `duration_unit` **[String][332]?** duration unit, required if duration is number
--   `product_type` **[String][332]?** 'multi_barrier' or 'basic'
+-   `contract_type` **[String][333]** 
+-   `amount` **[Number][346]** 
+-   `barrier` **[String][333]** 
+-   `barrier2` **[String][333]** 
+-   `expiry_time` **([Number][346] \| [Date][371])** epoch in seconds or [Date][373]
+-   `start_time` **([Number][346] \| [Date][371])** epoch in seconds or [Date][373]
+-   `Currency` **[String][333]?** Default is the account currency
+-   `basis` **[String][333]** stake or payout
+-   `duration` **([Number][346] \| [String][333])** duration with unit or duration in number
+-   `duration_unit` **[String][333]?** duration unit, required if duration is number
+-   `product_type` **[String][333]?** 'multi_barrier' or 'basic'
 
 #### HistoryRange
 
-Type: [Object][330]
+Type: [Object][331]
 
 ##### Properties
 
--   `start` **([Number][345] \| [Date][370])** An epoch in seconds or a Date object
--   `end` **([Number][345] \| [Date][370])**  An epoch in seconds or a Date object
--   `count` **[Number][345]** Number of ticks returned by history
+-   `start` **([Number][346] \| [Date][371])** An epoch in seconds or a Date object
+-   `end` **([Number][346] \| [Date][371])**  An epoch in seconds or a Date object
+-   `count` **[Number][346]** Number of ticks returned by history
 
 ## accountClosure
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_closure` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_closure` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.reason` **[String][332]** Reason for closing off accounts.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.reason` **[String][333]** Reason for closing off accounts.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## accountSecurity
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_security` **[Number][345]** Must be `1`
-    -   `args.otp` **[String][332]** [Optional] OTP (one-time passcode) generated by a 2FA application like Authy, Google Authenticator or Yubikey.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_security` **[Number][346]** Must be `1`
+    -   `args.otp` **[String][333]** [Optional] OTP (one-time passcode) generated by a 2FA application like Authy, Google Authenticator or Yubikey.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.totp_action` **[String][332]** [Optional] Action to be taken for managing TOTP (time-based one-time password, RFC6238). Generate will create a secret key which is then returned in the secret_key response field, you can then enable by using that code in a 2FA application.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.totp_action` **[String][333]** [Optional] Action to be taken for managing TOTP (time-based one-time password, RFC6238). Generate will create a secret key which is then returned in the secret_key response field, you can then enable by using that code in a 2FA application.
 
 ## accountStatistics
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_statistics` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_statistics` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## activeSymbols
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.active_symbols` **[String][332]** If you use `brief`, only a subset of fields will be returned.
-    -   `args.landing_company` **[String][332]** [Optional] If you specify this field, only symbols available for trading by that landing company will be returned. If you are logged in, only symbols available for trading by your landing company will be returned regardless of what you specify in this field.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.active_symbols` **[String][333]** If you use `brief`, only a subset of fields will be returned.
+    -   `args.landing_company` **[String][333]** [Optional] If you specify this field, only symbols available for trading by that landing company will be returned. If you are logged in, only symbols available for trading by your landing company will be returned regardless of what you specify in this field.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.product_type` **[String][332]** [Optional] If you specify this field, only symbols that can be traded through that product type will be returned.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.product_type` **[String][333]** [Optional] If you specify this field, only symbols that can be traded through that product type will be returned.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## affiliateAccountAdd
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_opening_reason` **[String][332]** [Optional] Purpose and reason for requesting the account opening.
-    -   `args.account_turnover` **[String][332]** [Optional] The anticipated account turnover.
-    -   `args.address_city` **[String][332]** [Optional] Within 100 characters.
-    -   `args.address_line_1` **[String][332]** Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-
-    -   `args.address_line_2` **[String][332]** [Optional] Within 70 characters.
-    -   `args.address_postcode` **[String][332]** [Optional] Within 20 characters and may not contain '+'.
-    -   `args.address_state` **[String][332]** [Optional] Possible value receive from `states_list` call.
-    -   `args.affiliate_account_add` **[Number][345]** Must be `1`
-    -   `args.affiliate_plan` **[String][332]** The affiliate plan the account will subscribe to
-    -   `args.affiliate_token` **[String][332]** [Optional] Affiliate token, within 32 characters.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_opening_reason` **[String][333]** [Optional] Purpose and reason for requesting the account opening.
+    -   `args.account_turnover` **[String][333]** [Optional] The anticipated account turnover.
+    -   `args.address_city` **[String][333]** [Optional] Within 100 characters.
+    -   `args.address_line_1` **[String][333]** Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-
+    -   `args.address_line_2` **[String][333]** [Optional] Within 70 characters.
+    -   `args.address_postcode` **[String][333]** [Optional] Within 20 characters and may not contain '+'.
+    -   `args.address_state` **[String][333]** [Optional] Possible value receive from `states_list` call.
+    -   `args.affiliate_account_add` **[Number][346]** Must be `1`
+    -   `args.affiliate_plan` **[String][333]** The affiliate plan the account will subscribe to
+    -   `args.affiliate_token` **[String][333]** [Optional] Affiliate token, within 32 characters.
     -   `args.citizen` **Any** [Optional] Country of legal citizenship, 2-letter country code.
-    -   `args.client_type` **[String][332]** [Optional] Indicates whether this is for a client requesting an account with professional status.
-    -   `args.currency` **[String][332]** [Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
-    -   `args.date_of_birth` **[String][332]** Date of birth format: `yyyy-mm-dd`.
-    -   `args.first_name` **[String][332]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.last_name` **[String][332]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.non_pep_declaration` **[Number][345]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
+    -   `args.client_type` **[String][333]** [Optional] Indicates whether this is for a client requesting an account with professional status.
+    -   `args.currency` **[String][333]** [Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
+    -   `args.date_of_birth` **[String][333]** Date of birth format: `yyyy-mm-dd`.
+    -   `args.first_name` **[String][333]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.last_name` **[String][333]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.non_pep_declaration` **[Number][346]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.phone` **Any** [Optional] Starting with `+` followed by 9-35 digits, hyphens or space.
-    -   `args.place_of_birth` **[String][332]** [Optional] Place of birth, 2-letter country code.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.residence` **[String][332]** 2-letter country code, possible value receive from `residence_list` call.
-    -   `args.salutation` **[String][332]** [Optional] Accept any value in enum list.
-    -   `args.secret_answer` **[String][332]** [Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.
-    -   `args.secret_question` **[String][332]** [Optional] Accept any value in enum list. Required for new account and existing client details will be used if client open another account.
-    -   `args.tax_identification_number` **[String][332]** [Optional] Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.
-    -   `args.tax_residence` **[String][332]** [Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.
+    -   `args.place_of_birth` **[String][333]** [Optional] Place of birth, 2-letter country code.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.residence` **[String][333]** 2-letter country code, possible value receive from `residence_list` call.
+    -   `args.salutation` **[String][333]** [Optional] Accept any value in enum list.
+    -   `args.secret_answer` **[String][333]** [Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.
+    -   `args.secret_question` **[String][333]** [Optional] Accept any value in enum list. Required for new account and existing client details will be used if client open another account.
+    -   `args.tax_identification_number` **[String][333]** [Optional] Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.
+    -   `args.tax_residence` **[String][333]** [Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.
 
 ## apiToken
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.api_token` **[Number][345]** Must be `1`
-    -   `args.delete_token` **[String][332]** [Optional] The token to remove.
-    -   `args.new_token` **[String][332]** [Optional] The name of the created token.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.api_token` **[Number][346]** Must be `1`
+    -   `args.delete_token` **[String][333]** [Optional] The token to remove.
+    -   `args.new_token` **[String][333]** [Optional] The name of the created token.
     -   `args.new_token_scopes` **Any** [Optional] List of permission scopes to provide with the token.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.valid_for_current_ip_only` **[Number][345]** [Optional] If you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.valid_for_current_ip_only` **[Number][346]** [Optional] If you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token
 
 ## appDelete
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.app_delete` **[Number][345]** Application app_id
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.app_delete` **[Number][346]** Application app_id
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## appGet
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.app_get` **[Number][345]** Application app_id
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.app_get` **[Number][346]** Application app_id
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## appList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.app_list` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.app_list` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## appMarkupDetails
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.app_id` **[Number][345]** [Optional] Specific application `app_id` to report on.
-    -   `args.app_markup_details` **[Number][345]** Must be `1`
-    -   `args.client_loginid` **[String][332]** [Optional] Specific client loginid to report on, like CR12345
-    -   `args.date_from` **[String][332]** Start date (epoch or YYYY-MM-DD HH:MM:SS). Results are inclusive of this time.
-    -   `args.date_to` **[String][332]** End date (epoch or YYYY-MM-DD HH::MM::SS). Results are inclusive of this time.
-    -   `args.description` **[Number][345]** [Optional] If set to 1, will return `app_markup` transaction details.
-    -   `args.limit` **[Number][345]** [Optional] Apply upper limit to count of transactions received.
-    -   `args.offset` **[Number][345]** [Optional] Number of transactions to skip.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.app_id` **[Number][346]** [Optional] Specific application `app_id` to report on.
+    -   `args.app_markup_details` **[Number][346]** Must be `1`
+    -   `args.client_loginid` **[String][333]** [Optional] Specific client loginid to report on, like CR12345
+    -   `args.date_from` **[String][333]** Start date (epoch or YYYY-MM-DD HH:MM:SS). Results are inclusive of this time.
+    -   `args.date_to` **[String][333]** End date (epoch or YYYY-MM-DD HH::MM::SS). Results are inclusive of this time.
+    -   `args.description` **[Number][346]** [Optional] If set to 1, will return `app_markup` transaction details.
+    -   `args.limit` **[Number][346]** [Optional] Apply upper limit to count of transactions received.
+    -   `args.offset` **[Number][346]** [Optional] Number of transactions to skip.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sort` **[String][332]** [Optional] Sort direction on `transaction_time`. Other fields sort order is ASC.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sort` **[String][333]** [Optional] Sort direction on `transaction_time`. Other fields sort order is ASC.
     -   `args.sort_fields` **Any** [Optional] One or more of the specified fields to sort on. Default sort field is by `transaction_time`.
 
 ## appRegister
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.app_markup_percentage` **[Number][345]** [Optional] Markup to be added to contract prices (as a percentage of contract payout).
-    -   `args.app_register` **[Number][345]** Must be `1`
-    -   `args.appstore` **[String][332]** [Optional] Application's App Store URL (if applicable).
-    -   `args.github` **[String][332]** [Optional] Application's GitHub page (for open-source projects).
-    -   `args.googleplay` **[String][332]** [Optional] Application's Google Play URL (if applicable).
-    -   `args.homepage` **[String][332]** [Optional] Application's homepage URL.
-    -   `args.name` **[String][332]** Application name.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.app_markup_percentage` **[Number][346]** [Optional] Markup to be added to contract prices (as a percentage of contract payout).
+    -   `args.app_register` **[Number][346]** Must be `1`
+    -   `args.appstore` **[String][333]** [Optional] Application's App Store URL (if applicable).
+    -   `args.github` **[String][333]** [Optional] Application's GitHub page (for open-source projects).
+    -   `args.googleplay` **[String][333]** [Optional] Application's Google Play URL (if applicable).
+    -   `args.homepage` **[String][333]** [Optional] Application's homepage URL.
+    -   `args.name` **[String][333]** Application name.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.redirect_uri` **[String][332]** [Optional] The URL to redirect to after a successful login. Required if charging markup percentage
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.redirect_uri` **[String][333]** [Optional] The URL to redirect to after a successful login. Required if charging markup percentage
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.scopes` **Any** List of permission scopes to grant the application.
-    -   `args.verification_uri` **[String][332]** [Optional] Used when `verify_email` called. If available, a URL containing the verification token will be sent to the client's email, otherwise only the token will be sent.
+    -   `args.verification_uri` **[String][333]** [Optional] Used when `verify_email` called. If available, a URL containing the verification token will be sent to the client's email, otherwise only the token will be sent.
 
 ## appUpdate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.app_markup_percentage` **[Number][345]** [Optional] Markup to be added to contract prices (as a percentage of contract payout).
-    -   `args.app_update` **[Number][345]** Application app_id.
-    -   `args.appstore` **[String][332]** [Optional] Application's App Store URL (if applicable).
-    -   `args.github` **[String][332]** [Optional] Application's GitHub page (for open-source projects).
-    -   `args.googleplay` **[String][332]** [Optional] Application's Google Play URL (if applicable).
-    -   `args.homepage` **[String][332]** [Optional] Application's homepage URL.
-    -   `args.name` **[String][332]** Application name.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.app_markup_percentage` **[Number][346]** [Optional] Markup to be added to contract prices (as a percentage of contract payout).
+    -   `args.app_update` **[Number][346]** Application app_id.
+    -   `args.appstore` **[String][333]** [Optional] Application's App Store URL (if applicable).
+    -   `args.github` **[String][333]** [Optional] Application's GitHub page (for open-source projects).
+    -   `args.googleplay` **[String][333]** [Optional] Application's Google Play URL (if applicable).
+    -   `args.homepage` **[String][333]** [Optional] Application's homepage URL.
+    -   `args.name` **[String][333]** Application name.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.redirect_uri` **[String][332]** [Optional] The URL to redirect to after a successful login. Required if charging markup percentage.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.redirect_uri` **[String][333]** [Optional] The URL to redirect to after a successful login. Required if charging markup percentage.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.scopes` **Any** Change scopes will revoke all user's grants and log them out.
-    -   `args.verification_uri` **[String][332]** [Optional] Used when `verify_email` called. If available, a URL containing the verification token will send to the client's email, otherwise only the token will be sent.
+    -   `args.verification_uri` **[String][333]** [Optional] Used when `verify_email` called. If available, a URL containing the verification token will send to the client's email, otherwise only the token will be sent.
 
 ## assetIndex
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.asset_index` **[Number][345]** Must be `1`
-    -   `args.landing_company` **[String][332]** [Optional] If specified, will return only the underlyings for the specified landing company.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.asset_index` **[Number][346]** Must be `1`
+    -   `args.landing_company` **[String][333]** [Optional] If specified, will return only the underlyings for the specified landing company.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## authorize
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.add_to_login_history` **[Number][345]** [Optional] Send this when you use api tokens for authorization and want to track activity using `login_history` call.
-    -   `args.authorize` **[String][332]** Authentication token. May be retrieved from [https://www.binary.com/en/user/security/api_tokenws.html][373]
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.add_to_login_history` **[Number][346]** [Optional] Send this when you use api tokens for authorization and want to track activity using `login_history` call.
+    -   `args.authorize` **[String][333]** Authentication token. May be retrieved from [https://www.binary.com/en/user/security/api_tokenws.html][374]
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## balance
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account` **[String][332]** [Optional] If set to `all`, return the balances of all accounts one by one; if set to `current`, return the balance of current account; if set as an account id, return the balance of that account.
-    -   `args.balance` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account` **[String][333]** [Optional] If set to `all`, return the balances of all accounts one by one; if set to `current`, return the balance of current account; if set as an account id, return the balance of that account.
+    -   `args.balance` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever the balance changes.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever the balance changes.
 
 ## buy
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.buy` **[String][332]** Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.buy` **[String][333]** Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.
     -   `args.parameters` **Any** \-
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.price` **[Number][345]** Maximum price at which to purchase the contract.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] `1` to stream.
+    -   `args.price` **[Number][346]** Maximum price at which to purchase the contract.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] `1` to stream.
 
 ## buyContractForMultipleAccounts
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.buy_contract_for_multiple_accounts` **[String][332]** Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.buy_contract_for_multiple_accounts` **[String][333]** Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.
     -   `args.parameters` **Any** \-
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.price` **[Number][345]** Maximum price at which to purchase the contract.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.price` **[Number][346]** Maximum price at which to purchase the contract.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.tokens` **Any** List of API tokens identifying the accounts for which the contract is bought. Note: If the same token appears multiple times or if multiple tokens designate the same account, the contract is bought multiple times for this account.
 
 ## cancel
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.cancel` **[Number][345]** Value should be the `contract_id` which received from the `portfolio` call.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.cancel` **[Number][346]** Value should be the `contract_id` which received from the `portfolio` call.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## cashier
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.address` **[String][332]** [Optional] Address for crypto withdrawal. Only applicable for `api` type.
-    -   `args.amount` **[Number][345]** [Optional] Amount for crypto withdrawal. Only applicable for `api` type.
-    -   `args.cashier` **[String][332]** Operation which needs to be requested from cashier
-    -   `args.dry_run` **[Number][345]** [Optional] If set to `1`, only validation is performed. Only applicable for `withdraw` using `crypto` provider and `api` type.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.address` **[String][333]** [Optional] Address for crypto withdrawal. Only applicable for `api` type.
+    -   `args.amount` **[Number][346]** [Optional] Amount for crypto withdrawal. Only applicable for `api` type.
+    -   `args.cashier` **[String][333]** Operation which needs to be requested from cashier
+    -   `args.dry_run` **[Number][346]** [Optional] If set to `1`, only validation is performed. Only applicable for `withdraw` using `crypto` provider and `api` type.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.provider` **[String][332]** [Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.type` **[String][332]** [Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider.
-    -   `args.verification_code` **[String][332]** [Optional] Email verification code (received from a `verify_email` call, which must be done first)
+    -   `args.provider` **[String][333]** [Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.type` **[String][333]** [Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider.
+    -   `args.verification_code` **[String][333]** [Optional] Email verification code (received from a `verify_email` call, which must be done first)
 
 ## cashierPayments
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.cashier_payments` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.cashier_payments` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.provider` **[String][332]** [Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever there is update to crypto payments.
-    -   `args.transaction_type` **[String][332]** [Optional] Type of transactions to receive.
+    -   `args.provider` **[String][333]** [Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever there is update to crypto payments.
+    -   `args.transaction_type` **[String][333]** [Optional] Type of transactions to receive.
 
 ## cashierWithdrawalCancel
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.cashier_withdrawal_cancel` **[Number][345]** Must be `1`
-    -   `args.id` **[String][332]** The unique identifier for the transaction.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.cashier_withdrawal_cancel` **[Number][346]** Must be `1`
+    -   `args.id` **[String][333]** The unique identifier for the transaction.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## changePassword
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.change_password` **[Number][345]** Must be `1`
-    -   `args.new_password` **[String][332]** New password (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address)
-    -   `args.old_password` **[String][332]** Old password for validation (non-empty string, accepts any printable ASCII character)
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.change_password` **[Number][346]** Must be `1`
+    -   `args.new_password` **[String][333]** New password (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address)
+    -   `args.old_password` **[String][333]** Old password for validation (non-empty string, accepts any printable ASCII character)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## contractUpdate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.contract_id` **[Number][345]** Internal unique contract identifier.
-    -   `args.contract_update` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.contract_id` **[Number][346]** Internal unique contract identifier.
+    -   `args.contract_update` **[Number][346]** Must be `1`
     -   `args.limit_order` **Any** \-
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## contractUpdateHistory
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.contract_id` **[Number][345]** Internal unique contract identifier.
-    -   `args.contract_update_history` **[Number][345]** Must be `1`
-    -   `args.limit` **[Number][345]** [Optional] Maximum number of historical updates to receive.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.contract_id` **[Number][346]** Internal unique contract identifier.
+    -   `args.contract_update_history` **[Number][346]** Must be `1`
+    -   `args.limit` **[Number][346]** [Optional] Maximum number of historical updates to receive.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## contractsFor
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.contracts_for` **[String][332]** The short symbol name (obtained from `active_symbols` call).
-    -   `args.currency` **[String][332]** [Optional] Currency of the contract's stake and payout (obtained from `payout_currencies` call).
-    -   `args.landing_company` **[String][332]** [Optional] Indicates which landing company to get a list of contracts for. If you are logged in, your account's landing company will override this field.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.contracts_for` **[String][333]** The short symbol name (obtained from `active_symbols` call).
+    -   `args.currency` **[String][333]** [Optional] Currency of the contract's stake and payout (obtained from `payout_currencies` call).
+    -   `args.landing_company` **[String][333]** [Optional] Indicates which landing company to get a list of contracts for. If you are logged in, your account's landing company will override this field.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.product_type` **[String][332]** [Optional] If you specify this field, only contracts tradable through that contract type will be returned.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.product_type` **[String][333]** [Optional] If you specify this field, only contracts tradable through that contract type will be returned.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## copyStart
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.assets` **Any** [Optional] Used to set assets to be copied. E.x ["frxUSDJPY", "R_50"]
-    -   `args.copy_start` **[String][332]** API tokens identifying the accounts of trader which will be used to copy trades
-    -   `args.max_trade_stake` **[Number][345]** [Optional] Used to set maximum trade stake to be copied.
-    -   `args.min_trade_stake` **[Number][345]** [Optional] Used to set minimal trade stake to be copied.
+    -   `args.copy_start` **[String][333]** API tokens identifying the accounts of trader which will be used to copy trades
+    -   `args.max_trade_stake` **[Number][346]** [Optional] Used to set maximum trade stake to be copied.
+    -   `args.min_trade_stake` **[Number][346]** [Optional] Used to set minimal trade stake to be copied.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.trade_types` **Any** [Optional] Used to set trade types to be copied. E.x ["CALL", "PUT"]
 
 ## copyStop
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.copy_stop` **[String][332]** API tokens identifying the accounts which needs not to be copied
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.copy_stop` **[String][333]** API tokens identifying the accounts which needs not to be copied
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## copytradingList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.copytrading_list` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.copytrading_list` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## copytradingStatistics
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.copytrading_statistics` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.copytrading_statistics` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trader_id` **[String][332]** The ID of the target trader.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trader_id` **[String][333]** The ID of the target trader.
 
 ## documentUpload
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.document_format` **[String][332]** Document file format
-    -   `args.document_id` **[String][332]** [Optional] Document ID (required for Passport, Proof of ID and Driver's License)
-    -   `args.document_issuing_country` **[String][332]** [Optional] 2-letter country code
-    -   `args.document_type` **[String][332]** Document type
-    -   `args.document_upload` **[Number][345]** Must be `1`
-    -   `args.expected_checksum` **[String][332]** The checksum of the file to be uploaded
-    -   `args.expiration_date` **[String][332]** [Optional] Document expiration date (required for Passport, Proof of ID and Driver's License)
-    -   `args.file_size` **[Number][345]** Document size (should be less than 10MB)
-    -   `args.lifetime_valid` **[Number][345]** [Optional] Boolean value that indicates whether this document is lifetime valid (only applies to POI document types, cancels out the expiration_date given if any)
-    -   `args.page_type` **[String][332]** [Optional] To determine document side
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.document_format` **[String][333]** Document file format
+    -   `args.document_id` **[String][333]** [Optional] Document ID (required for Passport, Proof of ID and Driver's License)
+    -   `args.document_issuing_country` **[String][333]** [Optional] 2-letter country code
+    -   `args.document_type` **[String][333]** Document type
+    -   `args.document_upload` **[Number][346]** Must be `1`
+    -   `args.expected_checksum` **[String][333]** The checksum of the file to be uploaded
+    -   `args.expiration_date` **[String][333]** [Optional] Document expiration date (required for Passport, Proof of ID and Driver's License)
+    -   `args.file_size` **[Number][346]** Document size (should be less than 10MB)
+    -   `args.lifetime_valid` **[Number][346]** [Optional] Boolean value that indicates whether this document is lifetime valid (only applies to POI document types, cancels out the expiration_date given if any)
+    -   `args.page_type` **[String][333]** [Optional] To determine document side
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## economicCalendar
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.currency` **[String][332]** [Optional] Currency symbol.
-    -   `args.economic_calendar` **[Number][345]** Must be `1`
-    -   `args.end_date` **[Number][345]** [Optional] End date.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.currency` **[String][333]** [Optional] Currency symbol.
+    -   `args.economic_calendar` **[Number][346]** Must be `1`
+    -   `args.end_date` **[Number][346]** [Optional] End date.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.start_date` **[Number][345]** [Optional] Start date.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.start_date` **[Number][346]** [Optional] Start date.
 
 ## exchangeRates
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.base_currency` **[String][332]** Base currency (can be obtained from `payout_currencies` call)
-    -   `args.exchange_rates` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.base_currency` **[String][333]** Base currency (can be obtained from `payout_currencies` call)
+    -   `args.exchange_rates` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## forget
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.forget` **[String][332]** ID of the real-time stream of messages to cancel.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.forget` **[String][333]** ID of the real-time stream of messages to cancel.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## forgetAll
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.forget_all` **Any** Cancel all streams by type. The value can be either a single type e.g. `"ticks"`, or an array of multiple types e.g. `["candles", "ticks"]`.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## getAccountStatus
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.get_account_status` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.get_account_status` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## getFinancialAssessment
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.get_financial_assessment` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.get_financial_assessment` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## getLimits
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.get_limits` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.get_limits` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## getSelfExclusion
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.get_self_exclusion` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.get_self_exclusion` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## getSettings
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.get_settings` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.get_settings` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## identityVerificationDocumentAdd
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.document_number` **[String][332]** The identification number of the document.
-    -   `args.document_type` **[String][332]** The type of the document based on provided `issuing_country` (can obtained from `residence_list` call).
-    -   `args.identity_verification_document_add` **[Number][345]** Must be `1`
-    -   `args.issuing_country` **[String][332]** 2-letter country code (can obtained from `residence_list` call).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.document_number` **[String][333]** The identification number of the document.
+    -   `args.document_type` **[String][333]** The type of the document based on provided `issuing_country` (can obtained from `residence_list` call).
+    -   `args.identity_verification_document_add` **[Number][346]** Must be `1`
+    -   `args.issuing_country` **[String][333]** 2-letter country code (can obtained from `residence_list` call).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## landingCompany
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.landing_company` **[String][332]** Client's 2-letter country code (obtained from `residence_list` call).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.landing_company` **[String][333]** Client's 2-letter country code (obtained from `residence_list` call).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## landingCompanyDetails
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.landing_company_details` **[String][332]** Landing company shortcode.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.landing_company_details` **[String][333]** Landing company shortcode.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## linkWallet
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.client_id` **[String][332]** The unique identifier for this trading account.
-    -   `args.link_wallet` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.client_id` **[String][333]** The unique identifier for this trading account.
+    -   `args.link_wallet` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.wallet_id` **[String][332]** The unique identifier for this wallet.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.wallet_id` **[String][333]** The unique identifier for this wallet.
 
 ## loginHistory
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.limit` **[Number][345]** [Optional] Apply limit to count of login history records.
-    -   `args.login_history` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.limit` **[Number][346]** [Optional] Apply limit to count of login history records.
+    -   `args.login_history` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## logout
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.logout` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.logout` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## mt5Deposit
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount
-    -   `args.from_binary` **[String][332]** Binary account loginid to transfer money from
-    -   `args.mt5_deposit` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount
+    -   `args.from_binary` **[String][333]** Binary account loginid to transfer money from
+    -   `args.mt5_deposit` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.to_mt5` **[String][332]** MT5 account login to deposit money to
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.to_mt5` **[String][333]** MT5 account login to deposit money to
 
 ## mt5GetSettings
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.login` **[String][332]** MT5 user login
-    -   `args.mt5_get_settings` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.login` **[String][333]** MT5 user login
+    -   `args.mt5_get_settings` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## mt5LoginList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.mt5_login_list` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.mt5_login_list` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## mt5NewAccount
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_type` **[String][332]** Account type. If set to 'financial', setting 'mt5_account_type' is also required.
-    -   `args.address` **[String][332]** [Optional] The address of the user. The maximum length of this address field is 128 characters.
-    -   `args.city` **[String][332]** [Optional] User's city of residence.
-    -   `args.company` **[String][332]** [Optional] Name of the client's company. The maximum length of the company name is 64 characters.
-    -   `args.country` **[String][332]** [Optional] 2-letter country code (value received from `residence_list` call).
-    -   `args.currency` **[String][332]** [Optional] MT5 account currency, the default value will be the qualified account currency.
-    -   `args.dry_run` **[Number][345]** [Optional] If set to 1, only validation is performed.
-    -   `args.email` **[String][332]** Email address
-    -   `args.investPassword` **[String][332]** [Optional] The investor password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
-    -   `args.leverage` **[Number][345]** Client leverage (from 1 to 1000).
-    -   `args.mainPassword` **[String][332]** The master password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address). This field is required.
-    -   `args.mt5_account_category` **[String][332]** [Optional] To choose whether account is conventional or swap_free. Unavailable for financial_stp MT5_account_type
-    -   `args.mt5_account_type` **[String][332]** [Optional] Financial: Variable spreads, High leverage. Financial STP: Variable spreads, Medium Leverage, more products. If 'account_type' set to 'financial', setting 'mt5_account_type' is also required.
-    -   `args.mt5_new_account` **[Number][345]** Must be `1`
-    -   `args.name` **[String][332]** Client's name. The maximum length here is 101 characters.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_type` **[String][333]** Account type. If set to 'financial', setting 'mt5_account_type' is also required.
+    -   `args.address` **[String][333]** [Optional] The address of the user. The maximum length of this address field is 128 characters.
+    -   `args.city` **[String][333]** [Optional] User's city of residence.
+    -   `args.company` **[String][333]** [Optional] Name of the client's company. The maximum length of the company name is 64 characters.
+    -   `args.country` **[String][333]** [Optional] 2-letter country code (value received from `residence_list` call).
+    -   `args.currency` **[String][333]** [Optional] MT5 account currency, the default value will be the qualified account currency.
+    -   `args.dry_run` **[Number][346]** [Optional] If set to 1, only validation is performed.
+    -   `args.email` **[String][333]** Email address
+    -   `args.investPassword` **[String][333]** [Optional] The investor password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+    -   `args.leverage` **[Number][346]** Client leverage (from 1 to 1000).
+    -   `args.mainPassword` **[String][333]** The master password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address). This field is required.
+    -   `args.mt5_account_category` **[String][333]** [Optional] To choose whether account is conventional or swap_free. Unavailable for financial_stp MT5_account_type
+    -   `args.mt5_account_type` **[String][333]** [Optional] Financial: Variable spreads, High leverage. Financial STP: Variable spreads, Medium Leverage, more products. If 'account_type' set to 'financial', setting 'mt5_account_type' is also required.
+    -   `args.mt5_new_account` **[Number][346]** Must be `1`
+    -   `args.name` **[String][333]** Client's name. The maximum length here is 101 characters.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.phone` **[String][332]** [Optional] User's phone number.
-    -   `args.phonePassword` **[String][332]** [Optional] The user's phone password.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.phone` **[String][333]** [Optional] User's phone number.
+    -   `args.phonePassword` **[String][333]** [Optional] The user's phone password.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.server` **Any** [Optional] Trade server.
-    -   `args.state` **[String][332]** [Optional] User's state (region) of residence.
-    -   `args.zipCode` **[String][332]** [Optional] User's zip code.
+    -   `args.state` **[String][333]** [Optional] User's state (region) of residence.
+    -   `args.zipCode` **[String][333]** [Optional] User's zip code.
 
 ## mt5PasswordChange
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.login` **[String][332]** MT5 user login
-    -   `args.mt5_password_change` **[Number][345]** Must be `1`
-    -   `args.new_password` **[String][332]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
-    -   `args.old_password` **[String][332]** Old password for validation (non-empty string, accepts any printable ASCII character)
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.login` **[String][333]** MT5 user login
+    -   `args.mt5_password_change` **[Number][346]** Must be `1`
+    -   `args.new_password` **[String][333]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+    -   `args.old_password` **[String][333]** Old password for validation (non-empty string, accepts any printable ASCII character)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.password_type` **[String][332]** [Optional] Type of the password to change.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.password_type` **[String][333]** [Optional] Type of the password to change.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## mt5PasswordCheck
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.login` **[String][332]** MT5 user login
-    -   `args.mt5_password_check` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.login` **[String][333]** MT5 user login
+    -   `args.mt5_password_check` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.password` **[String][332]** The password of the account.
-    -   `args.password_type` **[String][332]** [Optional] Type of the password to check.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.password` **[String][333]** The password of the account.
+    -   `args.password_type` **[String][333]** [Optional] Type of the password to check.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## mt5PasswordReset
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.login` **[String][332]** MT5 user login
-    -   `args.mt5_password_reset` **[Number][345]** Must be `1`
-    -   `args.new_password` **[String][332]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.login` **[String][333]** MT5 user login
+    -   `args.mt5_password_reset` **[Number][346]** Must be `1`
+    -   `args.new_password` **[String][333]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.password_type` **[String][332]** [Optional] Type of the password to reset.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.verification_code` **[String][332]** Email verification code (received from a `verify_email` call, which must be done first)
+    -   `args.password_type` **[String][333]** [Optional] Type of the password to reset.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.verification_code` **[String][333]** Email verification code (received from a `verify_email` call, which must be done first)
 
 ## mt5Withdrawal
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** Amount to withdraw (in the currency of the MT5 account); min = $1 or an equivalent amount, max = $20000 or an equivalent amount.
-    -   `args.from_mt5` **[String][332]** MT5 account login to withdraw money from
-    -   `args.mt5_withdrawal` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** Amount to withdraw (in the currency of the MT5 account); min = $1 or an equivalent amount, max = $20000 or an equivalent amount.
+    -   `args.from_mt5` **[String][333]** MT5 account login to withdraw money from
+    -   `args.mt5_withdrawal` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.to_binary` **[String][332]** Binary account loginid to transfer money to
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.to_binary` **[String][333]** Binary account loginid to transfer money to
 
 ## newAccountMaltainvest
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.accept_risk` **[Number][345]** Show whether client has accepted risk disclaimer.
-    -   `args.account_opening_reason` **[String][332]** [Optional] Purpose and reason for requesting the account opening.
-    -   `args.account_turnover` **[String][332]** [Optional] The anticipated account turnover.
-    -   `args.address_city` **[String][332]** Within 100 characters
-    -   `args.address_line_1` **[String][332]** Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-
-    -   `args.address_line_2` **[String][332]** [Optional] Within 70 characters.
-    -   `args.address_postcode` **[String][332]** [Optional] Within 20 characters and may not contain '+'.
-    -   `args.address_state` **[String][332]** [Optional] Possible value receive from `states_list` call.
-    -   `args.affiliate_token` **[String][332]** [Optional] Affiliate token, within 32 characters.
-    -   `args.binary_options_trading_experience` **[String][332]** [Optional] Binary options trading experience.
-    -   `args.binary_options_trading_frequency` **[String][332]** [Optional] Binary options trading frequency.
-    -   `args.cfd_trading_experience` **[String][332]** [Optional] CFDs trading experience.
-    -   `args.cfd_trading_frequency` **[String][332]** [Optional] CFDs trading frequency.
-    -   `args.citizen` **[String][332]** [Optional] Country of legal citizenship, 2-letter country code. Possible value receive from `residence_list` call.
-    -   `args.client_type` **[String][332]** [Optional] Indicates whether this is for a client requesting an account with professional status.
-    -   `args.date_of_birth` **[String][332]** Date of birth format: yyyy-mm-dd.
-    -   `args.education_level` **[String][332]** Level of Education
-    -   `args.employment_industry` **[String][332]** Industry of Employment.
-    -   `args.employment_status` **[String][332]** [Optional] Employment Status.
-    -   `args.estimated_worth` **[String][332]** Estimated Net Worth.
-    -   `args.first_name` **[String][332]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.forex_trading_experience` **[String][332]** [Optional] Forex trading experience.
-    -   `args.forex_trading_frequency` **[String][332]** [Optional] Forex trading frequency.
-    -   `args.income_source` **[String][332]** Income Source.
-    -   `args.last_name` **[String][332]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.net_income` **[String][332]** Net Annual Income.
-    -   `args.new_account_maltainvest` **[Number][345]** Must be `1`
-    -   `args.non_pep_declaration` **[Number][345]** [Optional] Indicates client's self-declaration of not being a PEP/RCA.
-    -   `args.occupation` **[String][332]** Occupation.
-    -   `args.other_instruments_trading_experience` **[String][332]** [Optional] Trading experience in other financial instruments.
-    -   `args.other_instruments_trading_frequency` **[String][332]** [Optional] Trading frequency in other financial instruments.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.accept_risk` **[Number][346]** Show whether client has accepted risk disclaimer.
+    -   `args.account_opening_reason` **[String][333]** [Optional] Purpose and reason for requesting the account opening.
+    -   `args.account_turnover` **[String][333]** [Optional] The anticipated account turnover.
+    -   `args.address_city` **[String][333]** Within 100 characters
+    -   `args.address_line_1` **[String][333]** Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-
+    -   `args.address_line_2` **[String][333]** [Optional] Within 70 characters.
+    -   `args.address_postcode` **[String][333]** [Optional] Within 20 characters and may not contain '+'.
+    -   `args.address_state` **[String][333]** [Optional] Possible value receive from `states_list` call.
+    -   `args.affiliate_token` **[String][333]** [Optional] Affiliate token, within 32 characters.
+    -   `args.binary_options_trading_experience` **[String][333]** [Optional] Binary options trading experience.
+    -   `args.binary_options_trading_frequency` **[String][333]** [Optional] Binary options trading frequency.
+    -   `args.cfd_trading_experience` **[String][333]** [Optional] CFDs trading experience.
+    -   `args.cfd_trading_frequency` **[String][333]** [Optional] CFDs trading frequency.
+    -   `args.citizen` **[String][333]** [Optional] Country of legal citizenship, 2-letter country code. Possible value receive from `residence_list` call.
+    -   `args.client_type` **[String][333]** [Optional] Indicates whether this is for a client requesting an account with professional status.
+    -   `args.date_of_birth` **[String][333]** Date of birth format: yyyy-mm-dd.
+    -   `args.education_level` **[String][333]** Level of Education
+    -   `args.employment_industry` **[String][333]** Industry of Employment.
+    -   `args.employment_status` **[String][333]** [Optional] Employment Status.
+    -   `args.estimated_worth` **[String][333]** Estimated Net Worth.
+    -   `args.first_name` **[String][333]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.forex_trading_experience` **[String][333]** [Optional] Forex trading experience.
+    -   `args.forex_trading_frequency` **[String][333]** [Optional] Forex trading frequency.
+    -   `args.income_source` **[String][333]** Income Source.
+    -   `args.last_name` **[String][333]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.net_income` **[String][333]** Net Annual Income.
+    -   `args.new_account_maltainvest` **[Number][346]** Must be `1`
+    -   `args.non_pep_declaration` **[Number][346]** [Optional] Indicates client's self-declaration of not being a PEP/RCA.
+    -   `args.occupation` **[String][333]** Occupation.
+    -   `args.other_instruments_trading_experience` **[String][333]** [Optional] Trading experience in other financial instruments.
+    -   `args.other_instruments_trading_frequency` **[String][333]** [Optional] Trading frequency in other financial instruments.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.phone` **Any** [Optional] Starting with `+` followed by 9-35 digits, hyphens or space.
-    -   `args.place_of_birth` **[String][332]** [Optional] Place of birth, 2-letter country code.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.residence` **[String][332]** 2-letter country code, possible value receive from `residence_list` call.
-    -   `args.salutation` **[String][332]** Accept any value in enum list.
-    -   `args.secret_answer` **[String][332]** [Optional] Answer to secret question, within 4-50 characters.
-    -   `args.secret_question` **[String][332]** [Optional] Accept any value in enum list.
-    -   `args.source_of_wealth` **[String][332]** [Optional] Source of wealth.
-    -   `args.tax_identification_number` **[String][332]** Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.
-    -   `args.tax_residence` **[String][332]** Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.
+    -   `args.place_of_birth` **[String][333]** [Optional] Place of birth, 2-letter country code.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.residence` **[String][333]** 2-letter country code, possible value receive from `residence_list` call.
+    -   `args.salutation` **[String][333]** Accept any value in enum list.
+    -   `args.secret_answer` **[String][333]** [Optional] Answer to secret question, within 4-50 characters.
+    -   `args.secret_question` **[String][333]** [Optional] Accept any value in enum list.
+    -   `args.source_of_wealth` **[String][333]** [Optional] Source of wealth.
+    -   `args.tax_identification_number` **[String][333]** Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.
+    -   `args.tax_residence` **[String][333]** Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.
 
 ## newAccountReal
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_opening_reason` **[String][332]** [Optional] Purpose and reason for requesting the account opening.
-    -   `args.account_turnover` **[String][332]** [Optional] The anticipated account turnover.
-    -   `args.address_city` **[String][332]** [Optional] Within 100 characters.
-    -   `args.address_line_1` **[String][332]** Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-
-    -   `args.address_line_2` **[String][332]** [Optional] Within 70 characters.
-    -   `args.address_postcode` **[String][332]** [Optional] Within 20 characters and may not contain '+'.
-    -   `args.address_state` **[String][332]** [Optional] Possible value receive from `states_list` call.
-    -   `args.affiliate_token` **[String][332]** [Optional] Affiliate token, within 32 characters.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_opening_reason` **[String][333]** [Optional] Purpose and reason for requesting the account opening.
+    -   `args.account_turnover` **[String][333]** [Optional] The anticipated account turnover.
+    -   `args.address_city` **[String][333]** [Optional] Within 100 characters.
+    -   `args.address_line_1` **[String][333]** Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-
+    -   `args.address_line_2` **[String][333]** [Optional] Within 70 characters.
+    -   `args.address_postcode` **[String][333]** [Optional] Within 20 characters and may not contain '+'.
+    -   `args.address_state` **[String][333]** [Optional] Possible value receive from `states_list` call.
+    -   `args.affiliate_token` **[String][333]** [Optional] Affiliate token, within 32 characters.
     -   `args.citizen` **Any** [Optional] Country of legal citizenship, 2-letter country code.
-    -   `args.client_type` **[String][332]** [Optional] Indicates whether this is for a client requesting an account with professional status.
-    -   `args.currency` **[String][332]** [Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
-    -   `args.date_of_birth` **[String][332]** Date of birth format: `yyyy-mm-dd`.
-    -   `args.first_name` **[String][332]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.last_name` **[String][332]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.new_account_real` **[Number][345]** Must be `1`
-    -   `args.non_pep_declaration` **[Number][345]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
+    -   `args.client_type` **[String][333]** [Optional] Indicates whether this is for a client requesting an account with professional status.
+    -   `args.currency` **[String][333]** [Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
+    -   `args.date_of_birth` **[String][333]** Date of birth format: `yyyy-mm-dd`.
+    -   `args.first_name` **[String][333]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.last_name` **[String][333]** Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.new_account_real` **[Number][346]** Must be `1`
+    -   `args.non_pep_declaration` **[Number][346]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.phone` **Any** [Optional] Starting with `+` followed by 9-35 digits, hyphens or space.
-    -   `args.place_of_birth` **[String][332]** [Optional] Place of birth, 2-letter country code.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.residence` **[String][332]** 2-letter country code, possible value receive from `residence_list` call.
-    -   `args.salutation` **[String][332]** [Optional] Accept any value in enum list.
-    -   `args.secret_answer` **[String][332]** [Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.
-    -   `args.secret_question` **[String][332]** [Optional] Accept any value in enum list. Required for new account and existing client details will be used if client open another account.
-    -   `args.tax_identification_number` **[String][332]** [Optional] Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.
-    -   `args.tax_residence` **[String][332]** [Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.
+    -   `args.place_of_birth` **[String][333]** [Optional] Place of birth, 2-letter country code.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.residence` **[String][333]** 2-letter country code, possible value receive from `residence_list` call.
+    -   `args.salutation` **[String][333]** [Optional] Accept any value in enum list.
+    -   `args.secret_answer` **[String][333]** [Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.
+    -   `args.secret_question` **[String][333]** [Optional] Accept any value in enum list. Required for new account and existing client details will be used if client open another account.
+    -   `args.tax_identification_number` **[String][333]** [Optional] Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.
+    -   `args.tax_residence` **[String][333]** [Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.
 
 ## newAccountVirtual
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.affiliate_token` **[String][332]** [Optional] Affiliate token, within 32 characters.
-    -   `args.client_password` **[String][332]** Password (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
-    -   `args.date_first_contact` **[String][332]** [Optional] Date of first contact, format: `yyyy-mm-dd` in GMT timezone.
-    -   `args.email_consent` **[Number][345]** [Optional] Boolean value: 1 or 0, indicating whether the client has given consent for marketing emails.
-    -   `args.gclid_url` **[String][332]** [Optional] Google Click Identifier to track source.
-    -   `args.new_account_virtual` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.affiliate_token` **[String][333]** [Optional] Affiliate token, within 32 characters.
+    -   `args.client_password` **[String][333]** Password (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+    -   `args.date_first_contact` **[String][333]** [Optional] Date of first contact, format: `yyyy-mm-dd` in GMT timezone.
+    -   `args.email_consent` **[Number][346]** [Optional] Boolean value: 1 or 0, indicating whether the client has given consent for marketing emails.
+    -   `args.gclid_url` **[String][333]** [Optional] Google Click Identifier to track source.
+    -   `args.new_account_virtual` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.residence` **[String][332]** 2-letter country code (obtained from `residence_list` call).
-    -   `args.signup_device` **[String][332]** [Optional] Show whether user has used mobile or desktop.
-    -   `args.type` **[String][332]** Account type
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.residence` **[String][333]** 2-letter country code (obtained from `residence_list` call).
+    -   `args.signup_device` **[String][333]** [Optional] Show whether user has used mobile or desktop.
+    -   `args.type` **[String][333]** Account type
     -   `args.utm_ad_id` **Any** [Optional] Identifier of particular ad. Value must match Regex pattern to be recorded
     -   `args.utm_adgroup_id` **Any** [Optional] Identifier of ad group in the campaign. Value must match Regex pattern to be recorded
     -   `args.utm_adrollclk_id` **Any** [Optional] Unique identifier of click on AdRoll ads platform. Value must match Regex pattern to be recorded
@@ -2166,575 +2171,575 @@ Type: [Object][330]
     -   `args.utm_msclk_id` **Any** [Optional] Unique click identifier on Microsoft Bing ads platform. Value must match Regex pattern to be recorded
     -   `args.utm_source` **Any** [Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral. Value must match Regex pattern to be recorded
     -   `args.utm_term` **Any** [Optional] Used to send information related to the campaign term like paid search keywords. Value must match Regex pattern to be recorded
-    -   `args.verification_code` **[String][332]** Email verification code (received from a `verify_email` call, which must be done first).
+    -   `args.verification_code` **[String][333]** Email verification code (received from a `verify_email` call, which must be done first).
 
 ## newAccountWallet
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.address_city` **[String][332]** [Optional] Within 35 characters.
-    -   `args.address_line_1` **[String][332]** [Optional] Mailing address.
-    -   `args.address_line_2` **[String][332]** [Optional] Within 70 characters.
-    -   `args.address_postcode` **[String][332]** [Optional] Within 20 characters and may not contain '+'.
-    -   `args.address_state` **[String][332]** [Optional] Possible value receive from `states_list` call.
-    -   `args.currency` **[String][332]** [Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
-    -   `args.date_of_birth` **[String][332]** [Optional] Date of birth format: `yyyy-mm-dd`.
-    -   `args.first_name` **[String][332]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.last_name` **[String][332]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
-    -   `args.new_account_wallet` **[Number][345]** Must be `1`
-    -   `args.non_pep_declaration` **[Number][345]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.address_city` **[String][333]** [Optional] Within 35 characters.
+    -   `args.address_line_1` **[String][333]** [Optional] Mailing address.
+    -   `args.address_line_2` **[String][333]** [Optional] Within 70 characters.
+    -   `args.address_postcode` **[String][333]** [Optional] Within 20 characters and may not contain '+'.
+    -   `args.address_state` **[String][333]** [Optional] Possible value receive from `states_list` call.
+    -   `args.currency` **[String][333]** [Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
+    -   `args.date_of_birth` **[String][333]** [Optional] Date of birth format: `yyyy-mm-dd`.
+    -   `args.first_name` **[String][333]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.last_name` **[String][333]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+    -   `args.new_account_wallet` **[Number][346]** Must be `1`
+    -   `args.non_pep_declaration` **[Number][346]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_method` **[String][332]** To set method which is used to transfer to/from wallet.
-    -   `args.phone` **[String][332]** [Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.payment_method` **[String][333]** To set method which is used to transfer to/from wallet.
+    -   `args.phone` **[String][333]** [Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## notificationEvent
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.args` **Any** \-
-    -   `args.category` **[String][332]** The category or nature of the event.
-    -   `args.event` **[String][332]** The name of the event.
-    -   `args.notification_event` **[Number][345]** Must be `1`
+    -   `args.category` **[String][333]** The category or nature of the event.
+    -   `args.event` **[String][333]** The name of the event.
+    -   `args.notification_event` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## oauthApps
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.oauth_apps` **[Number][345]** Must be `1`
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.oauth_apps` **[Number][346]** Must be `1`
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pAdvertCreate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** The total amount of the advert, in advertiser's account currency.
-    -   `args.contact_info` **[String][332]** [Optional] Advertiser contact information. Only applicable for 'sell adverts'.
-    -   `args.description` **[String][332]** [Optional] General information about the advert.
-    -   `args.local_currency` **[String][332]** [Optional] Local currency for this advert. If not provided, will use the currency of client's residence by default.
-    -   `args.max_order_amount` **[Number][345]** Maximum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than or equal to total `amount` of the advert.
-    -   `args.min_order_amount` **[Number][345]** Minimum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than `max_order_amount`.
-    -   `args.p2p_advert_create` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** The total amount of the advert, in advertiser's account currency.
+    -   `args.contact_info` **[String][333]** [Optional] Advertiser contact information. Only applicable for 'sell adverts'.
+    -   `args.description` **[String][333]** [Optional] General information about the advert.
+    -   `args.local_currency` **[String][333]** [Optional] Local currency for this advert. If not provided, will use the currency of client's residence by default.
+    -   `args.max_order_amount` **[Number][346]** Maximum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than or equal to total `amount` of the advert.
+    -   `args.min_order_amount` **[Number][346]** Minimum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than `max_order_amount`.
+    -   `args.p2p_advert_create` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_info` **[String][332]** [Optional] Payment instructions. Only applicable for 'sell adverts'.
-    -   `args.payment_method` **[String][332]** Supported payment methods. Separate multiple values with a comma, maximum 3.
+    -   `args.payment_info` **[String][333]** [Optional] Payment instructions. Only applicable for 'sell adverts'.
+    -   `args.payment_method` **[String][333]** Supported payment methods. Separate multiple values with a comma, maximum 3.
     -   `args.payment_method_ids` **Any** IDs of payment methods, only applicable for sell ads.
-    -   `args.rate` **[Number][345]** Conversion rate from advertiser's account currency to `local_currency`.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.type` **[String][332]** Whether this is a buy or a sell.
+    -   `args.rate` **[Number][346]** Conversion rate from advertiser's account currency to `local_currency`.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.type` **[String][333]** Whether this is a buy or a sell.
 
 ## p2pAdvertInfo
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.id` **[String][332]** [Optional] The unique identifier for this advert. Optional when subscribe is 1. If not provided, all advertiser adverts will be subscribed.
-    -   `args.p2p_advert_info` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.id` **[String][333]** [Optional] The unique identifier for this advert. Optional when subscribe is 1. If not provided, all advertiser adverts will be subscribed.
+    -   `args.p2p_advert_info` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates when changes occur. Optional when id is provided.
-    -   `args.use_client_limits` **[Number][345]** [Optional] If set to 1, the maximum order amount will be adjusted to the current balance and turnover limits of the account.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates when changes occur. Optional when id is provided.
+    -   `args.use_client_limits` **[Number][346]** [Optional] If set to 1, the maximum order amount will be adjusted to the current balance and turnover limits of the account.
 
 ## p2pAdvertList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.advertiser_id` **[String][332]** [Optional] ID of the advertiser to list adverts for.
-    -   `args.advertiser_name` **[String][332]** [Optional] Search for advertiser by name. Partial matches will be returned.
-    -   `args.amount` **[Number][345]** [Optional] How much to buy or sell, used to calculate prices.
-    -   `args.counterparty_type` **[String][332]** [Optional] Filter the adverts by `counterparty_type`.
-    -   `args.favourites_only` **[Number][345]** [Optional] Only show adverts from favourite advertisers. Default is 0.
-    -   `args.limit` **[Number][345]** [Optional] Used for paging.
-    -   `args.local_currency` **[String][332]** [Optional] Currency to conduct payment transaction in, defaults to the main currency for the client's country.
-    -   `args.offset` **[Number][345]** [Optional] Used for paging.
-    -   `args.p2p_advert_list` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.advertiser_id` **[String][333]** [Optional] ID of the advertiser to list adverts for.
+    -   `args.advertiser_name` **[String][333]** [Optional] Search for advertiser by name. Partial matches will be returned.
+    -   `args.amount` **[Number][346]** [Optional] How much to buy or sell, used to calculate prices.
+    -   `args.counterparty_type` **[String][333]** [Optional] Filter the adverts by `counterparty_type`.
+    -   `args.favourites_only` **[Number][346]** [Optional] Only show adverts from favourite advertisers. Default is 0.
+    -   `args.limit` **[Number][346]** [Optional] Used for paging.
+    -   `args.local_currency` **[String][333]** [Optional] Currency to conduct payment transaction in, defaults to the main currency for the client's country.
+    -   `args.offset` **[Number][346]** [Optional] Used for paging.
+    -   `args.p2p_advert_list` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.payment_method` **Any** [Optional] Search by supported payment methods.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sort_by` **[String][332]** [Optional] How the results are sorted: best rate, or advertiser completion rate.
-    -   `args.use_client_limits` **[Number][345]** [Optional] If set to 1, ads that exceed this account's balance or turnover limits will not be shown.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sort_by` **[String][333]** [Optional] How the results are sorted: best rate, or advertiser completion rate.
+    -   `args.use_client_limits` **[Number][346]** [Optional] If set to 1, ads that exceed this account's balance or turnover limits will not be shown.
 
 ## p2pAdvertUpdate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.delete` **[Number][345]** [Optional] If set to 1, permanently deletes the advert.
-    -   `args.id` **[String][332]** The unique identifier for this advert.
-    -   `args.is_active` **[Number][345]** [Optional] Activate or deactivate the advert.
-    -   `args.p2p_advert_update` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.delete` **[Number][346]** [Optional] If set to 1, permanently deletes the advert.
+    -   `args.id` **[String][333]** The unique identifier for this advert.
+    -   `args.is_active` **[Number][346]** [Optional] Activate or deactivate the advert.
+    -   `args.p2p_advert_update` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_method` **[String][332]** [Optional] Supported payment methods. Separate multiple values with a comma, maximum 3.
+    -   `args.payment_method` **[String][333]** [Optional] Supported payment methods. Separate multiple values with a comma, maximum 3.
     -   `args.payment_method_ids` **Any** [Optional] IDs of payment methods, only applicable for sell ads. Will replace exisiting methods.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pAdvertiserAdverts
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.limit` **[Number][345]** [Optional] Used for paging. This value will also apply to subsription responses.
-    -   `args.offset` **[Number][345]** [Optional] Used for paging. This value will also apply to subsription responses.
-    -   `args.p2p_advertiser_adverts` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.limit` **[Number][346]** [Optional] Used for paging. This value will also apply to subsription responses.
+    -   `args.offset` **[Number][346]** [Optional] Used for paging. This value will also apply to subsription responses.
+    -   `args.p2p_advertiser_adverts` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pAdvertiserCreate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.contact_info` **[String][332]** [Optional] Advertiser's contact information, to be used as a default for new sell adverts.
-    -   `args.default_advert_description` **[String][332]** [Optional] Default description that can be used every time an advert is created.
-    -   `args.name` **[String][332]** The advertiser's displayed name.
-    -   `args.p2p_advertiser_create` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.contact_info` **[String][333]** [Optional] Advertiser's contact information, to be used as a default for new sell adverts.
+    -   `args.default_advert_description` **[String][333]** [Optional] Default description that can be used every time an advert is created.
+    -   `args.name` **[String][333]** The advertiser's displayed name.
+    -   `args.p2p_advertiser_create` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_info` **[String][332]** [Optional] Advertiser's payment information, to be used as a default for new sell adverts.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever there is an update to advertiser
+    -   `args.payment_info` **[String][333]** [Optional] Advertiser's payment information, to be used as a default for new sell adverts.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever there is an update to advertiser
 
 ## p2pAdvertiserInfo
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.id` **[String][332]** [Optional] The unique identifier for this advertiser. If not provided, returns advertiser information about the current account.
-    -   `args.p2p_advertiser_info` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.id` **[String][333]** [Optional] The unique identifier for this advertiser. If not provided, returns advertiser information about the current account.
+    -   `args.p2p_advertiser_info` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever there is an update to advertiser
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever there is an update to advertiser
 
 ## p2pAdvertiserPaymentMethods
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.create` **Any** Contains new payment method entries.
     -   `args.delete` **Any** Contains payment methods to delete.
-    -   `args.p2p_advertiser_payment_methods` **[Number][345]** Must be 1
+    -   `args.p2p_advertiser_payment_methods` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.update` **Any** Contains payment methods to update.
 
 ## p2pAdvertiserRelations
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.add_blocked` **Any** IDs of advertisers to block.
     -   `args.add_favourites` **Any** IDs of advertisers to add as favourites.
-    -   `args.p2p_advertiser_relations` **[Number][345]** Must be 1
+    -   `args.p2p_advertiser_relations` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.remove_blocked` **Any** IDs of advertisers to remove from blocked.
     -   `args.remove_favourites` **Any** IDs of advertisers to remove from favourites.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pAdvertiserUpdate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.contact_info` **[String][332]** [Optional] Advertiser's contact information, to be used as a default for new sell adverts.
-    -   `args.default_advert_description` **[String][332]** [Optional] Default description that can be used every time an advert is created.
-    -   `args.is_listed` **[Number][345]** [Optional] Used to set if the advertiser's adverts could be listed. When `0`, adverts won't be listed regardless of they are active or not. This doesn't change the `is_active` of each individual advert.
-    -   `args.p2p_advertiser_update` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.contact_info` **[String][333]** [Optional] Advertiser's contact information, to be used as a default for new sell adverts.
+    -   `args.default_advert_description` **[String][333]** [Optional] Default description that can be used every time an advert is created.
+    -   `args.is_listed` **[Number][346]** [Optional] Used to set if the advertiser's adverts could be listed. When `0`, adverts won't be listed regardless of they are active or not. This doesn't change the `is_active` of each individual advert.
+    -   `args.p2p_advertiser_update` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_info` **[String][332]** [Optional] Advertiser's payment information, to be used as a default for new sell adverts.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.show_name` **[Number][345]** [Optional] When `1`, the advertiser's real name will be displayed on to other users on adverts and orders.
+    -   `args.payment_info` **[String][333]** [Optional] Advertiser's payment information, to be used as a default for new sell adverts.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.show_name` **[Number][346]** [Optional] When `1`, the advertiser's real name will be displayed on to other users on adverts and orders.
 
 ## p2pChatCreate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.order_id` **[String][332]** The unique identifier for the order to create the chat for.
-    -   `args.p2p_chat_create` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.order_id` **[String][333]** The unique identifier for the order to create the chat for.
+    -   `args.p2p_chat_create` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pOrderCancel
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.id` **[String][332]** The unique identifier for this order.
-    -   `args.p2p_order_cancel` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.id` **[String][333]** The unique identifier for this order.
+    -   `args.p2p_order_cancel` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pOrderConfirm
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.id` **[String][332]** The unique identifier for this order.
-    -   `args.p2p_order_confirm` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.id` **[String][333]** The unique identifier for this order.
+    -   `args.p2p_order_confirm` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pOrderCreate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.advert_id` **[String][332]** The unique identifier for the advert to create an order against.
-    -   `args.amount` **[Number][345]** The amount of currency to be bought or sold.
-    -   `args.contact_info` **[String][332]** [Optional] Seller contact information. Only applicable for 'sell orders'.
-    -   `args.p2p_order_create` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.advert_id` **[String][333]** The unique identifier for the advert to create an order against.
+    -   `args.amount` **[Number][346]** The amount of currency to be bought or sold.
+    -   `args.contact_info` **[String][333]** [Optional] Seller contact information. Only applicable for 'sell orders'.
+    -   `args.p2p_order_create` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_info` **[String][332]** [Optional] Payment instructions, only applicable for sell orders.
+    -   `args.payment_info` **[String][333]** [Optional] Payment instructions, only applicable for sell orders.
     -   `args.payment_method_ids` **Any** IDs of payment methods, only applicable for sell orders.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever there is an update to the order.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever there is an update to the order.
 
 ## p2pOrderDispute
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.dispute_reason` **[String][332]** The predefined dispute reason
-    -   `args.id` **[String][332]** The unique identifier for this order.
-    -   `args.p2p_order_dispute` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.dispute_reason` **[String][333]** The predefined dispute reason
+    -   `args.id` **[String][333]** The unique identifier for this order.
+    -   `args.p2p_order_dispute` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## p2pOrderInfo
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.id` **[String][332]** The unique identifier for the order.
-    -   `args.p2p_order_info` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.id` **[String][333]** The unique identifier for the order.
+    -   `args.p2p_order_info` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever there is an update to order
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever there is an update to order
 
 ## p2pOrderList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.active` **[Number][345]** [Optional] Should be 1 to list active, 0 to list inactive (historical).
-    -   `args.advert_id` **[String][332]** [Optional] If present, lists orders applying to a specific advert.
-    -   `args.limit` **[Number][345]** [Optional] Used for paging.
-    -   `args.offset` **[Number][345]** [Optional] Used for paging.
-    -   `args.p2p_order_list` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.active` **[Number][346]** [Optional] Should be 1 to list active, 0 to list inactive (historical).
+    -   `args.advert_id` **[String][333]** [Optional] If present, lists orders applying to a specific advert.
+    -   `args.limit` **[Number][346]** [Optional] Used for paging.
+    -   `args.offset` **[Number][346]** [Optional] Used for paging.
+    -   `args.p2p_order_list` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever there is a change to any order belonging to you.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever there is a change to any order belonging to you.
 
 ## p2pPaymentMethods
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.p2p_payment_methods` **[Number][345]** Must be 1
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.p2p_payment_methods` **[Number][346]** Must be 1
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## paymentMethods
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.country` **[String][332]** [Optional] 2-letter country code (ISO standard).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.country` **[String][333]** [Optional] 2-letter country code (ISO standard).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_methods` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.payment_methods` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## paymentagentCreate
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.affiliate_id` **[String][332]** [Optional] Client's My Affiliate id, if exists.
-    -   `args.code_of_conduct_approval` **[Number][345]** Indicates client's agreement with the Code of Conduct.
-    -   `args.commission_deposit` **[Number][345]** Commission  (%) the agent wants to take on deposits
-    -   `args.commission_withdrawal` **[Number][345]** Commission  (%) the agent wants to take on withdrawals
-    -   `args.email` **[String][332]** Payment agent's email address.
-    -   `args.information` **[String][332]** [Optional] Information about payment agent and their proposed service.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.affiliate_id` **[String][333]** [Optional] Client's My Affiliate id, if exists.
+    -   `args.code_of_conduct_approval` **[Number][346]** Indicates client's agreement with the Code of Conduct.
+    -   `args.commission_deposit` **[Number][346]** Commission  (%) the agent wants to take on deposits
+    -   `args.commission_withdrawal` **[Number][346]** Commission  (%) the agent wants to take on withdrawals
+    -   `args.email` **[String][333]** Payment agent's email address.
+    -   `args.information` **[String][333]** [Optional] Information about payment agent and their proposed service.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payment_agent_name` **[String][332]** The name with which the payment agent is going to be identified.
-    -   `args.paymentagent_create` **[Number][345]** Must be 1
-    -   `args.phone` **[String][332]** Payment agent's phone number with coutry code.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.payment_agent_name` **[String][333]** The name with which the payment agent is going to be identified.
+    -   `args.paymentagent_create` **[Number][346]** Must be 1
+    -   `args.phone` **[String][333]** Payment agent's phone number with coutry code.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.supported_payment_methods` **Any** A list of supported payment methods.
-    -   `args.url` **[String][332]** The URL of payment agent's website.
+    -   `args.url` **[String][333]** The URL of payment agent's website.
 
 ## paymentagentDetails
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.paymentagent_details` **[Number][345]** Must be 1
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.paymentagent_details` **[Number][346]** Must be 1
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## paymentagentList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.currency` **[String][332]** [Optional] If specified, only payment agents that supports that currency will be returned (obtained from `payout_currencies` call).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.currency` **[String][333]** [Optional] If specified, only payment agents that supports that currency will be returned (obtained from `payout_currencies` call).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.paymentagent_list` **[String][332]** Client's 2-letter country code (obtained from `residence_list` call).
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.paymentagent_list` **[String][333]** Client's 2-letter country code (obtained from `residence_list` call).
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## paymentagentTransfer
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** The amount to transfer.
-    -   `args.currency` **[String][332]** Currency code.
-    -   `args.description` **[String][332]** [Optional] Remarks about the transfer.
-    -   `args.dry_run` **[Number][345]** [Optional] If set to `1`, just do validation.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** The amount to transfer.
+    -   `args.currency` **[String][333]** Currency code.
+    -   `args.description` **[String][333]** [Optional] Remarks about the transfer.
+    -   `args.dry_run` **[Number][346]** [Optional] If set to `1`, just do validation.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.paymentagent_transfer` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.transfer_to` **[String][332]** The loginid of the recipient account.
+    -   `args.paymentagent_transfer` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.transfer_to` **[String][333]** The loginid of the recipient account.
 
 ## paymentagentWithdraw
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** The amount to withdraw to the payment agent.
-    -   `args.currency` **[String][332]** The currency code.
-    -   `args.description` **[String][332]** [Optional] Remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed.
-    -   `args.dry_run` **[Number][345]** [Optional] If set to 1, just do validation.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** The amount to withdraw to the payment agent.
+    -   `args.currency` **[String][333]** The currency code.
+    -   `args.description` **[String][333]** [Optional] Remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed.
+    -   `args.dry_run` **[Number][346]** [Optional] If set to 1, just do validation.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.paymentagent_loginid` **[String][332]** The payment agent loginid received from the `paymentagent_list` call.
-    -   `args.paymentagent_withdraw` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.verification_code` **[String][332]** Email verification code (received from a `verify_email` call, which must be done first)
+    -   `args.paymentagent_loginid` **[String][333]** The payment agent loginid received from the `paymentagent_list` call.
+    -   `args.paymentagent_withdraw` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.verification_code` **[String][333]** Email verification code (received from a `verify_email` call, which must be done first)
 
 ## payoutCurrencies
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.payout_currencies` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.payout_currencies` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## ping
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.ping` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.ping` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## portfolio
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.contract_type` **Any** Return only contracts of the specified types
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.portfolio` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.portfolio` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## profitTable
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.contract_type` **Any** Return only contracts of the specified types
-    -   `args.date_from` **[String][332]** [Optional] Start date (epoch or YYYY-MM-DD)
-    -   `args.date_to` **[String][332]** [Optional] End date (epoch or YYYY-MM-DD)
-    -   `args.description` **[Number][345]** [Optional] If set to 1, will return full contracts description.
-    -   `args.limit` **[Number][345]** [Optional] Apply upper limit to count of transactions received.
-    -   `args.offset` **[Number][345]** [Optional] Number of transactions to skip.
+    -   `args.date_from` **[String][333]** [Optional] Start date (epoch or YYYY-MM-DD)
+    -   `args.date_to` **[String][333]** [Optional] End date (epoch or YYYY-MM-DD)
+    -   `args.description` **[Number][346]** [Optional] If set to 1, will return full contracts description.
+    -   `args.limit` **[Number][346]** [Optional] Apply upper limit to count of transactions received.
+    -   `args.offset` **[Number][346]** [Optional] Number of transactions to skip.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.profit_table` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sort` **[String][332]** [Optional] Sort direction.
+    -   `args.profit_table` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sort` **[String][333]** [Optional] Sort direction.
 
 ## proposal
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** [Optional] Proposed contract payout or stake, or multiplier (for lookbacks).
-    -   `args.barrier` **[String][332]** [Optional] Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers. Not needed for lookbacks.
-    -   `args.barrier2` **[String][332]** [Optional] Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers. Not needed for lookbacks.
-    -   `args.basis` **[String][332]** [Optional] Indicates type of the `amount`.
-    -   `args.cancellation` **[String][332]** Cancellation duration option (only for `MULTUP` and `MULTDOWN` contracts).
-    -   `args.contract_type` **[String][332]** The proposed contract type
-    -   `args.currency` **[String][332]** This can only be the account-holder's currency (obtained from `payout_currencies` call).
-    -   `args.date_expiry` **[Number][345]** [Optional] Epoch value of the expiry time of the contract. Either date_expiry or duration is required.
-    -   `args.date_start` **[Number][345]** [Optional] Indicates epoch value of the starting time of the contract. If left empty, the start time of the contract is now.
-    -   `args.duration` **[Number][345]** [Optional] Duration quantity. Either date_expiry or duration is required.
-    -   `args.duration_unit` **[String][332]** [Optional] Duration unit - `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** [Optional] Proposed contract payout or stake, or multiplier (for lookbacks).
+    -   `args.barrier` **[String][333]** [Optional] Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers. Not needed for lookbacks.
+    -   `args.barrier2` **[String][333]** [Optional] Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers. Not needed for lookbacks.
+    -   `args.basis` **[String][333]** [Optional] Indicates type of the `amount`.
+    -   `args.cancellation` **[String][333]** Cancellation duration option (only for `MULTUP` and `MULTDOWN` contracts).
+    -   `args.contract_type` **[String][333]** The proposed contract type
+    -   `args.currency` **[String][333]** This can only be the account-holder's currency (obtained from `payout_currencies` call).
+    -   `args.date_expiry` **[Number][346]** [Optional] Epoch value of the expiry time of the contract. Either date_expiry or duration is required.
+    -   `args.date_start` **[Number][346]** [Optional] Indicates epoch value of the starting time of the contract. If left empty, the start time of the contract is now.
+    -   `args.duration` **[Number][346]** [Optional] Duration quantity. Either date_expiry or duration is required.
+    -   `args.duration_unit` **[String][333]** [Optional] Duration unit - `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks.
     -   `args.limit_order` **Any** \-
-    -   `args.multiplier` **[Number][345]** [Optional] The multiplier for non-binary options. E.g. lookbacks.
+    -   `args.multiplier` **[Number][346]** [Optional] The multiplier for non-binary options. E.g. lookbacks.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.product_type` **[String][332]** [Optional] The product type.
-    -   `args.proposal` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.selected_tick` **[Number][345]** [Optional] The tick that is predicted to have the highest/lowest value - for `TICKHIGH` and `TICKLOW` contracts.
-    -   `args.subscribe` **[Number][345]** [Optional] 1 - to initiate a realtime stream of prices. Note that tick trades (without a user-defined barrier), digit trades and less than 24 hours at-the-money contracts for the following underlying symbols are not streamed: `R_10`, `R_25`, `R_50`, `R_75`, `R_100`, `RDBULL`, `RDBEAR` (this is because their price is constant).
-    -   `args.symbol` **[String][332]** The short symbol name (obtained from `active_symbols` call).
-    -   `args.trading_period_start` **[Number][345]** [Optional] Required only for multi-barrier trading. Defines the epoch value of the trading period start time.
+    -   `args.product_type` **[String][333]** [Optional] The product type.
+    -   `args.proposal` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.selected_tick` **[Number][346]** [Optional] The tick that is predicted to have the highest/lowest value - for `TICKHIGH` and `TICKLOW` contracts.
+    -   `args.subscribe` **[Number][346]** [Optional] 1 - to initiate a realtime stream of prices. Note that tick trades (without a user-defined barrier), digit trades and less than 24 hours at-the-money contracts for the following underlying symbols are not streamed: `R_10`, `R_25`, `R_50`, `R_75`, `R_100`, `RDBULL`, `RDBEAR` (this is because their price is constant).
+    -   `args.symbol` **[String][333]** The short symbol name (obtained from `active_symbols` call).
+    -   `args.trading_period_start` **[Number][346]** [Optional] Required only for multi-barrier trading. Defines the epoch value of the trading period start time.
 
 ## proposalOpenContract
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.contract_id` **[Number][345]** [Optional] Contract ID received from a `portfolio` request. If not set, you will receive stream of all open contracts.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.contract_id` **[Number][346]** [Optional] Contract ID received from a `portfolio` request. If not set, you will receive stream of all open contracts.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.proposal_open_contract` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] `1` to stream.
+    -   `args.proposal_open_contract` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] `1` to stream.
 
 ## realityCheck
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.reality_check` **[Number][345]** Must be `1`
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.reality_check` **[Number][346]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
 
 ## requestReport
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.date_from` **[Number][345]** Start date of the report
-    -   `args.date_to` **[Number][345]** End date of the report
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.date_from` **[Number][346]** Start date of the report
+    -   `args.date_to` **[Number][346]** End date of the report
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.report_type` **[String][332]** Type of report to be sent to client's registered e-mail address
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.request_report` **[Number][345]** Must be `1`
+    -   `args.report_type` **[String][333]** Type of report to be sent to client's registered e-mail address
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.request_report` **[Number][346]** Must be `1`
 
 ## resetPassword
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.date_of_birth` **[String][332]** [Optional] Date of birth format: `yyyy-mm-dd`. Only required for clients with real-money accounts.
-    -   `args.new_password` **[String][332]** New password. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.date_of_birth` **[String][333]** [Optional] Date of birth format: `yyyy-mm-dd`. Only required for clients with real-money accounts.
+    -   `args.new_password` **[String][333]** New password. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.reset_password` **[Number][345]** Must be `1`
-    -   `args.verification_code` **[String][332]** Email verification code (received from a `verify_email` call, which must be done first)
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.reset_password` **[Number][346]** Must be `1`
+    -   `args.verification_code` **[String][333]** Email verification code (received from a `verify_email` call, which must be done first)
 
 ## residenceList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.residence_list` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.residence_list` **[Number][346]** Must be `1`
 
 ## revokeOauthApp
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.revoke_oauth_app` **[Number][345]** The application ID to revoke.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.revoke_oauth_app` **[Number][346]** The application ID to revoke.
 
 ## sell
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.price` **[Number][345]** Minimum price at which to sell the contract, or `0` for 'sell at market'.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sell` **[Number][345]** Pass contract_id received from the `portfolio` call.
+    -   `args.price` **[Number][346]** Minimum price at which to sell the contract, or `0` for 'sell at market'.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sell` **[Number][346]** Pass contract_id received from the `portfolio` call.
 
 ## sellContractForMultipleAccounts
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.price` **[Number][345]** Minimum price at which to sell the contract, or `0` for 'sell at market'.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sell_contract_for_multiple_accounts` **[Number][345]** Must be `1`
-    -   `args.shortcode` **[String][332]** An internal ID used to identify the contract which was originally bought. This is returned from the `buy` and `buy_contract_for_multiple_accounts` calls.
+    -   `args.price` **[Number][346]** Minimum price at which to sell the contract, or `0` for 'sell at market'.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sell_contract_for_multiple_accounts` **[Number][346]** Must be `1`
+    -   `args.shortcode` **[String][333]** An internal ID used to identify the contract which was originally bought. This is returned from the `buy` and `buy_contract_for_multiple_accounts` calls.
     -   `args.tokens` **Any** Authorisation tokens which select the accounts to sell use for the affected accounts.
 
 ## sellExpired
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sell_expired` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sell_expired` **[Number][346]** Must be `1`
 
 ## serviceToken
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.country` **[String][332]** [Optional] The 2-letter country code.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.country` **[String][333]** [Optional] The 2-letter country code.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.referrer` **[String][332]** [Optional] The URL of the web page where the Web SDK will be used.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.server` **[String][332]** Server (dxtrade only).
+    -   `args.referrer` **[String][333]** [Optional] The URL of the web page where the Web SDK will be used.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.server` **[String][333]** Server (dxtrade only).
     -   `args.service` **Any** The service(s) to retrieve token(s) for.
-    -   `args.service_token` **[Number][345]** Must be `1`
+    -   `args.service_token` **[Number][346]** Must be `1`
 
 ## setAccountCurrency
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.set_account_currency` **[String][332]** Currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.set_account_currency` **[String][333]** Currency of the account. List of supported currencies can be acquired with `payout_currencies` call.
 
 ## setFinancialAssessment
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_turnover` **[String][332]** [Optional] The anticipated account turnover.
-    -   `args.binary_options_trading_experience` **[String][332]** [Optional] Binary options trading experience.
-    -   `args.binary_options_trading_frequency` **[String][332]** [Optional] Binary options trading frequency.
-    -   `args.cfd_trading_experience` **[String][332]** [Optional] CFDs trading experience.
-    -   `args.cfd_trading_frequency` **[String][332]** [Optional] CFDs trading frequency.
-    -   `args.education_level` **[String][332]** Level of Education.
-    -   `args.employment_industry` **[String][332]** Industry of Employment.
-    -   `args.employment_status` **[String][332]** [Optional] Employment Status.
-    -   `args.estimated_worth` **[String][332]** Estimated Net Worth.
-    -   `args.forex_trading_experience` **[String][332]** [Optional] Forex trading experience.
-    -   `args.forex_trading_frequency` **[String][332]** [Optional] Forex trading frequency.
-    -   `args.income_source` **[String][332]** Income Source.
-    -   `args.net_income` **[String][332]** Net Annual Income.
-    -   `args.occupation` **[String][332]** Occupation.
-    -   `args.other_instruments_trading_experience` **[String][332]** [Optional] Trading experience in other financial instruments.
-    -   `args.other_instruments_trading_frequency` **[String][332]** [Optional] Trading frequency in other financial instruments.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_turnover` **[String][333]** [Optional] The anticipated account turnover.
+    -   `args.binary_options_trading_experience` **[String][333]** [Optional] Binary options trading experience.
+    -   `args.binary_options_trading_frequency` **[String][333]** [Optional] Binary options trading frequency.
+    -   `args.cfd_trading_experience` **[String][333]** [Optional] CFDs trading experience.
+    -   `args.cfd_trading_frequency` **[String][333]** [Optional] CFDs trading frequency.
+    -   `args.education_level` **[String][333]** Level of Education.
+    -   `args.employment_industry` **[String][333]** Industry of Employment.
+    -   `args.employment_status` **[String][333]** [Optional] Employment Status.
+    -   `args.estimated_worth` **[String][333]** Estimated Net Worth.
+    -   `args.forex_trading_experience` **[String][333]** [Optional] Forex trading experience.
+    -   `args.forex_trading_frequency` **[String][333]** [Optional] Forex trading frequency.
+    -   `args.income_source` **[String][333]** Income Source.
+    -   `args.net_income` **[String][333]** Net Annual Income.
+    -   `args.occupation` **[String][333]** Occupation.
+    -   `args.other_instruments_trading_experience` **[String][333]** [Optional] Trading experience in other financial instruments.
+    -   `args.other_instruments_trading_frequency` **[String][333]** [Optional] Trading frequency in other financial instruments.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.set_financial_assessment` **[Number][345]** Must be `1`
-    -   `args.source_of_wealth` **[String][332]** [Optional] Source of wealth.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.set_financial_assessment` **[Number][346]** Must be `1`
+    -   `args.source_of_wealth` **[String][333]** [Optional] Source of wealth.
 
 ## setSelfExclusion
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.exclude_until` **Any** [Optional] Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company.
     -   `args.max_30day_deposit` **Any** [Optional] 7-day limit on deposits.
     -   `args.max_30day_losses` **Any** [Optional] 30-day limit on losses.
@@ -2748,301 +2753,301 @@ Type: [Object][330]
     -   `args.max_open_bets` **Any** [Optional] Maximum number of open positions.
     -   `args.max_turnover` **Any** [Optional] Daily turnover limit.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
     -   `args.session_duration_limit` **Any** [Optional] Session duration limit, in minutes.
-    -   `args.set_self_exclusion` **[Number][345]** Must be `1`
+    -   `args.set_self_exclusion` **[Number][346]** Must be `1`
     -   `args.timeout_until` **Any** [Optional] Exclude me from the website (for up to 6 weeks). Requires time in epoch format. Note: unlike `exclude_until`, this self-exclusion will be lifted automatically at the expiry of the timeout period.
 
 ## setSettings
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_opening_reason` **[String][332]** [Optional] Purpose and reason for requesting the account opening. Only applicable for real money account. Required for clients that have not set it yet. Can only be set once.
-    -   `args.address_city` **[String][332]** [Optional] Note: not applicable for virtual account. Required field for real money account.
-    -   `args.address_line_1` **[String][332]** [Optional] Note: not applicable for virtual account. Required field for real money account.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_opening_reason` **[String][333]** [Optional] Purpose and reason for requesting the account opening. Only applicable for real money account. Required for clients that have not set it yet. Can only be set once.
+    -   `args.address_city` **[String][333]** [Optional] Note: not applicable for virtual account. Required field for real money account.
+    -   `args.address_line_1` **[String][333]** [Optional] Note: not applicable for virtual account. Required field for real money account.
     -   `args.address_line_2` **Any** [Optional] Note: not applicable for virtual account. Optional field for real money account.
-    -   `args.address_postcode` **[String][332]** [Optional] Note: not applicable for virtual account. Optional field for real money account.
-    -   `args.address_state` **[String][332]** [Optional] Note: not applicable for virtual account. Optional field for real money account.
-    -   `args.allow_copiers` **[Number][345]** [Optional] Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account.
+    -   `args.address_postcode` **[String][333]** [Optional] Note: not applicable for virtual account. Optional field for real money account.
+    -   `args.address_state` **[String][333]** [Optional] Note: not applicable for virtual account. Optional field for real money account.
+    -   `args.allow_copiers` **[Number][346]** [Optional] Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account.
     -   `args.citizen` **Any** [Optional] Country of legal citizenship, 2-letter country code.
-    -   `args.date_of_birth` **[String][332]** [Optional] Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).
-    -   `args.email_consent` **[Number][345]** [Optional] Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing
+    -   `args.date_of_birth` **[String][333]** [Optional] Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).
+    -   `args.email_consent` **[Number][346]** [Optional] Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing
     -   `args.feature_flag` **Any** \-
-    -   `args.first_name` **[String][332]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
-    -   `args.last_name` **[String][332]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
-    -   `args.non_pep_declaration` **[Number][345]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates). Effective for real accounts only.
+    -   `args.first_name` **[String][333]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
+    -   `args.last_name` **[String][333]** [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
+    -   `args.non_pep_declaration` **[Number][346]** [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates). Effective for real accounts only.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
     -   `args.phone` **Any** [Optional] Note: not applicable for virtual account. Starting with `+` followed by 9-35 digits, hyphens or space.
-    -   `args.place_of_birth` **[String][332]** [Optional] Place of birth, 2-letter country code.
+    -   `args.place_of_birth` **[String][333]** [Optional] Place of birth, 2-letter country code.
     -   `args.preferred_language` **Any** [Optional] User's preferred language, ISO standard language code
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.request_professional_status` **[Number][345]** [Optional] Required when client wants to be treated as professional. Applicable for financial accounts only.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.request_professional_status` **[Number][346]** [Optional] Required when client wants to be treated as professional. Applicable for financial accounts only.
     -   `args.residence` **Any** [Optional] 2-letter country code. Note: not applicable for real money account. Only allow for Virtual account without residence set.
-    -   `args.salutation` **[String][332]** [Optional] Accept any value in enum list (can only be changed on unauthenticated svg accounts).
-    -   `args.secret_answer` **[String][332]** [Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client opens another account.
-    -   `args.secret_question` **[String][332]** [Optional] Accept any value in enum list. Required for new account and existing client details will be used if client opens another account.
-    -   `args.set_settings` **[Number][345]** Must be `1`
-    -   `args.tax_identification_number` **[String][332]** [Optional] Tax identification number. Only applicable for real money account. Required for maltainvest landing company.
-    -   `args.tax_residence` **[String][332]** [Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.
+    -   `args.salutation` **[String][333]** [Optional] Accept any value in enum list (can only be changed on unauthenticated svg accounts).
+    -   `args.secret_answer` **[String][333]** [Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client opens another account.
+    -   `args.secret_question` **[String][333]** [Optional] Accept any value in enum list. Required for new account and existing client details will be used if client opens another account.
+    -   `args.set_settings` **[Number][346]** Must be `1`
+    -   `args.tax_identification_number` **[String][333]** [Optional] Tax identification number. Only applicable for real money account. Required for maltainvest landing company.
+    -   `args.tax_residence` **[String][333]** [Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.
 
 ## statement
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.action_type` **[String][332]** [Optional] To filter the statement according to the type of transaction.
-    -   `args.date_from` **[Number][345]** [Optional] Start date (epoch)
-    -   `args.date_to` **[Number][345]** [Optional] End date (epoch)
-    -   `args.description` **[Number][345]** [Optional] If set to 1, will return full contracts description.
-    -   `args.limit` **[Number][345]** [Optional] Maximum number of transactions to receive.
-    -   `args.offset` **[Number][345]** [Optional] Number of transactions to skip.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.action_type` **[String][333]** [Optional] To filter the statement according to the type of transaction.
+    -   `args.date_from` **[Number][346]** [Optional] Start date (epoch)
+    -   `args.date_to` **[Number][346]** [Optional] End date (epoch)
+    -   `args.description` **[Number][346]** [Optional] If set to 1, will return full contracts description.
+    -   `args.limit` **[Number][346]** [Optional] Maximum number of transactions to receive.
+    -   `args.offset` **[Number][346]** [Optional] Number of transactions to skip.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.statement` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.statement` **[Number][346]** Must be `1`
 
 ## statesList
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.states_list` **[String][332]** Client's 2-letter country code (obtained from `residence_list` call)
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.states_list` **[String][333]** Client's 2-letter country code (obtained from `residence_list` call)
 
 ## ticks
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] If set to 1, will send updates whenever a new tick is received.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] If set to 1, will send updates whenever a new tick is received.
     -   `args.ticks` **Any** The short symbol name or array of symbols (obtained from `active_symbols` call).
 
 ## ticksHistory
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.adjust_start_time` **[Number][345]** [Optional] 1 - if the market is closed at the end time, or license limit is before end time, adjust interval backwards to compensate.
-    -   `args.count` **[Number][345]** [Optional] An upper limit on ticks to receive.
-    -   `args.end` **[String][332]** Epoch value representing the latest boundary of the returned ticks. If `latest` is specified, this will be the latest available timestamp.
-    -   `args.granularity` **[Number][345]** [Optional] Only applicable for style: `candles`. Candle time-dimension width setting. (default: `60`).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.adjust_start_time` **[Number][346]** [Optional] 1 - if the market is closed at the end time, or license limit is before end time, adjust interval backwards to compensate.
+    -   `args.count` **[Number][346]** [Optional] An upper limit on ticks to receive.
+    -   `args.end` **[String][333]** Epoch value representing the latest boundary of the returned ticks. If `latest` is specified, this will be the latest available timestamp.
+    -   `args.granularity` **[Number][346]** [Optional] Only applicable for style: `candles`. Candle time-dimension width setting. (default: `60`).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.start` **[Number][345]** [Optional] Epoch value representing the earliest boundary of the returned ticks.-   For `"style": "ticks"`: this will default to 1 day ago.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.start` **[Number][346]** [Optional] Epoch value representing the earliest boundary of the returned ticks.-   For `"style": "ticks"`: this will default to 1 day ago.
         -   For `"style": "candles"`: it will default to 1 day ago if count or granularity is undefined.
-    -   `args.style` **[String][332]** [Optional] The tick-output style.
-    -   `args.subscribe` **[Number][345]** [Optional] 1 - to send updates whenever a new tick is received.
-    -   `args.ticks_history` **[String][332]** Short symbol name (obtained from the `active_symbols` call).
+    -   `args.style` **[String][333]** [Optional] The tick-output style.
+    -   `args.subscribe` **[Number][346]** [Optional] 1 - to send updates whenever a new tick is received.
+    -   `args.ticks_history` **[String][333]** Short symbol name (obtained from the `active_symbols` call).
 
 ## time
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.time` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.time` **[Number][346]** Must be `1`
 
 ## tncApproval
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.tnc_approval` **[Number][345]** Must be `1`
-    -   `args.ukgc_funds_protection` **[Number][345]** [Optional] For `ASK_UK_FUNDS_PROTECTION` in `cashier`.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.tnc_approval` **[Number][346]** Must be `1`
+    -   `args.ukgc_funds_protection` **[Number][346]** [Optional] For `ASK_UK_FUNDS_PROTECTION` in `cashier`.
 
 ## topupVirtual
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.topup_virtual` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.topup_virtual` **[Number][346]** Must be `1`
 
 ## tradingDurations
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.landing_company` **[String][332]** [Optional] If specified, will return only the underlyings for the specified landing company.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.landing_company` **[String][333]** [Optional] If specified, will return only the underlyings for the specified landing company.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_durations` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_durations` **[Number][346]** Must be `1`
 
 ## tradingPlatformAccounts
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Trading platform name
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_platform_accounts` **[Number][345]** Must be `1`
+    -   `args.platform` **[String][333]** Trading platform name
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_platform_accounts` **[Number][346]** Must be `1`
 
 ## tradingPlatformDeposit
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** Amount to deposit (in the currency of from_wallet).
-    -   `args.from_account` **[String][332]** Wallet account to transfer money from.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** Amount to deposit (in the currency of from_wallet).
+    -   `args.from_account` **[String][333]** Wallet account to transfer money from.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.to_account` **[String][332]** Trading account login to deposit money to.
-    -   `args.trading_platform_deposit` **[Number][345]** Must be `1`
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.to_account` **[String][333]** Trading account login to deposit money to.
+    -   `args.trading_platform_deposit` **[Number][346]** Must be `1`
 
 ## tradingPlatformInvestorPasswordChange
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_id` **[String][332]** Trading account ID.
-    -   `args.new_password` **[String][332]** New investor password. Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address.
-    -   `args.old_password` **[String][332]** Old investor password for validation (non-empty string, accepts any printable ASCII character)
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_id` **[String][333]** Trading account ID.
+    -   `args.new_password` **[String][333]** New investor password. Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address.
+    -   `args.old_password` **[String][333]** Old investor password for validation (non-empty string, accepts any printable ASCII character)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_platform_investor_password_change` **[Number][345]** Must be `1`
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_platform_investor_password_change` **[Number][346]** Must be `1`
 
 ## tradingPlatformInvestorPasswordReset
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_id` **[String][332]** Trading account ID.
-    -   `args.new_password` **[String][332]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_id` **[String][333]** Trading account ID.
+    -   `args.new_password` **[String][333]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_platform_investor_password_reset` **[Number][345]** Must be `1`
-    -   `args.verification_code` **[String][332]** Email verification code (received from a `verify_email` call, which must be done first)
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_platform_investor_password_reset` **[Number][346]** Must be `1`
+    -   `args.verification_code` **[String][333]** Email verification code (received from a `verify_email` call, which must be done first)
 
 ## tradingPlatformNewAccount
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_type` **[String][332]** Account type.
-    -   `args.currency` **[String][332]** [Optional] Trading account currency, the default value will be the qualified account currency.
-    -   `args.dry_run` **[Number][345]** [Optional] If set to 1, only validation is performed.
-    -   `args.market_type` **[String][332]** Market type
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_type` **[String][333]** Account type.
+    -   `args.currency` **[String][333]** [Optional] Trading account currency, the default value will be the qualified account currency.
+    -   `args.dry_run` **[Number][346]** [Optional] If set to 1, only validation is performed.
+    -   `args.market_type` **[String][333]** Market type
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.password` **[String][332]** The master password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address). This field is required.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.sub_account_type` **[String][332]** [Optional] Sub account type.
-    -   `args.trading_platform_new_account` **[Number][345]** Must be `1`
+    -   `args.password` **[String][333]** The master password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address). This field is required.
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.sub_account_type` **[String][333]** [Optional] Sub account type.
+    -   `args.trading_platform_new_account` **[Number][346]** Must be `1`
 
 ## tradingPlatformPasswordChange
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.new_password` **[String][332]** New trading password. Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address.
-    -   `args.old_password` **[String][332]** Old password for validation. Must be empty if a password has not been set yet.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.new_password` **[String][333]** New trading password. Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address.
+    -   `args.old_password` **[String][333]** Old password for validation. Must be empty if a password has not been set yet.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_platform_password_change` **[Number][345]** Must be `1`
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_platform_password_change` **[Number][346]** Must be `1`
 
 ## tradingPlatformPasswordReset
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.new_password` **[String][332]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.new_password` **[String][333]** New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_platform_password_reset` **[Number][345]** Must be `1`
-    -   `args.verification_code` **[String][332]** Email verification code (received from a `verify_email` call, which must be done first)
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_platform_password_reset` **[Number][346]** Must be `1`
+    -   `args.verification_code` **[String][333]** Email verification code (received from a `verify_email` call, which must be done first)
 
 ## tradingPlatformWithdrawal
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.amount` **[Number][345]** Amount to withdraw (in the currency of the Trading account).
-    -   `args.from_account` **[String][332]** Trading account login to withdraw money from.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.amount` **[Number][346]** Amount to withdraw (in the currency of the Trading account).
+    -   `args.from_account` **[String][333]** Trading account login to withdraw money from.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** Name of trading platform.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.to_account` **[String][332]** Wallet account loginid to transfer money to.
-    -   `args.trading_platform_withdrawal` **[Number][345]** Must be `1`
+    -   `args.platform` **[String][333]** Name of trading platform.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.to_account` **[String][333]** Wallet account loginid to transfer money to.
+    -   `args.trading_platform_withdrawal` **[Number][346]** Must be `1`
 
 ## tradingServers
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_type` **[String][332]** [Optional] Trading account type.
-    -   `args.environment` **[String][332]** [Optional] Pass the environment (installation) instance. Currently, there are one demo and two real environments. Defaults to 'all'.
-    -   `args.market_type` **[String][332]** [Optional] Market type.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_type` **[String][333]** [Optional] Trading account type.
+    -   `args.environment` **[String][333]** [Optional] Pass the environment (installation) instance. Currently, there are one demo and two real environments. Defaults to 'all'.
+    -   `args.market_type` **[String][333]** [Optional] Market type.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.platform` **[String][332]** [Optional] Pass the trading platform name, default to mt5
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_servers` **[Number][345]** Must be `1`
+    -   `args.platform` **[String][333]** [Optional] Pass the trading platform name, default to mt5
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_servers` **[Number][346]** Must be `1`
 
 ## tradingTimes
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.trading_times` **[String][332]** Date to receive market opening times for. (`yyyy-mm-dd` format. `today` can also be specified).
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.trading_times` **[String][333]** Date to receive market opening times for. (`yyyy-mm-dd` format. `today` can also be specified).
 
 ## transaction
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** If set to 1, will send updates whenever there is an update to transactions. If not to 1 then it will not return any records.
-    -   `args.transaction` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** If set to 1, will send updates whenever there is an update to transactions. If not to 1 then it will not return any records.
+    -   `args.transaction` **[Number][346]** Must be `1`
 
 ## transferBetweenAccounts
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
-    -   `args.account_from` **[String][332]** [Optional] The loginid of the account to transfer funds from.
-    -   `args.account_to` **[String][332]** [Optional] The loginid of the account to transfer funds to.
-    -   `args.accounts` **[String][332]** [Optional] To control the list of accounts returned when `account_from` or `account_to` is not provided. `brief` (default value) means that accounts with `mt5` account_type will be excluded; it will run faster. `all` means that all accounts with any account_type (including `mt5`) will be returned.
-    -   `args.amount` **[Number][345]** [Optional] The amount to transfer.
-    -   `args.currency` **[String][332]** [Optional] Currency code.
+-   `args` **[Object][331]**  (optional, default `{}`)
+    -   `args.account_from` **[String][333]** [Optional] The loginid of the account to transfer funds from.
+    -   `args.account_to` **[String][333]** [Optional] The loginid of the account to transfer funds to.
+    -   `args.accounts` **[String][333]** [Optional] To control the list of accounts returned when `account_from` or `account_to` is not provided. `brief` (default value) means that accounts with `mt5` account_type will be excluded; it will run faster. `all` means that all accounts with any account_type (including `mt5`) will be returned.
+    -   `args.amount` **[Number][346]** [Optional] The amount to transfer.
+    -   `args.currency` **[String][333]** [Optional] Currency code.
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.transfer_between_accounts` **[Number][345]** If `account_from` or `account_to` is not provided, it just returns the available accounts.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.transfer_between_accounts` **[Number][346]** If `account_from` or `account_to` is not provided, it just returns the available accounts.
 
 ## verifyEmail
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.type` **[String][332]** Purpose of the email verification call.
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.type` **[String][333]** Purpose of the email verification call.
     -   `args.url_parameters` **Any** \-
-    -   `args.verify_email` **[String][332]** Email address to be verified.
+    -   `args.verify_email` **[String][333]** Email address to be verified.
 
 ## websiteStatus
 
 ### Parameters
 
--   `args` **[Object][330]**  (optional, default `{}`)
+-   `args` **[Object][331]**  (optional, default `{}`)
     -   `args.passthrough` **Any** [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-    -   `args.req_id` **[Number][345]** [Optional] Used to map request to response.
-    -   `args.subscribe` **[Number][345]** [Optional] `1` to stream the server/website status updates.
-    -   `args.website_status` **[Number][345]** Must be `1`
+    -   `args.req_id` **[Number][346]** [Optional] Used to map request to response.
+    -   `args.subscribe` **[Number][346]** [Optional] `1` to stream the server/website status updates.
+    -   `args.website_status` **[Number][346]** Must be `1`
 
 ## InMemory
 
@@ -3050,7 +3055,7 @@ An in memory storage which can be used for caching
 
 ## TransactionParams
 
-Type: [Object][330]
+Type: [Object][331]
 
 ## Immutable
 
@@ -3058,37 +3063,37 @@ An abstract class for immutable objects
 
 ### Parameters
 
--   `props` **[Object][330]** A list of properties to add for the immutable object (optional, default `{}`)
+-   `props` **[Object][331]** A list of properties to add for the immutable object (optional, default `{}`)
 
 ### init
 
 Override to initialize an immutable object asynchronously
 
-## ExpiryType
-
-Type: [Object][330]
-
-### Properties
-
--   `duration` **[DurationRange][374]** 
--   `barriers` **[Object][330]** 
-    -   `barriers.high` **[Barrier][375]** 
-    -   `barriers.low` **[Barrier][375]** 
-    -   `barriers.single` **[Barrier][375]** 
-
 ## ContractCategory
 
-Type: [Object][330]
+Type: [Object][331]
 
 ### Properties
 
--   `name` **[FullName][351]** 
--   `has_end_time` **[Boolean][350]** Is end time available for the contract (hardcoded X) )
--   `contract_types` **[Array][348]&lt;[String][332]>** 
--   `bases` **[Array][348]&lt;[String][332]>** 
--   `forward_starting` **[Object][330]** 
-    -   `forward_starting.1564531200` **[DateRange][376]** 
--   `expiry_types` **[ExpiryType][377]** 
+-   `name` **[FullName][352]** 
+-   `has_end_time` **[Boolean][351]** Is end time available for the contract (hardcoded X) )
+-   `contract_types` **[Array][349]&lt;[String][333]>** 
+-   `bases` **[Array][349]&lt;[String][333]>** 
+-   `forward_starting` **[Object][331]** 
+    -   `forward_starting.1564531200` **[DateRange][375]** 
+-   `expiry_types` **[ExpiryType][376]** 
+
+## ExpiryType
+
+Type: [Object][331]
+
+### Properties
+
+-   `duration` **[DurationRange][377]** 
+-   `barriers` **[Object][331]** 
+    -   `barriers.high` **[Barrier][378]** 
+    -   `barriers.low` **[Barrier][378]** 
+    -   `barriers.single` **[Barrier][378]** 
 
 ## Stream
 
@@ -3106,8 +3111,8 @@ Listen on updates of a stream
 
 #### Parameters
 
--   `callback` **[Function][378]** 
--   `on_error` **[Function][378]** 
+-   `callback` **[Function][379]** 
+-   `on_error` **[Function][379]** 
 
 #### Examples
 
@@ -3157,722 +3162,724 @@ Returns **Observable**
 
 [18]: #closehandler
 
-[19]: #onclose
+[19]: #reconnect
 
-[20]: #onopen
+[20]: #onclose
 
-[21]: #onmessage
+[21]: #onopen
 
-[22]: #expectresponse
+[22]: #onmessage
 
-[23]: #abstract-objects
+[23]: #expectresponse
 
-[24]: #immutables
+[24]: #abstract-objects
 
-[25]: #account-1
+[25]: #immutables
 
-[26]: #assets-1
+[26]: #account-1
 
-[27]: #underlying-1
+[27]: #assets-1
 
-[28]: #tick
+[28]: #underlying-1
 
-[29]: #candle
+[29]: #tick
 
-[30]: #transaction
+[30]: #candle
 
-[31]: #buy
+[31]: #transaction
 
-[32]: #sell
+[32]: #buy
 
-[33]: #contractoptions-1
+[33]: #sell
 
-[34]: #streams
+[34]: #contractoptions-1
 
-[35]: #balance
+[35]: #streams
 
-[36]: #candles-1
+[36]: #balance
 
-[37]: #contract-1
+[37]: #candles-1
 
-[38]: #ticks-1
+[38]: #contract-1
 
-[39]: #transactions
+[39]: #ticks-1
 
-[40]: #websitestatus-1
+[40]: #transactions
 
-[41]: #fields
+[41]: #websitestatus-1
 
-[42]: #barrier
+[42]: #fields
 
-[43]: #customdate
+[43]: #barrier
 
-[44]: #daterange
+[44]: #customdate
 
-[45]: #duration
+[45]: #daterange
 
-[46]: #durationrange
+[46]: #duration
 
-[47]: #fullname
+[47]: #durationrange
 
-[48]: #marketvalue
+[48]: #fullname
 
-[49]: #monetary
+[49]: #marketvalue
 
-[50]: #profit
+[50]: #monetary
 
-[51]: #spot
+[51]: #profit
 
-[52]: #core-functionality
+[52]: #spot
 
-[53]: #cache
+[53]: #core-functionality
 
-[54]: #parameters-2
+[54]: #cache
 
-[55]: #examples-2
+[55]: #parameters-2
 
-[56]: #subscriptionmanager
+[56]: #examples-2
 
-[57]: #parameters-3
+[57]: #subscriptionmanager
 
-[58]: #examples-3
+[58]: #parameters-3
 
-[59]: #subscribe
+[59]: #examples-3
 
-[60]: #object-references
+[60]: #subscribe
 
-[61]: #parameters-4
+[61]: #object-references
 
-[62]: #candlesparam
+[62]: #parameters-4
 
-[63]: #ticksparam
+[63]: #candlesparam
 
-[64]: #buyparam
+[64]: #ticksparam
 
-[65]: #sellparam
+[65]: #buyparam
 
-[66]: #contractparam
+[66]: #sellparam
 
-[67]: #historyrange
+[67]: #contractparam
 
-[68]: #accountclosure
+[68]: #historyrange
 
-[69]: #parameters-5
+[69]: #accountclosure
 
-[70]: #accountsecurity
+[70]: #parameters-5
 
-[71]: #parameters-6
+[71]: #accountsecurity
 
-[72]: #accountstatistics
+[72]: #parameters-6
 
-[73]: #parameters-7
+[73]: #accountstatistics
 
-[74]: #activesymbols
+[74]: #parameters-7
 
-[75]: #parameters-8
+[75]: #activesymbols
 
-[76]: #affiliateaccountadd
+[76]: #parameters-8
 
-[77]: #parameters-9
+[77]: #affiliateaccountadd
 
-[78]: #apitoken
+[78]: #parameters-9
 
-[79]: #parameters-10
+[79]: #apitoken
 
-[80]: #appdelete
+[80]: #parameters-10
 
-[81]: #parameters-11
+[81]: #appdelete
 
-[82]: #appget
+[82]: #parameters-11
 
-[83]: #parameters-12
+[83]: #appget
 
-[84]: #applist
+[84]: #parameters-12
 
-[85]: #parameters-13
+[85]: #applist
 
-[86]: #appmarkupdetails
+[86]: #parameters-13
 
-[87]: #parameters-14
+[87]: #appmarkupdetails
 
-[88]: #appregister
+[88]: #parameters-14
 
-[89]: #parameters-15
+[89]: #appregister
 
-[90]: #appupdate
+[90]: #parameters-15
 
-[91]: #parameters-16
+[91]: #appupdate
 
-[92]: #assetindex
+[92]: #parameters-16
 
-[93]: #parameters-17
+[93]: #assetindex
 
-[94]: #authorize
+[94]: #parameters-17
 
-[95]: #parameters-18
+[95]: #authorize
 
-[96]: #balance-1
+[96]: #parameters-18
 
-[97]: #parameters-19
+[97]: #balance-1
 
-[98]: #buy-1
+[98]: #parameters-19
 
-[99]: #parameters-20
+[99]: #buy-1
 
-[100]: #buycontractformultipleaccounts
+[100]: #parameters-20
 
-[101]: #parameters-21
+[101]: #buycontractformultipleaccounts
 
-[102]: #cancel
+[102]: #parameters-21
 
-[103]: #parameters-22
+[103]: #cancel
 
-[104]: #cashier
+[104]: #parameters-22
 
-[105]: #parameters-23
+[105]: #cashier
 
-[106]: #cashierpayments
+[106]: #parameters-23
 
-[107]: #parameters-24
+[107]: #cashierpayments
 
-[108]: #cashierwithdrawalcancel
+[108]: #parameters-24
 
-[109]: #parameters-25
+[109]: #cashierwithdrawalcancel
 
-[110]: #changepassword
+[110]: #parameters-25
 
-[111]: #parameters-26
+[111]: #changepassword
 
-[112]: #contractupdate
+[112]: #parameters-26
 
-[113]: #parameters-27
+[113]: #contractupdate
 
-[114]: #contractupdatehistory
+[114]: #parameters-27
 
-[115]: #parameters-28
+[115]: #contractupdatehistory
 
-[116]: #contractsfor
+[116]: #parameters-28
 
-[117]: #parameters-29
+[117]: #contractsfor
 
-[118]: #copystart
+[118]: #parameters-29
 
-[119]: #parameters-30
+[119]: #copystart
 
-[120]: #copystop
+[120]: #parameters-30
 
-[121]: #parameters-31
+[121]: #copystop
 
-[122]: #copytradinglist
+[122]: #parameters-31
 
-[123]: #parameters-32
+[123]: #copytradinglist
 
-[124]: #copytradingstatistics
+[124]: #parameters-32
 
-[125]: #parameters-33
+[125]: #copytradingstatistics
 
-[126]: #documentupload
+[126]: #parameters-33
 
-[127]: #parameters-34
+[127]: #documentupload
 
-[128]: #economiccalendar
+[128]: #parameters-34
 
-[129]: #parameters-35
+[129]: #economiccalendar
 
-[130]: #exchangerates
+[130]: #parameters-35
 
-[131]: #parameters-36
+[131]: #exchangerates
 
-[132]: #forget
+[132]: #parameters-36
 
-[133]: #parameters-37
+[133]: #forget
 
-[134]: #forgetall
+[134]: #parameters-37
 
-[135]: #parameters-38
+[135]: #forgetall
 
-[136]: #getaccountstatus
+[136]: #parameters-38
 
-[137]: #parameters-39
+[137]: #getaccountstatus
 
-[138]: #getfinancialassessment
+[138]: #parameters-39
 
-[139]: #parameters-40
+[139]: #getfinancialassessment
 
-[140]: #getlimits
+[140]: #parameters-40
 
-[141]: #parameters-41
+[141]: #getlimits
 
-[142]: #getselfexclusion
+[142]: #parameters-41
 
-[143]: #parameters-42
+[143]: #getselfexclusion
 
-[144]: #getsettings
+[144]: #parameters-42
 
-[145]: #parameters-43
+[145]: #getsettings
 
-[146]: #identityverificationdocumentadd
+[146]: #parameters-43
 
-[147]: #parameters-44
+[147]: #identityverificationdocumentadd
 
-[148]: #landingcompany
+[148]: #parameters-44
 
-[149]: #parameters-45
+[149]: #landingcompany
 
-[150]: #landingcompanydetails
+[150]: #parameters-45
 
-[151]: #parameters-46
+[151]: #landingcompanydetails
 
-[152]: #linkwallet
+[152]: #parameters-46
 
-[153]: #parameters-47
+[153]: #linkwallet
 
-[154]: #loginhistory
+[154]: #parameters-47
 
-[155]: #parameters-48
+[155]: #loginhistory
 
-[156]: #logout
+[156]: #parameters-48
 
-[157]: #parameters-49
+[157]: #logout
 
-[158]: #mt5deposit
+[158]: #parameters-49
 
-[159]: #parameters-50
+[159]: #mt5deposit
 
-[160]: #mt5getsettings
+[160]: #parameters-50
 
-[161]: #parameters-51
+[161]: #mt5getsettings
 
-[162]: #mt5loginlist
+[162]: #parameters-51
 
-[163]: #parameters-52
+[163]: #mt5loginlist
 
-[164]: #mt5newaccount
+[164]: #parameters-52
 
-[165]: #parameters-53
+[165]: #mt5newaccount
 
-[166]: #mt5passwordchange
+[166]: #parameters-53
 
-[167]: #parameters-54
+[167]: #mt5passwordchange
 
-[168]: #mt5passwordcheck
+[168]: #parameters-54
 
-[169]: #parameters-55
+[169]: #mt5passwordcheck
 
-[170]: #mt5passwordreset
+[170]: #parameters-55
 
-[171]: #parameters-56
+[171]: #mt5passwordreset
 
-[172]: #mt5withdrawal
+[172]: #parameters-56
 
-[173]: #parameters-57
+[173]: #mt5withdrawal
 
-[174]: #newaccountmaltainvest
+[174]: #parameters-57
 
-[175]: #parameters-58
+[175]: #newaccountmaltainvest
 
-[176]: #newaccountreal
+[176]: #parameters-58
 
-[177]: #parameters-59
+[177]: #newaccountreal
 
-[178]: #newaccountvirtual
+[178]: #parameters-59
 
-[179]: #parameters-60
+[179]: #newaccountvirtual
 
-[180]: #newaccountwallet
+[180]: #parameters-60
 
-[181]: #parameters-61
+[181]: #newaccountwallet
 
-[182]: #notificationevent
+[182]: #parameters-61
 
-[183]: #parameters-62
+[183]: #notificationevent
 
-[184]: #oauthapps
+[184]: #parameters-62
 
-[185]: #parameters-63
+[185]: #oauthapps
 
-[186]: #p2padvertcreate
+[186]: #parameters-63
 
-[187]: #parameters-64
+[187]: #p2padvertcreate
 
-[188]: #p2padvertinfo
+[188]: #parameters-64
 
-[189]: #parameters-65
+[189]: #p2padvertinfo
 
-[190]: #p2padvertlist
+[190]: #parameters-65
 
-[191]: #parameters-66
+[191]: #p2padvertlist
 
-[192]: #p2padvertupdate
+[192]: #parameters-66
 
-[193]: #parameters-67
+[193]: #p2padvertupdate
 
-[194]: #p2padvertiseradverts
+[194]: #parameters-67
 
-[195]: #parameters-68
+[195]: #p2padvertiseradverts
 
-[196]: #p2padvertisercreate
+[196]: #parameters-68
 
-[197]: #parameters-69
+[197]: #p2padvertisercreate
 
-[198]: #p2padvertiserinfo
+[198]: #parameters-69
 
-[199]: #parameters-70
+[199]: #p2padvertiserinfo
 
-[200]: #p2padvertiserpaymentmethods
+[200]: #parameters-70
 
-[201]: #parameters-71
+[201]: #p2padvertiserpaymentmethods
 
-[202]: #p2padvertiserrelations
+[202]: #parameters-71
 
-[203]: #parameters-72
+[203]: #p2padvertiserrelations
 
-[204]: #p2padvertiserupdate
+[204]: #parameters-72
 
-[205]: #parameters-73
+[205]: #p2padvertiserupdate
 
-[206]: #p2pchatcreate
+[206]: #parameters-73
 
-[207]: #parameters-74
+[207]: #p2pchatcreate
 
-[208]: #p2pordercancel
+[208]: #parameters-74
 
-[209]: #parameters-75
+[209]: #p2pordercancel
 
-[210]: #p2porderconfirm
+[210]: #parameters-75
 
-[211]: #parameters-76
+[211]: #p2porderconfirm
 
-[212]: #p2pordercreate
+[212]: #parameters-76
 
-[213]: #parameters-77
+[213]: #p2pordercreate
 
-[214]: #p2porderdispute
+[214]: #parameters-77
 
-[215]: #parameters-78
+[215]: #p2porderdispute
 
-[216]: #p2porderinfo
+[216]: #parameters-78
 
-[217]: #parameters-79
+[217]: #p2porderinfo
 
-[218]: #p2porderlist
+[218]: #parameters-79
 
-[219]: #parameters-80
+[219]: #p2porderlist
 
-[220]: #p2ppaymentmethods
+[220]: #parameters-80
 
-[221]: #parameters-81
+[221]: #p2ppaymentmethods
 
-[222]: #paymentmethods
+[222]: #parameters-81
 
-[223]: #parameters-82
+[223]: #paymentmethods
 
-[224]: #paymentagentcreate
+[224]: #parameters-82
 
-[225]: #parameters-83
+[225]: #paymentagentcreate
 
-[226]: #paymentagentdetails
+[226]: #parameters-83
 
-[227]: #parameters-84
+[227]: #paymentagentdetails
 
-[228]: #paymentagentlist
+[228]: #parameters-84
 
-[229]: #parameters-85
+[229]: #paymentagentlist
 
-[230]: #paymentagenttransfer
+[230]: #parameters-85
 
-[231]: #parameters-86
+[231]: #paymentagenttransfer
 
-[232]: #paymentagentwithdraw
+[232]: #parameters-86
 
-[233]: #parameters-87
+[233]: #paymentagentwithdraw
 
-[234]: #payoutcurrencies
+[234]: #parameters-87
 
-[235]: #parameters-88
+[235]: #payoutcurrencies
 
-[236]: #ping
+[236]: #parameters-88
 
-[237]: #parameters-89
+[237]: #ping
 
-[238]: #portfolio
+[238]: #parameters-89
 
-[239]: #parameters-90
+[239]: #portfolio
 
-[240]: #profittable
+[240]: #parameters-90
 
-[241]: #parameters-91
+[241]: #profittable
 
-[242]: #proposal
+[242]: #parameters-91
 
-[243]: #parameters-92
+[243]: #proposal
 
-[244]: #proposalopencontract
+[244]: #parameters-92
 
-[245]: #parameters-93
+[245]: #proposalopencontract
 
-[246]: #realitycheck
+[246]: #parameters-93
 
-[247]: #parameters-94
+[247]: #realitycheck
 
-[248]: #requestreport
+[248]: #parameters-94
 
-[249]: #parameters-95
+[249]: #requestreport
 
-[250]: #resetpassword
+[250]: #parameters-95
 
-[251]: #parameters-96
+[251]: #resetpassword
 
-[252]: #residencelist
+[252]: #parameters-96
 
-[253]: #parameters-97
+[253]: #residencelist
 
-[254]: #revokeoauthapp
+[254]: #parameters-97
 
-[255]: #parameters-98
+[255]: #revokeoauthapp
 
-[256]: #sell-1
+[256]: #parameters-98
 
-[257]: #parameters-99
+[257]: #sell-1
 
-[258]: #sellcontractformultipleaccounts
+[258]: #parameters-99
 
-[259]: #parameters-100
+[259]: #sellcontractformultipleaccounts
 
-[260]: #sellexpired
+[260]: #parameters-100
 
-[261]: #parameters-101
+[261]: #sellexpired
 
-[262]: #servicetoken
+[262]: #parameters-101
 
-[263]: #parameters-102
+[263]: #servicetoken
 
-[264]: #setaccountcurrency
+[264]: #parameters-102
 
-[265]: #parameters-103
+[265]: #setaccountcurrency
 
-[266]: #setfinancialassessment
+[266]: #parameters-103
 
-[267]: #parameters-104
+[267]: #setfinancialassessment
 
-[268]: #setselfexclusion
+[268]: #parameters-104
 
-[269]: #parameters-105
+[269]: #setselfexclusion
 
-[270]: #setsettings
+[270]: #parameters-105
 
-[271]: #parameters-106
+[271]: #setsettings
 
-[272]: #statement
+[272]: #parameters-106
 
-[273]: #parameters-107
+[273]: #statement
 
-[274]: #stateslist
+[274]: #parameters-107
 
-[275]: #parameters-108
+[275]: #stateslist
 
-[276]: #ticks-2
+[276]: #parameters-108
 
-[277]: #parameters-109
+[277]: #ticks-2
 
-[278]: #tickshistory
+[278]: #parameters-109
 
-[279]: #parameters-110
+[279]: #tickshistory
 
-[280]: #time
+[280]: #parameters-110
 
-[281]: #parameters-111
+[281]: #time
 
-[282]: #tncapproval
+[282]: #parameters-111
 
-[283]: #parameters-112
+[283]: #tncapproval
 
-[284]: #topupvirtual
+[284]: #parameters-112
 
-[285]: #parameters-113
+[285]: #topupvirtual
 
-[286]: #tradingdurations
+[286]: #parameters-113
 
-[287]: #parameters-114
+[287]: #tradingdurations
 
-[288]: #tradingplatformaccounts
+[288]: #parameters-114
 
-[289]: #parameters-115
+[289]: #tradingplatformaccounts
 
-[290]: #tradingplatformdeposit
+[290]: #parameters-115
 
-[291]: #parameters-116
+[291]: #tradingplatformdeposit
 
-[292]: #tradingplatforminvestorpasswordchange
+[292]: #parameters-116
 
-[293]: #parameters-117
+[293]: #tradingplatforminvestorpasswordchange
 
-[294]: #tradingplatforminvestorpasswordreset
+[294]: #parameters-117
 
-[295]: #parameters-118
+[295]: #tradingplatforminvestorpasswordreset
 
-[296]: #tradingplatformnewaccount
+[296]: #parameters-118
 
-[297]: #parameters-119
+[297]: #tradingplatformnewaccount
 
-[298]: #tradingplatformpasswordchange
+[298]: #parameters-119
 
-[299]: #parameters-120
+[299]: #tradingplatformpasswordchange
 
-[300]: #tradingplatformpasswordreset
+[300]: #parameters-120
 
-[301]: #parameters-121
+[301]: #tradingplatformpasswordreset
 
-[302]: #tradingplatformwithdrawal
+[302]: #parameters-121
 
-[303]: #parameters-122
+[303]: #tradingplatformwithdrawal
 
-[304]: #tradingservers
+[304]: #parameters-122
 
-[305]: #parameters-123
+[305]: #tradingservers
 
-[306]: #tradingtimes
+[306]: #parameters-123
 
-[307]: #parameters-124
+[307]: #tradingtimes
 
-[308]: #transaction-1
+[308]: #parameters-124
 
-[309]: #parameters-125
+[309]: #transaction-1
 
-[310]: #transferbetweenaccounts
+[310]: #parameters-125
 
-[311]: #parameters-126
+[311]: #transferbetweenaccounts
 
-[312]: #verifyemail
+[312]: #parameters-126
 
-[313]: #parameters-127
+[313]: #verifyemail
 
-[314]: #websitestatus-2
+[314]: #parameters-127
 
-[315]: #parameters-128
+[315]: #websitestatus-2
 
-[316]: #inmemory
+[316]: #parameters-128
 
-[317]: #transactionparams
+[317]: #inmemory
 
-[318]: #immutable
+[318]: #transactionparams
 
-[319]: #parameters-129
+[319]: #immutable
 
-[320]: #init
+[320]: #parameters-129
 
-[321]: #expirytype
+[321]: #init
 
-[322]: #properties-2
+[322]: #contractcategory
 
-[323]: #contractcategory
+[323]: #properties-2
 
-[324]: #properties-3
+[324]: #expirytype
 
-[325]: #stream
+[325]: #properties-3
 
-[326]: #parameters-130
+[326]: #stream
 
-[327]: #onupdate
+[327]: #parameters-130
 
-[328]: #parameters-131
+[328]: #onupdate
 
-[329]: #examples-4
+[329]: #parameters-131
 
-[330]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[330]: #examples-4
 
-[331]: #derivapibasic
+[331]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[332]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[332]: #derivapibasic
 
-[333]: #ticksparam
+[333]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[334]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[334]: #ticksparam
 
-[335]: #ticks
+[335]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[336]: #candlesparam
+[336]: #ticks
 
-[337]: #candles
+[337]: #candlesparam
 
-[338]: #contractparam
+[338]: #candles
 
-[339]: #contract
+[339]: #contractparam
 
-[340]: #underlying
+[340]: #contract
 
-[341]: #account
+[341]: #underlying
 
-[342]: #assets
+[342]: #account
 
-[343]: #websitestatus
+[343]: #assets
 
-[344]: #contractoptions
+[344]: #websitestatus
 
-[345]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[345]: #contractoptions
 
-[346]: https://developer.mozilla.org/docs/WebSockets
+[346]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[347]: #cache
+[347]: https://developer.mozilla.org/docs/WebSockets
 
-[348]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[348]: #cache
 
-[349]: #derivapi
+[349]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[350]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[350]: #derivapi
 
-[351]: #fullname
+[351]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-[352]: #balance
+[352]: #fullname
 
-[353]: #transactions
+[353]: #balance
 
-[354]: #customdate
+[354]: #transactions
 
-[355]: #marketvalue
+[355]: #customdate
 
-[356]: #monetary
+[356]: #marketvalue
 
-[357]: #contractcategory
+[357]: #monetary
 
-[358]: DerivAPI#candleStream
+[358]: #contractcategory
 
-[359]: #candle
+[359]: DerivAPI#candleStream
 
-[360]: #historyrange
+[360]: #candle
 
-[361]: #spot
+[361]: #historyrange
 
-[362]: #profit
+[362]: #spot
 
-[363]: #tick
+[363]: #profit
 
-[364]: #buyparam
+[364]: #tick
 
-[365]: #buy
+[365]: #buyparam
 
-[366]: #sellparam
+[366]: #buy
 
-[367]: #sell
+[367]: #sellparam
 
-[368]: DerivAPI#tickStream
+[368]: #sell
 
-[369]: #transaction
+[369]: DerivAPI#tickStream
 
-[370]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[370]: #transaction
 
-[371]: #duration
+[371]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[372]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+[372]: #duration
 
-[373]: https://www.binary.com/en/user/security/api_tokenws.html
+[373]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-[374]: #durationrange
+[374]: https://www.binary.com/en/user/security/api_tokenws.html
 
-[375]: #barrier
+[375]: #daterange
 
-[376]: #daterange
+[376]: #expirytype
 
-[377]: #expirytype
+[377]: #durationrange
 
-[378]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[378]: #barrier
+
+[379]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

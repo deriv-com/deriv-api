@@ -323,9 +323,9 @@
 -   [Immutable][319]
     -   [Parameters][320]
     -   [init][321]
--   [ContractCategory][322]
+-   [ExpiryType][322]
     -   [Properties][323]
--   [ExpiryType][324]
+-   [ContractCategory][324]
     -   [Properties][325]
 -   [Stream][326]
     -   [Parameters][327]
@@ -3069,6 +3069,18 @@ An abstract class for immutable objects
 
 Override to initialize an immutable object asynchronously
 
+## ExpiryType
+
+Type: [Object][331]
+
+### Properties
+
+-   `duration` **[DurationRange][375]** 
+-   `barriers` **[Object][331]** 
+    -   `barriers.high` **[Barrier][376]** 
+    -   `barriers.low` **[Barrier][376]** 
+    -   `barriers.single` **[Barrier][376]** 
+
 ## ContractCategory
 
 Type: [Object][331]
@@ -3080,20 +3092,8 @@ Type: [Object][331]
 -   `contract_types` **[Array][349]&lt;[String][333]>** 
 -   `bases` **[Array][349]&lt;[String][333]>** 
 -   `forward_starting` **[Object][331]** 
-    -   `forward_starting.1564531200` **[DateRange][375]** 
--   `expiry_types` **[ExpiryType][376]** 
-
-## ExpiryType
-
-Type: [Object][331]
-
-### Properties
-
--   `duration` **[DurationRange][377]** 
--   `barriers` **[Object][331]** 
-    -   `barriers.high` **[Barrier][378]** 
-    -   `barriers.low` **[Barrier][378]** 
-    -   `barriers.single` **[Barrier][378]** 
+    -   `forward_starting.1564531200` **[DateRange][377]** 
+-   `expiry_types` **[ExpiryType][378]** 
 
 ## Stream
 
@@ -3768,11 +3768,11 @@ Returns **Observable**
 
 [321]: #init
 
-[322]: #contractcategory
+[322]: #expirytype
 
 [323]: #properties-2
 
-[324]: #expirytype
+[324]: #contractcategory
 
 [325]: #properties-3
 
@@ -3874,12 +3874,12 @@ Returns **Observable**
 
 [374]: https://www.binary.com/en/user/security/api_tokenws.html
 
-[375]: #daterange
+[375]: #durationrange
 
-[376]: #expirytype
+[376]: #barrier
 
-[377]: #durationrange
+[377]: #daterange
 
-[378]: #barrier
+[378]: #expirytype
 
 [379]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

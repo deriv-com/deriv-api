@@ -35,6 +35,7 @@ jobs:
           command: |
             git config --local user.email "sysadmin@binary.com"
             git config --local user.name "gh-pages deploy bot"
+            npm install
             npm run gh-pages
 workflows:
   version: 2

@@ -17,9 +17,9 @@
     "syntax": "npm run lint 'src/**/*.js'",
     "test_all": "npm test && npm run syntax",
     "prettify": "eslint --fix 'src/**/*.js' src/",
-    "docs": "documentation build src/DerivAPI.js --config docs/config.md.yml -f md -o docs/DerivAPI.md --markdown-toc-max-depth 4",
-    "gh-pages": "documentation build src/DerivAPI.js --config docs/config.html.yml -f html -o /tmp/deriv-api-docs; git add .; git stash; git checkout gh-pages; cp -r /tmp/deriv-api-docs/* .; git add .; git commit -m 'Update docs'; git push; git checkout -",
-    "serve_docs": "documentation serve src/DerivAPI.js --watch --config docs/config.html.yml",
+    "docs": "npx documentation build src/DerivAPI.js --config docs/config.md.yml -f md -o docs/DerivAPI.md --markdown-toc-max-depth 4",
+    "gh-pages": "npx documentation build src/DerivAPI.js --config docs/config.html.yml -f html -o /tmp/deriv-api-docs; git add .; git stash; git checkout gh-pages; cp -r /tmp/deriv-api-docs/* .; git add .; git commit -m 'Update docs'; git push; git checkout -",
+    "serve_docs": "npx documentation serve src/DerivAPI.js --watch --config docs/config.html.yml",
     "devel_docs": "while :; do clear; inotifywait -r src/ && npm run docs || break; done",
     "prepublish": "npm run test_all && npm run build"
   },

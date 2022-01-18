@@ -23,8 +23,3 @@ jobs:
           command: npm run syntax
       - store_artifacts:
           path: coverage
-workflows:
-  version: 2
-  build:
-    jobs:
-      - test

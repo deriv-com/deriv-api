@@ -23,7 +23,7 @@ jobs:
           command: npm run syntax
       - store_artifacts:
           path: coverage
-docs-build-deploy:
+  docs-build-deploy:
     docker:
       - image: circleci/node:14.17.1
     steps:

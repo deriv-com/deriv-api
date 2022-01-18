@@ -42,8 +42,4 @@ workflows:
   build:
     jobs:
       - test
-      - docs-build-deploy:
-          filters:
-            branches:
-              only:
-              - master
+      - docs-build-deploy

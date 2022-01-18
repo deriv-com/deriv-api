@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:14.17.1
     steps:
@@ -23,3 +23,27 @@ jobs:
           command: npm run syntax
       - store_artifacts:
           path: coverage
+docs-build-deploy:
+    docker:
+      - image: circleci/node:14.17.1
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "81:78:45:a5:90:c1:d3:d1:49:b2:0d:2b:95:13:29:aa"
+      - checkout
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run:
+          command: |
+            git config --local user.email "sysadmin@binary.com"
+            git config --local user.name "gh-pages deploy bot"
+            npm run gh-pages
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
+      - docs-build-deploy:
+          filters:
+            branches:
+              only:
+              - master

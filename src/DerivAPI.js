@@ -15,7 +15,7 @@ import WebsiteStatus   from './streams/WebsiteStatus';
  *
  * @example
  * // Returns an abstract ticks object
- * const ticks = api.ticks('R_100');
+ * const ticks = api.ticks('R_15');
  *
  * // Subscribe to updates on the ticks object
  * ticks.onUpdate().subscribe(console.log);

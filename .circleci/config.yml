@@ -42,7 +42,7 @@ workflows:
   build:
     jobs:
       - test
-      - docs-build-deploy
+      - docs-build-deploy:
           filters:
             branches:
               only:

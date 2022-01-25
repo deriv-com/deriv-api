@@ -1,3 +1,4 @@
+global.WebSocket = require('ws');
 import { TestWebSocket } from '../../test_utils';
 
 import DerivAPIBasic     from '../DerivAPIBasic';

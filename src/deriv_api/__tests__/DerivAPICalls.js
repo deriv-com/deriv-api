@@ -1,6 +1,6 @@
 import DerivAPICalls from '../DerivAPICalls';
 
-let api;
+const api = new DerivAPICalls();
 
 test('Constructing DerivAPICalls', async () => {
     expect(api).toBeInstanceOf(DerivAPICalls);
@@ -15,7 +15,6 @@ test('Constructing DerivAPICalls', async () => {
 });
 
 beforeAll(() => {
-    api      = new DerivAPICalls();
     api.send = async function send(args) {
         this.arguments = args;
         return this.arguments;

@@ -48,7 +48,7 @@
     "codecov": "^3.6.5",
     "documentation": "^13.2.5",
     "eslint": "^6.1.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-align-assignments": "^1.0.0",
     "eslint-plugin-arca": "^0.8.1",
     "eslint-plugin-import": "^2.18.0",

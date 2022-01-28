@@ -35,7 +35,7 @@ export default class Underlying extends Immutable {
     // Called by the API to initialize the instance
     async init() {
         const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
-        const ul_info            = active_symbols.find(s => s.symbol === this.symbol);
+        const ul_info            = active_symbols.find((s) => s.symbol === this.symbol);
 
         this._data.is_open              = ul_info.exchange_is_open;
         this._data.is_trading_suspended = ul_info.is_trading_suspended;

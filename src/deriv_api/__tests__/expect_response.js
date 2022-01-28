@@ -1,5 +1,4 @@
 import { TestWebSocket } from '../../test_utils';
-
 import DerivAPIBasic     from '../DerivAPIBasic';
 import InMemory          from '../InMemory';
 
@@ -24,7 +23,7 @@ test('Fetch multiple responses', async () => {
 
     expect(expected_responses).toBeInstanceOf(Array);
 
-    expect(expected_responses.map(r => r.msg_type)).toEqual(['ping', 'website_status', 'ticks']);
+    expect(expected_responses.map((r) => r.msg_type)).toEqual(['ping', 'website_status', 'ticks']);
 });
 
 test('Fetch existing response from the storage', async () => {

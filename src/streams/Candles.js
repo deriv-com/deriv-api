@@ -3,8 +3,6 @@ import {
 }                       from 'rxjs/operators';
 
 import Candle           from '../immutables/Candle';
-
-
 import Stream           from '../types/Stream';
 import {
     parseRequestRange,
@@ -33,12 +31,12 @@ export default class Candles extends Stream {
 
     async init() {
         const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
-        this._data.pip           = active_symbols.find(s => s.symbol === this.symbol).pip;
+        this._data.pip           = active_symbols.find((s) => s.symbol === this.symbol).pip;
         const candle_stream      = this.api.basic.subscribe(toTicksHistoryParam(this));
 
         this.addSource(candle_stream.pipe(
             skip(1),
-            map(t => wrapCandle(t, this._data.pip)),
+            map((t) => wrapCandle(t, this._data.pip)),
             share(),
         ));
 
@@ -47,10 +45,9 @@ export default class Candles extends Stream {
         });
 
         this._data.list = await candle_stream
-            .pipe(first(), map(h => historyToCandles(h, this._data.pip)))
+            .pipe(first(), map((h) => historyToCandles(h, this._data.pip)))
             .toPromise();
     }
-
 
     get list() {
         return [...this._data.list];
@@ -69,12 +66,12 @@ export default class Candles extends Stream {
         if (!range) return this.list;
 
         return this.api.basic.cache.ticksHistory(toTicksHistoryParam({ ...this, range }))
-            .then(h => historyToCandles(h, this._data.pip));
+            .then((h) => historyToCandles(h, this._data.pip));
     }
 }
 
 function historyToCandles({ candles: history }, pip) {
-    return history.map(candle => new Candle(candle, pip));
+    return history.map((candle) => new Candle(candle, pip));
 }
 
 function wrapCandle({ ohlc }, pip) {

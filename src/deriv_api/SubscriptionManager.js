@@ -3,7 +3,6 @@ import {
 } from 'rxjs/operators';
 
 import { APIError }                       from './errors';
-
 import { objectToCacheKey }               from './utils';
 
 /**
@@ -68,7 +67,7 @@ export default class SubscriptionManager {
         // If we have a buy subscription reuse that for poc
         if (request.proposal_open_contract && request.contract_id) {
             const poc_source = Object.values(this.buy_key_to_contract_id)
-                .find(c => c.contract_id === request.contract_id);
+                .find((c) => c.contract_id === request.contract_id);
 
             if (poc_source) {
                 return this.sources[poc_source.buy_key];
@@ -111,7 +110,6 @@ export default class SubscriptionManager {
                 this.saveSubsId(key, response);
             }, this.removeKeyOnError(key));
 
-
         return source;
     }
 
@@ -125,7 +123,7 @@ export default class SubscriptionManager {
         // To include subscriptions that were automatically unsubscribed
         // for example a proposal subscription is auto-unsubscribed after buy
         types.forEach((type) => {
-            (this.subs_per_msg_type[type] || []).forEach(key => this.completeSubsByKey(key));
+            (this.subs_per_msg_type[type] || []).forEach((key) => this.completeSubsByKey(key));
             this.subs_per_msg_type[type] = [];
         });
 
@@ -194,7 +192,7 @@ export default class SubscriptionManager {
     }
 
     getMsgType(request) {
-        return this.streams_list.find(stream_key => stream_key in request);
+        return this.streams_list.find((stream_key) => stream_key in request);
     }
 }
 

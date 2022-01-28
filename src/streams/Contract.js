@@ -10,7 +10,6 @@ import Buy              from '../immutables/Buy';
 import Sell             from '../immutables/Sell';
 import Tick             from '../immutables/Tick';
 import Stream           from '../types/Stream';
-
 import { mapApiFields } from '../utils';
 
 const field_mapping = {
@@ -103,14 +102,14 @@ export default class Contract extends Stream {
         };
 
         const { active_symbols } = (await this.api.basic.cache.activeSymbols('brief'));
-        this._data.active_symbol = active_symbols.find(s => s.symbol === request.symbol);
+        this._data.active_symbol = active_symbols.find((s) => s.symbol === request.symbol);
 
         this._data.type     = request.contract_type;
         this._data.symbol   = new FullName(request.symbol, this._data.active_symbol.display_name);
         this._data.currency = request.currency;
 
         this.addSource(this.api.basic.subscribe(request).pipe(
-            map(p => proposalToContract(p, {
+            map((p) => proposalToContract(p, {
                 ...request,
                 ...this.active_symbol,
                 lang: this.api.basic.lang,
@@ -164,7 +163,7 @@ export default class Contract extends Stream {
             proposal_open_contract: 1,
             contract_id           : buy.contract_id,
         }).pipe(
-            map(o => openContractToContract(o, this.active_symbol.pip, this.api.basic.lang)),
+            map((o) => openContractToContract(o, this.active_symbol.pip, this.api.basic.lang)),
         ));
 
         return wrappedBuy;
@@ -208,11 +207,11 @@ function proposalToContract({ proposal }, { currency, pip, lang }) {
 }
 
 function openContractToContract({ proposal_open_contract: poc }, pip, lang) {
-    const toBarrier = value => new MarketValue(value, pip);
-    const toMoney   = value => new Monetary(value, poc.currency, lang);
+    const toBarrier = (value) => new MarketValue(value, pip);
+    const toMoney   = (value) => new Monetary(value, poc.currency, lang);
     const toProfit  = (value, percentage) => new Profit(value, poc.currency, percentage);
     const toSpot    = (value, time) => new Spot(value, pip, time);
-    const toTime    = time => new CustomDate(time);
+    const toTime    = (time) => new CustomDate(time);
 
     return {
         is_expired         : !!poc.is_expired,
@@ -248,6 +247,7 @@ function openContractToContract({ proposal_open_contract: poc }, pip, lang) {
     };
 }
 
+// eslint-disable-next-line default-param-last
 function wrapPocTicks(ticks = [], pip) {
     return ticks.map(({ epoch, tick: quote }) => new Tick({ epoch, quote }, pip));
 }

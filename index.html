@@ -1107,6 +1107,16 @@
               
                 
                 <li><a
+                  href='#cryptoconfig'
+                  class="">
+                  cryptoConfig
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#documentupload'
                   class="">
                   documentUpload
@@ -9037,7 +9047,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call allows clients to close all their accounts (including virtual-money account). It is assumed that all their accounts (excluding virtual) have no balance left.</p>
+
     <div class='pre p1 fill-light mt0'>accountClosure(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -9155,7 +9166,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call manages two-factor account authentication</p>
+
     <div class='pre p1 fill-light mt0'>accountSecurity(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -9282,7 +9294,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Send request to get account statistics</p>
+
     <div class='pre p1 fill-light mt0'>accountStatistics(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -9391,7 +9404,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a list of all currently active symbols (underlying markets upon which contracts are available for trading).</p>
+
     <div class='pre p1 fill-light mt0'>activeSymbols(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -9519,7 +9533,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call opens a new affiliate account. This call can be used as as sign up endpoint.</p>
+
     <div class='pre p1 fill-light mt0'>affiliateAccountAdd(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -9858,7 +9873,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call manages API tokens</p>
+
     <div class='pre p1 fill-light mt0'>apiToken(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10003,7 +10019,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>The request for deleting an application.</p>
+
     <div class='pre p1 fill-light mt0'>appDelete(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10111,7 +10128,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>To get the information of the OAuth application specified by 'app_id'</p>
+
     <div class='pre p1 fill-light mt0'>appGet(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10219,7 +10237,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>List all of the account's OAuth applications</p>
+
     <div class='pre p1 fill-light mt0'>appList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10328,7 +10347,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve details of <code>app_markup</code> according to criteria specified.</p>
+
     <div class='pre p1 fill-light mt0'>appMarkupDetails(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10526,7 +10546,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Register a new OAuth application</p>
+
     <div class='pre p1 fill-light mt0'>appRegister(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10718,7 +10739,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Update a new OAuth application</p>
+
     <div class='pre p1 fill-light mt0'>appUpdate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -10909,7 +10931,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a list of all available underlyings and the corresponding contract types and duration boundaries. If the user is logged in, only the assets available for that user's landing company will be returned.</p>
+
     <div class='pre p1 fill-light mt0'>assetIndex(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11027,7 +11050,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Authorize current WebSocket session to act on behalf of the owner of a given token. Must precede requests that need to access client account, for example purchasing and selling contracts or viewing portfolio.</p>
+
     <div class='pre p1 fill-light mt0'>authorize(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11147,7 +11171,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get user account balance</p>
+
     <div class='pre p1 fill-light mt0'>balance(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11278,7 +11303,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Buy a Contract</p>
+
     <div class='pre p1 fill-light mt0'>buy(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11423,7 +11449,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Buy a Contract for multiple Accounts specified by the <code>tokens</code> parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.</p>
+
     <div class='pre p1 fill-light mt0'>buyContractForMultipleAccounts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11566,7 +11593,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Cancel contract with contract id</p>
+
     <div class='pre p1 fill-light mt0'>cancel(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11678,7 +11706,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Request the cashier info for the specified type.</p>
+
     <div class='pre p1 fill-light mt0'>cashier(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11860,7 +11889,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>List pending transactions. This can only be used for crypto transactions.</p>
+
     <div class='pre p1 fill-light mt0'>cashierPayments(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -11998,7 +12028,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Request for cancelling a withdrawal. This can only be used for crypto transactions.</p>
+
     <div class='pre p1 fill-light mt0'>cashierWithdrawalCancel(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12116,7 +12147,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Change Password. Note: This call is only available when authenticated using an OAuth token.</p>
+
     <div class='pre p1 fill-light mt0'>changePassword(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12243,7 +12275,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Update a contract condition.</p>
+
     <div class='pre p1 fill-light mt0'>contractUpdate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12372,7 +12405,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Request for contract update history.</p>
+
     <div class='pre p1 fill-light mt0'>contractUpdateHistory(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12499,7 +12533,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.</p>
+
     <div class='pre p1 fill-light mt0'>contractsFor(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12638,7 +12673,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Start copy trader bets</p>
+
     <div class='pre p1 fill-light mt0'>copyStart(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12782,7 +12818,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Stop copy trader bets</p>
+
     <div class='pre p1 fill-light mt0'>copyStop(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12890,7 +12927,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieves a list of active copiers and/or traders for Copy Trading</p>
+
     <div class='pre p1 fill-light mt0'>copytradingList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -12999,7 +13037,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve performance, trading, risk and copiers statistics of trader.</p>
+
     <div class='pre p1 fill-light mt0'>copytradingStatistics(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13109,6 +13148,125 @@ in this codebase.</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='cryptoconfig'>
+      cryptoConfig
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The request for cryptocurrencies configuration.</p>
+
+    <div class='pre p1 fill-light mt0'>cryptoConfig(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.crypto_config</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 
+<code>1</code>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.currency_code</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Cryptocurrency code. Sending request with currency_code provides crypto config for the sent cryptocurrency code only.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='documentupload'>
       documentUpload
     </h3>
@@ -13117,7 +13275,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Request KYC information from client</p>
+
     <div class='pre p1 fill-light mt0'>documentUpload(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13307,7 +13466,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Specify a currency to receive a list of events related to that specific currency. For example, specifying USD will return a list of USD-related events. If the currency is omitted, you will receive a list for all currencies.</p>
+
     <div class='pre p1 fill-light mt0'>economicCalendar(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13443,7 +13603,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieves the exchange rates from a base currency to all currencies supported by the system.</p>
+
     <div class='pre p1 fill-light mt0'>exchangeRates(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13563,7 +13724,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Immediately cancel the real-time stream of messages with a specific ID.</p>
+
     <div class='pre p1 fill-light mt0'>forget(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13671,7 +13833,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Immediately cancel the real-time streams of messages of given type.</p>
+
     <div class='pre p1 fill-light mt0'>forgetAll(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13783,7 +13946,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get Account Status</p>
+
     <div class='pre p1 fill-light mt0'>getAccountStatus(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -13892,7 +14056,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call gets the financial assessment details. The 'financial assessment' is a questionnaire that clients of certain Landing Companies need to complete, due to regulatory and KYC (know your client) requirements.</p>
+
     <div class='pre p1 fill-light mt0'>getFinancialAssessment(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14001,7 +14166,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Trading and Withdrawal Limits for a given user</p>
+
     <div class='pre p1 fill-light mt0'>getLimits(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14110,7 +14276,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities. This facility is a regulatory requirement for certain Landing Companies.</p>
+
     <div class='pre p1 fill-light mt0'>getSelfExclusion(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14219,7 +14386,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get User Settings (email, date of birth, address etc)</p>
+
     <div class='pre p1 fill-light mt0'>getSettings(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14328,7 +14496,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Adds document information such as issuing country, id and type for identity verification processes.</p>
+
     <div class='pre p1 fill-light mt0'>identityVerificationDocumentAdd(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14470,7 +14639,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>The company has a number of licensed subsidiaries in various jurisdictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for Gaming contracts (Synthetic Indices) and Financial contracts (Forex, Stock Indices, Commodities).</p>
+
     <div class='pre p1 fill-light mt0'>landingCompany(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14580,7 +14750,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>The company has a number of licensed subsidiaries in various jurisdictions, which are called Landing Companies (and which are wholly owned subsidiaries of the Deriv Group). This call provides information about each Landing Company.</p>
+
     <div class='pre p1 fill-light mt0'>landingCompanyDetails(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14688,7 +14859,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Link a wallet to a trading app.</p>
+
     <div class='pre p1 fill-light mt0'>linkWallet(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14815,7 +14987,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a summary of login history for user.</p>
+
     <div class='pre p1 fill-light mt0'>loginHistory(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -14933,7 +15106,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Logout the session</p>
+
     <div class='pre p1 fill-light mt0'>logout(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15042,7 +15216,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call allows deposit into MT5 account from Binary account.</p>
+
     <div class='pre p1 fill-light mt0'>mt5Deposit(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15178,7 +15353,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get MT5 user account settings</p>
+
     <div class='pre p1 fill-light mt0'>mt5GetSettings(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15296,7 +15472,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get list of MT5 accounts for client</p>
+
     <div class='pre p1 fill-light mt0'>mt5LoginList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15405,7 +15582,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call creates new MT5 user, either demo or real money user.</p>
+
     <div class='pre p1 fill-light mt0'>mt5NewAccount(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15687,7 +15865,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>To change passwords of the MT5 account.</p>
+
     <div class='pre p1 fill-light mt0'>mt5PasswordChange(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15832,7 +16011,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call validates the main password for the MT5 user</p>
+
     <div class='pre p1 fill-light mt0'>mt5PasswordCheck(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -15968,7 +16148,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>To reset the password of MT5 account.</p>
+
     <div class='pre p1 fill-light mt0'>mt5PasswordReset(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -16115,7 +16296,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call allows withdrawal from MT5 account to Binary account.</p>
+
     <div class='pre p1 fill-light mt0'>mt5Withdrawal(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -16251,7 +16433,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call opens a new real-money account with the <code>maltainvest</code> Landing Company. This call can be made from a virtual-money account or real-money account at Deriv (Europe) Limited. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.</p>
+
     <div class='pre p1 fill-light mt0'>newAccountMaltainvest(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -16723,7 +16906,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call opens a new real-money account. This call can be made from a virtual-money or a real-money account. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.</p>
+
     <div class='pre p1 fill-light mt0'>newAccountReal(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -17053,7 +17237,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Create a new virtual-money account.</p>
+
     <div class='pre p1 fill-light mt0'>newAccountVirtual(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -17357,7 +17542,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Create a new account real-money wallet account.</p>
+
     <div class='pre p1 fill-light mt0'>newAccountWallet(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -17582,7 +17768,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Notify the backend about a specific event.</p>
+
     <div class='pre p1 fill-light mt0'>notificationEvent(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -17720,7 +17907,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>List all my used OAuth applications.</p>
+
     <div class='pre p1 fill-light mt0'>oauthApps(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -17829,7 +18017,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Creates a P2P (Peer to Peer) advert. Can only be used by an approved P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -17877,7 +18066,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.contact_info</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Advertiser contact information. Only applicable for 'sell adverts'.
+  <td class='break-word'><span>[Optional] Advertiser contact information.
 </span></td>
 </tr>
 
@@ -17906,9 +18095,8 @@ in this codebase.</p>
   </td>
   <td class='break-word'><span>Maximum allowed amount for the orders of this advert, in advertiser's 
 <code>account_currency</code>
-. Should be less than or equal to total 
-<code>amount</code>
- of the advert.
+. Should be more than or equal to 
+<code>min_order_amount</code>
 </span></td>
 </tr>
 
@@ -17919,7 +18107,7 @@ in this codebase.</p>
   </td>
   <td class='break-word'><span>Minimum allowed amount for the orders of this advert, in advertiser's 
 <code>account_currency</code>
-. Should be less than 
+. Should be less than or equal to 
 <code>max_order_amount</code>
 .
 </span></td>
@@ -17950,7 +18138,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.payment_info</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Payment instructions. Only applicable for 'sell adverts'.
+  <td class='break-word'><span>[Optional] Payment instructions.
 </span></td>
 </tr>
 
@@ -17959,7 +18147,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.payment_method</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Supported payment methods. Separate multiple values with a comma, maximum 3.
+  <td class='break-word'><span>[Optional] Payment method name (deprecated).
 </span></td>
 </tr>
 
@@ -17968,7 +18156,16 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.payment_method_ids</span> <code class='quiet'>Any</code>
   </td>
-  <td class='break-word'><span>IDs of payment methods, only applicable for sell ads.
+  <td class='break-word'><span>IDs of previously saved payment methods as returned from p2p_advertiser_payment_methods, only applicable for sell ads.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.payment_method_names</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>Payment method identifiers as returned from p2p_payment_methods, only applicable for buy ads.
 </span></td>
 </tr>
 
@@ -17997,7 +18194,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.type</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Whether this is a buy or a sell.
+  <td class='break-word'><span>The advertisement represents the intention to perform this action on your Deriv account funds.
 </span></td>
 </tr>
 
@@ -18046,7 +18243,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve information about a P2P advert. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertInfo(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -18181,7 +18379,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Returns available adverts for use with <code>p2p_order_create</code>. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -18390,7 +18589,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Updates a P2P advert. Can only be used by the advertiser. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertUpdate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -18427,9 +18627,27 @@ in this codebase.</p>
             <tbody class='mt1'>
               
                 <tr>
+  <td class='break-word'><span class='code bold'>args.contact_info</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Advertiser contact information.
+</span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>args.delete</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>[Optional] If set to 1, permanently deletes the advert.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.description</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] General information about the advert.
 </span></td>
 </tr>
 
@@ -18448,6 +18666,41 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.is_active</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>[Optional] Activate or deactivate the advert.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.local_currency</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Local currency for this advert.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.max_order_amount</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Maximum allowed amount for the orders of this advert, in advertiser's 
+<code>account_currency</code>
+. Should be more than or equal to 
+<code>min_order_amount</code>
+.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.min_order_amount</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Minimum allowed amount for the orders of this advert, in advertiser's 
+<code>account_currency</code>
+. Should be less than or equal to 
+<code>max_order_amount</code>
+.
 </span></td>
 </tr>
 
@@ -18474,9 +18727,9 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.payment_method</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.payment_info</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Supported payment methods. Separate multiple values with a comma, maximum 3.
+  <td class='break-word'><span>[Optional] Payment instructions.
 </span></td>
 </tr>
 
@@ -18485,7 +18738,36 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.payment_method_ids</span> <code class='quiet'>Any</code>
   </td>
-  <td class='break-word'><span>[Optional] IDs of payment methods, only applicable for sell ads. Will replace exisiting methods.
+  <td class='break-word'><span>[Optional] IDs of previously saved payment methods as returned from p2p_advertiser_payment_methods, only applicable for sell ads. Exisiting methods will be replaced.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.payment_method_names</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Payment method identifiers as returned from p2p_payment_methods, only applicable for buy ads. Exisiting methods will be replaced.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.rate</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Conversion rate from advertiser's account currency to 
+<code>local_currency</code>
+.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.remaining_amount</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] The total available amount of the advert, in advertiser's account currency.
 </span></td>
 </tr>
 
@@ -18543,7 +18825,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Returns all P2P adverts created by the authorized client. Can only be used by a registered P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertiserAdverts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -18669,7 +18952,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Registers the client as a P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertiserCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -18822,7 +19106,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve information about a P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertiserInfo(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -18948,7 +19233,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Manage or list P2P advertiser payment methods.</p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertiserPaymentMethods(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19083,7 +19369,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Updates and returns favourite and blocked advertisers of the current user.</p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertiserRelations(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19227,7 +19514,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Update the information of the P2P advertiser for the current account. Can only be used by an approved P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pAdvertiserUpdate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19386,7 +19674,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Creates a P2P chat for the specified order. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pChatCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19503,7 +19792,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Cancel a P2P order. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pOrderCancel(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19620,7 +19910,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Confirm a P2P order. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pOrderConfirm(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19737,7 +20028,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Creates a P2P order for the specified advert. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pOrderCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -19899,7 +20191,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Dispute a P2P order. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pOrderDispute(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20025,7 +20318,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieves the information about a P2P order. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pOrderInfo(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20151,7 +20445,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>List active orders. <strong>This API call is still in Beta.</strong></p>
+
     <div class='pre p1 fill-light mt0'>p2pOrderList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20304,7 +20599,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>List all P2P payment methods.</p>
+
     <div class='pre p1 fill-light mt0'>p2pPaymentMethods(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20412,7 +20708,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Will return a list payment methods available for the given country. If the request is authenticated the client's residence country will be used.</p>
+
     <div class='pre p1 fill-light mt0'>paymentMethods(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20530,7 +20827,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Saves client's payment agent details.</p>
+
     <div class='pre p1 fill-light mt0'>paymentagentCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20728,7 +21026,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Gets client's payment agent details.</p>
+
     <div class='pre p1 fill-light mt0'>paymentagentDetails(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20836,7 +21135,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Will return a list of Payment Agents for a given country for a given currency. Payment agents allow users to deposit and withdraw funds using local payment methods that might not be available via the main website's cashier system.</p>
+
     <div class='pre p1 fill-light mt0'>paymentagentList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -20957,7 +21257,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.</p>
+
     <div class='pre p1 fill-light mt0'>paymentagentTransfer(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -21113,7 +21414,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Initiate a withdrawal to an approved Payment Agent.</p>
+
     <div class='pre p1 fill-light mt0'>paymentagentWithdraw(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -21280,7 +21582,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for the account will be returned.</p>
+
     <div class='pre p1 fill-light mt0'>payoutCurrencies(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -21389,7 +21692,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>To send the ping request to the server. Mostly used to test the connection or to keep it alive.</p>
+
     <div class='pre p1 fill-light mt0'>ping(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -21498,7 +21802,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Receive information about my current portfolio of outstanding options</p>
+
     <div class='pre p1 fill-light mt0'>portfolio(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -21616,7 +21921,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a summary of account Profit Table, according to given search criteria</p>
+
     <div class='pre p1 fill-light mt0'>profitTable(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -21788,7 +22094,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Gets latest price for a specific contract.</p>
+
     <div class='pre p1 fill-light mt0'>proposal(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22099,7 +22406,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get latest price (and other information) for a contract in the user's portfolio</p>
+
     <div class='pre p1 fill-light mt0'>proposalOpenContract(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22230,7 +22538,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve summary of client's trades and account for the Reality Check facility. A 'reality check' means a display of time elapsed since the session began, and associated client profit/loss. The Reality Check facility is a regulatory requirement for certain landing companies.</p>
+
     <div class='pre p1 fill-light mt0'>realityCheck(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22339,7 +22648,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Send report to client's registered e-mail</p>
+
     <div class='pre p1 fill-light mt0'>requestReport(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22475,7 +22785,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Reset Password.</p>
+
     <div class='pre p1 fill-light mt0'>resetPassword(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22615,7 +22926,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call returns a list of countries and 2-letter country codes, suitable for populating the account opening form.</p>
+
     <div class='pre p1 fill-light mt0'>residenceList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22724,7 +23036,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Used for revoking access of particular app.</p>
+
     <div class='pre p1 fill-light mt0'>revokeOauthApp(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22832,7 +23145,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Sell a Contract as identified from a previous <code>portfolio</code> call.</p>
+
     <div class='pre p1 fill-light mt0'>sell(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -22953,7 +23267,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Sell contracts for multiple accounts simultaneously. Uses the shortcode response from <code>buy_contract_for_multiple_accounts</code> to identify the contract, and authorisation tokens to select which accounts to sell those contracts on. Note that only the accounts identified by the tokens will be affected. This will not sell the contract on the currently-authorised account unless you include the token for the current account.</p>
+
     <div class='pre p1 fill-light mt0'>sellContractForMultipleAccounts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -23095,7 +23410,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call will try to sell any expired contracts and return the number of sold contracts.</p>
+
     <div class='pre p1 fill-light mt0'>sellExpired(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -23204,7 +23520,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieves the authorization token for the specified service.</p>
+
     <div class='pre p1 fill-light mt0'>serviceToken(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -23349,7 +23666,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Set account currency, this will be default currency for your account i.e currency for trading, deposit. Please note that account currency can only be set once, and then can never be changed.</p>
+
     <div class='pre p1 fill-light mt0'>setAccountCurrency(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -23459,7 +23777,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call sets the financial assessment details based on the client's answers to analyze whether they possess the experience and knowledge to understand the risks involved with binary options trading.</p>
+
     <div class='pre p1 fill-light mt0'>setFinancialAssessment(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -23721,7 +24040,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Set Self-Exclusion (this call should be used in conjunction with <code>get_self_exclusion</code>)</p>
+
     <div class='pre p1 fill-light mt0'>setSelfExclusion(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -23958,7 +24278,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Set User Settings (this call should be used in conjunction with <code>get_settings</code>)</p>
+
     <div class='pre p1 fill-light mt0'>setSettings(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -24287,7 +24608,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a summary of account transactions, according to given search criteria</p>
+
     <div class='pre p1 fill-light mt0'>statement(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -24450,7 +24772,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>For a given country, returns a list of States of that country. This is useful to populate the account opening form.</p>
+
     <div class='pre p1 fill-light mt0'>statesList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -24560,7 +24883,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Initiate a continuous stream of spot price updates for a given symbol.</p>
+
     <div class='pre p1 fill-light mt0'>ticks(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -24679,7 +25003,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get historic tick data for a given symbol.</p>
+
     <div class='pre p1 fill-light mt0'>ticksHistory(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -24862,7 +25187,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Request back-end server epoch time.</p>
+
     <div class='pre p1 fill-light mt0'>time(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -24971,7 +25297,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>To approve the latest version of terms and conditions.</p>
+
     <div class='pre p1 fill-light mt0'>tncApproval(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25006,6 +25333,15 @@ in this codebase.</p>
               </tr>
             </thead>
             <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.affiliate_coc_agreement</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] For Affiliate's Code of Conduct Agreement.
+</span></td>
+</tr>
+
+
               
                 <tr>
   <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
@@ -25093,7 +25429,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>When a virtual-money's account balance becomes low, it can be topped up using this call.</p>
+
     <div class='pre p1 fill-light mt0'>topupVirtual(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25202,7 +25539,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Retrieve a list of all available underlyings and the corresponding contract types and trading duration boundaries. If the user is logged in, only the assets available for that user's landing company will be returned.</p>
+
     <div class='pre p1 fill-light mt0'>tradingDurations(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25320,7 +25658,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get list of Trading Platform accounts for client</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformAccounts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25438,7 +25777,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Deposit funds from wallet account to trading platform account</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformDeposit(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25583,7 +25923,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Change the Trading Platform investor password</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformInvestorPasswordChange(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25728,7 +26069,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Reset the investor password of a Trading Platform Account</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformInvestorPasswordReset(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -25875,7 +26217,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call creates new Trading account, either demo or real money.</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformNewAccount(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26047,7 +26390,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Change the Trading Platform password</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformPasswordChange(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26183,7 +26527,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Reset the password of a Trading Platform Account</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformPasswordReset(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26321,7 +26666,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call allows withdrawal from Trading account to a wallet account.</p>
+
     <div class='pre p1 fill-light mt0'>tradingPlatformWithdrawal(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26466,7 +26812,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Get the list of servers for a trading platform.</p>
+
     <div class='pre p1 fill-light mt0'>tradingServers(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26611,7 +26958,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Receive a list of market opening times for a given date.</p>
+
     <div class='pre p1 fill-light mt0'>tradingTimes(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26723,7 +27071,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Subscribe to transaction notifications</p>
+
     <div class='pre p1 fill-light mt0'>transaction(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -26841,7 +27190,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>This call allows transfers between accounts held by a given user. Transfer funds between your fiat and cryptocurrency accounts (for a fee). Please note that account_from should be same as current authorized account.</p>
+
     <div class='pre p1 fill-light mt0'>transferBetweenAccounts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -27010,7 +27360,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.</p>
+
     <div class='pre p1 fill-light mt0'>verifyEmail(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
@@ -27138,7 +27489,8 @@ in this codebase.</p>
   </div>
   
 
-  
+  <p>Request server status.</p>
+
     <div class='pre p1 fill-light mt0'>websiteStatus(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   

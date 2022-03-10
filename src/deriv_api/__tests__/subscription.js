@@ -6,7 +6,6 @@ import {
 import { Observable }    from 'rxjs';
 
 import { TestWebSocket } from '../../test_utils';
-
 import DerivAPIBasic     from '../DerivAPIBasic';
 
 let api;
@@ -38,7 +37,7 @@ test('Subscribe with api.subscribe should return an Observable', async () => {
     expect(mock_fn).toHaveBeenCalledTimes(0);
 
     connection.receiveLater('tick', {
-        ask   : 1600.29, bid   : 1599.89, epoch : 1564978428, id    : 'b7ba02da-353e-2189-d6f3-3d8907ad7109', quote : 1600.09, symbol: 'R_100',
+        ask: 1600.29, bid: 1599.89, epoch: 1564978428, id: 'b7ba02da-353e-2189-d6f3-3d8907ad7109', quote: 1600.09, symbol: 'R_100',
     });
 
     const two_responses = await source

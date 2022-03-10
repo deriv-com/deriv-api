@@ -14,20 +14,20 @@ module.exports = [
             path         : path.resolve(__dirname, 'dist'),
         },
         module: {
-            rules : [
+            rules: [
                 {
-                    test: /\.js$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
-                    use: {
+                    use    : {
                         loader: 'babel-loader',
-                    }
+                    },
                 },
-            ]
+            ],
         },
     },
     {
         plugins: [
-            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+            new webpack.IgnorePlugin({ resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/ }),
         ],
         mode  : 'production',
         entry : './src/DerivAPI.js',
@@ -40,15 +40,15 @@ module.exports = [
             path         : path.resolve(__dirname, 'dist'),
         },
         module: {
-            rules : [
+            rules: [
                 {
-                    test: /\.js$/,
+                    test   : /\.js$/,
                     exclude: /node_modules/,
-                    use: {
+                    use    : {
                         loader: 'babel-loader',
-                    }
+                    },
                 },
-            ]
+            ],
         },
     },
 ];

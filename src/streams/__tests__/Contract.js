@@ -114,7 +114,7 @@ test('Receiving contract updates while open', async () => {
     expect(contract.symbol.short).toBe(underlying);
     expect(contract.symbol.long).toBe(display_name);
 
-    const checkFieldInPoc = field => expect(contract[field])
+    const checkFieldInPoc = (field) => expect(contract[field])
         .toBe(response.proposal_open_contract[field]);
 
     checkFieldInPoc('currency');

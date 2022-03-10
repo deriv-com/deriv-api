@@ -21,7 +21,7 @@ test('Request for a candles history', async () => {
     expect(candles).toHaveLength(count);
     expect(candles.slice(-1)[0]).toBeInstanceOf(Candle);
     response.ticks_history.push({
-        close: 1595.05, epoch: 1564977240, high : 1595.28, low  : 1591.06, open : 1591.56,
+        close: 1595.05, epoch: 1564977240, high: 1595.28, low: 1591.06, open: 1591.56,
     });
 
     const old_candles = await candle_stream.history({ count: 3, end: new Date() });
@@ -35,7 +35,7 @@ test('list stays up to date with the last candle', async () => {
     const last_candle = candle_stream.list.slice(-1)[0];
 
     connection.receiveLater('ohlc', {
-        close      : '1595.00', epoch      : 1564977284, granularity: 60, high       : '1595.28', id         : '28ab4e47-bc20-ee92-572f-1d8dd07fa283', low        : '1591.06', open       : '1591.56', open_time  : 1564977240, symbol     : 'R_100',
+        close: '1595.00', epoch: 1564977284, granularity: 60, high: '1595.28', id: '28ab4e47-bc20-ee92-572f-1d8dd07fa283', low: '1591.06', open: '1591.56', open_time: 1564977240, symbol: 'R_100',
     });
     const recent_candle = await candle_stream.onUpdate().pipe(first()).toPromise();
 
@@ -57,9 +57,9 @@ test('Check individual candles', async () => {
 
 beforeAll(async () => {
     response.ticks_history = [{
-        close: 1590.87, epoch: 1564977120, high : 1592.93, low  : 1589.75, open : 1589.75,
+        close: 1590.87, epoch: 1564977120, high: 1592.93, low: 1589.75, open: 1589.75,
     }, {
-        close: 1591.28, epoch: 1564977180, high : 1591.36, low  : 1589.72, open : 1590.52,
+        close: 1591.28, epoch: 1564977180, high: 1591.36, low: 1589.72, open: 1590.52,
     }];
 
     connection = new TestWebSocket({

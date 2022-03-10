@@ -31,7 +31,7 @@ export default class Balance extends Stream {
         this._data.amount = wrapBalance({ balance: initial_balance }, this.api.basic.lang);
 
         const source = this.api.basic.subscribe({ balance: 1 })
-            .pipe(map(b => wrapBalance(b, this.api.basic.lang)), share());
+            .pipe(map((b) => wrapBalance(b, this.api.basic.lang)), share());
 
         this._data.amount = await source.pipe(first()).toPromise();
 

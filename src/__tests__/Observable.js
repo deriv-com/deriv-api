@@ -53,7 +53,7 @@ test('Subject (with source.next)', async () => {
 test('Observable throwing error', async () => {
     const error_source = new Subject();
 
-    error_source.pipe(catchError(e => expect(e).toBeInstanceOf(Error)));
+    error_source.pipe(catchError((e) => expect(e).toBeInstanceOf(Error)));
 
     const promise = error_source.toPromise();
 

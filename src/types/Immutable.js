@@ -14,6 +14,7 @@ export default class Immutable {
         this._data = {};
 
         // Don't allow any other change, every other property can be added to _data
+        // eslint-disable-next-line no-constructor-return
         return new Proxy(Object.freeze(this), {
             get(target, name) {
                 if (name in target) {

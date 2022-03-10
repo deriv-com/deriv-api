@@ -11,11 +11,11 @@ import Immutable           from '../types/Immutable';
 export default class Duration extends Immutable {
     constructor(duration) {
         const [, value, unit] = duration.split(/(\d+)/);
+        // eslint-disable-next-line no-constructor-return
         if (!value || !unit) return undefined;
 
         super({ value, unit });
     }
-
 
     /**
      * Adds this duration to a date object

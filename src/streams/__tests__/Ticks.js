@@ -31,7 +31,7 @@ test('list stays up to date with the last tick', async () => {
     const last_tick = ticks.list.slice(-1)[0];
 
     connection.receiveLater('tick', {
-        ask   : 1587.35, bid   : 1586.95, epoch : 1564977006, id    : '5fcb61fe-af4e-d2ba-d8df-64f9f2dd8868', quote : 1587.15, symbol: 'R_100',
+        ask: 1587.35, bid: 1586.95, epoch: 1564977006, id: '5fcb61fe-af4e-d2ba-d8df-64f9f2dd8868', quote: 1587.15, symbol: 'R_100',
     });
 
     const recent_tick = await ticks.onUpdate().pipe(first()).toPromise();

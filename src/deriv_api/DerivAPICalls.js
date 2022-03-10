@@ -5855,13 +5855,13 @@ export default class DerivAPICalls {
 // ----- Helper Methods -----
 // ==========================
 
-const isObject = value => value instanceof Object;
+const isObject = (value) => value instanceof Object;
 
 const typeCheckers = {
     object : isObject,
-    numeric: value => !Number.isNaN(value * 1),
-    string : value => typeof value === 'string',
-    boolean: value => [true, false, 0, 1].includes(value),
+    numeric: (value) => !Number.isNaN(value * 1),
+    string : (value) => typeof value === 'string',
+    boolean: (value) => [true, false, 0, 1].includes(value),
 };
 
 function parseArgs({
@@ -5900,7 +5900,7 @@ function validateArgs({ config, args }) {
     const errorMessages = [];
 
     const missing = Object.keys(config).filter(
-        key => (config[key] || {}).required && !(key in args),
+        (key) => (config[key] || {}).required && !(key in args),
     );
 
     if (missing.length) {

@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 export function errorFactory(type) {
     return class GenericError extends Error {
         constructor(message) {

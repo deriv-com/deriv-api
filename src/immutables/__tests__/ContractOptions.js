@@ -8,7 +8,6 @@ const response = {};
 let contract_options;
 let category;
 
-
 test('Contract options has all the valid options', () => {
     expect(contract_options).toBeInstanceOf(ContractOptions);
     expect(() => { contract_options.categories = []; }).toThrow(Error);

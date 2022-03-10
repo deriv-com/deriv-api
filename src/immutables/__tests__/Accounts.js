@@ -72,7 +72,7 @@ test('Account with invalid token', async () => {
 
     const new_account = new Account(api, invalid_token);
 
-    await new_account.init().catch(error => expect(error).rejects);
+    await new_account.init().catch((error) => expect(error).rejects);
 });
 
 beforeAll(async () => {

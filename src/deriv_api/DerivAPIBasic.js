@@ -119,6 +119,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
     disconnect() {
         this.shouldReconnect = false; // prevents re-connecting automatically
+        if (this.keep_alive_interval) {
+            clearInterval(this.keep_alive_interval);
+            this.keep_alive_interval = false;
+        }
         this.connection.close();
     }
 

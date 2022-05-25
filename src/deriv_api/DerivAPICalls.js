@@ -5864,7 +5864,7 @@ const typeCheckers = {
     boolean: (value) => [true, false, 0, 1].includes(value),
 };
 
-function parseArgs({
+export function parseArgs({
     config, args, method, needsMethodArg,
 }) {
     let parsedArgs = args;

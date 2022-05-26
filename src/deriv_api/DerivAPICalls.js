@@ -5864,7 +5864,7 @@ const typeCheckers = {
     boolean: (value) => [true, false, 0, 1].includes(value),
 };
 
-function parseArgs({
+export function parseArgs({
     config, args, method, needsMethodArg,
 }) {
     let parsedArgs = args;
@@ -5883,7 +5883,7 @@ function parseArgs({
         if (config[param].type === 'string') {
             parsedArgs[param] = `${value}`;
         } else if (config[param].type === 'numeric') {
-            parsedArgs[param] = parseInt(value, 10);
+            parsedArgs[param] = parseFloat(value);
         } else if (config[param].type === 'boolean') {
             parsedArgs[param] = +value;
         }

@@ -21,19 +21,19 @@ export default class DerivAPICalls {
      */
     accountClosure(args = {}) {
         const config = {
-            'account_closure' : {
-               'required' : 1,
-               'type' : 'numeric'
+            account_closure: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'reason' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            reason     : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'account_closure',
@@ -56,21 +56,21 @@ export default class DerivAPICalls {
      */
     accountSecurity(args = {}) {
         const config = {
-            'account_security' : {
-               'required' : 1,
-               'type' : 'numeric'
+            account_security: {
+                required: 1,
+                type    : 'numeric',
             },
-            'otp' : {
-               'type' : 'string'
+            otp: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'totp_action' : {
-               'type' : 'string'
-            }
-         };
+            totp_action: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'account_security',
@@ -91,15 +91,15 @@ export default class DerivAPICalls {
      */
     accountStatistics(args = {}) {
         const config = {
-            'account_statistics' : {
-               'required' : 1,
-               'type' : 'numeric'
+            account_statistics: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'account_statistics',
@@ -122,21 +122,21 @@ export default class DerivAPICalls {
      */
     activeSymbols(args = {}) {
         const config = {
-            'active_symbols' : {
-               'required' : 1,
-               'type' : 'string'
+            active_symbols: {
+                required: 1,
+                type    : 'string',
             },
-            'landing_company' : {
-               'type' : 'string'
+            landing_company: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'product_type' : {
-               'type' : 'string'
+            passthrough : {},
+            product_type: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'active_symbols',
@@ -170,66 +170,66 @@ export default class DerivAPICalls {
      */
     affiliateAccountAdd(args = {}) {
         const config = {
-            'address_city' : {
-               'required' : 1,
-               'type' : 'string'
+            address_city: {
+                required: 1,
+                type    : 'string',
             },
-            'address_line_1' : {
-               'required' : 1,
-               'type' : 'string'
+            address_line_1: {
+                required: 1,
+                type    : 'string',
             },
-            'address_line_2' : {
-               'type' : 'string'
+            address_line_2: {
+                type: 'string',
             },
-            'address_postcode' : {
-               'required' : 1,
-               'type' : 'string'
+            address_postcode: {
+                required: 1,
+                type    : 'string',
             },
-            'address_state' : {
-               'required' : 1,
-               'type' : 'string'
+            address_state: {
+                required: 1,
+                type    : 'string',
             },
-            'affiliate_account_add' : {
-               'required' : 1,
-               'type' : 'numeric'
+            affiliate_account_add: {
+                required: 1,
+                type    : 'numeric',
             },
-            'country' : {
-               'required' : 1,
-               'type' : 'string'
+            country: {
+                required: 1,
+                type    : 'string',
             },
-            'first_name' : {
-               'required' : 1,
-               'type' : 'string'
+            first_name: {
+                required: 1,
+                type    : 'string',
             },
-            'last_name' : {
-               'required' : 1,
-               'type' : 'string'
+            last_name: {
+                required: 1,
+                type    : 'string',
             },
-            'non_pep_declaration' : {
-               'required' : 1,
-               'type' : 'numeric'
+            non_pep_declaration: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'password' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            password   : {
+                required: 1,
+                type    : 'string',
             },
-            'phone' : {
-               'required' : 1,
-               'type' : 'string'
+            phone: {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'tnc_accepted' : {
-               'required' : 1,
-               'type' : 'numeric'
+            tnc_accepted: {
+                required: 1,
+                type    : 'numeric',
             },
-            'username' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            username: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'affiliate_account_add',
@@ -254,25 +254,25 @@ export default class DerivAPICalls {
      */
     apiToken(args = {}) {
         const config = {
-            'api_token' : {
-               'required' : 1,
-               'type' : 'numeric'
+            api_token: {
+                required: 1,
+                type    : 'numeric',
             },
-            'delete_token' : {
-               'type' : 'string'
+            delete_token: {
+                type: 'string',
             },
-            'new_token' : {
-               'type' : 'string'
+            new_token: {
+                type: 'string',
             },
-            'new_token_scopes' : {},
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            new_token_scopes: {},
+            passthrough     : {},
+            req_id          : {
+                type: 'numeric',
             },
-            'valid_for_current_ip_only' : {
-               'type' : 'numeric'
-            }
-         };
+            valid_for_current_ip_only: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'api_token',
@@ -293,15 +293,15 @@ export default class DerivAPICalls {
      */
     appDelete(args = {}) {
         const config = {
-            'app_delete' : {
-               'required' : 1,
-               'type' : 'numeric'
+            app_delete: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'app_delete',
@@ -322,15 +322,15 @@ export default class DerivAPICalls {
      */
     appGet(args = {}) {
         const config = {
-            'app_get' : {
-               'required' : 1,
-               'type' : 'numeric'
+            app_get: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'app_get',
@@ -351,15 +351,15 @@ export default class DerivAPICalls {
      */
     appList(args = {}) {
         const config = {
-            'app_list' : {
-               'required' : 1,
-               'type' : 'numeric'
+            app_list: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'app_list',
@@ -389,42 +389,42 @@ export default class DerivAPICalls {
      */
     appMarkupDetails(args = {}) {
         const config = {
-            'app_id' : {
-               'type' : 'numeric'
+            app_id: {
+                type: 'numeric',
             },
-            'app_markup_details' : {
-               'required' : 1,
-               'type' : 'numeric'
+            app_markup_details: {
+                required: 1,
+                type    : 'numeric',
             },
-            'client_loginid' : {
-               'type' : 'string'
+            client_loginid: {
+                type: 'string',
             },
-            'date_from' : {
-               'required' : 1,
-               'type' : 'string'
+            date_from: {
+                required: 1,
+                type    : 'string',
             },
-            'date_to' : {
-               'required' : 1,
-               'type' : 'string'
+            date_to: {
+                required: 1,
+                type    : 'string',
             },
-            'description' : {
-               'type' : 'numeric'
+            description: {
+                type: 'numeric',
             },
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'offset' : {
-               'type' : 'numeric'
+            offset: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'sort' : {
-               'type' : 'string'
+            sort: {
+                type: 'string',
             },
-            'sort_fields' : {}
-         };
+            sort_fields: {},
+        };
 
         const allArgs = {
             method        : 'app_markup_details',
@@ -454,43 +454,43 @@ export default class DerivAPICalls {
      */
     appRegister(args = {}) {
         const config = {
-            'app_markup_percentage' : {
-               'type' : 'numeric'
+            app_markup_percentage: {
+                type: 'numeric',
             },
-            'app_register' : {
-               'required' : 1,
-               'type' : 'numeric'
+            app_register: {
+                required: 1,
+                type    : 'numeric',
             },
-            'appstore' : {
-               'type' : 'string'
+            appstore: {
+                type: 'string',
             },
-            'github' : {
-               'type' : 'string'
+            github: {
+                type: 'string',
             },
-            'googleplay' : {
-               'type' : 'string'
+            googleplay: {
+                type: 'string',
             },
-            'homepage' : {
-               'type' : 'string'
+            homepage: {
+                type: 'string',
             },
-            'name' : {
-               'required' : 1,
-               'type' : 'string'
+            name: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'redirect_uri' : {
-               'type' : 'string'
+            passthrough : {},
+            redirect_uri: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'scopes' : {
-               'required' : 1
+            scopes: {
+                required: 1,
             },
-            'verification_uri' : {
-               'type' : 'string'
-            }
-         };
+            verification_uri: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'app_register',
@@ -520,43 +520,43 @@ export default class DerivAPICalls {
      */
     appUpdate(args = {}) {
         const config = {
-            'app_markup_percentage' : {
-               'type' : 'numeric'
+            app_markup_percentage: {
+                type: 'numeric',
             },
-            'app_update' : {
-               'required' : 1,
-               'type' : 'numeric'
+            app_update: {
+                required: 1,
+                type    : 'numeric',
             },
-            'appstore' : {
-               'type' : 'string'
+            appstore: {
+                type: 'string',
             },
-            'github' : {
-               'type' : 'string'
+            github: {
+                type: 'string',
             },
-            'googleplay' : {
-               'type' : 'string'
+            googleplay: {
+                type: 'string',
             },
-            'homepage' : {
-               'type' : 'string'
+            homepage: {
+                type: 'string',
             },
-            'name' : {
-               'required' : 1,
-               'type' : 'string'
+            name: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'redirect_uri' : {
-               'type' : 'string'
+            passthrough : {},
+            redirect_uri: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'scopes' : {
-               'required' : 1
+            scopes: {
+                required: 1,
             },
-            'verification_uri' : {
-               'type' : 'string'
-            }
-         };
+            verification_uri: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'app_update',
@@ -578,18 +578,18 @@ export default class DerivAPICalls {
      */
     assetIndex(args = {}) {
         const config = {
-            'asset_index' : {
-               'required' : 1,
-               'type' : 'numeric'
+            asset_index: {
+                required: 1,
+                type    : 'numeric',
             },
-            'landing_company' : {
-               'type' : 'string'
+            landing_company: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'asset_index',
@@ -611,18 +611,18 @@ export default class DerivAPICalls {
      */
     authorize(args = {}) {
         const config = {
-            'add_to_login_history' : {
-               'type' : 'numeric'
+            add_to_login_history: {
+                type: 'numeric',
             },
-            'authorize' : {
-               'required' : 1,
-               'type' : 'string'
+            authorize: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'authorize',
@@ -645,21 +645,21 @@ export default class DerivAPICalls {
      */
     balance(args = {}) {
         const config = {
-            'account' : {
-               'type' : 'string'
+            account: {
+                type: 'string',
             },
-            'balance' : {
-               'required' : 1,
-               'type' : 'numeric'
+            balance: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'balance',
@@ -675,7 +675,7 @@ export default class DerivAPICalls {
      * Buy a Contract
      * @param {Object} args
      * @param {String} args.buy - Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.
-     * @param {Any} args.parameters - 
+     * @param {Any} args.parameters -
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
      * @param {Number} args.price - Maximum price at which to purchase the contract.
      * @param {Number} args.req_id - [Optional] Used to map request to response.
@@ -683,89 +683,89 @@ export default class DerivAPICalls {
      */
     buy(args = {}) {
         const config = {
-            'buy' : {
-               'required' : 1,
-               'type' : 'string'
+            buy: {
+                required: 1,
+                type    : 'string',
             },
-            'parameters' : {
-               'amount' : {
-                  'type' : 'numeric'
-               },
-               'app_markup_percentage' : {
-                  'type' : 'numeric'
-               },
-               'barrier' : {
-                  'type' : 'string'
-               },
-               'barrier2' : {
-                  'type' : 'string'
-               },
-               'barrier_range' : {
-                  'type' : 'string'
-               },
-               'basis' : {
-                  'type' : 'string'
-               },
-               'cancellation' : {
-                  'type' : 'string'
-               },
-               'contract_type' : {
-                  'required' : 1,
-                  'type' : 'string'
-               },
-               'currency' : {
-                  'required' : 1,
-                  'type' : 'string'
-               },
-               'date_expiry' : {
-                  'type' : 'numeric'
-               },
-               'date_start' : {
-                  'type' : 'numeric'
-               },
-               'duration' : {
-                  'type' : 'numeric'
-               },
-               'duration_unit' : {
-                  'type' : 'string'
-               },
-               'limit_order' : {
-                  'stop_loss' : {
-                     'type' : 'numeric'
-                  },
-                  'take_profit' : {
-                     'type' : 'numeric'
-                  }
-               },
-               'multiplier' : {
-                  'type' : 'numeric'
-               },
-               'product_type' : {
-                  'type' : 'string'
-               },
-               'selected_tick' : {
-                  'type' : 'numeric'
-               },
-               'symbol' : {
-                  'required' : 1,
-                  'type' : 'string'
-               },
-               'trading_period_start' : {
-                  'type' : 'numeric'
-               }
+            parameters: {
+                amount: {
+                    type: 'numeric',
+                },
+                app_markup_percentage: {
+                    type: 'numeric',
+                },
+                barrier: {
+                    type: 'string',
+                },
+                barrier2: {
+                    type: 'string',
+                },
+                barrier_range: {
+                    type: 'string',
+                },
+                basis: {
+                    type: 'string',
+                },
+                cancellation: {
+                    type: 'string',
+                },
+                contract_type: {
+                    required: 1,
+                    type    : 'string',
+                },
+                currency: {
+                    required: 1,
+                    type    : 'string',
+                },
+                date_expiry: {
+                    type: 'numeric',
+                },
+                date_start: {
+                    type: 'numeric',
+                },
+                duration: {
+                    type: 'numeric',
+                },
+                duration_unit: {
+                    type: 'string',
+                },
+                limit_order: {
+                    stop_loss: {
+                        type: 'numeric',
+                    },
+                    take_profit: {
+                        type: 'numeric',
+                    },
+                },
+                multiplier: {
+                    type: 'numeric',
+                },
+                product_type: {
+                    type: 'string',
+                },
+                selected_tick: {
+                    type: 'numeric',
+                },
+                symbol: {
+                    required: 1,
+                    type    : 'string',
+                },
+                trading_period_start: {
+                    type: 'numeric',
+                },
             },
-            'passthrough' : {},
-            'price' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough: {},
+            price      : {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'buy',
@@ -781,7 +781,7 @@ export default class DerivAPICalls {
      * Buy a Contract for multiple Accounts specified by the `tokens` parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.
      * @param {Object} args
      * @param {String} args.buy_contract_for_multiple_accounts - Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.
-     * @param {Any} args.parameters - 
+     * @param {Any} args.parameters -
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
      * @param {Number} args.price - Maximum price at which to purchase the contract.
      * @param {Number} args.req_id - [Optional] Used to map request to response.
@@ -789,69 +789,69 @@ export default class DerivAPICalls {
      */
     buyContractForMultipleAccounts(args = {}) {
         const config = {
-            'buy_contract_for_multiple_accounts' : {
-               'required' : 1,
-               'type' : 'string'
+            buy_contract_for_multiple_accounts: {
+                required: 1,
+                type    : 'string',
             },
-            'parameters' : {
-               'amount' : {
-                  'type' : 'numeric'
-               },
-               'app_markup_percentage' : {
-                  'type' : 'numeric'
-               },
-               'barrier' : {
-                  'type' : 'string'
-               },
-               'barrier2' : {
-                  'type' : 'string'
-               },
-               'basis' : {
-                  'type' : 'string'
-               },
-               'contract_type' : {
-                  'required' : 1,
-                  'type' : 'string'
-               },
-               'currency' : {
-                  'required' : 1,
-                  'type' : 'string'
-               },
-               'date_expiry' : {
-                  'type' : 'numeric'
-               },
-               'date_start' : {
-                  'type' : 'numeric'
-               },
-               'duration' : {
-                  'type' : 'numeric'
-               },
-               'duration_unit' : {
-                  'type' : 'string'
-               },
-               'multiplier' : {
-                  'type' : 'numeric'
-               },
-               'selected_tick' : {
-                  'type' : 'numeric'
-               },
-               'symbol' : {
-                  'required' : 1,
-                  'type' : 'string'
-               }
+            parameters: {
+                amount: {
+                    type: 'numeric',
+                },
+                app_markup_percentage: {
+                    type: 'numeric',
+                },
+                barrier: {
+                    type: 'string',
+                },
+                barrier2: {
+                    type: 'string',
+                },
+                basis: {
+                    type: 'string',
+                },
+                contract_type: {
+                    required: 1,
+                    type    : 'string',
+                },
+                currency: {
+                    required: 1,
+                    type    : 'string',
+                },
+                date_expiry: {
+                    type: 'numeric',
+                },
+                date_start: {
+                    type: 'numeric',
+                },
+                duration: {
+                    type: 'numeric',
+                },
+                duration_unit: {
+                    type: 'string',
+                },
+                multiplier: {
+                    type: 'numeric',
+                },
+                selected_tick: {
+                    type: 'numeric',
+                },
+                symbol: {
+                    required: 1,
+                    type    : 'string',
+                },
             },
-            'passthrough' : {},
-            'price' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough: {},
+            price      : {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'tokens' : {
-               'required' : 1
-            }
-         };
+            tokens: {
+                required: 1,
+            },
+        };
 
         const allArgs = {
             method        : 'buy_contract_for_multiple_accounts',
@@ -872,15 +872,15 @@ export default class DerivAPICalls {
      */
     cancel(args = {}) {
         const config = {
-            'cancel' : {
-               'required' : 1,
-               'type' : 'numeric'
+            cancel: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'cancel',
@@ -907,33 +907,33 @@ export default class DerivAPICalls {
      */
     cashier(args = {}) {
         const config = {
-            'address' : {
-               'type' : 'string'
+            address: {
+                type: 'string',
             },
-            'amount' : {
-               'type' : 'numeric'
+            amount: {
+                type: 'numeric',
             },
-            'cashier' : {
-               'required' : 1,
-               'type' : 'string'
+            cashier: {
+                required: 1,
+                type    : 'string',
             },
-            'dry_run' : {
-               'type' : 'numeric'
+            dry_run: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'provider' : {
-               'type' : 'string'
+            passthrough: {},
+            provider   : {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'type' : {
-               'type' : 'string'
+            type: {
+                type: 'string',
             },
-            'verification_code' : {
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'cashier',
@@ -957,24 +957,24 @@ export default class DerivAPICalls {
      */
     cashierPayments(args = {}) {
         const config = {
-            'cashier_payments' : {
-               'required' : 1,
-               'type' : 'numeric'
+            cashier_payments: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'provider' : {
-               'type' : 'string'
+            passthrough: {},
+            provider   : {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'transaction_type' : {
-               'type' : 'string'
-            }
-         };
+            transaction_type: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'cashier_payments',
@@ -996,19 +996,19 @@ export default class DerivAPICalls {
      */
     cashierWithdrawalCancel(args = {}) {
         const config = {
-            'cashier_withdrawal_cancel' : {
-               'required' : 1,
-               'type' : 'numeric'
+            cashier_withdrawal_cancel: {
+                required: 1,
+                type    : 'numeric',
             },
-            'id' : {
-               'required' : 1,
-               'type' : 'string'
+            id: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'cashier_withdrawal_cancel',
@@ -1032,26 +1032,26 @@ export default class DerivAPICalls {
      */
     changeEmail(args = {}) {
         const config = {
-            'change_email' : {
-               'required' : 1,
-               'type' : 'string'
+            change_email: {
+                required: 1,
+                type    : 'string',
             },
-            'new_email' : {
-               'required' : 1,
-               'type' : 'string'
+            new_email: {
+                required: 1,
+                type    : 'string',
             },
-            'new_password' : {
-               'type' : 'string'
+            new_password: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'verification_code' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'change_email',
@@ -1074,23 +1074,23 @@ export default class DerivAPICalls {
      */
     changePassword(args = {}) {
         const config = {
-            'change_password' : {
-               'required' : 1,
-               'type' : 'numeric'
+            change_password: {
+                required: 1,
+                type    : 'numeric',
             },
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'old_password' : {
-               'required' : 1,
-               'type' : 'string'
+            old_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'change_password',
@@ -1107,29 +1107,29 @@ export default class DerivAPICalls {
      * @param {Object} args
      * @param {Number} args.contract_id - Internal unique contract identifier.
      * @param {Number} args.contract_update - Must be `1`
-     * @param {Any} args.limit_order - 
+     * @param {Any} args.limit_order -
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
      * @param {Number} args.req_id - [Optional] Used to map request to response.
      */
     contractUpdate(args = {}) {
         const config = {
-            'contract_id' : {
-               'required' : 1,
-               'type' : 'numeric'
+            contract_id: {
+                required: 1,
+                type    : 'numeric',
             },
-            'contract_update' : {
-               'required' : 1,
-               'type' : 'numeric'
+            contract_update: {
+                required: 1,
+                type    : 'numeric',
             },
-            'limit_order' : {
-               'stop_loss' : {},
-               'take_profit' : {}
+            limit_order: {
+                stop_loss  : {},
+                take_profit: {},
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'contract_update',
@@ -1152,22 +1152,22 @@ export default class DerivAPICalls {
      */
     contractUpdateHistory(args = {}) {
         const config = {
-            'contract_id' : {
-               'required' : 1,
-               'type' : 'numeric'
+            contract_id: {
+                required: 1,
+                type    : 'numeric',
             },
-            'contract_update_history' : {
-               'required' : 1,
-               'type' : 'numeric'
+            contract_update_history: {
+                required: 1,
+                type    : 'numeric',
             },
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'contract_update_history',
@@ -1191,24 +1191,24 @@ export default class DerivAPICalls {
      */
     contractsFor(args = {}) {
         const config = {
-            'contracts_for' : {
-               'required' : 1,
-               'type' : 'string'
+            contracts_for: {
+                required: 1,
+                type    : 'string',
             },
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'landing_company' : {
-               'type' : 'string'
+            landing_company: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'product_type' : {
-               'type' : 'string'
+            passthrough : {},
+            product_type: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'contracts_for',
@@ -1233,23 +1233,23 @@ export default class DerivAPICalls {
      */
     copyStart(args = {}) {
         const config = {
-            'assets' : {},
-            'copy_start' : {
-               'required' : 1,
-               'type' : 'string'
+            assets    : {},
+            copy_start: {
+                required: 1,
+                type    : 'string',
             },
-            'max_trade_stake' : {
-               'type' : 'numeric'
+            max_trade_stake: {
+                type: 'numeric',
             },
-            'min_trade_stake' : {
-               'type' : 'numeric'
+            min_trade_stake: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'trade_types' : {}
-         };
+            trade_types: {},
+        };
 
         const allArgs = {
             method        : 'copy_start',
@@ -1270,15 +1270,15 @@ export default class DerivAPICalls {
      */
     copyStop(args = {}) {
         const config = {
-            'copy_stop' : {
-               'required' : 1,
-               'type' : 'string'
+            copy_stop: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'copy_stop',
@@ -1299,15 +1299,15 @@ export default class DerivAPICalls {
      */
     copytradingList(args = {}) {
         const config = {
-            'copytrading_list' : {
-               'required' : 1,
-               'type' : 'numeric'
+            copytrading_list: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'copytrading_list',
@@ -1329,19 +1329,19 @@ export default class DerivAPICalls {
      */
     copytradingStatistics(args = {}) {
         const config = {
-            'copytrading_statistics' : {
-               'required' : 1,
-               'type' : 'numeric'
+            copytrading_statistics: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'trader_id' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            trader_id: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'copytrading_statistics',
@@ -1363,18 +1363,18 @@ export default class DerivAPICalls {
      */
     cryptoConfig(args = {}) {
         const config = {
-            'crypto_config' : {
-               'required' : 1,
-               'type' : 'numeric'
+            crypto_config: {
+                required: 1,
+                type    : 'numeric',
             },
-            'currency_code' : {
-               'type' : 'string'
+            currency_code: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'crypto_config',
@@ -1400,60 +1400,60 @@ export default class DerivAPICalls {
      * @param {Number} args.lifetime_valid - [Optional] Boolean value that indicates whether this document is lifetime valid (only applies to POI document types, cancels out the expiration_date given if any)
      * @param {String} args.page_type - [Optional] To determine document side
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
-     * @param {Any} args.proof_of_ownership - 
+     * @param {Any} args.proof_of_ownership -
      * @param {Number} args.req_id - [Optional] Used to map request to response.
      */
     documentUpload(args = {}) {
         const config = {
-            'document_format' : {
-               'required' : 1,
-               'type' : 'string'
+            document_format: {
+                required: 1,
+                type    : 'string',
             },
-            'document_id' : {
-               'type' : 'string'
+            document_id: {
+                type: 'string',
             },
-            'document_issuing_country' : {
-               'type' : 'string'
+            document_issuing_country: {
+                type: 'string',
             },
-            'document_type' : {
-               'required' : 1,
-               'type' : 'string'
+            document_type: {
+                required: 1,
+                type    : 'string',
             },
-            'document_upload' : {
-               'required' : 1,
-               'type' : 'numeric'
+            document_upload: {
+                required: 1,
+                type    : 'numeric',
             },
-            'expected_checksum' : {
-               'required' : 1,
-               'type' : 'string'
+            expected_checksum: {
+                required: 1,
+                type    : 'string',
             },
-            'expiration_date' : {
-               'type' : 'string'
+            expiration_date: {
+                type: 'string',
             },
-            'file_size' : {
-               'required' : 1,
-               'type' : 'numeric'
+            file_size: {
+                required: 1,
+                type    : 'numeric',
             },
-            'lifetime_valid' : {
-               'type' : 'numeric'
+            lifetime_valid: {
+                type: 'numeric',
             },
-            'page_type' : {
-               'type' : 'string'
+            page_type: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'proof_of_ownership' : {
-               'details' : {
-                  'required' : 1
-               },
-               'id' : {
-                  'required' : 1,
-                  'type' : 'numeric'
-               }
+            passthrough       : {},
+            proof_of_ownership: {
+                details: {
+                    required: 1,
+                },
+                id: {
+                    required: 1,
+                    type    : 'numeric',
+                },
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'document_upload',
@@ -1477,24 +1477,24 @@ export default class DerivAPICalls {
      */
     economicCalendar(args = {}) {
         const config = {
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'economic_calendar' : {
-               'required' : 1,
-               'type' : 'numeric'
+            economic_calendar: {
+                required: 1,
+                type    : 'numeric',
             },
-            'end_date' : {
-               'type' : 'numeric'
+            end_date: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'start_date' : {
-               'type' : 'numeric'
-            }
-         };
+            start_date: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'economic_calendar',
@@ -1518,25 +1518,25 @@ export default class DerivAPICalls {
      */
     exchangeRates(args = {}) {
         const config = {
-            'base_currency' : {
-               'required' : 1,
-               'type' : 'string'
+            base_currency: {
+                required: 1,
+                type    : 'string',
             },
-            'exchange_rates' : {
-               'required' : 1,
-               'type' : 'numeric'
+            exchange_rates: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'target_currency' : {
-               'type' : 'string'
-            }
-         };
+            target_currency: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'exchange_rates',
@@ -1557,15 +1557,15 @@ export default class DerivAPICalls {
      */
     forget(args = {}) {
         const config = {
-            'forget' : {
-               'required' : 1,
-               'type' : 'string'
+            forget: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'forget',
@@ -1586,14 +1586,14 @@ export default class DerivAPICalls {
      */
     forgetAll(args = {}) {
         const config = {
-            'forget_all' : {
-               'required' : 1
+            forget_all: {
+                required: 1,
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'forget_all',
@@ -1614,15 +1614,15 @@ export default class DerivAPICalls {
      */
     getAccountStatus(args = {}) {
         const config = {
-            'get_account_status' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_account_status: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_account_status',
@@ -1643,15 +1643,15 @@ export default class DerivAPICalls {
      */
     getAccountTypes(args = {}) {
         const config = {
-            'get_account_types' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_account_types: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_account_types',
@@ -1673,19 +1673,19 @@ export default class DerivAPICalls {
      */
     getAvailableAccountsToTransfer(args = {}) {
         const config = {
-            'get_available_accounts_to_transfer' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_available_accounts_to_transfer: {
+                required: 1,
+                type    : 'numeric',
             },
-            'loginid' : {
-               'required' : 1,
-               'type' : 'string'
+            loginid: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_available_accounts_to_transfer',
@@ -1706,15 +1706,15 @@ export default class DerivAPICalls {
      */
     getFinancialAssessment(args = {}) {
         const config = {
-            'get_financial_assessment' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_financial_assessment: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_financial_assessment',
@@ -1735,15 +1735,15 @@ export default class DerivAPICalls {
      */
     getLimits(args = {}) {
         const config = {
-            'get_limits' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_limits: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_limits',
@@ -1764,15 +1764,15 @@ export default class DerivAPICalls {
      */
     getSelfExclusion(args = {}) {
         const config = {
-            'get_self_exclusion' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_self_exclusion: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_self_exclusion',
@@ -1793,15 +1793,15 @@ export default class DerivAPICalls {
      */
     getSettings(args = {}) {
         const config = {
-            'get_settings' : {
-               'required' : 1,
-               'type' : 'numeric'
+            get_settings: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'get_settings',
@@ -1825,27 +1825,27 @@ export default class DerivAPICalls {
      */
     identityVerificationDocumentAdd(args = {}) {
         const config = {
-            'document_number' : {
-               'required' : 1,
-               'type' : 'string'
+            document_number: {
+                required: 1,
+                type    : 'string',
             },
-            'document_type' : {
-               'required' : 1,
-               'type' : 'string'
+            document_type: {
+                required: 1,
+                type    : 'string',
             },
-            'identity_verification_document_add' : {
-               'required' : 1,
-               'type' : 'numeric'
+            identity_verification_document_add: {
+                required: 1,
+                type    : 'numeric',
             },
-            'issuing_country' : {
-               'required' : 1,
-               'type' : 'string'
+            issuing_country: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'identity_verification_document_add',
@@ -1866,15 +1866,15 @@ export default class DerivAPICalls {
      */
     landingCompany(args = {}) {
         const config = {
-            'landing_company' : {
-               'required' : 1,
-               'type' : 'string'
+            landing_company: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'landing_company',
@@ -1895,15 +1895,15 @@ export default class DerivAPICalls {
      */
     landingCompanyDetails(args = {}) {
         const config = {
-            'landing_company_details' : {
-               'required' : 1,
-               'type' : 'string'
+            landing_company_details: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'landing_company_details',
@@ -1926,23 +1926,23 @@ export default class DerivAPICalls {
      */
     linkWallet(args = {}) {
         const config = {
-            'client_id' : {
-               'required' : 1,
-               'type' : 'string'
+            client_id: {
+                required: 1,
+                type    : 'string',
             },
-            'link_wallet' : {
-               'required' : 1,
-               'type' : 'numeric'
+            link_wallet: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'wallet_id' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            wallet_id: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'link_wallet',
@@ -1964,18 +1964,18 @@ export default class DerivAPICalls {
      */
     loginHistory(args = {}) {
         const config = {
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'login_history' : {
-               'required' : 1,
-               'type' : 'numeric'
+            login_history: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'login_history',
@@ -1996,15 +1996,15 @@ export default class DerivAPICalls {
      */
     logout(args = {}) {
         const config = {
-            'logout' : {
-               'required' : 1,
-               'type' : 'numeric'
+            logout: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'logout',
@@ -2028,25 +2028,25 @@ export default class DerivAPICalls {
      */
     mt5Deposit(args = {}) {
         const config = {
-            'amount' : {
-               'type' : 'numeric'
+            amount: {
+                type: 'numeric',
             },
-            'from_binary' : {
-               'type' : 'string'
+            from_binary: {
+                type: 'string',
             },
-            'mt5_deposit' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_deposit: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'to_mt5' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            to_mt5: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_deposit',
@@ -2068,19 +2068,19 @@ export default class DerivAPICalls {
      */
     mt5GetSettings(args = {}) {
         const config = {
-            'login' : {
-               'required' : 1,
-               'type' : 'string'
+            login: {
+                required: 1,
+                type    : 'string',
             },
-            'mt5_get_settings' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_get_settings: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_get_settings',
@@ -2101,15 +2101,15 @@ export default class DerivAPICalls {
      */
     mt5LoginList(args = {}) {
         const config = {
-            'mt5_login_list' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_login_list: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_login_list',
@@ -2149,75 +2149,75 @@ export default class DerivAPICalls {
      */
     mt5NewAccount(args = {}) {
         const config = {
-            'account_type' : {
-               'required' : 1,
-               'type' : 'string'
+            account_type: {
+                required: 1,
+                type    : 'string',
             },
-            'address' : {
-               'type' : 'string'
+            address: {
+                type: 'string',
             },
-            'city' : {
-               'type' : 'string'
+            city: {
+                type: 'string',
             },
-            'company' : {
-               'type' : 'string'
+            company: {
+                type: 'string',
             },
-            'country' : {
-               'type' : 'string'
+            country: {
+                type: 'string',
             },
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'dry_run' : {
-               'type' : 'numeric'
+            dry_run: {
+                type: 'numeric',
             },
-            'email' : {
-               'required' : 1,
-               'type' : 'string'
+            email: {
+                required: 1,
+                type    : 'string',
             },
-            'investPassword' : {
-               'type' : 'string'
+            investPassword: {
+                type: 'string',
             },
-            'leverage' : {
-               'required' : 1,
-               'type' : 'numeric'
+            leverage: {
+                required: 1,
+                type    : 'numeric',
             },
-            'mainPassword' : {
-               'required' : 1,
-               'type' : 'string'
+            mainPassword: {
+                required: 1,
+                type    : 'string',
             },
-            'mt5_account_category' : {
-               'type' : 'string'
+            mt5_account_category: {
+                type: 'string',
             },
-            'mt5_account_type' : {
-               'type' : 'string'
+            mt5_account_type: {
+                type: 'string',
             },
-            'mt5_new_account' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_new_account: {
+                required: 1,
+                type    : 'numeric',
             },
-            'name' : {
-               'required' : 1,
-               'type' : 'string'
+            name: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'phone' : {
-               'type' : 'string'
+            passthrough: {},
+            phone      : {
+                type: 'string',
             },
-            'phonePassword' : {
-               'type' : 'string'
+            phonePassword: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'server' : {},
-            'state' : {
-               'type' : 'string'
+            server: {},
+            state : {
+                type: 'string',
             },
-            'zipCode' : {
-               'type' : 'string'
-            }
-         };
+            zipCode: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_new_account',
@@ -2242,30 +2242,30 @@ export default class DerivAPICalls {
      */
     mt5PasswordChange(args = {}) {
         const config = {
-            'login' : {
-               'required' : 1,
-               'type' : 'string'
+            login: {
+                required: 1,
+                type    : 'string',
             },
-            'mt5_password_change' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_password_change: {
+                required: 1,
+                type    : 'numeric',
             },
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'old_password' : {
-               'required' : 1,
-               'type' : 'string'
+            old_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'password_type' : {
-               'type' : 'string'
+            passthrough  : {},
+            password_type: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_password_change',
@@ -2289,26 +2289,26 @@ export default class DerivAPICalls {
      */
     mt5PasswordCheck(args = {}) {
         const config = {
-            'login' : {
-               'required' : 1,
-               'type' : 'string'
+            login: {
+                required: 1,
+                type    : 'string',
             },
-            'mt5_password_check' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_password_check: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'password' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            password   : {
+                required: 1,
+                type    : 'string',
             },
-            'password_type' : {
-               'type' : 'string'
+            password_type: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_password_check',
@@ -2333,30 +2333,30 @@ export default class DerivAPICalls {
      */
     mt5PasswordReset(args = {}) {
         const config = {
-            'login' : {
-               'required' : 1,
-               'type' : 'string'
+            login: {
+                required: 1,
+                type    : 'string',
             },
-            'mt5_password_reset' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_password_reset: {
+                required: 1,
+                type    : 'numeric',
             },
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'password_type' : {
-               'type' : 'string'
+            passthrough  : {},
+            password_type: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'verification_code' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_password_reset',
@@ -2380,27 +2380,27 @@ export default class DerivAPICalls {
      */
     mt5Withdrawal(args = {}) {
         const config = {
-            'amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'from_mt5' : {
-               'required' : 1,
-               'type' : 'string'
+            from_mt5: {
+                required: 1,
+                type    : 'string',
             },
-            'mt5_withdrawal' : {
-               'required' : 1,
-               'type' : 'numeric'
+            mt5_withdrawal: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'to_binary' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            to_binary: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'mt5_withdrawal',
@@ -2461,149 +2461,149 @@ export default class DerivAPICalls {
      */
     newAccountMaltainvest(args = {}) {
         const config = {
-            'accept_risk' : {
-               'required' : 1,
-               'type' : 'numeric'
+            accept_risk: {
+                required: 1,
+                type    : 'numeric',
             },
-            'account_opening_reason' : {
-               'type' : 'string'
+            account_opening_reason: {
+                type: 'string',
             },
-            'account_turnover' : {
-               'type' : 'string'
+            account_turnover: {
+                type: 'string',
             },
-            'address_city' : {
-               'required' : 1,
-               'type' : 'string'
+            address_city: {
+                required: 1,
+                type    : 'string',
             },
-            'address_line_1' : {
-               'required' : 1,
-               'type' : 'string'
+            address_line_1: {
+                required: 1,
+                type    : 'string',
             },
-            'address_line_2' : {
-               'type' : 'string'
+            address_line_2: {
+                type: 'string',
             },
-            'address_postcode' : {
-               'type' : 'string'
+            address_postcode: {
+                type: 'string',
             },
-            'address_state' : {
-               'type' : 'string'
+            address_state: {
+                type: 'string',
             },
-            'affiliate_token' : {
-               'type' : 'string'
+            affiliate_token: {
+                type: 'string',
             },
-            'binary_options_trading_experience' : {
-               'type' : 'string'
+            binary_options_trading_experience: {
+                type: 'string',
             },
-            'binary_options_trading_frequency' : {
-               'type' : 'string'
+            binary_options_trading_frequency: {
+                type: 'string',
             },
-            'cfd_trading_experience' : {
-               'type' : 'string'
+            cfd_trading_experience: {
+                type: 'string',
             },
-            'cfd_trading_frequency' : {
-               'type' : 'string'
+            cfd_trading_frequency: {
+                type: 'string',
             },
-            'citizen' : {
-               'type' : 'string'
+            citizen: {
+                type: 'string',
             },
-            'client_type' : {
-               'type' : 'string'
+            client_type: {
+                type: 'string',
             },
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'date_of_birth' : {
-               'required' : 1,
-               'type' : 'string'
+            date_of_birth: {
+                required: 1,
+                type    : 'string',
             },
-            'education_level' : {
-               'required' : 1,
-               'type' : 'string'
+            education_level: {
+                required: 1,
+                type    : 'string',
             },
-            'employment_industry' : {
-               'required' : 1,
-               'type' : 'string'
+            employment_industry: {
+                required: 1,
+                type    : 'string',
             },
-            'employment_status' : {
-               'type' : 'string'
+            employment_status: {
+                type: 'string',
             },
-            'estimated_worth' : {
-               'required' : 1,
-               'type' : 'string'
+            estimated_worth: {
+                required: 1,
+                type    : 'string',
             },
-            'first_name' : {
-               'required' : 1,
-               'type' : 'string'
+            first_name: {
+                required: 1,
+                type    : 'string',
             },
-            'forex_trading_experience' : {
-               'type' : 'string'
+            forex_trading_experience: {
+                type: 'string',
             },
-            'forex_trading_frequency' : {
-               'type' : 'string'
+            forex_trading_frequency: {
+                type: 'string',
             },
-            'income_source' : {
-               'required' : 1,
-               'type' : 'string'
+            income_source: {
+                required: 1,
+                type    : 'string',
             },
-            'last_name' : {
-               'required' : 1,
-               'type' : 'string'
+            last_name: {
+                required: 1,
+                type    : 'string',
             },
-            'net_income' : {
-               'required' : 1,
-               'type' : 'string'
+            net_income: {
+                required: 1,
+                type    : 'string',
             },
-            'new_account_maltainvest' : {
-               'required' : 1,
-               'type' : 'numeric'
+            new_account_maltainvest: {
+                required: 1,
+                type    : 'numeric',
             },
-            'non_pep_declaration' : {
-               'type' : 'numeric'
+            non_pep_declaration: {
+                type: 'numeric',
             },
-            'occupation' : {
-               'required' : 1,
-               'type' : 'string'
+            occupation: {
+                required: 1,
+                type    : 'string',
             },
-            'other_instruments_trading_experience' : {
-               'type' : 'string'
+            other_instruments_trading_experience: {
+                type: 'string',
             },
-            'other_instruments_trading_frequency' : {
-               'type' : 'string'
+            other_instruments_trading_frequency: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'phone' : {},
-            'place_of_birth' : {
-               'type' : 'string'
+            passthrough   : {},
+            phone         : {},
+            place_of_birth: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'residence' : {
-               'required' : 1,
-               'type' : 'string'
+            residence: {
+                required: 1,
+                type    : 'string',
             },
-            'salutation' : {
-               'required' : 1,
-               'type' : 'string'
+            salutation: {
+                required: 1,
+                type    : 'string',
             },
-            'secret_answer' : {
-               'type' : 'string'
+            secret_answer: {
+                type: 'string',
             },
-            'secret_question' : {
-               'type' : 'string'
+            secret_question: {
+                type: 'string',
             },
-            'source_of_wealth' : {
-               'type' : 'string'
+            source_of_wealth: {
+                type: 'string',
             },
-            'tax_identification_number' : {
-               'required' : 1,
-               'type' : 'string'
+            tax_identification_number: {
+                required: 1,
+                type    : 'string',
             },
-            'tax_residence' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            tax_residence: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'new_account_maltainvest',
@@ -2647,80 +2647,80 @@ export default class DerivAPICalls {
      */
     newAccountReal(args = {}) {
         const config = {
-            'account_opening_reason' : {
-               'type' : 'string'
+            account_opening_reason: {
+                type: 'string',
             },
-            'account_turnover' : {
-               'type' : 'string'
+            account_turnover: {
+                type: 'string',
             },
-            'address_city' : {
-               'type' : 'string'
+            address_city: {
+                type: 'string',
             },
-            'address_line_1' : {
-               'type' : 'string'
+            address_line_1: {
+                type: 'string',
             },
-            'address_line_2' : {
-               'type' : 'string'
+            address_line_2: {
+                type: 'string',
             },
-            'address_postcode' : {
-               'type' : 'string'
+            address_postcode: {
+                type: 'string',
             },
-            'address_state' : {
-               'type' : 'string'
+            address_state: {
+                type: 'string',
             },
-            'affiliate_token' : {
-               'type' : 'string'
+            affiliate_token: {
+                type: 'string',
             },
-            'citizen' : {},
-            'client_type' : {
-               'type' : 'string'
+            citizen    : {},
+            client_type: {
+                type: 'string',
             },
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'date_of_birth' : {
-               'type' : 'string'
+            date_of_birth: {
+                type: 'string',
             },
-            'first_name' : {
-               'type' : 'string'
+            first_name: {
+                type: 'string',
             },
-            'last_name' : {
-               'type' : 'string'
+            last_name: {
+                type: 'string',
             },
-            'new_account_real' : {
-               'required' : 1,
-               'type' : 'numeric'
+            new_account_real: {
+                required: 1,
+                type    : 'numeric',
             },
-            'non_pep_declaration' : {
-               'type' : 'numeric'
+            non_pep_declaration: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'phone' : {},
-            'place_of_birth' : {
-               'type' : 'string'
+            passthrough   : {},
+            phone         : {},
+            place_of_birth: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'residence' : {
-               'type' : 'string'
+            residence: {
+                type: 'string',
             },
-            'salutation' : {
-               'type' : 'string'
+            salutation: {
+                type: 'string',
             },
-            'secret_answer' : {
-               'type' : 'string'
+            secret_answer: {
+                type: 'string',
             },
-            'secret_question' : {
-               'type' : 'string'
+            secret_question: {
+                type: 'string',
             },
-            'tax_identification_number' : {
-               'type' : 'string'
+            tax_identification_number: {
+                type: 'string',
             },
-            'tax_residence' : {
-               'type' : 'string'
-            }
-         };
+            tax_residence: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'new_account_real',
@@ -2762,54 +2762,54 @@ export default class DerivAPICalls {
      */
     newAccountVirtual(args = {}) {
         const config = {
-            'affiliate_token' : {
-               'type' : 'string'
+            affiliate_token: {
+                type: 'string',
             },
-            'client_password' : {
-               'type' : 'string'
+            client_password: {
+                type: 'string',
             },
-            'date_first_contact' : {
-               'type' : 'string'
+            date_first_contact: {
+                type: 'string',
             },
-            'email_consent' : {
-               'type' : 'numeric'
+            email_consent: {
+                type: 'numeric',
             },
-            'gclid_url' : {
-               'type' : 'string'
+            gclid_url: {
+                type: 'string',
             },
-            'new_account_virtual' : {
-               'required' : 1,
-               'type' : 'numeric'
+            new_account_virtual: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'residence' : {
-               'type' : 'string'
+            residence: {
+                type: 'string',
             },
-            'signup_device' : {
-               'type' : 'string'
+            signup_device: {
+                type: 'string',
             },
-            'type' : {
-               'type' : 'string'
+            type: {
+                type: 'string',
             },
-            'utm_ad_id' : {},
-            'utm_adgroup_id' : {},
-            'utm_adrollclk_id' : {},
-            'utm_campaign' : {},
-            'utm_campaign_id' : {},
-            'utm_content' : {},
-            'utm_fbcl_id' : {},
-            'utm_gl_client_id' : {},
-            'utm_medium' : {},
-            'utm_msclk_id' : {},
-            'utm_source' : {},
-            'utm_term' : {},
-            'verification_code' : {
-               'type' : 'string'
-            }
-         };
+            utm_ad_id        : {},
+            utm_adgroup_id   : {},
+            utm_adrollclk_id : {},
+            utm_campaign     : {},
+            utm_campaign_id  : {},
+            utm_content      : {},
+            utm_fbcl_id      : {},
+            utm_gl_client_id : {},
+            utm_medium       : {},
+            utm_msclk_id     : {},
+            utm_source       : {},
+            utm_term         : {},
+            verification_code: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'new_account_virtual',
@@ -2842,53 +2842,53 @@ export default class DerivAPICalls {
      */
     newAccountWallet(args = {}) {
         const config = {
-            'address_city' : {
-               'type' : 'string'
+            address_city: {
+                type: 'string',
             },
-            'address_line_1' : {
-               'type' : 'string'
+            address_line_1: {
+                type: 'string',
             },
-            'address_line_2' : {
-               'type' : 'string'
+            address_line_2: {
+                type: 'string',
             },
-            'address_postcode' : {
-               'type' : 'string'
+            address_postcode: {
+                type: 'string',
             },
-            'address_state' : {
-               'type' : 'string'
+            address_state: {
+                type: 'string',
             },
-            'currency' : {
-               'required' : 1,
-               'type' : 'string'
+            currency: {
+                required: 1,
+                type    : 'string',
             },
-            'date_of_birth' : {
-               'type' : 'string'
+            date_of_birth: {
+                type: 'string',
             },
-            'first_name' : {
-               'type' : 'string'
+            first_name: {
+                type: 'string',
             },
-            'last_name' : {
-               'type' : 'string'
+            last_name: {
+                type: 'string',
             },
-            'new_account_wallet' : {
-               'required' : 1,
-               'type' : 'numeric'
+            new_account_wallet: {
+                required: 1,
+                type    : 'numeric',
             },
-            'non_pep_declaration' : {
-               'type' : 'numeric'
+            non_pep_declaration: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'payment_method' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough   : {},
+            payment_method: {
+                required: 1,
+                type    : 'string',
             },
-            'phone' : {
-               'type' : 'string'
+            phone: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'new_account_wallet',
@@ -2903,7 +2903,7 @@ export default class DerivAPICalls {
     /**
      * Notify the backend about a specific event.
      * @param {Object} args
-     * @param {Any} args.args - 
+     * @param {Any} args.args -
      * @param {String} args.category - The category or nature of the event.
      * @param {String} args.event - The name of the event.
      * @param {Number} args.notification_event - Must be `1`
@@ -2912,26 +2912,26 @@ export default class DerivAPICalls {
      */
     notificationEvent(args = {}) {
         const config = {
-            'args' : {
-               'documents' : {}
+            args: {
+                documents: {},
             },
-            'category' : {
-               'required' : 1,
-               'type' : 'string'
+            category: {
+                required: 1,
+                type    : 'string',
             },
-            'event' : {
-               'required' : 1,
-               'type' : 'string'
+            event: {
+                required: 1,
+                type    : 'string',
             },
-            'notification_event' : {
-               'required' : 1,
-               'type' : 'numeric'
+            notification_event: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'notification_event',
@@ -2952,15 +2952,15 @@ export default class DerivAPICalls {
      */
     oauthApps(args = {}) {
         const config = {
-            'oauth_apps' : {
-               'required' : 1,
-               'type' : 'numeric'
+            oauth_apps: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'oauth_apps',
@@ -2994,55 +2994,55 @@ export default class DerivAPICalls {
      */
     p2pAdvertCreate(args = {}) {
         const config = {
-            'amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'contact_info' : {
-               'type' : 'string'
+            contact_info: {
+                type: 'string',
             },
-            'description' : {
-               'type' : 'string'
+            description: {
+                type: 'string',
             },
-            'local_currency' : {
-               'type' : 'string'
+            local_currency: {
+                type: 'string',
             },
-            'max_order_amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            max_order_amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'min_order_amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            min_order_amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'p2p_advert_create' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advert_create: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'payment_info' : {
-               'type' : 'string'
+            passthrough : {},
+            payment_info: {
+                type: 'string',
             },
-            'payment_method' : {
-               'type' : 'string'
+            payment_method: {
+                type: 'string',
             },
-            'payment_method_ids' : {},
-            'payment_method_names' : {},
-            'rate' : {
-               'required' : 1,
-               'type' : 'numeric'
+            payment_method_ids  : {},
+            payment_method_names: {},
+            rate                : {
+                required: 1,
+                type    : 'numeric',
             },
-            'rate_type' : {
-               'type' : 'string'
+            rate_type: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'type' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            type: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advert_create',
@@ -3066,24 +3066,24 @@ export default class DerivAPICalls {
      */
     p2pAdvertInfo(args = {}) {
         const config = {
-            'id' : {
-               'type' : 'string'
+            id: {
+                type: 'string',
             },
-            'p2p_advert_info' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advert_info: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'use_client_limits' : {
-               'type' : 'numeric'
-            }
-         };
+            use_client_limits: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advert_info',
@@ -3115,46 +3115,46 @@ export default class DerivAPICalls {
      */
     p2pAdvertList(args = {}) {
         const config = {
-            'advertiser_id' : {
-               'type' : 'string'
+            advertiser_id: {
+                type: 'string',
             },
-            'advertiser_name' : {
-               'type' : 'string'
+            advertiser_name: {
+                type: 'string',
             },
-            'amount' : {
-               'type' : 'numeric'
+            amount: {
+                type: 'numeric',
             },
-            'counterparty_type' : {
-               'type' : 'string'
+            counterparty_type: {
+                type: 'string',
             },
-            'favourites_only' : {
-               'type' : 'numeric'
+            favourites_only: {
+                type: 'numeric',
             },
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'local_currency' : {
-               'type' : 'string'
+            local_currency: {
+                type: 'string',
             },
-            'offset' : {
-               'type' : 'numeric'
+            offset: {
+                type: 'numeric',
             },
-            'p2p_advert_list' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advert_list: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'payment_method' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough   : {},
+            payment_method: {},
+            req_id        : {
+                type: 'numeric',
             },
-            'sort_by' : {
-               'type' : 'string'
+            sort_by: {
+                type: 'string',
             },
-            'use_client_limits' : {
-               'type' : 'numeric'
-            }
-         };
+            use_client_limits: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advert_list',
@@ -3189,54 +3189,54 @@ export default class DerivAPICalls {
      */
     p2pAdvertUpdate(args = {}) {
         const config = {
-            'contact_info' : {
-               'type' : 'string'
+            contact_info: {
+                type: 'string',
             },
-            'delete' : {
-               'type' : 'numeric'
+            delete: {
+                type: 'numeric',
             },
-            'description' : {
-               'type' : 'string'
+            description: {
+                type: 'string',
             },
-            'id' : {
-               'required' : 1,
-               'type' : 'string'
+            id: {
+                required: 1,
+                type    : 'string',
             },
-            'is_active' : {
-               'type' : 'numeric'
+            is_active: {
+                type: 'numeric',
             },
-            'local_currency' : {
-               'type' : 'string'
+            local_currency: {
+                type: 'string',
             },
-            'max_order_amount' : {
-               'type' : 'numeric'
+            max_order_amount: {
+                type: 'numeric',
             },
-            'min_order_amount' : {
-               'type' : 'numeric'
+            min_order_amount: {
+                type: 'numeric',
             },
-            'p2p_advert_update' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advert_update: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'payment_info' : {
-               'type' : 'string'
+            passthrough : {},
+            payment_info: {
+                type: 'string',
             },
-            'payment_method_ids' : {},
-            'payment_method_names' : {},
-            'rate' : {
-               'type' : 'numeric'
+            payment_method_ids  : {},
+            payment_method_names: {},
+            rate                : {
+                type: 'numeric',
             },
-            'rate_type' : {
-               'type' : 'string'
+            rate_type: {
+                type: 'string',
             },
-            'remaining_amount' : {
-               'type' : 'numeric'
+            remaining_amount: {
+                type: 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advert_update',
@@ -3259,21 +3259,21 @@ export default class DerivAPICalls {
      */
     p2pAdvertiserAdverts(args = {}) {
         const config = {
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'offset' : {
-               'type' : 'numeric'
+            offset: {
+                type: 'numeric',
             },
-            'p2p_advertiser_adverts' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advertiser_adverts: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advertiser_adverts',
@@ -3299,31 +3299,31 @@ export default class DerivAPICalls {
      */
     p2pAdvertiserCreate(args = {}) {
         const config = {
-            'contact_info' : {
-               'type' : 'string'
+            contact_info: {
+                type: 'string',
             },
-            'default_advert_description' : {
-               'type' : 'string'
+            default_advert_description: {
+                type: 'string',
             },
-            'name' : {
-               'required' : 1,
-               'type' : 'string'
+            name: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_advertiser_create' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advertiser_create: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'payment_info' : {
-               'type' : 'string'
+            passthrough : {},
+            payment_info: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advertiser_create',
@@ -3346,21 +3346,21 @@ export default class DerivAPICalls {
      */
     p2pAdvertiserInfo(args = {}) {
         const config = {
-            'id' : {
-               'type' : 'string'
+            id: {
+                type: 'string',
             },
-            'p2p_advertiser_info' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advertiser_info: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advertiser_info',
@@ -3384,18 +3384,18 @@ export default class DerivAPICalls {
      */
     p2pAdvertiserPaymentMethods(args = {}) {
         const config = {
-            'create' : {},
-            'delete' : {},
-            'p2p_advertiser_payment_methods' : {
-               'required' : 1,
-               'type' : 'numeric'
+            create                        : {},
+            delete                        : {},
+            p2p_advertiser_payment_methods: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'update' : {}
-         };
+            update: {},
+        };
 
         const allArgs = {
             method        : 'p2p_advertiser_payment_methods',
@@ -3420,19 +3420,19 @@ export default class DerivAPICalls {
      */
     p2pAdvertiserRelations(args = {}) {
         const config = {
-            'add_blocked' : {},
-            'add_favourites' : {},
-            'p2p_advertiser_relations' : {
-               'required' : 1,
-               'type' : 'numeric'
+            add_blocked             : {},
+            add_favourites          : {},
+            p2p_advertiser_relations: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'remove_blocked' : {},
-            'remove_favourites' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough      : {},
+            remove_blocked   : {},
+            remove_favourites: {},
+            req_id           : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advertiser_relations',
@@ -3458,30 +3458,30 @@ export default class DerivAPICalls {
      */
     p2pAdvertiserUpdate(args = {}) {
         const config = {
-            'contact_info' : {
-               'type' : 'string'
+            contact_info: {
+                type: 'string',
             },
-            'default_advert_description' : {
-               'type' : 'string'
+            default_advert_description: {
+                type: 'string',
             },
-            'is_listed' : {
-               'type' : 'numeric'
+            is_listed: {
+                type: 'numeric',
             },
-            'p2p_advertiser_update' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_advertiser_update: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'payment_info' : {
-               'type' : 'string'
+            passthrough : {},
+            payment_info: {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'show_name' : {
-               'type' : 'numeric'
-            }
-         };
+            show_name: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_advertiser_update',
@@ -3503,19 +3503,19 @@ export default class DerivAPICalls {
      */
     p2pChatCreate(args = {}) {
         const config = {
-            'order_id' : {
-               'required' : 1,
-               'type' : 'string'
+            order_id: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_chat_create' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_chat_create: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_chat_create',
@@ -3537,19 +3537,19 @@ export default class DerivAPICalls {
      */
     p2pOrderCancel(args = {}) {
         const config = {
-            'id' : {
-               'required' : 1,
-               'type' : 'string'
+            id: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_order_cancel' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_cancel: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_cancel',
@@ -3571,19 +3571,19 @@ export default class DerivAPICalls {
      */
     p2pOrderConfirm(args = {}) {
         const config = {
-            'id' : {
-               'required' : 1,
-               'type' : 'string'
+            id: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_order_confirm' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_confirm: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_confirm',
@@ -3611,36 +3611,36 @@ export default class DerivAPICalls {
      */
     p2pOrderCreate(args = {}) {
         const config = {
-            'advert_id' : {
-               'required' : 1,
-               'type' : 'string'
+            advert_id: {
+                required: 1,
+                type    : 'string',
             },
-            'amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'contact_info' : {
-               'type' : 'string'
+            contact_info: {
+                type: 'string',
             },
-            'p2p_order_create' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_create: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'payment_info' : {
-               'type' : 'string'
+            passthrough : {},
+            payment_info: {
+                type: 'string',
             },
-            'payment_method_ids' : {},
-            'rate' : {
-               'type' : 'numeric'
+            payment_method_ids: {},
+            rate              : {
+                type: 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_create',
@@ -3663,23 +3663,23 @@ export default class DerivAPICalls {
      */
     p2pOrderDispute(args = {}) {
         const config = {
-            'dispute_reason' : {
-               'required' : 1,
-               'type' : 'string'
+            dispute_reason: {
+                required: 1,
+                type    : 'string',
             },
-            'id' : {
-               'required' : 1,
-               'type' : 'string'
+            id: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_order_dispute' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_dispute: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_dispute',
@@ -3702,22 +3702,22 @@ export default class DerivAPICalls {
      */
     p2pOrderInfo(args = {}) {
         const config = {
-            'id' : {
-               'required' : 1,
-               'type' : 'string'
+            id: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_order_info' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_info: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_info',
@@ -3743,30 +3743,30 @@ export default class DerivAPICalls {
      */
     p2pOrderList(args = {}) {
         const config = {
-            'active' : {
-               'type' : 'numeric'
+            active: {
+                type: 'numeric',
             },
-            'advert_id' : {
-               'type' : 'string'
+            advert_id: {
+                type: 'string',
             },
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'offset' : {
-               'type' : 'numeric'
+            offset: {
+                type: 'numeric',
             },
-            'p2p_order_list' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_list: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_list',
@@ -3790,24 +3790,24 @@ export default class DerivAPICalls {
      */
     p2pOrderReview(args = {}) {
         const config = {
-            'order_id' : {
-               'required' : 1,
-               'type' : 'string'
+            order_id: {
+                required: 1,
+                type    : 'string',
             },
-            'p2p_order_review' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_order_review: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'rating' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough: {},
+            rating     : {
+                required: 1,
+                type    : 'numeric',
             },
-            'recommended' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            recommended: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_order_review',
@@ -3828,15 +3828,15 @@ export default class DerivAPICalls {
      */
     p2pPaymentMethods(args = {}) {
         const config = {
-            'p2p_payment_methods' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_payment_methods: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_payment_methods',
@@ -3857,15 +3857,15 @@ export default class DerivAPICalls {
      */
     p2pPing(args = {}) {
         const config = {
-            'p2p_ping' : {
-               'required' : 1,
-               'type' : 'numeric'
+            p2p_ping: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'p2p_ping',
@@ -3887,18 +3887,18 @@ export default class DerivAPICalls {
      */
     paymentMethods(args = {}) {
         const config = {
-            'country' : {
-               'type' : 'string'
+            country: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'payment_methods' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough    : {},
+            payment_methods: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'payment_methods',
@@ -3929,49 +3929,49 @@ export default class DerivAPICalls {
      */
     paymentagentCreate(args = {}) {
         const config = {
-            'affiliate_id' : {
-               'type' : 'string'
+            affiliate_id: {
+                type: 'string',
             },
-            'code_of_conduct_approval' : {
-               'required' : 1,
-               'type' : 'numeric'
+            code_of_conduct_approval: {
+                required: 1,
+                type    : 'numeric',
             },
-            'commission_deposit' : {
-               'required' : 1,
-               'type' : 'numeric'
+            commission_deposit: {
+                required: 1,
+                type    : 'numeric',
             },
-            'commission_withdrawal' : {
-               'required' : 1,
-               'type' : 'numeric'
+            commission_withdrawal: {
+                required: 1,
+                type    : 'numeric',
             },
-            'email' : {
-               'required' : 1,
-               'type' : 'string'
+            email: {
+                required: 1,
+                type    : 'string',
             },
-            'information' : {
-               'required' : 1,
-               'type' : 'string'
+            information: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'payment_agent_name' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough       : {},
+            payment_agent_name: {
+                required: 1,
+                type    : 'string',
             },
-            'paymentagent_create' : {
-               'required' : 1,
-               'type' : 'numeric'
+            paymentagent_create: {
+                required: 1,
+                type    : 'numeric',
             },
-            'phone_numbers' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            phone_numbers: {},
+            req_id       : {
+                type: 'numeric',
             },
-            'supported_payment_methods' : {
-               'required' : 1
+            supported_payment_methods: {
+                required: 1,
             },
-            'urls' : {
-               'required' : 1
-            }
-         };
+            urls: {
+                required: 1,
+            },
+        };
 
         const allArgs = {
             method        : 'paymentagent_create',
@@ -3992,15 +3992,15 @@ export default class DerivAPICalls {
      */
     paymentagentDetails(args = {}) {
         const config = {
-            'passthrough' : {},
-            'paymentagent_details' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough         : {},
+            paymentagent_details: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'paymentagent_details',
@@ -4022,18 +4022,18 @@ export default class DerivAPICalls {
      */
     paymentagentList(args = {}) {
         const config = {
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'paymentagent_list' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough      : {},
+            paymentagent_list: {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'paymentagent_list',
@@ -4059,33 +4059,33 @@ export default class DerivAPICalls {
      */
     paymentagentTransfer(args = {}) {
         const config = {
-            'amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'currency' : {
-               'required' : 1,
-               'type' : 'string'
+            currency: {
+                required: 1,
+                type    : 'string',
             },
-            'description' : {
-               'type' : 'string'
+            description: {
+                type: 'string',
             },
-            'dry_run' : {
-               'type' : 'numeric'
+            dry_run: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'paymentagent_transfer' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough          : {},
+            paymentagent_transfer: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'transfer_to' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            transfer_to: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'paymentagent_transfer',
@@ -4112,37 +4112,37 @@ export default class DerivAPICalls {
      */
     paymentagentWithdraw(args = {}) {
         const config = {
-            'amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'currency' : {
-               'required' : 1,
-               'type' : 'string'
+            currency: {
+                required: 1,
+                type    : 'string',
             },
-            'description' : {
-               'type' : 'string'
+            description: {
+                type: 'string',
             },
-            'dry_run' : {
-               'type' : 'numeric'
+            dry_run: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'paymentagent_loginid' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough         : {},
+            paymentagent_loginid: {
+                required: 1,
+                type    : 'string',
             },
-            'paymentagent_withdraw' : {
-               'required' : 1,
-               'type' : 'numeric'
+            paymentagent_withdraw: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'verification_code' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'paymentagent_withdraw',
@@ -4163,15 +4163,15 @@ export default class DerivAPICalls {
      */
     payoutCurrencies(args = {}) {
         const config = {
-            'passthrough' : {},
-            'payout_currencies' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough      : {},
+            payout_currencies: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'payout_currencies',
@@ -4192,15 +4192,15 @@ export default class DerivAPICalls {
      */
     ping(args = {}) {
         const config = {
-            'passthrough' : {},
-            'ping' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough: {},
+            ping       : {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'ping',
@@ -4222,16 +4222,16 @@ export default class DerivAPICalls {
      */
     portfolio(args = {}) {
         const config = {
-            'contract_type' : {},
-            'passthrough' : {},
-            'portfolio' : {
-               'required' : 1,
-               'type' : 'numeric'
+            contract_type: {},
+            passthrough  : {},
+            portfolio    : {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'portfolio',
@@ -4259,34 +4259,34 @@ export default class DerivAPICalls {
      */
     profitTable(args = {}) {
         const config = {
-            'contract_type' : {},
-            'date_from' : {
-               'type' : 'string'
+            contract_type: {},
+            date_from    : {
+                type: 'string',
             },
-            'date_to' : {
-               'type' : 'string'
+            date_to: {
+                type: 'string',
             },
-            'description' : {
-               'type' : 'numeric'
+            description: {
+                type: 'numeric',
             },
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'offset' : {
-               'type' : 'numeric'
+            offset: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'profit_table' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough : {},
+            profit_table: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'sort' : {
-               'type' : 'string'
-            }
-         };
+            sort: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'profit_table',
@@ -4313,7 +4313,7 @@ export default class DerivAPICalls {
      * @param {Number} args.date_start - [Optional] Indicates epoch value of the starting time of the contract. If left empty, the start time of the contract is now.
      * @param {Number} args.duration - [Optional] Duration quantity. Either date_expiry or duration is required.
      * @param {String} args.duration_unit - [Optional] Duration unit - `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks.
-     * @param {Any} args.limit_order - 
+     * @param {Any} args.limit_order -
      * @param {Number} args.multiplier - [Optional] The multiplier for non-binary options. E.g. lookbacks.
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
      * @param {String} args.product_type - [Optional] The product type.
@@ -4326,80 +4326,80 @@ export default class DerivAPICalls {
      */
     proposal(args = {}) {
         const config = {
-            'amount' : {
-               'type' : 'numeric'
+            amount: {
+                type: 'numeric',
             },
-            'barrier' : {
-               'type' : 'string'
+            barrier: {
+                type: 'string',
             },
-            'barrier2' : {
-               'type' : 'string'
+            barrier2: {
+                type: 'string',
             },
-            'barrier_range' : {
-               'type' : 'string'
+            barrier_range: {
+                type: 'string',
             },
-            'basis' : {
-               'type' : 'string'
+            basis: {
+                type: 'string',
             },
-            'cancellation' : {
-               'type' : 'string'
+            cancellation: {
+                type: 'string',
             },
-            'contract_type' : {
-               'required' : 1,
-               'type' : 'string'
+            contract_type: {
+                required: 1,
+                type    : 'string',
             },
-            'currency' : {
-               'required' : 1,
-               'type' : 'string'
+            currency: {
+                required: 1,
+                type    : 'string',
             },
-            'date_expiry' : {
-               'type' : 'numeric'
+            date_expiry: {
+                type: 'numeric',
             },
-            'date_start' : {
-               'type' : 'numeric'
+            date_start: {
+                type: 'numeric',
             },
-            'duration' : {
-               'type' : 'numeric'
+            duration: {
+                type: 'numeric',
             },
-            'duration_unit' : {
-               'type' : 'string'
+            duration_unit: {
+                type: 'string',
             },
-            'limit_order' : {
-               'stop_loss' : {
-                  'type' : 'numeric'
-               },
-               'take_profit' : {
-                  'type' : 'numeric'
-               }
+            limit_order: {
+                stop_loss: {
+                    type: 'numeric',
+                },
+                take_profit: {
+                    type: 'numeric',
+                },
             },
-            'multiplier' : {
-               'type' : 'numeric'
+            multiplier: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'product_type' : {
-               'type' : 'string'
+            passthrough : {},
+            product_type: {
+                type: 'string',
             },
-            'proposal' : {
-               'required' : 1,
-               'type' : 'numeric'
+            proposal: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'selected_tick' : {
-               'type' : 'numeric'
+            selected_tick: {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'symbol' : {
-               'required' : 1,
-               'type' : 'string'
+            symbol: {
+                required: 1,
+                type    : 'string',
             },
-            'trading_period_start' : {
-               'type' : 'numeric'
-            }
-         };
+            trading_period_start: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'proposal',
@@ -4422,21 +4422,21 @@ export default class DerivAPICalls {
      */
     proposalOpenContract(args = {}) {
         const config = {
-            'contract_id' : {
-               'type' : 'numeric'
+            contract_id: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'proposal_open_contract' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough           : {},
+            proposal_open_contract: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
-            }
-         };
+            subscribe: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'proposal_open_contract',
@@ -4457,15 +4457,15 @@ export default class DerivAPICalls {
      */
     realityCheck(args = {}) {
         const config = {
-            'passthrough' : {},
-            'reality_check' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough  : {},
+            reality_check: {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
-            }
-         };
+            req_id: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'reality_check',
@@ -4489,27 +4489,27 @@ export default class DerivAPICalls {
      */
     requestReport(args = {}) {
         const config = {
-            'date_from' : {
-               'required' : 1,
-               'type' : 'numeric'
+            date_from: {
+                required: 1,
+                type    : 'numeric',
             },
-            'date_to' : {
-               'required' : 1,
-               'type' : 'numeric'
+            date_to: {
+                required: 1,
+                type    : 'numeric',
             },
-            'passthrough' : {},
-            'report_type' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            report_type: {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'request_report' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            request_report: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'request_report',
@@ -4533,26 +4533,26 @@ export default class DerivAPICalls {
      */
     resetPassword(args = {}) {
         const config = {
-            'date_of_birth' : {
-               'type' : 'string'
+            date_of_birth: {
+                type: 'string',
             },
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'reset_password' : {
-               'required' : 1,
-               'type' : 'numeric'
+            reset_password: {
+                required: 1,
+                type    : 'numeric',
             },
-            'verification_code' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'reset_password',
@@ -4573,15 +4573,15 @@ export default class DerivAPICalls {
      */
     residenceList(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'residence_list' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            residence_list: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'residence_list',
@@ -4602,15 +4602,15 @@ export default class DerivAPICalls {
      */
     revokeOauthApp(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'revoke_oauth_app' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            revoke_oauth_app: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'revoke_oauth_app',
@@ -4632,19 +4632,19 @@ export default class DerivAPICalls {
      */
     sell(args = {}) {
         const config = {
-            'passthrough' : {},
-            'price' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough: {},
+            price      : {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'sell' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            sell: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'sell',
@@ -4668,26 +4668,26 @@ export default class DerivAPICalls {
      */
     sellContractForMultipleAccounts(args = {}) {
         const config = {
-            'passthrough' : {},
-            'price' : {
-               'required' : 1,
-               'type' : 'numeric'
+            passthrough: {},
+            price      : {
+                required: 1,
+                type    : 'numeric',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'sell_contract_for_multiple_accounts' : {
-               'required' : 1,
-               'type' : 'numeric'
+            sell_contract_for_multiple_accounts: {
+                required: 1,
+                type    : 'numeric',
             },
-            'shortcode' : {
-               'required' : 1,
-               'type' : 'string'
+            shortcode: {
+                required: 1,
+                type    : 'string',
             },
-            'tokens' : {
-               'required' : 1
-            }
-         };
+            tokens: {
+                required: 1,
+            },
+        };
 
         const allArgs = {
             method        : 'sell_contract_for_multiple_accounts',
@@ -4708,15 +4708,15 @@ export default class DerivAPICalls {
      */
     sellExpired(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'sell_expired' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            sell_expired: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'sell_expired',
@@ -4741,27 +4741,27 @@ export default class DerivAPICalls {
      */
     serviceToken(args = {}) {
         const config = {
-            'country' : {
-               'type' : 'string'
+            country: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'referrer' : {
-               'type' : 'string'
+            passthrough: {},
+            referrer   : {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'server' : {
-               'type' : 'string'
+            server: {
+                type: 'string',
             },
-            'service' : {
-               'required' : 1
+            service: {
+                required: 1,
             },
-            'service_token' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            service_token: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'service_token',
@@ -4782,15 +4782,15 @@ export default class DerivAPICalls {
      */
     setAccountCurrency(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'set_account_currency' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            set_account_currency: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'set_account_currency',
@@ -4828,72 +4828,72 @@ export default class DerivAPICalls {
      */
     setFinancialAssessment(args = {}) {
         const config = {
-            'account_turnover' : {
-               'type' : 'string'
+            account_turnover: {
+                type: 'string',
             },
-            'binary_options_trading_experience' : {
-               'type' : 'string'
+            binary_options_trading_experience: {
+                type: 'string',
             },
-            'binary_options_trading_frequency' : {
-               'type' : 'string'
+            binary_options_trading_frequency: {
+                type: 'string',
             },
-            'cfd_trading_experience' : {
-               'type' : 'string'
+            cfd_trading_experience: {
+                type: 'string',
             },
-            'cfd_trading_frequency' : {
-               'type' : 'string'
+            cfd_trading_frequency: {
+                type: 'string',
             },
-            'education_level' : {
-               'required' : 1,
-               'type' : 'string'
+            education_level: {
+                required: 1,
+                type    : 'string',
             },
-            'employment_industry' : {
-               'required' : 1,
-               'type' : 'string'
+            employment_industry: {
+                required: 1,
+                type    : 'string',
             },
-            'employment_status' : {
-               'type' : 'string'
+            employment_status: {
+                type: 'string',
             },
-            'estimated_worth' : {
-               'required' : 1,
-               'type' : 'string'
+            estimated_worth: {
+                required: 1,
+                type    : 'string',
             },
-            'forex_trading_experience' : {
-               'type' : 'string'
+            forex_trading_experience: {
+                type: 'string',
             },
-            'forex_trading_frequency' : {
-               'type' : 'string'
+            forex_trading_frequency: {
+                type: 'string',
             },
-            'income_source' : {
-               'required' : 1,
-               'type' : 'string'
+            income_source: {
+                required: 1,
+                type    : 'string',
             },
-            'net_income' : {
-               'required' : 1,
-               'type' : 'string'
+            net_income: {
+                required: 1,
+                type    : 'string',
             },
-            'occupation' : {
-               'required' : 1,
-               'type' : 'string'
+            occupation: {
+                required: 1,
+                type    : 'string',
             },
-            'other_instruments_trading_experience' : {
-               'type' : 'string'
+            other_instruments_trading_experience: {
+                type: 'string',
             },
-            'other_instruments_trading_frequency' : {
-               'type' : 'string'
+            other_instruments_trading_frequency: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'set_financial_assessment' : {
-               'required' : 1,
-               'type' : 'numeric'
+            set_financial_assessment: {
+                required: 1,
+                type    : 'numeric',
             },
-            'source_of_wealth' : {
-               'type' : 'string'
-            }
-         };
+            source_of_wealth: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'set_financial_assessment',
@@ -4928,29 +4928,29 @@ export default class DerivAPICalls {
      */
     setSelfExclusion(args = {}) {
         const config = {
-            'exclude_until' : {},
-            'max_30day_deposit' : {},
-            'max_30day_losses' : {},
-            'max_30day_turnover' : {},
-            'max_7day_deposit' : {},
-            'max_7day_losses' : {},
-            'max_7day_turnover' : {},
-            'max_balance' : {},
-            'max_deposit' : {},
-            'max_losses' : {},
-            'max_open_bets' : {},
-            'max_turnover' : {},
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            exclude_until     : {},
+            max_30day_deposit : {},
+            max_30day_losses  : {},
+            max_30day_turnover: {},
+            max_7day_deposit  : {},
+            max_7day_losses   : {},
+            max_7day_turnover : {},
+            max_balance       : {},
+            max_deposit       : {},
+            max_losses        : {},
+            max_open_bets     : {},
+            max_turnover      : {},
+            passthrough       : {},
+            req_id            : {
+                type: 'numeric',
             },
-            'session_duration_limit' : {},
-            'set_self_exclusion' : {
-               'required' : 1,
-               'type' : 'numeric'
+            session_duration_limit: {},
+            set_self_exclusion    : {
+                required: 1,
+                type    : 'numeric',
             },
-            'timeout_until' : {}
-         };
+            timeout_until: {},
+        };
 
         const allArgs = {
             method        : 'set_self_exclusion',
@@ -4975,7 +4975,7 @@ export default class DerivAPICalls {
      * @param {Any} args.citizen - [Optional] Country of legal citizenship, 2-letter country code.
      * @param {String} args.date_of_birth - [Optional] Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).
      * @param {Number} args.email_consent - [Optional] Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing
-     * @param {Any} args.feature_flag - 
+     * @param {Any} args.feature_flag -
      * @param {String} args.first_name - [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
      * @param {String} args.last_name - [Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).
      * @param {Number} args.non_pep_declaration - [Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates). Effective for real accounts only.
@@ -4995,79 +4995,79 @@ export default class DerivAPICalls {
      */
     setSettings(args = {}) {
         const config = {
-            'account_opening_reason' : {
-               'type' : 'string'
+            account_opening_reason: {
+                type: 'string',
             },
-            'address_city' : {
-               'type' : 'string'
+            address_city: {
+                type: 'string',
             },
-            'address_line_1' : {
-               'type' : 'string'
+            address_line_1: {
+                type: 'string',
             },
-            'address_line_2' : {},
-            'address_postcode' : {
-               'type' : 'string'
+            address_line_2  : {},
+            address_postcode: {
+                type: 'string',
             },
-            'address_state' : {
-               'type' : 'string'
+            address_state: {
+                type: 'string',
             },
-            'allow_copiers' : {
-               'type' : 'numeric'
+            allow_copiers: {
+                type: 'numeric',
             },
-            'citizen' : {},
-            'date_of_birth' : {
-               'type' : 'string'
+            citizen      : {},
+            date_of_birth: {
+                type: 'string',
             },
-            'email_consent' : {
-               'type' : 'numeric'
+            email_consent: {
+                type: 'numeric',
             },
-            'feature_flag' : {
-               'wallet' : {
-                  'type' : 'numeric'
-               }
+            feature_flag: {
+                wallet: {
+                    type: 'numeric',
+                },
             },
-            'first_name' : {
-               'type' : 'string'
+            first_name: {
+                type: 'string',
             },
-            'last_name' : {
-               'type' : 'string'
+            last_name: {
+                type: 'string',
             },
-            'non_pep_declaration' : {
-               'type' : 'numeric'
+            non_pep_declaration: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'phone' : {},
-            'place_of_birth' : {
-               'type' : 'string'
+            passthrough   : {},
+            phone         : {},
+            place_of_birth: {
+                type: 'string',
             },
-            'preferred_language' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            preferred_language: {},
+            req_id            : {
+                type: 'numeric',
             },
-            'request_professional_status' : {
-               'type' : 'numeric'
+            request_professional_status: {
+                type: 'numeric',
             },
-            'residence' : {},
-            'salutation' : {
-               'type' : 'string'
+            residence : {},
+            salutation: {
+                type: 'string',
             },
-            'secret_answer' : {
-               'type' : 'string'
+            secret_answer: {
+                type: 'string',
             },
-            'secret_question' : {
-               'type' : 'string'
+            secret_question: {
+                type: 'string',
             },
-            'set_settings' : {
-               'required' : 1,
-               'type' : 'numeric'
+            set_settings: {
+                required: 1,
+                type    : 'numeric',
             },
-            'tax_identification_number' : {
-               'type' : 'string'
+            tax_identification_number: {
+                type: 'string',
             },
-            'tax_residence' : {
-               'type' : 'string'
-            }
-         };
+            tax_residence: {
+                type: 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'set_settings',
@@ -5094,33 +5094,33 @@ export default class DerivAPICalls {
      */
     statement(args = {}) {
         const config = {
-            'action_type' : {
-               'type' : 'string'
+            action_type: {
+                type: 'string',
             },
-            'date_from' : {
-               'type' : 'numeric'
+            date_from: {
+                type: 'numeric',
             },
-            'date_to' : {
-               'type' : 'numeric'
+            date_to: {
+                type: 'numeric',
             },
-            'description' : {
-               'type' : 'numeric'
+            description: {
+                type: 'numeric',
             },
-            'limit' : {
-               'type' : 'numeric'
+            limit: {
+                type: 'numeric',
             },
-            'offset' : {
-               'type' : 'numeric'
+            offset: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'statement' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            statement: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'statement',
@@ -5141,15 +5141,15 @@ export default class DerivAPICalls {
      */
     statesList(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'states_list' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            states_list: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'states_list',
@@ -5171,17 +5171,17 @@ export default class DerivAPICalls {
      */
     ticks(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'ticks' : {
-               'required' : 1
-            }
-         };
+            ticks: {
+                required: 1,
+            },
+        };
 
         const allArgs = {
             method        : 'ticks',
@@ -5202,7 +5202,7 @@ export default class DerivAPICalls {
      * @param {Number} args.granularity - [Optional] Only applicable for style: `candles`. Candle time-dimension width setting. (default: `60`).
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
      * @param {Number} args.req_id - [Optional] Used to map request to response.
-     * @param {Number} args.start - [Optional] Epoch value representing the earliest boundary of the returned ticks. 
+     * @param {Number} args.start - [Optional] Epoch value representing the earliest boundary of the returned ticks.
 - For `"style": "ticks"`: this will default to 1 day ago.
 - For `"style": "candles"`: it will default to 1 day ago if count or granularity is undefined.
      * @param {String} args.style - [Optional] The tick-output style.
@@ -5211,37 +5211,37 @@ export default class DerivAPICalls {
      */
     ticksHistory(args = {}) {
         const config = {
-            'adjust_start_time' : {
-               'type' : 'numeric'
+            adjust_start_time: {
+                type: 'numeric',
             },
-            'count' : {
-               'type' : 'numeric'
+            count: {
+                type: 'numeric',
             },
-            'end' : {
-               'required' : 1,
-               'type' : 'string'
+            end: {
+                required: 1,
+                type    : 'string',
             },
-            'granularity' : {
-               'type' : 'numeric'
+            granularity: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'start' : {
-               'type' : 'numeric'
+            start: {
+                type: 'numeric',
             },
-            'style' : {
-               'type' : 'string'
+            style: {
+                type: 'string',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'ticks_history' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            ticks_history: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'ticks_history',
@@ -5262,15 +5262,15 @@ export default class DerivAPICalls {
      */
     time(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'time' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            time: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'time',
@@ -5293,21 +5293,21 @@ export default class DerivAPICalls {
      */
     tncApproval(args = {}) {
         const config = {
-            'affiliate_coc_agreement' : {
-               'type' : 'numeric'
+            affiliate_coc_agreement: {
+                type: 'numeric',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'tnc_approval' : {
-               'required' : 1,
-               'type' : 'numeric'
+            tnc_approval: {
+                required: 1,
+                type    : 'numeric',
             },
-            'ukgc_funds_protection' : {
-               'type' : 'numeric'
-            }
-         };
+            ukgc_funds_protection: {
+                type: 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'tnc_approval',
@@ -5328,15 +5328,15 @@ export default class DerivAPICalls {
      */
     topupVirtual(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'topup_virtual' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            topup_virtual: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'topup_virtual',
@@ -5358,18 +5358,18 @@ export default class DerivAPICalls {
      */
     tradingDurations(args = {}) {
         const config = {
-            'landing_company' : {
-               'type' : 'string'
+            landing_company: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'trading_durations' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_durations: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_durations',
@@ -5391,19 +5391,19 @@ export default class DerivAPICalls {
      */
     tradingPlatformAccounts(args = {}) {
         const config = {
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'trading_platform_accounts' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_accounts: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_accounts',
@@ -5428,29 +5428,29 @@ export default class DerivAPICalls {
      */
     tradingPlatformDeposit(args = {}) {
         const config = {
-            'amount' : {
-               'type' : 'numeric'
+            amount: {
+                type: 'numeric',
             },
-            'from_account' : {
-               'type' : 'string'
+            from_account: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'to_account' : {
-               'required' : 1,
-               'type' : 'string'
+            to_account: {
+                required: 1,
+                type    : 'string',
             },
-            'trading_platform_deposit' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_deposit: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_deposit',
@@ -5475,31 +5475,31 @@ export default class DerivAPICalls {
      */
     tradingPlatformInvestorPasswordChange(args = {}) {
         const config = {
-            'account_id' : {
-               'required' : 1,
-               'type' : 'string'
+            account_id: {
+                required: 1,
+                type    : 'string',
             },
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'old_password' : {
-               'required' : 1,
-               'type' : 'string'
+            old_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'trading_platform_investor_password_change' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_investor_password_change: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_investor_password_change',
@@ -5524,31 +5524,31 @@ export default class DerivAPICalls {
      */
     tradingPlatformInvestorPasswordReset(args = {}) {
         const config = {
-            'account_id' : {
-               'required' : 1,
-               'type' : 'string'
+            account_id: {
+                required: 1,
+                type    : 'string',
             },
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'trading_platform_investor_password_reset' : {
-               'required' : 1,
-               'type' : 'numeric'
+            trading_platform_investor_password_reset: {
+                required: 1,
+                type    : 'numeric',
             },
-            'verification_code' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_investor_password_reset',
@@ -5576,40 +5576,40 @@ export default class DerivAPICalls {
      */
     tradingPlatformNewAccount(args = {}) {
         const config = {
-            'account_type' : {
-               'required' : 1,
-               'type' : 'string'
+            account_type: {
+                required: 1,
+                type    : 'string',
             },
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'dry_run' : {
-               'type' : 'numeric'
+            dry_run: {
+                type: 'numeric',
             },
-            'market_type' : {
-               'required' : 1,
-               'type' : 'string'
+            market_type: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'password' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            password   : {
+                required: 1,
+                type    : 'string',
             },
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            platform: {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'sub_account_type' : {
-               'type' : 'string'
+            sub_account_type: {
+                type: 'string',
             },
-            'trading_platform_new_account' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_new_account: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_new_account',
@@ -5633,26 +5633,26 @@ export default class DerivAPICalls {
      */
     tradingPlatformPasswordChange(args = {}) {
         const config = {
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'old_password' : {
-               'type' : 'string'
+            old_password: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'trading_platform_password_change' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_password_change: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_password_change',
@@ -5676,27 +5676,27 @@ export default class DerivAPICalls {
      */
     tradingPlatformPasswordReset(args = {}) {
         const config = {
-            'new_password' : {
-               'required' : 1,
-               'type' : 'string'
+            new_password: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'trading_platform_password_reset' : {
-               'required' : 1,
-               'type' : 'numeric'
+            trading_platform_password_reset: {
+                required: 1,
+                type    : 'numeric',
             },
-            'verification_code' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verification_code: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_password_reset',
@@ -5719,20 +5719,20 @@ export default class DerivAPICalls {
      */
     tradingPlatformProductListing(args = {}) {
         const config = {
-            'app_id' : {},
-            'country_code' : {
-               'required' : 1,
-               'type' : 'string'
+            app_id      : {},
+            country_code: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'trading_platform_product_listing' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_product_listing: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_product_listing',
@@ -5757,31 +5757,31 @@ export default class DerivAPICalls {
      */
     tradingPlatformWithdrawal(args = {}) {
         const config = {
-            'amount' : {
-               'required' : 1,
-               'type' : 'numeric'
+            amount: {
+                required: 1,
+                type    : 'numeric',
             },
-            'from_account' : {
-               'required' : 1,
-               'type' : 'string'
+            from_account: {
+                required: 1,
+                type    : 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'required' : 1,
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                required: 1,
+                type    : 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'to_account' : {
-               'required' : 1,
-               'type' : 'string'
+            to_account: {
+                required: 1,
+                type    : 'string',
             },
-            'trading_platform_withdrawal' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_platform_withdrawal: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_platform_withdrawal',
@@ -5806,27 +5806,27 @@ export default class DerivAPICalls {
      */
     tradingServers(args = {}) {
         const config = {
-            'account_type' : {
-               'type' : 'string'
+            account_type: {
+                type: 'string',
             },
-            'environment' : {
-               'type' : 'string'
+            environment: {
+                type: 'string',
             },
-            'market_type' : {
-               'type' : 'string'
+            market_type: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'platform' : {
-               'type' : 'string'
+            passthrough: {},
+            platform   : {
+                type: 'string',
             },
-            'req_id' : {
-               'type' : 'numeric'
+            req_id: {
+                type: 'numeric',
             },
-            'trading_servers' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            trading_servers: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_servers',
@@ -5847,15 +5847,15 @@ export default class DerivAPICalls {
      */
     tradingTimes(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'trading_times' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            trading_times: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'trading_times',
@@ -5877,19 +5877,19 @@ export default class DerivAPICalls {
      */
     transaction(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'required' : 1,
-               'type' : 'numeric'
+            subscribe: {
+                required: 1,
+                type    : 'numeric',
             },
-            'transaction' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            transaction: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'transaction',
@@ -5915,30 +5915,30 @@ export default class DerivAPICalls {
      */
     transferBetweenAccounts(args = {}) {
         const config = {
-            'account_from' : {
-               'type' : 'string'
+            account_from: {
+                type: 'string',
             },
-            'account_to' : {
-               'type' : 'string'
+            account_to: {
+                type: 'string',
             },
-            'accounts' : {
-               'type' : 'string'
+            accounts: {
+                type: 'string',
             },
-            'amount' : {
-               'type' : 'numeric'
+            amount: {
+                type: 'numeric',
             },
-            'currency' : {
-               'type' : 'string'
+            currency: {
+                type: 'string',
             },
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'transfer_between_accounts' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            transfer_between_accounts: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'transfer_between_accounts',
@@ -5956,65 +5956,65 @@ export default class DerivAPICalls {
      * @param {Any} args.passthrough - [Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.
      * @param {Number} args.req_id - [Optional] Used to map request to response.
      * @param {String} args.type - Purpose of the email verification call.
-     * @param {Any} args.url_parameters - 
+     * @param {Any} args.url_parameters -
      * @param {String} args.verify_email - Email address to be verified.
      */
     verifyEmail(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'type' : {
-               'required' : 1,
-               'type' : 'string'
+            type: {
+                required: 1,
+                type    : 'string',
             },
-            'url_parameters' : {
-               'affiliate_token' : {
-                  'type' : 'string'
-               },
-               'date_first_contact' : {
-                  'type' : 'string'
-               },
-               'gclid_url' : {
-                  'type' : 'string'
-               },
-               'pa_amount' : {
-                  'type' : 'numeric'
-               },
-               'pa_currency' : {
-                  'type' : 'string'
-               },
-               'pa_loginid' : {
-                  'type' : 'string'
-               },
-               'pa_remarks' : {
-                  'type' : 'string'
-               },
-               'redirect_to' : {
-                  'type' : 'numeric'
-               },
-               'signup_device' : {
-                  'type' : 'string'
-               },
-               'utm_ad_id' : {},
-               'utm_adgroup_id' : {},
-               'utm_adrollclk_id' : {},
-               'utm_campaign' : {},
-               'utm_campaign_id' : {},
-               'utm_content' : {},
-               'utm_fbcl_id' : {},
-               'utm_gl_client_id' : {},
-               'utm_medium' : {},
-               'utm_msclk_id' : {},
-               'utm_source' : {},
-               'utm_term' : {}
+            url_parameters: {
+                affiliate_token: {
+                    type: 'string',
+                },
+                date_first_contact: {
+                    type: 'string',
+                },
+                gclid_url: {
+                    type: 'string',
+                },
+                pa_amount: {
+                    type: 'numeric',
+                },
+                pa_currency: {
+                    type: 'string',
+                },
+                pa_loginid: {
+                    type: 'string',
+                },
+                pa_remarks: {
+                    type: 'string',
+                },
+                redirect_to: {
+                    type: 'numeric',
+                },
+                signup_device: {
+                    type: 'string',
+                },
+                utm_ad_id       : {},
+                utm_adgroup_id  : {},
+                utm_adrollclk_id: {},
+                utm_campaign    : {},
+                utm_campaign_id : {},
+                utm_content     : {},
+                utm_fbcl_id     : {},
+                utm_gl_client_id: {},
+                utm_medium      : {},
+                utm_msclk_id    : {},
+                utm_source      : {},
+                utm_term        : {},
             },
-            'verify_email' : {
-               'required' : 1,
-               'type' : 'string'
-            }
-         };
+            verify_email: {
+                required: 1,
+                type    : 'string',
+            },
+        };
 
         const allArgs = {
             method        : 'verify_email',
@@ -6036,18 +6036,18 @@ export default class DerivAPICalls {
      */
     websiteStatus(args = {}) {
         const config = {
-            'passthrough' : {},
-            'req_id' : {
-               'type' : 'numeric'
+            passthrough: {},
+            req_id     : {
+                type: 'numeric',
             },
-            'subscribe' : {
-               'type' : 'numeric'
+            subscribe: {
+                type: 'numeric',
             },
-            'website_status' : {
-               'required' : 1,
-               'type' : 'numeric'
-            }
-         };
+            website_status: {
+                required: 1,
+                type    : 'numeric',
+            },
+        };
 
         const allArgs = {
             method        : 'website_status',
@@ -6077,16 +6077,18 @@ export default class DerivAPICalls {
 // ----- Helper Methods -----
 // ==========================
 
-const isObject = value => value instanceof Object;
+const isObject = (value) => value instanceof Object;
 
 const typeCheckers = {
     object : isObject,
-    numeric: value => !Number.isNaN(value * 1),
-    string : value => typeof value === 'string',
-    boolean: value => [true, false, 0, 1].includes(value),
+    numeric: (value) => !Number.isNaN(value * 1),
+    string : (value) => typeof value === 'string',
+    boolean: (value) => [true, false, 0, 1].includes(value),
 };
 
-export function parseArgs ({ config, args, method, needsMethodArg }) {
+export function parseArgs({
+    config, args, method, needsMethodArg,
+}) {
     let parsedArgs = args;
 
     if (needsMethodArg && !isObject(parsedArgs)) {
@@ -6112,7 +6114,7 @@ export function parseArgs ({ config, args, method, needsMethodArg }) {
     return parsedArgs;
 }
 
-function validateArgs ({ config, args }) {
+function validateArgs({ config, args }) {
     if (!isObject(args)) {
         return `Requires an object but a ${typeof args} is passed.`;
     }
@@ -6120,7 +6122,7 @@ function validateArgs ({ config, args }) {
     const errorMessages = [];
 
     const missing = Object.keys(config).filter(
-        key => (config[key] || {}).required && !(key in args),
+        (key) => (config[key] || {}).required && !(key in args),
     );
 
     if (missing.length) {

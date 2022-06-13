@@ -1027,6 +1027,16 @@
               
                 
                 <li><a
+                  href='#changeemail'
+                  class="">
+                  changeEmail
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#changepassword'
                   class="">
                   changePassword
@@ -1170,6 +1180,26 @@
                   href='#getaccountstatus'
                   class="">
                   getAccountStatus
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getaccounttypes'
+                  class="">
+                  getAccountTypes
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getavailableaccountstotransfer'
+                  class="">
+                  getAvailableAccountsToTransfer
                   
                 </a>
                 
@@ -1587,9 +1617,29 @@
               
                 
                 <li><a
+                  href='#p2porderreview'
+                  class="">
+                  p2pOrderReview
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#p2ppaymentmethods'
                   class="">
                   p2pPaymentMethods
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#p2pping'
+                  class="">
+                  p2pPing
                   
                 </a>
                 
@@ -1990,6 +2040,16 @@
                   href='#tradingplatformpasswordreset'
                   class="">
                   tradingPlatformPasswordReset
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#tradingplatformproductlisting'
+                  class="">
+                  tradingPlatformProductListing
                   
                 </a>
                 
@@ -9533,7 +9593,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>This call opens a new affiliate account. This call can be used as as sign up endpoint.</p>
+  <p>Register a new affiliate</p>
 
     <div class='pre p1 fill-light mt0'>affiliateAccountAdd(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -9571,27 +9631,9 @@ in this codebase.</p>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.account_opening_reason</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Purpose and reason for requesting the account opening.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.account_turnover</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] The anticipated account turnover.
-</span></td>
-</tr>
-
-
-              
-                <tr>
   <td class='break-word'><span class='code bold'>args.address_city</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Within 100 characters.
+  <td class='break-word'><span>City name within 50 characters.
 </span></td>
 </tr>
 
@@ -9618,7 +9660,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.address_postcode</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Within 20 characters and may not contain '+'.
+  <td class='break-word'><span>Within 20 characters and may not contain '+'.
 </span></td>
 </tr>
 
@@ -9627,7 +9669,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.address_state</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Possible value receive from 
+  <td class='break-word'><span>Possible value receive from 
 <code>states_list</code>
  call.
 </span></td>
@@ -9638,7 +9680,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.affiliate_account_add</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
-  <td class='break-word'><span>Must be 
+  <td class='break-word'><span>[Required] Must be 
 <code>1</code>
 </span></td>
 </tr>
@@ -9646,58 +9688,9 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.affiliate_plan</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.country</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>The affiliate plan the account will subscribe to
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.affiliate_token</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Affiliate token, within 32 characters.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.citizen</span> <code class='quiet'>Any</code>
-  </td>
-  <td class='break-word'><span>[Optional] Country of legal citizenship, 2-letter country code.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.client_type</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Indicates whether this is for a client requesting an account with professional status.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.currency</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] To set currency of the account. List of supported currencies can be acquired with 
-<code>payout_currencies</code>
- call.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.date_of_birth</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>Date of birth format: 
-<code>yyyy-mm-dd</code>
-.
+  <td class='break-word'><span>Country of legal citizenship, 2-letter country code.
 </span></td>
 </tr>
 
@@ -9706,7 +9699,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.first_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+  <td class='break-word'><span>The official first name of the affiliate. Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -9715,7 +9708,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.last_name</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
+  <td class='break-word'><span>The official last name of the affiliate. Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -9724,7 +9717,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.non_pep_declaration</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
+  <td class='break-word'><span>Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).
 </span></td>
 </tr>
 
@@ -9742,20 +9735,20 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.phone</span> <code class='quiet'>Any</code>
+  <td class='break-word'><span class='code bold'>args.password</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Starting with 
-<code>+</code>
- followed by 9-35 digits, hyphens or space.
+  <td class='break-word'><span>Password for the affiliate account. (Accepts any printable ASCII character. Must be between 6-50 characters, and include numbers, lowercase and uppercase letters.).
 </span></td>
 </tr>
 
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.place_of_birth</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.phone</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Place of birth, 2-letter country code.
+  <td class='break-word'><span>Registered phone number of the affiliate. Starting with 
+<code>+</code>
+ followed by 8-35 digits, allowing hyphens or space.
 </span></td>
 </tr>
 
@@ -9771,60 +9764,18 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.residence</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.tnc_accepted</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
-  <td class='break-word'><span>2-letter country code, possible value receive from 
-<code>residence_list</code>
- call.
+  <td class='break-word'><span>Indicates client has agreed to the terms and conditions.
 </span></td>
 </tr>
 
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.salutation</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.username</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] Accept any value in enum list.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.secret_answer</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.secret_question</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Accept any value in enum list. Required for new account and existing client details will be used if client open another account.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.tax_identification_number</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Tax identification number. Only applicable for real money account. Required for 
-<code>maltainvest</code>
- landing company.
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>args.tax_residence</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>[Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for 
-<code>maltainvest</code>
- landing company.
+  <td class='break-word'><span>Desired username for the affiliate account. Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.
 </span></td>
 </tr>
 
@@ -12139,6 +12090,148 @@ in this codebase.</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='changeemail'>
+      changeEmail
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Change Email.</p>
+
+    <div class='pre p1 fill-light mt0'>changeEmail(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.change_email</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>Must be 
+<code>verify</code>
+ or 
+<code>update</code>
+.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.new_email</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>Email address to be verified.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.new_password</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] New password (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address). Mandatory if change_email is update and user has social login.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.verification_code</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>Email verification code (received from a 
+<code>verify_email</code>
+ call, which must be done first)
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='changepassword'>
       changePassword
     </h3>
@@ -13415,6 +13508,17 @@ in this codebase.</p>
 
               
                 <tr>
+  <td class='break-word'><span class='code bold'>args.proof_of_ownership</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span><ul>
+<li></li>
+</ul>
+</span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>[Optional] Used to map request to response.
@@ -13676,6 +13780,24 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.subscribe</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] 1 - to initiate a realtime stream of exchange rates relative to base currency.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.target_currency</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Local currency
 </span></td>
 </tr>
 
@@ -13988,6 +14110,235 @@ in this codebase.</p>
   </td>
   <td class='break-word'><span>Must be 
 <code>1</code>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getaccounttypes'>
+      getAccountTypes
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Types of accounts available to create or link to.</p>
+
+    <div class='pre p1 fill-light mt0'>getAccountTypes(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.get_account_types</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 
+<code>1</code>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getavailableaccountstotransfer'>
+      getAvailableAccountsToTransfer
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get Available Accounts to Transfer.</p>
+
+    <div class='pre p1 fill-light mt0'>getAvailableAccountsToTransfer(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.get_available_accounts_to_transfer</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 
+<code>1</code>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.loginid</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>The unique identifier for this trading/wallet account.
 </span></td>
 </tr>
 
@@ -15723,7 +16074,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.mt5_account_category</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] To choose whether account is conventional or swap_free. Unavailable for financial_stp MT5_account_type
+  <td class='break-word'><span>[Optional] To choose whether account is conventional or not. Unavailable for financial_stp MT5_account_type
 </span></td>
 </tr>
 
@@ -16604,6 +16955,17 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.client_type</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>[Optional] Indicates whether this is for a client requesting an account with professional status.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.currency</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] To set currency of the account. List of supported currencies can be acquired with 
+<code>payout_currencies</code>
+ call.
 </span></td>
 </tr>
 
@@ -18017,7 +18379,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Creates a P2P (Peer to Peer) advert. Can only be used by an approved P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+  <p>Creates a P2P (Peer to Peer) advert. Can only be used by an approved P2P advertiser.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -18176,7 +18538,16 @@ in this codebase.</p>
   </td>
   <td class='break-word'><span>Conversion rate from advertiser's account currency to 
 <code>local_currency</code>
-.
+. An absolute rate value (fixed), or percentage offset from current market rate (floating).
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.rate_type</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>Type of rate, fixed or floating.
 </span></td>
 </tr>
 
@@ -18243,7 +18614,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Retrieve information about a P2P advert. <strong>This API call is still in Beta.</strong></p>
+  <p>Retrieve information about a P2P advert.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertInfo(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -18379,7 +18750,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Returns available adverts for use with <code>p2p_order_create</code>. <strong>This API call is still in Beta.</strong></p>
+  <p>Returns available adverts for use with <code>p2p_order_create</code> .</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -18531,7 +18902,7 @@ in this codebase.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>args.sort_by</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>[Optional] How the results are sorted: best rate, or advertiser completion rate.
+  <td class='break-word'><span>[Optional] How the results are sorted.
 </span></td>
 </tr>
 
@@ -18589,7 +18960,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Updates a P2P advert. Can only be used by the advertiser. <strong>This API call is still in Beta.</strong></p>
+  <p>Updates a P2P advert. Can only be used by the advertiser.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertUpdate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -18758,7 +19129,16 @@ in this codebase.</p>
   </td>
   <td class='break-word'><span>[Optional] Conversion rate from advertiser's account currency to 
 <code>local_currency</code>
-.
+. An absolute rate value (fixed), or percentage offset from current market rate (floating).
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.rate_type</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Type of rate, fixed or floating.
 </span></td>
 </tr>
 
@@ -18825,7 +19205,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Returns all P2P adverts created by the authorized client. Can only be used by a registered P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+  <p>Returns all P2P adverts created by the authorized client. Can only be used by a registered P2P advertiser.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertiserAdverts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -18952,7 +19332,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Registers the client as a P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+  <p>Registers the client as a P2P advertiser.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertiserCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -19106,7 +19486,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Retrieve information about a P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+  <p>Retrieve information about a P2P advertiser.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertiserInfo(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -19514,7 +19894,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Update the information of the P2P advertiser for the current account. Can only be used by an approved P2P advertiser. <strong>This API call is still in Beta.</strong></p>
+  <p>Update the information of the P2P advertiser for the current account. Can only be used by an approved P2P advertiser.</p>
 
     <div class='pre p1 fill-light mt0'>p2pAdvertiserUpdate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -19674,7 +20054,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Creates a P2P chat for the specified order. <strong>This API call is still in Beta.</strong></p>
+  <p>Creates a P2P chat for the specified order.</p>
 
     <div class='pre p1 fill-light mt0'>p2pChatCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -19792,7 +20172,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Cancel a P2P order. <strong>This API call is still in Beta.</strong></p>
+  <p>Cancel a P2P order.</p>
 
     <div class='pre p1 fill-light mt0'>p2pOrderCancel(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -19910,7 +20290,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Confirm a P2P order. <strong>This API call is still in Beta.</strong></p>
+  <p>Confirm a P2P order.</p>
 
     <div class='pre p1 fill-light mt0'>p2pOrderConfirm(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -20028,7 +20408,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Creates a P2P order for the specified advert. <strong>This API call is still in Beta.</strong></p>
+  <p>Creates a P2P order for the specified advert.</p>
 
     <div class='pre p1 fill-light mt0'>p2pOrderCreate(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -20131,6 +20511,15 @@ in this codebase.</p>
 
               
                 <tr>
+  <td class='break-word'><span class='code bold'>args.rate</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Conversion rate from account currency to local currency, only applicable for floating rate adverts.
+</span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>[Optional] Used to map request to response.
@@ -20191,7 +20580,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Dispute a P2P order. <strong>This API call is still in Beta.</strong></p>
+  <p>Dispute a P2P order.</p>
 
     <div class='pre p1 fill-light mt0'>p2pOrderDispute(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -20318,7 +20707,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>Retrieves the information about a P2P order. <strong>This API call is still in Beta.</strong></p>
+  <p>Retrieves the information about a P2P order.</p>
 
     <div class='pre p1 fill-light mt0'>p2pOrderInfo(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -20445,7 +20834,7 @@ in this codebase.</p>
   </div>
   
 
-  <p>List active orders. <strong>This API call is still in Beta.</strong></p>
+  <p>List active orders.</p>
 
     <div class='pre p1 fill-light mt0'>p2pOrderList(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
@@ -20591,6 +20980,146 @@ in this codebase.</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='p2porderreview'>
+      p2pOrderReview
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Creates a review for the specified order.</p>
+
+    <div class='pre p1 fill-light mt0'>p2pOrderReview(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.order_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>The order identification number.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.p2p_order_review</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 1
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.rating</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Rating for the transaction, 1 to 5.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.recommended</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] 
+<code>1</code>
+ if the counterparty is recommendable to others, otherwise 
+<code>0</code>
+.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='p2ppaymentmethods'>
       p2pPaymentMethods
     </h3>
@@ -20640,6 +21169,116 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.p2p_payment_methods</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   </td>
   <td class='break-word'><span>Must be 1
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='p2pping'>
+      p2pPing
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Keeps the connection alive and updates the P2P advertiser's online status. The advertiser will be considered offline 60 seconds after a call is made.</p>
+
+    <div class='pre p1 fill-light mt0'>p2pPing(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.p2p_ping</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 
+<code>1</code>
 </span></td>
 </tr>
 
@@ -20948,9 +21587,9 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.phone</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.phone_numbers</span> <code class='quiet'>Any</code>
   </td>
-  <td class='break-word'><span>Payment agent's phone number with coutry code.
+  <td class='break-word'><span>Payment agent's phone number(s) with country code.
 </span></td>
 </tr>
 
@@ -20975,9 +21614,9 @@ in this codebase.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>args.url</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>args.urls</span> <code class='quiet'>Any</code>
   </td>
-  <td class='break-word'><span>The URL of payment agent's website.
+  <td class='break-word'><span>The URL(s) of payment agent's website(s).
 </span></td>
 </tr>
 
@@ -22153,6 +22792,15 @@ in this codebase.</p>
   <td class='break-word'><span class='code bold'>args.barrier2</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>[Optional] Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers. Not needed for lookbacks.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.barrier_range</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Barrier range for callputspread.
 </span></td>
 </tr>
 
@@ -26618,6 +27266,135 @@ in this codebase.</p>
   <td class='break-word'><span>Email verification code (received from a 
 <code>verify_email</code>
  call, which must be done first)
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='tradingplatformproductlisting'>
+      tradingPlatformProductListing
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get list of Trading Platform products for client</p>
+
+    <div class='pre p1 fill-light mt0'>tradingPlatformProductListing(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.app_id</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Specific application 
+<code>app_id</code>
+.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.country_code</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Country of legal citizenship, 2-letter country code.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.passthrough</span> <code class='quiet'>Any</code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to pass data through the websocket, which may be retrieved via the 
+<code>echo_req</code>
+ output field.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.req_id</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>[Optional] Used to map request to response.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>args.trading_platform_product_listing</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  </td>
+  <td class='break-word'><span>Must be 1.
 </span></td>
 </tr>
 

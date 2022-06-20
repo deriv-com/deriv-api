@@ -68,9 +68,15 @@ basic.ping().then(console.log);
 
 ```js
 // Smaller bundle size, dealing only with the low-level library
-import DerivAPIBasic from '@deriv/deriv-api/dist/DerivAPIBasic';
+import DerivAPIBasic from '@deriv/deriv-api/dist/DerivAPIBasic.js';
+import WebSocket from 'ws';
 
-const api = new DerivAPIBasic({app_id: /* your app_id */ });
+// app_id 1089 is for testing, create your own app_id and use it here.
+// go to api.deriv.com to register your own app.
+const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+const api        = new DerivAPIBasic({ connection });
+
+api.ping().then(console.log);
 ```
 
 ## CommonJS modules
@@ -79,9 +85,15 @@ const api = new DerivAPIBasic({app_id: /* your app_id */ });
 
 ```js
 // Smaller bundle size, dealing only with the low-level library
+const WebSocket = require('ws');
 const DerivAPIBasic = require('@deriv/deriv-api/dist/DerivAPIBasic');
 
-const api = new DerivAPIBasic({app_id: /* your app_id */ });
+// app_id 1089 is for testing, create your own app_id and use it here.
+// go to api.deriv.com to register your own app.
+const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+const api        = new DerivAPIBasic({ connection });
+
+api.ping().then(console.log);
 ```
 
 ## Using the HTML script tag
@@ -91,8 +103,13 @@ const api = new DerivAPIBasic({app_id: /* your app_id */ });
 ```html
 <script src="https://unpkg.com/@deriv/deriv-api/dist/DerivAPIBasic.js"></script>
 <script>
-const api = new DerivAPIBasic({app_id: /* your app_id */ });
-/* rest of your code */
+    const api = new DerivAPIBasic({ 
+        endpoint: 'ws.binaryws.com',
+        app_id: 1089 /* 1089 is a default test app_id, replace with your own app_id */,
+        lang: 'EN' 
+    });
+    
+    api.ping().then(console.log);
 </script>
 ```
 
@@ -102,13 +119,13 @@ There are two ways to establish a connection:
 
 1. Use a previously opened connection:
     ```js
-    const connection = new WebSocket('ws://...');
+    const connection = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=YOUR_APP_ID');
     const api        = new DerivAPI({ connection });
     ```
 
 2. Pass the arguments needed to create a connection:
     ```js
-    const api = new DerivAPI({ endpoint: 'ws://...', app_id: /* your app_id */, lang: 'EN' });
+    const api = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: /* your app_id */, lang: 'EN' });
     ```
 
 # Documentation

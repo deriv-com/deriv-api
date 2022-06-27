@@ -2,7 +2,7 @@ import {
     first, finalize, share,
 } from 'rxjs/operators';
 
-import streams_list from './StreamsList.js';
+import streams_list                       from './StreamsList';
 import { APIError }                       from './errors';
 import { objectToCacheKey }               from './utils';
 
@@ -34,6 +34,7 @@ export default class SubscriptionManager {
         this.key_to_subs_id         = {};
         this.buy_key_to_contract_id = {};
         this.subs_per_msg_type      = [];
+        this.streams_list           = streams_list;
     }
 
     /**
@@ -188,7 +189,7 @@ export default class SubscriptionManager {
     }
 
     getMsgType(request) {
-        return streams_list.find((stream_key) => stream_key in request);
+        return this.streams_list.find((stream_key) => stream_key in request);
     }
 }
 

@@ -2,6 +2,7 @@ import {
     first, finalize, share,
 } from 'rxjs/operators';
 
+import streams_list from './StreamsList.js';
 import { APIError }                       from './errors';
 import { objectToCacheKey }               from './utils';
 
@@ -33,11 +34,6 @@ export default class SubscriptionManager {
         this.key_to_subs_id         = {};
         this.buy_key_to_contract_id = {};
         this.subs_per_msg_type      = [];
-        // streams_list is the list of subscriptions msg_types available.
-        // Please add/remove based on current available streams in api.
-        // Refer https://developers.binary.com/
-        this.streams_list = ['balance', 'candles', 'p2p_advertiser', 'p2p_order', 'proposal',
-            'proposal_array', 'proposal_open_contract', 'ticks', 'ticks_history', 'transaction', 'website_status'];
     }
 
     /**
@@ -192,7 +188,7 @@ export default class SubscriptionManager {
     }
 
     getMsgType(request) {
-        return this.streams_list.find((stream_key) => stream_key in request);
+        return streams_list.find((stream_key) => stream_key in request);
     }
 }
 

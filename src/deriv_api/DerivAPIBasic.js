@@ -42,7 +42,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         app_id,
         connection,
         cache      = new InMemory(),
-        endpoint   = 'frontend.binaryws.com',
+        endpoint   = 'ws.binaryws.com',
         lang       = 'EN',
         brand      = '',
         middleware = {},

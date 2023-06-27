@@ -148,7 +148,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
         const send_will_be_called = this.callMiddleware('sendWillBeCalled', { args });
         if (send_will_be_called) return send_will_be_called;
 
-        const [request] = args;
+        const [parsed_request] = args;
+
+        const request = this.callMiddleware('requestDataTransformer', parsed_request) || parsed_request;
 
         this.events.next({
             name: 'send',
@@ -178,7 +180,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return this.middleware[name](args);
     }
 
-    subscribe(request) {
+    subscribe(parsed_request) {
+        const request = this.callMiddleware('requestDataTransformer', parsed_request) || parsed_request;
         return this.subscription_manager.subscribe(request);
     }
 

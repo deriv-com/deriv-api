@@ -1,9 +1,9 @@
 global.WebSocket = require('ws');
-const { find } = require('rxjs/operators');
-const DerivAPI = require('../dist/DerivAPI');
+const { find }   = require('rxjs/operators');
+const DerivAPI   = require('../dist/DerivAPI');
 
-const token = process.env.DERIV_TOKEN;
-const app_id = process.env.APP_ID || 1234;
+const token           = process.env.DERIV_TOKEN;
+const app_id          = process.env.APP_ID || 1234;
 const expected_payout = process.env.EXPECTED_PAYOUT || 19;
 
 if (!token) {
@@ -28,28 +28,31 @@ async function main() {
         const contract = await api.contract({
             contract_type: 'CALL',
             currency,
-            amount: 10,
-            duration: 15,
+            amount       : 10,
+            duration     : 15,
             duration_unit: 'm',
-            symbol: 'frxUSDJPY',
-            basis: 'stake',
+            symbol       : 'frxUSDJPY',
+            basis        : 'stake',
         });
 
         contract.onUpdate(({ status, payout, bid_price }) => {
             switch (status) {
                 case 'proposal':
                     return console.log(
-                        `Current payout: ${payout.currency} ${payout.display}`);
+                        `Current payout: ${payout.currency} ${payout.display}`,
+                    );
                 case 'open':
                     return console.log(
-                        `Current bid price: ${bid_price.currency} ${bid_price.display}`);
+                        `Current bid price: ${bid_price.currency} ${bid_price.display}`,
+                    );
                 default:
                     break;
-            };
+            }
         });
 
         // Wait until payout is greater than USD 19
-        await contract.onUpdate().pipe(find(({ payout }) => payout.value >= expected_payout)).toPromise();
+        await contract.onUpdate()
+            .pipe(find(({ payout }) => payout.value >= expected_payout)).toPromise();
 
         const buy = await contract.buy();
 
@@ -61,7 +64,6 @@ async function main() {
         const { profit, status } = contract;
 
         console.log(`You ${status}: ${profit.currency} ${profit.display}`);
-
     } catch (err) {
         console.error(err);
     } finally {

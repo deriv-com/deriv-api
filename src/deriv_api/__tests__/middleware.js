@@ -36,6 +36,13 @@ test('Expect requestDataTransformer to modify requests', async () => {
     expect(modified_request).toEqual({ ping: 1, modified: true, req_id: 1 });
 });
 
+test('Expect request data to be unchanged if requestDataTransformer is not defined', async () => {
+    delete middleware.requestDataTransformer;
+
+    const returned_value = api.send(request);
+    expect(returned_value).toEqual(Promise.resolve(1));
+});
+
 beforeAll(() => {
     connection = new TestWebSocket({
         ping: 'pong',

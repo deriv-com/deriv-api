@@ -12,7 +12,7 @@ Node.js (v12.18.0 or higher is recommended)
 
 ## Installing Deriv API Library
 
-We need to install the Deriv API library if we want to connect to Deriv's websocket.
+We need to install the Deriv API library if we want to connect to Deriv's WebSocket.
 #### NPM
 
 ```
@@ -26,7 +26,7 @@ yarn add @deriv/deriv-api
 ```
 ## Installing Websocket (ws) library
 
-In order to make a websocket connection, we need the websocket (ws) library.
+In order to make a WebSocket connection, we need the websocket (ws) library.
 #### NPM
 
 ```
@@ -198,7 +198,7 @@ npm run devel_docs
 npm run serve_docs
 ```
 
-#### Generate html version of the docs and publish it to gh-pages
+#### Generate HTML version of the docs and publish it to gh-pages
 
 ```
 npm run gh-pages

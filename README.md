@@ -12,7 +12,7 @@ Node.js (v12.18.0 or higher is recommended)
 
 ## Installing Deriv API Library
 
-We need to install the Deriv API library if we want to connect to Deriv's websocket.
+We need to install the Deriv API library if we want to connect to Deriv's WebSocket.
 #### NPM
 
 ```

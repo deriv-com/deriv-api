@@ -4,6 +4,7 @@ import Assets          from './immutables/Assets';
 import ContractOptions from './immutables/ContractOptions';
 import Underlying      from './immutables/Underlying';
 import Candles         from './streams/Candles';
+import DataPoints   from './streams/DataPoints';
 import Contract        from './streams/Contract';
 import Ticks           from './streams/Ticks';
 import WebsiteStatus   from './streams/WebsiteStatus';
@@ -36,6 +37,20 @@ import WebsiteStatus   from './streams/WebsiteStatus';
 export default class DerivAPI {
     constructor(...options) {
         this.basic = new DerivAPIBasic(...options);
+    }
+
+    /**
+     * Provides a data stream of a symbol
+     *
+     * @param {String|TicksParam} options - symbol or a ticks parameter object
+     * @returns {Promise<Data>}
+     */
+    async DataPoints(options) {
+        const dataPoints = new DataPoints(this, options);
+
+        await dataPoints.init();
+
+        return dataPoints;
     }
 
     /**

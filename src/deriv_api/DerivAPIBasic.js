@@ -354,6 +354,16 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return Promise.all(types.map((type) => this.expect_response_types[type]));
     }
 
+    /**
+     * Aborts the request irregardless of the status.
+     */
+    abortRequest(request) {
+        const response_type = Object
+            .keys(this.expect_response_types)
+            .find((type) => type in request);
+        delete this.expect_response_types[response_type];
+    }
+
     deleteFromExpectResponse(request) {
         const response_type = Object
             .keys(this.expect_response_types)

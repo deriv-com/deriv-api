@@ -1,0 +1,33 @@
+name: Deriv API Test WorkFlow
+on:
+  push:
+    branches:
+    - master
+jobs:
+    build_test_and_publish:
+        name: Build and Test the Application
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Node.js using 14.x
+          uses: actions/setup-node@v4
+          with:
+            node-version: 14.x
+        - name: Install Packages
+          run: npm install
+        - name: Cache dependencies
+          uses: actions/cache@v3
+          with:
+            path: |
+              ./node_modules
+            key: dependency-cache-{{ checksum "package.json" }}
+        - name: Run tests and collect coverage
+          run: npm test -- --collectCoverage=true && npm run coverage
+        - name: Check syntax
+          run: npm run syntax
+        - name: Save coverage artifacts
+          uses: actions/upload-artifact@v4
+          with:
+            name: coverage
+            path: coverage

@@ -76,6 +76,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.subscription_manager  = new SubscriptionManager(this);
         this.reconnect_timeout     = false;
         this.keep_alive_interval   = false;
+        this.is_request_blocked    = false;
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -85,6 +86,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.cache = new Cache(this.storage ? this.storage : this, cache);
 
         this.connectionHandlers();
+    }
+
+    blockRequest(value) {
+        this.is_request_blocked = value;
     }
 
     connectionHandlers() {
@@ -145,6 +150,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     async send(...args) {
+        const api_type = Object.keys(args[0])[0];
+        if (this.is_request_blocked && api_type !== 'website_status') return new Promise((resolve) => { resolve(true); });
+
         const send_will_be_called = this.callMiddleware('sendWillBeCalled', { args });
         if (send_will_be_called) return send_will_be_called;
 
@@ -181,6 +189,8 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     subscribe(parsed_request) {
+        if (this.is_request_blocked) return new Subject();
+
         const request = this.callMiddleware('requestDataTransformer', parsed_request) || parsed_request;
         return this.subscription_manager.subscribe(request);
     }

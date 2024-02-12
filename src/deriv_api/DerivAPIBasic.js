@@ -22,7 +22,7 @@ import {
  *
  * @example
  * const apiFromOpenConnection = new DerivAPI({ connection });
- * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: 1234 });
+ * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.derivws.com', app_id: 1234 });
  *
  * @param {Object}     options
  * @param {WebSocket=} options.connection - A ready to use connection
@@ -42,7 +42,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         app_id,
         connection,
         cache      = new InMemory(),
-        endpoint   = 'ws.binaryws.com',
+        endpoint   = 'ws.derivws.com',
         lang       = 'EN',
         brand      = '',
         middleware = {},

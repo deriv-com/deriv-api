@@ -456,7 +456,7 @@ API.
 -   `options` **[Object][331]**  (optional, default `{}`)
     -   `options.app_id` **[Number][346]** Application ID of the API user
     -   `options.connection` **[WebSocket][347]?** A ready to use connection
-    -   `options.endpoint` **[String][333]** API server to connect to (optional, default `'frontend.derivws.com'`)
+    -   `options.endpoint` **[String][333]** API server to connect to (optional, default `'ws.derivws.com'`)
     -   `options.lang` **[String][333]** Language of the API communication (optional, default `'EN'`)
     -   `options.brand` **[String][333]** Brand name (optional, default `''`)
     -   `options.middleware` **[Object][331]** A middleware to call on certain API actions (optional, default `{}`)

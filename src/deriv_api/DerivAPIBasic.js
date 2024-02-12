@@ -22,7 +22,7 @@ import {
  *
  * @example
  * const apiFromOpenConnection = new DerivAPI({ connection });
- * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.binaryws.com', app_id: 1234 });
+ * const apiFromEndpoint = new DerivAPI({ endpoint: 'ws.derivws.com', app_id: 1234 });
  *
  * @param {Object}     options
  * @param {WebSocket=} options.connection - A ready to use connection
@@ -42,7 +42,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         app_id,
         connection,
         cache      = new InMemory(),
-        endpoint   = 'frontend.binaryws.com',
+        endpoint   = 'ws.derivws.com',
         lang       = 'EN',
         brand      = '',
         middleware = {},
@@ -76,6 +76,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.subscription_manager  = new SubscriptionManager(this);
         this.reconnect_timeout     = false;
         this.keep_alive_interval   = false;
+        this.is_request_blocked    = false;
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -85,6 +86,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         this.cache = new Cache(this.storage ? this.storage : this, cache);
 
         this.connectionHandlers();
+    }
+
+    blockRequest(value) {
+        this.is_request_blocked = value;
     }
 
     connectionHandlers() {
@@ -145,10 +150,15 @@ export default class DerivAPIBasic extends DerivAPICalls {
     }
 
     async send(...args) {
+        const api_type = Object.keys(args[0])[0];
+        if (this.is_request_blocked && api_type !== 'website_status') return new Promise((resolve) => { resolve(true); });
+
         const send_will_be_called = this.callMiddleware('sendWillBeCalled', { args });
         if (send_will_be_called) return send_will_be_called;
 
-        const [request] = args;
+        const [parsed_request] = args;
+
+        const request = this.callMiddleware('requestDataTransformer', parsed_request) || parsed_request;
 
         this.events.next({
             name: 'send',
@@ -178,7 +188,10 @@ export default class DerivAPIBasic extends DerivAPICalls {
         return this.middleware[name](args);
     }
 
-    subscribe(request) {
+    subscribe(parsed_request) {
+        if (this.is_request_blocked) return new Subject();
+
+        const request = this.callMiddleware('requestDataTransformer', parsed_request) || parsed_request;
         return this.subscription_manager.subscribe(request);
     }
 

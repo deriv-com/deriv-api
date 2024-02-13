@@ -155,7 +155,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
     async send(...args) {
         const api_type = Object.keys(args[0])[0];
         if (this.is_request_blocked && !this.excluded_request_block.includes(api_type)) {
-            return new Promise();
+            return new Promise(() => {});
         }
 
         const send_will_be_called = this.callMiddleware('sendWillBeCalled', { args });

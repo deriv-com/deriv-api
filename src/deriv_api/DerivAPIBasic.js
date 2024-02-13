@@ -31,6 +31,7 @@ import {
  * @param {String}     options.lang       - Language of the API communication
  * @param {String}     options.brand      - Brand name
  * @param {Object}     options.middleware - A middleware to call on certain API actions
+ * @param {Array}     options.excluded_request_block - An array of api types which is excluded from request blocking
  *
  * @property {Observable} events
  * @property {Cache} cache - Temporary cache default to @link{InMemory}
@@ -46,6 +47,7 @@ export default class DerivAPIBasic extends DerivAPICalls {
         lang       = 'EN',
         brand      = '',
         middleware = {},
+        excluded_request_block = ['website_status', 'authorize'],
     } = {}) {
         super();
 
@@ -66,17 +68,18 @@ export default class DerivAPIBasic extends DerivAPICalls {
             this.connect();
         }
 
-        this.lang                  = lang;
-        this.reqId                 = 0;
-        this.connected             = new CustomPromise();
-        this.sanityErrors          = new Subject();
-        this.middleware            = middleware;
-        this.pendingRequests       = {};
-        this.expect_response_types = {};
-        this.subscription_manager  = new SubscriptionManager(this);
-        this.reconnect_timeout     = false;
-        this.keep_alive_interval   = false;
-        this.is_request_blocked    = false;
+        this.lang                   = lang;
+        this.reqId                  = 0;
+        this.connected              = new CustomPromise();
+        this.sanityErrors           = new Subject();
+        this.middleware             = middleware;
+        this.pendingRequests        = {};
+        this.expect_response_types  = {};
+        this.subscription_manager   = new SubscriptionManager(this);
+        this.reconnect_timeout      = false;
+        this.keep_alive_interval    = false;
+        this.is_request_blocked     = false;
+        this.excluded_request_block = excluded_request_block;
 
         if (storage) {
             this.storage = new Cache(this, storage);
@@ -151,7 +154,9 @@ export default class DerivAPIBasic extends DerivAPICalls {
 
     async send(...args) {
         const api_type = Object.keys(args[0])[0];
-        if (this.is_request_blocked && api_type !== 'website_status') return new Promise((resolve) => { resolve(true); });
+        if (this.is_request_blocked && !this.excluded_request_block.includes(api_type)) {
+            return new Promise();
+        }
 
         const send_will_be_called = this.callMiddleware('sendWillBeCalled', { args });
         if (send_will_be_called) return send_will_be_called;

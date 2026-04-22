@@ -63,5 +63,10 @@
     "dayjs": "^1.11.10",
     "json-stable-stringify": "^1.1.1",
     "rxjs": "^7.8.1"
+  },
+  "overrides": {
+    "lodash": ">=4.18.0",
+    "js-yaml": ">=4.1.1",
+    "vue-template-compiler": ">=3.4.0"
   }
 }
